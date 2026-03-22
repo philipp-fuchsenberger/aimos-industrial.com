@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikas&#305; — AIMOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">&#304;leti&#351;im</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+            <div class="relative group">
+                <button class="hover:text-white transition-colors flex items-center gap-1">
+                    TR
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="../index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-t-lg">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">English</a>
+                    <a href="index.html" class="block px-4 py-2 text-sm text-white bg-signal-500/10 font-medium">T&uuml;rk&ccedil;e</a>
+                    <a href="../fr/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Fran&ccedil;ais</a>
+                    <a href="../es/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Espa&ntilde;ol</a>
+                    <a href="../it/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-b-lg">Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Gizlilik Politikas&#305;</h1>
+
+        <div class="space-y-8 text-slate-400 leading-relaxed">
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">1. Gizlilik Hakk&#305;nda Genel Bilgi</h2>
+                <h3 class="text-white font-medium mb-2">Genel A&ccedil;&#305;klamalar</h3>
+                <p>
+                    A&#351;a&#287;&#305;daki a&ccedil;&#305;klamalar, bu web sitesini ziyaret etti&#287;inizde ki&#351;isel verilerinize
+                    ne oldu&#287;una dair genel bir bak&#305;&#351; sunmaktad&#305;r. Ki&#351;isel veriler, sizin
+                    ki&#351;isel olarak tan&#305;mlanman&#305;z&#305; sa&#287;layan t&uuml;m verilerdir.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">2. Bar&#305;nd&#305;rma</h2>
+                <p>
+                    Bu web sitesi harici bir hizmet sa&#287;lay&#305;c&#305; (bar&#305;nd&#305;rma sa&#287;lay&#305;c&#305;s&#305;) taraf&#305;ndan bar&#305;nd&#305;r&#305;lmaktad&#305;r.
+                    Bu web sitesinde toplanan ki&#351;isel veriler, bar&#305;nd&#305;rma sa&#287;lay&#305;c&#305;s&#305;n&#305;n sunucular&#305;nda saklanmaktad&#305;r.
+                    Bu veriler ba&#351;l&#305;ca IP adresleri, ileti&#351;im talepleri, meta ve ileti&#351;im verileri,
+                    s&ouml;zle&#351;me verileri, ileti&#351;im bilgileri, isimler, web sitesi eri&#351;im kay&#305;tlar&#305; ve
+                    bir web sitesi &uuml;zerinden &uuml;retilen di&#287;er veriler olabilir.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">3. AIMOS Yaz&#305;l&#305;m&#305; &mdash; Veri &#304;&#351;leme</h2>
+                <p>
+                    AIMOS, <strong class="text-white">yerel olarak &ccedil;al&#305;&#351;t&#305;r&#305;lan bir yaz&#305;l&#305;md&#305;r</strong>. AIMOS yaz&#305;l&#305;m&#305;
+                    bize veya &uuml;&ccedil;&uuml;nc&uuml; taraflara herhangi bir veri g&ouml;ndermez. T&uuml;m veriler i&#351;letmecinin
+                    sunucusunda (SovereignNode) kal&#305;r.
+                </p>
+                <div class="mt-4 bg-slate-900/50 border border-signal-500/20 rounded-xl p-5">
+                    <h4 class="text-signal-300 font-medium mb-2">AIMOS Taraf&#305;ndan Veri &#304;&#351;leme</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-green-400 mr-2">&#10003;</span> LLM &#199;&#305;kar&#305;m&#305;: Tamamen SovereignNode &uuml;zerinde yerel</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Ajan Belle&#287;i: Her ajan i&ccedil;in yerel SQLite veritaban&#305;</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Sohbet Ge&ccedil;mi&#351;leri: Yerel PostgreSQL veritaban&#305;</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Denetim Kay&#305;tlar&#305;: Yerel dosya sistemi</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> Telegram Mesajlar&#305;: Telegram sunucular&#305; &uuml;zerinden iletim (standart Telegram ta&#351;&#305;ma)</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> Harici LLM&#39;ler (iste&#287;e ba&#287;l&#305;): Yaln&#305;zca a&ccedil;&#305;k eskalasyonda, PII-Vault ile otomatik anonimle&#351;tirme</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">4. PII-Vault (Anonimle&#351;tirme)</h2>
+                <p>
+                    AIMOS harici bir YZ API&#39;sine ba&#351;vurdu&#287;unda (&ouml;rn. karma&#351;&#305;k analiz g&ouml;revleri i&ccedil;in),
+                    t&uuml;m ki&#351;isel veriler <strong class="text-white">iletimden &ouml;nce otomatik olarak anonimle&#351;tirilir</strong>.
+                    &#304;simler, e-posta adresleri, telefon numaralar&#305; ve eri&#351;im bilgileri yer tutucularla de&#287;i&#351;tirilir.
+                    E&#351;le&#351;tirme (yer tutucu &rarr; orijinal de&#287;er) yaln&#305;zca yerel sunucuda kal&#305;r.
+                </p>
+                <p class="mt-2">
+                    Ayr&#305;nt&#305;lar: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Uyumluluk Dok&uuml;mantasyonu</a>
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">5. Haklar&#305;n&#305;z</h2>
+                <p>
+                    Saklanan ki&#351;isel verileriniz, bunlar&#305;n kayna&#287;&#305; ve al&#305;c&#305;s&#305; ile veri i&#351;lemenin
+                    amac&#305; hakk&#305;nda her zaman &uuml;cretsiz bilgi alma hakk&#305;n&#305;z bulunmaktad&#305;r. Ayr&#305;ca
+                    bu verilerin d&uuml;zeltilmesini veya silinmesini talep etme hakk&#305;na sahipsiniz.
+                    Bu konuda ve ki&#351;isel verilerle ilgili di&#287;er sorular&#305;n&#305;z i&ccedil;in her zaman
+                    bizimle ileti&#351;ime ge&ccedil;ebilirsiniz.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">6. Analiz Ara&ccedil;lar&#305; ve Reklamc&#305;l&#305;k</h2>
+                <p>
+                    Bu web sitesi herhangi bir analiz arac&#305;,
+                    izleme &ccedil;erezi veya reklam a&#287;&#305; <strong class="text-white">kullanmamaktad&#305;r</strong>. Google Analytics,
+                    Facebook Pixel veya benzer hizmetlere hi&ccedil;bir veri aktar&#305;lmamaktad&#305;r.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">7. SSL &#350;ifreleme</h2>
+                <p>
+                    Bu site g&uuml;venlik nedeniyle SSL &#351;ifreleme kullanmaktad&#305;r. &#350;ifreli bir ba&#287;lant&#305;y&#305;,
+                    taray&#305;c&#305;n&#305;z&#305;n adres &ccedil;ubu&#287;undaki &quot;http://&quot; yerine &quot;https://&quot; yaz&#305;s&#305; ve
+                    kilit simgesinden anlayabilirsiniz.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">8. Sorumlu Kurum</h2>
+                <p>
+                    Bu web sitesindeki veri i&#351;lemeden sorumlu kurum
+                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Yasal Bilgiler</a> sayfas&#305;nda belirtilmi&#351;tir.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisans&#305;.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Yasal Bilgiler</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

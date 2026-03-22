@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#304;leti&#351;im — AIMOS</title>
+    <meta name="description" content="AIMOS dan&#305;&#351;manl&#305;&#287;&#305; i&ccedil;in bizimle ileti&#351;ime ge&ccedil;in. SovereignNode yap&#305;land&#305;rmas&#305;, ajan geli&#351;tirme, pilot projeler.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0,112,243,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,112,243,0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="kontakt.html" class="text-white">&#304;leti&#351;im</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+        </div>
+        <div class="relative group">
+            <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">TR</button>
+            <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">T&uuml;rk&ccedil;e</a>
+                <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
+                <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 px-6 grid-pattern">
+    <div class="max-w-3xl mx-auto text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">&#304;leti&#351;im</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Bizimle konu&#351;un
+        </h1>
+        <p class="text-slate-400 text-lg max-w-xl mx-auto">
+            Pilot proje, teknik dan&#305;&#351;manl&#305;k veya bireysel ajan geli&#351;tirme &mdash;
+            talebinizi bekliyoruz.
+        </p>
+    </div>
+</section>
+
+<!-- &#304;leti&#351;im Formu + Bilgi -->
+<section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-12">
+
+        <!-- Form (3 s&uuml;tun) -->
+        <div class="lg:col-span-3">
+            <form action="https://formspree.io/f/info@ecohub-muenchen.com" method="POST" class="space-y-5">
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm text-slate-300 mb-1.5">Ad&#305;n&#305;z *</label>
+                        <input type="text" name="name" required
+                               class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                               placeholder="Ad Soyad">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-300 mb-1.5">&#350;irket</label>
+                        <input type="text" name="company"
+                               class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                               placeholder="&#350;irket Ad&#305;">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">E-posta *</label>
+                    <input type="email" name="email" required
+                           class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                           placeholder="ad@sirket.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">&#304;lgi Alan&#305;</label>
+                    <select name="interest"
+                            class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-signal-500 focus:outline-none transition-colors">
+                        <option value="pilot">Pilot Proje / Proof of Concept</option>
+                        <option value="beratung">Teknik Dan&#305;&#351;manl&#305;k</option>
+                        <option value="agenten">Bireysel Ajan Geli&#351;tirme</option>
+                        <option value="sovereign">SovereignNode Yap&#305;land&#305;rmas&#305;</option>
+                        <option value="migration">Sistem Ta&#351;&#305;ma / ERP Entegrasyonu</option>
+                        <option value="sonstiges">Di&#287;er</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">Mesaj&#305;n&#305;z *</label>
+                    <textarea name="message" rows="5" required
+                              class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors resize-y"
+                              placeholder="Talebinizi k&#305;saca a&ccedil;&#305;klay&#305;n&#305;z..."></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="privacy" name="privacy" required
+                           class="mt-1 accent-signal-500">
+                    <label for="privacy" class="text-sm text-slate-500">
+                        <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">Gizlilik politikas&#305;n&#305;</a>
+                        okudum ve verilerimin i&#351;lenmesini kabul ediyorum. *
+                    </label>
+                </div>
+
+                <button type="submit"
+                        class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
+                    Mesaj g&ouml;nder
+                </button>
+
+                <p class="text-xs text-slate-600">* Zorunlu alanlar. Verileriniz yaln&#305;zca talebinizin i&#351;lenmesi amac&#305;yla kullan&#305;l&#305;r.</p>
+            </form>
+        </div>
+
+        <!-- Bilgi (2 s&uuml;tun) -->
+        <div class="lg:col-span-2 space-y-8">
+
+            <!-- Do&#287;rudan &#304;leti&#351;im -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <h3 class="font-bold mb-4">Do&#287;rudan &#304;leti&#351;im</h3>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <div>
+                            <p class="text-slate-300 font-medium">E-posta</p>
+                            <a href="mailto:info@ecohub-muenchen.com" class="text-signal-400 hover:text-signal-300 transition-colors">info@ecohub-muenchen.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <div>
+                            <p class="text-slate-300 font-medium">Konum</p>
+                            <p class="text-slate-400">EcoHub München GmbH<br>Ohlenschlagerstraße 14<br>81369 München</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sizi Neler Bekliyor -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <h3 class="font-bold mb-4">Sizi Neler Bekliyor</h3>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">1</span>
+                        <p><strong class="text-white">&#304;lk g&ouml;r&uuml;&#351;me</strong> &mdash; BT altyap&#305;n&#305;z&#305; anlar ve h&#305;zl&#305; kazan&#305;mlar&#305; belirleriz.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">2</span>
+                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Kullan&#305;m senaryonuz i&ccedil;in bir ajan yap&#305;land&#305;r&#305;l&#305;r ve 2 hafta test edilir.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">3</span>
+                        <p><strong class="text-white">Yayg&#305;nla&#351;t&#305;rma</strong> &mdash; SovereignNode sizin mekan&#305;n&#305;za, ajan ta&#351;&#305;ma, e&#287;itim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A&ccedil;&#305;k Kaynak Notu -->
+            <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5">
+                <p class="text-sm text-slate-400">
+                    <strong class="text-signal-300">A&ccedil;&#305;k Kaynak</strong> &mdash; AIMOS MIT lisansl&#305;d&#305;r.
+                    Yaz&#305;l&#305;m&#305; ba&#287;&#305;ms&#305;z olarak kullanabilirsiniz. Profesyonel dan&#305;&#351;manl&#305;k,
+                    bireysel ajan geli&#351;tirme ve SovereignNode yap&#305;land&#305;rmas&#305;n&#305; hizmet olarak sunuyoruz.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisans.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">K&uuml;nye</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

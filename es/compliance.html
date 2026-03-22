@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance y seguridad — AIMOS</title>
+    <meta name="description" content="Compliance AIMOS: RGPD, ISO 9001/27001, GoBD, PII-Vault, Audit-Trail, Execution Rings. Construido para auditores.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'], mono: ['JetBrains Mono', 'Fira Code', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .gradient-border { position: relative; background: #1a2332; border-radius: 12px; }
+        .gradient-border::before { content: ''; position: absolute; inset: -1px; border-radius: 13px; background: linear-gradient(135deg, #0070f3, #005cc8, #2b8eff, #0070f3); background-size: 300% 300%; animation: border-flow 6s ease infinite; z-index: -1; }
+        @keyframes border-flow { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .grid-pattern { background-image: linear-gradient(rgba(0,112,243,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,112,243,0.03) 1px, transparent 1px); background-size: 64px 64px; }
+        .glow-sm { box-shadow: 0 0 20px rgba(0,112,243,0.15); }
+        .glow-md { box-shadow: 0 0 40px rgba(0,112,243,0.12), 0 0 80px rgba(0,112,243,0.06); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+        .check-item::before { content: '\2713'; color: #10b981; font-weight: 700; margin-right: 0.75rem; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm group-hover:bg-signal-400 transition-colors">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+            <span class="hidden sm:inline text-xs font-mono text-slate-500 ml-1">v4.3</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Agentes</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Arquitectura</a>
+            <a href="compliance.html" class="text-white font-medium">Compliance</a>
+            <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contacto</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Precios</a>
+            <div class="flex items-center gap-2 text-xs text-slate-500">
+                <a href="../index.html" class="hover:text-white transition-colors">DE</a>
+                <a href="../en/index.html" class="hover:text-white transition-colors">EN</a>
+                <a href="../tr/index.html" class="hover:text-white transition-colors">TR</a>
+                <a href="../fr/index.html" class="hover:text-white transition-colors">FR</a>
+                <span class="text-white font-medium">ES</span>
+                <a href="../it/index.html" class="hover:text-white transition-colors">IT</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="https://github.com/AIMOS-Industrial/aimos" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="index.html#cta" class="bg-signal-500 hover:bg-signal-400 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">Comenzar ahora</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative pt-32 pb-20 grid-pattern">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Conformidad regulatoria</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+            Compliance &amp; Seguridad
+        </h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Construido para auditores, no contra ellos. Cada decisión arquitectónica se tomó bajo el aspecto
+            de la conformidad regulatoria &mdash; no se adaptó posteriormente.
+        </p>
+    </div>
+</section>
+
+<!-- Localidad de datos -->
+<section id="datenlokalitaet" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Soberanía de datos</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Localidad de datos</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Todos los datos permanecen en su SovereignNode. Ningún byte abandona su red &mdash; a menos que usted lo permita explícitamente.</p>
+        </div>
+
+        <div class="reveal max-w-4xl mx-auto">
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="cArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/></marker>
+                    <marker id="cArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/></marker>
+                </defs>
+                <rect x="30" y="20" width="530" height="380" rx="12" fill="#10b981" fill-opacity="0.03" stroke="#10b981" stroke-width="2"/>
+                <text x="295" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">SovereignNode (Su servidor)</text>
+                <rect x="60" y="70" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                <text x="160" y="100" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Canales de usuario</text>
+                <rect x="60" y="145" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                <text x="160" y="175" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Procesos de agentes</text>
+                <rect x="60" y="220" width="200" height="50" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
+                <text x="160" y="250" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">PostgreSQL + SQLite</text>
+                <rect x="60" y="295" width="200" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                <text x="160" y="325" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="600">LLM (runtime local)</text>
+                <rect x="320" y="130" width="210" height="80" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="425" y="160" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">PII-Vault</text>
+                <text x="425" y="178" text-anchor="middle" fill="#94a3b8" font-size="9">Anonimización</text>
+                <text x="425" y="193" text-anchor="middle" fill="#94a3b8" font-size="9">Des-anonimización</text>
+                <line x1="160" y1="120" x2="160" y2="145" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+                <line x1="160" y1="195" x2="160" y2="220" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+                <line x1="160" y1="270" x2="160" y2="295" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+                <line x1="260" y1="170" x2="320" y2="170" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#cArrowRed)"/>
+                <rect x="610" y="100" width="170" height="140" rx="12" fill="#ef4444" fill-opacity="0.04" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,4"/>
+                <text x="695" y="130" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Externo (opcional)</text>
+                <rect x="630" y="145" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
+                <text x="695" y="167" text-anchor="middle" fill="#94a3b8" font-size="10">Cloud-LLM API</text>
+                <rect x="630" y="195" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
+                <text x="695" y="217" text-anchor="middle" fill="#94a3b8" font-size="10">Web-Search API</text>
+                <line x1="530" y1="170" x2="610" y2="170" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#cArrowRed)"/>
+                <text x="570" y="160" text-anchor="middle" fill="#f59e0b" font-size="8" font-weight="600">anonimizado</text>
+                <rect x="60" y="375" width="12" height="12" rx="2" fill="#10b981" fill-opacity="0.3"/>
+                <text x="78" y="385" fill="#94a3b8" font-size="10">Interno (seguro)</text>
+                <rect x="200" y="375" width="12" height="12" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
+                <text x="218" y="385" fill="#94a3b8" font-size="10">Vía PII-Vault (anonimizado)</text>
+                <rect x="380" y="375" width="12" height="12" rx="2" fill="#ef4444" fill-opacity="0.3"/>
+                <text x="398" y="385" fill="#94a3b8" font-size="10">Externo (solo datos anonimizados)</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- PII-Vault -->
+<section id="pii-vault" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Motor de privacidad</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">PII-Vault</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Anonimización automática de datos personales antes de cada llamada API externa.</p>
+        </div>
+
+        <div class="reveal max-w-3xl mx-auto">
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                    <div class="text-2xl font-bold text-signal-400 mb-1">Sesión</div>
+                    <p class="text-slate-400 text-xs">Los mapeos están vinculados a la sesión y no se almacenan de forma persistente</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                    <div class="text-2xl font-bold text-signal-400 mb-1">Regex + NER</div>
+                    <p class="text-slate-400 text-xs">Detección mediante patrones Regex y Named Entity Recognition</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                    <div class="text-2xl font-bold text-signal-400 mb-1">Auditoría</div>
+                    <p class="text-slate-400 text-xs">Cada anonimización se documenta en el registro de auditoría</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Audit-Trail -->
+<section id="audit" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Registro</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Audit-Trail</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Cada acción de los agentes se registra completamente. El Audit-Trail captura seis tipos de eventos:
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">SYSTEM_PROMPT</span>
+                        <span class="text-slate-400 text-sm">System prompt completo para trazabilidad</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">REQUEST</span>
+                        <span class="text-slate-400 text-sm">Solicitud entrante del usuario</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">RESPONSE</span>
+                        <span class="text-slate-400 text-sm">Respuesta completa del agente</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-mono text-xs font-medium">TOOL_START</span>
+                        <span class="text-slate-400 text-sm">Llamada a herramienta con parámetros</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-300 font-mono text-xs font-medium">TOOL_OK</span>
+                        <span class="text-slate-400 text-sm">Resultado de herramienta (éxito o error)</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                        <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 font-mono text-xs font-medium">LLM_USAGE</span>
+                        <span class="text-slate-400 text-sm">Consumo de tokens, modelo, latencia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <div class="gradient-border glow-sm">
+                    <div class="bg-slate-850 rounded-xl p-6 overflow-x-auto">
+                        <div class="font-mono text-xs text-slate-500 mb-4">// Ejemplo: Entrada de Audit-Log</div>
+                        <pre class="font-mono text-xs leading-relaxed"><code><span class="text-slate-500">{</span>
+  <span class="text-signal-300">"id"</span>: <span class="text-slate-400">42847</span>,
+  <span class="text-signal-300">"timestamp"</span>: <span class="text-green-400">"2026-03-22T14:32:17.445Z"</span>,
+  <span class="text-signal-300">"session_id"</span>: <span class="text-green-400">"ses_7f3a2b91"</span>,
+  <span class="text-signal-300">"agent"</span>: <span class="text-green-400">"logistica"</span>,
+  <span class="text-signal-300">"event_type"</span>: <span class="text-amber-400">"TOOL_START"</span>,
+  <span class="text-signal-300">"tool"</span>: <span class="text-green-400">"sql_query"</span>,
+  <span class="text-signal-300">"ring"</span>: <span class="text-slate-400">1</span>,
+  <span class="text-signal-300">"params"</span>: <span class="text-slate-500">{</span>
+    <span class="text-signal-300">"connector"</span>: <span class="text-green-400">"uyumsoft_db"</span>,
+    <span class="text-signal-300">"query"</span>: <span class="text-green-400">"SELECT item, qty FROM stock WHERE qty &lt; 10"</span>
+  <span class="text-slate-500">}</span>,
+  <span class="text-signal-300">"user_id"</span>: <span class="text-green-400">"tg_12345"</span>,
+  <span class="text-signal-300">"pii_anonymized"</span>: <span class="text-slate-400">false</span>
+<span class="text-slate-500">}</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RGPD / GDPR -->
+<section id="dsgvo" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div class="reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Protección de datos UE</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">RGPD / GDPR</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    AIMOS cumple el RGPD no mediante adaptación posterior, sino mediante
+                    decisiones arquitectónicas &mdash; <strong class="text-white">Privacy by Design</strong>.
+                </p>
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 25 &mdash; Protección de datos desde el diseño</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="check-item">Tratamiento de datos local por defecto (SovereignNode)</li>
+                            <li class="check-item">PII-Vault anonimiza antes de cada transmisión externa</li>
+                            <li class="check-item">Sin servicio en la nube en la configuración estándar</li>
+                            <li class="check-item">Minimización de datos: solo datos de contexto relevantes en el prompt LLM</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Seguridad del tratamiento</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="check-item">Cifrado: PostgreSQL SSL, SQLite en disco</li>
+                            <li class="check-item">Control de acceso mediante Execution Rings (3 niveles)</li>
+                            <li class="check-item">Audit-Trail completo de todos los procesos de tratamiento</li>
+                            <li class="check-item">Mapeos PII vinculados a sesión (sin almacenamiento PII persistente)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISO 9001/27001 -->
+            <div class="reveal" id="iso" style="transition-delay: 0.15s;">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Conformidad normativa</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 &amp; 27001</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                    AIMOS respalda los requisitos de ambos estándares mediante mecanismos integrados.
+                </p>
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Gestión de calidad</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="check-item">Trazabilidad: cada decisión en el Audit-Log</li>
+                            <li class="check-item">Rastreabilidad: Session-IDs vinculan todos los eventos</li>
+                            <li class="check-item">Procesos documentados: system prompts como SOPs</li>
+                            <li class="check-item">Acciones correctivas: ciclo Dreaming aprende de errores</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 27001 &mdash; Seguridad de la información</h4>
+                        <ul class="space-y-2 text-sm text-slate-400">
+                            <li class="check-item">Clasificación: Execution Rings definen niveles de acceso</li>
+                            <li class="check-item">Control de acceso: habilitación de herramientas configurable por agente</li>
+                            <li class="check-item">Registro de eventos: todos los 6 tipos de eventos capturados</li>
+                            <li class="check-item">Seguridad física: los datos no abandonan el SovereignNode</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GoBD -->
+<section id="gobd" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Contabilidad</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Conformidad GoBD</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Los GoBD (principios para la gestión y conservación adecuada de libros, registros y documentos en formato electrónico) establecen requisitos especiales para sistemas basados en IA.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-6">AIMOS lo resuelve mediante una estricta separación arquitectónica:</p>
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-amber-400">Separación: borrador vs. registro definitivo</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Los agentes preparan asientos contables (borrador). El registro definitivo
+                            lo realizan exclusivamente operadores autorizados en el sistema destino
+                            (ETA V8, DATEV, etc.). Ningún LLM tiene derechos de transacción.
+                        </p>
+                    </div>
+                    <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2 text-amber-400">Human-in-the-Loop</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Las acciones Ring 2 (acceso de escritura) requieren habilitación explícita.
+                            Los procesos relevantes para la contabilidad siempre requieren aprobación humana &mdash;
+                            forzado arquitectónicamente, no mediante política.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GoBD Diagram -->
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                    <defs>
+                        <marker id="gobdArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/></marker>
+                        <marker id="gobdArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/></marker>
+                    </defs>
+                    <rect x="100" y="20" width="200" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
+                    <text x="200" y="42" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Agente Financiero</text>
+                    <text x="200" y="58" text-anchor="middle" fill="#94a3b8" font-size="9">Crea borrador contable</text>
+                    <line x1="200" y1="70" x2="200" y2="100" stroke="#0070f3" stroke-width="1.5" marker-end="url(#gobdArrow)"/>
+                    <rect x="80" y="100" width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="200" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">BORRADOR</text>
+                    <text x="200" y="138" text-anchor="middle" fill="#94a3b8" font-size="9">Asiento contable (no registrado)</text>
+                    <line x1="200" y1="150" x2="200" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
+                    <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
+                    <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">REVISIÓN HUMANA</text>
+                    <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">Operador verifica y aprueba</text>
+                    <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
+                    <rect x="80" y="270" width="240" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                    <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">REGISTRO DEFINITIVO</text>
+                    <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">En sistema destino (ETA, DATEV, etc.)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seguridad de auditoría -->
+<section id="revisionssicherheit" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Demostrabilidad</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Seguridad de auditoría</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Trazabilidad completa de cada decisión asistida por IA.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Token-Tracking</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Cada llamada LLM se documenta con consumo exacto de tokens (Prompt + Completion), nombre del modelo y latencia.</p>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Trail completo</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Desde la solicitud del usuario hasta las llamadas a herramientas y la respuesta &mdash; cada paso es trazable con marca temporal e ID de sesión.</p>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">PII-Vault Traces</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Mapeos de anonimización vinculados a sesión. Trazable qué datos se anonimizaron y des-anonimizaron y cuándo.</p>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Inspección del código</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Licencia MIT: los auditores pueden verificar cada línea de código. Sin caja negra, sin lógica propietaria.</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center reveal">
+            <div class="inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-4 rounded-2xl bg-slate-900/50 border border-white/5">
+                <span class="text-xs text-slate-500 uppercase tracking-widest">Demostrable mediante</span>
+                <span class="text-sm text-slate-400 font-medium">Audit-Logs</span>
+                <span class="text-slate-700">&middot;</span>
+                <span class="text-sm text-slate-400 font-medium">PII-Vault Traces</span>
+                <span class="text-slate-700">&middot;</span>
+                <span class="text-sm text-slate-400 font-medium">Session-IDs</span>
+                <span class="text-slate-700">&middot;</span>
+                <span class="text-sm text-slate-400 font-medium">Token-Tracking</span>
+                <span class="text-slate-700">&middot;</span>
+                <span class="text-sm text-slate-400 font-medium">Inspección del código</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-16 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-7 h-7 rounded-md bg-signal-500 flex items-center justify-center text-white font-bold text-xs">A</div>
+                    <span class="font-semibold">AIMOS</span>
+                </div>
+                <p class="text-sm text-slate-500 leading-relaxed">Adaptive Industrial Management &amp; Operations System. Código abierto bajo licencia MIT.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Producto</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Flota de agentes</a></li>
+                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Arquitectura</a></li>
+                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Conectores</a></li>
+                    <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="compliance.html#dsgvo" class="hover:text-signal-400 transition-colors">RGPD / GDPR</a></li>
+                    <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
+                    <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Registro de auditoría</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Recursos</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="https://github.com/AIMOS-Industrial/aimos" class="hover:text-signal-400 transition-colors">GitHub</a></li>
+                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilidad MCP</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licenciado bajo la licencia MIT.</p>
+            <div class="flex items-center gap-6 text-xs text-slate-600">
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>
+                <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('border-white/10', window.scrollY > 50);
+        nav.classList.toggle('border-white/5', window.scrollY <= 50);
+    });
+</script>
+</body>
+</html>

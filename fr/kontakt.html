@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — AIMOS</title>
+    <meta name="description" content="Contactez-nous pour une consultation AIMOS. Configuration SovereignNode, d&eacute;veloppement d'agents, projets pilotes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0,112,243,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,112,243,0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Technique</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="kontakt.html" class="text-white">Contact</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+        </div>
+        <div class="relative group">
+            <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
+            <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <a href="../kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">T&uuml;rk&ccedil;e</a>
+                <a href="kontakt.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Fran&ccedil;ais</a>
+                <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 px-6 grid-pattern">
+    <div class="max-w-3xl mx-auto text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Contact</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Parlons ensemble
+        </h1>
+        <p class="text-slate-400 text-lg max-w-xl mx-auto">
+            Qu'il s'agisse d'un projet pilote, d'un conseil technique ou du d&eacute;veloppement d'agents sur mesure &mdash;
+            nous nous r&eacute;jouissons de recevoir votre demande.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Form + Info -->
+<section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-12">
+
+        <!-- Form (3 cols) -->
+        <div class="lg:col-span-3">
+            <form action="https://formspree.io/f/info@ecohub-muenchen.com" method="POST" class="space-y-5">
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm text-slate-300 mb-1.5">Nom *</label>
+                        <input type="text" name="name" required
+                               class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                               placeholder="Jean Dupont">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-slate-300 mb-1.5">Entreprise</label>
+                        <input type="text" name="company"
+                               class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                               placeholder="Soci&eacute;t&eacute; SAS">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">E-mail *</label>
+                    <input type="email" name="email" required
+                           class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
+                           placeholder="jean@entreprise.fr">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">Int&eacute;r&ecirc;t</label>
+                    <select name="interest"
+                            class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-signal-500 focus:outline-none transition-colors">
+                        <option value="pilot">Projet pilote / Proof of Concept</option>
+                        <option value="beratung">Conseil technique</option>
+                        <option value="agenten">D&eacute;veloppement d'agents sur mesure</option>
+                        <option value="sovereign">Configuration SovereignNode</option>
+                        <option value="migration">Migration syst&egrave;me / Connexion ERP</option>
+                        <option value="sonstiges">Autre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm text-slate-300 mb-1.5">Votre message *</label>
+                    <textarea name="message" rows="5" required
+                              class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors resize-y"
+                              placeholder="D&eacute;crivez bri&egrave;vement votre demande..."></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="privacy" name="privacy" required
+                           class="mt-1 accent-signal-500">
+                    <label for="privacy" class="text-sm text-slate-500">
+                        J'ai lu la <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">politique de confidentialit&eacute;</a>
+                        et j'accepte le traitement de mes donn&eacute;es. *
+                    </label>
+                </div>
+
+                <button type="submit"
+                        class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
+                    Envoyer le message
+                </button>
+
+                <p class="text-xs text-slate-600">* Champs obligatoires. Vos donn&eacute;es sont utilis&eacute;es exclusivement pour traiter votre demande.</p>
+            </form>
+        </div>
+
+        <!-- Info (2 cols) -->
+        <div class="lg:col-span-2 space-y-8">
+
+            <!-- Direct Contact -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <h3 class="font-bold mb-4">Contact direct</h3>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <div>
+                            <p class="text-slate-300 font-medium">E-mail</p>
+                            <a href="mailto:info@ecohub-muenchen.com" class="text-signal-400 hover:text-signal-300 transition-colors">info@ecohub-muenchen.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <div>
+                            <p class="text-slate-300 font-medium">Adresse</p>
+                            <p class="text-slate-400">EcoHub M&uuml;nchen GmbH<br>Ohlenschlagerstra&szlig;e 14<br>81369 M&uuml;nchen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What to expect -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <h3 class="font-bold mb-4">&Agrave; quoi vous attendre</h3>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">1</span>
+                        <p><strong class="text-white">Premier entretien</strong> &mdash; Nous analysons votre paysage informatique et identifions les gains rapides.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">2</span>
+                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Un agent est configur&eacute; pour votre cas d'usage et test&eacute; pendant 2 semaines.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-signal-400 font-bold mt-0.5">3</span>
+                        <p><strong class="text-white">D&eacute;ploiement</strong> &mdash; SovereignNode chez vous, migration des agents, formation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Source Note -->
+            <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5">
+                <p class="text-sm text-slate-400">
+                    <strong class="text-signal-300">Open Source</strong> &mdash; AIMOS est sous licence MIT.
+                    Vous pouvez utiliser le logiciel de mani&egrave;re autonome. Nous proposons le conseil professionnel,
+                    le d&eacute;veloppement d'agents sur mesure et la configuration SovereignNode en tant que service.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licence MIT.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

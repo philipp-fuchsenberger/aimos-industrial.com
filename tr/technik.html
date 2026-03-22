@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknik Mimari — AIMOS</title>
+    <meta name="description" content="AIMOS teknik mimarisi: SovereignNode, yerel LLM çıkarımı, çift veritabanı mimarisi, konektörler ve ajan taşınabilirliği.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1a2332',
+                            900: '#0f1923',
+                            950: '#0a1118',
+                        },
+                        signal: {
+                            50:  '#e8f4ff',
+                            100: '#d0e8ff',
+                            200: '#a3d1ff',
+                            300: '#5eafff',
+                            400: '#2b8eff',
+                            500: '#0070f3',
+                            600: '#005cc8',
+                            700: '#004a9e',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .gradient-border {
+            position: relative;
+            background: #1a2332;
+            border-radius: 12px;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #0070f3, #005cc8, #2b8eff, #0070f3);
+            background-size: 300% 300%;
+            animation: border-flow 6s ease infinite;
+            z-index: -1;
+        }
+        @keyframes border-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0,112,243,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,112,243,0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+        .glow-sm { box-shadow: 0 0 20px rgba(0,112,243,0.15); }
+        .glow-md { box-shadow: 0 0 40px rgba(0,112,243,0.12), 0 0 80px rgba(0,112,243,0.06); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-blur {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm group-hover:bg-signal-400 transition-colors">
+                A
+            </div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+            <span class="hidden sm:inline text-xs font-mono text-slate-500 ml-1">v4.3</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
+            <a href="technik.html" class="text-white font-medium">Teknik</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">&#304;leti&#351;im</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+            <div class="relative group">
+                <button class="hover:text-white transition-colors flex items-center gap-1">
+                    TR
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="../index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-t-lg">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">English</a>
+                    <a href="index.html" class="block px-4 py-2 text-sm text-white bg-signal-500/10 font-medium">Türkçe</a>
+                    <a href="../fr/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Français</a>
+                    <a href="../es/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Español</a>
+                    <a href="../it/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-b-lg">Italiano</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="https://github.com/AIMOS-Industrial/aimos" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="index.html#cta" class="bg-signal-500 hover:bg-signal-400 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                Hemen Başlayın
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative pt-32 pb-20 grid-pattern">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Teknik Dokümantasyon</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+            Teknik Mimari
+        </h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            SovereignNode'dan LLM çağrısına kadar &mdash; AIMOS perde arkasında böyle çalışır.
+        </p>
+    </div>
+</section>
+
+<!-- Sistem Genel Bakış -->
+<section id="system-uebersicht" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Yığın Diyagramı</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Sistem Genel Bakışı</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Kullanıcı mesajından yanıta kadar tam veri akışı &mdash; tüm katmanlar bir bakışta.</p>
+        </div>
+
+        <div class="reveal max-w-4xl mx-auto">
+            <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="arrow1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                    </marker>
+                </defs>
+                <!-- User Channels -->
+                <rect x="50" y="10" width="700" height="60" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="400" y="32" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">KULLANICI KANALLARI</text>
+                <text x="140" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Telegram</text>
+                <text x="300" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">E-posta</text>
+                <text x="460" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Ses (STT/TTS)</text>
+                <text x="640" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Kontrol Paneli</text>
+
+                <line x1="400" y1="70" x2="400" y2="100" stroke="#0070f3" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                <rect x="200" y="100" width="400" height="50" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="400" y="130" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Shared Listener</text>
+
+                <line x1="400" y1="150" x2="400" y2="180" stroke="#0070f3" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                <rect x="220" y="180" width="360" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1.5"/>
+                <text x="400" y="210" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600">PostgreSQL (Mesaj Aktarımı)</text>
+
+                <line x1="400" y1="230" x2="400" y2="260" stroke="#0070f3" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                <rect x="180" y="260" width="440" height="50" rx="8" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="400" y="290" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600">Orkestratör (VRAM Guard, Süreç Yöneticisi)</text>
+
+                <line x1="400" y1="310" x2="400" y2="340" stroke="#0070f3" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                <rect x="150" y="340" width="500" height="50" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="400" y="370" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Ajan Süreci (Bellek + Beceriler + Prompt Oluşturucu)</text>
+
+                <line x1="400" y1="390" x2="400" y2="420" stroke="#0070f3" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                <rect x="240" y="420" width="320" height="50" rx="8" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-width="1.5"/>
+                <text x="400" y="450" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="600">LLM (Yerel Çıkarım)</text>
+
+                <path d="M 730 445 L 730 40 L 750 40" stroke="#0070f3" stroke-width="1.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow1)"/>
+                <text x="738" y="250" fill="#94a3b8" font-size="10" transform="rotate(90, 738, 250)" text-anchor="middle">Yanıt Yolu</text>
+
+                <rect x="50" y="490" width="12" height="12" rx="2" fill="#0070f3" fill-opacity="0.3"/>
+                <text x="68" y="500" fill="#94a3b8" font-size="10">Çekirdek</text>
+                <rect x="140" y="490" width="12" height="12" rx="2" fill="#10b981" fill-opacity="0.3"/>
+                <text x="158" y="500" fill="#94a3b8" font-size="10">Veritabanı</text>
+                <rect x="250" y="490" width="12" height="12" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
+                <text x="268" y="500" fill="#94a3b8" font-size="10">Orkestrasyon</text>
+                <rect x="390" y="490" width="12" height="12" rx="2" fill="#a855f7" fill-opacity="0.3"/>
+                <text x="408" y="500" fill="#94a3b8" font-size="10">Çıkarım</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- SovereignNode -->
+<section id="sovereign-node" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Altyapı</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Tek bir sunucu. Yerel GPU. Bulut bağımlılığı yok.
+                    SovereignNode, her AIMOS kurulumunun kalbidir &mdash;
+                    tüm bileşenleri barındıran fiziksel veya sanal bir sunucu.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Her şey yerel çalışır: LLM çıkarımı, veritabanları, ajan süreçleri
+                    ve iletişim kanalları. Ağınızdan hiçbir veri çıkmaz &mdash;
+                    siz açıkça yapılandırmadığınız sürece (örn. Telegram mesajları).
+                </p>
+
+                <!-- Hardware Requirements Table -->
+                <div class="overflow-hidden rounded-xl border border-white/5">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-slate-850 border-b border-white/5">
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Bileşen</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Önerilen</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-400">
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium text-white">GPU</td>
+                                <td class="py-3 px-4">NVIDIA RTX 5090 (32 GB VRAM)</td>
+                                <td class="py-3 px-4 text-signal-300">NVIDIA RTX 5090 (32 GB VRAM)</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium text-white">RAM</td>
+                                <td class="py-3 px-4">32 GB DDR4</td>
+                                <td class="py-3 px-4 text-signal-300">64 GB DDR5</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium text-white">Depolama</td>
+                                <td class="py-3 px-4">256 GB SSD</td>
+                                <td class="py-3 px-4 text-signal-300">1 TB NVMe</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-3 px-4 font-medium text-white">CPU</td>
+                                <td class="py-3 px-4">8 Çekirdek</td>
+                                <td class="py-3 px-4 text-signal-300">16+ Çekirdek</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium text-white">İS</td>
+                                <td class="py-3 px-4">Ubuntu 24.04 LTS</td>
+                                <td class="py-3 px-4 text-signal-300">Ubuntu 26.04 LTS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Deployment Diagram -->
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <defs>
+                        <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                        </marker>
+                    </defs>
+                    <rect x="10" y="10" width="380" height="460" rx="12" fill="none" stroke="#0070f3" stroke-width="2" stroke-dasharray="8,4"/>
+                    <text x="200" y="38" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">SovereignNode</text>
+
+                    <rect x="40" y="60" width="320" height="50" rx="8" fill="#a855f7" fill-opacity="0.12" stroke="#a855f7" stroke-width="1"/>
+                    <text x="200" y="90" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">GPU (NVIDIA CUDA / LLM Runtime)</text>
+
+                    <rect x="40" y="125" width="320" height="40" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 3.5:27B (Q4, ~17 GB VRAM, yerel Tool-Calling)</text>
+
+                    <rect x="40" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
+                    <text x="115" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">PostgreSQL</text>
+
+                    <rect x="210" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
+                    <text x="285" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">SQLite (Bellek)</text>
+
+                    <rect x="40" y="255" width="320" height="50" rx="8" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="1"/>
+                    <text x="200" y="285" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Orkestratör + VRAM Guard</text>
+
+                    <rect x="40" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
+                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan A</text>
+                    <rect x="150" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
+                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan B</text>
+                    <rect x="260" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
+                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan C</text>
+
+                    <rect x="40" y="390" width="320" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
+                    <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Shared Listener (Telegram, E-posta, Ses)</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LLM Entegrasyonu -->
+<section id="llm" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Çıkarım</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">LLM Entegrasyonu</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">SGLang ile yerel çıkarım. Sıralı çalışma. Akıllı VRAM yönetimi.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Yerel LLM Çıkarımı (SGLang)</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    AIMOS, yerel Tool-Calling destekli <strong class="text-white">27 milyar parametreli bir model</strong> kullanır.
+                    Daha küçük modeller (&lt;20B) güvenilir araç yönetiminde başarısız olur &mdash;
+                    bu, değerlendirmemizin üretim açısından kritik bir sonucudur. <span class="text-signal-300 font-mono text-xs">RadixAttention</span>: Prefix cache ajanlar arasında paylaşılır &mdash; ajan değişiminde yeniden yükleme gerekmez.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Sıralı Çalışma</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    VRAM Guard, aynı anda yalnızca bir ajanın GPU'ya erişmesini sağlar.
+                    İstekler veritabanı kuyruğunda tutulur ve sırayla işlenir &mdash;
+                    OOM yok, VRAM çakışması yok.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Keep-Alive Stratejisi</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Model 30 dakika VRAM'de kalır. Tüm ajanlar aynı modeli paylaşır &mdash;
+                    ajan değişikliğinde boşaltma olmaz. 30 dakika hareketsizlikten sonra VRAM serbest bırakılır.
+                </p>
+            </div>
+        </div>
+
+        <!-- LLM Request Anatomy -->
+        <div class="mt-12 reveal">
+            <div class="gradient-border glow-sm">
+                <div class="bg-slate-850 rounded-xl p-8">
+                    <div class="font-mono text-xs text-slate-500 mb-4">// LLM İsteği Anatomisi</div>
+                    <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                        <defs>
+                            <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                            </marker>
+                        </defs>
+                        <rect x="0" y="20" width="120" height="60" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                        <text x="60" y="45" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Sistem Prompt</text>
+                        <text x="60" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">+ Bellek Bağlamı</text>
+
+                        <line x1="120" y1="50" x2="155" y2="50" stroke="#0070f3" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="155" y="20" width="110" height="60" rx="8" fill="#1a2332" stroke="#f59e0b" stroke-width="1"/>
+                        <text x="210" y="45" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="600">Cognitive</text>
+                        <text x="210" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">Denge Kontrolü</text>
+
+                        <line x1="265" y1="50" x2="300" y2="50" stroke="#0070f3" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="300" y="20" width="110" height="60" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                        <text x="355" y="45" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">LLM Çıkarım</text>
+                        <text x="355" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">SGLang API</text>
+
+                        <line x1="410" y1="50" x2="445" y2="50" stroke="#0070f3" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="445" y="20" width="110" height="60" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
+                        <text x="500" y="45" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Araç Dağıtım</text>
+                        <text x="500" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">Ring Kontrolü</text>
+
+                        <line x1="555" y1="50" x2="590" y2="50" stroke="#0070f3" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                        <rect x="590" y="20" width="160" height="60" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                        <text x="670" y="45" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Denetim Kaydı + Yanıt</text>
+                        <text x="670" y="62" text-anchor="middle" fill="#94a3b8" font-size="9">Token Takibi</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Veritabanı Mimarisi -->
+<section id="datenbank" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Çift Veritabanı</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Veritabanı Mimarisi</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    AIMOS, net sorumluluk ayrımıyla iki veritabanı sistemi kullanır:
+                </p>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">PostgreSQL (Aktarım Veritabanı)</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Shared Listener, Orkestratör ve ajanlar arasında merkezi mesaj yönlendirmesi.
+                                Gelen mesajları, denetim kayıtlarını, PII-Vault eşleştirmelerini ve oturum verilerini saklar.
+                                Bağlantı havuzlama ile çoklu süreç desteği.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">SQLite (Ajan Belleği)</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Her ajanın semantik, epizodik ve prosedürel bellekli kendi SQLite veritabanı vardır.
+                                FTS5 + vektör gömmeleri üzerinden hibrit arama.
+                                Dosya kopyalama ile taşınabilir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dual-DB SVG -->
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <defs>
+                        <marker id="arrow4" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                        </marker>
+                    </defs>
+                    <rect x="20" y="20" width="160" height="340" rx="8" fill="#10b981" fill-opacity="0.06" stroke="#10b981" stroke-width="1.5"/>
+                    <text x="100" y="50" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">PostgreSQL</text>
+                    <rect x="35" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                    <text x="100" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">message_relay</text>
+                    <rect x="35" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                    <text x="100" y="125" text-anchor="middle" fill="#94a3b8" font-size="10">audit_log</text>
+                    <rect x="35" y="145" width="130" height="30" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                    <text x="100" y="165" text-anchor="middle" fill="#94a3b8" font-size="10">pii_vault</text>
+                    <rect x="35" y="185" width="130" height="30" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                    <text x="100" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">sessions</text>
+                    <rect x="35" y="225" width="130" height="30" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                    <text x="100" y="245" text-anchor="middle" fill="#94a3b8" font-size="10">llm_usage</text>
+
+                    <rect x="220" y="20" width="160" height="340" rx="8" fill="#0070f3" fill-opacity="0.06" stroke="#0070f3" stroke-width="1.5"/>
+                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (ajan başına)</text>
+                    <rect x="235" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                    <text x="300" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">semantic_memory</text>
+                    <rect x="235" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                    <text x="300" y="125" text-anchor="middle" fill="#94a3b8" font-size="10">episodic_memory</text>
+                    <rect x="235" y="145" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                    <text x="300" y="165" text-anchor="middle" fill="#94a3b8" font-size="10">procedural_memory</text>
+                    <rect x="235" y="185" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                    <text x="300" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">vector_embeddings</text>
+                    <rect x="235" y="225" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                    <text x="300" y="245" text-anchor="middle" fill="#94a3b8" font-size="10">dreaming_log</text>
+
+                    <line x1="180" y1="80" x2="220" y2="80" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow4)"/>
+                    <line x1="220" y1="120" x2="180" y2="120" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
+
+                    <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Senkronizasyon</text>
+                    <text x="200" y="305" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Orkestratör aracılığıyla</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Konektörler -->
+<section id="konnektoren" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Evrensel Bağlantı</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Konektörler</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Desteklenen tüm sistemler ve protokoller bir bakışta.</p>
+        </div>
+
+        <div class="reveal">
+            <div class="overflow-hidden rounded-xl border border-white/5">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-850 border-b border-white/10">
+                            <th class="text-left py-3 px-5 font-semibold text-slate-300 w-16"></th>
+                            <th class="text-left py-3 px-5 font-semibold text-slate-300">Konektör</th>
+                            <th class="text-left py-3 px-5 font-semibold text-slate-300">Protokol</th>
+                            <th class="text-left py-3 px-5 font-semibold text-slate-300 hidden md:table-cell">Kullanım</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-400">
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/><text x="12" y="16" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="bold">SQL</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">SQL Doğrudan Erişim</td>
+                            <td class="py-3 px-5 font-mono text-xs">PostgreSQL, MSSQL, Firebird, MySQL</td>
+                            <td class="py-3 px-5 hidden md:table-cell">ERP, CRM, Muhasebe</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#10b981" font-size="7" font-weight="bold">REST</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">REST API</td>
+                            <td class="py-3 px-5 font-mono text-xs">HTTP/HTTPS, JSON, OAuth2</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Modern sistemler, SaaS</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#f59e0b" font-size="6" font-weight="bold">SOAP</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">SOAP / XML-RPC</td>
+                            <td class="py-3 px-5 font-mono text-xs">WSDL, XML, NTLM</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Eski sistemler, SAP RFC</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#a855f7" font-size="6" font-weight="bold">SFTP</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">SFTP / Dosya Sistemi</td>
+                            <td class="py-3 px-5 font-mono text-xs">SSH, SMB, NFS</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Veri alışverişi, yedekleme</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#5eafff" font-size="6" font-weight="bold">TG</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">Telegram</td>
+                            <td class="py-3 px-5 font-mono text-xs">Bot API, Webhook</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Sohbet arayüzü, bildirimler</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#10b981" font-size="7" font-weight="bold">@</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">E-posta</td>
+                            <td class="py-3 px-5 font-mono text-xs">IMAP, SMTP</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Rapor gönderimi, gelen işleme</td>
+                        </tr>
+                        <tr class="hover:bg-slate-850/50">
+                            <td class="py-3 px-5">
+                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="bold">VOX</text></svg>
+                            </td>
+                            <td class="py-3 px-5 font-medium text-white">Ses (STT/TTS)</td>
+                            <td class="py-3 px-5 font-mono text-xs">Whisper, Edge-TTS</td>
+                            <td class="py-3 px-5 hidden md:table-cell">Sesli kontrol, dikte</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Teknik Öne Çıkanlar -->
+<section class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Teknik Öne Çıkanlar</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">AIMOS'u Farklı Kılan</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Yerel Tool-Calling</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Metin hileleri veya regex ayrıştırma yok &mdash; AIMOS, LLM'nin yerel Tool-Calling API'sini kullanır.
+                    Ajan <strong class="text-white">sistemleri doğrudan yönetir</strong>,
+                    eylemleri sadece açıklamak yerine.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay:0.1s">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Çok Dilli Ses</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Konuşma tanıma (Whisper STT) ve konuşma sentezi (Piper TTS)
+                    <strong class="text-white">tüm dillerde</strong> &mdash;
+                    ajanlar sesli mesajları anlar ve kullanıcının ana dilinde yanıt verir.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay:0.2s">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Token Takibi</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Her LLM çağrısı kaydedilir: giriş/çıkış token'ları, gecikme, bağlam doluluk oranı.
+                    Ajan, konuşma ve ay bazında <strong class="text-white">tam maliyet şeffaflığı</strong>.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay:0.3s">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Konuşma İş Parçacıkları</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Her ajan <strong class="text-white">kiminle hangi kanalda konuştuğunu</strong> bilir.
+                    Telegram, e-posta ve dahili mesajlar temiz bir şekilde ayrılır &mdash;
+                    muhataplar arasında karışıklık olmaz.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ajan Taşınabilirliği -->
+<section id="portabilitaet" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Birlikte Çalışabilirlik</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ajan Taşınabilirliği</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS ajanları açık standartlar sayesinde taşınabilir, uyumlu ve birlikte çalışabilirdir.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">OAP Dışa/İçe Aktarma</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                    Open Agent Package formatı, bir ajanın bellek, beceriler ve yapılandırma dahil
+                    tam dışa aktarımını taşınabilir bir arşiv olarak sağlar.
+                </p>
+                <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
+                    <div class="text-signal-300">agent_export.oap</div>
+                    <div>&nbsp;&nbsp;config.yaml</div>
+                    <div>&nbsp;&nbsp;memory.sqlite</div>
+                    <div>&nbsp;&nbsp;skills/</div>
+                    <div>&nbsp;&nbsp;prompts/</div>
+                </div>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">MCP Bridge (39 Araç)</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                    Model Context Protocol, harici LLM'lerin (Claude, GPT vb.)
+                    AIMOS becerilerine erişimini sağlar. 39 araç MCP sunucusu olarak hazırdır.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">sql_query</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">file_read</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">rest_call</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">memory_search</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">+35 daha</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">A2A Ajan Kartları</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                    Her ajan Google A2A spesifikasyonuna göre bir Ajan Kartı (JSON-LD) yayınlar.
+                    Harici sistemler yetenekleri, giriş formatlarını ve güven seviyesini sorgulayabilir.
+                </p>
+                <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
+                    <div><span class="text-signal-300">"name"</span>: "Yapı-Ajanı",</div>
+                    <div><span class="text-signal-300">"skills"</span>: ["cad_read", "bom_gen"],</div>
+                    <div><span class="text-signal-300">"trust_ring"</span>: 1</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Migration Diagram -->
+        <div class="mt-12 reveal">
+            <svg viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-4xl mx-auto">
+                <defs>
+                    <marker id="arrow5" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                    </marker>
+                </defs>
+                <rect x="10" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="110" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode A</text>
+                <text x="110" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Dışa aktar: agent.oap</text>
+
+                <line x1="210" y1="60" x2="290" y2="60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow5)"/>
+                <text x="250" y="50" text-anchor="middle" fill="#10b981" font-size="10">Transfer</text>
+
+                <rect x="290" y="30" width="220" height="60" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                <text x="400" y="58" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">OAP (Bellek + Beceri + Yapılandırma)</text>
+
+                <line x1="510" y1="60" x2="590" y2="60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow5)"/>
+                <text x="550" y="50" text-anchor="middle" fill="#10b981" font-size="10">İçe aktar</text>
+
+                <rect x="590" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="690" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode B</text>
+                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Ajan aktif</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-16 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-7 h-7 rounded-md bg-signal-500 flex items-center justify-center text-white font-bold text-xs">A</div>
+                    <span class="font-semibold">AIMOS</span>
+                </div>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Adaptive Industrial Management &amp; Operations System.
+                    MIT Lisansı altında açık kaynak.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ürün</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajan Filosu</a></li>
+                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
+                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Konektörler</a></li>
+                    <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Uyumluluk</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">KVKK / GDPR</a></li>
+                    <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
+                    <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Denetim Kayıtları</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="https://github.com/AIMOS-Industrial/aimos" class="hover:text-signal-400 transition-colors">GitHub</a></li>
+                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP Uyumluluğu</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Ana Sayfa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.</p>
+            <div class="flex items-center gap-6 text-xs text-slate-600">
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Yasal Bilgiler</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
+                <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('border-white/10', window.scrollY > 50);
+        nav.classList.toggle('border-white/5', window.scrollY <= 50);
+    });
+</script>
+</body>
+</html>

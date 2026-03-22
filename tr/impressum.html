@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasal Bilgiler — AIMOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">&#304;leti&#351;im</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+            <div class="relative group">
+                <button class="hover:text-white transition-colors flex items-center gap-1">
+                    TR
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-36 bg-slate-900 border border-white/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="../index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-t-lg">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">English</a>
+                    <a href="index.html" class="block px-4 py-2 text-sm text-white bg-signal-500/10 font-medium">T&uuml;rk&ccedil;e</a>
+                    <a href="../fr/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Fran&ccedil;ais</a>
+                    <a href="../es/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800">Espa&ntilde;ol</a>
+                    <a href="../it/index.html" class="block px-4 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-b-lg">Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Yasal Bilgiler (Impressum)</h1>
+
+        <div class="space-y-6 text-slate-400 leading-relaxed">
+            <div>
+                <h2 class="text-white font-semibold mb-2">Alman Telemedya Yasas&#305; (TMG) &sect; 5 uyar&#305;nca bilgiler</h2>
+                <p>
+                    EcoHub M&uuml;nchen GmbH<br>
+                    Ohlenschlagerstra&szlig;e 14<br>
+                    81369 M&uuml;nchen
+                </p>
+                <p class="mt-2">
+                    Genel M&uuml;d&uuml;r: M&uuml;ge Fuchsenberger
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Ticaret Sicil Kayd&#305;</h2>
+                <p>
+                    Sicil Mahkemesi: M&uuml;nchen Sulh Hukuk Mahkemesi (Amtsgericht M&uuml;nchen)<br>
+                    Sicil Numaras&#305;: HRB 264741
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">&#304;leti&#351;im</h2>
+                <p>
+                    E-posta: info@ecohub-muenchen.com
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">KDV Kimlik Numaras&#305;</h2>
+                <p>
+                    Alman KDV Kanunu (UStG) &sect; 27a uyar&#305;nca KDV kimlik numaras&#305;:<br>
+                    DE342603189
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">&#304;&ccedil;erikten sorumlu ki&#351;i (MStV &sect; 18/2 uyar&#305;nca)</h2>
+                <p>
+                    Philipp Fuchsenberger<br>
+                    Ohlenschlagerstra&szlig;e 14<br>
+                    81369 M&uuml;nchen
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">AB &Ccedil;evrimii&ccedil;i Uyu&#351;mazl&#305;k &Ccedil;&ouml;z&uuml;m&uuml;</h2>
+                <p>
+                    Avrupa Komisyonu &ccedil;evrimii&ccedil;i uyu&#351;mazl&#305;k &ccedil;&ouml;z&uuml;m&uuml; (ODR) i&ccedil;in bir platform
+                    sa&#287;lamaktad&#305;r: <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+                    E-posta adresimizi yukar&#305;da yasal bilgiler b&ouml;l&uuml;m&uuml;nde bulabilirsiniz.
+                </p>
+                <p class="mt-2">
+                    T&uuml;ketici uzla&#351;ma kurulu &ouml;n&uuml;ndeki uyu&#351;mazl&#305;k &ccedil;&ouml;z&uuml;m s&uuml;re&ccedil;lerine kat&#305;lma
+                    y&uuml;k&uuml;ml&uuml;l&uuml;&#287;&uuml;m&uuml;z veya iste&#287;imiz bulunmamaktad&#305;r.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">&#304;&ccedil;erik Sorumlulu&#287;u</h2>
+                <p>
+                    Hizmet sa&#287;lay&#305;c&#305; olarak, TMG &sect; 7/1 uyar&#305;nca bu sayfalardaki kendi i&ccedil;eriklerimizden
+                    genel yasalar &ccedil;er&ccedil;evesinde sorumluyuz. Ancak TMG &sect;&sect; 8-10 uyar&#305;nca,
+                    hizmet sa&#287;lay&#305;c&#305; olarak iletilen veya depolanan &uuml;&ccedil;&uuml;nc&uuml; taraf bilgilerini
+                    izleme veya yasa d&#305;&#351;&#305; faaliyetlere i&#351;aret eden ko&#351;ullar&#305; ara&#351;t&#305;rma
+                    y&uuml;k&uuml;ml&uuml;l&uuml;&#287;&uuml;m&uuml;z bulunmamaktad&#305;r.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Ba&#287;lant&#305; Sorumlulu&#287;u</h2>
+                <p>
+                    Sitemiz, i&ccedil;erikleri &uuml;zerinde kontrol&uuml;m&uuml;z bulunmayan &uuml;&ccedil;&uuml;nc&uuml; taraf web sitelerine
+                    ba&#287;lant&#305;lar i&ccedil;ermektedir. Bu nedenle bu harici i&ccedil;erikler i&ccedil;in herhangi bir
+                    sorumluluk kabul edemeyiz. Ba&#287;lant&#305; verilen sayfalar&#305;n i&ccedil;eri&#287;inden her zaman
+                    ilgili sa&#287;lay&#305;c&#305; veya i&#351;letmeci sorumludur.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Yaz&#305;l&#305;m Lisans&#305;</h2>
+                <p>
+                    AIMOS, <strong class="text-white">MIT Lisans&#305;</strong> alt&#305;nda a&ccedil;&#305;k kaynak yaz&#305;l&#305;md&#305;r.
+                    Kaynak kodunun tamam&#305; GitHub &uuml;zerinde incelenebilir.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisans&#305;.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Yasal Bilgiler</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

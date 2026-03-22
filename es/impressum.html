@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso legal — AIMOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Agentes</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Arquitectura</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contacto</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Precios</a>
+            <!-- Language Switcher -->
+            <div class="flex items-center gap-2 text-xs text-slate-500">
+                <a href="../index.html" class="hover:text-white transition-colors">DE</a>
+                <a href="../en/index.html" class="hover:text-white transition-colors">EN</a>
+                <a href="../tr/index.html" class="hover:text-white transition-colors">TR</a>
+                <a href="../fr/index.html" class="hover:text-white transition-colors">FR</a>
+                <span class="text-white font-medium">ES</span>
+                <a href="../it/index.html" class="hover:text-white transition-colors">IT</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Aviso legal</h1>
+
+        <div class="space-y-6 text-slate-400 leading-relaxed">
+            <div>
+                <h2 class="text-white font-semibold mb-2">Datos conforme al § 5 TMG (Ley alemana de Telemedia)</h2>
+                <p>
+                    EcoHub München GmbH<br>
+                    Ohlenschlagerstraße 14<br>
+                    81369 München
+                </p>
+                <p class="mt-2">
+                    Directora general: Müge Fuchsenberger
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Registro mercantil</h2>
+                <p>
+                    Juzgado de registro: Amtsgericht München<br>
+                    Número de registro: HRB 264741
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Contacto</h2>
+                <p>
+                    Correo electrónico: info@ecohub-muenchen.com
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">NIF intracomunitario</h2>
+                <p>
+                    Número de identificación fiscal conforme al § 27a UStG:<br>
+                    DE342603189
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Responsable del contenido conforme al § 18, apart. 2 MStV</h2>
+                <p>
+                    Philipp Fuchsenberger<br>
+                    Ohlenschlagerstraße 14<br>
+                    81369 München
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Resolución de litigios en línea de la UE</h2>
+                <p>
+                    La Comisión Europea pone a disposición una plataforma para la resolución de litigios en línea (ODR):
+                    <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+                    Puede encontrar nuestra dirección de correo electrónico en la parte superior de este aviso legal.
+                </p>
+                <p class="mt-2">
+                    No estamos obligados ni dispuestos a participar en procedimientos de resolución de litigios
+                    ante una entidad de resolución alternativa de conflictos de consumo.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Responsabilidad por los contenidos</h2>
+                <p>
+                    Como proveedor de servicios, somos responsables de nuestros propios contenidos en estas
+                    páginas conforme a las leyes generales, de acuerdo con el § 7, apart. 1 TMG. Sin embargo,
+                    conforme a los §§ 8 a 10 TMG, no estamos obligados como proveedor de servicios a supervisar
+                    la información ajena transmitida o almacenada, ni a investigar circunstancias que indiquen
+                    una actividad ilícita.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Responsabilidad por los enlaces</h2>
+                <p>
+                    Nuestra oferta contiene enlaces a sitios web externos de terceros, sobre cuyo contenido
+                    no tenemos influencia. Por tanto, no podemos asumir ninguna responsabilidad por dichos
+                    contenidos externos. El proveedor u operador respectivo de las páginas enlazadas es siempre
+                    responsable de su contenido.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Licencia de software</h2>
+                <p>
+                    AIMOS es software de código abierto bajo la <strong class="text-white">Licencia MIT</strong>.
+                    El código fuente completo está disponible en GitHub.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

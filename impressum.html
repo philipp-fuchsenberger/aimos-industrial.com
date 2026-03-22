@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum — AIMOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Agenten</a>
+            <a href="technik.html" class="hover:text-white transition-colors">Technik</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+        </div>
+        <div class="relative group">
+            <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">DE</button>
+            <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Deutsch</a>
+                <a href="en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                <a href="tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
+                <a href="fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                <a href="es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                <a href="it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Impressum</h1>
+
+        <div class="space-y-6 text-slate-400 leading-relaxed">
+            <div>
+                <h2 class="text-white font-semibold mb-2">Angaben gemäß § 5 TMG</h2>
+                <p>
+                    EcoHub München GmbH<br>
+                    Ohlenschlagerstraße 14<br>
+                    81369 München
+                </p>
+                <p class="mt-2">
+                    Geschäftsführerin: Müge Fuchsenberger
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Registereintrag</h2>
+                <p>
+                    Registergericht: Amtsgericht München<br>
+                    Registernummer: HRB 264741
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Kontakt</h2>
+                <p>
+                    E-Mail: info@ecohub-muenchen.com
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Umsatzsteuer-ID</h2>
+                <p>
+                    Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
+                    DE342603189
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+                <p>
+                    Philipp Fuchsenberger<br>
+                    Ohlenschlagerstraße 14<br>
+                    81369 München
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">EU-Streitschlichtung</h2>
+                <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS)
+                    bereit: <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                </p>
+                <p class="mt-2">
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+                    Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Haftung für Inhalte</h2>
+                <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen
+                    Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir
+                    als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+                    Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+                    Tätigkeit hinweisen.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Haftung für Links</h2>
+                <p>
+                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+                    Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+                    Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+                    der Seiten verantwortlich.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold mb-2">Software-Lizenz</h2>
+                <p>
+                    AIMOS ist Open-Source-Software unter der <strong class="text-white">MIT-Lizenz</strong>.
+                    Der vollständige Quellcode ist auf GitHub einsehbar.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT-Lizenz.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

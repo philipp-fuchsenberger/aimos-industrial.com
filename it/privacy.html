@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativa sulla privacy — AIMOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .nav-blur { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenti.html" class="hover:text-white transition-colors">Agenti</a>
+            <a href="tecnica.html" class="hover:text-white transition-colors">Tecnica</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contatto</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Prezzi</a>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-slate-500">
+            <a href="../index.html" class="hover:text-white transition-colors">DE</a>
+            <a href="../en/index.html" class="hover:text-white transition-colors">EN</a>
+            <a href="../tr/index.html" class="hover:text-white transition-colors">TR</a>
+            <a href="../fr/index.html" class="hover:text-white transition-colors">FR</a>
+            <a href="../es/index.html" class="hover:text-white transition-colors">ES</a>
+            <a href="index.html" class="text-white font-medium">IT</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Content -->
+<section class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Informativa sulla privacy</h1>
+
+        <div class="space-y-8 text-slate-400 leading-relaxed">
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">1. Privacy in sintesi</h2>
+                <h3 class="text-white font-medium mb-2">Informazioni generali</h3>
+                <p>
+                    Le seguenti indicazioni forniscono una panoramica su cosa accade ai Suoi dati personali
+                    quando visita questo sito web. I dati personali sono tutti i dati con cui Lei
+                    può essere identificato/a personalmente.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">2. Hosting</h2>
+                <p>
+                    Questo sito web è ospitato presso un fornitore di servizi esterno (hoster). I dati personali
+                    raccolti su questo sito vengono memorizzati sui server dell'hoster.
+                    Questi possono includere indirizzi IP, richieste di contatto, metadati e dati di comunicazione,
+                    dati contrattuali, dati di contatto, nomi, accessi al sito e altri dati
+                    generati attraverso un sito web.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">3. Software AIMOS — Trattamento dei dati</h2>
+                <p>
+                    AIMOS è un <strong class="text-white">software gestito localmente</strong>. Il software AIMOS
+                    stesso non invia alcun dato a noi o a terzi. Tutti i dati rimangono sul server dell'operatore
+                    (SovereignNode).
+                </p>
+                <div class="mt-4 bg-slate-900/50 border border-signal-500/20 rounded-xl p-5">
+                    <h4 class="text-signal-300 font-medium mb-2">Trattamento dei dati da parte di AIMOS</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Inferenza LLM: completamente locale sul SovereignNode</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Memoria degli agenti: database SQLite locale per ogni agente</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Cronologia chat: database PostgreSQL locale</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Log di audit: file system locale</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> Messaggi Telegram: transito attraverso i server Telegram (trasporto standard di Telegram)</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> LLM esterni (opzionale): solo in caso di escalation esplicita, anonimizzati automaticamente tramite PII-Vault</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">4. PII-Vault (anonimizzazione)</h2>
+                <p>
+                    Quando AIMOS contatta un'API di intelligenza artificiale esterna (ad es. per compiti di analisi complessi),
+                    tutti i dati personali vengono <strong class="text-white">anonimizzati automaticamente prima della trasmissione</strong>.
+                    Nomi, indirizzi e-mail, numeri di telefono e credenziali di accesso vengono sostituiti da segnaposto.
+                    La mappatura (segnaposto → valore originale) rimane esclusivamente sul server locale.
+                </p>
+                <p class="mt-2">
+                    Dettagli: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Documentazione Compliance</a>
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">5. I Suoi diritti</h2>
+                <p>
+                    Lei ha in qualsiasi momento il diritto di ottenere gratuitamente informazioni sui Suoi
+                    dati personali memorizzati, sulla loro origine e sui destinatari, nonché sullo scopo del
+                    trattamento dei dati, e il diritto di rettifica o cancellazione di tali dati. Per questo
+                    e per ulteriori domande sul tema dei dati personali può contattarci in qualsiasi momento.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">6. Strumenti di analisi e pubblicità</h2>
+                <p>
+                    Questo sito web <strong class="text-white">non</strong> utilizza strumenti di analisi,
+                    cookie di tracciamento o reti pubblicitarie. Nessun dato viene trasmesso a Google Analytics,
+                    Facebook Pixel o servizi analoghi.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">7. Crittografia SSL</h2>
+                <p>
+                    Questo sito utilizza per motivi di sicurezza una crittografia SSL. Una connessione crittografata
+                    si riconosce dal fatto che la barra degli indirizzi del browser passa da "http://" a "https://"
+                    e dall'icona del lucchetto nella barra del browser.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">8. Titolare del trattamento</h2>
+                <p>
+                    Il titolare del trattamento dei dati su questo sito web è indicato
+                    nell'<a href="impressum.html" class="text-signal-400 hover:text-signal-300">avviso legale</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licenza MIT.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-600">
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Avviso legale</a>
+            <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
