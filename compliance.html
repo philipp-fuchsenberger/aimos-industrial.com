@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compliance & Sicherheit — AIMOS</title>
-    <meta name="description" content="AIMOS Compliance: DSGVO, ISO 9001/27001, GoBD, PII-Vault, Audit-Trail, Execution Rings. Gebaut für Auditoren.">
+    <meta name="description" content="AIMOS Compliance: DSGVO, EU AI Act, ISO 9001/27001, GoBD, PII-Vault, Audit-Trail, Execution Rings. Gebaut für Auditoren.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -608,6 +608,100 @@
                     <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">FESTSCHREIBUNG</text>
                     <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">Im Zielsystem (ETA, DATEV, etc.)</text>
                 </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  EU AI Act                                                            -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="eu-ai-act" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-300 text-xs font-medium mb-4">
+                    In Kraft ab August 2026
+                </div>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Regulierung</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">EU AI Act (KI-Verordnung)</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Die EU-KI-Verordnung (EU) 2024/1689 tritt schrittweise in Kraft und betrifft
+                    jedes Unternehmen, das KI-Systeme einsetzt. AIMOS ist architektonisch auf
+                    Compliance ausgelegt &mdash; nicht nachtr&auml;glich angepasst.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Risikoklassifizierung: Begrenztes Risiko</h4>
+                                <p class="text-slate-400 text-sm">AIMOS-Agenten sind Assistenzsysteme mit menschlicher Aufsicht (Human-in-the-Loop). Keine autonomen Entscheidungen &uuml;ber Personen, keine biometrische &Uuml;berwachung, keine Sozial-Scoring-Funktionen. Damit fallen sie in die Kategorie &bdquo;begrenztes Risiko&rdquo; &mdash; nicht &bdquo;hochriskant&rdquo;.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Transparenzpflicht: Erf&uuml;llt</h4>
+                                <p class="text-slate-400 text-sm">Art. 50: Nutzer m&uuml;ssen wissen, dass sie mit einer KI interagieren. Jeder AIMOS-Agent identifiziert sich in seinem System-Prompt als KI-Assistent. Alle Aktionen sind im Audit-Trail nachvollziehbar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Menschliche Aufsicht: Architektonisch erzwungen</h4>
+                                <p class="text-slate-400 text-sm">Art. 14: Execution Rings stellen sicher, dass kein Agent eigenm&auml;chtig kritische Aktionen ausf&uuml;hrt. Buchungen, E-Mails und Bestellungen werden als Entwurf vorgelegt &mdash; der Mensch entscheidet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: additional requirements -->
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Technische Dokumentation: Vollst&auml;ndig</h4>
+                                <p class="text-slate-400 text-sm">Art. 11: Systemarchitektur, Datenfl&uuml;sse, Modellbeschreibung, Leistungskennzahlen und Risikobewertung sind dokumentiert und einsehbar. MIT-Lizenz: vollst&auml;ndiger Quellcode-Zugang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Protokollierung: L&uuml;ckenlos</h4>
+                                <p class="text-slate-400 text-sm">Art. 12: Jede Agenten-Aktion wird protokolliert &mdash; Tool-Aufrufe, LLM-Anfragen, Token-Verbrauch, Entscheidungsketten. Revisionssichere Audit-Trails mit Session-IDs und Zeitstempeln.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Datensouver&auml;nit&auml;t: Vollst&auml;ndig</h4>
+                                <p class="text-slate-400 text-sm">Art. 10: Trainingsdaten und Verarbeitungsdaten verlassen den SovereignNode nicht. PII-Vault anonymisiert externe API-Aufrufe automatisch. Keine Cloud-Abh&auml;ngigkeit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Vorteil lokaler KI</h4>
+                                <p class="text-slate-400 text-sm">Cloud-KI-Dienste m&uuml;ssen als &bdquo;General Purpose AI&rdquo; (GPAI) strengere Auflagen erf&uuml;llen. AIMOS nutzt ein lokal betriebenes Open-Source-Modell &mdash; die GPAI-Pflichten treffen den Modell-Anbieter (Alibaba/Qwen), nicht den Betreiber.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
