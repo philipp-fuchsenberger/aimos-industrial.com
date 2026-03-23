@@ -212,7 +212,7 @@
                     <div class="text-slate-500">$ aimos status</div>
                     <div class="mt-2 text-signal-300">AIMOS v4.3.6 &mdash; SovereignNode aktiv</div>
                     <div class="text-slate-400 mt-1">
-                        <span class="text-green-400">&#9679;</span> Konstruktions-Agent &nbsp;&mdash;&nbsp; CAD/Tekla-Anbindung &nbsp;<span class="text-slate-600">|</span>&nbsp; idle<br>
+                        <span class="text-green-400">&#9679;</span> Konstruktions-Agent &nbsp;&mdash;&nbsp; FEM/Tragwerk-Engine &nbsp;<span class="text-slate-600">|</span>&nbsp; idle<br>
                         <span class="text-green-400">&#9679;</span> Logistik-Agent &nbsp;&mdash;&nbsp; Uyumsoft/ERP-Sync &nbsp;<span class="text-slate-600">|</span>&nbsp; running<br>
                         <span class="text-green-400">&#9679;</span> Finanz-Agent &nbsp;&mdash;&nbsp; ETA/DATEV-Integration &nbsp;<span class="text-slate-600">|</span>&nbsp; idle
                     </div>
@@ -329,14 +329,14 @@
                 <div class="text-xs text-signal-400 font-medium mb-2">Technische Dokumentation</div>
                 <h4 class="font-bold mb-2">Konstruktions-Agent</h4>
                 <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Liest CAD- und Tekla-Dateien, erstellt St&uuml;cklisten, pr&uuml;ft Statik-Vorgaben.
-                    <strong class="text-slate-300">Legt Ergebnisse als Entwurf ab</strong> &mdash;
+                    Berechnet Tragwerke mit integrierter FEM-Engine (PyNite), optimiert Stahlprofile nach Gewicht und Kosten, pr&uuml;ft Erdbebennormen (TBDY 2018, Eurocode).
+                    <strong class="text-slate-300">Erstellt St&uuml;cklisten als Entwurf</strong> &mdash;
                     der Konstrukteur pr&uuml;ft und gibt frei.
                 </p>
                 <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">.dwg</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">.ifc</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Tekla API</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PyNite FEM</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DXF</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">TBDY 2018</span>
                 </div>
             </div>
 
