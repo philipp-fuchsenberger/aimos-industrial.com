@@ -132,8 +132,7 @@
             <a href="#context" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Context</a>
             <a href="#sovereign-node" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">SovereignNode</a>
             <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Datenbank</a>
-            <a href="#konnektoren" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Konnektivität</a>
-            <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilität</a>
+                        <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilität</a>
             <a href="#highlights" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Highlights</a>
         </div>
     </div>
@@ -692,93 +691,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  6. Konnektivität — Universelle Konnektivität                        -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konnektoren" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Universelle Konnektivität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Konnektoren</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Alle unterstützten Systeme und Protokolle im Überblick.</p>
-        </div>
-
-        <div class="reveal">
-            <div class="overflow-hidden rounded-xl border border-white/5">
-                <table class="w-full text-sm">
-                    <thead>
-                        <tr class="bg-slate-850 border-b border-white/10">
-                            <th class="text-left py-3 px-5 font-semibold text-slate-300 w-16"></th>
-                            <th class="text-left py-3 px-5 font-semibold text-slate-300">Konnektor</th>
-                            <th class="text-left py-3 px-5 font-semibold text-slate-300">Protokoll</th>
-                            <th class="text-left py-3 px-5 font-semibold text-slate-300 hidden md:table-cell">Einsatz</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-slate-400">
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/><text x="12" y="16" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="bold">SQL</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">SQL-Direktzugriff</td>
-                            <td class="py-3 px-5 font-mono text-xs">PostgreSQL, MSSQL, Firebird, MySQL</td>
-                            <td class="py-3 px-5 hidden md:table-cell">ERP, CRM, Buchhaltung</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#10b981" font-size="7" font-weight="bold">REST</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">REST API</td>
-                            <td class="py-3 px-5 font-mono text-xs">HTTP/HTTPS, JSON, OAuth2</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Moderne Systeme, SaaS</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#f59e0b" font-size="6" font-weight="bold">SOAP</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">SOAP / XML-RPC</td>
-                            <td class="py-3 px-5 font-mono text-xs">WSDL, XML, NTLM</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Legacy-Systeme, SAP RFC</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#a855f7" font-size="6" font-weight="bold">SFTP</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">SFTP / Dateisystem</td>
-                            <td class="py-3 px-5 font-mono text-xs">SSH, SMB, NFS</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Datenaustausch, Backup</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#5eafff" font-size="6" font-weight="bold">TG</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">Telegram</td>
-                            <td class="py-3 px-5 font-mono text-xs">Bot API, Webhook</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Chat-Interface, Notifications</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#10b981" font-size="7" font-weight="bold">@</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">E-Mail</td>
-                            <td class="py-3 px-5 font-mono text-xs">IMAP, SMTP</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Berichts-Versand, Eingangsverarbeitung</td>
-                        </tr>
-                        <tr class="hover:bg-slate-850/50">
-                            <td class="py-3 px-5">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1"/><text x="12" y="15" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="bold">VOX</text></svg>
-                            </td>
-                            <td class="py-3 px-5 font-medium text-white">Voice (STT/TTS)</td>
-                            <td class="py-3 px-5 font-mono text-xs">Whisper, Edge-TTS</td>
-                            <td class="py-3 px-5 hidden md:table-cell">Sprachsteuerung, Diktat</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  7. Portabilität — Agent-Portabilität                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="portabilitaet" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
