@@ -88,12 +88,16 @@
             transform: translateY(-4px);
             box-shadow: 0 12px 40px rgba(0,112,243,0.2);
         }
+        .subnav-link.active {
+            color: #2b8eff;
+            border-bottom-color: #0070f3;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
 
 <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+<nav id="main-nav" class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
             <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
@@ -112,9 +116,9 @@
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
                     <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Deutsch</a>
                     <a href="en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">T&uuml;rk&ccedil;e</a>
+                    <a href="fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
+                    <a href="es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
                     <a href="it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
@@ -122,8 +126,21 @@
     </div>
 </nav>
 
+<!-- Sub-Navigation (sticky below main nav) -->
+<nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
+        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konzept</a>
+        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
+        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konnektoren</a>
+        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Ged&auml;chtnis</a>
+        <a href="#teamarbeit" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Teamarbeit</a>
+        <a href="#berechtigungen" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Berechtigungen</a>
+        <a href="#beispiele" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Beispiele</a>
+    </div>
+</nav>
+
 <!-- Hero -->
-<section class="relative pt-32 pb-20 grid-pattern">
+<section class="relative pt-40 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Agenten-Architektur</p>
@@ -131,17 +148,20 @@
             Das Agenten-Team
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Autonome Spezialisten mit eigenem Gedächtnis, eigenen Werkzeugen und Persönlichkeit &mdash;
+            Autonome Spezialisten mit eigenem Ged&auml;chtnis, eigenen Werkzeugen und Pers&ouml;nlichkeit &mdash;
             koordiniert durch den Orchestrator auf Ihrem SovereignNode.
         </p>
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Agenten-Konzept                                                      -->
+<!--  1. KONZEPT — Was ist ein AIMOS-Agent?                                -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="konzept" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Anatomy: M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Grundlagen</p>
@@ -155,8 +175,8 @@
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory (Gedächtnis)</h4>
-                            <p class="text-slate-500 text-sm">Eigene SQLite-Datenbank mit semantischem, episodischem und prozeduralem Langzeitgedächtnis.</p>
+                            <h4 class="font-semibold text-sm">Memory (Ged&auml;chtnis)</h4>
+                            <p class="text-slate-500 text-sm">Eigene SQLite-Datenbank mit semantischem, episodischem und prozeduralem Langzeitged&auml;chtnis.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -165,7 +185,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-sm">Skills (Werkzeuge)</h4>
-                            <p class="text-slate-500 text-sm">Fachspezifische Tool-Sammlung: SQL-Abfragen, REST-Aufrufe, Datei-Operationen, domänenspezifische Funktionen.</p>
+                            <p class="text-slate-500 text-sm">Fachspezifische Tool-Sammlung: SQL-Abfragen, REST-Aufrufe, Datei-Operationen, dom&auml;nenspezifische Funktionen.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -174,7 +194,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-sm">LLM (Sprachmodell)</h4>
-                            <p class="text-slate-500 text-sm">Lokales Modell via lokale LLM-Runtime. Der Agent baut den vollständigen Prompt aus System-Prompt, Memory-Kontext und Benutzeranfrage.</p>
+                            <p class="text-slate-500 text-sm">Lokales Modell via lokale LLM-Runtime. Der Agent baut den vollst&auml;ndigen Prompt aus System-Prompt, Memory-Kontext und Benutzeranfrage.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -233,147 +253,439 @@
                 </svg>
             </div>
         </div>
+
+        <!-- Agent als digitaler Mitarbeiter (8 cards) -->
+        <div class="mt-24">
+            <div class="text-center mb-12 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arbeitsweise</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der Agent als digitaler Mitarbeiter</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Ein AIMOS-Agent arbeitet nicht wie ein Chat-Bot &mdash; er arbeitet wie ein Sachbearbeiter
+                    mit eigenem Schreibtisch, eigener Ablage und eigenem Tagesrhythmus.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+                <!-- Gedächtnis -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Ged&auml;chtnis</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Merkt sich Fakten, Korrekturen, Pr&auml;ferenzen &mdash; dauerhaft.
+                        Semantische Suche findet Erinnerungen auch mit anderen Worten.
+                    </p>
+                </div>
+
+                <!-- Notizen & Ablage -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Notizen &amp; Ablage</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Schreibt Zusammenfassungen, Recherche-Ergebnisse und Gespr&auml;chsnotizen
+                        in seinen eigenen Workspace &mdash; wie ein Sachbearbeiter seinen Aktenordner pflegt.
+                    </p>
+                </div>
+
+                <!-- Kalender -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Kalender</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Termine, Fristen, Wiedervorlagen. Der Agent sieht bei jeder Interaktion
+                        seine f&auml;lligen und &uuml;berf&auml;lligen Termine &mdash; und handelt proaktiv.
+                    </p>
+                </div>
+
+                <!-- Todo-Liste -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Todo-Liste</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Offene Aufgaben, Delegationen, Wartelisten.
+                        Wird im Dreaming-Zyklus automatisch aktualisiert.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Second row -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+                <!-- Tagesrhythmus -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Tagesrhythmus</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Einmal t&auml;glich pr&uuml;ft der Agent eigenst&auml;ndig Kalender, E-Mails
+                        und offene Aufgaben &mdash; auch ohne dass jemand ihn anspricht.
+                    </p>
+                </div>
+
+                <!-- Dreaming / Nachtarbeit -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Dreaming</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        In ruhigen Phasen verarbeitet der Agent seine Gespr&auml;che: extrahiert Fakten,
+                        aktualisiert Notizen und Todo-Listen, konsolidiert sein Ged&auml;chtnis.
+                    </p>
+                </div>
+
+                <!-- Kollegen -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Teamarbeit</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Agenten kommunizieren untereinander &mdash; der Finanz-Agent fragt den
+                        Logistik-Agent nach Lagerwerten, ohne den Benutzer zu belasten.
+                    </p>
+                </div>
+
+                <!-- Eskalation -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm mb-1">Eskalation</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Bei komplexen Fragen eskaliert der Agent automatisch an ein leistungsst&auml;rkeres
+                        KI-Modell &mdash; anonymisiert und revisionssicher protokolliert.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Summary box -->
+            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    <strong class="text-white">Das Ergebnis:</strong> Ein AIMOS-Agent hat alles, was ein Sachbearbeiter braucht &mdash;
+                    Ged&auml;chtnis, Notizen, Kalender, Todo-Liste, Kollegen, einen Tagesrhythmus
+                    und die F&auml;higkeit, bei Bedarf Hilfe zu holen. Der einzige Unterschied:
+                    Er arbeitet <strong class="text-signal-300">rund um die Uhr</strong>,
+                    vergisst <strong class="text-signal-300">nie</strong> etwas
+                    und ist in <strong class="text-signal-300">Sekunden</strong> ansprechbar.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Der Agent als digitaler Mitarbeiter                                  -->
+<!--  2. SKILLS — 18 Skills im SKILL_REGISTRY                             -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section class="relative py-24 bg-slate-900/50">
+<section id="skills" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arbeitsweise</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der Agent als digitaler Mitarbeiter</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">SKILL_REGISTRY</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">18 Skills im Werkzeugkasten</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                Ein AIMOS-Agent arbeitet nicht wie ein Chat-Bot &mdash; er arbeitet wie ein Sachbearbeiter
-                mit eigenem Schreibtisch, eigener Ablage und eigenem Tagesrhythmus.
+                Jeder Agent erh&auml;lt genau die Skills, die er braucht &mdash; modular zusammengestellt aus dem zentralen Registry.
+                Skills liefern Tool-Definitionen f&uuml;r LLM-Tool-Calling.
             </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-            <!-- Gedächtnis -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        <!-- Engineering -->
+        <div class="mb-8 reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-signal-500"></span>
+                Engineering
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-signal-300">structural</h4>
+                        <span class="text-xs text-slate-600 font-mono">9 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">FEM-Berechnung, Profiloptimierung, DXF-Verarbeitung, Normenpr&uuml;fung, St&uuml;cklisten-Export.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Ged&auml;chtnis</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Merkt sich Fakten, Korrekturen, Pr&auml;ferenzen &mdash; dauerhaft.
-                    Semantische Suche findet Erinnerungen auch mit anderen Worten.
-                </p>
-            </div>
-
-            <!-- Notizen & Ablage -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-signal-300">file_ops</h4>
+                        <span class="text-xs text-slate-600 font-mono">7 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Dateien lesen, schreiben, suchen, auflisten. Workspace-Management mit public/private-Trennung.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Notizen &amp; Ablage</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Schreibt Zusammenfassungen, Recherche-Ergebnisse und Gespr&auml;chsnotizen
-                    in seinen eigenen Workspace &mdash; wie ein Sachbearbeiter seinen Aktenordner pflegt.
-                </p>
-            </div>
-
-            <!-- Kalender -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-signal-300">brave_search</h4>
+                        <span class="text-xs text-slate-600 font-mono">1 Tool</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Web-Recherche via Brave Search API. Aktuelle Informationen ohne Cloud-Abh&auml;ngigkeit.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Kalender</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Termine, Fristen, Wiedervorlagen. Der Agent sieht bei jeder Interaktion
-                    seine f&auml;lligen und &uuml;berf&auml;lligen Termine &mdash; und handelt proaktiv.
-                </p>
-            </div>
-
-            <!-- Todo-Liste -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-1">Todo-Liste</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Offene Aufgaben, Delegationen, Wartelisten.
-                    Wird im Dreaming-Zyklus automatisch aktualisiert.
-                </p>
             </div>
         </div>
 
-        <!-- Second row -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-            <!-- Tagesrhythmus -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <!-- Communication -->
+        <div class="mb-8 reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                Communication
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-green-400">email</h4>
+                        <span class="text-xs text-slate-600 font-mono">2 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">E-Mails senden und empfangen via IMAP/SMTP. HTML und Anh&auml;nge.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Tagesrhythmus</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Einmal t&auml;glich pr&uuml;ft der Agent eigenst&auml;ndig Kalender, E-Mails
-                    und offene Aufgaben &mdash; auch ohne dass jemand ihn anspricht.
-                </p>
-            </div>
-
-            <!-- Dreaming / Nachtarbeit -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-green-400">mail_monitor</h4>
+                        <span class="text-xs text-slate-600 font-mono">3 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">POP3-Postfach-&Uuml;berwachung. Erkennt neue E-Mails und l&ouml;st automatisch Aktionen aus.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Dreaming</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    In ruhigen Phasen verarbeitet der Agent seine Gespr&auml;che: extrahiert Fakten,
-                    aktualisiert Notizen und Todo-Listen, konsolidiert sein Ged&auml;chtnis.
-                </p>
-            </div>
-
-            <!-- Kollegen -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-green-400">voice_io</h4>
+                        <span class="text-xs text-slate-600 font-mono">Kontext</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Spracherkennung und -synthese in allen Sprachen, lokal verarbeitet.</p>
                 </div>
-                <h4 class="font-bold text-sm mb-1">Teamarbeit</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Agenten kommunizieren untereinander &mdash; der Finanz-Agent fragt den
-                    Logistik-Agent nach Lagerwerten, ohne den Benutzer zu belasten.
-                </p>
-            </div>
-
-            <!-- Eskalation -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-1">Eskalation</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Bei komplexen Fragen eskaliert der Agent automatisch an ein leistungsst&auml;rkeres
-                    KI-Modell &mdash; anonymisiert und revisionssicher protokolliert.
-                </p>
             </div>
         </div>
 
-        <!-- Summary box -->
-        <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
-            <p class="text-sm text-slate-400 leading-relaxed">
-                <strong class="text-white">Das Ergebnis:</strong> Ein AIMOS-Agent hat alles, was ein Sachbearbeiter braucht &mdash;
-                Ged&auml;chtnis, Notizen, Kalender, Todo-Liste, Kollegen, einen Tagesrhythmus
-                und die F&auml;higkeit, bei Bedarf Hilfe zu holen. Der einzige Unterschied:
-                Er arbeitet <strong class="text-signal-300">rund um die Uhr</strong>,
-                vergisst <strong class="text-signal-300">nie</strong> etwas
-                und ist in <strong class="text-signal-300">Sekunden</strong> ansprechbar.
+        <!-- Storage -->
+        <div class="mb-8 reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                Storage
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-amber-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-amber-400">shared_storage</h4>
+                        <span class="text-xs text-slate-600 font-mono">3 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Inter-Agent Datei-Austausch &uuml;ber public/-Ordner. Lesen, Schreiben, Auflisten.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-amber-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-amber-400">remote_storage</h4>
+                        <span class="text-xs text-slate-600 font-mono">4 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">SFTP-Zugriff auf entfernte Rechner via Tailscale VPN. Dateien vom Arbeitsplatz holen und ablegen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planning -->
+        <div class="mb-8 reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                Planning
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-purple-400">scheduler</h4>
+                        <span class="text-xs text-slate-600 font-mono">2 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Zeitgesteuerte Aufgaben: Tagesrhythmus, wiederkehrende Pr&uuml;fungen, Erinnerungen.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-purple-400">calendar</h4>
+                        <span class="text-xs text-slate-600 font-mono">4 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Termine anlegen, abfragen, &auml;ndern, l&ouml;schen. Proaktive Erinnerungen bei f&auml;lligen Terminen.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-purple-400">contacts</h4>
+                        <span class="text-xs text-slate-600 font-mono">3 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Kontaktverwaltung: Personen, Firmen, Telefonnummern, E-Mail-Adressen, Notizen.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-purple-400">persistence</h4>
+                        <span class="text-xs text-slate-600 font-mono">3 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Notizen und Schl&uuml;ssel-Wert-Paare dauerhaft speichern. Agenten-eigene Wissensbasis.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intelligence -->
+        <div class="mb-8 reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                Intelligence
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-cyan-400">hybrid_reasoning</h4>
+                        <span class="text-xs text-slate-600 font-mono">1 Tool</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Eskalation an st&auml;rkeres Modell. Anonymisierte Anfrage an Cloud-LLM f&uuml;r komplexe Analysen.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-cyan-400">tr_calendar_awareness</h4>
+                        <span class="text-xs text-slate-600 font-mono">3 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">T&uuml;rkische Feiertage, Ramadan, Kandil-Nachte. Kulturelles Kontextbewusstsein.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-cyan-400">football_observer</h4>
+                        <span class="text-xs text-slate-600 font-mono">2 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Fussball-Ergebnisse und Spielpl&auml;ne. Proaktive Benachrichtigungen bei wichtigen Spielen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accounting -->
+        <div class="reveal">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                Accounting
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-red-400">eta_firebird</h4>
+                        <span class="text-xs text-slate-600 font-mono">4 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">ETA V8 Buchhaltung via Firebird/InterBase. Kontenabfrage, offene Rechnungen, Tages&uuml;bersicht.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-red-400">eta_mssql</h4>
+                        <span class="text-xs text-slate-600 font-mono">4 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">ETA V8 Buchhaltung via Microsoft SQL Server. Gleiche Funktionen, anderer Datenbank-Backend.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-red-400">web_automation</h4>
+                        <span class="text-xs text-slate-600 font-mono">2 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Browser-Automatisierung f&uuml;r Web-Portale ohne API. Formulare ausf&uuml;llen, Daten extrahieren.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3. KONNEKTOREN — Universelle Anbindung                               -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="konnektoren" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Anbindung</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Universelle Konnektoren</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                Der Agent kommuniziert &uuml;ber Konnektoren &mdash; standardisierte Schnittstellen
+                zu Benutzern, Systemen und anderen Agenten.
             </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+            <!-- Telegram -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">Telegram</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Text, Sprachnachrichten, Dokumente. Proaktive Nachrichten
+                    bei Erinnerungen, Alarmen und Ergebnissen. Shared Listener f&uuml;r alle Agenten.
+                </p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">E-Mail</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    IMAP/SMTP f&uuml;r Senden und Empfangen. POP3-Monitoring f&uuml;r
+                    eingehende Postf&auml;cher. HTML-Format und Dateianh&auml;nge.
+                </p>
+            </div>
+
+            <!-- Voice -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">Voice</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Whisper STT + Piper TTS &mdash; komplett lokal. Spracherkennung und
+                    -synthese in allen Sprachen, ohne Cloud-Dienste.
+                </p>
+            </div>
+
+            <!-- SFTP -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">SFTP</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Dateizugriff auf Arbeitsrechner via Tailscale VPN. Shared Folder
+                    f&uuml;r DXF, PDF, Excel &mdash; verschl&uuml;sselt und ohne offene Ports.
+                </p>
+            </div>
+
+            <!-- SQL -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">SQL-Datenbanken</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    PostgreSQL, MSSQL, Firebird &mdash; ausschliesslich SELECT-Abfragen.
+                    Kein Schreibzugriff auf Produktionsdaten. Read-Only by Design.
+                </p>
+            </div>
+
+            <!-- REST/SOAP -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Universelle API-Anbindung f&uuml;r ERP, CRM, Warenwirtschaft.
+                    GET, POST, PUT mit konfigurierbarer Authentifizierung.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Langzeitgedächtnis                                                   -->
+<!--  4. GEDÄCHTNIS — Langzeitgedächtnis                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="memory" class="relative py-24 bg-slate-900/50">
+<section id="gedaechtnis" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Langzeitgedächtnis</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei Gedächtnistypen, Hybrid-Suche und ein Dreaming-Zyklus zur Konsolidierung.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Langzeitged&auml;chtnis</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Drei Ged&auml;chtnistypen, Hybrid-Suche und ein Dreaming-Zyklus zur Konsolidierung.</p>
         </div>
 
         <!-- Memory Tiers SVG -->
@@ -409,13 +721,13 @@
                 <!-- Procedural Memory -->
                 <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
                 <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Prozedural</text>
-                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Abläufe &amp; Muster</text>
+                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Abl&auml;ufe &amp; Muster</text>
                 <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Bestellung: Prüfen→Freigabe→Buchen"</text>
+                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Bestellung: Pr&uuml;fen&#8594;Freigabe&#8594;Buchen"</text>
                 <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG→Parse→CSV"</text>
+                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG&#8594;Parse&#8594;CSV"</text>
                 <rect x="570" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventur: SQL→Diff→Report"</text>
+                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventur: SQL&#8594;Diff&#8594;Report"</text>
 
                 <!-- Search Layer -->
                 <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
@@ -429,8 +741,32 @@
             </svg>
         </div>
 
-        <!-- Dreaming Cycle -->
-        <div class="reveal max-w-3xl mx-auto">
+        <!-- Dreaming Explanation (enhanced) -->
+        <div class="reveal max-w-3xl mx-auto mb-10">
+            <div class="bg-slate-850 border border-purple-500/20 rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Ged&auml;chtniskonsolidierung per LLM-Call</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                            Im Ruhezustand analysiert der Agent seine Gespr&auml;che mit einem <strong class="text-white">LLM-Call</strong>,
+                            extrahiert Fakten, aktualisiert Notizen und Todo-Listen, konsolidiert
+                            sein Ged&auml;chtnis und erstellt w&ouml;chentliche Berichte.
+                        </p>
+                        <p class="text-slate-500 text-xs leading-relaxed">
+                            Wie das menschliche Gehirn im Schlaf &mdash; der Agent verdichtet Erlebnisse zu Wissen,
+                            entfernt redundante Eintr&auml;ge und st&auml;rkt wichtige Verbindungen.
+                            Das Ergebnis: pr&auml;zisere Antworten bei niedrigerem Token-Verbrauch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dreaming Cycle SVG -->
+        <div class="reveal max-w-3xl mx-auto mb-16">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
                     <h3 class="font-bold text-lg mb-2">Dreaming-Zyklus (Konsolidierung)</h3>
@@ -463,23 +799,17 @@
 
                         <rect x="525" y="15" width="165" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
                         <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Semantisch speichern</text>
-                        <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Langzeitgedächtnis</text>
+                        <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Langzeitged&auml;chtnis</text>
                     </svg>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Cognitive Balance                                                    -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="cognitive-balance" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
+        <!-- Cognitive Balance -->
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token-Optimierung</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Dynamischer Ausgleich zwischen Gedächtnistiefe und Antwortlänge &mdash; innerhalb des begrenzten Kontextfensters.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Dynamischer Ausgleich zwischen Ged&auml;chtnistiefe und Antwortl&auml;nge &mdash; innerhalb des begrenzten Kontextfensters.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
@@ -497,7 +827,7 @@
 
                     <!-- Labels -->
                     <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Memory-Tiefe</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Antwort-Länge</text>
+                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Antwort-L&auml;nge</text>
 
                     <!-- Level marks -->
                     <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
@@ -523,7 +853,7 @@
                     <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Kontextfenster (z.B. 32k Tokens)</text>
 
                     <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Mehr Memory = weniger Platz für Antwort (und umgekehrt)</text>
+                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Mehr Memory = weniger Platz f&uuml;r Antwort (und umgekehrt)</text>
                 </svg>
             </div>
 
@@ -578,201 +908,200 @@
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Inter-Agent Kommunikation                                            -->
+<!--  5. TEAMARBEIT — Agenten im Team                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="inter-agent" class="relative py-24 bg-slate-900/50">
+<section id="teamarbeit" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Koordination</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Inter-Agent Kommunikation</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Agenten können einander über die PostgreSQL-Relay-Datenbank Nachrichten senden &mdash; mit eingebautem Ping-Pong-Limit.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agenten im Team</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Inter-Agent-Messaging, geteilte Dateien und architektonisch erzwungener Datenschutz.</p>
         </div>
 
-        <div class="reveal max-w-4xl mx-auto">
-            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                <defs>
-                    <marker id="comArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                    </marker>
-                    <marker id="comArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
-                    </marker>
-                </defs>
-                <!-- Agent A -->
-                <rect x="40" y="40" width="180" height="90" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="130" y="72" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Konstruktions-Agent</text>
-                <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">CAD-Analyse</text>
-                <text x="130" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">Stücklisten</text>
-
-                <!-- Agent B -->
-                <rect x="580" y="40" width="180" height="90" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                <text x="670" y="72" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">Logistik-Agent</text>
-                <text x="670" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">Bestandsprüfung</text>
-                <text x="670" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">ERP-Zugriff</text>
-
-                <!-- DB Relay (center) -->
-                <rect x="290" y="160" width="220" height="70" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="400" y="190" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">PostgreSQL Relay</text>
-                <text x="400" y="210" text-anchor="middle" fill="#94a3b8" font-size="10">message_relay Tabelle</text>
-
-                <!-- Arrows: A to DB -->
-                <line x1="200" y1="130" x2="310" y2="160" stroke="#0070f3" stroke-width="1.5" marker-end="url(#comArrow)"/>
-                <text x="230" y="155" fill="#5eafff" font-size="9">"Brauche Stahl-Bestand"</text>
-
-                <!-- Arrows: DB to B -->
-                <line x1="490" y1="160" x2="600" y2="130" stroke="#10b981" stroke-width="1.5" marker-end="url(#comArrowGreen)"/>
-                <text x="530" y="155" fill="#10b981" font-size="9">Weiterleitung</text>
-
-                <!-- Return: B to DB -->
-                <line x1="600" y1="130" x2="490" y2="195" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>
-
-                <!-- Return: DB to A -->
-                <line x1="310" y1="195" x2="200" y2="130" stroke="#0070f3" stroke-width="1.5" stroke-dasharray="6,3"/>
-
-                <!-- Ping-Pong Limit -->
-                <rect x="270" y="255" width="260" height="35" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
-                <text x="400" y="278" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Ping-Pong-Limit: max 3 Runden</text>
-            </svg>
-        </div>
-
-        <div class="mt-8 max-w-3xl mx-auto reveal">
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
-                    <h4 class="font-semibold text-sm mb-2">Connector Families</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Agenten der gleichen Connector Family teilen sich einen Kommunikationskanal.
-                        Nachrichten an die Familie werden automatisch an den zuständigen Agenten geroutet.
-                    </p>
-                </div>
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
-                    <h4 class="font-semibold text-sm mb-2">Ping-Pong-Schutz</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Maximum 3 Hin-und-Her-Runden zwischen zwei Agenten pro Anfrage.
-                        Verhindert Endlos-Schleifen und unkontrollierten Token-Verbrauch.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Workspace & Datenschutz                                              -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="workspace-privacy" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenisolierung</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Workspace &amp; interner Datenschutz</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Jeder Agent hat einen eigenen Workspace &mdash; wie ein abgeschlossener Schreibtisch. Nur bewusst freigegebene Dateien sind f&uuml;r andere sichtbar.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- SVG Diagram -->
-            <div class="reveal">
-                <svg viewBox="0 0 440 340" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+        <!-- Inter-Agent Messaging -->
+        <div class="mb-16">
+            <h3 class="text-xl font-bold mb-6 text-center reveal">Inter-Agent Kommunikation</h3>
+            <div class="reveal max-w-4xl mx-auto">
+                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
                     <defs>
-                        <marker id="wsArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <marker id="comArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
                             <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
                         </marker>
+                        <marker id="comArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                        </marker>
                     </defs>
+                    <!-- Agent A -->
+                    <rect x="40" y="40" width="180" height="90" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
+                    <text x="130" y="72" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Konstruktions-Agent</text>
+                    <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">CAD-Analyse</text>
+                    <text x="130" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">St&uuml;cklisten</text>
 
-                    <!-- Agent A Workspace -->
-                    <rect x="10" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="105" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">M&uuml;hendis</text>
+                    <!-- Agent B -->
+                    <rect x="580" y="40" width="180" height="90" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                    <text x="670" y="72" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">Logistik-Agent</text>
+                    <text x="670" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">Bestandspr&uuml;fung</text>
+                    <text x="670" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">ERP-Zugriff</text>
 
-                    <!-- Private area -->
-                    <rect x="25" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-                    <text x="105" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Privat (gesperrt)</text>
-                    <text x="105" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
-                    <text x="105" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json, todo.txt</text>
-                    <text x="105" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">steel_profiles.json</text>
-                    <rect x="155" y="130" width="16" height="16" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5"/>
-                    <line x1="159" y1="134" x2="167" y2="142" stroke="#ef4444" stroke-width="1.5"/>
-                    <line x1="167" y1="134" x2="159" y2="142" stroke="#ef4444" stroke-width="1.5"/>
+                    <!-- DB Relay (center) -->
+                    <rect x="290" y="160" width="220" height="70" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="400" y="190" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">PostgreSQL Relay</text>
+                    <text x="400" y="210" text-anchor="middle" fill="#94a3b8" font-size="10">message_relay Tabelle</text>
 
-                    <!-- Public area -->
-                    <rect x="25" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                    <text x="105" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (freigegeben)</text>
-                    <text x="105" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">stueckliste.pdf</text>
-                    <text x="105" y="217" text-anchor="middle" fill="#94a3b8" font-size="9">report_projekt_X.dxf</text>
+                    <!-- Arrows: A to DB -->
+                    <line x1="200" y1="130" x2="310" y2="160" stroke="#0070f3" stroke-width="1.5" marker-end="url(#comArrow)"/>
+                    <text x="230" y="155" fill="#5eafff" font-size="9">"Brauche Stahl-Bestand"</text>
 
-                    <!-- Agent B Workspace -->
-                    <rect x="240" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="335" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Finanz-Agent</text>
+                    <!-- Arrows: DB to B -->
+                    <line x1="490" y1="160" x2="600" y2="130" stroke="#10b981" stroke-width="1.5" marker-end="url(#comArrowGreen)"/>
+                    <text x="530" y="155" fill="#10b981" font-size="9">Weiterleitung</text>
 
-                    <!-- Private area B -->
-                    <rect x="255" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-                    <text x="335" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Privat (gesperrt)</text>
-                    <text x="335" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
-                    <text x="335" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">market_prices.json</text>
-                    <text x="335" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json</text>
+                    <!-- Return: B to DB -->
+                    <line x1="600" y1="130" x2="490" y2="195" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>
 
-                    <!-- Public area B -->
-                    <rect x="255" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                    <text x="335" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (freigegeben)</text>
-                    <text x="335" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">kalkulation_projekt_X.pdf</text>
+                    <!-- Return: DB to A -->
+                    <line x1="310" y1="195" x2="200" y2="130" stroke="#0070f3" stroke-width="1.5" stroke-dasharray="6,3"/>
 
-                    <!-- Arrow: A public → B reads -->
-                    <line x1="190" y1="200" x2="250" y2="200" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
-                    <text x="220" y="193" text-anchor="middle" fill="#0070f3" font-size="8">read_public</text>
-
-                    <!-- Blocked arrow: B tries to read A private -->
-                    <line x1="250" y1="100" x2="200" y2="100" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                    <text x="225" y="93" text-anchor="middle" fill="#ef4444" font-size="8">gesperrt</text>
-                    <circle cx="200" cy="100" r="6" fill="none" stroke="#ef4444" stroke-width="1.5"/>
-                    <line x1="196" y1="96" x2="204" y2="104" stroke="#ef4444" stroke-width="1.5"/>
-
-                    <!-- Legend -->
-                    <rect x="10" y="270" width="420" height="60" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <rect x="25" y="283" width="10" height="10" rx="2" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1"/>
-                    <text x="42" y="293" fill="#94a3b8" font-size="9">public/ — alle Agents k&ouml;nnen lesen</text>
-                    <rect x="225" y="283" width="10" height="10" rx="2" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
-                    <text x="242" y="293" fill="#94a3b8" font-size="9">privat — nur der eigene Agent</text>
-                    <line x1="25" y1="313" x2="45" y2="313" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
-                    <text x="52" y="317" fill="#94a3b8" font-size="9">Datei-Austausch via read_public</text>
-                    <line x1="225" y1="313" x2="245" y2="313" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                    <text x="252" y="317" fill="#94a3b8" font-size="9">Zugriff verweigert</text>
+                    <!-- Ping-Pong Limit -->
+                    <rect x="270" y="255" width="260" height="35" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
+                    <text x="400" y="278" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Ping-Pong-Limit: max 3 Runden</text>
                 </svg>
             </div>
 
-            <!-- Text -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">public/ — Bewusste Freigabe</h4>
-                                <p class="text-slate-400 text-sm">Berichte, Exporte, St&uuml;cklisten &mdash; alles was andere Agents brauchen. Der Agent entscheidet selbst, was er teilt.</p>
-                            </div>
-                        </div>
+            <div class="mt-8 max-w-3xl mx-auto reveal">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2">Connector Families</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Agenten der gleichen Connector Family teilen sich einen Kommunikationskanal.
+                            Nachrichten an die Familie werden automatisch an den zust&auml;ndigen Agenten geroutet.
+                        </p>
                     </div>
-                    <div class="bg-slate-850 border border-red-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Privater Bereich — Unsichtbar</h4>
-                                <p class="text-slate-400 text-sm">Notizen, Kalender, Kontakte, Todo-Listen, Profildatenbanken. Kein anderer Agent hat Zugriff &mdash; architektonisch erzwungen, nicht per Policy.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-900/60 border border-white/5 rounded-lg p-5">
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            <strong class="text-signal-300">Beispiel:</strong> Der Konstruktions-Agent liest eine DXF-Datei vom Arbeitsrechner des Ingenieurs, erstellt eine St&uuml;ckliste und legt sie in <code class="text-signal-400 font-mono text-xs">public/</code>. Der Finanz-Agent liest die St&uuml;ckliste und berechnet die Materialkosten &mdash; ohne Zugriff auf die Konstruktionsnotizen.
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                        <h4 class="font-semibold text-sm mb-2">Ping-Pong-Schutz</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Maximum 3 Hin-und-Her-Runden zwischen zwei Agenten pro Anfrage.
+                            Verhindert Endlos-Schleifen und unkontrollierten Token-Verbrauch.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Workspace & Datenschutz (Shared Folder / public/) -->
+        <div>
+            <h3 class="text-xl font-bold mb-6 text-center reveal">Workspace &amp; interner Datenschutz</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto text-center mb-8 reveal">Jeder Agent hat einen eigenen Workspace &mdash; wie ein abgeschlossener Schreibtisch. Nur bewusst freigegebene Dateien sind f&uuml;r andere sichtbar.</p>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- SVG Diagram -->
+                <div class="reveal">
+                    <svg viewBox="0 0 440 340" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                        <defs>
+                            <marker id="wsArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Agent A Workspace -->
+                        <rect x="10" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="105" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">M&uuml;hendis</text>
+
+                        <!-- Private area -->
+                        <rect x="25" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+                        <text x="105" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Privat (gesperrt)</text>
+                        <text x="105" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
+                        <text x="105" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json, todo.txt</text>
+                        <text x="105" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">steel_profiles.json</text>
+                        <rect x="155" y="130" width="16" height="16" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+                        <line x1="159" y1="134" x2="167" y2="142" stroke="#ef4444" stroke-width="1.5"/>
+                        <line x1="167" y1="134" x2="159" y2="142" stroke="#ef4444" stroke-width="1.5"/>
+
+                        <!-- Public area -->
+                        <rect x="25" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                        <text x="105" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (freigegeben)</text>
+                        <text x="105" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">stueckliste.pdf</text>
+                        <text x="105" y="217" text-anchor="middle" fill="#94a3b8" font-size="9">report_projekt_X.dxf</text>
+
+                        <!-- Agent B Workspace -->
+                        <rect x="240" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="335" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Finanz-Agent</text>
+
+                        <!-- Private area B -->
+                        <rect x="255" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+                        <text x="335" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Privat (gesperrt)</text>
+                        <text x="335" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
+                        <text x="335" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">market_prices.json</text>
+                        <text x="335" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json</text>
+
+                        <!-- Public area B -->
+                        <rect x="255" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                        <text x="335" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (freigegeben)</text>
+                        <text x="335" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">kalkulation_projekt_X.pdf</text>
+
+                        <!-- Arrow: A public to B reads -->
+                        <line x1="190" y1="200" x2="250" y2="200" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
+                        <text x="220" y="193" text-anchor="middle" fill="#0070f3" font-size="8">read_public</text>
+
+                        <!-- Blocked arrow: B tries to read A private -->
+                        <line x1="250" y1="100" x2="200" y2="100" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="225" y="93" text-anchor="middle" fill="#ef4444" font-size="8">gesperrt</text>
+                        <circle cx="200" cy="100" r="6" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+                        <line x1="196" y1="96" x2="204" y2="104" stroke="#ef4444" stroke-width="1.5"/>
+
+                        <!-- Legend -->
+                        <rect x="10" y="270" width="420" height="60" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
+                        <rect x="25" y="283" width="10" height="10" rx="2" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1"/>
+                        <text x="42" y="293" fill="#94a3b8" font-size="9">public/ — alle Agents k&ouml;nnen lesen</text>
+                        <rect x="225" y="283" width="10" height="10" rx="2" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
+                        <text x="242" y="293" fill="#94a3b8" font-size="9">privat — nur der eigene Agent</text>
+                        <line x1="25" y1="313" x2="45" y2="313" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
+                        <text x="52" y="317" fill="#94a3b8" font-size="9">Datei-Austausch via read_public</text>
+                        <line x1="225" y1="313" x2="245" y2="313" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="252" y="317" fill="#94a3b8" font-size="9">Zugriff verweigert</text>
+                    </svg>
+                </div>
+
+                <!-- Text -->
+                <div class="reveal" style="transition-delay: 0.15s;">
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-1">public/ — Bewusste Freigabe</h4>
+                                    <p class="text-slate-400 text-sm">Berichte, Exporte, St&uuml;cklisten &mdash; alles was andere Agents brauchen. Der Agent entscheidet selbst, was er teilt.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-850 border border-red-500/10 rounded-xl p-5">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-1">Privater Bereich — Unsichtbar</h4>
+                                    <p class="text-slate-400 text-sm">Notizen, Kalender, Kontakte, Todo-Listen, Profildatenbanken. Kein anderer Agent hat Zugriff &mdash; architektonisch erzwungen, nicht per Policy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/60 border border-white/5 rounded-lg p-5">
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                <strong class="text-signal-300">Beispiel:</strong> Der Konstruktions-Agent liest eine DXF-Datei vom Arbeitsrechner des Ingenieurs, erstellt eine St&uuml;ckliste und legt sie in <code class="text-signal-400 font-mono text-xs">public/</code>. Der Finanz-Agent liest die St&uuml;ckliste und berechnet die Materialkosten &mdash; ohne Zugriff auf die Konstruktionsnotizen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Execution Rings ()                                             -->
+<!--  6. BERECHTIGUNGEN — Execution Rings                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="execution-rings" class="relative py-24 grid-pattern">
+<section id="berechtigungen" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Sicherheit</p>
@@ -823,7 +1152,7 @@
                         <h3 class="font-bold text-green-400">Ring 0 &mdash; Read Only</h3>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Niedrigstes Risiko. Der Agent darf nur lesen: Gedächtnis abrufen, Konfiguration einsehen.
+                        Niedrigstes Risiko. Der Agent darf nur lesen: Ged&auml;chtnis abrufen, Konfiguration einsehen.
                         Kein Zugriff auf externe Systeme, kein Schreibzugriff.
                     </p>
                     <div class="flex flex-wrap gap-2">
@@ -843,7 +1172,7 @@
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-3">
                         Lesezugriff auf externe Systeme. SQL-SELECT, REST-GET, Datei lesen.
-                        Kein Schreibzugriff auf Produktionsdaten. Standard-Ring für die meisten Agenten.
+                        Kein Schreibzugriff auf Produktionsdaten. Standard-Ring f&uuml;r die meisten Agenten.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
@@ -864,7 +1193,7 @@
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-3">
                         Vollzugriff inklusive Schreiboperationen. Erfordert explizite Freischaltung
-                        durch den Administrator. Human-in-the-Loop für kritische Aktionen.
+                        durch den Administrator. Human-in-the-Loop f&uuml;r kritische Aktionen.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
@@ -881,14 +1210,14 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Beispiel-Agenten                                                     -->
+<!--  7. BEISPIELE — Beispiel-Agenten                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="beispiele" class="relative py-24 grid-pattern">
+<section id="beispiele" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Praxisbeispiele</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Beispiel-Agenten</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei vorkonfigurierte Agenten-Typen für typische Industrieumgebungen.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Drei vorkonfigurierte Agenten-Typen f&uuml;r typische Industrieumgebungen.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -938,8 +1267,8 @@
                     <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard</p>
                     <p class="text-slate-400 text-sm leading-relaxed flex-1">
                         Koppelt Uyumsoft, SAP, Navision und andere ERP-Systeme.
-                        Überwacht Lagerbestände in Echtzeit, meldet kritische Unterschreitungen
-                        und automatisiert Bedarfsanforderungen über SQL- und REST-Konnektoren.
+                        &Uuml;berwacht Lagerbest&auml;nde in Echtzeit, meldet kritische Unterschreitungen
+                        und automatisiert Bedarfsanforderungen &uuml;ber SQL- und REST-Konnektoren.
                     </p>
                     <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
                         <div>
@@ -1046,7 +1375,7 @@
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
+                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilit&auml;t</a></li>
                     <li><a href="index.html" class="hover:text-signal-400 transition-colors">Startseite</a></li>
                 </ul>
             </div>
@@ -1063,6 +1392,7 @@
 </footer>
 
 <script>
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1070,11 +1400,33 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    const nav = document.querySelector('nav');
+    // Main nav border on scroll
+    const nav = document.querySelector('#main-nav');
     window.addEventListener('scroll', () => {
         nav.classList.toggle('border-white/10', window.scrollY > 50);
         nav.classList.toggle('border-white/5', window.scrollY <= 50);
     });
+
+    // Sub-nav: highlight active section on scroll
+    const subnavLinks = document.querySelectorAll('.subnav-link');
+    const sections = [];
+    subnavLinks.forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        const section = document.getElementById(id);
+        if (section) sections.push({ id, el: section, link });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                subnavLinks.forEach(l => l.classList.remove('active'));
+                const match = sections.find(s => s.el === entry.target);
+                if (match) match.link.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '-80px 0px -50% 0px' });
+
+    sections.forEach(s => sectionObserver.observe(s.el));
 </script>
 </body>
 </html>

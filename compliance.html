@@ -87,12 +87,32 @@
             font-weight: 700;
             margin-right: 0.75rem;
         }
+        /* Sub-navigation */
+        .subnav-link {
+            position: relative;
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+        .subnav-link:hover { color: #e2e8f0; }
+        .subnav-link.active { color: #ffffff; }
+        .subnav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #0070f3;
+            transform: scaleX(0);
+            transition: transform 0.25s ease;
+        }
+        .subnav-link.active::after { transform: scaleX(1); }
     </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
 
 <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+<nav id="main-nav" class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
             <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
@@ -121,8 +141,18 @@
     </div>
 </nav>
 
+<!-- Sub-Navigation (sticky below main nav) -->
+<nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-[-100%] opacity-0 transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6 h-11 flex items-center justify-center gap-8 text-sm font-medium">
+        <a href="#normen" class="subnav-link" data-section="normen">Normen</a>
+        <a href="#eu-ki-verordnung" class="subnav-link" data-section="eu-ki-verordnung">EU KI-Verordnung</a>
+        <a href="#technische-umsetzung" class="subnav-link" data-section="technische-umsetzung">Technische Umsetzung</a>
+        <a href="#revisionssicherheit" class="subnav-link" data-section="revisionssicherheit">Revisionssicherheit</a>
+    </div>
+</nav>
+
 <!-- Hero -->
-<section class="relative pt-32 pb-20 grid-pattern">
+<section id="hero" class="relative pt-32 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Regulatorische Konformität</p>
@@ -136,486 +166,259 @@
     </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Datenlokalität                                                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="datenlokalitaet" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datensouveränität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Datenlokalität</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Alle Daten bleiben auf Ihrem SovereignNode. Kein Byte verlässt Ihr Netzwerk &mdash; außer Sie erlauben es explizit.</p>
-        </div>
-
-        <div class="reveal max-w-4xl mx-auto">
-            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                <defs>
-                    <marker id="cArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
-                    </marker>
-                    <marker id="cArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
-                    </marker>
-                </defs>
-
-                <!-- SovereignNode boundary -->
-                <rect x="30" y="20" width="530" height="380" rx="12" fill="#10b981" fill-opacity="0.03" stroke="#10b981" stroke-width="2"/>
-                <text x="295" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">SovereignNode (Ihr Server)</text>
-
-                <!-- Internal components -->
-                <rect x="60" y="70" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
-                <text x="160" y="100" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Benutzer-Kanäle</text>
-
-                <rect x="60" y="145" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
-                <text x="160" y="175" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Agenten-Prozesse</text>
-
-                <rect x="60" y="220" width="200" height="50" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
-                <text x="160" y="250" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">PostgreSQL + SQLite</text>
-
-                <rect x="60" y="295" width="200" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                <text x="160" y="325" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="600">LLM (lokale Runtime)</text>
-
-                <!-- PII Vault -->
-                <rect x="320" y="130" width="210" height="80" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="425" y="160" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">PII-Vault</text>
-                <text x="425" y="178" text-anchor="middle" fill="#94a3b8" font-size="9">Anonymisierung</text>
-                <text x="425" y="193" text-anchor="middle" fill="#94a3b8" font-size="9">De-Anonymisierung</text>
-
-                <!-- Internal arrows (green = safe) -->
-                <line x1="160" y1="120" x2="160" y2="145" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
-                <line x1="160" y1="195" x2="160" y2="220" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
-                <line x1="160" y1="270" x2="160" y2="295" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
-
-                <!-- Arrow from Agent to PII Vault -->
-                <line x1="260" y1="170" x2="320" y2="170" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#cArrowRed)"/>
-
-                <!-- External boundary -->
-                <rect x="610" y="100" width="170" height="140" rx="12" fill="#ef4444" fill-opacity="0.04" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,4"/>
-                <text x="695" y="130" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Extern (optional)</text>
-                <rect x="630" y="145" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
-                <text x="695" y="167" text-anchor="middle" fill="#94a3b8" font-size="10">Cloud-LLM API</text>
-                <rect x="630" y="195" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
-                <text x="695" y="217" text-anchor="middle" fill="#94a3b8" font-size="10">Web-Search API</text>
-
-                <!-- Arrow from PII Vault to External (anonymized) -->
-                <line x1="530" y1="170" x2="610" y2="170" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#cArrowRed)"/>
-                <text x="570" y="160" text-anchor="middle" fill="#f59e0b" font-size="8" font-weight="600">anonymisiert</text>
-
-                <!-- Legend -->
-                <rect x="60" y="375" width="12" height="12" rx="2" fill="#10b981" fill-opacity="0.3"/>
-                <text x="78" y="385" fill="#94a3b8" font-size="10">Intern (sicher)</text>
-                <rect x="200" y="375" width="12" height="12" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
-                <text x="218" y="385" fill="#94a3b8" font-size="10">Via PII-Vault (anonymisiert)</text>
-                <rect x="380" y="375" width="12" height="12" rx="2" fill="#ef4444" fill-opacity="0.3"/>
-                <text x="398" y="385" fill="#94a3b8" font-size="10">Extern (nur anonymisierte Daten)</text>
-            </svg>
-        </div>
-    </div>
-</section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  PII-Vault                                                            -->
+<!--  CHAPTER 1: NORMEN — Regulatorische Konformität                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="pii-vault" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz-Engine</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">PII-Vault</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Automatische Anonymisierung personenbezogener Daten vor jedem externen API-Aufruf.</p>
-        </div>
+<section id="normen" class="relative">
 
-        <!-- PII Pipeline SVG -->
-        <div class="reveal max-w-5xl mx-auto mb-12">
-            <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                <defs>
-                    <marker id="piiArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                    </marker>
-                    <marker id="piiArrowAmber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
-                    </marker>
-                    <marker id="piiArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
-                    </marker>
-                </defs>
-
-                <!-- Step 1: User Input -->
-                <rect x="0" y="30" width="120" height="55" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
-                <text x="60" y="52" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Benutzer</text>
-                <text x="60" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">"Max Müller hat"</text>
-                <text x="60" y="78" text-anchor="middle" fill="#94a3b8" font-size="8">"3000 EUR bezahlt"</text>
-
-                <line x1="120" y1="57" x2="155" y2="57" stroke="#0070f3" stroke-width="1.5" marker-end="url(#piiArrow)"/>
-
-                <!-- Step 2: Agent -->
-                <rect x="155" y="30" width="100" height="55" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
-                <text x="205" y="52" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Agent</text>
-                <text x="205" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Verarbeitung</text>
-
-                <line x1="255" y1="57" x2="290" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
-
-                <!-- Step 3: PII Vault (Anonymize) -->
-                <rect x="290" y="20" width="140" height="75" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="360" y="42" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700">PII-Vault</text>
-                <text x="360" y="58" text-anchor="middle" fill="#f59e0b" font-size="9">Anonymisieren</text>
-                <text x="360" y="75" text-anchor="middle" fill="#94a3b8" font-size="8">"[PER_1] hat"</text>
-                <text x="360" y="85" text-anchor="middle" fill="#94a3b8" font-size="8">"[AMT_1] bezahlt"</text>
-
-                <line x1="430" y1="57" x2="465" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
-
-                <!-- Step 4: External API -->
-                <rect x="465" y="30" width="120" height="55" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
-                <text x="525" y="52" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Externe API</text>
-                <text x="525" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Cloud-LLM</text>
-
-                <line x1="585" y1="57" x2="620" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
-
-                <!-- Step 5: PII Vault (De-anonymize) -->
-                <rect x="620" y="20" width="140" height="75" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                <text x="690" y="42" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700">PII-Vault</text>
-                <text x="690" y="58" text-anchor="middle" fill="#10b981" font-size="9">De-Anonymisieren</text>
-                <text x="690" y="75" text-anchor="middle" fill="#94a3b8" font-size="8">"Max Müller hat"</text>
-                <text x="690" y="85" text-anchor="middle" fill="#94a3b8" font-size="8">"3000 EUR bezahlt"</text>
-
-                <line x1="760" y1="57" x2="795" y2="57" stroke="#10b981" stroke-width="1.5" marker-end="url(#piiArrowGreen)"/>
-
-                <!-- Step 6: User -->
-                <rect x="795" y="30" width="100" height="55" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
-                <text x="845" y="52" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Benutzer</text>
-                <text x="845" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Vollständige</text>
-                <text x="845" y="78" text-anchor="middle" fill="#94a3b8" font-size="8">Antwort</text>
-
-                <!-- Mapping table below -->
-                <rect x="290" y="120" width="280" height="65" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                <text x="430" y="140" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">Mapping (session-gebunden)</text>
-                <text x="430" y="156" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="monospace">[PER_1] = "Max Müller"</text>
-                <text x="430" y="172" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="monospace">[AMT_1] = "3000 EUR"</text>
-
-                <line x1="360" y1="95" x2="360" y2="120" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-            </svg>
-        </div>
-
-        <div class="reveal max-w-3xl mx-auto">
-            <div class="grid sm:grid-cols-3 gap-4">
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
-                    <div class="text-2xl font-bold text-signal-400 mb-1">Session</div>
-                    <p class="text-slate-400 text-xs">Mappings sind an die Session gebunden und werden nicht persistent gespeichert</p>
-                </div>
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
-                    <div class="text-2xl font-bold text-signal-400 mb-1">Regex + NER</div>
-                    <p class="text-slate-400 text-xs">Erkennung via Regex-Patterns und Named Entity Recognition</p>
-                </div>
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
-                    <div class="text-2xl font-bold text-signal-400 mb-1">Audit</div>
-                    <p class="text-slate-400 text-xs">Jede Anonymisierung wird im Audit-Log dokumentiert</p>
-                </div>
+    <!-- Datenlokalität (DSGVO context) -->
+    <div id="datenlokalitaet" class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-4 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Regulatorische Konformität</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Normen</h2>
+                <p class="text-slate-500 text-sm mb-8">DSGVO / GDPR &middot; ISO 9001 &amp; 27001 &middot; GoBD</p>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Audit-Trail                                                          -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="audit" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Protokollierung</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Audit-Trail</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Jede Agenten-Aktion wird lückenlos protokolliert. Der Audit-Trail erfasst sechs Event-Typen:
-                </p>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">SYSTEM_PROMPT</span>
-                        <span class="text-slate-400 text-sm">Vollständiger System-Prompt für Nachvollziehbarkeit</span>
-                    </div>
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">REQUEST</span>
-                        <span class="text-slate-400 text-sm">Eingehende Benutzer-Anfrage</span>
-                    </div>
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">RESPONSE</span>
-                        <span class="text-slate-400 text-sm">Vollständige Agenten-Antwort</span>
-                    </div>
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-mono text-xs font-medium">TOOL_START</span>
-                        <span class="text-slate-400 text-sm">Tool-Aufruf mit Parametern</span>
-                    </div>
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-300 font-mono text-xs font-medium">TOOL_OK</span>
-                        <span class="text-slate-400 text-sm">Tool-Ergebnis (Erfolg oder Fehler)</span>
-                    </div>
-                    <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
-                        <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 font-mono text-xs font-medium">LLM_USAGE</span>
-                        <span class="text-slate-400 text-sm">Token-Verbrauch, Modell, Latenz</span>
-                    </div>
-                </div>
+            <div class="text-center mb-12 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datensouveränität</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Datenlokalität</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">Alle Daten bleiben auf Ihrem SovereignNode. Kein Byte verlässt Ihr Netzwerk &mdash; außer Sie erlauben es explizit.</p>
             </div>
 
-            <!-- Sample Audit Log -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <div class="gradient-border glow-sm">
-                    <div class="bg-slate-850 rounded-xl p-6 overflow-x-auto">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Beispiel: Audit-Log Eintrag</div>
-                        <pre class="font-mono text-xs leading-relaxed"><code><span class="text-slate-500">{</span>
-  <span class="text-signal-300">"id"</span>: <span class="text-slate-400">42847</span>,
-  <span class="text-signal-300">"timestamp"</span>: <span class="text-green-400">"2026-03-22T14:32:17.445Z"</span>,
-  <span class="text-signal-300">"session_id"</span>: <span class="text-green-400">"ses_7f3a2b91"</span>,
-  <span class="text-signal-300">"agent"</span>: <span class="text-green-400">"logistik"</span>,
-  <span class="text-signal-300">"event_type"</span>: <span class="text-amber-400">"TOOL_START"</span>,
-  <span class="text-signal-300">"tool"</span>: <span class="text-green-400">"sql_query"</span>,
-  <span class="text-signal-300">"ring"</span>: <span class="text-slate-400">1</span>,
-  <span class="text-signal-300">"params"</span>: <span class="text-slate-500">{</span>
-    <span class="text-signal-300">"connector"</span>: <span class="text-green-400">"uyumsoft_db"</span>,
-    <span class="text-signal-300">"query"</span>: <span class="text-green-400">"SELECT item, qty FROM stock WHERE qty &lt; 10"</span>
-  <span class="text-slate-500">}</span>,
-  <span class="text-signal-300">"user_id"</span>: <span class="text-green-400">"tg_12345"</span>,
-  <span class="text-signal-300">"pii_anonymized"</span>: <span class="text-slate-400">false</span>
-<span class="text-slate-500">}</span></code></pre>
-                    </div>
-                </div>
-
-                <div class="mt-6 gradient-border">
-                    <div class="bg-slate-850 rounded-xl p-6 overflow-x-auto">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Zugehöriger LLM_USAGE Eintrag</div>
-                        <pre class="font-mono text-xs leading-relaxed"><code><span class="text-slate-500">{</span>
-  <span class="text-signal-300">"event_type"</span>: <span class="text-purple-400">"LLM_USAGE"</span>,
-  <span class="text-signal-300">"session_id"</span>: <span class="text-green-400">"ses_7f3a2b91"</span>,
-  <span class="text-signal-300">"model"</span>: <span class="text-green-400">"qwen3.5:27b"</span>,
-  <span class="text-signal-300">"prompt_tokens"</span>: <span class="text-slate-400">2847</span>,
-  <span class="text-signal-300">"completion_tokens"</span>: <span class="text-slate-400">312</span>,
-  <span class="text-signal-300">"total_tokens"</span>: <span class="text-slate-400">3159</span>,
-  <span class="text-signal-300">"latency_ms"</span>: <span class="text-slate-400">4280</span>,
-  <span class="text-signal-300">"cognitive_balance"</span>: <span class="text-slate-400">3</span>
-<span class="text-slate-500">}</span></code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Execution Rings (Compliance view)                                    -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="rings" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Zugriffskontrolle</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings &mdash; Vertrauensstufen</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Wie Execution Rings unautorisierte Aktionen verhindern.</p>
-        </div>
-
-        <div class="reveal max-w-4xl mx-auto">
-            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                <defs>
-                    <marker id="ringArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                    </marker>
-                </defs>
-
-                <!-- Scenario: Blocked -->
-                <text x="400" y="20" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">Beispiel: Agent (Ring 1) versucht file_write (Ring 2)</text>
-
-                <!-- Agent -->
-                <rect x="30" y="50" width="160" height="60" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="110" y="77" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Logistik-Agent</text>
-                <text x="110" y="95" text-anchor="middle" fill="#94a3b8" font-size="10">Ring 1 (Standard)</text>
-
-                <!-- Arrow to dispatcher -->
-                <line x1="190" y1="80" x2="250" y2="80" stroke="#0070f3" stroke-width="1.5" marker-end="url(#ringArrow)"/>
-                <text x="220" y="72" text-anchor="middle" fill="#94a3b8" font-size="8">file_write()</text>
-
-                <!-- Ring Checker -->
-                <rect x="250" y="45" width="180" height="70" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="340" y="72" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">Ring-Dispatcher</text>
-                <text x="340" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">Ring-Check: 1 &lt; 2</text>
-
-                <!-- Blocked arrow -->
-                <line x1="430" y1="80" x2="490" y2="80" stroke="#ef4444" stroke-width="2"/>
-                <line x1="475" y1="65" x2="495" y2="95" stroke="#ef4444" stroke-width="3"/>
-                <line x1="495" y1="65" x2="475" y2="95" stroke="#ef4444" stroke-width="3"/>
-
-                <!-- Blocked result -->
-                <rect x="520" y="45" width="250" height="70" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1.5"/>
-                <text x="645" y="72" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700">BLOCKIERT</text>
-                <text x="645" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">"Tool file_write erfordert Ring 2"</text>
-
-                <!-- Audit log entry -->
-                <rect x="250" y="145" width="520" height="55" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                <text x="510" y="165" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">Audit-Log Eintrag</text>
-                <text x="510" y="185" text-anchor="middle" fill="#ef4444" font-size="9" font-family="monospace">TOOL_BLOCKED | agent=logistik | tool=file_write | required=2 | actual=1</text>
-
-                <line x1="340" y1="115" x2="340" y2="145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-            </svg>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  DSGVO / GDPR                                                         -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="dsgvo" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Datenschutz</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">DSGVO / GDPR</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                    AIMOS erfüllt die DSGVO nicht durch nachträgliche Anpassung, sondern durch
-                    architektonische Entscheidungen &mdash; <strong class="text-white">Privacy by Design</strong>.
-                </p>
-
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 25 &mdash; Datenschutz durch Technikgestaltung</h4>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li class="check-item">Datenverarbeitung standardmäßig lokal (SovereignNode)</li>
-                            <li class="check-item">PII-Vault anonymisiert vor jeder externen Übermittlung</li>
-                            <li class="check-item">Kein Cloud-Service in der Standard-Konfiguration</li>
-                            <li class="check-item">Datenminimierung: nur relevante Kontextdaten im LLM-Prompt</li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Sicherheit der Verarbeitung</h4>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li class="check-item">Verschlüsselung: PostgreSQL SSL, SQLite on-disk</li>
-                            <li class="check-item">Zugriffskontrolle durch Execution Rings (3 Stufen)</li>
-                            <li class="check-item">Lückenloser Audit-Trail aller Verarbeitungsvorgänge</li>
-                            <li class="check-item">Session-gebundene PII-Mappings (kein persistenter PII-Speicher)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ISO 9001/27001 -->
-            <div class="reveal" id="iso" style="transition-delay: 0.15s;">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Normenkonformität</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 &amp; 27001</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                    AIMOS unterstützt die Anforderungen beider Standards durch eingebaute Mechanismen.
-                </p>
-
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Qualitätsmanagement</h4>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li class="check-item">Nachvollziehbarkeit: Jede Entscheidung im Audit-Log</li>
-                            <li class="check-item">Rückverfolgbarkeit: Session-IDs verknüpfen alle Ereignisse</li>
-                            <li class="check-item">Dokumentierte Prozesse: System-Prompts als SOPs</li>
-                            <li class="check-item">Korrekturmaßnahmen: Dreaming-Zyklus lernt aus Fehlern</li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 27001 &mdash; Informationssicherheit</h4>
-                        <ul class="space-y-2 text-sm text-slate-400">
-                            <li class="check-item">Klassifizierung: Execution Rings definieren Zugriffsstufen</li>
-                            <li class="check-item">Zugriffskontrolle: Tool-Freischaltung pro Agent konfigurierbar</li>
-                            <li class="check-item">Ereignisprotokollierung: Alle 6 Event-Typen erfasst</li>
-                            <li class="check-item">Physische Sicherheit: Daten verlassen den SovereignNode nicht</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  GoBD                                                                 -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="gobd" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Buchführung</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">GoBD-Konformität</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Die GoBD (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von
-                    Büchern, Aufzeichnungen und Unterlagen in elektronischer Form) stellt
-                    besondere Anforderungen an KI-gestützte Systeme.
-                </p>
-                <p class="text-slate-400 leading-relaxed mb-6">
-                    AIMOS löst dies durch eine strikte architektonische Trennung:
-                </p>
-
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-amber-400">Trennung: Entwurf vs. Festschreibung</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Agenten bereiten Buchungssätze vor (Entwurf). Die Festschreibung
-                            erfolgt ausschließlich durch autorisierte Sachbearbeiter im Zielsystem
-                            (ETA V8, DATEV, etc.). Kein LLM hat Transaktionsrechte.
-                        </p>
-                    </div>
-                    <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2 text-amber-400">Human-in-the-Loop</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Ring 2-Aktionen (Schreibzugriffe) erfordern explizite Freischaltung.
-                            Buchungsrelevante Vorgänge benötigen immer menschliche Freigabe &mdash;
-                            architektonisch erzwungen, nicht durch Policy.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GoBD Diagram -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+            <div class="reveal max-w-4xl mx-auto">
+                <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" class="w-full">
                     <defs>
-                        <marker id="gobdArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                        </marker>
-                        <marker id="gobdArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <marker id="cArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
                             <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                        </marker>
+                        <marker id="cArrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
                         </marker>
                     </defs>
 
-                    <!-- Agent creates draft -->
-                    <rect x="100" y="20" width="200" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="200" y="42" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Finanz-Agent</text>
-                    <text x="200" y="58" text-anchor="middle" fill="#94a3b8" font-size="9">Erstellt Buchungsentwurf</text>
+                    <!-- SovereignNode boundary -->
+                    <rect x="30" y="20" width="530" height="380" rx="12" fill="#10b981" fill-opacity="0.03" stroke="#10b981" stroke-width="2"/>
+                    <text x="295" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">SovereignNode (Ihr Server)</text>
 
-                    <line x1="200" y1="70" x2="200" y2="100" stroke="#0070f3" stroke-width="1.5" marker-end="url(#gobdArrow)"/>
+                    <!-- Internal components -->
+                    <rect x="60" y="70" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                    <text x="160" y="100" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Benutzer-Kanäle</text>
 
-                    <!-- Draft -->
-                    <rect x="80" y="100" width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                    <text x="200" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">ENTWURF</text>
-                    <text x="200" y="138" text-anchor="middle" fill="#94a3b8" font-size="9">Buchungssatz (nicht festgeschrieben)</text>
+                    <rect x="60" y="145" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                    <text x="160" y="175" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Agenten-Prozesse</text>
 
-                    <line x1="200" y1="150" x2="200" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
+                    <rect x="60" y="220" width="200" height="50" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
+                    <text x="160" y="250" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">PostgreSQL + SQLite</text>
 
-                    <!-- Human Review -->
-                    <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
-                    <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">MENSCHLICHE PRÜFUNG</text>
-                    <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">Sachbearbeiter prüft und genehmigt</text>
+                    <rect x="60" y="295" width="200" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                    <text x="160" y="325" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="600">LLM (lokale Runtime)</text>
 
-                    <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
+                    <!-- PII Vault -->
+                    <rect x="320" y="130" width="210" height="80" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="425" y="160" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">PII-Vault</text>
+                    <text x="425" y="178" text-anchor="middle" fill="#94a3b8" font-size="9">Anonymisierung</text>
+                    <text x="425" y="193" text-anchor="middle" fill="#94a3b8" font-size="9">De-Anonymisierung</text>
 
-                    <!-- Booking -->
-                    <rect x="80" y="270" width="240" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                    <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">FESTSCHREIBUNG</text>
-                    <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">Im Zielsystem (ETA, DATEV, etc.)</text>
+                    <!-- Internal arrows (green = safe) -->
+                    <line x1="160" y1="120" x2="160" y2="145" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+                    <line x1="160" y1="195" x2="160" y2="220" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+                    <line x1="160" y1="270" x2="160" y2="295" stroke="#10b981" stroke-width="1.5" marker-end="url(#cArrow)"/>
+
+                    <!-- Arrow from Agent to PII Vault -->
+                    <line x1="260" y1="170" x2="320" y2="170" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#cArrowRed)"/>
+
+                    <!-- External boundary -->
+                    <rect x="610" y="100" width="170" height="140" rx="12" fill="#ef4444" fill-opacity="0.04" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,4"/>
+                    <text x="695" y="130" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Extern (optional)</text>
+                    <rect x="630" y="145" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
+                    <text x="695" y="167" text-anchor="middle" fill="#94a3b8" font-size="10">Cloud-LLM API</text>
+                    <rect x="630" y="195" width="130" height="35" rx="6" fill="#1a2332" stroke="#ef4444" stroke-width="0.5"/>
+                    <text x="695" y="217" text-anchor="middle" fill="#94a3b8" font-size="10">Web-Search API</text>
+
+                    <!-- Arrow from PII Vault to External (anonymized) -->
+                    <line x1="530" y1="170" x2="610" y2="170" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#cArrowRed)"/>
+                    <text x="570" y="160" text-anchor="middle" fill="#f59e0b" font-size="8" font-weight="600">anonymisiert</text>
+
+                    <!-- Legend -->
+                    <rect x="60" y="375" width="12" height="12" rx="2" fill="#10b981" fill-opacity="0.3"/>
+                    <text x="78" y="385" fill="#94a3b8" font-size="10">Intern (sicher)</text>
+                    <rect x="200" y="375" width="12" height="12" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
+                    <text x="218" y="385" fill="#94a3b8" font-size="10">Via PII-Vault (anonymisiert)</text>
+                    <rect x="380" y="375" width="12" height="12" rx="2" fill="#ef4444" fill-opacity="0.3"/>
+                    <text x="398" y="385" fill="#94a3b8" font-size="10">Extern (nur anonymisierte Daten)</text>
                 </svg>
             </div>
         </div>
     </div>
+
+    <!-- DSGVO / GDPR + ISO 9001/27001 -->
+    <div id="dsgvo" class="relative py-24 grid-pattern">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Datenschutz</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">DSGVO / GDPR</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                        AIMOS erfüllt die DSGVO nicht durch nachträgliche Anpassung, sondern durch
+                        architektonische Entscheidungen &mdash; <strong class="text-white">Privacy by Design</strong>.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 25 &mdash; Datenschutz durch Technikgestaltung</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Datenverarbeitung standardmäßig lokal (SovereignNode)</li>
+                                <li class="check-item">PII-Vault anonymisiert vor jeder externen Übermittlung</li>
+                                <li class="check-item">Kein Cloud-Service in der Standard-Konfiguration</li>
+                                <li class="check-item">Datenminimierung: nur relevante Kontextdaten im LLM-Prompt</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Sicherheit der Verarbeitung</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Verschlüsselung: PostgreSQL SSL, SQLite on-disk</li>
+                                <li class="check-item">Zugriffskontrolle durch Execution Rings (3 Stufen)</li>
+                                <li class="check-item">Lückenloser Audit-Trail aller Verarbeitungsvorgänge</li>
+                                <li class="check-item">Session-gebundene PII-Mappings (kein persistenter PII-Speicher)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ISO 9001/27001 -->
+                <div class="reveal" id="iso" style="transition-delay: 0.15s;">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Normenkonformität</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 &amp; 27001</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                        AIMOS unterstützt die Anforderungen beider Standards durch eingebaute Mechanismen.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Qualitätsmanagement</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Nachvollziehbarkeit: Jede Entscheidung im Audit-Log</li>
+                                <li class="check-item">Rückverfolgbarkeit: Session-IDs verknüpfen alle Ereignisse</li>
+                                <li class="check-item">Dokumentierte Prozesse: System-Prompts als SOPs</li>
+                                <li class="check-item">Korrekturmaßnahmen: Dreaming-Zyklus lernt aus Fehlern</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 27001 &mdash; Informationssicherheit</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Klassifizierung: Execution Rings definieren Zugriffsstufen</li>
+                                <li class="check-item">Zugriffskontrolle: Tool-Freischaltung pro Agent konfigurierbar</li>
+                                <li class="check-item">Ereignisprotokollierung: Alle 6 Event-Typen erfasst</li>
+                                <li class="check-item">Physische Sicherheit: Daten verlassen den SovereignNode nicht</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GoBD -->
+    <div id="gobd" class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Buchführung</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">GoBD-Konformität</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                        Die GoBD (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von
+                        Büchern, Aufzeichnungen und Unterlagen in elektronischer Form) stellt
+                        besondere Anforderungen an KI-gestützte Systeme.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        AIMOS löst dies durch eine strikte architektonische Trennung:
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Trennung: Entwurf vs. Festschreibung</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Agenten bereiten Buchungssätze vor (Entwurf). Die Festschreibung
+                                erfolgt ausschließlich durch autorisierte Sachbearbeiter im Zielsystem
+                                (ETA V8, DATEV, etc.). Kein LLM hat Transaktionsrechte.
+                            </p>
+                        </div>
+                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Human-in-the-Loop</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Ring 2-Aktionen (Schreibzugriffe) erfordern explizite Freischaltung.
+                                Buchungsrelevante Vorgänge benötigen immer menschliche Freigabe &mdash;
+                                architektonisch erzwungen, nicht durch Policy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GoBD Diagram -->
+                <div class="reveal" style="transition-delay: 0.15s;">
+                    <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                        <defs>
+                            <marker id="gobdArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                            </marker>
+                            <marker id="gobdArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Agent creates draft -->
+                        <rect x="100" y="20" width="200" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="200" y="42" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Finanz-Agent</text>
+                        <text x="200" y="58" text-anchor="middle" fill="#94a3b8" font-size="9">Erstellt Buchungsentwurf</text>
+
+                        <line x1="200" y1="70" x2="200" y2="100" stroke="#0070f3" stroke-width="1.5" marker-end="url(#gobdArrow)"/>
+
+                        <!-- Draft -->
+                        <rect x="80" y="100" width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                        <text x="200" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">ENTWURF</text>
+                        <text x="200" y="138" text-anchor="middle" fill="#94a3b8" font-size="9">Buchungssatz (nicht festgeschrieben)</text>
+
+                        <line x1="200" y1="150" x2="200" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
+
+                        <!-- Human Review -->
+                        <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
+                        <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">MENSCHLICHE PRÜFUNG</text>
+                        <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">Sachbearbeiter prüft und genehmigt</text>
+
+                        <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
+
+                        <!-- Booking -->
+                        <rect x="80" y="270" width="240" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                        <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">FESTSCHREIBUNG</text>
+                        <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">Im Zielsystem (ETA, DATEV, etc.)</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  EU AI Act                                                            -->
+<!--  CHAPTER 2: EU KI-VERORDNUNG — EU AI Act                            -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="eu-ai-act" class="relative py-24 bg-slate-900/50">
+<section id="eu-ki-verordnung" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-4 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU AI Act</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">EU KI-Verordnung</h2>
+            <p class="text-slate-500 text-sm mb-8">Risikoklassifizierung &middot; Transparenz &middot; Menschliche Aufsicht &middot; Dokumentation</p>
+        </div>
+
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div class="reveal">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-300 text-xs font-medium mb-4">
                     In Kraft ab August 2026
                 </div>
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Regulierung</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">EU AI Act (KI-Verordnung)</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">EU AI Act (KI-Verordnung)</h3>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
                     Die EU-KI-Verordnung (EU) 2024/1689 tritt schrittweise in Kraft und betrifft
                     jedes Unternehmen, das KI-Systeme einsetzt. AIMOS ist architektonisch auf
@@ -698,8 +501,295 @@
     </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Revisionssicherheit                                                  -->
+<!--  CHAPTER 3: TECHNISCHE UMSETZUNG — Datenschutz durch Technik        -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="technische-umsetzung" class="relative">
+
+    <div class="text-center pt-24 pb-4 bg-slate-900/50 reveal">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz durch Technik</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Technische Umsetzung</h2>
+        <p class="text-slate-500 text-sm">PII-Vault &middot; Audit-Trail &middot; Execution Rings &middot; Token-Tracking</p>
+    </div>
+
+    <!-- PII-Vault -->
+    <div id="pii-vault" class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz-Engine</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">PII-Vault</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">Automatische Anonymisierung personenbezogener Daten vor jedem externen API-Aufruf.</p>
+            </div>
+
+            <!-- PII Pipeline SVG -->
+            <div class="reveal max-w-5xl mx-auto mb-12">
+                <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <defs>
+                        <marker id="piiArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                        </marker>
+                        <marker id="piiArrowAmber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+                        </marker>
+                        <marker id="piiArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Step 1: User Input -->
+                    <rect x="0" y="30" width="120" height="55" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                    <text x="60" y="52" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Benutzer</text>
+                    <text x="60" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">"Max Müller hat"</text>
+                    <text x="60" y="78" text-anchor="middle" fill="#94a3b8" font-size="8">"3000 EUR bezahlt"</text>
+
+                    <line x1="120" y1="57" x2="155" y2="57" stroke="#0070f3" stroke-width="1.5" marker-end="url(#piiArrow)"/>
+
+                    <!-- Step 2: Agent -->
+                    <rect x="155" y="30" width="100" height="55" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
+                    <text x="205" y="52" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600">Agent</text>
+                    <text x="205" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Verarbeitung</text>
+
+                    <line x1="255" y1="57" x2="290" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
+
+                    <!-- Step 3: PII Vault (Anonymize) -->
+                    <rect x="290" y="20" width="140" height="75" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="360" y="42" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700">PII-Vault</text>
+                    <text x="360" y="58" text-anchor="middle" fill="#f59e0b" font-size="9">Anonymisieren</text>
+                    <text x="360" y="75" text-anchor="middle" fill="#94a3b8" font-size="8">"[PER_1] hat"</text>
+                    <text x="360" y="85" text-anchor="middle" fill="#94a3b8" font-size="8">"[AMT_1] bezahlt"</text>
+
+                    <line x1="430" y1="57" x2="465" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
+
+                    <!-- Step 4: External API -->
+                    <rect x="465" y="30" width="120" height="55" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
+                    <text x="525" y="52" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Externe API</text>
+                    <text x="525" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Cloud-LLM</text>
+
+                    <line x1="585" y1="57" x2="620" y2="57" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#piiArrowAmber)"/>
+
+                    <!-- Step 5: PII Vault (De-anonymize) -->
+                    <rect x="620" y="20" width="140" height="75" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                    <text x="690" y="42" text-anchor="middle" fill="#10b981" font-size="10" font-weight="700">PII-Vault</text>
+                    <text x="690" y="58" text-anchor="middle" fill="#10b981" font-size="9">De-Anonymisieren</text>
+                    <text x="690" y="75" text-anchor="middle" fill="#94a3b8" font-size="8">"Max Müller hat"</text>
+                    <text x="690" y="85" text-anchor="middle" fill="#94a3b8" font-size="8">"3000 EUR bezahlt"</text>
+
+                    <line x1="760" y1="57" x2="795" y2="57" stroke="#10b981" stroke-width="1.5" marker-end="url(#piiArrowGreen)"/>
+
+                    <!-- Step 6: User -->
+                    <rect x="795" y="30" width="100" height="55" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1"/>
+                    <text x="845" y="52" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Benutzer</text>
+                    <text x="845" y="68" text-anchor="middle" fill="#94a3b8" font-size="8">Vollständige</text>
+                    <text x="845" y="78" text-anchor="middle" fill="#94a3b8" font-size="8">Antwort</text>
+
+                    <!-- Mapping table below -->
+                    <rect x="290" y="120" width="280" height="65" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
+                    <text x="430" y="140" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">Mapping (session-gebunden)</text>
+                    <text x="430" y="156" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="monospace">[PER_1] = "Max Müller"</text>
+                    <text x="430" y="172" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="monospace">[AMT_1] = "3000 EUR"</text>
+
+                    <line x1="360" y1="95" x2="360" y2="120" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+                </svg>
+            </div>
+
+            <div class="reveal max-w-3xl mx-auto">
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                        <div class="text-2xl font-bold text-signal-400 mb-1">Session</div>
+                        <p class="text-slate-400 text-xs">Mappings sind an die Session gebunden und werden nicht persistent gespeichert</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                        <div class="text-2xl font-bold text-signal-400 mb-1">Regex + NER</div>
+                        <p class="text-slate-400 text-xs">Erkennung via Regex-Patterns und Named Entity Recognition</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
+                        <div class="text-2xl font-bold text-signal-400 mb-1">Audit</div>
+                        <p class="text-slate-400 text-xs">Jede Anonymisierung wird im Audit-Log dokumentiert</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit-Trail -->
+    <div id="audit" class="relative py-24 grid-pattern">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Protokollierung</p>
+                    <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Audit-Trail</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                        Jede Agenten-Aktion wird lückenlos protokolliert. Der Audit-Trail erfasst sechs Event-Typen:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">SYSTEM_PROMPT</span>
+                            <span class="text-slate-400 text-sm">Vollständiger System-Prompt für Nachvollziehbarkeit</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">REQUEST</span>
+                            <span class="text-slate-400 text-sm">Eingehende Benutzer-Anfrage</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">RESPONSE</span>
+                            <span class="text-slate-400 text-sm">Vollständige Agenten-Antwort</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-mono text-xs font-medium">TOOL_START</span>
+                            <span class="text-slate-400 text-sm">Tool-Aufruf mit Parametern</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-300 font-mono text-xs font-medium">TOOL_OK</span>
+                            <span class="text-slate-400 text-sm">Tool-Ergebnis (Erfolg oder Fehler)</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
+                            <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 font-mono text-xs font-medium">LLM_USAGE</span>
+                            <span class="text-slate-400 text-sm">Token-Verbrauch, Modell, Latenz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Audit Log -->
+                <div class="reveal" style="transition-delay: 0.15s;">
+                    <div class="gradient-border glow-sm">
+                        <div class="bg-slate-850 rounded-xl p-6 overflow-x-auto">
+                            <div class="font-mono text-xs text-slate-500 mb-4">// Beispiel: Audit-Log Eintrag</div>
+                            <pre class="font-mono text-xs leading-relaxed"><code><span class="text-slate-500">{</span>
+  <span class="text-signal-300">"id"</span>: <span class="text-slate-400">42847</span>,
+  <span class="text-signal-300">"timestamp"</span>: <span class="text-green-400">"2026-03-22T14:32:17.445Z"</span>,
+  <span class="text-signal-300">"session_id"</span>: <span class="text-green-400">"ses_7f3a2b91"</span>,
+  <span class="text-signal-300">"agent"</span>: <span class="text-green-400">"logistik"</span>,
+  <span class="text-signal-300">"event_type"</span>: <span class="text-amber-400">"TOOL_START"</span>,
+  <span class="text-signal-300">"tool"</span>: <span class="text-green-400">"sql_query"</span>,
+  <span class="text-signal-300">"ring"</span>: <span class="text-slate-400">1</span>,
+  <span class="text-signal-300">"params"</span>: <span class="text-slate-500">{</span>
+    <span class="text-signal-300">"connector"</span>: <span class="text-green-400">"uyumsoft_db"</span>,
+    <span class="text-signal-300">"query"</span>: <span class="text-green-400">"SELECT item, qty FROM stock WHERE qty &lt; 10"</span>
+  <span class="text-slate-500">}</span>,
+  <span class="text-signal-300">"user_id"</span>: <span class="text-green-400">"tg_12345"</span>,
+  <span class="text-signal-300">"pii_anonymized"</span>: <span class="text-slate-400">false</span>
+<span class="text-slate-500">}</span></code></pre>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 gradient-border">
+                        <div class="bg-slate-850 rounded-xl p-6 overflow-x-auto">
+                            <div class="font-mono text-xs text-slate-500 mb-4">// Zugehöriger LLM_USAGE Eintrag</div>
+                            <pre class="font-mono text-xs leading-relaxed"><code><span class="text-slate-500">{</span>
+  <span class="text-signal-300">"event_type"</span>: <span class="text-purple-400">"LLM_USAGE"</span>,
+  <span class="text-signal-300">"session_id"</span>: <span class="text-green-400">"ses_7f3a2b91"</span>,
+  <span class="text-signal-300">"model"</span>: <span class="text-green-400">"qwen3.5:27b"</span>,
+  <span class="text-signal-300">"prompt_tokens"</span>: <span class="text-slate-400">2847</span>,
+  <span class="text-signal-300">"completion_tokens"</span>: <span class="text-slate-400">312</span>,
+  <span class="text-signal-300">"total_tokens"</span>: <span class="text-slate-400">3159</span>,
+  <span class="text-signal-300">"latency_ms"</span>: <span class="text-slate-400">4280</span>,
+  <span class="text-signal-300">"cognitive_balance"</span>: <span class="text-slate-400">3</span>
+<span class="text-slate-500">}</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Execution Rings -->
+    <div id="rings" class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Zugriffskontrolle</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Execution Rings &mdash; Vertrauensstufen</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">Wie Execution Rings unautorisierte Aktionen verhindern.</p>
+            </div>
+
+            <div class="reveal max-w-4xl mx-auto">
+                <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <defs>
+                        <marker id="ringArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Scenario: Blocked -->
+                    <text x="400" y="20" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="600">Beispiel: Agent (Ring 1) versucht file_write (Ring 2)</text>
+
+                    <!-- Agent -->
+                    <rect x="30" y="50" width="160" height="60" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
+                    <text x="110" y="77" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Logistik-Agent</text>
+                    <text x="110" y="95" text-anchor="middle" fill="#94a3b8" font-size="10">Ring 1 (Standard)</text>
+
+                    <!-- Arrow to dispatcher -->
+                    <line x1="190" y1="80" x2="250" y2="80" stroke="#0070f3" stroke-width="1.5" marker-end="url(#ringArrow)"/>
+                    <text x="220" y="72" text-anchor="middle" fill="#94a3b8" font-size="8">file_write()</text>
+
+                    <!-- Ring Checker -->
+                    <rect x="250" y="45" width="180" height="70" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                    <text x="340" y="72" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">Ring-Dispatcher</text>
+                    <text x="340" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">Ring-Check: 1 &lt; 2</text>
+
+                    <!-- Blocked arrow -->
+                    <line x1="430" y1="80" x2="490" y2="80" stroke="#ef4444" stroke-width="2"/>
+                    <line x1="475" y1="65" x2="495" y2="95" stroke="#ef4444" stroke-width="3"/>
+                    <line x1="495" y1="65" x2="475" y2="95" stroke="#ef4444" stroke-width="3"/>
+
+                    <!-- Blocked result -->
+                    <rect x="520" y="45" width="250" height="70" rx="8" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1.5"/>
+                    <text x="645" y="72" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700">BLOCKIERT</text>
+                    <text x="645" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">"Tool file_write erfordert Ring 2"</text>
+
+                    <!-- Audit log entry -->
+                    <rect x="250" y="145" width="520" height="55" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
+                    <text x="510" y="165" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="600">Audit-Log Eintrag</text>
+                    <text x="510" y="185" text-anchor="middle" fill="#ef4444" font-size="9" font-family="monospace">TOOL_BLOCKED | agent=logistik | tool=file_write | required=2 | actual=1</text>
+
+                    <line x1="340" y1="115" x2="340" y2="145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Token-Tracking -->
+    <div id="token-tracking" class="relative py-24 grid-pattern">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ressourcen-Überwachung</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Token-Tracking</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">Jeder LLM-Aufruf wird mit exaktem Token-Verbrauch, Modellname und Latenz dokumentiert.</p>
+            </div>
+
+            <div class="reveal max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                        <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Prompt + Completion</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Exakte Aufschlüsselung in prompt_tokens und completion_tokens pro Anfrage.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Latenz-Messung</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Jede LLM-Anfrage wird mit latency_ms erfasst, inklusive Modellname und Session-Kontext.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Cognitive Balance</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Verbleibende LLM-Aufrufe pro Session werden als cognitive_balance mitgeführt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  CHAPTER 4: REVISIONSSICHERHEIT — Nachweisbarkeit                    -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="revisionssicherheit" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
@@ -759,7 +849,7 @@
             </div>
         </div>
 
-        <!-- Trust bar (same as landing page) -->
+        <!-- Trust bar -->
         <div class="mt-16 text-center reveal">
             <div class="inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-4 rounded-2xl bg-slate-900/50 border border-white/5">
                 <span class="text-xs text-slate-500 uppercase tracking-widest">Nachweisbar durch</span>
@@ -821,8 +911,8 @@
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der MIT-Lizenz.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Impressum</a>
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Impressum</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
             </div>
         </div>
@@ -830,6 +920,7 @@
 </footer>
 
 <script>
+    // Reveal-on-scroll observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -837,11 +928,72 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('border-white/10', window.scrollY > 50);
-        nav.classList.toggle('border-white/5', window.scrollY <= 50);
+    // Main nav border on scroll
+    const mainNav = document.getElementById('main-nav');
+    const subNav = document.getElementById('sub-nav');
+    const heroSection = document.getElementById('hero');
+
+    // Sub-nav: show/hide based on scroll past hero
+    function updateSubNav() {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollY = window.scrollY;
+
+        if (scrollY > heroBottom - 80) {
+            subNav.style.transform = 'translateY(0)';
+            subNav.style.opacity = '1';
+        } else {
+            subNav.style.transform = 'translateY(-100%)';
+            subNav.style.opacity = '0';
+        }
+
+        // Main nav border
+        mainNav.classList.toggle('border-white/10', scrollY > 50);
+        mainNav.classList.toggle('border-white/5', scrollY <= 50);
+    }
+
+    // Scroll-aware active state for sub-nav links
+    const sectionIds = ['normen', 'eu-ki-verordnung', 'technische-umsetzung', 'revisionssicherheit'];
+    const subnavLinks = document.querySelectorAll('.subnav-link');
+
+    function updateActiveSection() {
+        const scrollY = window.scrollY + 140; // offset for fixed navs
+        let activeId = sectionIds[0];
+
+        for (const id of sectionIds) {
+            const section = document.getElementById(id);
+            if (section && section.offsetTop <= scrollY) {
+                activeId = id;
+            }
+        }
+
+        subnavLinks.forEach(link => {
+            const isActive = link.getAttribute('data-section') === activeId;
+            link.classList.toggle('active', isActive);
+        });
+    }
+
+    // Smooth scroll with offset for sub-nav links
+    subnavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                const offset = 108; // main nav (64) + sub nav (44)
+                const top = target.offsetTop - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
     });
+
+    window.addEventListener('scroll', () => {
+        updateSubNav();
+        updateActiveSection();
+    }, { passive: true });
+
+    // Initial state
+    updateSubNav();
+    updateActiveSection();
 </script>
 </body>
 </html>
