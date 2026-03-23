@@ -42,13 +42,18 @@
             <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
-        <div class="flex items-center gap-3 text-xs text-slate-500">
-            <a href="../index.html" class="hover:text-white transition-colors">DE</a>
-            <a href="../en/index.html" class="hover:text-white transition-colors">EN</a>
-            <a href="../tr/index.html" class="hover:text-white transition-colors">TR</a>
-            <a href="index.html" class="text-white font-medium">FR</a>
-            <a href="../es/index.html" class="hover:text-white transition-colors">ES</a>
-            <a href="../it/index.html" class="hover:text-white transition-colors">IT</a>
+        <div class="flex items-center gap-3">
+            <div class="relative group">
+                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
+                <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
