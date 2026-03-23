@@ -176,97 +176,125 @@
     </div>
 </section>
 
-<!-- Execution Rings -->
-<section id="execution-rings" class="relative py-24 grid-pattern">
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Dijital Çalışan Olarak Ajan                                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Güvenlik</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Ring'leri</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Üç güven seviyesi, bir ajanın hangi araçları kullanabileceğini belirler. Bir işletim sistemi çekirdeği gibi.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Çalışma Biçimi</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Dijital Çalışan Olarak Ajan</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                Bir AIMOS ajanı bir sohbet botu gibi çalışmaz &mdash; kendi masası, kendi dosyalama sistemi
+                ve kendi günlük rutini olan bir memur gibi çalışır.
+            </p>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div class="reveal">
-                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
-                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Tam Erişim</text>
-                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
-                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standart</text>
-                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
-                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
-                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Salt Okunur</text>
-                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
-                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
-                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
-                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
-                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
-                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
-                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
-                </svg>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Haf&#305;za</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Gerçekleri, düzeltmeleri, tercihleri &mdash; kal&#305;c&#305; olarak hat&#305;rlar.
+                    Anlamsal arama, farkl&#305; kelimelerle bile an&#305;lar&#305; bulur.
+                </p>
             </div>
 
-            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
-                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                            <span class="text-green-400 font-bold text-xs">0</span>
-                        </div>
-                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Salt Okunur</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        En düşük risk. Ajan yalnızca okuma yapabilir: bellek çağırma, yapılandırma görüntüleme.
-                        Harici sistemlere erişim yok, yazma erişimi yok.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
-                    </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 </div>
-
-                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                            <span class="text-amber-400 font-bold text-xs">1</span>
-                        </div>
-                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standart</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Harici sistemlere okuma erişimi. SQL-SELECT, REST-GET, dosya okuma.
-                        Üretim verilerine yazma erişimi yok. Çoğu ajan için standart ring.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                            <span class="text-red-400 font-bold text-xs">2</span>
-                        </div>
-                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Tam Erişim</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Yazma işlemleri dahil tam erişim. Yönetici tarafından açık onay gerektirir.
-                        Kritik eylemler için İnsan-Döngüsünde kontrolü.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
-                    </div>
-                </div>
+                <h4 class="font-bold text-sm mb-1">Notlar &amp; Dosyalama</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    &Ouml;zetler, ara&#351;t&#305;rma sonuçlar&#305; ve görü&#351;me notlar&#305;n&#305;
+                    kendi çal&#305;&#351;ma alan&#305;na yazar &mdash; t&#305;pk&#305; bir memurun dosya dolab&#305;n&#305; düzenlemesi gibi.
+                </p>
             </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Takvim</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Randevular, son tarihler, hat&#305;rlat&#305;c&#305;lar. Ajan her etkile&#351;imde
+                    vadesi gelen ve geciken ö&#287;elerini kontrol eder &mdash; ve proaktif davran&#305;r.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Yap&#305;lacaklar Listesi</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Aç&#305;k görevler, delegasyonlar, bekleme listeleri.
+                    Dreaming döngüsünde otomatik olarak güncellenir.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Günlük Rutin</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Günde bir kez ajan ba&#287;&#305;ms&#305;z olarak takvimi, e-postalar&#305;
+                    ve aç&#305;k görevleri kontrol eder &mdash; kimse ona ula&#351;masa bile.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Rüya Görme</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Sessiz dönemlerde ajan konu&#351;malar&#305;n&#305; i&#351;ler: gerçekleri ç&#305;kar&#305;r,
+                    notlar&#305; ve yap&#305;lacaklar listelerini günceller, haf&#305;zas&#305;n&#305; peki&#351;tirir.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Tak&#305;m Çal&#305;&#351;mas&#305;</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Ajanlar birbirleriyle ileti&#351;im kurar &mdash; finans ajan&#305;, lojistik ajandan
+                    envanter de&#287;erlerini sorar, kullan&#305;c&#305;y&#305; yormadan.
+                </p>
+            </div>
+
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Eskalasyon</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Karma&#351;&#305;k sorularda ajan otomatik olarak daha güçlü bir yapay zeka modeline
+                    yükseltme yapar &mdash; anonimle&#351;tirilmi&#351; ve denetim güvenli &#351;ekilde kaydedilir.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+            <p class="text-sm text-slate-400 leading-relaxed">
+                <strong class="text-white">Sonuç:</strong> Bir AIMOS ajan&#305;, bir çal&#305;&#351;an&#305;n ihtiyac&#305; olan her &#351;eye sahiptir &mdash;
+                haf&#305;za, notlar, takvim, yap&#305;lacaklar listesi, meslekta&#351;lar, günlük bir rutin
+                ve gerekti&#287;inde yard&#305;m alma yetene&#287;i. Tek fark:
+                <strong class="text-signal-300">Günün 24 saati</strong> çal&#305;&#351;&#305;r,
+                hiçbir &#351;eyi <strong class="text-signal-300">asla</strong> unutmaz
+                ve <strong class="text-signal-300">saniyeler</strong> içinde yan&#305;t verir.
+            </p>
         </div>
     </div>
 </section>
+
 
 <!-- Uzun Süreli Bellek -->
 <section id="memory" class="relative py-24 bg-slate-900/50">
@@ -425,6 +453,97 @@
     </div>
 </section>
 
+<!-- Execution Rings -->
+<section id="execution-rings" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Güvenlik</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Ring'leri</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Üç güven seviyesi, bir ajanın hangi araçları kullanabileceğini belirler. Bir işletim sistemi çekirdeği gibi.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
+                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Tam Erişim</text>
+                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standart</text>
+                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
+                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
+                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Salt Okunur</text>
+                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
+                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
+                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
+                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
+                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
+                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
+                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
+                </svg>
+            </div>
+
+            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
+                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                            <span class="text-green-400 font-bold text-xs">0</span>
+                        </div>
+                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Salt Okunur</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        En düşük risk. Ajan yalnızca okuma yapabilir: bellek çağırma, yapılandırma görüntüleme.
+                        Harici sistemlere erişim yok, yazma erişimi yok.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-xs">1</span>
+                        </div>
+                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standart</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Harici sistemlere okuma erişimi. SQL-SELECT, REST-GET, dosya okuma.
+                        Üretim verilerine yazma erişimi yok. Çoğu ajan için standart ring.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+                            <span class="text-red-400 font-bold text-xs">2</span>
+                        </div>
+                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Tam Erişim</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Yazma işlemleri dahil tam erişim. Yönetici tarafından açık onay gerektirir.
+                        Kritik eylemler için İnsan-Döngüsünde kontrolü.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Örnek Ajanlar -->
 <section id="beispiele" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">

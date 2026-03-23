@@ -201,100 +201,134 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Execution Rings                                                      -->
+<!--  The Agent as a Digital Employee                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="execution-rings" class="relative py-24 grid-pattern">
+<section class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Security</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Three trust levels determine which tools an agent may use. Like an operating system kernel.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">How It Works</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">The Agent as a Digital Employee</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                An AIMOS agent does not work like a chatbot &mdash; it works like a clerk
+                with its own desk, its own filing system, and its own daily routine.
+            </p>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Ring Diagram SVG -->
-            <div class="reveal">
-                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
-                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Full Access</text>
-                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
-                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standard</text>
-                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
-                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
-                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Read Only</text>
-                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
-                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
-                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
-                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
-                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
-                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
-                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
-                </svg>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+            <!-- Memory -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Memory</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Remembers facts, corrections, preferences &mdash; permanently.
+                    Semantic search finds memories even with different wording.
+                </p>
             </div>
 
-            <!-- Ring Descriptions -->
-            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
-                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                            <span class="text-green-400 font-bold text-xs">0</span>
-                        </div>
-                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Read Only</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Lowest risk. The agent may only read: recall memory, view configuration.
-                        No access to external systems, no write access.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
-                    </div>
+            <!-- Notes & Filing -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                 </div>
-
-                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                            <span class="text-amber-400 font-bold text-xs">1</span>
-                        </div>
-                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standard</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Read access to external systems. SQL SELECT, REST GET, file read.
-                        No write access to production data. Default ring for most agents.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
-                    </div>
-                </div>
-
-                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                            <span class="text-red-400 font-bold text-xs">2</span>
-                        </div>
-                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Full Access</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Full access including write operations. Requires explicit activation
-                        by the administrator. Human-in-the-loop for critical actions.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
-                    </div>
-                </div>
+                <h4 class="font-bold text-sm mb-1">Notes &amp; Filing</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Writes summaries, research results, and conversation notes
+                    into its own workspace &mdash; like a clerk maintaining their filing cabinet.
+                </p>
             </div>
+
+            <!-- Calendar -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Calendar</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Appointments, deadlines, follow-ups. The agent checks its due
+                    and overdue items at every interaction &mdash; and acts proactively.
+                </p>
+            </div>
+
+            <!-- Todo List -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Todo List</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Open tasks, delegations, waiting lists.
+                    Automatically updated during the dreaming cycle.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
+            <!-- Daily Routine -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Daily Routine</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Once a day, the agent independently checks calendar, emails,
+                    and open tasks &mdash; even without anyone reaching out.
+                </p>
+            </div>
+
+            <!-- Dreaming -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Dreaming</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    During quiet phases, the agent processes its conversations: extracts facts,
+                    updates notes and todo lists, consolidates its memory.
+                </p>
+            </div>
+
+            <!-- Teamwork -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Teamwork</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Agents communicate with each other &mdash; the finance agent asks the
+                    logistics agent for inventory values, without burdening the user.
+                </p>
+            </div>
+
+            <!-- Escalation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
+                <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
+                    <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-1">Escalation</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    For complex questions, the agent automatically escalates to a more powerful
+                    AI model &mdash; anonymized and logged in an audit-proof manner.
+                </p>
+            </div>
+        </div>
+
+        <!-- Summary box -->
+        <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+            <p class="text-sm text-slate-400 leading-relaxed">
+                <strong class="text-white">The result:</strong> An AIMOS agent has everything an employee needs &mdash;
+                memory, notes, calendar, todo list, colleagues, a daily routine,
+                and the ability to get help when needed. The only difference:
+                It works <strong class="text-signal-300">around the clock</strong>,
+                never <strong class="text-signal-300">forgets</strong> anything,
+                and responds in <strong class="text-signal-300">seconds</strong>.
+            </p>
         </div>
     </div>
 </section>
+
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Long-Term Memory                                                     -->
@@ -565,6 +599,101 @@
     </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Execution Rings                                                      -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="execution-rings" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Security</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Three trust levels determine which tools an agent may use. Like an operating system kernel.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Ring Diagram SVG -->
+            <div class="reveal">
+                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
+                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Full Access</text>
+                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standard</text>
+                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
+                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
+                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Read Only</text>
+                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
+                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
+                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
+                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
+                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
+                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
+                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
+                </svg>
+            </div>
+
+            <!-- Ring Descriptions -->
+            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
+                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                            <span class="text-green-400 font-bold text-xs">0</span>
+                        </div>
+                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Read Only</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Lowest risk. The agent may only read: recall memory, view configuration.
+                        No access to external systems, no write access.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-xs">1</span>
+                        </div>
+                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standard</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Read access to external systems. SQL SELECT, REST GET, file read.
+                        No write access to production data. Default ring for most agents.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+                            <span class="text-red-400 font-bold text-xs">2</span>
+                        </div>
+                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Full Access</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Full access including write operations. Requires explicit activation
+                        by the administrator. Human-in-the-loop for critical actions.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Example Agents                                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
