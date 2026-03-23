@@ -239,6 +239,79 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Cos'è un agente IA?                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 bg-slate-900/50">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Il concetto</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                Cos'è un agente IA?
+            </h2>
+            <p class="text-slate-400 max-w-3xl mx-auto text-lg">
+                Un agente IA non è un chat-bot. È un <strong class="text-white">collaboratore digitale</strong>
+                con un proprio ambito di responsabilità, una propria memoria e accesso diretto ai Suoi sistemi informatici.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Left: What a chat-bot does -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 reveal">
+                <div class="text-xs text-red-400/60 uppercase tracking-wider mb-4">Cosa fa un chat-bot</div>
+                <ul class="space-y-3 text-sm text-slate-500">
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-400/60 mt-0.5">&times;</span>
+                        <span>Risponde alle domande in base al suo materiale di addestramento</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-400/60 mt-0.5">&times;</span>
+                        <span>Dimentica tutto dopo la conversazione</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-400/60 mt-0.5">&times;</span>
+                        <span>Non può fare nulla &mdash; genera solo testo</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-red-400/60 mt-0.5">&times;</span>
+                        <span>Attende passivamente il Suo input</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: What an AIMOS agent does -->
+            <div class="gradient-border reveal" style="transition-delay:0.1s">
+                <div class="bg-slate-850 rounded-xl p-7 h-full">
+                    <div class="text-xs text-signal-400 uppercase tracking-wider mb-4">Cosa fa un agente AIMOS</div>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong class="text-white">Supervisiona il proprio ambito di responsabilità</strong> &mdash; scorte, fatture aperte, richieste clienti, scadenze</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong class="text-white">Agisce in autonomia</strong> &mdash; interroga database, crea documenti, invia messaggi, imposta promemoria</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong class="text-white">Ricorda in modo permanente</strong> &mdash; conosce ogni cliente, ogni preferenza, ogni pratica aperta</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong class="text-white">Agisce in modo proattivo</strong> &mdash; segnala livelli critici, ricorda le scadenze, dà seguito alle richieste in sospeso</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong class="text-white">Prepara ma non decide mai da solo</strong> &mdash; bozze di e-mail, proposte di prenotazione, richieste di acquisto vengono inviate al collaboratore per l'approvazione</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  La flotta di specialisti                                             -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="agenti" class="relative py-28 grid-pattern">
@@ -251,83 +324,134 @@
             </h2>
             <p class="text-slate-400 max-w-2xl mx-auto text-lg">
                 Ogni agente è un esperto con una propria memoria, propri strumenti
-                e accesso diretto ai Suoi sistemi. Espandibile a piacere.
+                e accesso diretto ai Suoi sistemi. Supervisiona il proprio ambito di responsabilità
+                e svolge il proprio compito in autonomia &mdash; 24 ore su 24.
             </p>
         </div>
 
-        <!-- Agent Cards -->
-        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Agent Cards — griglia uniforme a 4 colonne -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
             <!-- Agente Costruzioni -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12l1.5-4.5L7 9l2-6 2 6 3.5-1.5L16 12m-14 0h14m-14 0v4a2 2 0 002 2h10a2 2 0 002-2v-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agente Costruzioni</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">ex Mimar</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Legge file AutoCAD e Tekla, crea distinte base automatizzate,
-                        verifica i requisiti statici e rileva deviazioni dei materiali &mdash;
-                        direttamente dai Suoi sistemi CAD esistenti.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">.dwg</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">.ifc</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">Tekla API</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">BIM</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Agente Logistica -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.1s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agente Logistica</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">ex Depocu</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Collega Uyumsoft, SAP, Microsoft Navision e altri sistemi ERP.
-                        Monitora le scorte in tempo reale, segnala livelli critici
-                        e automatizza le richieste di approvvigionamento.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">Uyumsoft</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">SAP RFC</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">Navision</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">REST</span>
-                        </div>
-                    </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col">
+                <div class="text-xs text-signal-400 font-medium mb-2">Documentazione tecnica</div>
+                <h4 class="font-bold mb-2">Agente Costruzioni</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Legge file CAD e Tekla, crea distinte base, verifica i requisiti statici.
+                    <strong class="text-slate-300">Deposita i risultati come bozza</strong> &mdash;
+                    l'ingegnere verifica e approva.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">.dwg</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">.ifc</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Tekla API</span>
                 </div>
             </div>
 
             <!-- Agente Finanza -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.2s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agente Finanza</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">ex Hesapci</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Integra ETA V8, DATEV e altri sistemi contabili.
-                        Analizza il flusso di cassa, prepara le registrazioni contabili e
-                        fornisce saldi aggiornati su richiesta &mdash; senza file di esportazione.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">ETA V8</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">DATEV</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">Firebird</span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs text-slate-400 font-mono">MSSQL</span>
-                        </div>
-                    </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.05s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Contabilità &amp; Finanze</div>
+                <h4 class="font-bold mb-2">Agente Finanza</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Accede a ETA, DATEV o altri sistemi contabili. Fornisce saldi e flusso di cassa in pochi secondi.
+                    <strong class="text-slate-300">Prepara le registrazioni</strong> &mdash;
+                    il contabile verifica e approva.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ETA V8</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
                 </div>
+            </div>
+
+            <!-- Agente Logistica -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.1s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Magazzino &amp; Approvvigionamento</div>
+                <h4 class="font-bold mb-2">Agente Logistica</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Monitora le scorte tramite interfaccia ERP, rileva i livelli critici in autonomia.
+                    <strong class="text-slate-300">Crea la richiesta di approvvigionamento</strong> &mdash;
+                    l'acquirente approva l'ordine.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SAP OData</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Navision</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">REST</span>
+                </div>
+            </div>
+
+            <!-- Agente Produzione -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.15s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Controllo produzione</div>
+                <h4 class="font-bold mb-2">Agente Produzione</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Legge lo stato delle macchine, ottimizza la sequenza degli ordini, crea i report di cambio turno.
+                    <strong class="text-slate-300">Propone la sequenza</strong> &mdash;
+                    il responsabile di produzione approva.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">OPC-UA</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">MES-API</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
+                </div>
+            </div>
+
+            <!-- Agente HR -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.2s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Risorse umane</div>
+                <h4 class="font-bold mb-2">Agente HR</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Verifica le richieste di ferie rispetto al calendario del team, traccia l'onboarding, avvisa sulle scadenze contrattuali.
+                    <strong class="text-slate-300">Raccomanda una decisione</strong> &mdash;
+                    il responsabile approva.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Personio</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">iCal</span>
+                </div>
+            </div>
+
+            <!-- Agente Legale -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.25s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Diritto &amp; Contratti</div>
+                <h4 class="font-bold mb-2">Agente Legale</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Analizza i contratti per le scadenze, genera bozze di NDA da modelli, segnala modifiche normative.
+                    <strong class="text-slate-300">Crea la bozza</strong> &mdash;
+                    il giurista verifica e approva.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">d.velop</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ELO</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PDF/OCR</span>
+                </div>
+            </div>
+
+            <!-- Agente IT-Ops -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.3s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Operazioni IT</div>
+                <h4 class="font-bold mb-2">Agente IT-Ops</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Riceve gli avvisi di monitoraggio, arricchisce i ticket, monitora le scadenze delle licenze, crea report sullo stato di salute.
+                    <strong class="text-slate-300">Prioritizza l'incidente</strong> &mdash;
+                    l'amministratore verifica e scala.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Zabbix</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Jira</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SNMP</span>
+                </div>
+            </div>
+
+            <!-- Placeholder: Il Vostro Agente -->
+            <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center reveal" style="transition-delay:0.35s">
+                <div class="text-2xl text-slate-700 mb-2">+</div>
+                <h4 class="font-bold text-sm text-slate-500 mb-1">Il Vostro Agente</h4>
+                <p class="text-slate-600 text-xs">
+                    Progettato individualmente per il Suo reparto, i Suoi sistemi, i Suoi workflow.
+                </p>
+                <a href="kontakt.html" class="mt-3 text-signal-400 text-xs hover:text-signal-300 underline underline-offset-2">Parliamone ora</a>
             </div>
         </div>
 
@@ -335,7 +459,8 @@
         <div class="mt-10 text-center reveal">
             <p class="text-slate-500 text-sm">
                 Questi sono esempi. Gli agenti AIMOS vengono configurati individualmente per ogni azienda &mdash;
-                <a href="agenti.html" class="text-signal-400 hover:text-signal-300 underline underline-offset-2">scopri altri tipi di agenti</a>.
+                ogni reparto, ogni interfaccia, ogni workflow.
+                <a href="agenti.html" class="text-signal-400 hover:text-signal-300 underline underline-offset-2">Scopra di più sull'architettura degli agenti</a>.
             </p>
         </div>
     </div>
