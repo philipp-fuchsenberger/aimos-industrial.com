@@ -366,116 +366,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Execution Rings (CR-142)                                             -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="execution-rings" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Sicherheit</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei Vertrauensstufen bestimmen, welche Werkzeuge ein Agent nutzen darf. Wie bei einem Betriebssystem-Kernel.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Ring Diagram SVG -->
-            <div class="reveal">
-                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <!-- Ring 2 (outermost) -->
-                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
-                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Full Access</text>
-
-                    <!-- Ring 1 (middle) -->
-                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
-                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standard</text>
-
-                    <!-- Ring 0 (innermost) -->
-                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
-                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
-                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Read Only</text>
-
-                    <!-- Ring 1 tools -->
-                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
-                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
-
-                    <!-- Ring 2 tools -->
-                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
-                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
-                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
-
-                    <!-- Ring 0 tools -->
-                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
-                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
-                </svg>
-            </div>
-
-            <!-- Ring Descriptions -->
-            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
-                <!-- Ring 0 -->
-                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                            <span class="text-green-400 font-bold text-xs">0</span>
-                        </div>
-                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Read Only</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Niedrigstes Risiko. Der Agent darf nur lesen: Gedächtnis abrufen, Konfiguration einsehen.
-                        Kein Zugriff auf externe Systeme, kein Schreibzugriff.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
-                    </div>
-                </div>
-
-                <!-- Ring 1 -->
-                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                            <span class="text-amber-400 font-bold text-xs">1</span>
-                        </div>
-                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standard</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Lesezugriff auf externe Systeme. SQL-SELECT, REST-GET, Datei lesen.
-                        Kein Schreibzugriff auf Produktionsdaten. Standard-Ring für die meisten Agenten.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
-                    </div>
-                </div>
-
-                <!-- Ring 2 -->
-                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                            <span class="text-red-400 font-bold text-xs">2</span>
-                        </div>
-                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Full Access</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Vollzugriff inklusive Schreiboperationen. Erfordert explizite Freischaltung
-                        durch den Administrator. Human-in-the-Loop für kritische Aktionen.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Langzeitgedächtnis                                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="memory" class="relative py-24 bg-slate-900/50">
@@ -766,6 +656,117 @@
         </div>
     </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Execution Rings (CR-142)                                             -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="execution-rings" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">CR-142 &mdash; Sicherheit</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Drei Vertrauensstufen bestimmen, welche Werkzeuge ein Agent nutzen darf. Wie bei einem Betriebssystem-Kernel.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Ring Diagram SVG -->
+            <div class="reveal">
+                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                    <!-- Ring 2 (outermost) -->
+                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
+                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Full Access</text>
+
+                    <!-- Ring 1 (middle) -->
+                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
+                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standard</text>
+
+                    <!-- Ring 0 (innermost) -->
+                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
+                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
+                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Read Only</text>
+
+                    <!-- Ring 1 tools -->
+                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
+                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
+
+                    <!-- Ring 2 tools -->
+                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
+                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
+                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
+
+                    <!-- Ring 0 tools -->
+                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
+                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
+                </svg>
+            </div>
+
+            <!-- Ring Descriptions -->
+            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
+                <!-- Ring 0 -->
+                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                            <span class="text-green-400 font-bold text-xs">0</span>
+                        </div>
+                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Read Only</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Niedrigstes Risiko. Der Agent darf nur lesen: Gedächtnis abrufen, Konfiguration einsehen.
+                        Kein Zugriff auf externe Systeme, kein Schreibzugriff.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
+                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
+                    </div>
+                </div>
+
+                <!-- Ring 1 -->
+                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                            <span class="text-amber-400 font-bold text-xs">1</span>
+                        </div>
+                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standard</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Lesezugriff auf externe Systeme. SQL-SELECT, REST-GET, Datei lesen.
+                        Kein Schreibzugriff auf Produktionsdaten. Standard-Ring für die meisten Agenten.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
+                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
+                    </div>
+                </div>
+
+                <!-- Ring 2 -->
+                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+                            <span class="text-red-400 font-bold text-xs">2</span>
+                        </div>
+                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Full Access</h3>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                        Vollzugriff inklusive Schreiboperationen. Erfordert explizite Freischaltung
+                        durch den Administrator. Human-in-the-Loop für kritische Aktionen.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
+                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Beispiel-Agenten                                                     -->
