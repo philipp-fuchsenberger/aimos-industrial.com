@@ -144,9 +144,9 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-[-100%] opacity-0 transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6 h-11 flex items-center justify-center gap-8 text-sm font-medium">
+        <a href="#technische-umsetzung" class="subnav-link" data-section="technische-umsetzung">Technische Umsetzung</a>
         <a href="#normen" class="subnav-link" data-section="normen">Normen</a>
         <a href="#eu-ki-verordnung" class="subnav-link" data-section="eu-ki-verordnung">EU KI-Verordnung</a>
-        <a href="#technische-umsetzung" class="subnav-link" data-section="technische-umsetzung">Technische Umsetzung</a>
         <a href="#revisionssicherheit" class="subnav-link" data-section="revisionssicherheit">Revisionssicherheit</a>
     </div>
 </nav>
@@ -166,21 +166,15 @@
     </div>
 </section>
 
+<section id="technische-umsetzung" class="relative">
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  CHAPTER 1: NORMEN — Regulatorische Konformität                      -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="normen" class="relative">
+    <div class="text-center pt-24 pb-4 bg-slate-900/50 reveal">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz durch Technik</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Technische Umsetzung</h2>
+        <p class="text-slate-500 text-sm">PII-Vault &middot; Audit-Trail &middot; Execution Rings &middot; Token-Tracking</p>
+    </div>
 
-    <!-- Datenlokalität (DSGVO context) -->
-    <div id="datenlokalitaet" class="relative py-24 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-4 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Regulatorische Konformität</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Normen</h2>
-                <p class="text-slate-500 text-sm mb-8">DSGVO / GDPR &middot; ISO 9001 &amp; 27001 &middot; GoBD</p>
-            </div>
-            <div class="text-center mb-12 reveal">
+<div class="text-center mb-12 reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datensouveränität</p>
                 <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Datenlokalität</h3>
                 <p class="text-slate-400 max-w-2xl mx-auto">Alle Daten bleiben auf Ihrem SovereignNode. Kein Byte verlässt Ihr Netzwerk &mdash; außer Sie erlauben es explizit.</p>
@@ -250,268 +244,7 @@
                 </svg>
             </div>
         </div>
-    </div>
 
-    <!-- DSGVO / GDPR + ISO 9001/27001 -->
-    <div id="dsgvo" class="relative py-24 grid-pattern">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="reveal">
-                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Datenschutz</p>
-                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">DSGVO / GDPR</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                        AIMOS erfüllt die DSGVO nicht durch nachträgliche Anpassung, sondern durch
-                        architektonische Entscheidungen &mdash; <strong class="text-white">Privacy by Design</strong>.
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 25 &mdash; Datenschutz durch Technikgestaltung</h4>
-                            <ul class="space-y-2 text-sm text-slate-400">
-                                <li class="check-item">Datenverarbeitung standardmäßig lokal (SovereignNode)</li>
-                                <li class="check-item">PII-Vault anonymisiert vor jeder externen Übermittlung</li>
-                                <li class="check-item">Kein Cloud-Service in der Standard-Konfiguration</li>
-                                <li class="check-item">Datenminimierung: nur relevante Kontextdaten im LLM-Prompt</li>
-                            </ul>
-                        </div>
-                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Sicherheit der Verarbeitung</h4>
-                            <ul class="space-y-2 text-sm text-slate-400">
-                                <li class="check-item">Verschlüsselung: PostgreSQL SSL, SQLite on-disk</li>
-                                <li class="check-item">Zugriffskontrolle durch Execution Rings (3 Stufen)</li>
-                                <li class="check-item">Lückenloser Audit-Trail aller Verarbeitungsvorgänge</li>
-                                <li class="check-item">Session-gebundene PII-Mappings (kein persistenter PII-Speicher)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ISO 9001/27001 -->
-                <div class="reveal" id="iso" style="transition-delay: 0.15s;">
-                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Normenkonformität</p>
-                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 &amp; 27001</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                        AIMOS unterstützt die Anforderungen beider Standards durch eingebaute Mechanismen.
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Qualitätsmanagement</h4>
-                            <ul class="space-y-2 text-sm text-slate-400">
-                                <li class="check-item">Nachvollziehbarkeit: Jede Entscheidung im Audit-Log</li>
-                                <li class="check-item">Rückverfolgbarkeit: Session-IDs verknüpfen alle Ereignisse</li>
-                                <li class="check-item">Dokumentierte Prozesse: System-Prompts als SOPs</li>
-                                <li class="check-item">Korrekturmaßnahmen: Dreaming-Zyklus lernt aus Fehlern</li>
-                            </ul>
-                        </div>
-                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 27001 &mdash; Informationssicherheit</h4>
-                            <ul class="space-y-2 text-sm text-slate-400">
-                                <li class="check-item">Klassifizierung: Execution Rings definieren Zugriffsstufen</li>
-                                <li class="check-item">Zugriffskontrolle: Tool-Freischaltung pro Agent konfigurierbar</li>
-                                <li class="check-item">Ereignisprotokollierung: Alle 6 Event-Typen erfasst</li>
-                                <li class="check-item">Physische Sicherheit: Daten verlassen den SovereignNode nicht</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- GoBD -->
-    <div id="gobd" class="relative py-24 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Buchführung</p>
-                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">GoBD-Konformität</h3>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                        Die GoBD (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von
-                        Büchern, Aufzeichnungen und Unterlagen in elektronischer Form) stellt
-                        besondere Anforderungen an KI-gestützte Systeme.
-                    </p>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        AIMOS löst dies durch eine strikte architektonische Trennung:
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Trennung: Entwurf vs. Festschreibung</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Agenten bereiten Buchungssätze vor (Entwurf). Die Festschreibung
-                                erfolgt ausschließlich durch autorisierte Sachbearbeiter im Zielsystem
-                                (ETA V8, DATEV, etc.). Kein LLM hat Transaktionsrechte.
-                            </p>
-                        </div>
-                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
-                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Human-in-the-Loop</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed">
-                                Ring 2-Aktionen (Schreibzugriffe) erfordern explizite Freischaltung.
-                                Buchungsrelevante Vorgänge benötigen immer menschliche Freigabe &mdash;
-                                architektonisch erzwungen, nicht durch Policy.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GoBD Diagram -->
-                <div class="reveal" style="transition-delay: 0.15s;">
-                    <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                        <defs>
-                            <marker id="gobdArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                            </marker>
-                            <marker id="gobdArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
-                            </marker>
-                        </defs>
-
-                        <!-- Agent creates draft -->
-                        <rect x="100" y="20" width="200" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="200" y="42" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Finanz-Agent</text>
-                        <text x="200" y="58" text-anchor="middle" fill="#94a3b8" font-size="9">Erstellt Buchungsentwurf</text>
-
-                        <line x1="200" y1="70" x2="200" y2="100" stroke="#0070f3" stroke-width="1.5" marker-end="url(#gobdArrow)"/>
-
-                        <!-- Draft -->
-                        <rect x="80" y="100" width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                        <text x="200" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">ENTWURF</text>
-                        <text x="200" y="138" text-anchor="middle" fill="#94a3b8" font-size="9">Buchungssatz (nicht festgeschrieben)</text>
-
-                        <line x1="200" y1="150" x2="200" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
-
-                        <!-- Human Review -->
-                        <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
-                        <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">MENSCHLICHE PRÜFUNG</text>
-                        <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">Sachbearbeiter prüft und genehmigt</text>
-
-                        <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
-
-                        <!-- Booking -->
-                        <rect x="80" y="270" width="240" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                        <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">FESTSCHREIBUNG</text>
-                        <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">Im Zielsystem (ETA, DATEV, etc.)</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  CHAPTER 2: EU KI-VERORDNUNG — EU AI Act                            -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="eu-ki-verordnung" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-4 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU AI Act</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">EU KI-Verordnung</h2>
-            <p class="text-slate-500 text-sm mb-8">Risikoklassifizierung &middot; Transparenz &middot; Menschliche Aufsicht &middot; Dokumentation</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-            <div class="reveal">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-300 text-xs font-medium mb-4">
-                    In Kraft ab August 2026
-                </div>
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Regulierung</p>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">EU AI Act (KI-Verordnung)</h3>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Die EU-KI-Verordnung (EU) 2024/1689 tritt schrittweise in Kraft und betrifft
-                    jedes Unternehmen, das KI-Systeme einsetzt. AIMOS ist architektonisch auf
-                    Compliance ausgelegt &mdash; nicht nachtr&auml;glich angepasst.
-                </p>
-
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Risikoklassifizierung: Begrenztes Risiko</h4>
-                                <p class="text-slate-400 text-sm">AIMOS-Agenten sind Assistenzsysteme mit menschlicher Aufsicht (Human-in-the-Loop). Keine autonomen Entscheidungen &uuml;ber Personen, keine biometrische &Uuml;berwachung, keine Sozial-Scoring-Funktionen. Damit fallen sie in die Kategorie &bdquo;begrenztes Risiko&rdquo; &mdash; nicht &bdquo;hochriskant&rdquo;.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Transparenzpflicht: Erf&uuml;llt</h4>
-                                <p class="text-slate-400 text-sm">Art. 50: Nutzer m&uuml;ssen wissen, dass sie mit einer KI interagieren. Jeder AIMOS-Agent identifiziert sich in seinem System-Prompt als KI-Assistent. Alle Aktionen sind im Audit-Trail nachvollziehbar.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Menschliche Aufsicht: Architektonisch erzwungen</h4>
-                                <p class="text-slate-400 text-sm">Art. 14: Execution Rings stellen sicher, dass kein Agent eigenm&auml;chtig kritische Aktionen ausf&uuml;hrt. Buchungen, E-Mails und Bestellungen werden als Entwurf vorgelegt &mdash; der Mensch entscheidet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right column: additional requirements -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <div class="space-y-4">
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Technische Dokumentation: Vollst&auml;ndig</h4>
-                                <p class="text-slate-400 text-sm">Art. 11: Systemarchitektur, Datenfl&uuml;sse, Modellbeschreibung, Leistungskennzahlen und Risikobewertung sind dokumentiert und einsehbar. MIT-Lizenz: vollst&auml;ndiger Quellcode-Zugang.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Protokollierung: L&uuml;ckenlos</h4>
-                                <p class="text-slate-400 text-sm">Art. 12: Jede Agenten-Aktion wird protokolliert &mdash; Tool-Aufrufe, LLM-Anfragen, Token-Verbrauch, Entscheidungsketten. Revisionssichere Audit-Trails mit Session-IDs und Zeitstempeln.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Datensouver&auml;nit&auml;t: Vollst&auml;ndig</h4>
-                                <p class="text-slate-400 text-sm">Art. 10: Trainingsdaten und Verarbeitungsdaten verlassen den SovereignNode nicht. PII-Vault anonymisiert externe API-Aufrufe automatisch. Keine Cloud-Abh&auml;ngigkeit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-5">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <div>
-                                <h4 class="font-semibold text-sm mb-1">Vorteil lokaler KI</h4>
-                                <p class="text-slate-400 text-sm">Cloud-KI-Dienste m&uuml;ssen als &bdquo;General Purpose AI&rdquo; (GPAI) strengere Auflagen erf&uuml;llen. AIMOS nutzt ein lokal betriebenes Open-Source-Modell &mdash; die GPAI-Pflichten treffen den Modell-Anbieter (Alibaba/Qwen), nicht den Betreiber.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  CHAPTER 3: TECHNISCHE UMSETZUNG — Datenschutz durch Technik        -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="technische-umsetzung" class="relative">
-
-    <div class="text-center pt-24 pb-4 bg-slate-900/50 reveal">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz durch Technik</p>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Technische Umsetzung</h2>
-        <p class="text-slate-500 text-sm">PII-Vault &middot; Audit-Trail &middot; Execution Rings &middot; Token-Tracking</p>
-    </div>
 
     <!-- PII-Vault -->
     <div id="pii-vault" class="relative py-24 bg-slate-900/50">
@@ -787,10 +520,263 @@
 
 </section>
 
+<section id="normen" class="relative">
 
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  CHAPTER 4: REVISIONSSICHERHEIT — Nachweisbarkeit                    -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- Normen chapter header -->
+    <div class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-4 reveal">
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Regulatorische Konformität</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Normen</h2>
+                <p class="text-slate-500 text-sm mb-8">DSGVO / GDPR &middot; ISO 9001 &amp; 27001 &middot; GoBD</p>
+            </div>
+                </div>
+
+    <!-- DSGVO / GDPR + ISO 9001/27001 -->
+    <div id="dsgvo" class="relative py-24 grid-pattern">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Datenschutz</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">DSGVO / GDPR</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                        AIMOS erfüllt die DSGVO nicht durch nachträgliche Anpassung, sondern durch
+                        architektonische Entscheidungen &mdash; <strong class="text-white">Privacy by Design</strong>.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 25 &mdash; Datenschutz durch Technikgestaltung</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Datenverarbeitung standardmäßig lokal (SovereignNode)</li>
+                                <li class="check-item">PII-Vault anonymisiert vor jeder externen Übermittlung</li>
+                                <li class="check-item">Kein Cloud-Service in der Standard-Konfiguration</li>
+                                <li class="check-item">Datenminimierung: nur relevante Kontextdaten im LLM-Prompt</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Sicherheit der Verarbeitung</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Verschlüsselung: PostgreSQL SSL, SQLite on-disk</li>
+                                <li class="check-item">Zugriffskontrolle durch Execution Rings (3 Stufen)</li>
+                                <li class="check-item">Lückenloser Audit-Trail aller Verarbeitungsvorgänge</li>
+                                <li class="check-item">Session-gebundene PII-Mappings (kein persistenter PII-Speicher)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ISO 9001/27001 -->
+                <div class="reveal" id="iso" style="transition-delay: 0.15s;">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Normenkonformität</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 &amp; 27001</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
+                        AIMOS unterstützt die Anforderungen beider Standards durch eingebaute Mechanismen.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Qualitätsmanagement</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Nachvollziehbarkeit: Jede Entscheidung im Audit-Log</li>
+                                <li class="check-item">Rückverfolgbarkeit: Session-IDs verknüpfen alle Ereignisse</li>
+                                <li class="check-item">Dokumentierte Prozesse: System-Prompts als SOPs</li>
+                                <li class="check-item">Korrekturmaßnahmen: Dreaming-Zyklus lernt aus Fehlern</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 27001 &mdash; Informationssicherheit</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="check-item">Klassifizierung: Execution Rings definieren Zugriffsstufen</li>
+                                <li class="check-item">Zugriffskontrolle: Tool-Freischaltung pro Agent konfigurierbar</li>
+                                <li class="check-item">Ereignisprotokollierung: Alle 6 Event-Typen erfasst</li>
+                                <li class="check-item">Physische Sicherheit: Daten verlassen den SovereignNode nicht</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GoBD -->
+    <div id="gobd" class="relative py-24 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Buchführung</p>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">GoBD-Konformität</h3>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                        Die GoBD (Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von
+                        Büchern, Aufzeichnungen und Unterlagen in elektronischer Form) stellt
+                        besondere Anforderungen an KI-gestützte Systeme.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        AIMOS löst dies durch eine strikte architektonische Trennung:
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Trennung: Entwurf vs. Festschreibung</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Agenten bereiten Buchungssätze vor (Entwurf). Die Festschreibung
+                                erfolgt ausschließlich durch autorisierte Sachbearbeiter im Zielsystem
+                                (ETA V8, DATEV, etc.). Kein LLM hat Transaktionsrechte.
+                            </p>
+                        </div>
+                        <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
+                            <h4 class="font-semibold text-sm mb-2 text-amber-400">Human-in-the-Loop</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Ring 2-Aktionen (Schreibzugriffe) erfordern explizite Freischaltung.
+                                Buchungsrelevante Vorgänge benötigen immer menschliche Freigabe &mdash;
+                                architektonisch erzwungen, nicht durch Policy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GoBD Diagram -->
+                <div class="reveal" style="transition-delay: 0.15s;">
+                    <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
+                        <defs>
+                            <marker id="gobdArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                            </marker>
+                            <marker id="gobdArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Agent creates draft -->
+                        <rect x="100" y="20" width="200" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="200" y="42" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Finanz-Agent</text>
+                        <text x="200" y="58" text-anchor="middle" fill="#94a3b8" font-size="9">Erstellt Buchungsentwurf</text>
+
+                        <line x1="200" y1="70" x2="200" y2="100" stroke="#0070f3" stroke-width="1.5" marker-end="url(#gobdArrow)"/>
+
+                        <!-- Draft -->
+                        <rect x="80" y="100" width="240" height="50" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
+                        <text x="200" y="122" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="600">ENTWURF</text>
+                        <text x="200" y="138" text-anchor="middle" fill="#94a3b8" font-size="9">Buchungssatz (nicht festgeschrieben)</text>
+
+                        <line x1="200" y1="150" x2="200" y2="180" stroke="#f59e0b" stroke-width="1.5"/>
+
+                        <!-- Human Review -->
+                        <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
+                        <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">MENSCHLICHE PRÜFUNG</text>
+                        <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">Sachbearbeiter prüft und genehmigt</text>
+
+                        <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
+
+                        <!-- Booking -->
+                        <rect x="80" y="270" width="240" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
+                        <text x="200" y="292" text-anchor="middle" fill="#10b981" font-size="11" font-weight="600">FESTSCHREIBUNG</text>
+                        <text x="200" y="308" text-anchor="middle" fill="#94a3b8" font-size="9">Im Zielsystem (ETA, DATEV, etc.)</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="eu-ki-verordnung" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-4 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU AI Act</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">EU KI-Verordnung</h2>
+            <p class="text-slate-500 text-sm mb-8">Risikoklassifizierung &middot; Transparenz &middot; Menschliche Aufsicht &middot; Dokumentation</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/20 bg-amber-500/5 text-amber-300 text-xs font-medium mb-4">
+                    In Kraft ab August 2026
+                </div>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">EU-Regulierung</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">EU AI Act (KI-Verordnung)</h3>
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Die EU-KI-Verordnung (EU) 2024/1689 tritt schrittweise in Kraft und betrifft
+                    jedes Unternehmen, das KI-Systeme einsetzt. AIMOS ist architektonisch auf
+                    Compliance ausgelegt &mdash; nicht nachtr&auml;glich angepasst.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Risikoklassifizierung: Begrenztes Risiko</h4>
+                                <p class="text-slate-400 text-sm">AIMOS-Agenten sind Assistenzsysteme mit menschlicher Aufsicht (Human-in-the-Loop). Keine autonomen Entscheidungen &uuml;ber Personen, keine biometrische &Uuml;berwachung, keine Sozial-Scoring-Funktionen. Damit fallen sie in die Kategorie &bdquo;begrenztes Risiko&rdquo; &mdash; nicht &bdquo;hochriskant&rdquo;.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Transparenzpflicht: Erf&uuml;llt</h4>
+                                <p class="text-slate-400 text-sm">Art. 50: Nutzer m&uuml;ssen wissen, dass sie mit einer KI interagieren. Jeder AIMOS-Agent identifiziert sich in seinem System-Prompt als KI-Assistent. Alle Aktionen sind im Audit-Trail nachvollziehbar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Menschliche Aufsicht: Architektonisch erzwungen</h4>
+                                <p class="text-slate-400 text-sm">Art. 14: Execution Rings stellen sicher, dass kein Agent eigenm&auml;chtig kritische Aktionen ausf&uuml;hrt. Buchungen, E-Mails und Bestellungen werden als Entwurf vorgelegt &mdash; der Mensch entscheidet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column: additional requirements -->
+            <div class="reveal" style="transition-delay: 0.15s;">
+                <div class="space-y-4">
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Technische Dokumentation: Vollst&auml;ndig</h4>
+                                <p class="text-slate-400 text-sm">Art. 11: Systemarchitektur, Datenfl&uuml;sse, Modellbeschreibung, Leistungskennzahlen und Risikobewertung sind dokumentiert und einsehbar. MIT-Lizenz: vollst&auml;ndiger Quellcode-Zugang.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Protokollierung: L&uuml;ckenlos</h4>
+                                <p class="text-slate-400 text-sm">Art. 12: Jede Agenten-Aktion wird protokolliert &mdash; Tool-Aufrufe, LLM-Anfragen, Token-Verbrauch, Entscheidungsketten. Revisionssichere Audit-Trails mit Session-IDs und Zeitstempeln.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Datensouver&auml;nit&auml;t: Vollst&auml;ndig</h4>
+                                <p class="text-slate-400 text-sm">Art. 10: Trainingsdaten und Verarbeitungsdaten verlassen den SovereignNode nicht. PII-Vault anonymisiert externe API-Aufrufe automatisch. Keine Cloud-Abh&auml;ngigkeit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-5">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Vorteil lokaler KI</h4>
+                                <p class="text-slate-400 text-sm">Cloud-KI-Dienste m&uuml;ssen als &bdquo;General Purpose AI&rdquo; (GPAI) strengere Auflagen erf&uuml;llen. AIMOS nutzt ein lokal betriebenes Open-Source-Modell &mdash; die GPAI-Pflichten treffen den Modell-Anbieter (Alibaba/Qwen), nicht den Betreiber.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="revisionssicherheit" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
@@ -952,7 +938,7 @@
     }
 
     // Scroll-aware active state for sub-nav links
-    const sectionIds = ['normen', 'eu-ki-verordnung', 'technische-umsetzung', 'revisionssicherheit'];
+    const sectionIds = ['technische-umsetzung', 'normen', 'eu-ki-verordnung', 'revisionssicherheit'];
     const subnavLinks = document.querySelectorAll('.subnav-link');
 
     function updateActiveSection() {
