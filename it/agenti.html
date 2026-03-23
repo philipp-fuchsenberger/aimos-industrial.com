@@ -417,6 +417,41 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Workspace & Privacy                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="workspace-privacy" class="relative py-24 grid-pattern">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-slate-850 border border-white/10 rounded-xl p-8 reveal">
+            <h3 class="text-2xl font-bold tracking-tight mb-4 text-white">Workspace &amp; privacy interna</h3>
+            <p class="text-slate-300 mb-6">Ogni agente dispone del proprio spazio di lavoro &mdash; come una scrivania chiusa a chiave:</p>
+            <ul class="space-y-3 text-slate-400 mb-6">
+                <li class="flex items-start gap-3">
+                    <span class="text-signal-400 font-mono text-sm mt-0.5">public/</span>
+                    <span>File condivisi deliberatamente con altri agenti (report, esportazioni, distinte base)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-signal-400 font-mono text-sm mt-0.5">privato</span>
+                    <span>Note, calendari, contatti, liste di attivit&agrave; &mdash; visibili solo all'agente proprietario</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-slate-500 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></span>
+                    <span>Nessun agente pu&ograve; leggere i dati privati di un altro agente</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-slate-500 mt-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></span>
+                    <span>Scambio file: Agente&nbsp;A scrive in <code class="text-signal-400 font-mono text-sm">public/</code> &rarr; notifica Agente&nbsp;B &rarr; Agente&nbsp;B legge tramite <code class="text-signal-400 font-mono text-sm">read_public</code></span>
+                </li>
+            </ul>
+            <div class="bg-slate-900/60 border border-white/5 rounded-lg p-5">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    <span class="text-signal-400 font-semibold">Esempio:</span> L'agente Costruzione legge un file DXF dalla postazione dell'ingegnere, crea una distinta base e la deposita nella propria cartella <code class="text-signal-400 font-mono text-xs">public/</code>. L'agente Finanza legge la distinta base e calcola i costi dei materiali &mdash; senza accesso alle note di costruzione.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Execution Rings                                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="execution-rings" class="relative py-24 grid-pattern">
