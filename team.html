@@ -675,126 +675,142 @@
 <!--  7. BEISPIELE — Beispiel-Agenten                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="beispiele" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Praxisbeispiele</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Beispiel-Agenten</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei vorkonfigurierte Agenten-Typen f&uuml;r typische Industrieumgebungen.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ein Agent f&uuml;r jede Abteilung</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Jeder Agent wird individuell f&uuml;r seine Aufgabe konfiguriert &mdash; mit eigenen Skills, eigenen Konnektoren und eigener Wissensbasis.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Konstruktions-Agent -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12l1.5-4.5L7 9l2-6 2 6 3.5-1.5L16 12m-14 0h14m-14 0v4a2 2 0 002 2h10a2 2 0 002-2v-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Konstruktions-Agent</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Berechnet Tragwerke mit integrierter FEM-Engine (PyNite), optimiert Stahlprofile nach Gewicht und Kosten,
-                        pr&uuml;ft Erdbebennormen (Eurocode 8). Erstellt St&uuml;cklisten als Entwurf &mdash;
-                        der Konstrukteur pr&uuml;ft und gibt frei.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">fem_calc</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">profile_optimize</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">seismic_check</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">bom_generate</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Konnektoren</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">PyNite FEM</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">DXF</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Eurocode 8</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Logistik-Agent -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.1s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Logistik-Agent</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Koppelt SAP, Navision und andere ERP-Systeme.
-                        &Uuml;berwacht Lagerbest&auml;nde in Echtzeit, meldet kritische Unterschreitungen
-                        und automatisiert Bedarfsanforderungen &uuml;ber SQL- und REST-Konnektoren.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">sql_query</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">rest_get</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">stock_check</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">alert_send</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Konnektoren</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">SAP B1</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">SAP RFC</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Navision</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">REST</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col">
+                <div class="text-xs text-signal-400 font-medium mb-2">Technische Dokumentation</div>
+                <h4 class="font-bold mb-2">Konstruktions-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Berechnet Tragwerke, optimiert Stahlprofile, pr&uuml;ft Normen.
+                    <strong class="text-slate-300">Erstellt St&uuml;cklisten als Entwurf</strong> &mdash;
+                    der Konstrukteur pr&uuml;ft und gibt frei.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PyNite FEM</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DXF</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Eurocode 8</span>
                 </div>
             </div>
 
             <!-- Finanz-Agent -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.2s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Finanz-Agent</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard (Schreiben: Ring 2)</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Integriert ETA V8, DATEV und weitere Buchhaltungssysteme.
-                        Analysiert Cashflow, bereitet Buchungen vor und liefert
-                        tagesaktuelle Salden. Buchungs-Festschreibung nur durch autorisierte Sachbearbeiter.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">sql_query</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">cashflow_calc</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">booking_prep</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">datev_export</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Konnektoren</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">ETA V8</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">DATEV</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Firebird</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">MSSQL</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.05s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Buchhaltung &amp; Finanzen</div>
+                <h4 class="font-bold mb-2">Finanz-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Greift auf ETA, DATEV oder andere Buchhaltungssysteme zu. Liefert Salden und Cashflow in Sekunden.
+                    <strong class="text-slate-300">Bereitet Buchungen vor</strong> &mdash;
+                    Sachbearbeiter pr&uuml;ft und gibt frei.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ETA V8</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
                 </div>
+            </div>
+
+            <!-- Logistik-Agent -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.1s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Lager &amp; Beschaffung</div>
+                <h4 class="font-bold mb-2">Logistik-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    &Uuml;berwacht Best&auml;nde via ERP-Schnittstelle, erkennt Unterschreitungen.
+                    <strong class="text-slate-300">Erstellt Bedarfsmeldung</strong> &mdash;
+                    Eink&auml;ufer gibt Bestellung frei.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SAP</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Navision</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">REST</span>
+                </div>
+            </div>
+
+            <!-- Fertigungs-Agent -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.15s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Produktionssteuerung</div>
+                <h4 class="font-bold mb-2">Fertigungs-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Liest Maschinenstatus, optimiert Auftragsreihenfolge, erstellt Schicht&uuml;bergabe-Berichte.
+                    <strong class="text-slate-300">Schl&auml;gt Reihenfolge vor</strong> &mdash;
+                    Produktionsleiter gibt frei.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">OPC-UA</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">MES-API</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
+                </div>
+            </div>
+
+            <!-- HR-Agent -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.2s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Personalwesen</div>
+                <h4 class="font-bold mb-2">HR-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Pr&uuml;ft Urlaubsantr&auml;ge gegen Teamkalender, trackt Onboarding, warnt vor Vertragsfristen.
+                    <strong class="text-slate-300">Empfiehlt Entscheidung</strong> &mdash;
+                    F&uuml;hrungskraft genehmigt.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Personio</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">iCal</span>
+                </div>
+            </div>
+
+            <!-- Legal-Agent -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.25s">
+                <div class="text-xs text-signal-400 font-medium mb-2">Recht &amp; Vertr&auml;ge</div>
+                <h4 class="font-bold mb-2">Legal-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Scannt Vertr&auml;ge nach Fristen, generiert NDA-Entw&uuml;rfe aus Vorlagen, meldet regulatorische &Auml;nderungen.
+                    <strong class="text-slate-300">Erstellt Entwurf</strong> &mdash;
+                    Jurist pr&uuml;ft und gibt frei.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">d.velop</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ELO</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PDF/OCR</span>
+                </div>
+            </div>
+
+            <!-- IT-Agent -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.3s">
+                <div class="text-xs text-signal-400 font-medium mb-2">IT-Betrieb</div>
+                <h4 class="font-bold mb-2">IT-Ops-Agent</h4>
+                <p class="text-slate-400 text-xs leading-relaxed flex-1">
+                    Empf&auml;ngt Monitoring-Alerts, reichert Tickets an, &uuml;berwacht Lizenz-Abl&auml;ufe.
+                    <strong class="text-slate-300">Priorisiert Incident</strong> &mdash;
+                    Admin pr&uuml;ft und eskaliert.
+                </p>
+                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Zabbix</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Jira</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SNMP</span>
+                </div>
+            </div>
+
+            <!-- Ihr Agent -->
+            <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center reveal" style="transition-delay:0.35s">
+                <div class="text-2xl text-slate-700 mb-2">+</div>
+                <h4 class="font-bold text-sm text-slate-500 mb-1">Ihr Agent</h4>
+                <p class="text-slate-600 text-xs">
+                    Individuell f&uuml;r Ihre Abteilung, Ihre Systeme, Ihre Workflows.
+                </p>
+                <a href="kontakt.html" class="mt-3 text-signal-400 text-xs hover:text-signal-300 underline underline-offset-2">Jetzt besprechen</a>
             </div>
         </div>
 
         <div class="mt-10 text-center reveal">
             <p class="text-slate-500 text-sm">
                 Dies sind Beispiele. AIMOS-Agenten werden pro Unternehmen individuell konfiguriert &mdash;
-                jeder Agent wird auf die spezifischen Systeme und Anforderungen zugeschnitten.
+                jede Abteilung, jede Schnittstelle, jeder Workflow.
+                <a href="agenten.html" class="text-signal-400 hover:text-signal-300 underline underline-offset-2">Mehr &uuml;ber die Agenten-Architektur</a>.
             </p>
         </div>
     </div>
