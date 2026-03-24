@@ -85,16 +85,8 @@
             color: #2b8eff;
             border-bottom-color: #0070f3;
         }
-        .faq-toggle:checked + .faq-answer {
-            max-height: 300px;
-            opacity: 1;
-            padding-top: 12px;
-        }
         .faq-answer {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.3s ease, padding-top 0.3s ease;
+            padding-top: 12px;
         }
     </style>
 </head>
@@ -153,7 +145,7 @@
             <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">Sie entscheiden.</span>
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            AIMOS-Agenten sind keine Ersetzung f&uuml;r Ihre Mitarbeiter &mdash; sie sind
+            AIMOS-Agenten ersetzen keine Mitarbeiter &mdash; sie sind
             <strong class="text-white">digitale Assistenten</strong>, die Routinearbeit &uuml;bernehmen,
             damit Ihr Team sich auf das konzentrieren kann, was wirklich z&auml;hlt.
         </p>
@@ -374,7 +366,7 @@
                 </div>
                 <p class="text-slate-500 text-xs leading-relaxed">
                     Wenn etwas Unvorhergesehenes passiert, braucht es Kreativit&auml;t und Erfahrung &mdash;
-                    nicht ein Modell, das nur Bekanntes wiederholen kann.
+                    kein Modell, das nur Bekanntes wiederholen kann.
                 </p>
             </div>
 
@@ -388,7 +380,7 @@
                 </div>
                 <p class="text-slate-500 text-xs leading-relaxed">
                     Ihr jahrelang aufgebautes Wissen &mdash; Branchen&shy;kenntnisse, Lieferanten&shy;beziehungen,
-                    Prozess&shy;verst&auml;ndnis &mdash; ist durch keine KI ersetzbar. Der Agent profitiert davon.
+                    Prozess&shy;verst&auml;ndnis &mdash; kann keine KI ersetzen. Im Gegenteil: Der Agent wird besser, je mehr er von Ihrer Erfahrung profitiert.
                 </p>
             </div>
 
@@ -423,8 +415,7 @@
         <div class="space-y-4 reveal">
             <!-- Q1 -->
             <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
-                <label class="flex items-start gap-4 p-6 cursor-pointer group">
-                    <input type="checkbox" class="faq-toggle sr-only" checked>
+                <div class="p-6">
                     <div class="flex-1">
                         <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
                             Wird mein Arbeitsplatz durch AIMOS ersetzt?
@@ -437,14 +428,12 @@
                             eingestellt wurden.
                         </div>
                     </div>
-                    <svg class="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0 transition-transform group-has-[:checked]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </label>
+                </div>
             </div>
 
             <!-- Q2 -->
             <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
-                <label class="flex items-start gap-4 p-6 cursor-pointer group">
-                    <input type="checkbox" class="faq-toggle sr-only">
+                <div class="p-6">
                     <div class="flex-1">
                         <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
                             Wer entscheidet &mdash; ich oder die KI?
@@ -455,14 +444,12 @@
                             Das ist keine Option, sondern ein Grundprinzip der Architektur.
                         </div>
                     </div>
-                    <svg class="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0 transition-transform group-has-[:checked]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </label>
+                </div>
             </div>
 
             <!-- Q3 -->
             <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
-                <label class="flex items-start gap-4 p-6 cursor-pointer group">
-                    <input type="checkbox" class="faq-toggle sr-only">
+                <div class="p-6">
                     <div class="flex-1">
                         <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
                             Kann die KI Fehler machen?
@@ -473,31 +460,27 @@
                             Sie w&uuml;rden das Ergebnis auch dort pr&uuml;fen.
                         </div>
                     </div>
-                    <svg class="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0 transition-transform group-has-[:checked]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </label>
+                </div>
             </div>
 
             <!-- Q4 -->
             <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
-                <label class="flex items-start gap-4 p-6 cursor-pointer group">
-                    <input type="checkbox" class="faq-toggle sr-only">
+                <div class="p-6">
                     <div class="flex-1">
                         <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
-                            Muss ich technisch sein, um mit dem Agenten zu arbeiten?
+                            Brauche ich technische Vorkenntnisse?
                         </h3>
                         <div class="faq-answer text-slate-400 text-sm leading-relaxed">
                             Nein. Sie kommunizieren &uuml;ber Telegram, E-Mail oder Sprache &mdash; in normaler Sprache.
                             Kein Terminal, keine Programmierung, keine Schulung notwendig.
                         </div>
                     </div>
-                    <svg class="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0 transition-transform group-has-[:checked]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </label>
+                </div>
             </div>
 
             <!-- Q5 -->
             <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
-                <label class="flex items-start gap-4 p-6 cursor-pointer group">
-                    <input type="checkbox" class="faq-toggle sr-only">
+                <div class="p-6">
                     <div class="flex-1">
                         <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
                             Was passiert mit meinem Wissen, wenn ich das Unternehmen verlasse?
@@ -509,8 +492,7 @@
                             kein Urteilsverm&ouml;gen, keine Beziehungen.
                         </div>
                     </div>
-                    <svg class="w-5 h-5 text-slate-500 mt-0.5 flex-shrink-0 transition-transform group-has-[:checked]:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </label>
+                </div>
             </div>
         </div>
     </div>
