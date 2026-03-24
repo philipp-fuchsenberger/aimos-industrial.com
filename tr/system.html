@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem ve Altyapı — AIMOS</title>
-    <meta name="description" content="AIMOS Sistem ve Altyapı: SovereignNode Donanımı, İkili VT Mimarisi, Ajan Taşınabilirliği ve teknik öne çıkanlar.">
+    <title>Sistem &amp; Altyapı — AIMOS</title>
+    <meta name="description" content="AIMOS Sistem &amp; Altyapı: SovereignNode donanımı, &ccedil;ift veritabanı mimarisi, ajan taşınabilirliği ve teknik &ouml;ne &ccedil;ıkan &ouml;zellikler.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -117,12 +117,12 @@
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">TR</button>
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
-                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
-                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Türkçe</a>
-                    <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
-                    <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                    <a href="../system.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                    <a href="../en/system.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="system.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">T&uuml;rk&ccedil;e</a>
+                    <a href="../fr/system.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
+                    <a href="../es/system.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                    <a href="../it/system.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
         </div>
@@ -147,8 +147,8 @@
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
             <a href="#sovereign-node" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">SovereignNode</a>
             <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Veritabanı</a>
-            <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilit&auml;t</a>
-            <a href="#highlights" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Highlights</a>
+            <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Taşınabilirlik</a>
+            <a href="#highlights" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">&Ouml;ne &Ccedil;ıkanlar</a>
         </div>
     </div>
 </div>
@@ -159,7 +159,7 @@
     <div class="relative max-w-5xl mx-auto px-6 text-center">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Altyapı</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            System &amp; Altyapı
+            Sistem &amp; Altyapı
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Donanım, veritabanları, taşınabilirlik &mdash; SovereignNode'unuzun fiziksel ve mantıksal temeli.
@@ -179,12 +179,12 @@
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
                     Tek bir sunucu. Yerel GPU. Bulut bağımlılığı yok.
                     SovereignNode her AIMOS kurulumunun kalbidir &mdash;
-                    tüm bileşenleri barındıran fiziksel veya sanal bir sunucu.
+                    t&uuml;m bileşenleri barındıran fiziksel veya sanal bir sunucu.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-8">
-                    Her şey yerinde çalışır: LLM çıkarımı, veritabanları, ajan süreçleri
-                    ve iletişim kanalları. Ağınızdan tek bir bayt çıkmaz &mdash;
-                    siz açıkça yapılandırmadığınız sürece (ör. Telegram mesajları).
+                    Her şey şirket i&ccedil;inde &ccedil;alışır: LLM &ccedil;ıkarımı, veritabanları, ajan s&uuml;re&ccedil;leri
+                    ve iletişim kanalları. Siz a&ccedil;ık&ccedil;a yapılandırmadık&ccedil;a (ör. Telegram mesajları)
+                    hi&ccedil;bir byte ağınızı terk etmez.
                 </p>
 
                 <!-- Hardware Requirements Table -->
@@ -194,7 +194,7 @@
                             <tr class="bg-slate-850 border-b border-white/5">
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Bileşen</th>
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Önerilen</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">&Ouml;nerilen</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
@@ -209,17 +209,17 @@
                                 <td class="py-3 px-4 text-signal-300">64 GB DDR5</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">Speicher</td>
+                                <td class="py-3 px-4 font-medium text-white">Depolama</td>
                                 <td class="py-3 px-4">256 GB SSD</td>
                                 <td class="py-3 px-4 text-signal-300">1 TB NVMe</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-medium text-white">CPU</td>
-                                <td class="py-3 px-4">8 Kerne</td>
-                                <td class="py-3 px-4 text-signal-300">16+ Kerne</td>
+                                <td class="py-3 px-4">8 &ccedil;ekirdek</td>
+                                <td class="py-3 px-4 text-signal-300">16+ &ccedil;ekirdek</td>
                             </tr>
                             <tr>
-                                <td class="py-3 px-4 font-medium text-white">OS</td>
+                                <td class="py-3 px-4 font-medium text-white">İS</td>
                                 <td class="py-3 px-4">Ubuntu 24.04 LTS</td>
                                 <td class="py-3 px-4 text-signal-300">Ubuntu 26.04 LTS</td>
                             </tr>
@@ -246,7 +246,7 @@
 
                     <!-- LLM Model -->
                     <rect x="40" y="125" width="320" height="40" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 2.5:32B (Q4, ~20 GB VRAM, native Tool-Calling)</text>
+                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 2.5:32B (Q4, ~20 GB VRAM, yerel Tool-Calling)</text>
 
                     <!-- PostgreSQL -->
                     <rect x="40" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
@@ -254,23 +254,23 @@
 
                     <!-- SQLite -->
                     <rect x="210" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
-                    <text x="285" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">SQLite (Memory)</text>
+                    <text x="285" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">SQLite (Bellek)</text>
 
-                    <!-- Orkestratör -->
+                    <!-- Orchestrator -->
                     <rect x="40" y="255" width="320" height="50" rx="8" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="1"/>
-                    <text x="200" y="285" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Orkestratör + VRAM Guard</text>
+                    <text x="200" y="285" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Orkestrat&ouml;r + VRAM Koruma</text>
 
                     <!-- Agents -->
                     <rect x="40" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent A</text>
+                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan A</text>
                     <rect x="150" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent B</text>
+                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan B</text>
                     <rect x="260" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent C</text>
+                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Ajan C</text>
 
-                    <!-- Paylaşılan Dinleyici -->
+                    <!-- Shared Listener -->
                     <rect x="40" y="390" width="320" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
-                    <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Paylaşılan Dinleyici (Telegram, E-Mail, Voice)</text>
+                    <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Ortak Dinleyici (Telegram, E-posta, Ses)</text>
                 </svg>
             </div>
         </div>
@@ -278,16 +278,16 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  5. Datenbank — İkili VT Mimarisi                                   -->
+<!--  5. Datenbank — Dual-DB-Architektur                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="datenbank" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Dual-DB</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">İkili VT Mimarisi</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">&Ccedil;ift Veritabanı Mimarisi</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    AIMOS nutzt zwei Datenbanksysteme mit klar getrennten Verantwortlichkeiten:
+                    AIMOS, a&ccedil;ık&ccedil;a ayrılmış sorumluluklara sahip iki veritabanı sistemi kullanır:
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4">
@@ -295,11 +295,11 @@
                             <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay-Datenbank)</h4>
+                            <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay Veritabanı)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Paylaşılan Dinleyici, Orkestratör ve ajanlar arasında merkezi mesaj yönlendirme.
-                                Speichert eingehende Nachrichten, Audit-Logs, PII-Vault-Mappings und Session-Daten.
-                                Multi-Process-fähig durch Connection Pooling.
+                                Ortak Dinleyici, Orkestrat&ouml;r ve ajanlar arasında merkezi mesaj iletimi.
+                                Gelen mesajları, denetim kayıtlarını, PII-Vault eşlemelerini ve oturum verilerini saklar.
+                                Connection Pooling ile &ccedil;oklu s&uuml;re&ccedil; desteği.
                             </p>
                         </div>
                     </div>
@@ -308,11 +308,11 @@
                             <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white mb-1">SQLite (Agent-Memory)</h4>
+                            <h4 class="font-semibold text-white mb-1">SQLite (Ajan Belleği)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Her ajanın anlamsal, epizodik
-                                ve prosedürel belleğe sahip kendi SQLite veritabanı vardır. Hybrid-Suche über FTS5 + Vektor-Embeddings.
-                                Dosyanın basit kopyalanmasıyla taşınabilir.
+                                Her ajan, anlamsal, episodik ve prosed&uuml;rel belleğe sahip kendi SQLite
+                                veritabanına sahiptir. FTS5 + Vekt&ouml;r embedding'leri ile hibrit arama.
+                                Dosyayı kopyalayarak kolayca taşınabilir.
                             </p>
                         </div>
                     </div>
@@ -343,7 +343,7 @@
 
                     <!-- SQLite Box -->
                     <rect x="220" y="20" width="160" height="340" rx="8" fill="#0070f3" fill-opacity="0.06" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (je Agent)</text>
+                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (ajan başına)</text>
                     <rect x="235" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                     <text x="300" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">semantic_memory</text>
                     <rect x="235" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
@@ -360,8 +360,8 @@
                     <line x1="220" y1="120" x2="180" y2="120" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
 
                     <!-- Label -->
-                    <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Sync via</text>
-                    <text x="200" y="305" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Orkestratör</text>
+                    <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Senkronizasyon</text>
+                    <text x="200" y="305" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Orkestrat&ouml;r &uuml;zerinden</text>
                 </svg>
             </div>
         </div>
@@ -373,9 +373,9 @@
 <section id="portabilitaet" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilität</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Birlikte &Ccedil;alışabilirlik</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ajan Taşınabilirliği</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS ajanları açık standartlar sayesinde taşınabilir, uyumlu ve birlikte çalışabilirdir.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS ajanları a&ccedil;ık standartlar aracılığıyla taşınabilir, uyumlu ve birlikte &ccedil;alışabilirdir.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -384,10 +384,10 @@
                 <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">OAP Export/Import</h3>
+                <h3 class="font-bold mb-2">OAP Dışa/İ&ccedil;e Aktarma</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Open Agent Package formatı bir ajanın tam dışa aktarımını sağlar
-                    dahil Memory, Skills und Yapılandırma als portables Archiv.
+                    Open Agent Package formatı, bir ajanın bellek, beceriler ve
+                    yapılandırması dahil tam dışa aktarımını taşınabilir arşiv olarak sağlar.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div class="text-signal-300">agent_export.oap</div>
@@ -403,17 +403,17 @@
                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">MCP Bridge (39 Tools)</h3>
+                <h3 class="font-bold mb-2">MCP Bridge (39 Ara&ccedil;)</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Model Context Protocol, harici LLM'lerin (Claude, GPT, vb.)
-                    AIMOS becerilerine erişimini sağlar. 39 Tools stehen als MCP-Server bereit.
+                    Model Context Protocol, harici LLM'lerin (Claude, GPT vb.)
+                    AIMOS becerilerine erişmesini sağlar. 39 ara&ccedil; MCP sunucusu olarak hazırdır.
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">sql_query</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">file_read</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">rest_call</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">memory_search</span>
-                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">+35 daha fazla</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">+35 daha</span>
                 </div>
             </div>
 
@@ -422,13 +422,13 @@
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">A2A Agent Cards</h3>
+                <h3 class="font-bold mb-2">A2A Ajan Kartları</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Her ajan, Google A2A spesifikasyonuna göre bir Agent Card (JSON-LD) yayınlar.
-                    Externe Systeme können Fähigkeiten, Eingabeformate und Vertrauensstufe abfragen.
+                    Her ajan, Google A2A spesifikasyonuna g&ouml;re bir Ajan Kartı (JSON-LD) yayınlar.
+                    Harici sistemler yetenekleri, girdi formatlarını ve g&uuml;ven seviyesini sorgulayabilir.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
-                    <div><span class="text-signal-300">"name"</span>: "Konstruktions-Agent",</div>
+                    <div><span class="text-signal-300">"name"</span>: "Yapı Ajanı",</div>
                     <div><span class="text-signal-300">"skills"</span>: ["cad_read", "bom_gen"],</div>
                     <div><span class="text-signal-300">"trust_ring"</span>: 1</div>
                 </div>
@@ -446,7 +446,7 @@
                 <!-- Source Node -->
                 <rect x="10" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="110" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode A</text>
-                <text x="110" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Export: agent.oap</text>
+                <text x="110" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Dışa aktarma: agent.oap</text>
 
                 <!-- Arrow -->
                 <line x1="210" y1="60" x2="290" y2="60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow5)"/>
@@ -454,43 +454,42 @@
 
                 <!-- OAP Package -->
                 <rect x="290" y="30" width="220" height="60" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                <text x="400" y="58" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">OAP (Memory + Skills + Config)</text>
+                <text x="400" y="58" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">OAP (Bellek + Beceriler + Yapılandırma)</text>
 
                 <!-- Arrow -->
                 <line x1="510" y1="60" x2="590" y2="60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow5)"/>
-                <text x="550" y="50" text-anchor="middle" fill="#10b981" font-size="10">Import</text>
+                <text x="550" y="50" text-anchor="middle" fill="#10b981" font-size="10">İ&ccedil;e aktarma</text>
 
                 <!-- Target Node -->
                 <rect x="590" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="690" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode B</text>
-                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agent aktiv</text>
+                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Ajan aktif</text>
             </svg>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  8. Highlights — Teknik Öne Çıkanlar                                -->
+<!--  8. Highlights — Technische Highlights                                -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="highlights" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Teknik Öne Çıkanlar</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Was AIMOS auszeichnet</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Teknik &Ouml;ne &Ccedil;ıkan &Ouml;zellikler</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">AIMOS'u farklı kılan ne</h2>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <!-- Yerel Araç Çağrısı -->
+            <!-- Native Tool-Calling -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal">
                 <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Yerel Araç Çağrısı</h3>
+                <h3 class="font-bold mb-2">Yerel Tool-Calling</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Metin hileleri veya Regex ayrıştırma yok &mdash; AIMOS, LLM'in yerel araç çağrısı API'sini kullanır
-                    . Ajan <strong class="text-white">sistemleri do&#287;rudan y&ouml;netir</strong>,
-                    eylemleri yaln&#305;zca a&ccedil;&#305;klamak yerine.
+                    Metin hileleri veya Regex ayrıştırma yok &mdash; AIMOS, LLM'nin yerel Tool-Calling API'sini
+                    kullanır. Ajan eylemleri yalnızca a&ccedil;ıklamak yerine <strong class="text-white">sistemleri doğrudan y&ouml;netir</strong>.
                 </p>
             </div>
 
@@ -499,11 +498,11 @@
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Mehrsprachige Sprache</h3>
+                <h3 class="font-bold mb-2">&Ccedil;ok Dilli Ses</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Spracherkennung (Whisper STT) und Sprachsynthese (Piper TTS) in
-                    <strong class="text-white">allen Sprachen</strong> &mdash;
-                    Ajanlar sesli mesajları anlar ve kullanıcının ana dilinde yanıt verir.
+                    Konuşma tanıma (Whisper STT) ve konuşma sentezi (Piper TTS)
+                    <strong class="text-white">t&uuml;m dillerde</strong> &mdash;
+                    ajanlar sesli mesajları anlar ve kullanıcının ana dilinde yanıt verir.
                 </p>
             </div>
 
@@ -514,9 +513,8 @@
                 </div>
                 <h3 class="font-bold mb-2">Token İzleme</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Her LLM çağrısı kaydedilir: Giriş/Çıkış tokenleri, gecikme, bağlam kullanımı.
-                    <strong class="text-white">Volle Kostentransparenz</strong> ajan başına,
-                    pro Gespräch, aylık.
+                    Her LLM &ccedil;ağrısı kaydedilir: Giriş/&ccedil;ıkış token'ları, gecikme, bağlam kullanımı.
+                    Ajan başına, konuşma başına, ay başına <strong class="text-white">tam maliyet şeffaflığı</strong>.
                 </p>
             </div>
 
@@ -525,11 +523,11 @@
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Conversation Threading</h3>
+                <h3 class="font-bold mb-2">Konuşma İş Par&ccedil;acıkları</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Her ajan <strong class="text-white">kiminle hangi kanalda konu&#351;tu&#287;unu bilir</strong>.
-                    Telegram, e-posta ve dahili mesajlar temiz bir &#351;ekilde ayr&#305;l&#305;r &mdash;
-                    muhataplar aras&#305;nda kar&#305;&#351;&#305;kl&#305;k olmaz.
+                    Her ajan <strong class="text-white">kiminle hangi kanalda konuştuğunu</strong> bilir.
+                    Telegram, e-posta ve dahili mesajlar temiz şekilde ayrılır &mdash;
+                    konuşma ortakları arasında karışıklık olmaz.
                 </p>
             </div>
         </div>
@@ -547,36 +545,36 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    MIT Lisansı altında Açık Kaynak.
+                    MIT Lisansı altında a&ccedil;ık kaynak.
                 </p>
                 <p class="text-sm text-slate-500 leading-relaxed mt-3">
-                    <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
+                    <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> &uuml;r&uuml;n&uuml;d&uuml;r.
                 </p>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ürün</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">&Uuml;r&uuml;n</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
-                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Bağlayıcılar</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konekt&ouml;rler</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Uyumluluk</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">KVKK/DSGVO / GDPR</a></li>
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">DSGVO / GDPR / KVKK</a></li>
                     <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
                     <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
-                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Audit-Logging</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Denetim Kaydı</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP Uyumluluğu</a></li>
                     <li><a href="index.html" class="hover:text-signal-400 transition-colors">Ana Sayfa</a></li>
                 </ul>
             </div>
@@ -584,7 +582,7 @@
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">K&uuml;nye</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
             </div>

@@ -147,10 +147,10 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konzept</a>
+        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Concept</a>
         <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
         <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Connecteurs</a>
-        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Ged&auml;chtnis</a>
+        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">M&eacute;moire</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
     </div>
 </nav>
@@ -159,13 +159,13 @@
 <section class="relative pt-40 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Agenten-Architektur</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Architecture des agents</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
             L'&eacute;quipe d'agents
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Autonome Spezialisten mit eigenem Ged&auml;chtnis, eigenen Werkzeugen und Pers&ouml;nlichkeit &mdash;
-            jeder Agent ist ein spezialisierter digitaler Assistent.
+            Des sp&eacute;cialistes autonomes avec leur propre m&eacute;moire, leurs propres outils et leur personnalit&eacute; &mdash;
+            chaque agent est un assistant num&eacute;rique sp&eacute;cialis&eacute;.
         </p>
     </div>
 </section>
@@ -180,10 +180,10 @@
         <!-- Anatomy: M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Grundlagen</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Was ist ein AIMOS-Agent?</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Fondamentaux</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Qu'est-ce qu'un agent AIMOS ?</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Ein AIMOS-Agent ist ein spezialisierter digitaler Assistent, der vier Kernkomponenten verbindet:
+                    Un agent AIMOS est un assistant num&eacute;rique sp&eacute;cialis&eacute; qui combine quatre composants cl&eacute;s :
                 </p>
                 <div class="space-y-4">
                     <div class="flex items-start gap-4">
@@ -191,8 +191,8 @@
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory (Ged&auml;chtnis)</h4>
-                            <p class="text-slate-500 text-sm">Eigene SQLite-Datenbank mit semantischem, episodischem und prozeduralem M&eacute;moire &agrave; long terme.</p>
+                            <h4 class="font-semibold text-sm">Memory (M&eacute;moire)</h4>
+                            <p class="text-slate-500 text-sm">Base de donn&eacute;es SQLite propre avec m&eacute;moire &agrave; long terme s&eacute;mantique, &eacute;pisodique et proc&eacute;durale.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -201,7 +201,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-sm">Comp&eacute;tences (outils)</h4>
-                            <p class="text-slate-500 text-sm">Fachspezifische Tool-Sammlung: SQL-Abfragen, REST-Aufrufe, Datei-Operationen, dom&auml;nenspezifische Funktionen.</p>
+                            <p class="text-slate-500 text-sm">Collection d'outils sp&eacute;cifiques au m&eacute;tier : requ&ecirc;tes SQL, appels REST, op&eacute;rations sur fichiers, fonctions sp&eacute;cifiques au domaine.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -209,7 +209,7 @@
                             <span class="text-amber-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Sprachmodell)</h4>
+                            <h4 class="font-semibold text-sm">LLM (Mod&egrave;le de langage)</h4>
                             <p class="text-slate-500 text-sm">Mod&egrave;le local via LLM-Runtime locale. L'agent construit le prompt complet &agrave; partir du system-prompt, du contexte m&eacute;moire et de la requ&ecirc;te utilisateur.</p>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-sm">Connecteur (int&eacute;gration)</h4>
-                            <p class="text-slate-500 text-sm">Kommunikationskanal zum Benutzer: Telegram, E-Mail, Sprache oder Dashboard.</p>
+                            <p class="text-slate-500 text-sm">Canal de communication avec l'utilisateur : Telegram, e-mail, voix ou tableau de bord.</p>
                         </div>
                     </div>
                 </div>
@@ -236,7 +236,7 @@
                     <!-- Central Agent -->
                     <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
                     <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">AGENT</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomer Spezialist</text>
+                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Sp&eacute;cialiste autonome</text>
 
                     <!-- Memory (top-left) -->
                     <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
@@ -258,7 +258,7 @@
                     <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
                         <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
                         <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Sprachmodell (lokal)</text>
+                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Mod&egrave;le de langage (local)</text>
                     </a>
                     <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
 
@@ -281,11 +281,11 @@
         <!-- Agent als digitaler Assistent (8 cards) -->
         <div class="mt-24">
             <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arbeitsweise</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der Agent als digitaler Assistent</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Mode de fonctionnement</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">L'agent comme assistant num&eacute;rique</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
-                    Ein AIMOS-Agent arbeitet nicht wie ein Chat-Bot &mdash; er arbeitet wie ein Sachbearbeiter
-                    mit eigenem Schreibtisch, eigener Ablage und eigenem Tagesrhythmus.
+                    Un agent AIMOS ne fonctionne pas comme un chatbot &mdash; il travaille comme un collaborateur
+                    avec son propre bureau, son propre classeur et son propre rythme quotidien.
                 </p>
             </div>
 
@@ -295,10 +295,10 @@
                     <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Ged&auml;chtnis</h4>
+                    <h4 class="font-bold text-sm mb-1">M&eacute;moire</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Merkt sich Fakten, Korrekturen, Pr&auml;ferenzen &mdash; dauerhaft.
-                        Semantische Suche findet Erinnerungen auch mit anderen Worten.
+                        Retient les faits, corrections et pr&eacute;f&eacute;rences &mdash; de mani&egrave;re permanente.
+                        La recherche s&eacute;mantique retrouve les souvenirs m&ecirc;me avec des termes diff&eacute;rents.
                     </p>
                 </div>
 
@@ -307,10 +307,10 @@
                     <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Notizen &amp; Ablage</h4>
+                    <h4 class="font-bold text-sm mb-1">Notes &amp; classement</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Schreibt R&eacute;sum&eacute;s, Recherche-Ergebnisse und Gespr&auml;chsnotizen
-                        in seinen eigenen Workspace &mdash; wie ein Sachbearbeiter seinen Aktenordner pflegt.
+                        R&eacute;dige des r&eacute;sum&eacute;s, des r&eacute;sultats de recherche et des notes de conversation
+                        dans son propre espace de travail &mdash; comme un collaborateur entretient son dossier.
                     </p>
                 </div>
 
@@ -319,10 +319,10 @@
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Kalender</h4>
+                    <h4 class="font-bold text-sm mb-1">Calendrier</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Termine, Fristen, Wiedervorlagen. Der Agent sieht bei jeder Interaktion
-                        seine f&auml;lligen und &uuml;berf&auml;lligen Termine &mdash; und handelt proaktiv.
+                        Rendez-vous, &eacute;ch&eacute;ances, rappels. L'agent voit &agrave; chaque interaction
+                        ses rendez-vous &eacute;chus et en retard &mdash; et agit de mani&egrave;re proactive.
                     </p>
                 </div>
 
@@ -331,10 +331,10 @@
                     <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Todo-Liste</h4>
+                    <h4 class="font-bold text-sm mb-1">Liste de t&acirc;ches</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Offene Aufgaben, Delegationen, Wartelisten.
-                        Wird im Dreaming-Zyklus automatisch aktualisiert.
+                        T&acirc;ches ouvertes, d&eacute;l&eacute;gations, listes d'attente.
+                        Mise &agrave; jour automatique lors du cycle Dreaming.
                     </p>
                 </div>
             </div>
@@ -346,10 +346,10 @@
                     <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Tagesrhythmus</h4>
+                    <h4 class="font-bold text-sm mb-1">Rythme quotidien</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Einmal t&auml;glich pr&uuml;ft der Agent eigenst&auml;ndig Kalender, E-Mails
-                        und offene Aufgaben &mdash; auch ohne dass jemand ihn anspricht.
+                        Une fois par jour, l'agent v&eacute;rifie de mani&egrave;re autonome le calendrier, les e-mails
+                        et les t&acirc;ches ouvertes &mdash; m&ecirc;me sans qu'on le sollicite.
                     </p>
                 </div>
 
@@ -360,8 +360,8 @@
                     </div>
                     <h4 class="font-bold text-sm mb-1">Dreaming</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        In ruhigen Phasen verarbeitet der Agent seine Gespr&auml;che: extrahiert Fakten,
-                        aktualisiert Notizen und Todo-Listen, konsolidiert sein Ged&auml;chtnis.
+                        Pendant les phases calmes, l'agent traite ses conversations : extrait les faits,
+                        met &agrave; jour les notes et les listes de t&acirc;ches, consolide sa m&eacute;moire.
                     </p>
                 </div>
 
@@ -370,10 +370,10 @@
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Teamarbeit</h4>
+                    <h4 class="font-bold text-sm mb-1">Travail d'&eacute;quipe</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Agenten kommunizieren untereinander &mdash; der Finanz-Agent fragt den
-                        Logistik-Agent nach Lagerwerten, ohne den Benutzer zu belasten.
+                        Les agents communiquent entre eux &mdash; l'agent financier interroge
+                        l'agent logistique sur les niveaux de stock, sans d&eacute;ranger l'utilisateur.
                     </p>
                 </div>
 
@@ -384,8 +384,8 @@
                     </div>
                     <h4 class="font-bold text-sm mb-1">Eskalation</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Bei komplexen Fragen eskaliert der Agent automatisch an ein leistungsst&auml;rkeres
-                        KI-Modell &mdash; anonymisiert und revisionssicher protokolliert.
+                        Pour les questions complexes, l'agent escalade automatiquement vers un mod&egrave;le
+                        d'IA plus puissant &mdash; anonymis&eacute; et consign&eacute; de mani&egrave;re infalsifiable.
                     </p>
                 </div>
             </div>
@@ -393,7 +393,7 @@
             <!-- Summary box -->
             <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
                 <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">Le point d&eacute;cisif :</strong> Der Agent bereitet vor &mdash; Sie entscheiden. Ihr Fachwissen, Ihre Erfahrung und Ihr Urteilsverm&ouml;gen bleiben unverzichtbar. Der Agent nimmt Ihnen Routinearbeit ab: Daten zusammensuchen, Fristen &uuml;berwachen, Entw&uuml;rfe vorbereiten. Die fachliche Arbeit bleibt bei Ihnen.
+                    <strong class="text-white">Le point d&eacute;cisif :</strong> L'agent pr&eacute;pare &mdash; vous d&eacute;cidez. Votre expertise, votre exp&eacute;rience et votre jugement restent indispensables. L'agent vous d&eacute;charge du travail routinier : rassembler les donn&eacute;es, surveiller les &eacute;ch&eacute;ances, pr&eacute;parer les brouillons. Le travail sp&eacute;cialis&eacute; reste entre vos mains.
                 </p>
             </div>
         </div>
@@ -411,11 +411,11 @@
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">SKILL_REGISTRY</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">18 comp&eacute;tences dans la bo&icirc;te &agrave; outils &mdash; et ce n'est que le d&eacute;but</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                Jeder Agent erh&auml;lt genau die Skills, die er braucht &mdash; modular zusammengestellt aus dem zentralen Registry.
-                <strong class="text-signal-300">Kundenspezifische Skills k&ouml;nnen jederzeit entwickelt und hinzugef&uuml;gt werden</strong> &mdash;
-                f&uuml;r jede Branche, jedes ERP-System, jeden Workflow.
+                Chaque agent re&ccedil;oit exactement les comp&eacute;tences dont il a besoin &mdash; assembl&eacute;es de mani&egrave;re modulaire depuis le registre central.
+                <strong class="text-signal-300">Des comp&eacute;tences personnalis&eacute;es peuvent &ecirc;tre d&eacute;velopp&eacute;es et ajout&eacute;es &agrave; tout moment</strong> &mdash;
+                pour chaque secteur, chaque syst&egrave;me ERP, chaque workflow.
             </p>
-            <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Jeder neue Skill bedeutet weniger Routinearbeit f&uuml;r Ihr Team &mdash; nicht weniger Teammitglieder.</p>
+            <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Chaque nouvelle comp&eacute;tence signifie moins de travail routinier pour votre &eacute;quipe &mdash; pas moins de membres d'&eacute;quipe.</p>
         </div>
 
         <!-- Engineering -->
@@ -437,14 +437,14 @@
                         <h4 class="font-semibold text-sm font-mono text-signal-300">file_ops</h4>
                         <span class="text-xs text-slate-600 font-mono">7 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Dateien lesen, schreiben, suchen, auflisten. Workspace-Management mit public/private-Trennung.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Lire, &eacute;crire, rechercher et lister des fichiers. Gestion de l'espace de travail avec s&eacute;paration public/priv&eacute;.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-signal-300">brave_search</h4>
                         <span class="text-xs text-slate-600 font-mono">1 Tool</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Web-Recherche via Brave Search API. Aktuelle Informationen ohne Cloud-Abh&auml;ngigkeit.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Recherche web via l'API Brave Search. Informations actuelles sans d&eacute;pendance au cloud.</p>
                 </div>
             </div>
         </div>
@@ -461,21 +461,21 @@
                         <h4 class="font-semibold text-sm font-mono text-green-400">email</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">E-Mails senden und empfangen via IMAP/SMTP. HTML und Anh&auml;nge.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Envoyer et recevoir des e-mails via IMAP/SMTP. HTML et pi&egrave;ces jointes.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">mail_monitor</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">POP3-Postfach-&Uuml;berwachung. Erkennt neue E-Mails und l&ouml;st automatisch Aktionen aus.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Surveillance de bo&icirc;te POP3. D&eacute;tecte les nouveaux e-mails et d&eacute;clenche automatiquement des actions.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">voice_io</h4>
-                        <span class="text-xs text-slate-600 font-mono">Kontext</span>
+                        <span class="text-xs text-slate-600 font-mono">Contexte</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Spracherkennung und -synthese in toutes les langues, lokal verarbeitet.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Reconnaissance et synth&egrave;se vocale dans toutes les langues, trait&eacute;es localement.</p>
                 </div>
             </div>
         </div>
@@ -492,7 +492,7 @@
                         <h4 class="font-semibold text-sm font-mono text-amber-400">shared_storage</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Inter-Agent Datei-Austausch &uuml;ber public/-Ordner. Lesen, Schreiben, Auflisten.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">&Eacute;change de fichiers inter-agents via le dossier public/. Lecture, &eacute;criture, listage.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-amber-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
@@ -516,21 +516,21 @@
                         <h4 class="font-semibold text-sm font-mono text-purple-400">scheduler</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Zeitgesteuerte Aufgaben: Tagesrhythmus, wiederkehrende V&eacute;rificationen, Erinnerungen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">T&acirc;ches planifi&eacute;es : rythme quotidien, v&eacute;rifications r&eacute;currentes, rappels.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">calendar</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Termine anlegen, abfragen, &auml;ndern, l&ouml;schen. Proaktive Erinnerungen bei f&auml;lligen Terminen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Cr&eacute;er, consulter, modifier, supprimer des rendez-vous. Rappels proactifs pour les &eacute;ch&eacute;ances.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">contacts</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Kontaktverwaltung: Personen, Firmen, Telefonnummern, E-Mail-Adressen, Notizen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Gestion des contacts : personnes, entreprises, num&eacute;ros de t&eacute;l&eacute;phone, adresses e-mail, notes.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
@@ -544,7 +544,7 @@
                         <h4 class="font-semibold text-sm font-mono text-purple-400">project_management</h4>
                         <span class="text-xs text-slate-600 font-mono">7 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Projekte, Aufgaben, Meilensteine, Abh&auml;ngigkeiten. Proaktive Nachverfolgung &uuml;berf&auml;lliger Vorg&auml;nge und automatische Statusberichte.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Projets, t&acirc;ches, jalons, d&eacute;pendances. Suivi proactif des &eacute;l&eacute;ments en retard et rapports de statut automatiques.</p>
                 </div>
             </div>
         </div>
@@ -568,7 +568,7 @@
                         <h4 class="font-semibold text-sm font-mono text-cyan-400">calendar_awareness</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Deutsche Jours f&eacute;ri&eacute;s, Ponts, regionale Ferienzeiten. Kulturelles und gesch&auml;ftliches Kontextbewusstsein.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Jours f&eacute;ri&eacute;s allemands, ponts, p&eacute;riodes de vacances r&eacute;gionales. Conscience du contexte culturel et commercial.</p>
                 </div>
             </div>
         </div>
@@ -599,7 +599,7 @@
                         <h4 class="font-semibold text-sm font-mono text-red-400">web_automation</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Browser-Automatisierung f&uuml;r Web-Portale ohne API. Formulare ausf&uuml;llen, Daten extrahieren.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Automatisation de navigateur pour les portails web sans API. Remplir des formulaires, extraire des donn&eacute;es.</p>
                 </div>
             </div>
         </div>
@@ -608,42 +608,42 @@
         <div class="mt-16 reveal">
             <div class="text-center mb-8">
                 <p class="text-slate-500 font-mono text-xs font-medium tracking-widest uppercase mb-2">ROADMAP</p>
-                <h3 class="text-xl font-bold text-slate-300">In Entwicklung &mdash; n&auml;chste Skills f&uuml;r den Mittelstand</h3>
-                <p class="text-slate-500 text-sm mt-2 max-w-xl mx-auto">Diese Skills befinden sich in der Planung oder Entwicklung und werden sukzessive verf&uuml;gbar.</p>
+                <h3 class="text-xl font-bold text-slate-300">En d&eacute;veloppement &mdash; prochaines comp&eacute;tences pour les PME</h3>
+                <p class="text-slate-500 text-sm mt-2 max-w-xl mx-auto">Ces comp&eacute;tences sont en cours de planification ou de d&eacute;veloppement et seront disponibles progressivement.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">document_ocr</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">pr&eacute;vu</span>
                     </div>
                     <p class="text-slate-500 text-xs leading-relaxed">Scanner, reconna&icirc;tre et classer de mani&egrave;re structur&eacute;e les factures, bons de livraison et contrats. Traitement local.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">erp_connector</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">pr&eacute;vu</span>
                     </div>
                     <p class="text-slate-500 text-xs leading-relaxed">Connexion aux syst&egrave;mes ERP courants : SAP Business One, DATEV, Sage, Lexware. Lecture et &eacute;criture.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">inventory_tracker</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">pr&eacute;vu</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Lagerbestand &uuml;berwachen, Nachbestellvorschl&auml;ge generieren, Mindestmengen-Warnungen ausl&ouml;sen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Surveiller les stocks, g&eacute;n&eacute;rer des propositions de r&eacute;approvisionnement, d&eacute;clencher des alertes de quantit&eacute; minimale.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">compliance_monitor</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">pr&eacute;vu</span>
                     </div>
                     <p class="text-slate-500 text-xs leading-relaxed">Gestion des d&eacute;lais, certifications, intervalles de maintenance, pr&eacute;paration d'audit. Rappel proactif avant &eacute;ch&eacute;ance.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">reporting</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">pr&eacute;vu</span>
                     </div>
                     <p class="text-slate-500 text-xs leading-relaxed">Rapports KPI automatiques, aper&ccedil;us journaliers/hebdomadaires, export CSV et PDF. Tableaux de bord pour la direction.</p>
                 </div>
@@ -661,12 +661,12 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Int&eacute;gration</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Bisher verf&uuml;gbare Connecteurs</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Connecteurs actuellement disponibles</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                Der Agent kommuniziert &uuml;ber Connecteurs &mdash; standardisierte Schnittstellen
-                zu Benutzern, Systemen und anderen Agenten.
-                <strong class="text-signal-300">Neue Connecteurs werden laufend entwickelt und k&ouml;nnen jederzeit
-                f&uuml;r Ihre spezifische IT-Landschaft erg&auml;nzt werden.</strong>
+                L'agent communique via des connecteurs &mdash; des interfaces standardis&eacute;es
+                vers les utilisateurs, les syst&egrave;mes et les autres agents.
+                <strong class="text-signal-300">De nouveaux connecteurs sont d&eacute;velopp&eacute;s en continu et peuvent &ecirc;tre ajout&eacute;s
+                &agrave; tout moment pour votre paysage informatique sp&eacute;cifique.</strong>
             </p>
         </div>
 
@@ -678,8 +678,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">Telegram</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Text, Sprachnachrichten, Dokumente. Proaktive Nachrichten
-                    bei Erinnerungen, Alarmen und Ergebnissen. Shared Listener f&uuml;r alle Agenten.
+                    Texte, messages vocaux, documents. Messages proactifs
+                    pour les rappels, alertes et r&eacute;sultats. Shared Listener pour tous les agents.
                 </p>
             </div>
 
@@ -690,8 +690,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">E-Mail</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    IMAP/SMTP f&uuml;r Senden und Empfangen. POP3-Monitoring f&uuml;r
-                    eingehende Postf&auml;cher. HTML-Format und Dateianh&auml;nge.
+                    IMAP/SMTP pour l'envoi et la r&eacute;ception. Surveillance POP3 pour
+                    les bo&icirc;tes de r&eacute;ception. Format HTML et pi&egrave;ces jointes.
                 </p>
             </div>
 
@@ -702,8 +702,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">Voice</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Whisper STT + Piper TTS &mdash; komplett lokal. Spracherkennung und
-                    -synthese in toutes les langues, ohne Cloud-Dienste.
+                    Whisper STT + Piper TTS &mdash; enti&egrave;rement local. Reconnaissance et
+                    synth&egrave;se vocale dans toutes les langues, sans services cloud.
                 </p>
             </div>
 
@@ -714,8 +714,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">SFTP</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Dateizugriff auf Arbeitsrechner via Tailscale VPN. Shared Folder
-                    f&uuml;r DXF, PDF, Excel &mdash; verschl&uuml;sselt und ohne offene Ports.
+                    Acc&egrave;s fichiers sur les postes de travail via Tailscale VPN. Dossier partag&eacute;
+                    pour DXF, PDF, Excel &mdash; chiffr&eacute; et sans ports ouverts.
                 </p>
             </div>
 
@@ -724,9 +724,9 @@
                 <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
                 </div>
-                <h4 class="font-bold text-sm mb-2">SQL-Datenbanken</h4>
+                <h4 class="font-bold text-sm mb-2">Bases de donn&eacute;es SQL</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    PostgreSQL, MSSQL, Firebird &mdash; ausschliesslich SELECT-Abfragen.
+                    PostgreSQL, MSSQL, Firebird &mdash; exclusivement des requ&ecirc;tes SELECT.
                     Pas d'acc&egrave;s en &eacute;criture aux donn&eacute;es de production. Read-Only by Design.
                 </p>
             </div>
@@ -738,8 +738,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Universelle API-Int&eacute;gration f&uuml;r ERP, CRM, Warenwirtschaft.
-                    GET, POST, PUT mit konfigurierbarer Authentifizierung.
+                    Int&eacute;gration API universelle pour ERP, CRM, gestion des marchandises.
+                    GET, POST, PUT avec authentification configurable.
                 </p>
             </div>
         </div>
@@ -755,7 +755,7 @@
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">M&eacute;moire &agrave; long terme</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei Ged&auml;chtnistypen, Hybrid-Suche und ein Dreaming-Zyklus zur Konsolidierung.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Trois types de m&eacute;moire, recherche hybride et un cycle Dreaming pour la consolidation.</p>
         </div>
 
         <!-- Memory Tiers SVG -->
@@ -768,41 +768,41 @@
                 </defs>
                 <!-- Semantic Memory -->
                 <rect x="20" y="20" width="230" height="180" rx="8" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Semantisch</text>
-                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Fakten &amp; Wissen</text>
+                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">S&eacute;mantique</text>
+                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Faits &amp; connaissances</text>
                 <rect x="40" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Stahlpreis Q1: 850 EUR/t"</text>
+                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Prix acier T1 : 850 EUR/t"</text>
                 <rect x="40" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                 <text x="135" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"SAP API: /api/v2/stock"</text>
                 <rect x="40" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Lieferant X: 14 Tage Vorlauf"</text>
+                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Fournisseur X : 14 jours de d&eacute;lai"</text>
 
                 <!-- Episodic Memory -->
                 <rect x="285" y="20" width="230" height="180" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Episodisch</text>
-                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Erlebnisse &amp; Konversationen</text>
+                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">&Eacute;pisodique</text>
+                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Exp&eacute;riences &amp; conversations</text>
                 <rect x="305" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15: Bestandsabfrage"</text>
+                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15 : Consultation stock"</text>
                 <rect x="305" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18: Preisvergleich"</text>
+                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18: Comparaison de prix"</text>
                 <rect x="305" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
                 <text x="400" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-20: Analyse CAO"</text>
 
                 <!-- Procedural Memory -->
                 <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Prozedural</text>
-                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Abl&auml;ufe &amp; Muster</text>
+                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Proc&eacute;dural</text>
+                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Processus &amp; sch&eacute;mas</text>
                 <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Bestellung: Pr&uuml;fen&#8594;Freigabe&#8594;Buchen"</text>
+                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Commande : V&eacute;rifier&#8594;Valider&#8594;Comptabiliser"</text>
                 <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
                 <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG&#8594;Parse&#8594;CSV"</text>
                 <rect x="570" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventur: SQL&#8594;Diff&#8594;Report"</text>
+                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventaire : SQL&#8594;Diff&#8594;Report"</text>
 
                 <!-- Search Layer -->
                 <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
-                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">Hybrid-Suche: FTS5 + Vektor-Embeddings + RRF Fusion</text>
-                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">Relevanz-Ranking kombiniert Keyword- und Semantik-Treffer</text>
+                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">Recherche hybride : FTS5 + Embeddings vectoriels + Fusion RRF</text>
+                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">Le classement par pertinence combine les r&eacute;sultats par mots-cl&eacute;s et s&eacute;mantiques</text>
 
                 <!-- Arrows from tiers to search -->
                 <line x1="135" y1="200" x2="250" y2="230" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
@@ -819,16 +819,16 @@
                         <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Ged&auml;chtniskonsolidierung per LLM-Call</h3>
+                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Consolidation de la m&eacute;moire par appel LLM</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                            Im Ruhezustand analysiert der Agent seine Gespr&auml;che mit einem <strong class="text-white">LLM-Call</strong>,
-                            extrahiert Fakten, aktualisiert Notizen und Todo-Listen, konsolidiert
-                            sein Ged&auml;chtnis und erstellt w&ouml;chentliche Berichte.
+                            En &eacute;tat de repos, l'agent analyse ses conversations avec un <strong class="text-white">appel LLM</strong>,
+                            extrait les faits, met &agrave; jour les notes et les listes de t&acirc;ches, consolide
+                            sa m&eacute;moire et g&eacute;n&egrave;re des rapports hebdomadaires.
                         </p>
                         <p class="text-slate-500 text-xs leading-relaxed">
-                            Wie das menschliche Gehirn im Schlaf &mdash; der Agent verdichtet Erlebnisse zu Wissen,
-                            entfernt redundante Eintr&auml;ge und st&auml;rkt wichtige Verbindungen.
-                            Das Ergebnis: pr&auml;zisere Antworten bei niedrigerem Token-Verbrauch.
+                            Comme le cerveau humain pendant le sommeil &mdash; l'agent condense les exp&eacute;riences en connaissances,
+                            supprime les entr&eacute;es redondantes et renforce les connexions importantes.
+                            Le r&eacute;sultat : des r&eacute;ponses plus pr&eacute;cises avec une consommation de tokens r&eacute;duite.
                         </p>
                     </div>
                 </div>
@@ -839,9 +839,9 @@
         <div class="reveal max-w-3xl mx-auto mb-16">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
-                    <h3 class="font-bold text-lg mb-2">Dreaming-Zyklus (Konsolidierung)</h3>
+                    <h3 class="font-bold text-lg mb-2">Cycle Dreaming (consolidation)</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Wie das menschliche Gehirn im Schlaf konsolidiert AIMOS Erinnerungen im Leerlauf:
+                        Comme le cerveau humain pendant le sommeil, AIMOS consolide les souvenirs au repos :
                     </p>
                     <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <defs>
@@ -850,20 +850,20 @@
                             </marker>
                         </defs>
                         <rect x="0" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Episoden sammeln</text>
-                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Alle Konversationen</text>
+                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Collecter les &eacute;pisodes</text>
+                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Toutes les conversations</text>
 
                         <line x1="130" y1="40" x2="175" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="175" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Muster erkennen</text>
-                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">LLM-Analyse</text>
+                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Identifier les sch&eacute;mas</text>
+                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Analyse LLM</text>
 
                         <line x1="305" y1="40" x2="350" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="350" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Verdichten</text>
-                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Fakten extrahieren</text>
+                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Condenser</text>
+                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Extraire les faits</text>
 
                         <line x1="480" y1="40" x2="525" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
@@ -879,7 +879,7 @@
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token-Optimierung</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Dynamischer Ausgleich zwischen Ged&auml;chtnistiefe und Antwortl&auml;nge &mdash; innerhalb des begrenzten Kontextfensters.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">&Eacute;quilibre dynamique entre profondeur de m&eacute;moire et longueur de r&eacute;ponse &mdash; au sein de la fen&ecirc;tre de contexte limit&eacute;e.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
@@ -896,8 +896,8 @@
                     <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
 
                     <!-- Labels -->
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Memory-Tiefe</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Antwort-L&auml;nge</text>
+                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Profondeur m&eacute;moire</text>
+                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Longueur r&eacute;ponse</text>
 
                     <!-- Level marks -->
                     <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
@@ -918,12 +918,12 @@
                     <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
                     <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Memory</text>
                     <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Antwort</text>
+                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">R&eacute;ponse</text>
 
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Kontextfenster (z.B. 32k Tokens)</text>
+                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Fen&ecirc;tre de contexte (p. ex. 32k tokens)</text>
 
                     <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Mehr Memory = weniger Platz f&uuml;r Antwort (und umgekehrt)</text>
+                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Plus de m&eacute;moire = moins de place pour la r&eacute;ponse (et inversement)</text>
                 </svg>
             </div>
 
@@ -935,40 +935,40 @@
                             <tr class="bg-slate-850 border-b border-white/10">
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Level</th>
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Memory</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Antwort</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Einsatz</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">R&eacute;ponse</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Utilisation</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">1</td>
                                 <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4">Sehr lang</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analyse, Berichte</td>
+                                <td class="py-3 px-4">Tr&egrave;s longue</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analyses, rapports</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">Reduziert</td>
-                                <td class="py-3 px-4">Lang</td>
+                                <td class="py-3 px-4">R&eacute;duite</td>
+                                <td class="py-3 px-4">Longue</td>
                                 <td class="py-3 px-4 hidden sm:table-cell text-xs">R&eacute;sum&eacute;s</td>
                             </tr>
                             <tr class="border-b border-white/5 bg-signal-500/5">
                                 <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">Ausgewogen</td>
-                                <td class="py-3 px-4 text-white">Mittel</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (Default)</td>
+                                <td class="py-3 px-4 text-white">&Eacute;quilibr&eacute;e</td>
+                                <td class="py-3 px-4 text-white">Moyenne</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (par d&eacute;faut)</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Tief</td>
-                                <td class="py-3 px-4">Kurz</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Kontextreiche Fragen</td>
+                                <td class="py-3 px-4">Profonde</td>
+                                <td class="py-3 px-4">Courte</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Questions riches en contexte</td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-mono text-signal-300">5</td>
                                 <td class="py-3 px-4">Maximum</td>
                                 <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Recherche, Fakten-Check</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Recherche, v&eacute;rification des faits</td>
                             </tr>
                         </tbody>
                     </table>
@@ -985,23 +985,23 @@
 <section id="llm" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Sprachmodell</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Das LLM &mdash; Gehirn des Agenten</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Mod&egrave;le de langage</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Le LLM &mdash; cerveau de l'agent</h2>
             <p class="text-slate-400 max-w-3xl mx-auto">
-                Das Large Language Model (LLM) ist die Denkmaschine hinter jedem Agenten.
-                Es versteht Sprache, f&auml;llt Entscheidungen und steuert Werkzeuge &mdash;
-                und l&auml;uft <strong class="text-white">vollst&auml;ndig auf Ihrer eigenen Hardware</strong>.
+                Le Large Language Model (LLM) est le moteur de r&eacute;flexion derri&egrave;re chaque agent.
+                Il comprend le langage, prend des d&eacute;cisions et pilote les outils &mdash;
+                et fonctionne <strong class="text-white">enti&egrave;rement sur votre propre mat&eacute;riel</strong>.
             </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 reveal">
             <!-- Was ist ein LLM? -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">Was macht das LLM?</h3>
+                <h3 class="font-bold mb-3">Que fait le LLM ?</h3>
                 <ul class="space-y-3 text-sm text-slate-400">
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Comprend les requ&ecirc;tes</strong> &mdash; in nat&uuml;rlicher Sprache, in jeder Sprache</span>
+                        <span><strong class="text-white">Comprend les requ&ecirc;tes</strong> &mdash; en langage naturel, dans toutes les langues</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -1009,30 +1009,30 @@
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Formuliert Antworten</strong> &mdash; fachlich korrekt, im Kontext des bisherigen Gespr&auml;chs</span>
+                        <span><strong class="text-white">Formule les r&eacute;ponses</strong> &mdash; techniquement correctes, dans le contexte de la conversation pr&eacute;c&eacute;dente</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Lernt aus Korrekturen</strong> &mdash; &uuml;ber das M&eacute;moire &agrave; long terme, nicht durch Modell-Training</span>
+                        <span><strong class="text-white">Apprend des corrections</strong> &mdash; via la m&eacute;moire &agrave; long terme, pas par entra&icirc;nement du mod&egrave;le</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Warum lokal? -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">Warum lokal statt Cloud?</h3>
+                <h3 class="font-bold mb-3">Pourquoi en local plut&ocirc;t que dans le cloud ?</h3>
                 <div class="space-y-4">
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                            <h4 class="font-semibold text-sm text-green-400">Datensouver&auml;nit&auml;t</h4>
+                            <h4 class="font-semibold text-sm text-green-400">Souverainet&eacute; des donn&eacute;es</h4>
                         </div>
                         <p class="text-slate-500 text-xs leading-relaxed pl-4">Vos requ&ecirc;tes ne quittent jamais le r&eacute;seau. Aucun fournisseur cloud ne voit vos donn&eacute;es.</p>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-signal-500"></span>
-                            <h4 class="font-semibold text-sm text-signal-400">Keine laufenden Kosten</h4>
+                            <h4 class="font-semibold text-sm text-signal-400">Aucun co&ucirc;t r&eacute;current</h4>
                         </div>
                         <p class="text-slate-500 text-xs leading-relaxed pl-4">Aucun prix par token par requ&ecirc;te. Le mod&egrave;le fonctionne sans limite sur votre GPU.</p>
                     </div>
@@ -1041,14 +1041,14 @@
                             <span class="w-2 h-2 rounded-full bg-amber-500"></span>
                             <h4 class="font-semibold text-sm text-amber-400">Disponibilit&eacute;</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein API-Limit, kein Rate-Limiting, keine Abh&auml;ngigkeit von externen Diensten.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Pas de limite d'API, pas de rate-limiting, pas de d&eacute;pendance aux services externes.</p>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                            <h4 class="font-semibold text-sm text-purple-400">Eskalation bei Bedarf</h4>
+                            <h4 class="font-semibold text-sm text-purple-400">Escalade en cas de besoin</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Bei komplexen Aufgaben: automatische, anonymisierte Eskalation an ein Cloud-LLM. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; Details</a></p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Pour les t&acirc;ches complexes : escalade automatique et anonymis&eacute;e vers un LLM cloud. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; D&eacute;tails</a></p>
                     </div>
                 </div>
             </div>
@@ -1068,7 +1068,7 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Open Source unter Licence MIT.
+                    Open Source sous licence MIT.
                 </p>
                 <p class="text-sm text-slate-500 leading-relaxed mt-3">
                     Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
@@ -1104,7 +1104,7 @@
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der Licence MIT.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Sous licence MIT.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
