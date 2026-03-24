@@ -158,11 +158,12 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Die Herausforderung</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">24 GB VRAM &mdash; und trotzdem produktionsreif</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">32 GB VRAM &mdash; mehr braucht es nicht</h2>
             <p class="text-slate-400 max-w-3xl mx-auto">
                 Cloud-LLMs arbeiten mit riesigen Kontextfenstern auf spezialisierten Server-Clustern.
                 AIMOS l&auml;uft auf <strong class="text-white">einer einzigen Grafikkarte</strong> in Ihrem B&uuml;ro &mdash;
-                und erreicht mit architektonischen Mitteln eine Leistung, die f&uuml;r Unternehmensaufgaben mehr als ausreicht.
+                und erreicht mit architektonischen Mitteln eine Leistung, die f&uuml;r Unternehmensaufgaben nicht nur ausreicht,
+                sondern oft <strong class="text-white">bessere Ergebnisse</strong> liefert als &uuml;berdimensionierte Cloud-Modelle.
             </p>
         </div>
 
@@ -211,8 +212,8 @@
                         <!-- Arrow + label -->
                         <line x1="36" y1="228" x2="36" y2="262" stroke="#ef4444" stroke-width="1.5"/>
                         <polygon points="30,262 36,272 42,262" fill="#ef4444"/>
-                        <text x="50" y="268" fill="#ef4444" font-size="10" font-weight="600">70&times; kleiner als Gemini</text>
-                        <text x="50" y="282" fill="#94a3b8" font-size="9">Aber: <tspan fill="#0070f3" font-weight="600">Architektur kompensiert das.</tspan></text>
+                        <text x="50" y="268" fill="#ef4444" font-size="10" font-weight="600">Kleineres Kontextfenster &mdash; aber:</text>
+                        <text x="50" y="282" fill="#0070f3" font-size="9" font-weight="600">Architektur kompensiert das. Und: gr&ouml;&szlig;er ist nicht besser (siehe unten).</text>
                     </svg>
                 </div>
             </div>
@@ -226,35 +227,80 @@
                     <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <!-- GPU VRAM bar -->
                         <rect x="20" y="20" width="680" height="60" rx="10" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.15"/>
-                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">RTX 3090 / RTX 5090 &mdash; 24 GB VRAM</text>
+                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">NVIDIA RTX 5090 &mdash; 32 GB VRAM</text>
 
                         <!-- Model weights: ~17 GB -->
-                        <rect x="22" y="22" width="486" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
-                        <text x="265" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Modell-Gewichte</text>
-                        <text x="265" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
+                        <rect x="22" y="22" width="362" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="203" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Modell-Gewichte</text>
+                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
 
-                        <!-- KV-Cache: ~5 GB -->
-                        <rect x="512" y="22" width="130" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="577" y="48" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">KV-Cache</text>
-                        <text x="577" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~5 GB f&uuml;r Kontext</text>
+                        <!-- KV-Cache: ~13 GB -->
+                        <rect x="388" y="22" width="248" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="512" y="48" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">KV-Cache</text>
+                        <text x="512" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~13 GB f&uuml;r Kontext</text>
 
                         <!-- Safety margin -->
-                        <rect x="646" y="22" width="52" height="56" rx="9" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
-                        <text x="672" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Reserve</text>
-                        <text x="672" y="66" text-anchor="middle" fill="#94a3b8" font-size="8">~2 GB</text>
+                        <rect x="640" y="22" width="58" height="56" rx="9" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
+                        <text x="669" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Reserve</text>
+                        <text x="669" y="66" text-anchor="middle" fill="#94a3b8" font-size="8">~2 GB</text>
 
                         <!-- Percentage labels -->
-                        <text x="265" y="100" text-anchor="middle" fill="#a855f7" font-size="10">71% belegt</text>
-                        <text x="577" y="100" text-anchor="middle" fill="#0070f3" font-size="10">21% f&uuml;r Kontext</text>
-                        <text x="672" y="100" text-anchor="middle" fill="#ef4444" font-size="10">8% Puffer</text>
+                        <text x="203" y="100" text-anchor="middle" fill="#a855f7" font-size="10">53% Modell</text>
+                        <text x="512" y="100" text-anchor="middle" fill="#0070f3" font-size="10">41% f&uuml;r Kontext</text>
+                        <text x="669" y="100" text-anchor="middle" fill="#ef4444" font-size="10">6% Puffer</text>
 
                         <!-- Bottom explanation -->
-                        <rect x="20" y="120" width="680" height="65" rx="8" fill="#1a2332" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
-                        <text x="40" y="142" fill="#f59e0b" font-size="11" font-weight="700">Kernproblem:</text>
-                        <text x="145" y="142" fill="#94a3b8" font-size="10">Die 5 GB KV-Cache bestimmen, wie viel der Agent gleichzeitig &bdquo;sehen&ldquo; kann.</text>
-                        <text x="40" y="162" fill="#94a3b8" font-size="10">Cloud-Anbieter l&ouml;sen das mit hunderten GPUs. AIMOS l&ouml;st es mit</text>
-                        <text x="40" y="177" fill="#0070f3" font-size="10" font-weight="600">intelligentem Kontext-Management, Langzeitged&auml;chtnis und Aufgabenteilung.</text>
+                        <rect x="20" y="120" width="680" height="65" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
+                        <text x="40" y="142" fill="#10b981" font-size="11" font-weight="700">Vorteil RTX 5090:</text>
+                        <text x="190" y="142" fill="#94a3b8" font-size="10">8 GB mehr VRAM = fast dreimal so viel Platz f&uuml;r Kontext wie bei der RTX 3090.</text>
+                        <text x="40" y="162" fill="#94a3b8" font-size="10">AIMOS nutzt diesen Spielraum f&uuml;r mehr Ged&auml;chtnis, l&auml;ngere Gespr&auml;che</text>
+                        <text x="40" y="177" fill="#0070f3" font-size="10" font-weight="600">und gr&ouml;&szlig;ere Kontextfenster &mdash; bei gleichen Kosten.</text>
                     </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why bigger is NOT better -->
+        <div class="reveal max-w-4xl mx-auto mb-16">
+            <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-3">Gr&ouml;&szlig;er ist nicht besser &mdash; warum gigantische Cloud-LLMs f&uuml;r den Unternehmenseinsatz oft die falsche Wahl sind</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Modelle mit 200 Milliarden Parametern und 1 Million Tokens Kontext sind beeindruckend &mdash; aber f&uuml;r
+                            strukturierte Unternehmensaufgaben (Buchungen vorbereiten, Fristen &uuml;berwachen, Berichte erstellen)
+                            sind sie <strong class="text-white">&uuml;berdimensioniert und kontraproduktiv</strong>.
+                        </p>
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div class="bg-slate-900 rounded-lg p-4">
+                                <h4 class="font-semibold text-sm text-amber-400 mb-1">Overthinking</h4>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Zu gro&szlig;e Modelle &bdquo;&uuml;berdenken&ldquo; einfache Aufgaben: Sie generieren unn&ouml;tig lange
+                                    Analysen, wo eine kurze Antwort reicht. Das kostet Zeit und verschlechtert
+                                    oft das Ergebnis.
+                                </p>
+                            </div>
+                            <div class="bg-slate-900 rounded-lg p-4">
+                                <h4 class="font-semibold text-sm text-red-400 mb-1">Energie &amp; Latenz</h4>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Jede Anfrage an ein 200B-Modell verbraucht ein Vielfaches an Rechenleistung.
+                                    Die Antwort dauert l&auml;nger, kostet mehr Strom &mdash; und das Ergebnis
+                                    ist f&uuml;r eine Kontoabfrage nicht besser.
+                                </p>
+                            </div>
+                            <div class="bg-slate-900 rounded-lg p-4">
+                                <h4 class="font-semibold text-sm text-green-400 mb-1">Richtige Gr&ouml;&szlig;e</h4>
+                                <p class="text-slate-500 text-xs leading-relaxed">
+                                    Ein 27B-Modell mit nativem Tool-Calling trifft den Sweet Spot:
+                                    zuverl&auml;ssige Werkzeugsteuerung, schnelle Antworten, kein &Uuml;berdenken.
+                                    F&uuml;r komplexe Sonderf&auml;lle eskaliert der Agent automatisch.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
