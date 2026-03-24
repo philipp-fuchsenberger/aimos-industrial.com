@@ -228,7 +228,7 @@
                     <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <!-- GPU VRAM bar -->
                         <rect x="20" y="20" width="680" height="60" rx="10" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.15"/>
-                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">RTX 3090 / RTX 4090 &mdash; 24 GB VRAM</text>
+                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">RTX 3090 / RTX 5090 &mdash; 24 GB VRAM</text>
 
                         <!-- Model weights: ~17 GB -->
                         <rect x="22" y="22" width="486" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
@@ -261,7 +261,7 @@
             </div>
         </div>
 
-        <!-- How AIMOS compensates — 6 architectural techniques -->
+        <!-- How AIMOS compensates — 7 architectural techniques -->
         <div class="text-center mb-8 reveal">
             <h3 class="text-2xl font-bold tracking-tight mb-3">Sieben Architektur-Prinzipien statt roher Rechenleistung</h3>
             <p class="text-slate-400 max-w-2xl mx-auto text-sm">
@@ -271,117 +271,43 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 reveal">
-            <!-- 1. Langzeitgedächtnis -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-signal-400 font-bold text-sm">1</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Langzeitged&auml;chtnis</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Jeder Agent hat ein eigenes Langzeitged&auml;chtnis mit semantischer Suche (Embeddings + Volltextsuche).
-                    Statt 200.000 Tokens Verlauf zu speichern, merkt sich der Agent die <strong class="text-slate-300">relevanten Fakten</strong>
-                    &mdash; und findet sie mit der richtigen Frage sofort wieder.
+        <!-- Jump links to principles explained below -->
+        <div class="reveal max-w-4xl mx-auto">
+            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6">
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                    <strong class="text-white">AIMOS kompensiert das mit sieben Architektur-Prinzipien</strong>,
+                    die auf dieser Seite im Detail erkl&auml;rt werden:
                 </p>
-                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Kontext-Architektur</a>
-            </div>
-
-            <!-- 2. Dreaming -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-green-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-green-400 font-bold text-sm">2</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Dreaming (Ged&auml;chtniskonsolidierung)</h4>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <a href="#context" class="flex items-center gap-2 text-xs text-signal-400 hover:text-signal-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-signal-500/10 flex items-center justify-center text-[10px] font-bold">1</span>
+                        Langzeitged&auml;chtnis
+                    </a>
+                    <a href="#context" class="flex items-center gap-2 text-xs text-green-400 hover:text-green-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-green-500/10 flex items-center justify-center text-[10px] font-bold">2</span>
+                        Dreaming
+                    </a>
+                    <a href="#context" class="flex items-center gap-2 text-xs text-amber-400 hover:text-amber-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-amber-500/10 flex items-center justify-center text-[10px] font-bold">3</span>
+                        Agent-Splitting
+                    </a>
+                    <a href="#context" class="flex items-center gap-2 text-xs text-purple-400 hover:text-purple-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-purple-500/10 flex items-center justify-center text-[10px] font-bold">4</span>
+                        Budget Guard
+                    </a>
+                    <a href="#context" class="flex items-center gap-2 text-xs text-cyan-400 hover:text-cyan-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-cyan-500/10 flex items-center justify-center text-[10px] font-bold">5</span>
+                        Kontext-Injektion
+                    </a>
+                    <a href="#gpu-llm" class="flex items-center gap-2 text-xs text-red-400 hover:text-red-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-red-500/10 flex items-center justify-center text-[10px] font-bold">6</span>
+                        VRAM-Sharing
+                    </a>
+                    <a href="#gpu-llm" class="flex items-center gap-2 text-xs text-orange-400 hover:text-orange-300 font-mono">
+                        <span class="w-5 h-5 rounded bg-orange-500/10 flex items-center justify-center text-[10px] font-bold">7</span>
+                        Eskalation
+                    </a>
                 </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Bevor der Kontext voll wird, analysiert der Agent seinen Gespr&auml;chsverlauf mit dem LLM,
-                    extrahiert wichtige Erkenntnisse und speichert sie ins Langzeitged&auml;chtnis.
-                    Dann wird der Verlauf gel&ouml;scht &mdash; <strong class="text-slate-300">ohne Informationsverlust</strong>.
-                </p>
-                <a href="agenten.html#gedaechtnis" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Agenten: Ged&auml;chtnis</a>
-            </div>
-
-            <!-- 3. Agent-Splitting -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-amber-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-amber-400 font-bold text-sm">3</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Agent-Splitting</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Statt einen &uuml;berladenen Agenten mit riesigem Prompt: mehrere Spezialisten mit
-                    kurzen, fokussierten Prompts. Jeder Agent belegt nur <strong class="text-slate-300">17&ndash;22% des Kontexts</strong>
-                    f&uuml;r seinen Systemprompt &mdash; der Rest bleibt f&uuml;r die Arbeit.
-                </p>
-                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Context Management</a>
-            </div>
-
-            <!-- 4. Dynamische Kompression -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-purple-400 font-bold text-sm">4</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Dynamische Kompression</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Der Context Budget Guard pr&uuml;ft vor jedem LLM-Call, ob der Kontext ins Budget passt.
-                    Zu lange Tool-Ergebnisse werden gek&uuml;rzt, &auml;ltere Nachrichten entfernt &mdash;
-                    <strong class="text-slate-300">automatisch, ohne Zutun</strong>.
-                </p>
-                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Budget Guard</a>
-            </div>
-
-            <!-- 5. Strukturierte Kontext-Injektion -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-cyan-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-cyan-400 font-bold text-sm">5</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Strukturierte Kontext-Injektion</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Kalender, Projekte, Kontakte und Memories werden als <strong class="text-slate-300">kompakte Bl&ouml;cke</strong>
-                    in den Kontext injiziert &mdash; nicht als Freitext, sondern in einem Format, das der Agent
-                    mit minimalen Tokens versteht.
-                </p>
-                <a href="agenten.html#skills" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Agenten: Skills</a>
-            </div>
-
-            <!-- 6. Sequenzieller VRAM-Betrieb -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-red-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-red-400 font-bold text-sm">6</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Sequenzieller VRAM-Betrieb</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Alle Agenten teilen sich <strong class="text-slate-300">eine GPU, ein Modell</strong>.
-                    Der Orchestrator stellt sicher, dass immer nur ein Agent die GPU belegt &mdash;
-                    Anfragen anderer Agenten warten in der Datenbank-Queue. Kein OOM, kein VRAM-Konflikt.
-                </p>
-                <a href="#gpu-llm" class="text-signal-400 text-xs font-mono hover:underline">&rarr; GPU &amp; LLM</a>
-            </div>
-
-            <!-- 7. Eskalation -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-orange-500/20 transition-colors">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
-                        <span class="text-orange-400 font-bold text-sm">7</span>
-                    </div>
-                    <h4 class="font-bold text-sm">Eskalation an st&auml;rkeres Modell</h4>
-                </div>
-                <p class="text-slate-500 text-xs leading-relaxed mb-3">
-                    Wenn eine Aufgabe das lokale Modell &uuml;bersteigt, eskaliert der Agent automatisch
-                    an ein Cloud-LLM &mdash; <strong class="text-slate-300">anonymisiert &uuml;ber PII-Vault</strong>.
-                    Nur die bereinigte Frage verl&auml;sst das Netzwerk, nie Ihre Daten.
-                </p>
-                <a href="compliance.html" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Compliance: Datenschutz</a>
             </div>
         </div>
 
@@ -497,7 +423,7 @@
             </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 reveal">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
             <!-- SGLang Runtime -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
@@ -510,16 +436,17 @@
                 </p>
             </div>
 
-            <!-- Sequential Operation -->
+            <!-- Orchestrator & VRAM Guard -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Sequenzieller Betrieb</h3>
+                <h3 class="font-bold mb-2">Orchestrator &amp; VRAM Guard</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Die VRAM Guard stellt sicher, dass nur ein Agent gleichzeitig auf die GPU zugreift.
-                    Anfragen werden in der Datenbank-Queue gehalten und sequenziell abgearbeitet &mdash;
-                    kein OOM, kein VRAM-Konflikt.
+                    Der Orchestrator ist der Prozessmanager: er erkennt neue Nachrichten in der DB-Queue,
+                    spawnt den zust&auml;ndigen Agenten und stellt &uuml;ber die <span class="text-signal-300 font-mono text-xs">VRAM Guard</span>
+                    sicher, dass nur ein Agent gleichzeitig die GPU belegt. Heartbeat-&Uuml;berwachung erkennt
+                    h&auml;ngende Prozesse und gibt blockierten VRAM automatisch frei.
                 </p>
             </div>
 
@@ -532,6 +459,20 @@
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Das Modell bleibt 30 Minuten im VRAM. Alle Agenten teilen sich dasselbe Modell &mdash;
                     kein Entladen beim Agenten-Wechsel. Erst nach 30 Minuten Inaktivität wird VRAM freigegeben.
+                </p>
+            </div>
+
+            <!-- Eskalation & PII-Vault -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Eskalation &amp; PII-Vault</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    &Uuml;bersteigt eine Aufgabe das lokale Modell, eskaliert der Agent an ein Cloud-LLM.
+                    Der <span class="text-signal-300 font-mono text-xs">PII-Vault</span> anonymisiert dabei
+                    automatisch alle personenbezogenen Daten (Namen, Telefonnummern, E-Mails) &mdash;
+                    nur die bereinigte Frage verl&auml;sst das Netzwerk.
                 </p>
             </div>
         </div>
@@ -682,7 +623,7 @@
         </div>
 
         <!-- Context Strategy Cards -->
-        <div class="grid md:grid-cols-3 gap-6 reveal">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
             <!-- Budget Guard -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
@@ -690,35 +631,79 @@
                 </div>
                 <h3 class="font-bold mb-2">Context Budget Guard</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Vor jedem LLM-Call wird die Token-Summe geprüft. Überschreitet sie das Budget,
-                    wird der Gesprächsverlauf automatisch gekürzt &mdash; älteste Nachrichten zuerst.
-                    Der Agent-Prompt und die Tool-Definitionen bleiben immer vollständig erhalten.
+                    Vor jedem LLM-Call wird die Token-Summe gepr&uuml;ft. &Uuml;berschreitet sie das Budget,
+                    wird der Gespr&auml;chsverlauf automatisch gek&uuml;rzt &mdash; &auml;lteste Nachrichten zuerst,
+                    lange Tool-Ergebnisse auf 200 Zeichen. Agent-Prompt und Tool-Definitionen bleiben immer vollst&auml;ndig.
                 </p>
             </div>
 
-            <!-- Dynamic Compression -->
+            <!-- Dreaming -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"/></svg>
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Dynamische Kompression</h3>
+                <h3 class="font-bold mb-2">Dreaming (Ged&auml;chtniskonsolidierung)</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Das verfügbare Kontext-Budget wird dynamisch berechnet: kürzere Agenten-Prompts
-                    lassen mehr Platz für Gesprächsverlauf und Memories. Agenten mit umfangreichen
-                    Tool-Sets kompensieren durch kürzere System-Prompts.
+                    Bevor der Kontext voll wird, analysiert der Agent seinen Gespr&auml;chsverlauf mit dem LLM.
+                    Wichtige Erkenntnisse werden als Fakten ins Langzeitged&auml;chtnis extrahiert,
+                    Notizen und Todo-Listen im Workspace aktualisiert. Dann wird der Verlauf gel&ouml;scht &mdash;
+                    <strong class="text-white">ohne Informationsverlust</strong>.
                 </p>
             </div>
 
-            <!-- Agent Splitting -->
+            <!-- Agent-Splitting -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                 </div>
                 <h3 class="font-bold mb-2">Agent-Splitting</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Statt einen Agenten mit riesigem Prompt zu überladen, verteilt AIMOS Arbeit auf
-                    Spezialisten mit kurzen, fokussierten Prompts. Jeder Agent beherrscht sein Fachgebiet &mdash;
-                    weniger Prompt, mehr Platz für Kontext.
+                    Statt einen Agenten mit riesigem Prompt zu &uuml;berladen, verteilt AIMOS Arbeit auf
+                    Spezialisten mit kurzen, fokussierten Prompts (17&ndash;22% Kontextbelegung).
+                    Weniger Prompt = mehr Platz f&uuml;r Kontext, Memory und Antwort.
+                </p>
+            </div>
+
+            <!-- Langzeitgedächtnis -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Hybrid-Langzeitged&auml;chtnis</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Jeder Agent hat ein eigenes Ged&auml;chtnis mit zwei Suchmechanismen:
+                    <span class="text-signal-300 font-mono text-xs">FTS5</span> (Volltextsuche) und
+                    <span class="text-signal-300 font-mono text-xs">MiniLM-L6-v2</span> (384-dimensionale Vektor-Embeddings).
+                    Die Ergebnisse werden per Reciprocal Rank Fusion kombiniert &mdash;
+                    relevant auch bei ungenauen Suchbegriffen.
+                </p>
+            </div>
+
+            <!-- Strukturierte Kontext-Injektion -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Strukturierte Kontext-Injektion</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Kalender, Projekte, Kontakte und relevante Memories werden als kompakte
+                    <span class="text-signal-300 font-mono text-xs">&lt;calendar&gt;</span>,
+                    <span class="text-signal-300 font-mono text-xs">&lt;projects&gt;</span>-Bl&ouml;cke
+                    in den Kontext injiziert. Strukturiertes Format statt Freitext &mdash;
+                    maximale Information bei minimalen Tokens.
+                </p>
+            </div>
+
+            <!-- Dynamische History-Kompression -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Dynamische History-Kompression</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Der Gespr&auml;chsverlauf wird dynamisch gekappt: Agenten mit kurzem Prompt (17%)
+                    behalten mehr History als Agenten mit langem Prompt (22%).
+                    Schwellenwerte passen sich automatisch an &mdash; 15, 25 oder 35 Nachrichten je nach Agenten-Konfiguration.
                 </p>
             </div>
         </div>
@@ -1113,7 +1098,7 @@
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
                     <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Architektur</a></li>
-                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
                     <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
@@ -1138,8 +1123,8 @@
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der MIT-Lizenz.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Impressum</a>
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Impressum</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
             </div>
         </div>
