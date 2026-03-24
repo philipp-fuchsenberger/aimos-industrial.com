@@ -163,42 +163,49 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Hero                                                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden">
+<section id="hero" class="relative grid-pattern overflow-hidden">
     <!-- Background glow -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
 
-    <div class="relative max-w-6xl mx-auto px-6 pt-32 pb-20 text-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-8">
-            <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
-            MIT-Lizenz &middot; 100% On-Premise &middot; DSGVO-konform
-        </div>
+    <div class="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-28 pb-12">
+        <!-- Two-column layout: Text left, SVG right (desktop) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="text-center lg:text-left pt-4">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
+                    MIT-Lizenz &middot; 100% On-Premise &middot; DSGVO-konform
+                </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            <span class="text-white">AIMOS</span><br>
-            <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
-                KI-Agenten, die handeln.<br>
-                Lokal. Auf Ihrem Server.
-            </span>
-        </h1>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
+                    <span class="text-white">AIMOS</span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        KI-Agenten, die handeln.
+                    </span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        Lokal. Auf Ihrem Server.
+                    </span>
+                </h1>
 
-        <p class="text-base sm:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
-            Autonome Fachspezialisten mit eigenem Ged&auml;chtnis, eigenen Werkzeugen
-            und direktem Zugriff auf Ihre IT-Systeme &mdash; ohne Cloud, ohne Lizenzgeb&uuml;hren.
-        </p>
+                <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                    Autonome Fachspezialisten mit eigenem Ged&auml;chtnis, eigenen Werkzeugen
+                    und direktem Zugriff auf Ihre IT-Systeme &mdash; ohne Cloud, ohne Lizenzgeb&uuml;hren.
+                </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="preise.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center">
-                Proof of Concept anfragen
-            </a>
-            <a href="agenten.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-8 py-3.5 rounded-xl transition-all hover:bg-white/5 text-center">
-                Agenten kennenlernen
-            </a>
-        </div>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+                    <a href="preise.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-7 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center text-sm">
+                        Proof of Concept anfragen
+                    </a>
+                    <a href="agenten.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-7 py-3 rounded-xl transition-all hover:bg-white/5 text-center text-sm">
+                        Agenten kennenlernen
+                    </a>
+                </div>
+            </div>
 
-        <!-- Agent Network SVG Illustration -->
-        <div class="max-w-3xl mx-auto">
+            <!-- Right: Agent Network SVG (visible immediately) -->
+            <div class="max-w-lg mx-auto lg:max-w-none">
             <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="AIMOS Agenten-Netzwerk: F&uuml;nf spezialisierte KI-Agenten verbunden mit Ihrem lokalen Server">
                 <defs>
                     <!-- Pulse animation for connection dots -->
@@ -405,12 +412,7 @@
                       font-weight="500" letter-spacing="0.05em">ZUGRIFF</text>
             </svg>
         </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 text-xs">
-        <span>Scrollen</span>
-        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div><!-- end grid -->
     </div>
 </section>
 
