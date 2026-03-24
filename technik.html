@@ -127,6 +127,7 @@
 <div id="subnav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-0 transition-transform duration-300" style="transform: translateY(-100%);">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
+            <a href="#herausforderung" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Herausforderung</a>
             <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Architektur</a>
             <a href="#gpu-llm" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">GPU &amp; LLM</a>
             <a href="#context" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Context</a>
@@ -149,6 +150,289 @@
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Vom SovereignNode bis zum LLM-Aufruf &mdash; so funktioniert AIMOS unter der Haube.
         </p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  0. HERAUSFORDERUNG — Lokale KI vs. Cloud                             -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="herausforderung" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Die Herausforderung</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">24 GB VRAM &mdash; und trotzdem produktionsreif</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Cloud-LLMs arbeiten mit riesigen Kontextfenstern auf spezialisierten Server-Clustern.
+                AIMOS l&auml;uft auf <strong class="text-white">einer einzigen Grafikkarte</strong> in Ihrem B&uuml;ro &mdash;
+                und erreicht mit architektonischen Mitteln eine Leistung, die f&uuml;r Unternehmensaufgaben mehr als ausreicht.
+            </p>
+        </div>
+
+        <!-- Comparison Chart: Context Windows -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <div class="gradient-border glow-sm">
+                <div class="bg-slate-850 rounded-xl p-8">
+                    <div class="font-mono text-xs text-slate-500 mb-6">// Kontextfenster im Vergleich (Tokens)</div>
+                    <svg viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                        <!-- Grid lines -->
+                        <line x1="180" y1="20" x2="180" y2="230" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
+                        <line x1="330" y1="20" x2="330" y2="230" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
+                        <line x1="480" y1="20" x2="480" y2="230" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
+                        <line x1="630" y1="20" x2="630" y2="230" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
+
+                        <!-- Axis labels -->
+                        <text x="180" y="248" text-anchor="middle" fill="#64748b" font-size="8">250K</text>
+                        <text x="330" y="248" text-anchor="middle" fill="#64748b" font-size="8">500K</text>
+                        <text x="480" y="248" text-anchor="middle" fill="#64748b" font-size="8">750K</text>
+                        <text x="630" y="248" text-anchor="middle" fill="#64748b" font-size="8">1.000K</text>
+
+                        <!-- Gemini 2.5 Pro — 1M -->
+                        <text x="25" y="42" fill="#94a3b8" font-size="10">Gemini 2.5</text>
+                        <rect x="30" y="48" width="660" height="24" rx="4" fill="#4285f4" fill-opacity="0.2" stroke="#4285f4" stroke-width="1"/>
+                        <text x="660" y="64" text-anchor="end" fill="#4285f4" font-size="10" font-weight="600">1.000.000</text>
+                        <text x="40" y="64" fill="#94a3b8" font-size="9">Cloud &bull; $$$</text>
+
+                        <!-- Claude 4 — 200K -->
+                        <text x="25" y="92" fill="#94a3b8" font-size="10">Claude 4</text>
+                        <rect x="30" y="98" width="132" height="24" rx="4" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="1"/>
+                        <text x="150" y="114" text-anchor="end" fill="#d97706" font-size="10" font-weight="600">200.000</text>
+                        <text x="40" y="114" fill="#94a3b8" font-size="9">Cloud &bull; $$</text>
+
+                        <!-- GPT-4o — 128K -->
+                        <text x="25" y="142" fill="#94a3b8" font-size="10">GPT-4o</text>
+                        <rect x="30" y="148" width="85" height="24" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/>
+                        <text x="106" y="164" text-anchor="end" fill="#10b981" font-size="10" font-weight="600">128.000</text>
+                        <text x="40" y="164" fill="#94a3b8" font-size="9">Cloud &bull; $$</text>
+
+                        <!-- AIMOS local — 14K -->
+                        <text x="25" y="192" fill="#ffffff" font-size="10" font-weight="700">AIMOS</text>
+                        <rect x="30" y="198" width="12" height="24" rx="4" fill="#0070f3" fill-opacity="0.4" stroke="#0070f3" stroke-width="2"/>
+                        <text x="50" y="214" fill="#0070f3" font-size="10" font-weight="700">14.336</text>
+                        <text x="95" y="214" fill="#94a3b8" font-size="9">Lokal &bull; Ihre GPU &bull; Ihre Daten</text>
+
+                        <!-- Arrow + label -->
+                        <line x1="36" y1="228" x2="36" y2="262" stroke="#ef4444" stroke-width="1.5"/>
+                        <polygon points="30,262 36,272 42,262" fill="#ef4444"/>
+                        <text x="50" y="268" fill="#ef4444" font-size="10" font-weight="600">70&times; kleiner als Gemini</text>
+                        <text x="50" y="282" fill="#94a3b8" font-size="9">Aber: <tspan fill="#0070f3" font-weight="600">Architektur kompensiert das.</tspan></text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why VRAM is the bottleneck -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <div class="gradient-border glow-sm">
+                <div class="bg-slate-850 rounded-xl p-8">
+                    <div class="font-mono text-xs text-slate-500 mb-6">// Warum VRAM der Engpass ist</div>
+                    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                        <!-- GPU VRAM bar -->
+                        <rect x="20" y="20" width="680" height="60" rx="10" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.15"/>
+                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">RTX 3090 / RTX 4090 &mdash; 24 GB VRAM</text>
+
+                        <!-- Model weights: ~17 GB -->
+                        <rect x="22" y="22" width="486" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="265" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Modell-Gewichte</text>
+                        <text x="265" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
+
+                        <!-- KV-Cache: ~5 GB -->
+                        <rect x="512" y="22" width="130" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="577" y="48" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">KV-Cache</text>
+                        <text x="577" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~5 GB f&uuml;r Kontext</text>
+
+                        <!-- Safety margin -->
+                        <rect x="646" y="22" width="52" height="56" rx="9" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
+                        <text x="672" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Reserve</text>
+                        <text x="672" y="66" text-anchor="middle" fill="#94a3b8" font-size="8">~2 GB</text>
+
+                        <!-- Percentage labels -->
+                        <text x="265" y="100" text-anchor="middle" fill="#a855f7" font-size="10">71% belegt</text>
+                        <text x="577" y="100" text-anchor="middle" fill="#0070f3" font-size="10">21% f&uuml;r Kontext</text>
+                        <text x="672" y="100" text-anchor="middle" fill="#ef4444" font-size="10">8% Puffer</text>
+
+                        <!-- Bottom explanation -->
+                        <rect x="20" y="120" width="680" height="65" rx="8" fill="#1a2332" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.3"/>
+                        <text x="40" y="142" fill="#f59e0b" font-size="11" font-weight="700">Kernproblem:</text>
+                        <text x="145" y="142" fill="#94a3b8" font-size="10">Die 5 GB KV-Cache bestimmen, wie viel der Agent gleichzeitig &bdquo;sehen&ldquo; kann.</text>
+                        <text x="40" y="162" fill="#94a3b8" font-size="10">Cloud-Anbieter l&ouml;sen das mit hunderten GPUs. AIMOS l&ouml;st es mit</text>
+                        <text x="40" y="177" fill="#0070f3" font-size="10" font-weight="600">intelligentem Kontext-Management, Langzeitged&auml;chtnis und Aufgabenteilung.</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- How AIMOS compensates — 6 architectural techniques -->
+        <div class="text-center mb-8 reveal">
+            <h3 class="text-2xl font-bold tracking-tight mb-3">Sechs Architektur-Prinzipien statt roher Rechenleistung</h3>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                AIMOS kompensiert das kleinere Kontextfenster nicht durch gr&ouml;&szlig;ere Hardware &mdash;
+                sondern durch Architektur, die daf&uuml;r sorgt, dass der Agent genau das im Kontext hat,
+                was er f&uuml;r die aktuelle Aufgabe braucht.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10 reveal">
+            <!-- 1. Langzeitgedächtnis -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-signal-400 font-bold text-sm">1</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Langzeitged&auml;chtnis</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Jeder Agent hat ein eigenes Langzeitged&auml;chtnis mit semantischer Suche (Embeddings + Volltextsuche).
+                    Statt 200.000 Tokens Verlauf zu speichern, merkt sich der Agent die <strong class="text-slate-300">relevanten Fakten</strong>
+                    &mdash; und findet sie mit der richtigen Frage sofort wieder.
+                </p>
+                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Kontext-Architektur</a>
+            </div>
+
+            <!-- 2. Dreaming -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-green-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-green-400 font-bold text-sm">2</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Dreaming (Ged&auml;chtniskonsolidierung)</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Bevor der Kontext voll wird, analysiert der Agent seinen Gespr&auml;chsverlauf mit dem LLM,
+                    extrahiert wichtige Erkenntnisse und speichert sie ins Langzeitged&auml;chtnis.
+                    Dann wird der Verlauf gel&ouml;scht &mdash; <strong class="text-slate-300">ohne Informationsverlust</strong>.
+                </p>
+                <a href="agenten.html#gedaechtnis" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Agenten: Ged&auml;chtnis</a>
+            </div>
+
+            <!-- 3. Agent-Splitting -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-amber-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-amber-400 font-bold text-sm">3</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Agent-Splitting</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Statt einen &uuml;berladenen Agenten mit riesigem Prompt: mehrere Spezialisten mit
+                    kurzen, fokussierten Prompts. Jeder Agent belegt nur <strong class="text-slate-300">17&ndash;22% des Kontexts</strong>
+                    f&uuml;r seinen Systemprompt &mdash; der Rest bleibt f&uuml;r die Arbeit.
+                </p>
+                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Context Management</a>
+            </div>
+
+            <!-- 4. Dynamische Kompression -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-purple-400 font-bold text-sm">4</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Dynamische Kompression</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Der Context Budget Guard pr&uuml;ft vor jedem LLM-Call, ob der Kontext ins Budget passt.
+                    Zu lange Tool-Ergebnisse werden gek&uuml;rzt, &auml;ltere Nachrichten entfernt &mdash;
+                    <strong class="text-slate-300">automatisch, ohne Zutun</strong>.
+                </p>
+                <a href="#context" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Budget Guard</a>
+            </div>
+
+            <!-- 5. Strukturierte Kontext-Injektion -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-cyan-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-cyan-400 font-bold text-sm">5</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Strukturierte Kontext-Injektion</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Kalender, Projekte, Kontakte und Memories werden als <strong class="text-slate-300">kompakte Bl&ouml;cke</strong>
+                    in den Kontext injiziert &mdash; nicht als Freitext, sondern in einem Format, das der Agent
+                    mit minimalen Tokens versteht.
+                </p>
+                <a href="agenten.html#skills" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Agenten: Skills</a>
+            </div>
+
+            <!-- 6. Eskalation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-red-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-red-400 font-bold text-sm">6</span>
+                    </div>
+                    <h4 class="font-bold text-sm">Eskalation an st&auml;rkeres Modell</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                    Wenn eine Aufgabe das lokale Modell &uuml;bersteigt, eskaliert der Agent automatisch
+                    an ein Cloud-LLM &mdash; <strong class="text-slate-300">anonymisiert &uuml;ber PII-Vault</strong>.
+                    Nur die bereinigte Frage verl&auml;sst das Netzwerk, nie Ihre Daten.
+                </p>
+                <a href="compliance.html" class="text-signal-400 text-xs font-mono hover:underline">&rarr; Compliance: Datenschutz</a>
+            </div>
+        </div>
+
+        <!-- Result visualization: Effective vs actual context -->
+        <div class="reveal max-w-4xl mx-auto">
+            <div class="gradient-border glow-sm">
+                <div class="bg-slate-850 rounded-xl p-8">
+                    <div class="font-mono text-xs text-slate-500 mb-6">// Effektives Arbeitsged&auml;chtnis vs. Kontextfenster</div>
+                    <svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                        <!-- Cloud LLM bar -->
+                        <text x="20" y="25" fill="#94a3b8" font-size="10">Cloud-LLM (z.B. Claude)</text>
+                        <rect x="20" y="32" width="680" height="40" rx="6" fill="#d97706" fill-opacity="0.1" stroke="#d97706" stroke-width="1"/>
+                        <text x="360" y="57" text-anchor="middle" fill="#d97706" font-size="11" font-weight="600">200.000 Tokens Kontextfenster</text>
+                        <text x="360" y="38" text-anchor="middle" fill="#94a3b8" font-size="9">Alles auf einmal im Speicher &mdash; aber nach der Session vergessen</text>
+
+                        <!-- AIMOS bar: small context + memory extensions -->
+                        <text x="20" y="100" fill="#ffffff" font-size="10" font-weight="600">AIMOS Agent (lokal)</text>
+
+                        <!-- Actual context window -->
+                        <rect x="20" y="107" width="47" height="40" rx="6" fill="#0070f3" fill-opacity="0.3" stroke="#0070f3" stroke-width="2"/>
+                        <text x="43" y="131" text-anchor="middle" fill="#0070f3" font-size="9" font-weight="700">14K</text>
+
+                        <!-- Plus sign -->
+                        <text x="78" y="132" text-anchor="middle" fill="#64748b" font-size="14" font-weight="700">+</text>
+
+                        <!-- Memory layer -->
+                        <rect x="92" y="107" width="180" height="40" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1"/>
+                        <text x="182" y="125" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Langzeitged&auml;chtnis</text>
+                        <text x="182" y="140" text-anchor="middle" fill="#94a3b8" font-size="8">unbegrenzte Fakten &bull; semantische Suche</text>
+
+                        <!-- Plus sign -->
+                        <text x="284" y="132" text-anchor="middle" fill="#64748b" font-size="14" font-weight="700">+</text>
+
+                        <!-- Workspace layer -->
+                        <rect x="297" y="107" width="160" height="40" rx="6" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-width="1"/>
+                        <text x="377" y="125" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Workspace &amp; Projekte</text>
+                        <text x="377" y="140" text-anchor="middle" fill="#94a3b8" font-size="8">Dateien &bull; Kalender &bull; Kontakte</text>
+
+                        <!-- Plus sign -->
+                        <text x="469" y="132" text-anchor="middle" fill="#64748b" font-size="14" font-weight="700">+</text>
+
+                        <!-- Dreaming layer -->
+                        <rect x="482" y="107" width="105" height="40" rx="6" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-width="1"/>
+                        <text x="534" y="125" text-anchor="middle" fill="#ec4899" font-size="10" font-weight="600">Dreaming</text>
+                        <text x="534" y="140" text-anchor="middle" fill="#94a3b8" font-size="8">Konsolidierung</text>
+
+                        <!-- Plus sign -->
+                        <text x="599" y="132" text-anchor="middle" fill="#64748b" font-size="14" font-weight="700">+</text>
+
+                        <!-- Escalation layer -->
+                        <rect x="612" y="107" width="88" height="40" rx="6" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
+                        <text x="656" y="125" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Eskalation</text>
+                        <text x="656" y="140" text-anchor="middle" fill="#94a3b8" font-size="8">Cloud-LLM</text>
+
+                        <!-- Result bracket -->
+                        <line x1="20" y1="155" x2="700" y2="155" stroke="#0070f3" stroke-width="1.5"/>
+                        <line x1="20" y1="151" x2="20" y2="159" stroke="#0070f3" stroke-width="1.5"/>
+                        <line x1="700" y1="151" x2="700" y2="159" stroke="#0070f3" stroke-width="1.5"/>
+
+                        <!-- Result text -->
+                        <text x="360" y="178" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">Effektives Arbeitsged&auml;chtnis: unbegrenzt</text>
+                        <text x="360" y="196" text-anchor="middle" fill="#94a3b8" font-size="10">Der Agent vergisst nie etwas &mdash; auch nach Monaten und tausenden Gespr&auml;chen.</text>
+                        <text x="360" y="212" text-anchor="middle" fill="#0070f3" font-size="10" font-weight="600">Cloud-LLMs vergessen alles nach jeder Session.</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
