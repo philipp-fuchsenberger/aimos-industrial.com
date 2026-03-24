@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technische Architektur — AIMOS</title>
-    <meta name="description" content="AIMOS technische Architektur: SovereignNode, lokale LLM-Inferenz, Kontext-Management, Dual-DB-Architektur, Konnektoren und Agent-Portabilität.">
+    <title>Architettura Tecnica — AIMOS</title>
+    <meta name="description" content="Architettura tecnica AIMOS: SovereignNode, inferenza LLM locale, gestione del contesto, architettura Dual-DB, connettori e portabilit&agrave; degli agenti.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -101,22 +101,22 @@
             <span class="font-semibold text-lg tracking-tight">AIMOS</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="agenten.html" class="hover:text-white transition-colors">Agenten</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technik</a>
+            <a href="agenti.html" class="hover:text-white transition-colors">Agenti</a>
+            <a href="tecnica.html" class="hover:text-white transition-colors">Tecnica</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
-            <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
-            <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Prezzi</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contatto</a>
         </div>
         <div class="flex items-center gap-3">
             <div class="relative group">
-                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">DE</button>
+                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">IT</button>
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Deutsch</a>
-                    <a href="en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
-                    <a href="it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
+                    <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Italiano</a>
                 </div>
             </div>
         </div>
@@ -127,12 +127,12 @@
 <div id="subnav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-0 transition-transform duration-300" style="transform: translateY(-100%);">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
-            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Architektur</a>
+            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Architettura</a>
             <a href="#gpu-llm" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">GPU &amp; LLM</a>
             <a href="#context" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Context</a>
             <a href="#sovereign-node" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">SovereignNode</a>
-            <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Datenbank</a>
-                        <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilität</a>
+            <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Database</a>
+                        <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilit&agrave;</a>
             <a href="#highlights" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Highlights</a>
         </div>
     </div>
@@ -142,12 +142,12 @@
 <section id="hero" class="relative pt-32 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Technische Dokumentation</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Documentazione Tecnica</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            Technische Architektur
+            Architettura Tecnica
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Vom SovereignNode bis zum LLM-Aufruf &mdash; so funktioniert AIMOS unter der Haube.
+            Dal SovereignNode alla chiamata LLM &mdash; ecco come funziona AIMOS sotto il cofano.
         </p>
     </div>
 </section>
@@ -158,9 +158,9 @@
 <section id="architektur" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Stack-Diagramm</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">System-Übersicht</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Der vollständige Datenfluss von der Benutzernachricht bis zur Antwort &mdash; alle Schichten im Überblick.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Diagramma dello Stack</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Panoramica del Sistema</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Il flusso dati completo dal messaggio dell'utente alla risposta &mdash; tutti i livelli in sintesi.</p>
         </div>
 
         <div class="reveal max-w-4xl mx-auto">
@@ -172,10 +172,10 @@
                 </defs>
                 <!-- User Channels -->
                 <rect x="50" y="10" width="700" height="60" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="400" y="32" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">BENUTZER-KANÄLE</text>
+                <text x="400" y="32" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">CANALI UTENTE</text>
                 <text x="140" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Telegram</text>
                 <text x="300" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">E-Mail</text>
-                <text x="460" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Sprache (STT/TTS)</text>
+                <text x="460" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Voce (STT/TTS)</text>
                 <text x="640" y="52" text-anchor="middle" fill="#94a3b8" font-size="11">Dashboard</text>
 
                 <!-- Arrow -->
@@ -215,17 +215,17 @@
 
                 <!-- Return Arrow -->
                 <path d="M 730 445 L 730 40 L 750 40" stroke="#0070f3" stroke-width="1.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow1)"/>
-                <text x="738" y="250" fill="#94a3b8" font-size="10" transform="rotate(90, 738, 250)" text-anchor="middle">Antwort-Pfad</text>
+                <text x="738" y="250" fill="#94a3b8" font-size="10" transform="rotate(90, 738, 250)" text-anchor="middle">Percorso risposta</text>
 
                 <!-- Legend -->
                 <rect x="50" y="490" width="12" height="12" rx="2" fill="#0070f3" fill-opacity="0.3"/>
                 <text x="68" y="500" fill="#94a3b8" font-size="10">Kernel</text>
                 <rect x="140" y="490" width="12" height="12" rx="2" fill="#10b981" fill-opacity="0.3"/>
-                <text x="158" y="500" fill="#94a3b8" font-size="10">Datenbank</text>
+                <text x="158" y="500" fill="#94a3b8" font-size="10">Database</text>
                 <rect x="250" y="490" width="12" height="12" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
-                <text x="268" y="500" fill="#94a3b8" font-size="10">Orchestrierung</text>
+                <text x="268" y="500" fill="#94a3b8" font-size="10">Orchestrazione</text>
                 <rect x="390" y="490" width="12" height="12" rx="2" fill="#a855f7" fill-opacity="0.3"/>
-                <text x="408" y="500" fill="#94a3b8" font-size="10">Inferenz</text>
+                <text x="408" y="500" fill="#94a3b8" font-size="10">Inferenza</text>
             </svg>
         </div>
     </div>
@@ -238,8 +238,8 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Inferenz</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Lokale KI-Inferenz</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Lokale Inferenz via SGLang. Sequenzieller Betrieb. Intelligentes VRAM-Management.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Inferenza IA Locale</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Inferenza locale tramite SGLang. Funzionamento sequenziale. Gestione VRAM intelligente.</p>
         </div>
 
         <!-- Model Info -->
@@ -252,9 +252,9 @@
                     <div>
                         <h3 class="font-bold text-lg mb-1">Qwen 3.5:27B <span class="text-slate-500 font-normal text-sm">(Q4, ~17 GB VRAM)</span></h3>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            27-Milliarden-Parameter-Modell mit <strong class="text-white">nativem Tool-Calling</strong>.
-                            Kleinere Modelle (&lt;20B) scheitern an zuverlässiger Werkzeugsteuerung &mdash;
-                            ein produktionskritisches Ergebnis unserer Evaluierung.
+                            Modello da 27 miliardi di parametri con <strong class="text-white">Tool-Calling nativo</strong>.
+                            I modelli pi&ugrave; piccoli (&lt;20B) falliscono nel controllo affidabile degli strumenti &mdash;
+                            un risultato critico per la produzione dalla nostra valutazione.
                         </p>
                     </div>
                 </div>
@@ -269,8 +269,8 @@
                 </div>
                 <h3 class="font-bold mb-2">SGLang Runtime</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Hochperformante LLM-Runtime mit OpenAI-kompatiblem API-Endpunkt.
-                    <span class="text-signal-300 font-mono text-xs">RadixAttention</span>: Prefix-Cache wird zwischen Agenten geteilt &mdash; kein Neuladen bei Agent-Wechsel.
+                    Runtime LLM ad alte prestazioni con endpoint API compatibile OpenAI.
+                    <span class="text-signal-300 font-mono text-xs">RadixAttention</span>: la cache dei prefissi &egrave; condivisa tra gli agenti &mdash; nessun ricaricamento al cambio di agente.
                 </p>
             </div>
 
@@ -279,11 +279,11 @@
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Sequenzieller Betrieb</h3>
+                <h3 class="font-bold mb-2">Funzionamento Sequenziale</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Die VRAM Guard stellt sicher, dass nur ein Agent gleichzeitig auf die GPU zugreift.
-                    Anfragen werden in der Datenbank-Queue gehalten und sequenziell abgearbeitet &mdash;
-                    kein OOM, kein VRAM-Konflikt.
+                    Il VRAM Guard garantisce che solo un agente alla volta acceda alla GPU.
+                    Le richieste vengono mantenute nella coda del database ed elaborate sequenzialmente &mdash;
+                    nessun OOM, nessun conflitto VRAM.
                 </p>
             </div>
 
@@ -294,8 +294,8 @@
                 </div>
                 <h3 class="font-bold mb-2">Keep-Alive / RadixAttention</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Das Modell bleibt 30 Minuten im VRAM. Alle Agenten teilen sich dasselbe Modell &mdash;
-                    kein Entladen beim Agenten-Wechsel. Erst nach 30 Minuten Inaktivität wird VRAM freigegeben.
+                    Il modello rimane nella VRAM per 30 minuti. Tutti gli agenti condividono lo stesso modello &mdash;
+                    nessuno scaricamento al cambio di agente. Solo dopo 30 minuti di inattivit&agrave; la VRAM viene liberata.
                 </p>
             </div>
         </div>
@@ -304,7 +304,7 @@
         <div class="mt-12 reveal">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
-                    <div class="font-mono text-xs text-slate-500 mb-4">// Anatomie eines LLM-Requests</div>
+                    <div class="font-mono text-xs text-slate-500 mb-4">// Anatomia di una richiesta LLM</div>
                     <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <defs>
                             <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
@@ -352,16 +352,16 @@
 <section id="context" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Kontext-Management</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Kontext-Architektur</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">14.336 Tokens Kontextfenster. Jeder Agent nutzt 17&ndash;22% für seinen Prompt &mdash; der Rest bleibt für Gedächtnis, Gespräche und Tool-Aufrufe.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Gestione del Contesto</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Architettura del Contesto</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">14.336 token di finestra di contesto. Ogni agente utilizza il 17&ndash;22% per il proprio prompt &mdash; il resto rimane per memoria, conversazioni e chiamate agli strumenti.</p>
         </div>
 
         <!-- Context Window Composition Diagram -->
         <div class="reveal max-w-4xl mx-auto mb-12">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
-                    <div class="font-mono text-xs text-slate-500 mb-4">// Kontext-Fenster Komposition (14.336 Tokens)</div>
+                    <div class="font-mono text-xs text-slate-500 mb-4">// Composizione finestra di contesto (14.336 token)</div>
                     <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <defs>
                             <marker id="arrow-ctx" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
@@ -394,7 +394,7 @@
 
                         <!-- Calendar -->
                         <rect x="358" y="20" width="55" height="50" rx="0" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-width="1"/>
-                        <text x="385" y="42" text-anchor="middle" fill="#ec4899" font-size="8" font-weight="600">Kalender</text>
+                        <text x="385" y="42" text-anchor="middle" fill="#ec4899" font-size="8" font-weight="600">Calendario</text>
                         <text x="385" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">~200</text>
 
                         <!-- Active Chats -->
@@ -404,26 +404,26 @@
 
                         <!-- History -->
                         <rect x="482" y="20" width="150" height="50" rx="0" fill="#0070f3" fill-opacity="0.12" stroke="#0070f3" stroke-width="0.8"/>
-                        <text x="557" y="42" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="600">Gesprächsverlauf</text>
+                        <text x="557" y="42" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="600">Cronologia conversazione</text>
                         <text x="557" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">dynamisch</text>
 
                         <!-- Response budget -->
                         <rect x="634" y="20" width="106" height="50" rx="8" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
-                        <text x="687" y="42" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">Antwort</text>
-                        <text x="687" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">~2.000 reserv.</text>
+                        <text x="687" y="42" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">Risposta</text>
+                        <text x="687" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">~2.000 riservati</text>
 
                         <!-- Bracket labels -->
                         <!-- Fixed portion -->
                         <line x1="20" y1="82" x2="253" y2="82" stroke="#5eafff" stroke-width="1"/>
                         <line x1="20" y1="78" x2="20" y2="86" stroke="#5eafff" stroke-width="1"/>
                         <line x1="253" y1="78" x2="253" y2="86" stroke="#5eafff" stroke-width="1"/>
-                        <text x="136" y="96" text-anchor="middle" fill="#5eafff" font-size="9">Fix pro Agent (17-22%)</text>
+                        <text x="136" y="96" text-anchor="middle" fill="#5eafff" font-size="9">Fisso per agente (17-22%)</text>
 
                         <!-- Dynamic portion -->
                         <line x1="256" y1="82" x2="740" y2="82" stroke="#10b981" stroke-width="1"/>
                         <line x1="256" y1="78" x2="256" y2="86" stroke="#10b981" stroke-width="1"/>
                         <line x1="740" y1="78" x2="740" y2="86" stroke="#10b981" stroke-width="1"/>
-                        <text x="498" y="96" text-anchor="middle" fill="#10b981" font-size="9">Dynamisch (Gedächtnis + Konversation + Antwort)</text>
+                        <text x="498" y="96" text-anchor="middle" fill="#10b981" font-size="9">Dinamico (Memoria + Conversazione + Risposta)</text>
 
                         <!-- Budget Guard explanation -->
                         <rect x="20" y="120" width="720" height="120" rx="8" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.05"/>
@@ -431,15 +431,15 @@
                         <circle cx="55" cy="150" r="18" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1"/>
                         <text x="55" y="154" text-anchor="middle" fill="#f59e0b" font-size="16" font-weight="700">!</text>
                         <text x="85" y="145" fill="#ffffff" font-size="11" font-weight="600">Context Budget Guard</text>
-                        <text x="85" y="162" fill="#94a3b8" font-size="10">Automatisches Trimming: Wenn der Kontext das Budget überschreitet,</text>
-                        <text x="85" y="177" fill="#94a3b8" font-size="10">wird der Gesprächsverlauf komprimiert, bevor der LLM-Call startet.</text>
+                        <text x="85" y="162" fill="#94a3b8" font-size="10">Trimming automatico: quando il contesto supera il budget,</text>
+                        <text x="85" y="177" fill="#94a3b8" font-size="10">la cronologia della conversazione viene compressa prima dell'avvio della chiamata LLM.</text>
 
                         <circle cx="55" cy="215" r="18" fill="#a855f7" fill-opacity="0.15" stroke="#a855f7" stroke-width="1"/>
                         <text x="55" y="212" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="700">zZ</text>
                         <text x="55" y="224" text-anchor="middle" fill="#a855f7" font-size="8"></text>
                         <text x="85" y="210" fill="#ffffff" font-size="11" font-weight="600">Dreaming-Trigger</text>
-                        <text x="85" y="227" fill="#94a3b8" font-size="10">Überschreitet der Verlauf die Schwelle, konsolidiert der Agent</text>
-                        <text x="85" y="242" fill="#94a3b8" font-size="10">Erkenntnisse ins Langzeitgedächtnis (Dreaming) und leert den Verlauf.</text>
+                        <text x="85" y="227" fill="#94a3b8" font-size="10">Se la cronologia supera la soglia, l'agente consolida</text>
+                        <text x="85" y="242" fill="#94a3b8" font-size="10">le informazioni nella memoria a lungo termine (Dreaming) e svuota la cronologia.</text>
                     </svg>
                 </div>
             </div>
@@ -454,9 +454,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Context Budget Guard</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Vor jedem LLM-Call wird die Token-Summe geprüft. Überschreitet sie das Budget,
-                    wird der Gesprächsverlauf automatisch gekürzt &mdash; älteste Nachrichten zuerst.
-                    Der Agent-Prompt und die Tool-Definitionen bleiben immer vollständig erhalten.
+                    Prima di ogni chiamata LLM viene verificato il totale dei token. Se supera il budget,
+                    la cronologia della conversazione viene automaticamente ridotta &mdash; i messaggi pi&ugrave; vecchi per primi.
+                    Il prompt dell'agente e le definizioni degli strumenti rimangono sempre completamente intatti.
                 </p>
             </div>
 
@@ -465,11 +465,11 @@
                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Dynamische Kompression</h3>
+                <h3 class="font-bold mb-2">Compressione Dinamica</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Das verfügbare Kontext-Budget wird dynamisch berechnet: kürzere Agenten-Prompts
-                    lassen mehr Platz für Gesprächsverlauf und Memories. Agenten mit umfangreichen
-                    Tool-Sets kompensieren durch kürzere System-Prompts.
+                    Il budget di contesto disponibile viene calcolato dinamicamente: prompt degli agenti pi&ugrave; brevi
+                    lasciano pi&ugrave; spazio per la cronologia e le memorie. Gli agenti con set di strumenti ampi
+                    compensano con prompt di sistema pi&ugrave; corti.
                 </p>
             </div>
 
@@ -480,9 +480,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Agent-Splitting</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Statt einen Agenten mit riesigem Prompt zu überladen, verteilt AIMOS Arbeit auf
-                    Spezialisten mit kurzen, fokussierten Prompts. Jeder Agent beherrscht sein Fachgebiet &mdash;
-                    weniger Prompt, mehr Platz für Kontext.
+                    Invece di sovraccaricare un agente con un prompt enorme, AIMOS distribuisce il lavoro su
+                    specialisti con prompt brevi e focalizzati. Ogni agente domina il proprio campo &mdash;
+                    meno prompt, pi&ugrave; spazio per il contesto.
                 </p>
             </div>
         </div>
@@ -496,17 +496,17 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruktur</p>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruttura</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Ein einzelner Server. Lokale GPU. Keine Cloud-Abhängigkeit.
-                    Der SovereignNode ist das Herzstück jeder AIMOS-Installation &mdash;
-                    ein physischer oder virtueller Server, der alle Komponenten beherbergt.
+                    Un singolo server. GPU locale. Nessuna dipendenza dal cloud.
+                    Il SovereignNode &egrave; il cuore di ogni installazione AIMOS &mdash;
+                    un server fisico o virtuale che ospita tutti i componenti.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-8">
-                    Alles läuft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
-                    und die Kommunikationskanäle. Kein Byte verlässt Ihr Netzwerk &mdash;
-                    es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
+                    Tutto funziona on-premise: l'inferenza LLM, i database, i processi degli agenti
+                    e i canali di comunicazione. Nessun byte lascia la Sua rete &mdash;
+                    a meno che non lo configuri esplicitamente (ad es. messaggi Telegram).
                 </p>
 
                 <!-- Hardware Requirements Table -->
@@ -514,9 +514,9 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="bg-slate-850 border-b border-white/5">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Komponente</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Empfohlen</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Componente</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimo</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Raccomandato</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
@@ -531,14 +531,14 @@
                                 <td class="py-3 px-4 text-signal-300">64 GB DDR5</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">Speicher</td>
+                                <td class="py-3 px-4 font-medium text-white">Archiviazione</td>
                                 <td class="py-3 px-4">256 GB SSD</td>
                                 <td class="py-3 px-4 text-signal-300">1 TB NVMe</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-medium text-white">CPU</td>
-                                <td class="py-3 px-4">8 Kerne</td>
-                                <td class="py-3 px-4 text-signal-300">16+ Kerne</td>
+                                <td class="py-3 px-4">8 core</td>
+                                <td class="py-3 px-4 text-signal-300">16+ core</td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-medium text-white">OS</td>
@@ -607,9 +607,9 @@
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Dual-DB</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Dual-DB-Architektur</h2>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Architettura Dual-DB</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    AIMOS nutzt zwei Datenbanksysteme mit klar getrennten Verantwortlichkeiten:
+                    AIMOS utilizza due sistemi di database con responsabilit&agrave; nettamente separate:
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4">
@@ -617,11 +617,11 @@
                             <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay-Datenbank)</h4>
+                            <h4 class="font-semibold text-white mb-1">PostgreSQL (Database Relay)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Zentrale Nachrichtenweiterleitung zwischen Shared Listener, Orchestrator und Agenten.
-                                Speichert eingehende Nachrichten, Audit-Logs, PII-Vault-Mappings und Session-Daten.
-                                Multi-Process-fähig durch Connection Pooling.
+                                Inoltro centralizzato dei messaggi tra Shared Listener, Orchestrator e agenti.
+                                Memorizza messaggi in entrata, log di audit, mappature PII-Vault e dati di sessione.
+                                Supporto multi-processo tramite Connection Pooling.
                             </p>
                         </div>
                     </div>
@@ -632,9 +632,9 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">SQLite (Agent-Memory)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Jeder Agent hat seine eigene SQLite-Datenbank mit semantischem, episodischem
-                                und prozeduralem Gedächtnis. Hybrid-Suche über FTS5 + Vektor-Embeddings.
-                                Portabel durch einfaches Kopieren der Datei.
+                                Ogni agente ha il proprio database SQLite con memoria semantica, episodica
+                                e procedurale. Ricerca ibrida tramite FTS5 + vettori-embeddings.
+                                Portabile tramite semplice copia del file.
                             </p>
                         </div>
                     </div>
@@ -665,7 +665,7 @@
 
                     <!-- SQLite Box -->
                     <rect x="220" y="20" width="160" height="340" rx="8" fill="#0070f3" fill-opacity="0.06" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (je Agent)</text>
+                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (per agente)</text>
                     <rect x="235" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                     <text x="300" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">semantic_memory</text>
                     <rect x="235" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
@@ -682,7 +682,7 @@
                     <line x1="220" y1="120" x2="180" y2="120" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
 
                     <!-- Label -->
-                    <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Sync via</text>
+                    <text x="200" y="290" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Sincr. via</text>
                     <text x="200" y="305" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Orchestrator</text>
                 </svg>
             </div>
@@ -695,9 +695,9 @@
 <section id="portabilitaet" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agent-Portabilität</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS-Agenten sind portabel, kompatibel und interoperabel durch offene Standards.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilit&agrave;</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Portabilit&agrave; degli Agenti</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Gli agenti AIMOS sono portabili, compatibili e interoperabili grazie a standard aperti.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -708,8 +708,8 @@
                 </div>
                 <h3 class="font-bold mb-2">OAP Export/Import</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Open Agent Package Format ermöglicht den vollständigen Export eines Agenten
-                    inklusive Memory, Skills und Konfiguration als portables Archiv.
+                    Il formato Open Agent Package consente l'esportazione completa di un agente
+                    inclusi memoria, competenze e configurazione come archivio portabile.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div class="text-signal-300">agent_export.oap</div>
@@ -727,8 +727,8 @@
                 </div>
                 <h3 class="font-bold mb-2">MCP Bridge (39 Tools)</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Model Context Protocol ermöglicht externen LLMs (Claude, GPT, etc.)
-                    den Zugriff auf AIMOS-Skills. 39 Tools stehen als MCP-Server bereit.
+                    Il Model Context Protocol consente a LLM esterni (Claude, GPT, ecc.)
+                    l'accesso alle competenze AIMOS. 39 strumenti sono disponibili come server MCP.
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">sql_query</span>
@@ -746,8 +746,8 @@
                 </div>
                 <h3 class="font-bold mb-2">A2A Agent Cards</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Jeder Agent publiziert eine Agent Card (JSON-LD) nach Google A2A-Spezifikation.
-                    Externe Systeme können Fähigkeiten, Eingabeformate und Vertrauensstufe abfragen.
+                    Ogni agente pubblica una Agent Card (JSON-LD) secondo la specifica Google A2A.
+                    I sistemi esterni possono interrogare capacit&agrave;, formati di input e livello di fiducia.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div><span class="text-signal-300">"name"</span>: "Konstruktions-Agent",</div>
@@ -785,7 +785,7 @@
                 <!-- Target Node -->
                 <rect x="590" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="690" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode B</text>
-                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agent aktiv</text>
+                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agente attivo</text>
             </svg>
         </div>
     </div>
@@ -797,8 +797,8 @@
 <section id="highlights" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Technische Highlights</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Was AIMOS auszeichnet</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Punti di forza tecnici</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cosa distingue AIMOS</h2>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -810,9 +810,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Native Tool-Calling</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Keine Text-Hacks oder Regex-Parsing &mdash; AIMOS nutzt die native Tool-Calling-API
-                    des LLM. Der Agent <strong class="text-white">steuert Systeme direkt</strong>,
-                    statt Aktionen nur zu beschreiben.
+                    Nessun text-hack o parsing regex &mdash; AIMOS utilizza l'API nativa di Tool-Calling
+                    del LLM. L'agente <strong class="text-white">controlla i sistemi direttamente</strong>,
+                    invece di descrivere solo le azioni.
                 </p>
             </div>
 
@@ -821,11 +821,11 @@
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Mehrsprachige Sprache</h3>
+                <h3 class="font-bold mb-2">Voce Multilingue</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Spracherkennung (Whisper STT) und Sprachsynthese (Piper TTS) in
-                    <strong class="text-white">allen Sprachen</strong> &mdash;
-                    Agenten verstehen Sprachnachrichten und antworten in der Muttersprache des Nutzers.
+                    Riconoscimento vocale (Whisper STT) e sintesi vocale (Piper TTS) in
+                    <strong class="text-white">tutte le lingue</strong> &mdash;
+                    gli agenti comprendono i messaggi vocali e rispondono nella lingua madre dell'utente.
                 </p>
             </div>
 
@@ -836,9 +836,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Token-Tracking</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder LLM-Call wird erfasst: Input-/Output-Tokens, Latenz, Kontextauslastung.
-                    <strong class="text-white">Volle Kostentransparenz</strong> pro Agent,
-                    pro Gespräch, pro Monat.
+                    Ogni chiamata LLM viene registrata: token input/output, latenza, utilizzo del contesto.
+                    <strong class="text-white">Trasparenza totale dei costi</strong> per agente,
+                    per conversazione, per mese.
                 </p>
             </div>
 
@@ -849,9 +849,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Conversation Threading</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder Agent weiß, <strong class="text-white">mit wem er auf welchem Kanal spricht</strong>.
-                    Telegram, E-Mail und interne Nachrichten werden sauber getrennt &mdash;
-                    keine Verwechslung zwischen Gesprächspartnern.
+                    Ogni agente sa <strong class="text-white">con chi sta parlando su quale canale</strong>.
+                    Telegram, e-mail e messaggi interni vengono separati in modo pulito &mdash;
+                    nessuna confusione tra gli interlocutori.
                 </p>
             </div>
         </div>
@@ -869,15 +869,15 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Open Source unter MIT-Lizenz.
+                    Open Source con licenza MIT.
                 </p>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Prodotto</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
-                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Architektur</a></li>
-                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="agenti.html" class="hover:text-signal-400 transition-colors">Team di Agenti</a></li>
+                    <li><a href="tecnica.html" class="hover:text-signal-400 transition-colors">Architektur</a></li>
+                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Connettori</a></li>
                     <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
@@ -891,19 +891,19 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Risorse</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
-                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Startseite</a></li>
+                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilit&agrave; MCP</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Home</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der MIT-Lizenz.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Concesso in licenza MIT.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Impressum</a>
-                <a href="index.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
+                <a href="index.html" class="hover:text-slate-400 transition-colors">Note legali</a>
+                <a href="index.html" class="hover:text-slate-400 transition-colors">Privacy</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
             </div>
         </div>
