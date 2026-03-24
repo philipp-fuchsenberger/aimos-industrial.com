@@ -162,7 +162,7 @@
             Sistema &amp; Infrastruttura
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Hardware, database, portabilit&agrave; &mdash; die physische und logische Basis Ihres SovereignNode.
+            Hardware, database, portabilità &mdash; la base fisica e logica del Suo SovereignNode.
         </p>
     </div>
 </section>
@@ -177,14 +177,14 @@
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruttura</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Ein einzelner Server. Lokale GPU. Keine Cloud-Abhängigkeit.
-                    Der SovereignNode ist das Herzstück jeder AIMOS-Installation &mdash;
-                    ein physischer oder virtueller Server, der alle Komponenten beherbergt.
+                    Un singolo server. GPU locale. Nessuna dipendenza dal cloud.
+                    Il SovereignNode è il cuore di ogni installazione AIMOS &mdash;
+                    un server fisico o virtuale che ospita tutti i componenti.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-8">
-                    Alles läuft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
-                    und die Kommunikationskanäle. Kein Byte verlässt Ihr Netzwerk &mdash;
-                    es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
+                    Tutto funziona on-premise: l'inferenza LLM, i database, i processi degli agenti
+                    e i canali di comunicazione. Nessun byte lascia la Sua rete &mdash;
+                    a meno che non lo configuri esplicitamente (ad es. messaggi Telegram).
                 </p>
 
                 <!-- Hardware Requirements Table -->
@@ -192,9 +192,9 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="bg-slate-850 border-b border-white/5">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Komponente</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Empfohlen</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Componente</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimo</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Consigliato</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
@@ -209,14 +209,14 @@
                                 <td class="py-3 px-4 text-signal-300">64 GB DDR5</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">Speicher</td>
+                                <td class="py-3 px-4 font-medium text-white">Archiviazione</td>
                                 <td class="py-3 px-4">256 GB SSD</td>
                                 <td class="py-3 px-4 text-signal-300">1 TB NVMe</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-medium text-white">CPU</td>
-                                <td class="py-3 px-4">8 Kerne</td>
-                                <td class="py-3 px-4 text-signal-300">16+ Kerne</td>
+                                <td class="py-3 px-4">8 core</td>
+                                <td class="py-3 px-4 text-signal-300">16+ core</td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-medium text-white">OS</td>
@@ -287,7 +287,7 @@
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Dual-DB</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Dual-DB-Architektur</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    AIMOS nutzt zwei Datenbanksysteme mit klar getrennten Verantwortlichkeiten:
+                    AIMOS utilizza due sistemi di database con responsabilità chiaramente separate:
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4">
@@ -297,9 +297,9 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay-Datenbank)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Zentrale Nachrichtenweiterleitung zwischen Shared Listener, Orchestrator und Agenten.
-                                Speichert eingehende Nachrichten, Audit-Logs, PII-Vault-Mappings und Session-Daten.
-                                Multi-Process-fähig durch Connection Pooling.
+                                Inoltro centrale dei messaggi tra Shared Listener, Orchestrator e agenti.
+                                Memorizza messaggi in entrata, audit log, mappature PII-Vault e dati di sessione.
+                                Multi-processo grazie al connection pooling.
                             </p>
                         </div>
                     </div>
@@ -310,9 +310,9 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">SQLite (Agent-Memory)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Jeder Agent hat seine eigene SQLite-Datenbank mit semantischem, episodischem
-                                und prozeduralem Gedächtnis. Ricerca ibrida über FTS5 + vettori embeddings.
-                                Portabel durch einfaches Kopieren der Datei.
+                                Ogni agente ha il proprio database SQLite con memoria semantica, episodica
+                                e procedurale. Ricerca ibrida tramite FTS5 + vettori embeddings.
+                                Portabile tramite semplice copia del file.
                             </p>
                         </div>
                     </div>
@@ -343,7 +343,7 @@
 
                     <!-- SQLite Box -->
                     <rect x="220" y="20" width="160" height="340" rx="8" fill="#0070f3" fill-opacity="0.06" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (je Agent)</text>
+                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (per agente)</text>
                     <rect x="235" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                     <text x="300" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">semantic_memory</text>
                     <rect x="235" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
@@ -373,9 +373,9 @@
 <section id="portabilitaet" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agent-Portabilität</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS-Agenten sind portabel, kompatibel und interoperabel durch offene Standards.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilità</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Portabilità degli agenti</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Gli agenti AIMOS sono portabili, compatibili e interoperabili grazie a standard aperti.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -386,8 +386,8 @@
                 </div>
                 <h3 class="font-bold mb-2">OAP Export/Import</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Open Agent Package Format ermöglicht den vollständigen Export eines Agenten
-                    inklusive Memory, Skills und Konfiguration als portables Archiv.
+                    Il formato Open Agent Package consente l'esportazione completa di un agente
+                    inclusi memoria, skills e configurazione come archivio portabile.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div class="text-signal-300">agent_export.oap</div>
@@ -405,15 +405,15 @@
                 </div>
                 <h3 class="font-bold mb-2">MCP Bridge (39 Tools)</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Model Context Protocol ermöglicht externen LLMs (Claude, GPT, etc.)
-                    den Zugriff auf AIMOS-Skills. 39 Tools stehen als MCP-Server bereit.
+                    Il Model Context Protocol consente a LLM esterni (Claude, GPT, ecc.)
+                    l'accesso agli skills AIMOS. 39 strumenti sono disponibili come server MCP.
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">sql_query</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">file_read</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">rest_call</span>
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">memory_search</span>
-                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">+35 mehr</span>
+                    <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">+35 altri</span>
                 </div>
             </div>
 
@@ -424,11 +424,11 @@
                 </div>
                 <h3 class="font-bold mb-2">A2A Agent Cards</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Jeder Agent publiziert eine Agent Card (JSON-LD) nach Google A2A-Spezifikation.
-                    Externe Systeme können Fähigkeiten, Eingabeformate und Vertrauensstufe abfragen.
+                    Ogni agente pubblica un'Agent Card (JSON-LD) secondo la specifica Google A2A.
+                    I sistemi esterni possono interrogare capacità, formati di input e livello di fiducia.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
-                    <div><span class="text-signal-300">"name"</span>: "Konstruktions-Agent",</div>
+                    <div><span class="text-signal-300">"name"</span>: "Agente di progettazione",</div>
                     <div><span class="text-signal-300">"skills"</span>: ["cad_read", "bom_gen"],</div>
                     <div><span class="text-signal-300">"trust_ring"</span>: 1</div>
                 </div>
@@ -463,20 +463,20 @@
                 <!-- Target Node -->
                 <rect x="590" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="690" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode B</text>
-                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agent aktiv</text>
+                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agente attivo</text>
             </svg>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  8. Highlights — Technische Highlights                                -->
+<!--  8. Highlights — Punti di forza tecnici                                -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="highlights" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Technische Highlights</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Was AIMOS auszeichnet</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Punti di forza tecnici</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cosa distingue AIMOS</h2>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -488,9 +488,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Native Tool-Calling</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Keine Text-Hacks oder Regex-Parsing &mdash; AIMOS nutzt die native Tool-Calling-API
-                    des LLM. Der Agent <strong class="text-white">steuert Systeme direkt</strong>,
-                    statt Aktionen nur zu beschreiben.
+                    Nessun hack testuale o parsing regex &mdash; AIMOS utilizza l'API nativa di tool-calling
+                    del LLM. L'agente <strong class="text-white">controlla i sistemi direttamente</strong>,
+                    anziché limitarsi a descrivere le azioni.
                 </p>
             </div>
 
@@ -499,11 +499,11 @@
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Mehrsprachige Sprache</h3>
+                <h3 class="font-bold mb-2">Voce multilingue</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Spracherkennung (Whisper STT) und Sprachsynthese (Piper TTS) in
-                    <strong class="text-white">allen Sprachen</strong> &mdash;
-                    Agenten verstehen Sprachnachrichten und antworten in der Muttersprache des Nutzers.
+                    Riconoscimento vocale (Whisper STT) e sintesi vocale (Piper TTS) in
+                    <strong class="text-white">tutte le lingue</strong> &mdash;
+                    gli agenti comprendono i messaggi vocali e rispondono nella lingua madre dell'utente.
                 </p>
             </div>
 
@@ -514,9 +514,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Token-Tracking</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder LLM-Call wird erfasst: Input-/Output-Tokens, Latenz, Kontextauslastung.
-                    <strong class="text-white">Volle Kostentransparenz</strong> pro Agent,
-                    pro Gespräch, pro Monat.
+                    Ogni chiamata LLM viene registrata: token input/output, latenza, utilizzo del contesto.
+                    <strong class="text-white">Piena trasparenza dei costi</strong> per agente,
+                    per conversazione, per mese.
                 </p>
             </div>
 
@@ -527,9 +527,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Conversation Threading</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder Agent weiß, <strong class="text-white">mit wem er auf welchem Kanal spricht</strong>.
-                    Telegram, E-Mail und interne Nachrichten werden sauber getrennt &mdash;
-                    keine Verwechslung zwischen Gesprächspartnern.
+                    Ogni agente sa <strong class="text-white">con chi sta parlando su quale canale</strong>.
+                    Telegram, e-mail e messaggi interni vengono separati in modo pulito &mdash;
+                    nessuna confusione tra interlocutori.
                 </p>
             </div>
         </div>
@@ -576,7 +576,7 @@
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Risorse</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilità MCP</a></li>
                     <li><a href="index.html" class="hover:text-signal-400 transition-colors">Pagina iniziale</a></li>
                 </ul>
             </div>

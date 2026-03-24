@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajan Ekibi — AIMOS</title>
-    <meta name="description" content="AIMOS Agenten: Autonome Spezialisten mit eigenem Bellek, Yürütme Halkaları, Uzun Süreli Bellek und Ajanlar Arası İletişim.">
+    <meta name="description" content="AIMOS Ajanları: Kendi belleği, yürütme halkaları, uzun süreli bellek ve ajanlar arası iletişim ile otonom uzmanlar.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -147,9 +147,9 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konzept</a>
+        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konsept</a>
         <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
-        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konnektoren</a>
+        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Bağlayıcılar</a>
         <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Bellek</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
     </div>
@@ -159,9 +159,9 @@
 <section class="relative pt-40 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Agenten-Architektur</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ajan Mimarisi</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            Das Agenten-Team
+            Ajan Ekibi
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Kendi belleği, kendi araçları ve kişiliği olan otonom uzmanlar &mdash;
@@ -180,7 +180,7 @@
         <!-- Anatomy: M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Grundlagen</p>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Temel Bilgiler</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">AIMOS Ajanı Nedir?</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
                     Bir AIMOS ajanı, dört temel bileşeni birleştiren özelleştirilmiş bir dijital asistandır:
@@ -201,7 +201,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-sm">Skills (Araçlar)</h4>
-                            <p class="text-slate-500 text-sm">Fachspezifische Tool-Sammlung: SQL-Abfragen, REST-Aufrufe, Datei-Operationen, dom&auml;nenspezifische Funktionen.</p>
+                            <p class="text-slate-500 text-sm">Alana özgü araç koleksiyonu: SQL sorguları, REST çağrıları, dosya işlemleri, alana özel fonksiyonlar.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -209,7 +209,7 @@
                             <span class="text-amber-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Sprachmodell)</h4>
+                            <h4 class="font-semibold text-sm">LLM (Dil Modeli)</h4>
                             <p class="text-slate-500 text-sm">Yerel LLM çalışma zamanı üzerinden yerel model. Ajan, sistem promptu, bellek bağlamı ve kullanıcı talebinden tam promptu oluşturur.</p>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                             <span class="text-purple-400 font-bold text-xs">C</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Bağlayıcı (Anbindung)</h4>
+                            <h4 class="font-semibold text-sm">Bağlayıcı (Arayüz)</h4>
                             <p class="text-slate-500 text-sm">Kullanıcıyla iletişim kanalı: Telegram, e-posta, ses veya gösterge paneli.</p>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                     <!-- Central Agent -->
                     <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
                     <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">AGENT</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomer Spezialist</text>
+                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Otonom Uzman</text>
 
                     <!-- Memory (top-left) -->
                     <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
@@ -258,7 +258,7 @@
                     <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
                         <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
                         <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Sprachmodell (lokal)</text>
+                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Dil Modeli (yerel)</text>
                     </a>
                     <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
 
@@ -281,11 +281,11 @@
         <!-- Agent als digitaler Assistent (8 cards) -->
         <div class="mt-24">
             <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arbeitsweise</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der Agent als digitaler Assistent</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Çalışma Şekli</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Dijital Asistan Olarak Ajan</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
                     Bir AIMOS ajanı sohbet botu gibi çalışmaz &mdash; bir memur gibi çalışır
-                    mit eigenem Schreibtisch, eigener Ablage und eigenem Tagesrhythmus.
+                    kendi masası, kendi dosyalama sistemi ve kendi günlük ritmi ile.
                 </p>
             </div>
 
@@ -298,7 +298,7 @@
                     <h4 class="font-bold text-sm mb-1">Bellek</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Gerçekleri, düzeltmeleri, tercihleri hatırlar &mdash; kalıcı olarak.
-                        Semantische Suche findet Erinnerungen auch mit anderen Worten.
+                        Anlamsal arama, anıları farklı kelimelerle de bulur.
                     </p>
                 </div>
 
@@ -307,10 +307,10 @@
                     <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Notizen &amp; Ablage</h4>
+                    <h4 class="font-bold text-sm mb-1">Notlar &amp; Dosyalama</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Özetler yazar, araştırma sonuçları ve görüşme notları
-                        in seinen eigenen Workspace &mdash; wie ein Sachbearbeiter seinen Aktenordner pflegt.
+                        kendi çalışma alanında saklar &mdash; tıpkı bir memurun dosya klasörünü düzenlemesi gibi.
                     </p>
                 </div>
 
@@ -319,10 +319,10 @@
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Kalender</h4>
+                    <h4 class="font-bold text-sm mb-1">Takvim</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Randevular, son tarihler, hatırlatmalar. Ajan her etkileşimde
-                        seine f&auml;lligen und &uuml;berf&auml;lligen Termine &mdash; und handelt proaktiv.
+                        vadesi gelmiş ve gecikmiş randevularını kontrol eder &mdash; ve proaktif davranır.
                     </p>
                 </div>
 
@@ -333,8 +333,8 @@
                     </div>
                     <h4 class="font-bold text-sm mb-1">Todo-Liste</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Offene Aufgaben, Delegationen, Wartelisten.
-                        Wird im Dreaming-Zyklus automatisch aktualisiert.
+                        Açık görevler, delegasyonlar, bekleme listeleri.
+                        Dreaming döngüsünde otomatik olarak güncellenir.
                     </p>
                 </div>
             </div>
@@ -346,10 +346,10 @@
                     <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Tagesrhythmus</h4>
+                    <h4 class="font-bold text-sm mb-1">Günlük Ritim</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Ajan günde bir kez bağımsız olarak takvimi, e-postaları
-                        ve açık görevleri kontrol eder &mdash; auch ohne dass jemand ihn anspricht.
+                        ve açık görevleri kontrol eder &mdash; kimse ona sormasa bile.
                     </p>
                 </div>
 
@@ -361,7 +361,7 @@
                     <h4 class="font-bold text-sm mb-1">Dreaming</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Sakin dönemlerde ajan konuşmalarını işler: gerçekleri çıkarır,
-                        notları günceller und Todo-Listen, konsolidiert sein Bellek.
+                        notları ve yapılacaklar listelerini günceller, belleğini konsolide eder.
                     </p>
                 </div>
 
@@ -370,7 +370,7 @@
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Teamarbeit</h4>
+                    <h4 class="font-bold text-sm mb-1">Ekip Çalışması</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Ajanlar kendi aralarında iletişim kurar &mdash; Finans Ajanı
                         Lojistik Ajanına stok değerlerini sorar, kullanıcıyı rahatsız etmeden.
@@ -385,7 +385,7 @@
                     <h4 class="font-bold text-sm mb-1">Eskalasyon</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
                         Karmaşık sorularda ajan otomatik olarak daha güçlü bir
-                        YZ modeline eskalasyon yapar &mdash; anonymisiert und denetim güvenli protokolliert.
+                        YZ modeline eskalasyon yapar &mdash; anonimleştirilmiş ve denetim güvenli şekilde protokollenmiş.
                     </p>
                 </div>
             </div>
@@ -393,7 +393,7 @@
             <!-- Summary box -->
             <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
                 <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">Der entscheidende Punkt:</strong> Ajan hazırlar &mdash; Siz karar verirsiniz. Uzmanlığınız, deneyiminiz ve yargı gücünüz vazgeçilmez kalır. Ajan rutin işlerinizi üstlenir: Daten zusammensuchen, Fristen &uuml;berwachen, Entw&uuml;rfe vorbereiten. Die fachliche Arbeit bleibt bei Ihnen.
+                    <strong class="text-white">Kilit nokta:</strong> Ajan hazırlar &mdash; Siz karar verirsiniz. Uzmanlığınız, deneyiminiz ve yargı gücünüz vazgeçilmez kalır. Ajan rutin işlerinizi üstlenir: veri toplamak, süreleri takip etmek, taslaklar hazırlamak. Uzmanlık gerektiren iş sizde kalır.
                 </p>
             </div>
         </div>
@@ -409,13 +409,13 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">SKILL_REGISTRY</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">18 Skills im Araçkasten &mdash; und es werden daha fazla</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Araç kutusunda 18 beceri &mdash; ve daha fazlası geliyor</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
                 Her ajan tam olarak ihtiyaç duyduğu becerileri alır &mdash; merkezi kayıt defterinden modüler olarak oluşturulur.
-                <strong class="text-signal-300">Kundenspezifische Skills k&ouml;nnen jederzeit entwickelt und hinzugef&uuml;gt werden</strong> &mdash;
-                f&uuml;r jede Branche, jedes ERP-System, jeden Workflow.
+                <strong class="text-signal-300">Müşteriye özel beceriler her zaman geliştirilebilir ve eklenebilir</strong> &mdash;
+                her sektör, her ERP sistemi, her iş akışı için.
             </p>
-            <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Jeder neue Skill bedeutet weniger Routinearbeit f&uuml;r Ihr Team &mdash; nicht weniger Teammitglieder.</p>
+            <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Her yeni beceri ekibiniz için daha az rutin iş demektir &mdash; daha az ekip üyesi değil.</p>
         </div>
 
         <!-- Engineering -->
@@ -430,21 +430,21 @@
                         <h4 class="font-semibold text-sm font-mono text-signal-300">structural</h4>
                         <span class="text-xs text-slate-600 font-mono">9 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">FEM-Berechnung, Profiloptimierung, DXF-İşleme, Normenpr&uuml;fung, St&uuml;cklisten-Export.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">FEM hesaplama, profil optimizasyonu, DXF işleme, standart kontrolü, malzeme listesi dışa aktarma.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-signal-300">file_ops</h4>
                         <span class="text-xs text-slate-600 font-mono">7 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Dateien lesen, schreiben, suchen, auflisten. Workspace-Management mit public/private-Trennung.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Dosya okuma, yazma, arama, listeleme. Public/private ayrımı ile çalışma alanı yönetimi.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-signal-300">brave_search</h4>
                         <span class="text-xs text-slate-600 font-mono">1 Tool</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Web-Recherche via Brave Search API. Aktuelle Informationen ohne Cloud-Abh&auml;ngigkeit.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Brave Search API üzerinden web araştırması. Bulut bağımlılığı olmadan güncel bilgiler.</p>
                 </div>
             </div>
         </div>
@@ -461,21 +461,21 @@
                         <h4 class="font-semibold text-sm font-mono text-green-400">email</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">E-Mails senden und empfangen via IMAP/SMTP. HTML und Anh&auml;nge.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">IMAP/SMTP üzerinden e-posta gönderme ve alma. HTML ve ekler.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">mail_monitor</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">POP3-Postfach-&Uuml;berwachung. Erkennt neue E-Mails und l&ouml;st automatisch Aktionen aus.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">POP3 posta kutusu izleme. Yeni e-postaları algılar ve otomatik olarak eylemler tetikler.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">voice_io</h4>
-                        <span class="text-xs text-slate-600 font-mono">Kontext</span>
+                        <span class="text-xs text-slate-600 font-mono">Bağlam</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Spracherkennung und -synthese in allen Sprachen, lokal verarbeitet.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Tüm dillerde konuşma tanıma ve sentezi, yerel olarak işlenir.</p>
                 </div>
             </div>
         </div>
@@ -492,14 +492,14 @@
                         <h4 class="font-semibold text-sm font-mono text-amber-400">shared_storage</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Inter-Agent Datei-Austausch &uuml;ber public/-Ordner. Okuma, Yazma, Auflisten.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Ajanlar arası dosya paylaşımı public/ klasörü üzerinden. Okuma, yazma, listeleme.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-amber-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-amber-400">remote_storage</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">SFTP-Zugriff auf entfernte Rechner via Tailscale VPN. Dateien vom Arbeitsplatz holen und ablegen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Tailscale VPN üzerinden uzak bilgisayarlara SFTP erişimi. İş bilgisayarından dosya alma ve bırakma.</p>
                 </div>
             </div>
         </div>
@@ -516,35 +516,35 @@
                         <h4 class="font-semibold text-sm font-mono text-purple-400">scheduler</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Zeitgesteuerte Aufgaben: Tagesrhythmus, wiederkehrende Pr&uuml;fungen, Erinnerungen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Zamanlı görevler: günlük ritim, tekrarlayan kontroller, hatırlatmalar.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">calendar</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Termine anlegen, abfragen, &auml;ndern, l&ouml;schen. Proaktive Erinnerungen bei f&auml;lligen Terminen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Randevu oluşturma, sorgulama, değiştirme, silme. Vadesi gelen randevular için proaktif hatırlatmalar.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">contacts</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Kontaktverwaltung: Personen, Firmen, Telefonnummern, E-Mail-Adressen, Notizen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Kişi yönetimi: kişiler, şirketler, telefon numaraları, e-posta adresleri, notlar.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">persistence</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Notizen und Schl&uuml;ssel-Wert-Paare kalıcı olarak speichern. Agenten-eigene Wissensbasis.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Notları ve anahtar-değer çiftlerini kalıcı olarak kaydetme. Ajana özel bilgi tabanı.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">project_management</h4>
                         <span class="text-xs text-slate-600 font-mono">7 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Projekte, Aufgaben, Meilensteine, Abh&auml;ngigkeiten. Proaktive Nachverfolgung &uuml;berf&auml;lliger Vorg&auml;nge und automatische Statusberichte.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Projeler, görevler, kilometre taşları, bağımlılıklar. Gecikmiş işlemlerin proaktif takibi ve otomatik durum raporları.</p>
                 </div>
             </div>
         </div>
@@ -561,14 +561,14 @@
                         <h4 class="font-semibold text-sm font-mono text-cyan-400">hybrid_reasoning</h4>
                         <span class="text-xs text-slate-600 font-mono">1 Tool</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Eskalasyon an st&auml;rkeres Modell. Anonymisierte Anfrage an Cloud-LLM f&uuml;r komplexe Analysen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Daha güçlü modele eskalasyon. Karmaşık analizler için Cloud-LLM'ye anonimleştirilmiş istek.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-cyan-400">calendar_awareness</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Deutsche Feiertage, Br&uuml;ckentage, regionale Ferienzeiten. Kulturelles und gesch&auml;ftliches Kontextbewusstsein.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Resmi tatiller, köprü günleri, bölgesel tatil dönemleri. Kültürel ve ticari bağlam farkındalığı.</p>
                 </div>
             </div>
         </div>
@@ -585,21 +585,21 @@
                         <h4 class="font-semibold text-sm font-mono text-red-400">eta_firebird</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">ETA V8 Buchhaltung via Firebird/InterBase. Kontenabfrage, offene Rechnungen, Tages&uuml;bersicht.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Firebird/InterBase üzerinden ETA V8 muhasebe. Hesap sorgulama, açık faturalar, günlük özet.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-red-400">eta_mssql</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">ETA V8 Buchhaltung via Microsoft SQL Server. Gleiche Funktionen, anderer Datenbank-Backend.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Microsoft SQL Server üzerinden ETA V8 muhasebe. Aynı fonksiyonlar, farklı veritabanı arka ucu.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-red-400">web_automation</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Browser-Otomasyon f&uuml;r Web-Portale ohne API. Formulare ausf&uuml;llen, Daten extrahieren.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">API'siz web portalları için tarayıcı otomasyonu. Form doldurma, veri çıkarma.</p>
                 </div>
             </div>
         </div>
@@ -608,44 +608,44 @@
         <div class="mt-16 reveal">
             <div class="text-center mb-8">
                 <p class="text-slate-500 font-mono text-xs font-medium tracking-widest uppercase mb-2">ROADMAP</p>
-                <h3 class="text-xl font-bold text-slate-300">In Geliştirme &mdash; n&auml;chste Skills f&uuml;r den Mittelstand</h3>
+                <h3 class="text-xl font-bold text-slate-300">Geliştirme Aşamasında &mdash; KOBİ'ler için sıradaki beceriler</h3>
                 <p class="text-slate-500 text-sm mt-2 max-w-xl mx-auto">Bu beceriler planlama veya geliştirme aşamasındadır ve kademeli olarak kullanılabilir hale gelecektir.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">document_ocr</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">planlandı</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Rechnungen, Lieferscheine und Vertr&auml;ge scannen, erkennen und strukturiert ablegen. Lokale İşleme.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Faturaları, irsaliyeleri ve sözleşmeleri tarayıp tanıyarak yapılandırılmış şekilde kaydetme. Yerel işleme.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">erp_connector</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">planlandı</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Anbindung an g&auml;ngige ERP-Systeme: SAP Business One, DATEV, Sage, Lexware. Okuma und Yazma.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Yaygın ERP sistemlerine bağlantı: SAP Business One, DATEV, Sage, Lexware. Okuma ve yazma.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">inventory_tracker</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">planlandı</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Lagerbestand &uuml;berwachen, Nachbestellvorschl&auml;ge generieren, Mindestmengen-Warnungen ausl&ouml;sen.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Stok izleme, yeniden sipariş önerileri oluşturma, minimum miktar uyarıları tetikleme.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">compliance_monitor</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">planlandı</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Fristenverwaltung, Zertifizierungen, Wartungsintervalle, Audit-Vorbereitung. Proaktive Erinnerung vor Ablauf.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Süre yönetimi, sertifikalar, bakım aralıkları, denetim hazırlığı. Süre dolmadan proaktif hatırlatma.</p>
                 </div>
                 <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-slate-400">reporting</h4>
-                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                        <span class="text-xs text-slate-600 font-mono">planlandı</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Automatische KPI-Berichte, Tages-/Wochen&uuml;bersichten, CSV- und PDF-Export. Dashboards f&uuml;r die Gesch&auml;ftsleitung.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Otomatik KPI raporları, günlük/haftalık özetler, CSV ve PDF dışa aktarma. Yönetim için gösterge panelleri.</p>
                 </div>
             </div>
         </div>
@@ -660,11 +660,11 @@
 <section id="konnektoren" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Anbindung</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Bisher verf&uuml;gbare Konnektoren</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Bağlantı</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Mevcut Bağlayıcılar</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                Der Agent kommuniziert &uuml;ber Konnektoren &mdash; standardisierte Schnittstellen
-                zu Benutzern, Systemen und anderen Agenten.
+                Ajan bağlayıcılar üzerinden iletişim kurar &mdash; kullanıcılara,
+                sistemlere ve diğer ajanlara standartlaştırılmış arayüzler.
                 <strong class="text-signal-300">Yeni bağlayıcılar sürekli geliştirilmektedir ve BT altyapınıza özel olarak
                 her zaman eklenebilir.</strong>
             </p>
@@ -690,8 +690,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">E-Mail</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    IMAP/SMTP f&uuml;r Senden und Empfangen. POP3-İzleme f&uuml;r
-                    eingehende Postf&auml;cher. HTML-Format und Dateianh&auml;nge.
+                    Gönderme ve alma için IMAP/SMTP. Gelen posta kutuları için
+                    POP3 izleme. HTML formatı ve dosya ekleri.
                 </p>
             </div>
 
@@ -702,8 +702,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">Voice</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Whisper STT + Piper TTS &mdash; komplett lokal. Spracherkennung und
-                    -synthese in allen Sprachen, ohne Cloud-Dienste.
+                    Whisper STT + Piper TTS &mdash; tamamen yerel. Tüm dillerde konuşma tanıma
+                    ve sentezi, bulut hizmeti olmadan.
                 </p>
             </div>
 
@@ -724,10 +724,10 @@
                 <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
                 </div>
-                <h4 class="font-bold text-sm mb-2">SQL-Datenbanken</h4>
+                <h4 class="font-bold text-sm mb-2">SQL Veritabanları</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    PostgreSQL, MSSQL, Firebird &mdash; ausschliesslich SELECT-Abfragen.
-                    Kein Schreibzugriff auf Produktionsdaten. Read-Only by Design.
+                    PostgreSQL, MSSQL, Firebird &mdash; yalnızca SELECT sorguları.
+                    Üretim verilerine yazma erişimi yok. Tasarım gereği salt okunur.
                 </p>
             </div>
 
@@ -738,8 +738,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Universelle API-Anbindung f&uuml;r ERP, CRM, Warenwirtschaft.
-                    GET, POST, PUT mit konfigurierbarer Authentifizierung.
+                    ERP, CRM, stok yönetimi için evrensel API bağlantısı.
+                    Yapılandırılabilir kimlik doğrulama ile GET, POST, PUT.
                 </p>
             </div>
         </div>
@@ -755,7 +755,7 @@
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Uzun Süreli Bellek</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Drei Bellektypen, Hybrid-Suche und ein Dreaming-Zyklus zur Konsolidierung.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Üç bellek türü, hibrit arama ve konsolidasyon için bir Dreaming döngüsü.</p>
         </div>
 
         <!-- Memory Tiers SVG -->
@@ -768,8 +768,8 @@
                 </defs>
                 <!-- Semantic Memory -->
                 <rect x="20" y="20" width="230" height="180" rx="8" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Semantisch</text>
-                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Fakten &amp; Wissen</text>
+                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Anlamsal</text>
+                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Gerçekler &amp; Bilgi</text>
                 <rect x="40" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                 <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Stahlpreis Q1: 850 EUR/t"</text>
                 <rect x="40" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
@@ -779,8 +779,8 @@
 
                 <!-- Episodic Memory -->
                 <rect x="285" y="20" width="230" height="180" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Episodisch</text>
-                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Erlebnisse &amp; Konversationen</text>
+                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Epizodik</text>
+                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Deneyimler &amp; Konuşmalar</text>
                 <rect x="305" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
                 <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15: Bestandsabfrage"</text>
                 <rect x="305" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
@@ -790,8 +790,8 @@
 
                 <!-- Procedural Memory -->
                 <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Prozedural</text>
-                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Abl&auml;ufe &amp; Muster</text>
+                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Prosedürel</text>
+                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Süreçler &amp; Kalıplar</text>
                 <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
                 <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Bestellung: Pr&uuml;fen&#8594;Freigabe&#8594;Buchen"</text>
                 <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
@@ -802,7 +802,7 @@
                 <!-- Search Layer -->
                 <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
                 <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">Hybrid-Suche: FTS5 + Vektor-Embeddings + RRF Fusion</text>
-                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">Relevanz-Ranking kombiniert Keyword- und Semantik-Treffer</text>
+                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">İlgililik sıralaması anahtar kelime ve anlamsal eşleşmeleri birleştirir</text>
 
                 <!-- Arrows from tiers to search -->
                 <line x1="135" y1="200" x2="250" y2="230" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
@@ -819,16 +819,16 @@
                         <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Bellekkonsolidierung per LLM-Call</h3>
+                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; LLM Çağrısı ile Bellek Konsolidasyonu</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                            Im Ruhezustand analysiert der Agent seine Gespr&auml;che mit einem <strong class="text-white">LLM-Call</strong>,
-                            gerçekleri çıkarır, notları günceller und Todo-Listen, konsolidiert
-                            sein Bellek und erstellt w&ouml;chentliche Berichte.
+                            Boşta kaldığında ajan konuşmalarını bir <strong class="text-white">LLM çağrısı</strong> ile analiz eder,
+                            gerçekleri çıkarır, notları ve yapılacaklar listelerini günceller,
+                            belleğini konsolide eder ve haftalık raporlar oluşturur.
                         </p>
                         <p class="text-slate-500 text-xs leading-relaxed">
-                            Wie das menschliche Gehirn im Schlaf &mdash; der Agent verdichtet Erlebnisse zu Wissen,
-                            entfernt redundante Eintr&auml;ge und st&auml;rkt wichtige Verbindungen.
-                            Das Ergebnis: pr&auml;zisere Antworten bei niedrigerem Token Tüketimi.
+                            Uyku sırasındaki insan beyni gibi &mdash; ajan deneyimleri bilgiye dönüştürür,
+                            gereksiz kayıtları kaldırır ve önemli bağlantıları güçlendirir.
+                            Sonuç: daha düşük token tüketimi ile daha hassas yanıtlar.
                         </p>
                     </div>
                 </div>
@@ -839,9 +839,9 @@
         <div class="reveal max-w-3xl mx-auto mb-16">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
-                    <h3 class="font-bold text-lg mb-2">Dreaming-Zyklus (Konsolidierung)</h3>
+                    <h3 class="font-bold text-lg mb-2">Dreaming Döngüsü (Konsolidasyon)</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Wie das menschliche Gehirn im Schlaf konsolidiert AIMOS Erinnerungen im Leerlauf:
+                        İnsan beyninin uyku sırasında yaptığı gibi, AIMOS boşta kaldığında anıları konsolide eder:
                     </p>
                     <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <defs>
@@ -850,25 +850,25 @@
                             </marker>
                         </defs>
                         <rect x="0" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Episoden sammeln</text>
-                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Alle Konversationen</text>
+                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Bölümleri topla</text>
+                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Tüm konuşmalar</text>
 
                         <line x1="130" y1="40" x2="175" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="175" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Muster erkennen</text>
-                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">LLM-Analyse</text>
+                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Kalıpları tanı</text>
+                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">LLM analizi</text>
 
                         <line x1="305" y1="40" x2="350" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="350" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Verdichten</text>
-                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Fakten extrahieren</text>
+                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Yoğunlaştır</text>
+                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Gerçekleri çıkar</text>
 
                         <line x1="480" y1="40" x2="525" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="525" y="15" width="165" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
-                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Semantisch speichern</text>
+                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Anlamsal olarak kaydet</text>
                         <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Uzun Süreli Bellek</text>
                     </svg>
                 </div>
@@ -879,7 +879,7 @@
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token-Optimierung</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Dynamischer Ausgleich zwischen Bellektiefe und Antwortl&auml;nge &mdash; innerhalb des begrenzten Bağlam Penceresis.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Sınırlı bağlam penceresi içinde bellek derinliği ve yanıt uzunluğu arasında dinamik denge.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
@@ -896,8 +896,8 @@
                     <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
 
                     <!-- Labels -->
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Memory-Tiefe</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Antwort-L&auml;nge</text>
+                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Bellek Derinliği</text>
+                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Yanıt Uzunluğu</text>
 
                     <!-- Level marks -->
                     <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
@@ -918,12 +918,12 @@
                     <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
                     <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Memory</text>
                     <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Antwort</text>
+                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Yanıt</text>
 
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Bağlam Penceresi (z.B. 32k Tokens)</text>
+                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Bağlam Penceresi (ör. 32k Token)</text>
 
                     <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Mehr Memory = weniger Platz f&uuml;r Antwort (und umgekehrt)</text>
+                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Daha fazla bellek = yanıt için daha az yer (ve tam tersi)</text>
                 </svg>
             </div>
 
@@ -935,40 +935,40 @@
                             <tr class="bg-slate-850 border-b border-white/10">
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Level</th>
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Memory</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Antwort</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Einsatz</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Yanıt</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Kullanım</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">1</td>
                                 <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4">Sehr lang</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analyse, Berichte</td>
+                                <td class="py-3 px-4">Çok uzun</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analiz, raporlar</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">Reduziert</td>
-                                <td class="py-3 px-4">Lang</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Zusammenfassungen</td>
+                                <td class="py-3 px-4">Azaltılmış</td>
+                                <td class="py-3 px-4">Uzun</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Özetler</td>
                             </tr>
                             <tr class="border-b border-white/5 bg-signal-500/5">
                                 <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">Ausgewogen</td>
-                                <td class="py-3 px-4 text-white">Mittel</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (Default)</td>
+                                <td class="py-3 px-4 text-white">Dengeli</td>
+                                <td class="py-3 px-4 text-white">Orta</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standart (Varsayılan)</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Tief</td>
-                                <td class="py-3 px-4">Kurz</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Kontextreiche Fragen</td>
+                                <td class="py-3 px-4">Derin</td>
+                                <td class="py-3 px-4">Kısa</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Bağlam yoğun sorular</td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-mono text-signal-300">5</td>
                                 <td class="py-3 px-4">Maximum</td>
                                 <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Recherche, Fakten-Check</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Araştırma, doğrulama</td>
                             </tr>
                         </tbody>
                     </table>
@@ -985,70 +985,70 @@
 <section id="llm" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Sprachmodell</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Das LLM &mdash; Gehirn des Agenten</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Dil Modeli</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">LLM &mdash; Ajanın Beyni</h2>
             <p class="text-slate-400 max-w-3xl mx-auto">
-                Das Large Language Model (LLM) ist die Denkmaschine hinter jedem Agenten.
-                Es versteht Sprache, f&auml;llt Kararen und steuert Araçlar &mdash;
-                und l&auml;uft <strong class="text-white">vollst&auml;ndig auf Ihrer eigenen Hardware</strong>.
+                Büyük Dil Modeli (LLM) her ajanın arkasındaki düşünce motorudur.
+                Dili anlar, kararlar verir ve araçları yönetir &mdash;
+                ve <strong class="text-white">tamamen kendi donanımınızda</strong> çalışır.
             </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 reveal">
             <!-- Was ist ein LLM? -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">Was macht das LLM?</h3>
+                <h3 class="font-bold mb-3">LLM ne yapar?</h3>
                 <ul class="space-y-3 text-sm text-slate-400">
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Versteht Anfragen</strong> &mdash; in nat&uuml;rlicher Sprache, in jeder Sprache</span>
+                        <span><strong class="text-white">İstekleri anlar</strong> &mdash; doğal dilde, her dilde</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">W&auml;hlt Araçlar</strong> &mdash; entscheidet selbst&auml;ndig, ob eine Datenbankabfrage, ein E-Mail-Versand veya eine Berechnung n&ouml;tig ist</span>
+                        <span><strong class="text-white">Araçları seçer</strong> &mdash; bir veritabanı sorgusu, e-posta gönderimi veya hesaplama gerekip gerekmediğine bağımsız olarak karar verir</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Formuliert Antworten</strong> &mdash; fachlich korrekt, im Kontext des bisherigen Gespr&auml;chs</span>
+                        <span><strong class="text-white">Yanıtları formüle eder</strong> &mdash; teknik olarak doğru, önceki konuşma bağlamında</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Lernt aus Korrekturen</strong> &mdash; &uuml;ber das Uzun Süreli Bellek, nicht durch Modell-Training</span>
+                        <span><strong class="text-white">Düzeltmelerden öğrenir</strong> &mdash; Uzun Süreli Bellek üzerinden, model eğitimi ile değil</span>
                     </li>
                 </ul>
             </div>
 
             <!-- Warum lokal? -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">Warum lokal statt Cloud?</h3>
+                <h3 class="font-bold mb-3">Neden bulut yerine yerel?</h3>
                 <div class="space-y-4">
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                            <h4 class="font-semibold text-sm text-green-400">Datensouver&auml;nit&auml;t</h4>
+                            <h4 class="font-semibold text-sm text-green-400">Veri Egemenliği</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Ihre Anfragen verlassen nie das Netzwerk. Kein Cloud-Anbieter sieht Ihre Daten.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">İstekleriniz asla ağı terk etmez. Hiçbir bulut sağlayıcı verilerinizi görmez.</p>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-signal-500"></span>
-                            <h4 class="font-semibold text-sm text-signal-400">Keine laufenden Kosten</h4>
+                            <h4 class="font-semibold text-sm text-signal-400">Sürekli maliyet yok</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein Token-Preis pro Anfrage. Das Modell l&auml;uft unbegrenzt auf Ihrer GPU.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">İstek başına token fiyatı yok. Model GPU'nuzda sınırsız çalışır.</p>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                            <h4 class="font-semibold text-sm text-amber-400">Verf&uuml;gbarkeit</h4>
+                            <h4 class="font-semibold text-sm text-amber-400">Kullanılabilirlik</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein API-Limit, kein Rate-Limiting, keine Abh&auml;ngigkeit von externen Diensten.</p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">API limiti yok, hız sınırlaması yok, harici hizmetlere bağımlılık yok.</p>
                     </div>
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                            <h4 class="font-semibold text-sm text-purple-400">Eskalasyon bei Bedarf</h4>
+                            <h4 class="font-semibold text-sm text-purple-400">Gerektiğinde Eskalasyon</h4>
                         </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Bei komplexen Aufgaben: automatische, anonymisierte Eskalasyon an ein Cloud-LLM. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; Details</a></p>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Karmaşık görevlerde: Cloud-LLM'ye otomatik, anonimleştirilmiş eskalasyon. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; Details</a></p>
                     </div>
                 </div>
             </div>
@@ -1068,20 +1068,20 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Açık Kaynak unter MIT Lisansı.
+                    MIT Lisansı altında Açık Kaynak.
                 </p>
                 <p class="text-sm text-slate-500 leading-relaxed mt-3">
                     <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
                 </p>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ürün</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajanlar</a></li>
-                    <li><a href="team.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
+                    <li><a href="team.html" class="hover:text-signal-400 transition-colors">Ajan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
-                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Bağlayıcılar</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
@@ -1095,16 +1095,16 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilit&auml;t</a></li>
-                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Startseite</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP Uyumluluğu</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Ana Sayfa</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. altında lisanslanmıştır MIT Lisansı.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>

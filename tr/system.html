@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem ve Altyapı — AIMOS</title>
-    <meta name="description" content="AIMOS System & Altyapı: SovereignNode Donanımı, İkili VT Mimarisi, Ajan Taşınabilirliği und teknik öne çıkanlar.">
+    <meta name="description" content="AIMOS Sistem ve Altyapı: SovereignNode Donanımı, İkili VT Mimarisi, Ajan Taşınabilirliği ve teknik öne çıkanlar.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -146,7 +146,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
             <a href="#sovereign-node" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">SovereignNode</a>
-            <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Datenbank</a>
+            <a href="#datenbank" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Veritabanı</a>
             <a href="#portabilitaet" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Portabilit&auml;t</a>
             <a href="#highlights" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Highlights</a>
         </div>
@@ -179,12 +179,12 @@
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
                     Tek bir sunucu. Yerel GPU. Bulut bağımlılığı yok.
                     SovereignNode her AIMOS kurulumunun kalbidir &mdash;
-                    ein physischer veya virtueller Server, der alle Komponenten beherbergt.
+                    tüm bileşenleri barındıran fiziksel veya sanal bir sunucu.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-8">
                     Her şey yerinde çalışır: LLM çıkarımı, veritabanları, ajan süreçleri
-                    ve iletişimskanäle. Kein Byte verlässt Ihr Netzwerk &mdash;
-                    es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
+                    ve iletişim kanalları. Ağınızdan tek bir bayt çıkmaz &mdash;
+                    siz açıkça yapılandırmadığınız sürece (ör. Telegram mesajları).
                 </p>
 
                 <!-- Hardware Requirements Table -->
@@ -192,7 +192,7 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="bg-slate-850 border-b border-white/5">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Komponente</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Bileşen</th>
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
                                 <th class="text-left py-3 px-4 font-semibold text-slate-300">Önerilen</th>
                             </tr>
@@ -312,7 +312,7 @@
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Her ajanın anlamsal, epizodik
                                 ve prosedürel belleğe sahip kendi SQLite veritabanı vardır. Hybrid-Suche über FTS5 + Vektor-Embeddings.
-                                Portabel durch einfaches Kopieren der Datei.
+                                Dosyanın basit kopyalanmasıyla taşınabilir.
                             </p>
                         </div>
                     </div>
@@ -489,8 +489,8 @@
                 <h3 class="font-bold mb-2">Yerel Araç Çağrısı</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Metin hileleri veya Regex ayrıştırma yok &mdash; AIMOS, LLM'in yerel araç çağrısı API'sini kullanır
-                    . Der Agent <strong class="text-white">steuert Systeme direkt</strong>,
-                    statt Aktionen nur zu beschreiben.
+                    . Ajan <strong class="text-white">sistemleri do&#287;rudan y&ouml;netir</strong>,
+                    eylemleri yaln&#305;zca a&ccedil;&#305;klamak yerine.
                 </p>
             </div>
 
@@ -527,9 +527,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Conversation Threading</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder Agent weiß, <strong class="text-white">kiminle hangi kanalda konuştuğunu bilir</strong>.
-                    Telegram, e-posta ve dahili mesajlar temiz bir şekilde ayrılır &mdash;
-                    keine Verwechslung zwischen Gesprächspartnern.
+                    Her ajan <strong class="text-white">kiminle hangi kanalda konu&#351;tu&#287;unu bilir</strong>.
+                    Telegram, e-posta ve dahili mesajlar temiz bir &#351;ekilde ayr&#305;l&#305;r &mdash;
+                    muhataplar aras&#305;nda kar&#305;&#351;&#305;kl&#305;k olmaz.
                 </p>
             </div>
         </div>
@@ -554,12 +554,12 @@
                 </p>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ürün</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
-                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Bağlayıcılar</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
@@ -573,16 +573,16 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
                     <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
-                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Startseite</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Ana Sayfa</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. altında lisanslanmıştır MIT Lisansı.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>

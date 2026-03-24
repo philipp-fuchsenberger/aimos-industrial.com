@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System & Infrastruktur — AIMOS</title>
-    <meta name="description" content="Sistema AIMOS & Infrastruktur: SovereignNode-Hardware, Dual-DB-Architektur, Agent-Portabilität und technische Highlights.">
+    <meta name="description" content="Sistema AIMOS e infraestructura: Hardware SovereignNode, arquitectura Dual-DB, portabilidad de agentes y aspectos técnicos destacados.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -162,7 +162,7 @@
             System &amp; Infrastruktur
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Hardware, Datenbanken, Portabilidad &mdash; die physische und logische Basis Ihres SovereignNode.
+            Hardware, bases de datos, portabilidad &mdash; la base física y lógica de su SovereignNode.
         </p>
     </div>
 </section>
@@ -177,14 +177,14 @@
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruktur</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Ein einzelner Server. Lokale GPU. Keine Cloud-Abhängigkeit.
-                    Der SovereignNode ist das Herzstück jeder AIMOS-Instalación &mdash;
-                    ein physischer oder virtueller Server, der alle Komponenten beherbergt.
+                    Un solo servidor. GPU local. Sin dependencia de la nube.
+                    El SovereignNode es el núcleo de cada instalación de AIMOS &mdash;
+                    un servidor físico o virtual que alberga todos los componentes.
                 </p>
                 <p class="text-slate-400 leading-relaxed mb-8">
-                    Alles läuft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
-                    und die Kommunikationskanäle. Kein Byte verlässt Ihr Red &mdash;
-                    es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
+                    Todo funciona on-premise: la inferencia LLM, las bases de datos, los procesos de agentes
+                    y los canales de comunicación. Ningún byte abandona su red &mdash;
+                    a menos que usted lo configure explícitamente (p.ej. mensajes de Telegram).
                 </p>
 
                 <!-- Hardware Requirements Table -->
@@ -287,7 +287,7 @@
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Dual-DB</p>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Dual-DB-Architektur</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    AIMOS nutzt zwei Datenbanksysteme mit klar getrennten Verantwortlichkeiten:
+                    AIMOS utiliza dos sistemas de bases de datos con responsabilidades claramente separadas:
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4">
@@ -297,9 +297,9 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay-Datenbank)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Zentrale Nachrichtenweiterleitung zwischen Shared Listener, Orquestador und Agenten.
-                                Speichert eingehende Nachrichten, Audit-Logs, PII-Vault-Mappings und Session-Daten.
-                                Multi-Process-fähig durch Connection Pooling.
+                                Enrutamiento central de mensajes entre Shared Listener, orquestador y agentes.
+                                Almacena mensajes entrantes, registros de auditoría, mapeos PII-Vault y datos de sesión.
+                                Compatible con múltiples procesos mediante Connection Pooling.
                             </p>
                         </div>
                     </div>
@@ -310,9 +310,9 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">SQLite (Agent-Memory)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Jeder Agent hat seine eigene SQLite-Datenbank mit semantischem, episodischem
-                                und prozeduralem Gedächtnis. Hybrid-Suche über FTS5 + Vektor-Embeddings.
-                                Portabel durch einfaches Kopieren der Datei.
+                                Cada agente tiene su propia base de datos SQLite con memoria semántica, episódica
+                                y memoria procedimental. Búsqueda híbrida mediante FTS5 + embeddings vectoriales.
+                                Portable mediante simple copia del archivo.
                             </p>
                         </div>
                     </div>
@@ -373,9 +373,9 @@
 <section id="portabilitaet" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agent-Portabilität</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS-Agenten sind portabel, kompatibel und interoperabel durch offene Standards.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilidad</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Portabilidad de agentes</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Los agentes AIMOS son portables, compatibles e interoperables mediante estándares abiertos.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -386,8 +386,8 @@
                 </div>
                 <h3 class="font-bold mb-2">OAP Export/Import</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Open Agent Package Format ermöglicht den vollständigen Export eines Agenten
-                    inklusive Memory, Skills und Konfiguration als portables Archiv.
+                    El formato Open Agent Package permite la exportación completa de un agente
+                    incluyendo memoria, Skills y configuración como archivo portable.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div class="text-signal-300">agent_export.oap</div>
@@ -405,8 +405,8 @@
                 </div>
                 <h3 class="font-bold mb-2">MCP Bridge (39 Tools)</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Model Context Protocol ermöglicht externen LLMs (Claude, GPT, etc.)
-                    den Zugriff auf AIMOS-Skills. 39 Tools stehen als MCP-Server bereit.
+                    El Model Context Protocol permite a LLMs externos (Claude, GPT, etc.)
+                    acceder a los Skills de AIMOS. 39 herramientas están disponibles como servidor MCP.
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs">
                     <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono">sql_query</span>
@@ -424,8 +424,8 @@
                 </div>
                 <h3 class="font-bold mb-2">A2A Agent Cards</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Jeder Agent publiziert eine Agent Card (JSON-LD) nach Google A2A-Spezifikation.
-                    Externe Systeme können Fähigkeiten, Eingabeformate und Vertrauensstufe abfragen.
+                    Cada agente publica una Agent Card (JSON-LD) según la especificación Google A2A.
+                    Los sistemas externos pueden consultar capacidades, formatos de entrada y nivel de confianza.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
                     <div><span class="text-signal-300">"name"</span>: "Konstruktions-Agent",</div>
@@ -476,7 +476,7 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Technische Highlights</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Was AIMOS auszeichnet</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Lo que distingue a AIMOS</h2>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -488,9 +488,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Native Tool-Calling</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Keine Text-Hacks oder Regex-Parsing &mdash; AIMOS nutzt die native Tool-Calling-API
-                    des LLM. Der Agent <strong class="text-white">steuert Systeme direkt</strong>,
-                    statt Aktionen nur zu beschreiben.
+                    Sin hacks de texto ni análisis Regex &mdash; AIMOS utiliza la API nativa de Tool-Calling
+                    del LLM. El agente <strong class="text-white">controla sistemas directamente</strong>,
+                    en lugar de solo describir acciones.
                 </p>
             </div>
 
@@ -501,9 +501,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Mehrsprachige Sprache</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Spracherkennung (Whisper STT) und Sprachsynthese (Piper TTS) in
+                    Reconocimiento de voz (Whisper STT) y síntesis de voz (Piper TTS) en
                     <strong class="text-white">allen Sprachen</strong> &mdash;
-                    Agenten verstehen Sprachnachrichten und antworten in der Muttersprache des Nutzers.
+                    Los agentes comprenden mensajes de voz y responden en el idioma nativo del usuario.
                 </p>
             </div>
 
@@ -514,9 +514,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Token-Tracking</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder LLM-Call wird erfasst: Input-/Output-Tokens, Latenz, Kontextauslastung.
+                    Cada llamada LLM se registra: tokens de entrada/salida, latencia, utilización del contexto.
                     <strong class="text-white">Volle Kostentransparenz</strong> pro Agent,
-                    pro Gespräch, pro Monat.
+                    por conversación, por mes.
                 </p>
             </div>
 
@@ -527,9 +527,9 @@
                 </div>
                 <h3 class="font-bold mb-2">Conversation Threading</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder Agent weiß, <strong class="text-white">mit wem er auf welchem Kanal spricht</strong>.
-                    Telegram, E-Mail und interne Nachrichten werden sauber getrennt &mdash;
-                    keine Verwechslung zwischen Gesprächspartnern.
+                    Cada agente sabe <strong class="text-white">con quién habla y en qué canal</strong>.
+                    Telegram, correo electrónico y mensajes internos se separan correctamente &mdash;
+                    sin confusión entre interlocutores.
                 </p>
             </div>
         </div>
@@ -547,7 +547,7 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Open Source unter Licencia MIT.
+                    Open Source con licencia MIT.
                 </p>
                 <p class="text-sm text-slate-500 leading-relaxed mt-3">
                     Un producto de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
@@ -582,7 +582,7 @@
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licenciado bajo la licencia MIT.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>

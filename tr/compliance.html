@@ -162,11 +162,11 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-[-100%] opacity-0 transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6 h-11 flex items-center justify-center gap-8 text-sm font-medium">
-        <a href="#ueberblick" class="subnav-link" data-section="ueberblick">Überblick</a>
+        <a href="#ueberblick" class="subnav-link" data-section="ueberblick">Genel Bakış</a>
         <a href="#dsgvo" class="subnav-link" data-section="dsgvo">KVKK/DSGVO</a>
         <a href="#eu-ai-act" class="subnav-link" data-section="eu-ai-act">AB YZ Yasası</a>
         <a href="#normen" class="subnav-link" data-section="normen">ISO &amp; GoBD</a>
-        <a href="#umsetzung" class="subnav-link" data-section="umsetzung">Umsetzung</a>
+        <a href="#umsetzung" class="subnav-link" data-section="umsetzung">Uygulama</a>
     </div>
 </nav>
 
@@ -174,12 +174,12 @@
 <section id="hero" class="relative pt-32 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Regulatorische Konformität</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Düzenleyici Uyumluluk</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            Compliance &amp; Sicherheit
+            Uyumluluk &amp; Güvenlik
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Denetçiler için inşa edildi, onlara karşı değil. Her mimari karar mevzuat uyumluluğu açısından alınmıştır &mdash; nicht nachträglich angepasst.
+            Denetçiler için inşa edildi, onlara karşı değil. Her mimari karar mevzuat uyumluluğu açısından alınmıştır &mdash; sonradan uyarlanmamıştır.
         </p>
     </div>
 </section>
@@ -187,12 +187,12 @@
 <section id="ueberblick" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Compliance-Ansatz</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Uyumluluk Yaklaşımı</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Tasarım Gereği Uyumluluk &mdash; Kontrol Listesiyle Değil</h2>
             <p class="text-slate-400 max-w-3xl mx-auto">
                 AIMOS veri koruma ve güvenlik gereksinimlerini sonradan yapılan uyarlamalarla değil,
-                 <strong class="text-white">architektonische Kararen</strong>.
-                Drei Designprinzipien durchziehen das gesamte System:
+                 <strong class="text-white">mimari kararlarla</strong> sağlar.
+                Üç tasarım ilkesi tüm sistemi kapsar:
             </p>
         </div>
 
@@ -238,12 +238,12 @@
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li class="check-item">Datenverarbeitung standardmäßig lokal (SovereignNode)</li>
                         <li class="check-item">PII-Vault her harici iletimden önce anonimleştirir</li>
-                        <li class="check-item">Kein Cloud-Service in der Standard-Yapılandırma</li>
-                        <li class="check-item">Datenminimierung: nur relevante Kontextdaten im LLM-Prompt</li>
+                        <li class="check-item">Standart yapılandırmada bulut hizmeti yok</li>
+                        <li class="check-item">Veri minimizasyonu: LLM isteminde yalnızca ilgili bağlam verileri</li>
                     </ul>
                 </div>
                 <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                    <h4 class="font-semibold text-sm mb-2 text-green-400">Art. 32 &mdash; Sicherheit der İşleme</h4>
+                    <h4 class="font-semibold text-sm mb-2 text-green-400">Madde 32 &mdash; İşleme Güvenliği</h4>
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li class="check-item">Şifreleme: PostgreSQL SSL, SQLite on-disk</li>
                         <li class="check-item">Erişim Kontrolü durch Yürütme Halkaları (3 Stufen)</li>
@@ -274,7 +274,7 @@
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
                     AB YZ Tüzüğü (AB) 2024/1689 kademeli olarak yürürlüğe girmekte olup
                     YZ sistemleri kullanan her şirketi ilgilendirmektedir. AIMOS mimari olarak
-                    uyumluluk için tasarlanmıştır &mdash; nicht nachtr&auml;glich angepasst.
+                    uyumluluk için tasarlanmıştır &mdash; sonradan uyarlanmamıştır.
                 </p>
 
                 <div class="space-y-4">
@@ -282,8 +282,8 @@
                         <div class="flex items-start gap-3">
                             <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             <div>
-                                <h4 class="font-semibold text-sm mb-1">Risikoklassifizierung: Begrenztes Risiko</h4>
-                                <p class="text-slate-400 text-sm">AIMOS ajanları insan gözetimli asistan sistemleridir (Human-in-the-Loop). Kişiler hakkında otonom karar yok, biyometrik gözetim yok, sosyal puanlama işlevleri yok. Bu nedenle in die Kategorie &bdquo;begrenztes Risiko&rdquo; &mdash; nicht &bdquo;hochriskant&rdquo;.</p>
+                                <h4 class="font-semibold text-sm mb-1">Risk Sınıflandırması: Sınırlı Risk</h4>
+                                <p class="text-slate-400 text-sm">AIMOS ajanları insan gözetimli asistan sistemleridir (Human-in-the-Loop). Kişiler hakkında otonom karar yok, biyometrik gözetim yok, sosyal puanlama işlevleri yok. Bu nedenle &bdquo;sınırlı risk&rdquo; kategorisindedir &mdash; &bdquo;yüksek riskli&rdquo; değil.</p>
                             </div>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
                             <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             <div>
                                 <h4 class="font-semibold text-sm mb-1">Günlük Kaydı: L&uuml;ckenlos</h4>
-                                <p class="text-slate-400 text-sm">Madde 12: Her ajan eylemi kayıt altına alınır &mdash; Araç çağrıları, LLM talepleri, token tüketimi, karar zincirleri. Revisionssichere Denetim İzis mit Session-IDs und Zeitstempeln.</p>
+                                <p class="text-slate-400 text-sm">Madde 12: Her ajan eylemi kayıt altına alınır &mdash; Araç çağrıları, LLM talepleri, token tüketimi, karar zincirleri. Denetim güvenli Denetim İzis mit Session-IDs und Zeitstempeln.</p>
                             </div>
                         </div>
                     </div>
@@ -333,8 +333,8 @@
                         <div class="flex items-start gap-3">
                             <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             <div>
-                                <h4 class="font-semibold text-sm mb-1">Datensouver&auml;nit&auml;t: Vollst&auml;ndig</h4>
-                                <p class="text-slate-400 text-sm">Madde 10: Eğitim verileri ve işlem verileri SovereignNode'u terk etmez. PII-Vault harici API çağrılarını otomatik anonimleştirir. Keine Cloud-Abh&auml;ngigkeit.</p>
+                                <h4 class="font-semibold text-sm mb-1">Veri Egemenli&#287;i: Tam</h4>
+                                <p class="text-slate-400 text-sm">Madde 10: E&#287;itim verileri ve i&#351;lem verileri SovereignNode'u terk etmez. PII-Vault harici API &ccedil;a&#287;r&#305;lar&#305;n&#305; otomatik anonimle&#351;tirir. Bulut ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok.</p>
                             </div>
                         </div>
                     </div>
@@ -342,8 +342,8 @@
                         <div class="flex items-start gap-3">
                             <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             <div>
-                                <h4 class="font-semibold text-sm mb-1">Vorteil lokaler KI</h4>
-                                <p class="text-slate-400 text-sm">Bulut YZ hizmetleri &bdquo;Genel Amaçlı YZ&rdquo; (GPAI) olarak daha katı gereksinimleri karşılamak zorundadır. AIMOS nutzt ein lokal betriebenes Açık Kaynak-Modell &mdash; die GPAI-Pflichten treffen den Modell-Anbieter (Alibaba/Qwen), nicht den Betreiber.</p>
+                                <h4 class="font-semibold text-sm mb-1">Yerel YZ'nin Avantajı</h4>
+                                <p class="text-slate-400 text-sm">Bulut YZ hizmetleri &bdquo;Genel Amaçlı YZ&rdquo; (GPAI) olarak daha katı gereksinimleri karşılamak zorundadır. AIMOS yerel olarak işletilen bir açık kaynak modelidir &mdash; GPAI yükümlülükleri model sağlayıcısını (Alibaba/Qwen) etkiler, işletmeciyi değil.</p>
                             </div>
                         </div>
                     </div>
@@ -372,14 +372,14 @@
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Normenkonformität</p>
                 <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">ISO 9001 ve 27001</h3>
                 <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                    AIMOS unterstützt die Anforderungen beider Standards durch eingebaute Mechanismen.
+                    AIMOS yerleşik mekanizmalarla her iki standardın gereksinimlerini destekler.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-slate-850 border border-blue-500/10 rounded-xl p-5">
                         <h4 class="font-semibold text-sm mb-2 text-blue-400">ISO 9001 &mdash; Kalite Yönetimi</h4>
                         <ul class="space-y-2 text-sm text-slate-400">
-                            <li class="check-item">Nachvollziehbarkeit: Jede Karar im Audit-Log</li>
+                            <li class="check-item">İzlenebilirlik: Her karar denetim günlüğünde</li>
                             <li class="check-item">Rückverfolgbarkeit: Session-IDs verknüpfen alle Ereignisse</li>
                             <li class="check-item">Dokumentierte Prozesse: System-Prompts als SOPs</li>
                             <li class="check-item">Korrekturmaßnahmen: Dreaming-Zyklus lernt aus Fehlern</li>
@@ -390,8 +390,8 @@
                         <ul class="space-y-2 text-sm text-slate-400">
                             <li class="check-item">Klassifizierung: Yürütme Halkaları definieren Zugriffsstufen</li>
                             <li class="check-item">Erişim Kontrolü: Tool-Freischaltung ajan başına konfigurierbar</li>
-                            <li class="check-item">Ereignisprotokollierung: Alle 6 Event-Typen erfasst</li>
-                            <li class="check-item">Physische Sicherheit: Daten verlassen den SovereignNode nicht</li>
+                            <li class="check-item">Olay günlüğü: 6 olay türünün tümü kaydedilir</li>
+                            <li class="check-item">Fiziksel güvenlik: Veriler SovereignNode'u terk etmez</li>
                         </ul>
                     </div>
                 </div>
@@ -407,8 +407,8 @@
                     <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Buchführung</p>
                     <h3 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">GoBD Uyumluluğu</h3>
                     <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                        Die GoBD (Dijital defterlerin ve diğer verilerin düzenli und Aufbewahrung von
-                        Büchern, Aufzeichnungen und Unterlagen elektronik formda) stellt
+                        GoBD (Dijital defterlerin ve diğer verilerin düzenli tutulması ve
+                        defterlerin, kayıtların ve belgelerin elektronik formda saklanması) stellt
                         besondere Anforderungen an KI-gestützte Systeme.
                     </p>
                     <p class="text-slate-400 leading-relaxed mb-6">
@@ -419,9 +419,9 @@
                         <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
                             <h4 class="font-semibold text-sm mb-2 text-amber-400">Trennung: Entwurf vs. Festschreibung</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Agenten bereiten Buchungssätze vor (Entwurf). Die Festschreibung
+                                Ajanlar kayıt setlerini hazırlar (taslak). Kesinleştirme
                                 erfolgt yalnızca yetkili memurlar tarafından im Zielsystem
-                                (ETA V8, DATEV, etc.). Kein LLM hat Transaktionsrechte.
+                                (ETA V8, DATEV, vb.). Hiçbir LLM'nin işlem yetkisi yoktur.
                             </p>
                         </div>
                         <div class="bg-slate-850 border border-amber-500/10 rounded-xl p-5">
@@ -429,7 +429,7 @@
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 Ring 2-Aktionen (Schreibzugriffe) erfordern explizite Freischaltung.
                                 Buchungsrelevante Vorgänge benötigen immer menschliche Freigabe &mdash;
-                                architektonisch erzwungen, nicht durch Policy.
+                                mimari olarak zorunlu kılınmış, politika ile değil.
                             </p>
                         </div>
                     </div>
@@ -464,7 +464,7 @@
                         <!-- Human Review -->
                         <rect x="60" y="180" width="280" height="60" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="2"/>
                         <text x="200" y="205" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">MENSCHLICHE PRÜFUNG</text>
-                        <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">memur prüft und genehmigt</text>
+                        <text x="200" y="225" text-anchor="middle" fill="#94a3b8" font-size="9">memur kontrol eder ve onaylar</text>
 
                         <line x1="200" y1="240" x2="200" y2="270" stroke="#10b981" stroke-width="1.5" marker-end="url(#gobdArrowGreen)"/>
 
@@ -484,14 +484,14 @@
 
     <div class="text-center pt-24 pb-4 bg-slate-900/50 reveal">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz durch Technik</p>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">So setzt AIMOS das technisch um</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">AIMOS bunu teknik olarak şöyle uygular</h2>
         <p class="text-slate-500 text-sm">PII-Vault &middot; Denetim İzi &middot; Yürütme Halkaları &middot; Token-Tracking</p>
     </div>
 
 <div class="text-center mb-12 reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datensouveränität</p>
                 <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Datenlokalität</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto">Alle Daten bleiben auf Ihrem SovereignNode. Hiçbir bayt ağınızı terk etmez &mdash; außer Sie erlauben es explizit.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Tüm veriler SovereignNode'unuzda kalır. Hiçbir bayt ağınızı terk etmez &mdash; siz açıkça izin vermediğiniz sürece.</p>
             </div>
 
             <div class="reveal max-w-4xl mx-auto">
@@ -507,7 +507,7 @@
 
                     <!-- SovereignNode boundary -->
                     <rect x="30" y="20" width="530" height="380" rx="12" fill="#10b981" fill-opacity="0.03" stroke="#10b981" stroke-width="2"/>
-                    <text x="295" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">SovereignNode (Ihr Server)</text>
+                    <text x="295" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">SovereignNode (Sunucunuz)</text>
 
                     <!-- Internal components -->
                     <rect x="60" y="70" width="200" height="50" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
@@ -566,7 +566,7 @@
             <div class="text-center mb-12 reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenschutz-Engine</p>
                 <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">PII-Vault</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto">Automatische Anonimleştirme personenbezogener Daten vor jedem externen API-Aufruf.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Her harici API çağrısından önce kişisel verilerin otomatik anonimleştirilmesi.</p>
             </div>
 
             <!-- PII Pipeline SVG -->
@@ -644,15 +644,15 @@
                 <div class="grid sm:grid-cols-3 gap-4">
                     <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">Session</div>
-                        <p class="text-slate-400 text-xs">Mappings sind an die Session gebunden und werden nicht persistent gespeichert</p>
+                        <p class="text-slate-400 text-xs">Eşleştirmeler oturuma bağlıdır ve kalıcı olarak saklanmaz</p>
                     </div>
                     <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">Regex + NER</div>
-                        <p class="text-slate-400 text-xs">Erkennung via Regex-Patterns und Named Entity Recognition</p>
+                        <p class="text-slate-400 text-xs">Regex kalıpları ve Adlandırılmış Varlık Tanıma ile algılama</p>
                     </div>
                     <div class="bg-slate-850 border border-white/5 rounded-xl p-5 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">Audit</div>
-                        <p class="text-slate-400 text-xs">Jede Anonimleştirme wird im Audit-Log dokumentiert</p>
+                        <p class="text-slate-400 text-xs">Her anonimleştirme denetim günlüğünde belgelenir</p>
                     </div>
                 </div>
             </div>
@@ -667,12 +667,12 @@
                     <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Günlük Kaydı</p>
                     <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Denetim İzi</h3>
                     <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                        Jede Agenten-Aktion wird lückenlos protokolliert. Der Denetim İzi erfasst sechs Event-Typen:
+                        Her ajan eylemi eksiksiz olarak protokollendirilir. Denetim İzi altı olay türünü kaydeder:
                     </p>
                     <div class="space-y-3">
                         <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
                             <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">SYSTEM_PROMPT</span>
-                            <span class="text-slate-400 text-sm">Vollständiger System-Prompt für Nachvollziehbarkeit</span>
+                            <span class="text-slate-400 text-sm">İzlenebilirlik için tam sistem istemi</span>
                         </div>
                         <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
                             <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs font-medium">REQUEST</span>
@@ -684,7 +684,7 @@
                         </div>
                         <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
                             <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-mono text-xs font-medium">TOOL_START</span>
-                            <span class="text-slate-400 text-sm">Tool-Aufruf mit Parametern</span>
+                            <span class="text-slate-400 text-sm">Parametrelerle araç çağrısı</span>
                         </div>
                         <div class="flex items-center gap-3 bg-slate-850 border border-white/5 rounded-lg px-4 py-3">
                             <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-300 font-mono text-xs font-medium">TOOL_OK</span>
@@ -746,7 +746,7 @@
             <div class="text-center mb-12 reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Erişim Kontrolü</p>
                 <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Yürütme Halkaları &mdash; Vertrauensstufen</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto">Wie Yürütme Halkaları unautorisierte Aktionen verhindern.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Yürütme Halkalarının yetkisiz eylemleri nasıl önlediği.</p>
             </div>
 
             <div class="reveal max-w-4xl mx-auto">
@@ -801,7 +801,7 @@
             <div class="text-center mb-12 reveal">
                 <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ressourcen-Überwachung</p>
                 <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Token-Tracking</h3>
-                <p class="text-slate-400 max-w-2xl mx-auto">Jeder LLM-Aufruf wird mit exaktem Token-Verbrauch, Modellname und Latenz dokumentiert.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Her LLM çağrısı kesin token tüketimi, model adı ve gecikme ile belgelenir.</p>
             </div>
 
             <div class="reveal max-w-4xl mx-auto">
@@ -818,7 +818,7 @@
                             <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         </div>
                         <h4 class="font-bold mb-2">Latenz-Messung</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">Jede LLM-Anfrage wird mit latency_ms erfasst, dahil Modellname und Session-Kontext.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Her LLM isteği latency_ms ile kaydedilir, model adı ve oturum bağlamı dahil.</p>
                     </div>
                     <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
                         <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
@@ -838,7 +838,7 @@
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Nachweisbarkeit</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Denetim Güvenliği</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Lückenlose Nachvollziehbarkeit jeder KI-gestützten Karar.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">YZ destekli her kararın eksiksiz izlenebilirliği.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
@@ -849,8 +849,8 @@
                 </div>
                 <h3 class="font-bold mb-2">Token-Tracking</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder LLM-Aufruf wird mit exaktem Token-Verbrauch (Prompt + Completion),
-                    Modellname und Latenz dokumentiert.
+                    Her LLM çağrısı kesin token tüketimi (Prompt + Completion),
+                    model adı ve gecikme ile belgelenir.
                 </p>
             </div>
 
@@ -861,8 +861,8 @@
                 </div>
                 <h3 class="font-bold mb-2">Vollständiger Trail</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Von der Benutzeranfrage über Tool-Aufrufe bis zur Antwort &mdash;
-                    jeder Schritt ist mit Zeitstempel und Session-ID nachvollziehbar.
+                    Kullanıcı talebinden araç çağrılarına ve yanıta kadar &mdash;
+                    her adım zaman damgası ve oturum kimliği ile izlenebilir.
                 </p>
             </div>
 
@@ -874,7 +874,7 @@
                 <h3 class="font-bold mb-2">PII-Vault Traces</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Session-gebundene Anonimleştirmes-Mappings. Nachvollziehbar,
-                    welche Daten wann anonymisiert und de-anonymisiert wurden.
+                    hangi verilerin ne zaman anonimleştirildiği ve de-anonimleştirildiği.
                 </p>
             </div>
 
@@ -885,8 +885,8 @@
                 </div>
                 <h3 class="font-bold mb-2">Quellcode-Einsicht</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    MIT Lisansı: Auditoren können jede Zeile Code prüfen.
-                    Keine Black Box, keine proprietäre Logik.
+                    MIT Lisansı: Denetçiler her satır kodu inceleyebilir.
+                    Kara kutu yok, tescilli mantık yok.
                 </p>
             </div>
         </div>
@@ -922,19 +922,19 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Açık Kaynak unter MIT Lisansı.
+                    MIT Lisansı altında Açık Kaynak.
                 </p>
                 <p class="text-sm text-slate-500 leading-relaxed mt-3">
                     <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
                 </p>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ürün</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
-                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Bağlayıcılar</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
@@ -948,16 +948,16 @@
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
                     <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP-Kompatibilität</a></li>
-                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Startseite</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Ana Sayfa</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. altında lisanslanmıştır MIT Lisansı.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
