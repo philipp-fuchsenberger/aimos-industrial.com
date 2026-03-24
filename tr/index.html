@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIMOS — End&uuml;striyel Zeka &#304;&ccedil;in A&ccedil;&#305;k Kaynak &#304;&#351;letim Sistemi</title>
-    <meta name="description" content="AIMOS: Kendi sunucunuzda egemen YZ altyap&#305;s&#305;. KVKK/GDPR uyumlu, ISO haz&#305;r, MIT lisansl&#305;. ERP, CRM, CAD ve eski sistemleri bulut ba&#287;&#305;ml&#305;l&#305;&#287;&#305; olmadan birle&#351;tirir.">
+    <title>AIMOS — Endüstriyel Zeka için Açık Kaynak İşletim Sistemi</title>
+    <meta name="description" content="AIMOS: Kendi sunucunuzda egemen YZ altyapısı. KVKK/DSGVO uyumlu, ISO-hazır, MIT lisanslı. ERP, CRM, CAD ve eski sistemleri bulut zorunluluğu olmadan birleştirir.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -137,18 +137,24 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="team.html" class="hover:text-white transition-colors">Ajan Ekibi</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">İnsan &amp; YZ</a>
             <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Mimari</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistem</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">İletişim</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">TR</button>
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
@@ -157,419 +163,428 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Ajanlar</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Ajan Ekibi</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">İnsan &amp; YZ</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Fiyatlar</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Uyumluluk</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Mimari</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistem</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">İletişim</a>
+    </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Hero                                                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden">
+<section id="hero" class="relative grid-pattern overflow-hidden">
     <!-- Background glow -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
 
-    <div class="relative max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-8">
-            <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
-            MIT Lisans&#305; &middot; %100 Yerel Kurulum &middot; KVKK/GDPR Uyumlu
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            <span class="text-white">AIMOS</span><br>
-            <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
-                End&uuml;striyel Zeka &#304;&ccedil;in<br>
-                A&ccedil;&#305;k Kaynak &#304;&#351;letim Sistemi.
-            </span>
-        </h1>
-
-        <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-4">
-            Ba&#287;&#305;ms&#305;z. Standartlara Uygun. &Ouml;l&ccedil;eklenebilir.
-        </p>
-        <p class="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12">
-            Tamamen kendi <span class="text-signal-400 font-medium">SovereignNode</span>&rsquo;unuzda
-            &ccedil;al&#305;&#351;an ilk YZ altyap&#305;s&#305; &mdash;
-            bulut ba&#287;&#305;ml&#305;l&#305;&#287;&#305; olmadan, lisans &uuml;creti olmadan, taviz vermeden.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="technik.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center">
-                Dok&uuml;mantasyonu Oku
-            </a>
-            <a href="#cta" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-8 py-3.5 rounded-xl transition-all hover:bg-white/5 text-center">
-                SovereignNode Yap&#305;land&#305;r
-            </a>
-        </div>
-
-        <!-- Terminal preview -->
-        <div class="max-w-2xl mx-auto gradient-border glow-md">
-            <div class="bg-slate-850 rounded-xl overflow-hidden">
-                <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
-                    <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
-                    <span class="text-xs text-slate-500 ml-2 font-mono">sovereign-node:~$</span>
+    <div class="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-28 pb-12">
+        <!-- Two-column layout: Text left, SVG right (desktop) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="text-center lg:text-left pt-4">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
+                    MIT Lisansı &middot; 100% On-Premise &middot; KVKK/DSGVO uyumlu
                 </div>
-                <div class="p-5 text-left font-mono text-sm leading-relaxed">
-                    <div class="text-slate-500">$ aimos status</div>
-                    <div class="mt-2 text-signal-300">AIMOS v4.3.6 &mdash; SovereignNode aktif</div>
-                    <div class="text-slate-400 mt-1">
-                        <span class="text-green-400">&#9679;</span> Yap&#305;-Ajan&#305; &nbsp;&mdash;&nbsp; FEM/Ta&#351;&#305;y&#305;c&#305; motoru &nbsp;<span class="text-slate-600">|</span>&nbsp; beklemede<br>
-                        <span class="text-green-400">&#9679;</span> Lojistik-Ajan&#305; &nbsp;&mdash;&nbsp; Uyumsoft/ERP senkronizasyonu &nbsp;<span class="text-slate-600">|</span>&nbsp; &ccedil;al&#305;&#351;&#305;yor<br>
-                        <span class="text-green-400">&#9679;</span> Finans-Ajan&#305; &nbsp;&mdash;&nbsp; ETA/DATEV entegrasyonu &nbsp;<span class="text-slate-600">|</span>&nbsp; beklemede
-                    </div>
-                    <div class="mt-2 text-slate-500">GPU: RTX 5090 (22/32 GB) &nbsp;|&nbsp; DB: PostgreSQL &nbsp;|&nbsp; LLM: yerel</div>
-                    <div class="mt-1 text-slate-600 cursor-blink">$</div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
+                    <span class="text-white">AIMOS</span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        KI-Agenten, die handeln.
+                    </span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        Yerel. Kendi Sunucunuzda.
+                    </span>
+                </h1>
+
+                <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                    Kendi belleği, kendi araçları
+                    ve BT sistemlerinize doğrudan erişimi olan dijital asistanlar &mdash; bulut yok, lisans ücreti yok.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+                    <a href="preise.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-7 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center text-sm">
+                        Konsept Kanıtı anfragen
+                    </a>
+                    <a href="agenten.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-7 py-3 rounded-xl transition-all hover:bg-white/5 text-center text-sm">
+                        Agenten kennenlernen
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 text-xs">
-        <span>A&#351;a&#287;&#305; kay&#305;n</span>
-        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            <!-- Right: Agent Network SVG (visible immediately) -->
+            <div class="w-full">
+            <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="AIMOS Agenten-Netzwerk: F&uuml;nf spezialisierte KI-Agenten verbunden mit Ihrem yerelen Server">
+                <defs>
+                    <!-- Pulse animation for connection dots -->
+                    <style>
+                        @keyframes dash-flow {
+                            0% { stroke-dashoffset: 24; }
+                            100% { stroke-dashoffset: 0; }
+                        }
+                        @keyframes node-pulse {
+                            0%, 100% { opacity: 0.5; r: 3; }
+                            50% { opacity: 1; r: 5; }
+                        }
+                        .conn-line {
+                            stroke-dasharray: 6 6;
+                            animation: dash-flow 2s linear infinite;
+                        }
+                        .conn-dot {
+                            animation: node-pulse 2.5s ease-in-out infinite;
+                        }
+                        .conn-dot-d1 { animation-delay: 0s; }
+                        .conn-dot-d2 { animation-delay: 0.5s; }
+                        .conn-dot-d3 { animation-delay: 1.0s; }
+                        .conn-dot-d4 { animation-delay: 1.5s; }
+                        .conn-dot-d5 { animation-delay: 2.0s; }
+                    </style>
+
+                    <!-- Glow filter for server -->
+                    <filter id="server-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+
+                    <!-- Subtle glow for agent circles -->
+                    <filter id="agent-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- ── Network boundary ── -->
+                <rect x="40" y="20" width="580" height="400" rx="24" ry="24"
+                      fill="none" stroke="#334155" stroke-width="1.5"
+                      stroke-dasharray="8 4" opacity="0.5"/>
+                <text x="330" y="52" text-anchor="middle"
+                      fill="#475569" font-size="12" font-family="Inter, sans-serif"
+                      font-weight="500" letter-spacing="0.1em">IHR NETZWERK</text>
+
+                <!-- Shield/lock icon on boundary -->
+                <g transform="translate(580, 10)">
+                    <rect x="0" y="0" width="40" height="28" rx="6" fill="#0f1923" stroke="#334155" stroke-width="1"/>
+                    <!-- Lock body -->
+                    <rect x="12" y="12" width="16" height="12" rx="2" fill="#10b981" opacity="0.8"/>
+                    <!-- Lock shackle -->
+                    <path d="M16 12 V8 a4 4 0 0 1 8 0 V12" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+                    <!-- Keyhole -->
+                    <circle cx="20" cy="18" r="1.5" fill="#0f1923"/>
+                </g>
+                <text x="600" y="52" text-anchor="middle"
+                      fill="#10b981" font-size="9" font-family="Inter, sans-serif"
+                      font-weight="500" opacity="0.7">DSGVO</text>
+
+                <!-- ── Central Server ── -->
+                <g transform="translate(290, 180)">
+                    <!-- Server glow background -->
+                    <rect x="-40" y="-40" width="80" height="80" rx="16"
+                          fill="#0070f3" opacity="0.08" filter="url(#server-glow)"/>
+                    <!-- Server box -->
+                    <rect x="-32" y="-32" width="64" height="64" rx="12"
+                          fill="#1a2332" stroke="#0070f3" stroke-width="2"/>
+                    <!-- Server detail lines -->
+                    <line x1="-18" y1="-14" x2="18" y2="-14" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="-18" y1="-2" x2="18" y2="-2" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="-18" y1="10" x2="18" y2="10" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <!-- GPU chip icon -->
+                    <rect x="-8" y="16" width="16" height="10" rx="2"
+                          fill="none" stroke="#0070f3" stroke-width="1" opacity="0.5"/>
+                    <line x1="-4" y1="26" x2="-4" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <line x1="0" y1="26" x2="0" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <line x1="4" y1="26" x2="4" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <!-- Status LEDs -->
+                    <circle cx="14" cy="-14" r="2.5" fill="#10b981" opacity="0.9"/>
+                    <circle cx="14" cy="-2" r="2.5" fill="#10b981" opacity="0.9"/>
+                    <circle cx="14" cy="10" r="2.5" fill="#f59e0b" opacity="0.7"/>
+                </g>
+                <text x="290" y="260" text-anchor="middle"
+                      fill="#94a3b8" font-size="11" font-family="Inter, sans-serif"
+                      font-weight="600" letter-spacing="0.05em">IHR SERVER</text>
+                <text x="290" y="275" text-anchor="middle"
+                      fill="#475569" font-size="9" font-family="Inter, sans-serif">GPU &middot; LLM &middot; Datenbank</text>
+
+                <!-- ── Agent: Finanzen (top-left) ── -->
+                <line x1="172" y1="96" x2="260" y2="165" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="216" cy="130" r="3" fill="#f59e0b" class="conn-dot conn-dot-d1"/>
+                <g transform="translate(130, 62)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Euro sign icon -->
+                    <text x="0" y="2" text-anchor="middle" dominant-baseline="central"
+                          fill="#10b981" font-size="22" font-family="Inter, sans-serif" font-weight="700">&euro;</text>
+                </g>
+                <text x="130" y="110" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Finanzen</text>
+                <text x="130" y="123" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">DATEV &middot; ETA</text>
+
+                <!-- ── Agent: Logistik (top-right) ── -->
+                <line x1="408" y1="96" x2="320" y2="165" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="364" cy="130" r="3" fill="#f59e0b" class="conn-dot conn-dot-d2"/>
+                <g transform="translate(450, 62)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Truck/logistics icon -->
+                    <path d="M-10 -4 h12 l6 6 v4 h-18 z" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="-5" cy="8" r="3" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                    <circle cx="7" cy="8" r="3" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="450" y="110" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Logistik</text>
+                <text x="450" y="123" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">ERP &middot; Lager</text>
+
+                <!-- ── Agent: Konstruktion (left) ── -->
+                <line x1="130" y1="228" x2="255" y2="198" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="192" cy="213" r="3" fill="#f59e0b" class="conn-dot conn-dot-d3"/>
+                <g transform="translate(88, 228)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Gear/cog icon -->
+                    <path d="M0 -12 l3 4 h4 l1 5 -4 2 -1 5 -3 -2 -3 2 -1 -5 -4 -2 1 -5 h4 z"
+                          fill="none" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="0" cy="0" r="4" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="88" y="276" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Konstruktion</text>
+                <text x="88" y="289" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">CAD &middot; FEM</text>
+
+                <!-- ── Agent: Personal (bottom-left) ── -->
+                <line x1="210" y1="360" x2="272" y2="248" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="241" cy="304" r="3" fill="#f59e0b" class="conn-dot conn-dot-d4"/>
+                <g transform="translate(185, 374)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Person icon -->
+                    <circle cx="0" cy="-6" r="5" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                    <path d="M-9 10 Q-9 0 0 2 Q9 0 9 10" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="185" y="420" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Personal</text>
+
+                <!-- ── Agent: Vertrieb (bottom-right) ── -->
+                <line x1="385" y1="350" x2="315" y2="248" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="350" cy="299" r="3" fill="#f59e0b" class="conn-dot conn-dot-d5"/>
+                <g transform="translate(420, 364)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Chart/sales icon -->
+                    <rect x="-10" y="2" width="5" height="8" rx="1" fill="#10b981" opacity="0.7"/>
+                    <rect x="-3" y="-4" width="5" height="14" rx="1" fill="#10b981" opacity="0.8"/>
+                    <rect x="4" y="-10" width="5" height="20" rx="1" fill="#10b981" opacity="0.9"/>
+                </g>
+                <text x="420" y="410" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Vertrieb</text>
+
+                <!-- ── External Access: Telegram & Email (outside boundary) ── -->
+                <!-- Dashed line from server to boundary edge -->
+                <line x1="354" y1="188" x2="620" y2="165" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+                <line x1="354" y1="200" x2="620" y2="240" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+                <!-- Telegram icon -->
+                <g transform="translate(660, 155)">
+                    <circle cx="0" cy="0" r="22" fill="#1a2332" stroke="#334155" stroke-width="1.5"/>
+                    <!-- Paper plane icon -->
+                    <path d="M-8 1 l18 -7 -6 16 -4 -5 -8 -4z" fill="#0070f3" opacity="0.7"/>
+                    <line x1="10" y1="-6" x2="0" y2="5" stroke="#1a2332" stroke-width="1"/>
+                </g>
+                <text x="660" y="186" text-anchor="middle"
+                      fill="#64748b" font-size="9" font-family="Inter, sans-serif">Telegram</text>
+
+                <!-- Email icon -->
+                <g transform="translate(660, 235)">
+                    <circle cx="0" cy="0" r="22" fill="#1a2332" stroke="#334155" stroke-width="1.5"/>
+                    <!-- Envelope icon -->
+                    <rect x="-10" y="-6" width="20" height="14" rx="2" fill="none" stroke="#0070f3" stroke-width="1.5" opacity="0.7"/>
+                    <path d="M-10 -6 l10 8 10 -8" fill="none" stroke="#0070f3" stroke-width="1.5" opacity="0.7"/>
+                </g>
+                <text x="660" y="266" text-anchor="middle"
+                      fill="#64748b" font-size="9" font-family="Inter, sans-serif">E-Mail</text>
+
+                <!-- Access label -->
+                <text x="660" y="295" text-anchor="middle"
+                      fill="#475569" font-size="8" font-family="Inter, sans-serif"
+                      font-weight="500" letter-spacing="0.05em">ZUGRIFF</text>
+            </svg>
+        </div>
+        </div><!-- end grid -->
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  YZ Ajan nedir?                                                       -->
+<!--  Sorun                                                          -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="relative py-28 bg-slate-900/50">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center mb-14 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Konsept</p>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Die Ausgangslage</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                YZ Ajan nedir?
+                Bilgi kişilerin zihninde.<br>
+                <span class="text-signal-400">Rutin işler zaman yiyor.</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                Drei Herausforderungen, die jedes wachsende Unternehmen kennt.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-8">
+            <!-- Bilgi Kaybı -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal">
+                <h3 class="font-bold text-lg mb-3">Bilgi Kaybı</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Deneyimli bir çalışan ayrıldığında, yıllarca oluşturduğu bilgiyi beraberinde götürür. Müşteri ilişkileri, süreç detayları, deneyim değerleri &mdash; unwiederbringlich.
+                </p>
+            </div>
+
+            <!-- Rutin İş -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.1s">
+                <h3 class="font-bold text-lg mb-3">Rutin İş</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Uzman çalışanlarınız veri toplamak, rapor oluşturmak ve süreleri takip etmekle saatler harcıyor. Zor görevler için eksik kalan zaman.
+                </p>
+            </div>
+
+            <!-- Fachkräftemangel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.2s">
+                <h3 class="font-bold text-lg mb-3">Uzman İş Gücü Açığı</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Nitelikli çalışanları bulmak zordur. Aynı zamanda dokümantasyon, uyumluluk ve tepki hızı gereksinimleri artmaktadır.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Çözüm                                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 grid-pattern">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">AIMOS</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                Ekibinize destek olan dijital asistanlar
             </h2>
             <p class="text-slate-400 max-w-3xl mx-auto text-lg">
-                Bir YZ ajan&#305;, sohbet robotu de&#287;ildir. O, kendi sorumluluk alan&#305;, kendi belle&#287;i ve BT sistemlerinize do&#287;rudan eri&#351;imi olan bir <strong class="text-white">dijital uzman personeldir</strong>.
+                Jeder Agent ist ein Spezialist f&uuml;r einen Fachbereich &mdash; mit eigenem Ged&auml;chtnis, eigenen Werkzeugen und einer klaren Regel: Er bereitet vor, Sie entscheiden.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <!-- Sol: Sohbet robotu ne yapar -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 reveal">
-                <div class="text-xs text-red-400/60 uppercase tracking-wider mb-4">Bir sohbet robotu ne yapar</div>
-                <ul class="space-y-3 text-sm text-slate-500">
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>E&#287;itim materyalinden sorular&#305; yan&#305;tlar</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Konu&#351;madan sonra her &#351;eyi unutur</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Hi&ccedil;bir &#351;ey yapamaz &mdash; yaln&#305;zca metin &uuml;retir</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Sizin girdinizi pasif olarak bekler</span>
-                    </li>
-                </ul>
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- LEFT: Bullet points -->
+            <div class="space-y-5 reveal">
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Verileri araştırır, taslaklar oluşturur, süreleri takip eder &mdash; 7/24 kullanılabilir</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Her etkileşimden öğrenir ve kalıcı bir bilgi tabanı oluşturur</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Mevcut sistemlerinize bağlanır &mdash; ERP, muhasebe, e-posta, CAD</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Hazırlar, asla kendi başına karar vermez &mdash; İnsan-Döngüde-İlkesi temel prensiptir</p>
+                </div>
             </div>
 
-            <!-- Sa&#287;: AIMOS ajan&#305; ne yapar -->
-            <div class="gradient-border reveal" style="transition-delay:0.1s">
-                <div class="bg-slate-850 rounded-xl p-7 h-full">
-                    <div class="text-xs text-signal-400 uppercase tracking-wider mb-4">Bir AIMOS ajan&#305; ne yapar</div>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Sorumluluk alan&#305;n&#305; g&ouml;zetler</strong> &mdash; stok seviyeleri, a&ccedil;&#305;k faturalar, m&uuml;&#351;teri talepleri, son tarihler</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Ba&#287;&#305;ms&#305;z hareket eder</strong> &mdash; veritabanlar&#305;n&#305; sorgular, belge olu&#351;turur, mesaj g&ouml;nderir, hat&#305;rlatma kurar</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Kal&#305;c&#305; olarak hat&#305;rlar</strong> &mdash; her m&uuml;&#351;teriyi, her tercihi, her a&ccedil;&#305;k s&uuml;reci bilir</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Proaktif davran&#305;r</strong> &mdash; kritik d&uuml;&#351;&uuml;&#351;leri bildirir, son tarihleri hat&#305;rlat&#305;r, a&ccedil;&#305;k talepleri takip eder</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Haz&#305;rlar, asla kendi ba&#351;&#305;na karar vermez</strong> &mdash; e-posta taslaklar&#305;, muhasebe &ouml;nerileri, ihtiya&ccedil; bildirimleri onay i&ccedil;in &ccedil;al&#305;&#351;ana iletilir</span>
-                        </li>
-                    </ul>
+            <!-- RIGHT: Mensch & KI callout -->
+            <div class="reveal" style="transition-delay:0.15s">
+                <div class="gradient-border p-px rounded-xl">
+                    <div class="bg-slate-850 rounded-xl p-6 text-center">
+                        <div class="text-4xl mb-3">&#129309;</div>
+                        <h3 class="font-bold mb-2">Mensch &amp; KI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Ajan hazırlar.<br>Sie entscheiden.</p>
+                        <a href="mensch-ki.html" class="text-signal-400 text-sm font-medium hover:underline">&rarr; Daha Fazla Bilgi</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Ajan Ekibi                                                           -->
+<!--  Bağımsızlık                                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="agenten" class="relative py-28 grid-pattern">
+<section class="relative py-28 bg-slate-900/50">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Section header -->
         <div class="text-center mb-16 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ajan Mimarisi</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Bağımlılık Yok</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Ajan Ekibi
+                Açık Kaynak. Ihr Server.<br>
+                <span class="text-signal-400">Sizin kararınız.</span>
             </h2>
             <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                Koordineli bir uzman ekibi &mdash; her biri kendi belle&#287;i, kendi ara&ccedil;lar&#305; ve
-                sistemlerinize do&#287;rudan eri&#351;imi ile. Birlikte &ccedil;al&#305;&#351;&#305;r, sonu&ccedil;lar&#305; payla&#351;&#305;r
-                ve g&ouml;revlerini ba&#287;&#305;ms&#305;z olarak yerine getirir &mdash; 7/24.
+                AIMOS size aittir &mdash; bugün, yarın ve fikrinizi değiştirseniz bile.
             </p>
         </div>
 
-        <!-- Agent Cards — 4-s&uuml;tun Grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            <!-- Yap&#305;-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col">
-                <div class="text-xs text-signal-400 font-medium mb-2">Teknik Dok&uuml;mantasyon</div>
-                <h4 class="font-bold mb-2">Yap&#305;-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Entegre FEM motoru (PyNite) ile ta&#351;&#305;y&#305;c&#305; sistemleri hesaplar, &ccedil;elik profilleri a&#287;&#305;rl&#305;k ve maliyete g&ouml;re optimize eder, deprem y&ouml;netmeliklerini (TBDY 2018, Eurocode) kontrol eder.
-                    <strong class="text-slate-300">Mal&ccedil;ekme listelerini taslak olarak olu&#351;turur</strong> &mdash;
-                    m&uuml;hendis inceler ve onaylar.
+        <!-- 2x2 Card Grid -->
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+            <!-- MIT Lisansı -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal">
+                <h3 class="font-bold text-lg mb-3">MIT Lisansı</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Volle Einsicht in jede Zeile Code. Keine Lizenzgeb&uuml;hren &mdash; nicht heute, nicht morgen, nicht bei 100 Agenten. Sie k&ouml;nnen den Code ver&auml;ndern, erweitern veya forken.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PyNite FEM</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DXF</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">TBDY 2018</span>
-                </div>
             </div>
 
-            <!-- Finans-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.05s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Muhasebe &amp; Finans</div>
-                <h4 class="font-bold mb-2">Finans-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    ETA, DATEV veya di&#287;er muhasebe sistemlerine eri&#351;ir. Bakiyeleri ve nakit ak&#305;&#351;&#305;n&#305; saniyeler i&ccedil;inde sunar.
-                    <strong class="text-slate-300">Muhasebe kay&#305;tlar&#305;n&#305; haz&#305;rlar</strong> &mdash;
-                    uzman personel inceler ve onaylar.
+            <!-- Satıcı Bağımlılığı Yok -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.1s">
+                <h3 class="font-bold text-lg mb-3">Satıcı Bağımlılığı Yok</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    AIMOS bindet Sie an keinen Anbieter. Alle Daten liegen in offenen Formaten (JSON, SQLite, PostgreSQL). Kein propriet&auml;res Format, keine versteckten Abh&auml;ngigkeiten.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ETA V8</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
-                </div>
             </div>
 
-            <!-- Lojistik-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.1s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Depo &amp; Tedarik</div>
-                <h4 class="font-bold mb-2">Lojistik-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    ERP aray&uuml;z&uuml; &uuml;zerinden stoklar&#305; izler, d&uuml;&#351;&uuml;&#351;leri ba&#287;&#305;ms&#305;z olarak tespit eder.
-                    <strong class="text-slate-300">&#304;htiya&ccedil; bildirimi olu&#351;turur</strong> &mdash;
-                    sat&#305;n almac&#305; sipari&#351;i onaylar.
+            <!-- Agent-Migration -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.2s">
+                <h3 class="font-bold text-lg mb-3">Agent-Migration</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Ihre Agenten sind portabel. Das Open Agent Package (OAP) exportiert einen Agenten komplett &mdash; Ged&auml;chtnis, Skills, Konfiguration. Import auf einem anderen Server in Minuten. Wenn Sie morgen auf ein propriet&auml;res System wechseln wollen: Ihre Wissensbasis geht mit.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SAP OData</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Navision</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">REST</span>
-                </div>
             </div>
 
-            <!-- &Uuml;retim-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.15s">
-                <div class="text-xs text-signal-400 font-medium mb-2">&Uuml;retim Y&ouml;netimi</div>
-                <h4 class="font-bold mb-2">&Uuml;retim-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Makine durumunu okur, sipari&#351; s&#305;ras&#305;n&#305; optimize eder, vardiya devir raporlar&#305; olu&#351;turur.
-                    <strong class="text-slate-300">S&#305;ralama &ouml;nerir</strong> &mdash;
-                    &uuml;retim m&uuml;d&uuml;r&uuml; onaylar.
+            <!-- Sizin Verileriniz, Sizin Sunucunuz -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.3s">
+                <h3 class="font-bold text-lg mb-3">Sizin Verileriniz, Sizin Sunucunuz</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Tüm veriler SovereignNode'unuzda kalır. Bulut sağlayıcı yok, üçüncü taraf yok, veri transferi yok. Wenn AIMOS Ihnen nicht daha fazla gef&auml;llt, ziehen Sie den Stecker &mdash; und alles bleibt bei Ihnen.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">OPC-UA</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">MES-API</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
-                </div>
-            </div>
-
-            <!-- &#304;K-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.2s">
-                <div class="text-xs text-signal-400 font-medium mb-2">&#304;nsan Kaynaklar&#305;</div>
-                <h4 class="font-bold mb-2">&#304;K-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    &#304;zin taleplerini ekip takvimine g&ouml;re kontrol eder, i&#351;e al&#305;&#351;t&#305;rma s&uuml;recini takip eder, s&ouml;zle&#351;me s&uuml;relerini uyar&#305;r.
-                    <strong class="text-slate-300">Karar &ouml;nerir</strong> &mdash;
-                    y&ouml;netici onaylar.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Personio</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">iCal</span>
-                </div>
-            </div>
-
-            <!-- Hukuk-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.25s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Hukuk &amp; S&ouml;zle&#351;meler</div>
-                <h4 class="font-bold mb-2">Hukuk-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    S&ouml;zle&#351;meleri son tarihlere g&ouml;re tarar, &#351;ablonlardan NDA taslaklar&#305; olu&#351;turur, d&uuml;zenleyici de&#287;i&#351;iklikleri bildirir.
-                    <strong class="text-slate-300">Taslak olu&#351;turur</strong> &mdash;
-                    hukuk&ccedil;u inceler ve onaylar.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">d.velop</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ELO</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PDF/OCR</span>
-                </div>
-            </div>
-
-            <!-- BT-Ajan&#305; -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.3s">
-                <div class="text-xs text-signal-400 font-medium mb-2">BT Operasyonlar&#305;</div>
-                <h4 class="font-bold mb-2">BT-Ops-Ajan&#305;</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    &#304;zleme uyar&#305;lar&#305;n&#305; al&#305;r, talepleri zenginle&#351;tirir, lisans s&uuml;relerini takip eder, sa&#287;l&#305;k raporlar&#305; olu&#351;turur.
-                    <strong class="text-slate-300">Olay&#305; &ouml;nceliklendirir</strong> &mdash;
-                    y&ouml;netici inceler ve eskalasyon yapar.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Zabbix</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Jira</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SNMP</span>
-                </div>
-            </div>
-
-            <!-- Yer tutucu: Sizin Ajan&#305;n&#305;z -->
-            <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center reveal" style="transition-delay:0.35s">
-                <div class="text-2xl text-slate-700 mb-2">+</div>
-                <h4 class="font-bold text-sm text-slate-500 mb-1">Sizin Ajan&#305;n&#305;z</h4>
-                <p class="text-slate-600 text-xs">
-                    Departman&#305;n&#305;za, sistemlerinize, i&#351; ak&#305;&#351;lar&#305;n&#305;za &ouml;zel olarak tasarlan&#305;r.
-                </p>
-                <a href="kontakt.html" class="mt-3 text-signal-400 text-xs hover:text-signal-300 underline underline-offset-2">Hemen g&ouml;r&uuml;&#351;elim</a>
             </div>
         </div>
 
-        <!-- Expandable note -->
-        <div class="mt-10 text-center reveal">
-            <p class="text-slate-500 text-sm">
-                Bunlar &ouml;rnektir. AIMOS ajanlar&#305; her &#351;irket i&ccedil;in bireysel olarak yap&#305;land&#305;r&#305;l&#305;r &mdash;
-                her departman, her aray&uuml;z, her i&#351; ak&#305;&#351;&#305;.
-                <a href="agenten.html" class="text-signal-400 hover:text-signal-300 underline underline-offset-2">Ajan mimarisi hakk&#305;nda daha fazla bilgi</a>.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Evrensel Ba&#287;lant&#305;                                                    -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konnektivitaet" class="relative py-28 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Text -->
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Evrensel Ba&#287;lant&#305;</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-                    Sisteminiz SQL, REST&nbsp;veya&nbsp;SOAP m&#305; konu&#351;uyor?<br>
-                    <span class="text-signal-400">AIMOS &uuml;&ccedil;&uuml;n&uuml; de anlar.</span>
-                </h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                    &#304;li&#351;kisel veritaban&#305;, modern REST API veya 90&#39;lardan kalma eski yaz&#305;l&#305;m &mdash;
-                    fark etmez: AIMOS mevcut BT altyap&#305;n&#305;z&#305; bulut zorunlulu&#287;u ve
-                    ara yaz&#305;l&#305;m y&uuml;k&uuml; olmadan birle&#351;tirir.
-                </p>
-
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">SQL Do&#287;rudan Eri&#351;im</h4>
-                            <p class="text-slate-500 text-sm">PostgreSQL, MSSQL, Firebird, MySQL &mdash; yaln&#305;zca SELECT, &uuml;retim verilerine yazma eri&#351;imi yok.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 0.5s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">REST / SOAP / GraphQL</h4>
-                            <p class="text-slate-500 text-sm">Modern ve eski API&#39;ler ayn&#305; &#351;ekilde. OAuth2, API anahtarlar&#305;, NTLM &mdash; t&uuml;m kimlik do&#287;rulama y&ouml;ntemleri.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 1s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Dosya Sistemleri &amp; SFTP</h4>
-                            <p class="text-slate-500 text-sm">Yerel a&#287; s&uuml;r&uuml;c&uuml;leri, SMB payla&#351;&#305;mlar&#305;, VPN &uuml;zerinden SFTP &mdash; DS-Lite/NAT arkas&#305;nda bile Tailscale ile.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 1.5s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">&#304;leti&#351;im Kanallar&#305;</h4>
-                            <p class="text-slate-500 text-sm">Telegram, E-posta (IMAP/SMTP), sesli mesajlar (STT/TTS) &mdash; ajan, &ccedil;al&#305;&#351;an&#305;n sordu&#287;u yerde yan&#305;t verir.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Architecture diagram -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <div class="gradient-border glow-sm">
-                    <div class="bg-slate-850 rounded-xl p-8">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Mimari: SovereignNode</div>
-                        <div class="space-y-3 text-sm">
-                            <!-- Row 1: External Systems -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">SAP</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Uyumsoft</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">ETA V8</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">DATEV</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Tekla</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">AutoCAD</span>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 2: Connectors -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SQL</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">REST</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SFTP</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SOAP</span>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 3: AIMOS Core -->
-                            <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5 text-center">
-                                <div class="text-signal-300 font-semibold mb-2">AIMOS &Ccedil;ekirdek</div>
-                                <div class="grid grid-cols-3 gap-2 text-xs">
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Orkestrat&ouml;r</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">LLM (yerel)</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">PostgreSQL</div>
-                                </div>
-                                <div class="grid grid-cols-2 gap-2 text-xs mt-2">
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Ajan Belle&#287;i</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Denetim Kay&#305;tlar&#305;</div>
-                                </div>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 4: Users -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Telegram</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">E-posta</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Ses</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Kontrol Paneli</span>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Callout box -->
+        <div class="reveal">
+            <div class="gradient-border glow-sm p-px rounded-xl">
+                <div class="bg-slate-850 rounded-xl p-8 text-center">
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                        Das Risiko ist nicht, AIMOS einzuf&uuml;hren. Das Risiko ist, zu warten &mdash; denn jeder Tag ohne AIMOS ist ein Tag, an dem Ihre Agenten <strong class="text-white">kein Wissen aufbauen</strong>.
+                    </p>
                 </div>
             </div>
         </div>
@@ -577,178 +592,124 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Uyumluluk & G&uuml;venlik                                                 -->
+<!--  Warum jetzt starten                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="compliance" class="relative py-28 grid-pattern">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Section header -->
-        <div class="text-center mb-16 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Uyumluluk &amp; G&uuml;venlik</p>
+<section class="relative py-28 grid-pattern">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">First-Mover-Vorteil</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Denet&ccedil;iler i&ccedil;in tasarland&#305;,<br>
-                <span class="text-signal-400">onlara kar&#351;&#305; de&#287;il.</span>
+                Ne kadar erken başlarsanız,<br>
+                <span class="text-signal-400">sistem o kadar değerli hale gelir</span>
             </h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                AIMOS&#39;taki her mimari karar&#305;, d&uuml;zenleyici uyumluluk
-                g&ouml;z &ouml;n&uuml;nde bulundurularak al&#305;nm&#305;&#351;t&#305;r &mdash; sonradan eklenmi&#351; de&#287;ildir.
-            </p>
         </div>
 
-        <!-- Compliance Grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Text block -->
+        <div class="reveal mb-16">
+            <div class="text-slate-400 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto text-center">
+                <p>
+                    Bir AIMOS ajanı her sohbetle daha iyi olur. Müşteri tercihlerini, süreç detaylarını, tedarikçi değerlendirmelerini saklar &mdash; <strong class="text-white">kalıcı ve aranabilir</strong>. Bir yıl sonra Finans Ajanınız yüzlerce muhasebe kalıbı öğrenmiş olur. İki yıl sonra Satış Ajanınız her müşteriyi kişisel olarak tanır.
+                </p>
+                <p>
+                    Dieses Wissen ist <strong class="text-white">kumulativ</strong>. Es kann nicht nachgeholt werden. Unternehmen, die heute starten, haben in zwei Jahren einen Vorsprung, den Nachz&uuml;gler nicht aufholen k&ouml;nnen &mdash; unabh&auml;ngig davon, welches KI-System sie dann einsetzen.
+                </p>
+                <p>
+                    Und dank <strong class="text-white">OAP-Export</strong> bu bilgi her zaman size aittir &mdash; AIMOS'u daha sonra başka bir sistemle değiştirseniz bile.
+                </p>
+            </div>
+        </div>
 
-            <!-- KVKK/GDPR -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal">
+        <!-- Timeline -->
+        <div class="reveal">
+            <div class="grid sm:grid-cols-3 gap-6">
+                <!-- Jahr 1 -->
+                <div class="relative bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Jahr 1</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">500+</div>
+                    <p class="text-slate-400 text-sm">gespeicherte Fakten, Prozesse etabliert</p>
+                    <div class="hidden sm:block absolute top-1/2 -right-3 w-6 h-px bg-signal-500/30"></div>
+                </div>
+
+                <!-- Jahr 2 -->
+                <div class="relative bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Jahr 2</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">360&deg;</div>
+                    <p class="text-slate-400 text-sm">Her müşteri, her tedarikçi, her işlem belgelenmiştir</p>
+                    <div class="hidden sm:block absolute top-1/2 -right-3 w-6 h-px bg-signal-500/30"></div>
+                </div>
+
+                <!-- Jahr 3 -->
+                <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 text-center glow-sm">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Jahr 3</div>
+                    <div class="text-3xl font-extrabold text-signal-400 mb-2">&infin;</div>
+                    <p class="text-slate-400 text-sm">Kurumsal bilgi &mdash; personel değişiminden bağımsız</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Compliance auf einen Blick                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Compliance</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                Denetçiler için inşa edilmiş,<br>
+                <span class="text-signal-400">onlara karşı değil.</span>
+            </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <!-- DSGVO -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal">
                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">KVKK / GDPR</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    SovereignNode &uuml;zerinde tam <strong class="text-white">veri yerellik</strong>.
-                    Sunucunuzdan hi&ccedil;bir veri &ccedil;&#305;kmaz &mdash; siz a&ccedil;&#305;k&ccedil;a izin vermedik&ccedil;e.
-                    PII-Vault harici API &ccedil;a&#287;r&#305;lar&#305;n&#305; otomatik olarak anonimle&#351;tirir.
-                </p>
+                <h3 class="font-bold mb-1">DSGVO</h3>
+                <p class="text-slate-400 text-sm">Privacy by Design &mdash; Daten bleiben yerel</p>
             </div>
 
-            <!-- ISO -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.1s;">
+            <!-- ISO 27001 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.1s">
                 <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">ISO 9001 &amp; 27001</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    T&uuml;m ajan eylemlerinin eksiksiz <strong class="text-white">kay&#305;t alt&#305;na al&#305;nmas&#305;</strong>.
-                    Her ara&ccedil; &ccedil;a&#287;r&#305;s&#305;, her LLM iste&#287;i, her karar
-                    zaman damgas&#305; ve oturum kimli&#287;i ile belgelenir.
-                </p>
+                <h3 class="font-bold mb-1">ISO 27001</h3>
+                <p class="text-slate-400 text-sm">ile Erişim Kontrolü Yürütme Halkaları</p>
             </div>
 
-            <!-- Revizyon G&uuml;venli&#287;i -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.2s;">
+            <!-- GoBD -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.2s">
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Denetim G&uuml;venli&#287;i</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Mimari ilke olarak <strong class="text-white">&#304;nsan-D&ouml;ng&uuml;s&uuml;nde</strong>:
-                    Hi&ccedil;bir LLM&#39;nin i&#351;lem d&uuml;zeyine do&#287;rudan eri&#351;imi yoktur.
-                    Muhasebe ile ilgili her i&#351;lem insan onay&#305; gerektirir.
-                </p>
+                <h3 class="font-bold mb-1">GoBD</h3>
+                <p class="text-slate-400 text-sm">Taslak &rarr; İnceleme &rarr; Onay</p>
             </div>
 
-            <!-- GoBD / VUK -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.3s;">
+            <!-- EU AI Act -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.3s">
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">GoBD / VUK Uyumu</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-white">Taslak ve kesinle&#351;tirme</strong> aras&#305;nda net ayr&#305;m.
-                    Ajanlar muhasebe kay&#305;tlar&#305;n&#305; haz&#305;rlar &mdash; kesinle&#351;tirme
-                    yaln&#305;zca yetkili personel taraf&#305;ndan hedef sistemde yap&#305;l&#305;r.
-                </p>
+                <h3 class="font-bold mb-1">EU AI Act</h3>
+                <p class="text-slate-400 text-sm">Şeffaflık, menschliche Aufsicht, Dokumentation</p>
             </div>
         </div>
 
-        <!-- Trust bar -->
-        <div class="mt-16 text-center reveal">
-            <div class="inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-4 rounded-2xl bg-slate-900/50 border border-white/5">
-                <span class="text-xs text-slate-500 uppercase tracking-widest">Kan&#305;tlanabilir</span>
-                <span class="text-sm text-slate-400 font-medium">Denetim Kay&#305;tlar&#305;</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">PII-Vault &#304;zleri</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">Oturum Kimlikleri</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">Kaynak Kod &#304;ncelemesi</span>
-            </div>
-        </div>
-
-        <div class="mt-6 text-center">
+        <div class="text-center reveal">
             <a href="compliance.html" class="text-signal-400 hover:text-signal-300 text-sm font-medium underline underline-offset-4 transition-colors">
-                Uyumluluk dok&uuml;mantasyonunu ayr&#305;nt&#305;l&#305; okuyun &rarr;
+                &rarr; Compliance im Detail
             </a>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  A&ccedil;&#305;k Kaynak Taahh&uuml;d&uuml;                                                -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="open-source" class="relative py-28 bg-slate-900/50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">A&ccedil;&#305;k Kaynak</p>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                MIT Lisans&#305;.<br>
-                <span class="text-signal-400">Taviz yok.</span>
-            </h2>
-            <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-                Her sat&#305;r koda tam g&ouml;r&uuml;n&uuml;rl&uuml;k. Lisans &uuml;creti yok &mdash; bug&uuml;n de yar&#305;n da.
-                Maksimum yat&#305;r&#305;m g&uuml;vencesi, &ccedil;&uuml;nk&uuml; asla bir tedarik&ccedil;iye ba&#287;&#305;ml&#305; kalmazs&#305;n&#305;z.
-            </p>
-        </div>
-
-        <!-- Three pillars -->
-        <div class="grid sm:grid-cols-3 gap-8 mb-12 reveal">
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">%100</div>
-                <div class="text-sm text-slate-400">Kaynak kod g&ouml;r&uuml;n&uuml;rl&uuml;&#287;&uuml;</div>
-            </div>
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">0 &euro;</div>
-                <div class="text-sm text-slate-400">Lisans &uuml;creti. Sonsuza dek.</div>
-            </div>
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">&infin;</div>
-                <div class="text-sm text-slate-400">&Ouml;zelle&#351;tirilebilir &amp; geni&#351;letilebilir</div>
-            </div>
-        </div>
-
-        <!-- License block -->
-        <div class="inline-block gradient-border glow-sm reveal">
-            <div class="bg-slate-850 rounded-xl p-6 text-left font-mono text-xs text-slate-400 max-w-lg">
-                <div class="text-slate-600 mb-2">// MIT License (al&#305;nt&#305;)</div>
-                <div>Permission is hereby granted, <span class="text-signal-300">free of charge</span>,</div>
-                <div>to any person obtaining a copy of this software</div>
-                <div>and associated documentation files, to deal in</div>
-                <div>the Software <span class="text-signal-300">without restriction</span>, including</div>
-                <div>without limitation the rights to <span class="text-signal-300">use, copy,</span></div>
-                <div><span class="text-signal-300">modify, merge, publish, distribute, sublicense,</span></div>
-                <div><span class="text-signal-300">and/or sell</span> copies of the Software&hellip;</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Rakamlar                                                             -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section class="relative py-20 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">15+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Beceri / Konekt&ouml;r</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">39</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">MCP Uyumlu Ara&ccedil;</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">138+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Uygulanm&#305;&#351; CR</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">24/7</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Yerel Kurulum &#304;&#351;letimi</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Eylem &Ccedil;a&#287;r&#305;s&#305;                                                       -->
+<!--  CTA                                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="cta" class="relative py-28 bg-slate-900/50 overflow-hidden">
     <!-- Background glow -->
@@ -756,31 +717,20 @@
 
     <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Egemen end&uuml;striyel zekaya<br>
-            <span class="text-signal-400">haz&#305;r m&#305;s&#305;n&#305;z?</span>
+            Starten Sie mit einem<br>
+            <span class="text-signal-400">Konsept Kanıtı</span>
         </h2>
         <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            Dok&uuml;mantasyonla ba&#351;lay&#305;n veya kendi SovereignNode&#39;unuzu
-            yap&#305;land&#305;r&#305;n &mdash; bir saatten k&#305;sa s&uuml;rede.
+            4.900 EUR &mdash; sipariş verildiğinde tamamen mahsup edilir. Gerçek verileriniz ve süreçlerinizle iki haftalık test operasyonu.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a href="technik.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg text-center">
-                Dok&uuml;mantasyonu Oku
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="kontakt.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg text-center">
+                PoC anfragen
             </a>
-            <a href="technik.html#sovereign-node" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-10 py-4 rounded-xl transition-all hover:bg-white/5 text-lg text-center">
-                SovereignNode Yap&#305;land&#305;r
+            <a href="preise.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-10 py-4 rounded-xl transition-all hover:bg-white/5 text-lg text-center">
+                Preise und Pakete
             </a>
-        </div>
-
-        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            <a href="technik.html" class="hover:text-signal-400 transition-colors">Teknik Dok&uuml;mantasyon</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="agenten.html" class="hover:text-signal-400 transition-colors">T&uuml;m Ajan T&uuml;rleri</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="compliance.html" class="hover:text-signal-400 transition-colors">Uyumluluk Ayr&#305;nt&#305;lar&#305;</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub Deposu</a>
         </div>
     </div>
 </section>
@@ -799,50 +749,54 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    MIT Lisans&#305; alt&#305;nda a&ccedil;&#305;k kaynak.
+                    MIT Lisansı altında Açık Kaynak.
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                    <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
                 </p>
             </div>
 
-            <!-- &Uuml;r&uuml;n -->
+            <!-- Product -->
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">&Uuml;r&uuml;n</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Ajan Ekibi</a></li>
-                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
-                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Konekt&ouml;rler</a></li>
-                    <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
+                    <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
+                    <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
+                    <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
 
-            <!-- Uyumluluk -->
+            <!-- Compliance -->
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Uyumluluk</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">KVKK / GDPR</a></li>
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">DSGVO / GDPR</a></li>
                     <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
                     <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
-                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Denetim Kay&#305;tlar&#305;</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Audit-Logging</a></li>
                 </ul>
             </div>
 
-            <!-- Kaynaklar -->
+            <!-- Ressourcen -->
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Kaynaklar</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressourcen</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="technik.html#api" class="hover:text-signal-400 transition-colors">API Referans&#305;</a></li>
-                    <li><a href="technik.html#mcp" class="hover:text-signal-400 transition-colors">MCP Uyumlulu&#287;u</a></li>
-                    <li><a href="technik.html#changelog" class="hover:text-signal-400 transition-colors">De&#287;i&#351;iklik G&uuml;nl&uuml;&#287;&uuml;</a></li>
+                    <li><a href="architektur.html#api" class="hover:text-signal-400 transition-colors">API-Referenz</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">MCP Uyumluluğu</a></li>
+                    <li><a href="architektur.html#changelog" class="hover:text-signal-400 transition-colors">Changelog</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-600">
-                &copy; 2026 AIMOS Project. MIT Lisans&#305; alt&#305;nda lisanslanm&#305;&#351;t&#305;r.
+                &copy; 2026 AIMOS Project. MIT Lisansı altında lisanslanmıştır.
             </p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Yasal Bilgiler</a>
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
                 <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
             </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto — AIMOS</title>
-    <meta name="description" content="Cont&aacute;ctenos para una consultor&iacute;a de AIMOS. Configuraci&oacute;n de SovereignNode, desarrollo de agentes, proyectos piloto.">
+    <meta name="description" content="Contáctenos para una consultoría AIMOS. Configuración SovereignNode, desarrollo de agentes, proyectos piloto.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -44,11 +44,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agentes</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Tecnología</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="team.html" class="hover:text-white transition-colors">Equipo de Agentes</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humano &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Precios</a>
-            <a href="kontakt.html" class="hover:text-white transition-colors">Contacto</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Arquitectura</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistema</a>
+            <a href="kontakt.html" class="text-white font-medium">Contacto</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">ES</button>
@@ -57,13 +63,25 @@
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agentes</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Equipo de Agentes</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humano &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Precios</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Cumplimiento</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Arquitectura</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistema</a>
+        <a href="kontakt.html" class="text-white py-2">Contacto</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
@@ -73,8 +91,8 @@
             Hable con nosotros
         </h1>
         <p class="text-slate-400 text-lg max-w-xl mx-auto">
-            Ya sea un proyecto piloto, asesor&iacute;a t&eacute;cnica o desarrollo individual de agentes &mdash;
-            esperamos su consulta con mucho gusto.
+            Ya sea un proyecto piloto, consultoría técnica o desarrollo individual de agentes &mdash;
+            esperamos su consulta.
         </p>
     </div>
 </section>
@@ -92,7 +110,7 @@
                         <label class="block text-sm text-slate-300 mb-1.5">Nombre *</label>
                         <input type="text" name="name" required
                                class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
-                               placeholder="Juan Garc&iacute;a">
+                               placeholder="Juan García">
                     </div>
                     <div>
                         <label class="block text-sm text-slate-300 mb-1.5">Empresa</label>
@@ -103,21 +121,21 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm text-slate-300 mb-1.5">Correo electr&oacute;nico *</label>
+                    <label class="block text-sm text-slate-300 mb-1.5">Correo electrónico *</label>
                     <input type="email" name="email" required
                            class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
-                           placeholder="juan@empresa.es">
+                           placeholder="juan@empresa.com">
                 </div>
 
                 <div>
-                    <label class="block text-sm text-slate-300 mb-1.5">Inter&eacute;s</label>
+                    <label class="block text-sm text-slate-300 mb-1.5">Interés</label>
                     <select name="interest"
                             class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-signal-500 focus:outline-none transition-colors">
                         <option value="pilot">Proyecto piloto / Proof of Concept</option>
-                        <option value="beratung">Asesor&iacute;a t&eacute;cnica</option>
+                        <option value="beratung">Consultoría técnica</option>
                         <option value="agenten">Desarrollo individual de agentes</option>
-                        <option value="sovereign">Configuraci&oacute;n de SovereignNode</option>
-                        <option value="migration">Migraci&oacute;n de sistemas / Conexi&oacute;n ERP</option>
+                        <option value="sovereign">Configuración SovereignNode</option>
+                        <option value="migration">Migración de sistemas / Conexión ERP</option>
                         <option value="sonstiges">Otros</option>
                     </select>
                 </div>
@@ -133,8 +151,8 @@
                     <input type="checkbox" id="privacy" name="privacy" required
                            class="mt-1 accent-signal-500">
                     <label for="privacy" class="text-sm text-slate-500">
-                        He le&iacute;do la <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">pol&iacute;tica de privacidad</a>
-                        y acepto el tratamiento de mis datos. *
+                        He leído la <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">política de privacidad</a>
+                        y acepto el procesamiento de mis datos. *
                     </label>
                 </div>
 
@@ -143,7 +161,7 @@
                     Enviar mensaje
                 </button>
 
-                <p class="text-xs text-slate-600">* Campos obligatorios. Sus datos se utilizar&aacute;n exclusivamente para atender su consulta.</p>
+                <p class="text-xs text-slate-600">* Campos obligatorios. Sus datos se utilizarán exclusivamente para procesar su consulta.</p>
             </form>
         </div>
 
@@ -157,14 +175,14 @@
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         <div>
-                            <p class="text-slate-300 font-medium">Correo electr&oacute;nico</p>
+                            <p class="text-slate-300 font-medium">Correo electrónico</p>
                             <a href="mailto:info@ecohub-muenchen.com" class="text-signal-400 hover:text-signal-300 transition-colors">info@ecohub-muenchen.com</a>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         <div>
-                            <p class="text-slate-300 font-medium">Ubicaci&oacute;n</p>
+                            <p class="text-slate-300 font-medium">Ubicación</p>
                             <p class="text-slate-400">EcoHub München GmbH<br>Ohlenschlagerstraße 14<br>81369 München</p>
                         </div>
                     </div>
@@ -173,19 +191,19 @@
 
             <!-- What to expect -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
-                <h3 class="font-bold mb-4">Qu&eacute; puede esperar</h3>
+                <h3 class="font-bold mb-4">Qué puede esperar</h3>
                 <div class="space-y-3 text-sm text-slate-400">
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">1</span>
-                        <p><strong class="text-white">Primera conversaci&oacute;n</strong> &mdash; Comprendemos su entorno IT e identificamos quick wins.</p>
+                        <p><strong class="text-white">Consulta inicial</strong> &mdash; Comprendemos su panorama de TI e identificamos Quick Wins.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">2</span>
-                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Se configura un agente para su caso de uso y se prueba durante 2 semanas.</p>
+                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Un agente se configura para su caso de uso y se prueba durante 2 semanas.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">3</span>
-                        <p><strong class="text-white">Despliegue</strong> &mdash; SovereignNode en sus instalaciones, migraci&oacute;n de agentes, formaci&oacute;n.</p>
+                        <p><strong class="text-white">Implementación</strong> &mdash; SovereignNode en sus instalaciones, migración de agentes, capacitación.</p>
                     </div>
                 </div>
             </div>
@@ -194,8 +212,8 @@
             <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5">
                 <p class="text-sm text-slate-400">
                     <strong class="text-signal-300">Open Source</strong> &mdash; AIMOS tiene licencia MIT.
-                    Puede utilizar el software de forma independiente. Ofrecemos asesor&iacute;a profesional,
-                    desarrollo individual de agentes y configuraci&oacute;n de SovereignNode como servicio.
+                    Puede utilizar el software de forma independiente. Ofrecemos consultoría profesional,
+                    desarrollo individual de agentes y configuración SovereignNode como servicio.
                 </p>
             </div>
         </div>
@@ -205,11 +223,16 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licenciado bajo la licencia MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un producto de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>
-            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Cumplimiento</a>
         </div>
     </div>
 </footer>

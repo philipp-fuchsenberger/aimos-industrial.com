@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'&eacute;quipe d'agents — AIMOS</title>
-    <meta name="description" content="Agents AIMOS : sp&eacute;cialistes autonomes dot&eacute;s de leur propre m&eacute;moire, Execution Rings, m&eacute;moire &agrave; long terme et communication inter-agents.">
+    <title>L'&eacute;quipe d'agents &mdash; AIMOS</title>
+    <meta name="description" content="Agents AIMOS : sp&eacute;cialistes autonomes avec m&eacute;moire propre, Execution Rings, m&eacute;moire &agrave; long terme et communication inter-agents.">>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -104,12 +104,18 @@
             <span class="font-semibold text-lg tracking-tight">AIMOS</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technique</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Conformit&eacute;</a>
+            <a href="agenten.html" class="text-white font-medium">Agents</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'agents</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humain &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
@@ -125,17 +131,27 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">&Eacute;quipe d'agents</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humain &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Tarifs</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Syst&egrave;me</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
 
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Concept</a>
-        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Comp&eacute;tences</a>
+        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konzept</a>
+        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
         <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Connecteurs</a>
-        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">M&eacute;moire</a>
-        <a href="#teamarbeit" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">&Eacute;quipe</a>
-        <a href="#berechtigungen" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Autorisations</a>
-        <a href="#beispiele" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Exemples</a>
+        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Ged&auml;chtnis</a>
+        <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
     </div>
 </nav>
 
@@ -143,20 +159,20 @@
 <section class="relative pt-40 pb-20 grid-pattern">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto px-6 text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Architecture des agents</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Agenten-Architektur</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
             L'&eacute;quipe d'agents
         </h1>
         <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Des sp&eacute;cialistes autonomes dot&eacute;s de leur propre m&eacute;moire, de leurs propres outils et de leur personnalit&eacute; &mdash;
-            coordonn&eacute;s par l'Orchestrator sur votre SovereignNode.
+            Autonome Spezialisten mit eigenem Ged&auml;chtnis, eigenen Werkzeugen und Pers&ouml;nlichkeit &mdash;
+            jeder Agent ist ein spezialisierter digitaler Assistent.
         </p>
     </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  1. KONZEPT — Qu'est-ce qu'un agent AIMOS ?                          -->
+<!--  1. KONZEPT — Was ist ein AIMOS-Agent?                                -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="konzept" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
@@ -164,10 +180,10 @@
         <!-- Anatomy: M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Fondamentaux</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Qu'est-ce qu'un agent AIMOS ?</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Grundlagen</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Was ist ein AIMOS-Agent?</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Un agent AIMOS est un sp&eacute;cialiste autonome qui combine quatre composants cl&eacute;s :
+                    Ein AIMOS-Agent ist ein spezialisierter digitaler Assistent, der vier Kernkomponenten verbindet:
                 </p>
                 <div class="space-y-4">
                     <div class="flex items-start gap-4">
@@ -175,8 +191,8 @@
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory (M&eacute;moire)</h4>
-                            <p class="text-slate-500 text-sm">Base de donn&eacute;es SQLite propre avec m&eacute;moire &agrave; long terme s&eacute;mantique, &eacute;pisodique et proc&eacute;durale.</p>
+                            <h4 class="font-semibold text-sm">Memory (Ged&auml;chtnis)</h4>
+                            <p class="text-slate-500 text-sm">Eigene SQLite-Datenbank mit semantischem, episodischem und prozeduralem M&eacute;moire &agrave; long terme.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -184,8 +200,8 @@
                             <span class="text-green-400 font-bold text-xs">S</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Skills (Outils)</h4>
-                            <p class="text-slate-500 text-sm">Collection d'outils sp&eacute;cialis&eacute;s : requ&ecirc;tes SQL, appels REST, op&eacute;rations sur fichiers, fonctions sp&eacute;cifiques au domaine.</p>
+                            <h4 class="font-semibold text-sm">Comp&eacute;tences (outils)</h4>
+                            <p class="text-slate-500 text-sm">Fachspezifische Tool-Sammlung: SQL-Abfragen, REST-Aufrufe, Datei-Operationen, dom&auml;nenspezifische Funktionen.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -193,8 +209,8 @@
                             <span class="text-amber-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Mod&egrave;le de langue)</h4>
-                            <p class="text-slate-500 text-sm">Mod&egrave;le local via runtime LLM local. L'agent construit le prompt complet &agrave; partir du prompt syst&egrave;me, du contexte m&eacute;moire et de la requ&ecirc;te utilisateur.</p>
+                            <h4 class="font-semibold text-sm">LLM (Sprachmodell)</h4>
+                            <p class="text-slate-500 text-sm">Mod&egrave;le local via LLM-Runtime locale. L'agent construit le prompt complet &agrave; partir du system-prompt, du contexte m&eacute;moire et de la requ&ecirc;te utilisateur.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
@@ -202,8 +218,8 @@
                             <span class="text-purple-400 font-bold text-xs">C</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Connector (Connexion)</h4>
-                            <p class="text-slate-500 text-sm">Canal de communication avec l'utilisateur : Telegram, e-mail, voix ou tableau de bord.</p>
+                            <h4 class="font-semibold text-sm">Connecteur (int&eacute;gration)</h4>
+                            <p class="text-slate-500 text-sm">Kommunikationskanal zum Benutzer: Telegram, E-Mail, Sprache oder Dashboard.</p>
                         </div>
                     </div>
                 </div>
@@ -220,30 +236,38 @@
                     <!-- Central Agent -->
                     <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
                     <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">AGENT</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Sp&eacute;cialiste autonome</text>
+                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomer Spezialist</text>
 
                     <!-- Memory (top-left) -->
-                    <rect x="20" y="30" width="140" height="55" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
-                    <text x="90" y="55" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Memory</text>
-                    <text x="90" y="72" text-anchor="middle" fill="#94a3b8" font-size="9">SQLite + Embeddings</text>
+                    <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="20" y="30" width="140" height="55" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
+                        <text x="90" y="55" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600" style="cursor:pointer">Memory</text>
+                        <text x="90" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQLite + Embeddings</text>
+                    </a>
                     <line x1="120" y1="85" x2="170" y2="150" stroke="#0070f3" stroke-width="1.5" marker-end="url(#agentArrow)"/>
 
                     <!-- Skills (top-right) -->
-                    <rect x="240" y="30" width="140" height="55" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
-                    <text x="310" y="55" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">Skills</text>
-                    <text x="310" y="72" text-anchor="middle" fill="#94a3b8" font-size="9">SQL, REST, File, Domain</text>
+                    <a href="#skills" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="240" y="30" width="140" height="55" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
+                        <text x="310" y="55" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600" style="cursor:pointer">Skills</text>
+                        <text x="310" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQL, REST, File, Domain</text>
+                    </a>
                     <line x1="280" y1="85" x2="230" y2="150" stroke="#10b981" stroke-width="1.5"/>
 
                     <!-- LLM (bottom-left) -->
-                    <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1"/>
-                    <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">LLM</text>
-                    <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9">LLM Runtime (local)</text>
+                    <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
+                        <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
+                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Sprachmodell (lokal)</text>
+                    </a>
                     <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
 
                     <!-- Connector (bottom-right) -->
-                    <rect x="240" y="290" width="140" height="55" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1"/>
-                    <text x="310" y="315" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Connector</text>
-                    <text x="310" y="332" text-anchor="middle" fill="#94a3b8" font-size="9">Telegram, E-Mail, Voice</text>
+                    <a href="#konnektoren" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="240" y="290" width="140" height="55" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
+                        <text x="310" y="315" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600" style="cursor:pointer">Connector</text>
+                        <text x="310" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Telegram, E-Mail, Voice</text>
+                    </a>
                     <line x1="280" y1="290" x2="230" y2="230" stroke="#f59e0b" stroke-width="1.5"/>
 
                     <!-- Formula -->
@@ -254,114 +278,114 @@
             </div>
         </div>
 
-        <!-- Agent comme collaborateur numérique (8 cards) -->
+        <!-- Agent als digitaler Assistent (8 cards) -->
         <div class="mt-24">
             <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Mode de travail</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">L'agent comme collaborateur num&eacute;rique</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arbeitsweise</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der Agent als digitaler Assistent</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
-                    Un agent AIMOS ne fonctionne pas comme un chatbot &mdash; il travaille comme un employ&eacute;
-                    avec son propre bureau, son propre classeur et son propre rythme quotidien.
+                    Ein AIMOS-Agent arbeitet nicht wie ein Chat-Bot &mdash; er arbeitet wie ein Sachbearbeiter
+                    mit eigenem Schreibtisch, eigener Ablage und eigenem Tagesrhythmus.
                 </p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Mémoire -->
+                <!-- Gedächtnis -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">M&eacute;moire</h4>
+                    <h4 class="font-bold text-sm mb-1">Ged&auml;chtnis</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Retient les faits, les corrections, les pr&eacute;f&eacute;rences &mdash; de mani&egrave;re permanente.
-                        La recherche s&eacute;mantique retrouve les souvenirs m&ecirc;me avec d'autres termes.
+                        Merkt sich Fakten, Korrekturen, Pr&auml;ferenzen &mdash; dauerhaft.
+                        Semantische Suche findet Erinnerungen auch mit anderen Worten.
                     </p>
                 </div>
 
-                <!-- Notes & Classement -->
+                <!-- Notizen & Ablage -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Notes &amp; Classement</h4>
+                    <h4 class="font-bold text-sm mb-1">Notizen &amp; Ablage</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        R&eacute;dige des r&eacute;sum&eacute;s, des r&eacute;sultats de recherche et des notes de conversation
-                        dans son propre espace de travail &mdash; comme un employ&eacute; entretient son classeur.
+                        Schreibt R&eacute;sum&eacute;s, Recherche-Ergebnisse und Gespr&auml;chsnotizen
+                        in seinen eigenen Workspace &mdash; wie ein Sachbearbeiter seinen Aktenordner pflegt.
                     </p>
                 </div>
 
-                <!-- Calendrier -->
+                <!-- Kalender -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Calendrier</h4>
+                    <h4 class="font-bold text-sm mb-1">Kalender</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Rendez-vous, &eacute;ch&eacute;ances, rappels. L'agent consulte &agrave; chaque interaction
-                        ses rendez-vous &eacute;chus et en retard &mdash; et agit de mani&egrave;re proactive.
+                        Termine, Fristen, Wiedervorlagen. Der Agent sieht bei jeder Interaktion
+                        seine f&auml;lligen und &uuml;berf&auml;lligen Termine &mdash; und handelt proaktiv.
                     </p>
                 </div>
 
-                <!-- Liste de tâches -->
+                <!-- Todo-Liste -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Liste de t&acirc;ches</h4>
+                    <h4 class="font-bold text-sm mb-1">Todo-Liste</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        T&acirc;ches en cours, d&eacute;l&eacute;gations, listes d'attente.
-                        Mise &agrave; jour automatique lors du cycle Dreaming.
+                        Offene Aufgaben, Delegationen, Wartelisten.
+                        Wird im Dreaming-Zyklus automatisch aktualisiert.
                     </p>
                 </div>
             </div>
 
             <!-- Second row -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Rythme quotidien -->
+                <!-- Tagesrhythmus -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Rythme quotidien</h4>
+                    <h4 class="font-bold text-sm mb-1">Tagesrhythmus</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Une fois par jour, l'agent v&eacute;rifie de mani&egrave;re autonome le calendrier, les e-mails
-                        et les t&acirc;ches en cours &mdash; m&ecirc;me sans qu'on lui adresse la parole.
+                        Einmal t&auml;glich pr&uuml;ft der Agent eigenst&auml;ndig Kalender, E-Mails
+                        und offene Aufgaben &mdash; auch ohne dass jemand ihn anspricht.
                     </p>
                 </div>
 
-                <!-- Dreaming / Travail nocturne -->
+                <!-- Dreaming / Nachtarbeit -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </div>
                     <h4 class="font-bold text-sm mb-1">Dreaming</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Pendant les phases calmes, l'agent traite ses conversations : extrait des faits,
-                        met &agrave; jour les notes et listes de t&acirc;ches, consolide sa m&eacute;moire.
+                        In ruhigen Phasen verarbeitet der Agent seine Gespr&auml;che: extrahiert Fakten,
+                        aktualisiert Notizen und Todo-Listen, konsolidiert sein Ged&auml;chtnis.
                     </p>
                 </div>
 
-                <!-- Travail d'équipe -->
+                <!-- Kollegen -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Travail d'&eacute;quipe</h4>
+                    <h4 class="font-bold text-sm mb-1">Teamarbeit</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Les agents communiquent entre eux &mdash; l'agent financier interroge
-                        l'agent logistique sur les niveaux de stock, sans d&eacute;ranger l'utilisateur.
+                        Agenten kommunizieren untereinander &mdash; der Finanz-Agent fragt den
+                        Logistik-Agent nach Lagerwerten, ohne den Benutzer zu belasten.
                     </p>
                 </div>
 
-                <!-- Escalade -->
+                <!-- Eskalation -->
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
                         <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Escalade</h4>
+                    <h4 class="font-bold text-sm mb-1">Eskalation</h4>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Pour les questions complexes, l'agent escalade automatiquement vers un mod&egrave;le IA
-                        plus puissant &mdash; de mani&egrave;re anonymis&eacute;e et trac&eacute;e de fa&ccedil;on r&eacute;visable.
+                        Bei komplexen Fragen eskaliert der Agent automatisch an ein leistungsst&auml;rkeres
+                        KI-Modell &mdash; anonymisiert und revisionssicher protokolliert.
                     </p>
                 </div>
             </div>
@@ -369,32 +393,29 @@
             <!-- Summary box -->
             <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
                 <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">Le r&eacute;sultat :</strong> Un agent AIMOS poss&egrave;de tout ce dont un employ&eacute; a besoin &mdash;
-                    m&eacute;moire, notes, calendrier, liste de t&acirc;ches, coll&egrave;gues, un rythme quotidien
-                    et la capacit&eacute; de demander de l'aide si n&eacute;cessaire. La seule diff&eacute;rence :
-                    Il travaille <strong class="text-signal-300">24 heures sur 24</strong>,
-                    n'oublie <strong class="text-signal-300">jamais</strong> rien
-                    et est disponible en <strong class="text-signal-300">quelques secondes</strong>.
+                    <strong class="text-white">Le point d&eacute;cisif :</strong> Der Agent bereitet vor &mdash; Sie entscheiden. Ihr Fachwissen, Ihre Erfahrung und Ihr Urteilsverm&ouml;gen bleiben unverzichtbar. Der Agent nimmt Ihnen Routinearbeit ab: Daten zusammensuchen, Fristen &uuml;berwachen, Entw&uuml;rfe vorbereiten. Die fachliche Arbeit bleibt bei Ihnen.
                 </p>
             </div>
         </div>
+
     </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  2. SKILLS — 18 Skills dans le SKILL_REGISTRY                        -->
+<!--  2. SKILLS — 17 Skills + Roadmap                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="skills" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">SKILL_REGISTRY</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">18 comp&eacute;tences dans la bo&icirc;te &agrave; outils</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">18 comp&eacute;tences dans la bo&icirc;te &agrave; outils &mdash; et ce n'est que le d&eacute;but</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                Chaque agent re&ccedil;oit exactement les comp&eacute;tences dont il a besoin &mdash; compos&eacute;es de mani&egrave;re modulaire &agrave; partir du registre central.
-                <strong class="text-signal-300">Des comp&eacute;tences sp&eacute;cifiques au client peuvent &ecirc;tre d&eacute;velopp&eacute;es et ajout&eacute;es &agrave; tout moment</strong> &mdash;
-                pour tout secteur, tout syst&egrave;me ERP, tout workflow.
+                Jeder Agent erh&auml;lt genau die Skills, die er braucht &mdash; modular zusammengestellt aus dem zentralen Registry.
+                <strong class="text-signal-300">Kundenspezifische Skills k&ouml;nnen jederzeit entwickelt und hinzugef&uuml;gt werden</strong> &mdash;
+                f&uuml;r jede Branche, jedes ERP-System, jeden Workflow.
             </p>
+            <p class="text-slate-600 text-xs mt-2 max-w-xl mx-auto">Jeder neue Skill bedeutet weniger Routinearbeit f&uuml;r Ihr Team &mdash; nicht weniger Teammitglieder.</p>
         </div>
 
         <!-- Engineering -->
@@ -409,21 +430,21 @@
                         <h4 class="font-semibold text-sm font-mono text-signal-300">structural</h4>
                         <span class="text-xs text-slate-600 font-mono">9 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Calcul FEM, optimisation de profil&eacute;s, traitement DXF, v&eacute;rification de normes, export de nomenclatures.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Calcul FEM, optimisation de profils, traitement DXF, v&eacute;rification des normes, export de nomenclatures.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-signal-300">file_ops</h4>
                         <span class="text-xs text-slate-600 font-mono">7 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Lire, &eacute;crire, rechercher, lister des fichiers. Gestion de l'espace de travail avec s&eacute;paration public/priv&eacute;.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Dateien lesen, schreiben, suchen, auflisten. Workspace-Management mit public/private-Trennung.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-signal-300">brave_search</h4>
                         <span class="text-xs text-slate-600 font-mono">1 Tool</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Recherche web via Brave Search API. Informations actualis&eacute;es sans d&eacute;pendance cloud.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Web-Recherche via Brave Search API. Aktuelle Informationen ohne Cloud-Abh&auml;ngigkeit.</p>
                 </div>
             </div>
         </div>
@@ -440,21 +461,21 @@
                         <h4 class="font-semibold text-sm font-mono text-green-400">email</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Envoyer et recevoir des e-mails via IMAP/SMTP. HTML et pi&egrave;ces jointes.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">E-Mails senden und empfangen via IMAP/SMTP. HTML und Anh&auml;nge.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">mail_monitor</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Surveillance de bo&icirc;te POP3. D&eacute;tecte les nouveaux e-mails et d&eacute;clenche automatiquement des actions.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">POP3-Postfach-&Uuml;berwachung. Erkennt neue E-Mails und l&ouml;st automatisch Aktionen aus.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-green-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-green-400">voice_io</h4>
-                        <span class="text-xs text-slate-600 font-mono">Contexte</span>
+                        <span class="text-xs text-slate-600 font-mono">Kontext</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Reconnaissance et synth&egrave;se vocale dans toutes les langues, trait&eacute;es localement.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Whisper STT + Piper TTS. Spracherkennung und -synthese in toutes les langues, lokal verarbeitet.</p>
                 </div>
             </div>
         </div>
@@ -471,14 +492,14 @@
                         <h4 class="font-semibold text-sm font-mono text-amber-400">shared_storage</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">&Eacute;change de fichiers inter-agents via le dossier public/. Lire, &eacute;crire, lister.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Inter-Agent Datei-Austausch &uuml;ber public/-Ordner. Lesen, Schreiben, Auflisten.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-amber-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-amber-400">remote_storage</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Acc&egrave;s SFTP aux machines distantes via Tailscale VPN. R&eacute;cup&eacute;rer et d&eacute;poser des fichiers depuis le poste de travail.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Acc&egrave;s SFTP aux ordinateurs distants via Tailscale VPN. R&eacute;cup&eacute;rer et d&eacute;poser des fichiers depuis le poste de travail.</p>
                 </div>
             </div>
         </div>
@@ -495,28 +516,35 @@
                         <h4 class="font-semibold text-sm font-mono text-purple-400">scheduler</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">T&acirc;ches programm&eacute;es : rythme quotidien, v&eacute;rifications r&eacute;currentes, rappels.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Zeitgesteuerte Aufgaben: Tagesrhythmus, wiederkehrende V&eacute;rificationen, Erinnerungen.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">calendar</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Cr&eacute;er, consulter, modifier, supprimer des rendez-vous. Rappels proactifs pour les &eacute;ch&eacute;ances.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Termine anlegen, abfragen, &auml;ndern, l&ouml;schen. Proaktive Erinnerungen bei f&auml;lligen Terminen.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">contacts</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Gestion des contacts : personnes, entreprises, num&eacute;ros de t&eacute;l&eacute;phone, adresses e-mail, notes.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Kontaktverwaltung: Personen, Firmen, Telefonnummern, E-Mail-Adressen, Notizen.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-semibold text-sm font-mono text-purple-400">persistence</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Sauvegarder des notes et des paires cl&eacute;-valeur de mani&egrave;re permanente. Base de connaissances propre &agrave; l'agent.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Enregistrer des notes et des paires cl&eacute;-valeur de mani&egrave;re permanente. Base de connaissances propre &agrave; l'agent.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-purple-400">project_management</h4>
+                        <span class="text-xs text-slate-600 font-mono">7 Tools</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Projekte, Aufgaben, Meilensteine, Abh&auml;ngigkeiten. Proaktive Nachverfolgung &uuml;berf&auml;lliger Vorg&auml;nge und automatische Statusberichte.</p>
                 </div>
             </div>
         </div>
@@ -533,21 +561,14 @@
                         <h4 class="font-semibold text-sm font-mono text-cyan-400">hybrid_reasoning</h4>
                         <span class="text-xs text-slate-600 font-mono">1 Tool</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Escalade vers un mod&egrave;le plus puissant. Requ&ecirc;te anonymis&eacute;e vers un LLM cloud pour les analyses complexes.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Escalade vers un mod&egrave;le plus puissant. Requ&ecirc;te anonymis&eacute;e vers un LLM cloud pour des analyses complexes.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
-                        <h4 class="font-semibold text-sm font-mono text-cyan-400">tr_calendar_awareness</h4>
+                        <h4 class="font-semibold text-sm font-mono text-cyan-400">calendar_awareness</h4>
                         <span class="text-xs text-slate-600 font-mono">3 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Jours f&eacute;ri&eacute;s turcs, Ramadan, nuits de Kandil. Conscience du contexte culturel.</p>
-                </div>
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-cyan-500/20 transition-colors">
-                    <div class="flex items-center justify-between mb-2">
-                        <h4 class="font-semibold text-sm font-mono text-cyan-400">football_observer</h4>
-                        <span class="text-xs text-slate-600 font-mono">2 Tools</span>
-                    </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">R&eacute;sultats et calendriers de football. Notifications proactives pour les matchs importants.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Deutsche Jours f&eacute;ri&eacute;s, Ponts, regionale Ferienzeiten. Kulturelles und gesch&auml;ftliches Kontextbewusstsein.</p>
                 </div>
             </div>
         </div>
@@ -564,7 +585,7 @@
                         <h4 class="font-semibold text-sm font-mono text-red-400">eta_firebird</h4>
                         <span class="text-xs text-slate-600 font-mono">4 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Comptabilit&eacute; ETA V8 via Firebird/InterBase. Requ&ecirc;te de comptes, factures ouvertes, aper&ccedil;u journalier.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Comptabilit&eacute; ETA V8 via Firebird/InterBase. Consultation des comptes, factures en attente, aper&ccedil;u journalier.</p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-red-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
@@ -578,7 +599,53 @@
                         <h4 class="font-semibold text-sm font-mono text-red-400">web_automation</h4>
                         <span class="text-xs text-slate-600 font-mono">2 Tools</span>
                     </div>
-                    <p class="text-slate-500 text-xs leading-relaxed">Automatisation du navigateur pour les portails web sans API. Remplir des formulaires, extraire des donn&eacute;es.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Browser-Automatisierung f&uuml;r Web-Portale ohne API. Formulare ausf&uuml;llen, Daten extrahieren.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap — In Entwicklung -->
+        <div class="mt-16 reveal">
+            <div class="text-center mb-8">
+                <p class="text-slate-500 font-mono text-xs font-medium tracking-widest uppercase mb-2">ROADMAP</p>
+                <h3 class="text-xl font-bold text-slate-300">In Entwicklung &mdash; n&auml;chste Skills f&uuml;r den Mittelstand</h3>
+                <p class="text-slate-500 text-sm mt-2 max-w-xl mx-auto">Diese Skills befinden sich in der Planung oder Entwicklung und werden sukzessive verf&uuml;gbar.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-slate-400">document_ocr</h4>
+                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Scanner, reconna&icirc;tre et classer de mani&egrave;re structur&eacute;e les factures, bons de livraison et contrats. Traitement local.</p>
+                </div>
+                <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-slate-400">erp_connector</h4>
+                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Connexion aux syst&egrave;mes ERP courants : SAP Business One, DATEV, Sage, Lexware. Lecture et &eacute;criture.</p>
+                </div>
+                <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-slate-400">inventory_tracker</h4>
+                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Lagerbestand &uuml;berwachen, Nachbestellvorschl&auml;ge generieren, Mindestmengen-Warnungen ausl&ouml;sen.</p>
+                </div>
+                <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-slate-400">compliance_monitor</h4>
+                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Gestion des d&eacute;lais, certifications, intervalles de maintenance, pr&eacute;paration d'audit. Rappel proactif avant &eacute;ch&eacute;ance.</p>
+                </div>
+                <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-5 opacity-80">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-sm font-mono text-slate-400">reporting</h4>
+                        <span class="text-xs text-slate-600 font-mono">geplant</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed">Rapports KPI automatiques, aper&ccedil;us journaliers/hebdomadaires, export CSV et PDF. Tableaux de bord pour la direction.</p>
                 </div>
             </div>
         </div>
@@ -588,18 +655,18 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  3. KONNEKTOREN — Connectivité universelle                            -->
+<!--  3. KONNEKTOREN — Universelle Int&eacute;gration                               -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="konnektoren" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Connectivit&eacute;</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Connecteurs disponibles</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Int&eacute;gration</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Bisher verf&uuml;gbare Connecteurs</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                L'agent communique via des connecteurs &mdash; des interfaces standardis&eacute;es
-                vers les utilisateurs, les syst&egrave;mes et les autres agents.
-                <strong class="text-signal-300">De nouveaux connecteurs sont d&eacute;velopp&eacute;s en continu et peuvent &ecirc;tre
-                ajout&eacute;s &agrave; tout moment pour votre paysage IT sp&eacute;cifique.</strong>
+                Der Agent kommuniziert &uuml;ber Connecteurs &mdash; standardisierte Schnittstellen
+                zu Benutzern, Systemen und anderen Agenten.
+                <strong class="text-signal-300">Neue Connecteurs werden laufend entwickelt und k&ouml;nnen jederzeit
+                f&uuml;r Ihre spezifische IT-Landschaft erg&auml;nzt werden.</strong>
             </p>
         </div>
 
@@ -611,8 +678,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">Telegram</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Texte, messages vocaux, documents. Messages proactifs
-                    pour les rappels, alarmes et r&eacute;sultats. Shared Listener pour tous les agents.
+                    Text, Sprachnachrichten, Dokumente. Proaktive Nachrichten
+                    bei Erinnerungen, Alarmen und Ergebnissen. Shared Listener f&uuml;r alle Agenten.
                 </p>
             </div>
 
@@ -623,8 +690,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">E-Mail</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    IMAP/SMTP pour l'envoi et la r&eacute;ception. Monitoring POP3 pour
-                    les bo&icirc;tes de r&eacute;ception entrantes. Format HTML et pi&egrave;ces jointes.
+                    IMAP/SMTP f&uuml;r Senden und Empfangen. POP3-Monitoring f&uuml;r
+                    eingehende Postf&auml;cher. HTML-Format und Dateianh&auml;nge.
                 </p>
             </div>
 
@@ -633,10 +700,10 @@
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
                 </div>
-                <h4 class="font-bold text-sm mb-2">Voix</h4>
+                <h4 class="font-bold text-sm mb-2">Voice</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Whisper STT + Piper TTS &mdash; enti&egrave;rement local. Reconnaissance et
-                    synth&egrave;se vocale dans toutes les langues, sans services cloud.
+                    Whisper STT + Piper TTS &mdash; komplett lokal. Spracherkennung und
+                    -synthese in toutes les langues, ohne Cloud-Dienste.
                 </p>
             </div>
 
@@ -647,8 +714,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">SFTP</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Acc&egrave;s aux fichiers du poste de travail via Tailscale VPN. Dossier partag&eacute;
-                    pour DXF, PDF, Excel &mdash; chiffr&eacute; et sans ports ouverts.
+                    Dateizugriff auf Arbeitsrechner via Tailscale VPN. Shared Folder
+                    f&uuml;r DXF, PDF, Excel &mdash; verschl&uuml;sselt und ohne offene Ports.
                 </p>
             </div>
 
@@ -657,9 +724,9 @@
                 <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
                 </div>
-                <h4 class="font-bold text-sm mb-2">Bases de donn&eacute;es SQL</h4>
+                <h4 class="font-bold text-sm mb-2">SQL-Datenbanken</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    PostgreSQL, MSSQL, Firebird &mdash; exclusivement des requ&ecirc;tes SELECT.
+                    PostgreSQL, MSSQL, Firebird &mdash; ausschliesslich SELECT-Abfragen.
                     Pas d'acc&egrave;s en &eacute;criture aux donn&eacute;es de production. Read-Only by Design.
                 </p>
             </div>
@@ -671,8 +738,8 @@
                 </div>
                 <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
                 <p class="text-slate-500 text-xs leading-relaxed">
-                    Connexion API universelle pour ERP, CRM, gestion des stocks.
-                    GET, POST, PUT avec authentification configurable.
+                    Universelle API-Int&eacute;gration f&uuml;r ERP, CRM, Warenwirtschaft.
+                    GET, POST, PUT mit konfigurierbarer Authentifizierung.
                 </p>
             </div>
         </div>
@@ -681,14 +748,14 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  4. GEDÄCHTNIS — Mémoire à long terme                                -->
+<!--  4. GEDÄCHTNIS — Langzeitgedächtnis                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="gedaechtnis" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">M&eacute;moire &agrave; long terme</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Trois types de m&eacute;moire, recherche hybride et un cycle de Dreaming pour la consolidation.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Drei Ged&auml;chtnistypen, Hybrid-Suche und ein Dreaming-Zyklus zur Konsolidierung.</p>
         </div>
 
         <!-- Memory Tiers SVG -->
@@ -701,41 +768,41 @@
                 </defs>
                 <!-- Semantic Memory -->
                 <rect x="20" y="20" width="230" height="180" rx="8" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">S&eacute;mantique</text>
-                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Faits &amp; Connaissances</text>
+                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Semantisch</text>
+                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Fakten &amp; Wissen</text>
                 <rect x="40" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Prix acier T1 : 850 EUR/t"</text>
+                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Stahlpreis Q1: 850 EUR/t"</text>
                 <rect x="40" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"Uyumsoft API : /api/v2/stock"</text>
+                <text x="135" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"SAP API: /api/v2/stock"</text>
                 <rect x="40" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Fournisseur X : 14 jours de d&eacute;lai"</text>
+                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Lieferant X: 14 Tage Vorlauf"</text>
 
                 <!-- Episodic Memory -->
                 <rect x="285" y="20" width="230" height="180" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">&Eacute;pisodique</text>
-                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Exp&eacute;riences &amp; Conversations</text>
+                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Episodisch</text>
+                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Erlebnisse &amp; Konversationen</text>
                 <rect x="305" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15 : Requ&ecirc;te de stock"</text>
+                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15: Bestandsabfrage"</text>
                 <rect x="305" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18 : Comparaison de prix"</text>
+                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18: Preisvergleich"</text>
                 <rect x="305" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-20 : Analyse CAO"</text>
+                <text x="400" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-20: Analyse CAO"</text>
 
                 <!-- Procedural Memory -->
                 <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Proc&eacute;dural</text>
-                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Processus &amp; Mod&egrave;les</text>
+                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Prozedural</text>
+                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Abl&auml;ufe &amp; Muster</text>
                 <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Commande : V&eacute;rifier&#8594;Valider&#8594;Comptabiliser"</text>
+                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Bestellung: Pr&uuml;fen&#8594;Freigabe&#8594;Buchen"</text>
                 <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"Export BOM : DWG&#8594;Parse&#8594;CSV"</text>
+                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG&#8594;Parse&#8594;CSV"</text>
                 <rect x="570" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventaire : SQL&#8594;Diff&#8594;Rapport"</text>
+                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventur: SQL&#8594;Diff&#8594;Report"</text>
 
                 <!-- Search Layer -->
                 <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
-                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">Recherche hybride : FTS5 + Embeddings vectoriels + Fusion RRF</text>
-                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">Le classement par pertinence combine les r&eacute;sultats par mots-cl&eacute;s et s&eacute;mantiques</text>
+                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">Hybrid-Suche: FTS5 + Vektor-Embeddings + RRF Fusion</text>
+                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">Relevanz-Ranking kombiniert Keyword- und Semantik-Treffer</text>
 
                 <!-- Arrows from tiers to search -->
                 <line x1="135" y1="200" x2="250" y2="230" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
@@ -752,16 +819,16 @@
                         <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Consolidation de la m&eacute;moire par appel LLM</h3>
+                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Ged&auml;chtniskonsolidierung per LLM-Call</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                            En phase de repos, l'agent analyse ses conversations avec un <strong class="text-white">appel LLM</strong>,
-                            extrait des faits, met &agrave; jour les notes et listes de t&acirc;ches, consolide
-                            sa m&eacute;moire et g&eacute;n&egrave;re des rapports hebdomadaires.
+                            Im Ruhezustand analysiert der Agent seine Gespr&auml;che mit einem <strong class="text-white">LLM-Call</strong>,
+                            extrahiert Fakten, aktualisiert Notizen und Todo-Listen, konsolidiert
+                            sein Ged&auml;chtnis und erstellt w&ouml;chentliche Berichte.
                         </p>
                         <p class="text-slate-500 text-xs leading-relaxed">
-                            Comme le cerveau humain pendant le sommeil &mdash; l'agent condense les exp&eacute;riences en connaissances,
-                            supprime les entr&eacute;es redondantes et renforce les connexions importantes.
-                            Le r&eacute;sultat : des r&eacute;ponses plus pr&eacute;cises avec une consommation de tokens r&eacute;duite.
+                            Wie das menschliche Gehirn im Schlaf &mdash; der Agent verdichtet Erlebnisse zu Wissen,
+                            entfernt redundante Eintr&auml;ge und st&auml;rkt wichtige Verbindungen.
+                            Das Ergebnis: pr&auml;zisere Antworten bei niedrigerem Token-Verbrauch.
                         </p>
                     </div>
                 </div>
@@ -772,9 +839,9 @@
         <div class="reveal max-w-3xl mx-auto mb-16">
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
-                    <h3 class="font-bold text-lg mb-2">Cycle de Dreaming (Consolidation)</h3>
+                    <h3 class="font-bold text-lg mb-2">Dreaming-Zyklus (Konsolidierung)</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Comme le cerveau humain pendant le sommeil, AIMOS consolide les souvenirs au repos :
+                        Wie das menschliche Gehirn im Schlaf konsolidiert AIMOS Erinnerungen im Leerlauf:
                     </p>
                     <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <defs>
@@ -783,25 +850,25 @@
                             </marker>
                         </defs>
                         <rect x="0" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Collecter les &eacute;pisodes</text>
-                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Toutes les conversations</text>
+                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Episoden sammeln</text>
+                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Alle Konversationen</text>
 
                         <line x1="130" y1="40" x2="175" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="175" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">D&eacute;tecter les motifs</text>
-                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Analyse LLM</text>
+                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Muster erkennen</text>
+                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">LLM-Analyse</text>
 
                         <line x1="305" y1="40" x2="350" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="350" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Condenser</text>
-                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Extraire les faits</text>
+                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Verdichten</text>
+                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Fakten extrahieren</text>
 
                         <line x1="480" y1="40" x2="525" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
 
                         <rect x="525" y="15" width="165" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
-                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Stocker s&eacute;mantiquement</text>
+                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Stockage s&eacute;mantique</text>
                         <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">M&eacute;moire &agrave; long terme</text>
                     </svg>
                 </div>
@@ -810,9 +877,9 @@
 
         <!-- Cognitive Balance -->
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Optimisation des tokens</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token-Optimierung</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">&Eacute;quilibre dynamique entre profondeur de m&eacute;moire et longueur de r&eacute;ponse &mdash; dans les limites de la fen&ecirc;tre de contexte.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Dynamischer Ausgleich zwischen Ged&auml;chtnistiefe und Antwortl&auml;nge &mdash; innerhalb des begrenzten Kontextfensters.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
@@ -829,8 +896,8 @@
                     <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
 
                     <!-- Labels -->
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Profondeur m&eacute;moire</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Longueur r&eacute;ponse</text>
+                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Memory-Tiefe</text>
+                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Antwort-L&auml;nge</text>
 
                     <!-- Level marks -->
                     <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
@@ -847,16 +914,16 @@
                     <!-- Context window -->
                     <rect x="40" y="110" width="320" height="40" rx="6" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
                     <rect x="40" y="110" width="120" height="40" rx="6" fill="#0070f3" fill-opacity="0.2"/>
-                    <text x="100" y="134" text-anchor="middle" fill="#5eafff" font-size="10">Prompt syst&egrave;me</text>
+                    <text x="100" y="134" text-anchor="middle" fill="#5eafff" font-size="10">System Prompt</text>
                     <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
-                    <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">M&eacute;moire</text>
+                    <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Memory</text>
                     <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">R&eacute;ponse</text>
+                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Antwort</text>
 
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Fen&ecirc;tre de contexte (p. ex. 32k tokens)</text>
+                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Kontextfenster (z.B. 32k Tokens)</text>
 
                     <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Plus de m&eacute;moire = moins d'espace pour la r&eacute;ponse (et inversement)</text>
+                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Mehr Memory = weniger Platz f&uuml;r Antwort (und umgekehrt)</text>
                 </svg>
             </div>
 
@@ -866,42 +933,42 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="bg-slate-850 border-b border-white/10">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Niveau</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">M&eacute;moire</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">R&eacute;ponse</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Utilisation</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Level</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Memory</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Antwort</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Einsatz</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">1</td>
-                                <td class="py-3 px-4">Minimale</td>
-                                <td class="py-3 px-4">Tr&egrave;s longue</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analyse, rapports</td>
+                                <td class="py-3 px-4">Minimal</td>
+                                <td class="py-3 px-4">Sehr lang</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analyse, Berichte</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">R&eacute;duite</td>
-                                <td class="py-3 px-4">Longue</td>
+                                <td class="py-3 px-4">Reduziert</td>
+                                <td class="py-3 px-4">Lang</td>
                                 <td class="py-3 px-4 hidden sm:table-cell text-xs">R&eacute;sum&eacute;s</td>
                             </tr>
                             <tr class="border-b border-white/5 bg-signal-500/5">
                                 <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">&Eacute;quilibr&eacute;e</td>
-                                <td class="py-3 px-4 text-white">Moyenne</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (par d&eacute;faut)</td>
+                                <td class="py-3 px-4 text-white">Ausgewogen</td>
+                                <td class="py-3 px-4 text-white">Mittel</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (Default)</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Profonde</td>
-                                <td class="py-3 px-4">Courte</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Questions riches en contexte</td>
+                                <td class="py-3 px-4">Tief</td>
+                                <td class="py-3 px-4">Kurz</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Kontextreiche Fragen</td>
                             </tr>
                             <tr>
                                 <td class="py-3 px-4 font-mono text-signal-300">5</td>
                                 <td class="py-3 px-4">Maximum</td>
-                                <td class="py-3 px-4">Minimale</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Recherche, v&eacute;rification de faits</td>
+                                <td class="py-3 px-4">Minimal</td>
+                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Recherche, Fakten-Check</td>
                             </tr>
                         </tbody>
                     </table>
@@ -913,434 +980,82 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  5. TEAMARBEIT — Agents en équipe                                     -->
+<!--  5. LLM — Das Sprachmodell                                            -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="teamarbeit" class="relative py-24 bg-slate-900/50">
+<section id="llm" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Coordination</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agents en &eacute;quipe</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Messagerie inter-agents, fichiers partag&eacute;s et protection des donn&eacute;es impos&eacute;e par l'architecture.</p>
-        </div>
-
-        <!-- Inter-Agent Messaging -->
-        <div class="mb-16">
-            <h3 class="text-xl font-bold mb-6 text-center reveal">Communication inter-agents</h3>
-            <div class="reveal max-w-4xl mx-auto">
-                <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                    <defs>
-                        <marker id="comArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                        </marker>
-                        <marker id="comArrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
-                        </marker>
-                    </defs>
-                    <!-- Agent A -->
-                    <rect x="40" y="40" width="180" height="90" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="130" y="72" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Agent Construction</text>
-                    <text x="130" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">Analyse CAO</text>
-                    <text x="130" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">Nomenclatures</text>
-
-                    <!-- Agent B -->
-                    <rect x="580" y="40" width="180" height="90" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5"/>
-                    <text x="670" y="72" text-anchor="middle" fill="#10b981" font-size="13" font-weight="700">Agent Logistique</text>
-                    <text x="670" y="92" text-anchor="middle" fill="#94a3b8" font-size="10">V&eacute;rification des stocks</text>
-                    <text x="670" y="108" text-anchor="middle" fill="#94a3b8" font-size="10">Acc&egrave;s ERP</text>
-
-                    <!-- DB Relay (center) -->
-                    <rect x="290" y="160" width="220" height="70" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5"/>
-                    <text x="400" y="190" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">PostgreSQL Relay</text>
-                    <text x="400" y="210" text-anchor="middle" fill="#94a3b8" font-size="10">Table message_relay</text>
-
-                    <!-- Arrows: A to DB -->
-                    <line x1="200" y1="130" x2="310" y2="160" stroke="#0070f3" stroke-width="1.5" marker-end="url(#comArrow)"/>
-                    <text x="230" y="155" fill="#5eafff" font-size="9">"Stock acier n&eacute;cessaire"</text>
-
-                    <!-- Arrows: DB to B -->
-                    <line x1="490" y1="160" x2="600" y2="130" stroke="#10b981" stroke-width="1.5" marker-end="url(#comArrowGreen)"/>
-                    <text x="530" y="155" fill="#10b981" font-size="9">Transmission</text>
-
-                    <!-- Return: B to DB -->
-                    <line x1="600" y1="130" x2="490" y2="195" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6,3"/>
-
-                    <!-- Return: DB to A -->
-                    <line x1="310" y1="195" x2="200" y2="130" stroke="#0070f3" stroke-width="1.5" stroke-dasharray="6,3"/>
-
-                    <!-- Ping-Pong Limit -->
-                    <rect x="270" y="255" width="260" height="35" rx="6" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
-                    <text x="400" y="278" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="600">Limite ping-pong : max 3 tours</text>
-                </svg>
-            </div>
-
-            <div class="mt-8 max-w-3xl mx-auto reveal">
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2">Connector Families</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Les agents de la m&ecirc;me Connector Family partagent un canal de communication.
-                            Les messages adress&eacute;s &agrave; la famille sont automatiquement rout&eacute;s vers l'agent comp&eacute;tent.
-                        </p>
-                    </div>
-                    <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
-                        <h4 class="font-semibold text-sm mb-2">Protection ping-pong</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Maximum 3 allers-retours entre deux agents par requ&ecirc;te.
-                            Pr&eacute;vient les boucles infinies et la consommation incontr&ocirc;l&eacute;e de tokens.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Workspace & Protection des données (Shared Folder / public/) -->
-        <div>
-            <h3 class="text-xl font-bold mb-6 text-center reveal">Espace de travail &amp; protection interne des donn&eacute;es</h3>
-            <p class="text-slate-400 max-w-2xl mx-auto text-center mb-8 reveal">Chaque agent poss&egrave;de son propre espace de travail &mdash; comme un bureau ferm&eacute; &agrave; cl&eacute;. Seuls les fichiers consciemment partag&eacute;s sont visibles par les autres.</p>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- SVG Diagram -->
-                <div class="reveal">
-                    <svg viewBox="0 0 440 340" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                        <defs>
-                            <marker id="wsArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                            </marker>
-                        </defs>
-
-                        <!-- Agent A Workspace -->
-                        <rect x="10" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="105" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">M&uuml;hendis</text>
-
-                        <!-- Private area -->
-                        <rect x="25" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-                        <text x="105" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Priv&eacute; (verrouill&eacute;)</text>
-                        <text x="105" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
-                        <text x="105" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json, todo.txt</text>
-                        <text x="105" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">steel_profiles.json</text>
-                        <rect x="155" y="130" width="16" height="16" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5"/>
-                        <line x1="159" y1="134" x2="167" y2="142" stroke="#ef4444" stroke-width="1.5"/>
-                        <line x1="167" y1="134" x2="159" y2="142" stroke="#ef4444" stroke-width="1.5"/>
-
-                        <!-- Public area -->
-                        <rect x="25" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                        <text x="105" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (partag&eacute;)</text>
-                        <text x="105" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">nomenclature.pdf</text>
-                        <text x="105" y="217" text-anchor="middle" fill="#94a3b8" font-size="9">rapport_projet_X.dxf</text>
-
-                        <!-- Agent B Workspace -->
-                        <rect x="240" y="10" width="190" height="240" rx="10" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="335" y="35" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">Agent Financier</text>
-
-                        <!-- Private area B -->
-                        <rect x="255" y="50" width="160" height="100" rx="6" fill="#ef4444" fill-opacity="0.05" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
-                        <text x="335" y="70" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Priv&eacute; (verrouill&eacute;)</text>
-                        <text x="335" y="90" text-anchor="middle" fill="#94a3b8" font-size="9">notes/, calendar.json</text>
-                        <text x="335" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">market_prices.json</text>
-                        <text x="335" y="120" text-anchor="middle" fill="#94a3b8" font-size="9">contacts.json</text>
-
-                        <!-- Public area B -->
-                        <rect x="255" y="165" width="160" height="70" rx="6" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                        <text x="335" y="185" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">public/ (partag&eacute;)</text>
-                        <text x="335" y="202" text-anchor="middle" fill="#94a3b8" font-size="9">calcul_projet_X.pdf</text>
-
-                        <!-- Arrow: A public to B reads -->
-                        <line x1="190" y1="200" x2="250" y2="200" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
-                        <text x="220" y="193" text-anchor="middle" fill="#0070f3" font-size="8">read_public</text>
-
-                        <!-- Blocked arrow: B tries to read A private -->
-                        <line x1="250" y1="100" x2="200" y2="100" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                        <text x="225" y="93" text-anchor="middle" fill="#ef4444" font-size="8">bloqu&eacute;</text>
-                        <circle cx="200" cy="100" r="6" fill="none" stroke="#ef4444" stroke-width="1.5"/>
-                        <line x1="196" y1="96" x2="204" y2="104" stroke="#ef4444" stroke-width="1.5"/>
-
-                        <!-- Legend -->
-                        <rect x="10" y="270" width="420" height="60" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                        <rect x="25" y="283" width="10" height="10" rx="2" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="1"/>
-                        <text x="42" y="293" fill="#94a3b8" font-size="9">public/ — tous les agents peuvent lire</text>
-                        <rect x="225" y="283" width="10" height="10" rx="2" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
-                        <text x="242" y="293" fill="#94a3b8" font-size="9">priv&eacute; — uniquement l'agent propri&eacute;taire</text>
-                        <line x1="25" y1="313" x2="45" y2="313" stroke="#0070f3" stroke-width="1.5" marker-end="url(#wsArrow)"/>
-                        <text x="52" y="317" fill="#94a3b8" font-size="9">&Eacute;change de fichiers via read_public</text>
-                        <line x1="225" y1="313" x2="245" y2="313" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                        <text x="252" y="317" fill="#94a3b8" font-size="9">Acc&egrave;s refus&eacute;</text>
-                    </svg>
-                </div>
-
-                <!-- Text -->
-                <div class="reveal" style="transition-delay: 0.15s;">
-                    <div class="space-y-4">
-                        <div class="bg-slate-850 border border-green-500/10 rounded-xl p-5">
-                            <div class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1">public/ — Partage conscient</h4>
-                                    <p class="text-slate-400 text-sm">Rapports, exports, nomenclatures &mdash; tout ce dont les autres agents ont besoin. L'agent d&eacute;cide lui-m&ecirc;me ce qu'il partage.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-850 border border-red-500/10 rounded-xl p-5">
-                            <div class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1">Zone priv&eacute;e — Invisible</h4>
-                                    <p class="text-slate-400 text-sm">Notes, calendrier, contacts, listes de t&acirc;ches, bases de donn&eacute;es de profils. Aucun autre agent n'y a acc&egrave;s &mdash; impos&eacute; par l'architecture, pas par une politique.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900/60 border border-white/5 rounded-lg p-5">
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                <strong class="text-signal-300">Exemple :</strong> L'agent de construction lit un fichier DXF depuis le poste de travail de l'ing&eacute;nieur, cr&eacute;e une nomenclature et la place dans <code class="text-signal-400 font-mono text-xs">public/</code>. L'agent financier lit la nomenclature et calcule les co&ucirc;ts des mat&eacute;riaux &mdash; sans acc&egrave;s aux notes de construction.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  6. BERECHTIGUNGEN — Execution Rings                                  -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="berechtigungen" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">S&eacute;curit&eacute;</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Execution Rings</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Trois niveaux de confiance d&eacute;terminent quels outils un agent peut utiliser. Comme un noyau de syst&egrave;me d'exploitation.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Ring Diagram SVG -->
-            <div class="reveal">
-                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <!-- Ring 2 (outermost) -->
-                    <circle cx="210" cy="210" r="190" fill="#ef4444" fill-opacity="0.06" stroke="#ef4444" stroke-width="2"/>
-                    <text x="210" y="40" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="600">Ring 2 &mdash; Acc&egrave;s complet</text>
-
-                    <!-- Ring 1 (middle) -->
-                    <circle cx="210" cy="210" r="130" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
-                    <text x="210" y="100" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Ring 1 &mdash; Standard</text>
-
-                    <!-- Ring 0 (innermost) -->
-                    <circle cx="210" cy="210" r="70" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="2"/>
-                    <text x="210" y="200" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">Ring 0</text>
-                    <text x="210" y="218" text-anchor="middle" fill="#10b981" font-size="10">Lecture seule</text>
-
-                    <!-- Ring 1 tools -->
-                    <text x="210" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">sql_query, rest_get</text>
-                    <text x="210" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">memory_search, file_read</text>
-
-                    <!-- Ring 2 tools -->
-                    <text x="210" y="305" text-anchor="middle" fill="#94a3b8" font-size="9">file_write, sql_execute</text>
-                    <text x="210" y="318" text-anchor="middle" fill="#94a3b8" font-size="9">rest_post, email_send</text>
-                    <text x="210" y="331" text-anchor="middle" fill="#94a3b8" font-size="9">shell_exec</text>
-
-                    <!-- Ring 0 tools -->
-                    <text x="210" y="235" text-anchor="middle" fill="#94a3b8" font-size="9">memory_recall</text>
-                    <text x="210" y="248" text-anchor="middle" fill="#94a3b8" font-size="9">config_read</text>
-                </svg>
-            </div>
-
-            <!-- Ring Descriptions -->
-            <div class="reveal space-y-6" style="transition-delay: 0.15s;">
-                <!-- Ring 0 -->
-                <div class="bg-slate-850 border border-green-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
-                            <span class="text-green-400 font-bold text-xs">0</span>
-                        </div>
-                        <h3 class="font-bold text-green-400">Ring 0 &mdash; Lecture seule</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Risque le plus bas. L'agent ne peut que lire : consulter la m&eacute;moire, afficher la configuration.
-                        Pas d'acc&egrave;s aux syst&egrave;mes externes, pas d'acc&egrave;s en &eacute;criture.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">memory_recall</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">config_read</span>
-                        <span class="px-2 py-1 rounded bg-green-500/10 text-green-400 font-mono text-xs">time_now</span>
-                    </div>
-                </div>
-
-                <!-- Ring 1 -->
-                <div class="bg-slate-850 border border-amber-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                            <span class="text-amber-400 font-bold text-xs">1</span>
-                        </div>
-                        <h3 class="font-bold text-amber-400">Ring 1 &mdash; Standard</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Acc&egrave;s en lecture aux syst&egrave;mes externes. SQL-SELECT, REST-GET, lecture de fichiers.
-                        Pas d'acc&egrave;s en &eacute;criture aux donn&eacute;es de production. Ring standard pour la plupart des agents.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">sql_query</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">rest_get</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">file_read</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">memory_search</span>
-                        <span class="px-2 py-1 rounded bg-amber-500/10 text-amber-400 font-mono text-xs">brave_search</span>
-                    </div>
-                </div>
-
-                <!-- Ring 2 -->
-                <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
-                            <span class="text-red-400 font-bold text-xs">2</span>
-                        </div>
-                        <h3 class="font-bold text-red-400">Ring 2 &mdash; Acc&egrave;s complet</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                        Acc&egrave;s complet incluant les op&eacute;rations d'&eacute;criture. N&eacute;cessite une activation explicite
-                        par l'administrateur. Human-in-the-Loop pour les actions critiques.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">file_write</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">sql_execute</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">rest_post</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">email_send</span>
-                        <span class="px-2 py-1 rounded bg-red-500/10 text-red-400 font-mono text-xs">shell_exec</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  7. BEISPIELE — Exemples d'agents                                     -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="beispiele" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Exemples pratiques</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Exemples d'agents</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Trois types d'agents pr&eacute;configur&eacute;s pour des environnements industriels typiques.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-            <!-- Agent de construction -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2 12l1.5-4.5L7 9l2-6 2 6 3.5-1.5L16 12m-14 0h14m-14 0v4a2 2 0 002 2h10a2 2 0 002-2v-4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agent de construction</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Calcule les structures avec un moteur FEM int&eacute;gr&eacute; (PyNite), optimise les profils acier par poids et co&ucirc;t,
-                        v&eacute;rifie les normes sismiques (TBDY 2018, Eurocode). Cr&eacute;e des nomenclatures en brouillon &mdash;
-                        l'ing&eacute;nieur v&eacute;rifie et valide.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">fem_calc</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">profile_optimize</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">seismic_check</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">bom_generate</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Connecteurs</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">PyNite FEM</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">DXF</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">TBDY 2018</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Eurocode</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Agent logistique -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.1s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agent logistique</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Connecte Uyumsoft, SAP, Navision et d'autres syst&egrave;mes ERP.
-                        Surveille les niveaux de stock en temps r&eacute;el, signale les seuils critiques
-                        et automatise les demandes d'approvisionnement via les connecteurs SQL et REST.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">sql_query</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">rest_get</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">stock_check</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">alert_send</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Connecteurs</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Uyumsoft</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">SAP RFC</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Navision</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">REST</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Agent financier -->
-            <div class="agent-card gradient-border p-px rounded-xl reveal" style="transition-delay: 0.2s;">
-                <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
-                    <div class="w-12 h-12 rounded-xl bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-5">
-                        <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-1">Agent financier</h3>
-                    <p class="text-xs font-mono text-slate-600 mb-4">Ring 1 &mdash; Standard (&Eacute;criture : Ring 2)</p>
-                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
-                        Int&egrave;gre ETA V8, DATEV et d'autres syst&egrave;mes comptables.
-                        Analyse la tr&eacute;sorerie, pr&eacute;pare les &eacute;critures comptables et fournit
-                        des soldes actualis&eacute;s. La validation des &eacute;critures uniquement par des comptables autoris&eacute;s.
-                    </p>
-                    <div class="mt-5 pt-4 border-t border-white/5 space-y-3">
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Skills</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">sql_query</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">cashflow_calc</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">booking_prep</span>
-                                <span class="px-2 py-0.5 rounded bg-signal-500/10 text-signal-300 font-mono text-xs">datev_export</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500 mb-1.5">Connecteurs</div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">ETA V8</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">DATEV</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">Firebird</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 text-xs">MSSQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-10 text-center reveal">
-            <p class="text-slate-500 text-sm">
-                Ce sont des exemples. Les agents AIMOS sont configur&eacute;s individuellement par entreprise &mdash;
-                chaque agent est adapt&eacute; aux syst&egrave;mes et exigences sp&eacute;cifiques.
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Sprachmodell</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Das LLM &mdash; Gehirn des Agenten</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Das Large Language Model (LLM) ist die Denkmaschine hinter jedem Agenten.
+                Es versteht Sprache, f&auml;llt Entscheidungen und steuert Werkzeuge &mdash;
+                und l&auml;uft <strong class="text-white">vollst&auml;ndig auf Ihrer eigenen Hardware</strong>.
             </p>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <!-- Was ist ein LLM? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">Was macht das LLM?</h3>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Comprend les requ&ecirc;tes</strong> &mdash; in nat&uuml;rlicher Sprache, in jeder Sprache</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Choisit les outils</strong> &mdash; d&eacute;cide de mani&egrave;re autonome si une requ&ecirc;te de base de donn&eacute;es, un envoi d'e-mail ou un calcul est n&eacute;cessaire</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Formuliert Antworten</strong> &mdash; fachlich korrekt, im Kontext des bisherigen Gespr&auml;chs</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Lernt aus Korrekturen</strong> &mdash; &uuml;ber das M&eacute;moire &agrave; long terme, nicht durch Modell-Training</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Warum lokal? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">Warum lokal statt Cloud?</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <h4 class="font-semibold text-sm text-green-400">Datensouver&auml;nit&auml;t</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Vos requ&ecirc;tes ne quittent jamais le r&eacute;seau. Aucun fournisseur cloud ne voit vos donn&eacute;es.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-signal-500"></span>
+                            <h4 class="font-semibold text-sm text-signal-400">Keine laufenden Kosten</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Aucun prix par token par requ&ecirc;te. Le mod&egrave;le fonctionne sans limite sur votre GPU.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <h4 class="font-semibold text-sm text-amber-400">Disponibilit&eacute;</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein API-Limit, kein Rate-Limiting, keine Abh&auml;ngigkeit von externen Diensten.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            <h4 class="font-semibold text-sm text-purple-400">Eskalation bei Bedarf</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Bei komplexen Aufgaben: automatische, anonymisierte Eskalation an ein Cloud-LLM. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; Details</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="border-t border-white/5 py-16 bg-slate-950">
@@ -1353,42 +1068,47 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Open Source sous licence MIT.
+                    Open Source unter Licence MIT.
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                    Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
                 </p>
             </div>
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Produit</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">&Eacute;quipe d'agents</a></li>
-                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agents</a></li>
+                    <li><a href="team.html" class="hover:text-signal-400 transition-colors">&Eacute;quipe d'agents</a></li>
+                    <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
+                    <li><a href="system.html" class="hover:text-signal-400 transition-colors">Syst&egrave;me</a></li>
                     <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Connecteurs</a></li>
-                    <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                    <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-sm mb-4 text-slate-300">Conformit&eacute;</h4>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">RGPD / GDPR</a></li>
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">RGPD / DSGVO</a></li>
                     <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
                     <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
-                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Journalisation d'audit</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Audit-Logging</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressources</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="technik.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilit&eacute; MCP</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilit&eacute; MCP</a></li>
                     <li><a href="index.html" class="hover:text-signal-400 transition-colors">Accueil</a></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Sous licence MIT.</p>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der Licence MIT.</p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
                 <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
-                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Politique de confidentialit&eacute;</a>
-                <a href="compliance.html" class="hover:text-slate-400 transition-colors">Conformit&eacute;</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
+                <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
             </div>
         </div>
     </div>

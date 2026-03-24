@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions légales — AIMOS</title>
+    <title>Mentions l&eacute;gales &mdash; AIMOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,11 +37,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technique</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Conformité</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'agents</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humain &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
@@ -49,7 +55,7 @@
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Fran&ccedil;ais</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
@@ -57,50 +63,62 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">&Eacute;quipe d'agents</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humain &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Tarifs</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Syst&egrave;me</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
 
 <!-- Content -->
 <section class="pt-32 pb-20 px-6">
     <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold mb-8">Mentions légales</h1>
+        <h1 class="text-3xl font-bold mb-8">Mentions l&eacute;gales</h1>
 
         <div class="space-y-6 text-slate-400 leading-relaxed">
             <div>
-                <h2 class="text-white font-semibold mb-2">Informations conformément au § 5 TMG</h2>
+                <h2 class="text-white font-semibold mb-2">Informations conform&eacute;ment au &sect; 5 TMG</h2>
                 <p>
                     EcoHub München GmbH<br>
                     Ohlenschlagerstraße 14<br>
                     81369 München
                 </p>
                 <p class="mt-2">
-                    Directrice générale : Müge Fuchsenberger
+                    G&eacute;rante : M&uuml;ge Fuchsenberger
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold mb-2">Inscription au registre</h2>
                 <p>
-                    Tribunal d'enregistrement : Amtsgericht München<br>
-                    Numéro d'enregistrement : HRB 264741
+                    Tribunal d'immatriculation : Amtsgericht M&uuml;nchen<br>
+                    Num&eacute;ro d'immatriculation : HRB 264741
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Contact</h2>
+                <h2 class="text-white font-semibold mb-2">Kontakt</h2>
                 <p>
-                    E-mail : info@ecohub-muenchen.com
+                    E-Mail: info@ecohub-muenchen.com
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Numéro de TVA</h2>
+                <h2 class="text-white font-semibold mb-2">Num&eacute;ro de TVA intracommunautaire</h2>
                 <p>
-                    Numéro d'identification à la taxe sur la valeur ajoutée conformément au § 27a UStG :<br>
+                    Num&eacute;ro d'identification &agrave; la TVA conform&eacute;ment au &sect; 27a UStG :<br>
                     DE342603189
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsable du contenu selon le § 18 al. 2 MStV</h2>
+                <h2 class="text-white font-semibold mb-2">Responsable du contenu selon le &sect; 18 al. 2 MStV</h2>
                 <p>
                     Philipp Fuchsenberger<br>
                     Ohlenschlagerstraße 14<br>
@@ -109,34 +127,35 @@
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Règlement des litiges en ligne (UE)</h2>
+                <h2 class="text-white font-semibold mb-2">R&egrave;glement des litiges en ligne (UE)</h2>
                 <p>
-                    La Commission européenne met à disposition une plateforme de règlement en ligne des litiges (RLL) :
-                    <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
-                    Vous trouverez notre adresse e-mail dans les mentions légales ci-dessus.
+                    La Commission europ&eacute;enne met &agrave; disposition une plateforme de r&egrave;glement en ligne des litiges (RLL) : <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+                    Vous trouverez notre adresse e-mail ci-dessus dans les mentions l&eacute;gales.
                 </p>
                 <p class="mt-2">
-                    Nous ne sommes ni disposés ni tenus de participer à une procédure de règlement
-                    des litiges devant une instance d'arbitrage de consommation.
+                    Nous ne sommes ni dispos&eacute;s ni tenus de participer &agrave; des proc&eacute;dures de r&egrave;glement des litiges
+                    devant un organisme de m&eacute;diation de la consommation.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilité relative au contenu</h2>
+                <h2 class="text-white font-semibold mb-2">Responsabilit&eacute; pour les contenus</h2>
                 <p>
                     En tant que prestataire de services, nous sommes responsables de nos propres contenus sur ces
-                    pages conformément au § 7 al. 1 TMG et aux lois générales applicables. Conformément aux §§ 8
-                    à 10 TMG, nous ne sommes cependant pas tenus de surveiller les informations transmises ou
-                    stockées par des tiers, ni de rechercher des circonstances indiquant une activité illicite.
+                    pages conform&eacute;ment au &sect; 7 al. 1 TMG selon les lois g&eacute;n&eacute;rales. Cependant, conform&eacute;ment aux &sect;&sect; 8 &agrave; 10 TMG,
+                    nous ne sommes pas tenus en tant que prestataire de services de surveiller les informations
+                    transmises ou stock&eacute;es de tiers, ni de rechercher des circonstances indiquant une activit&eacute;
+                    ill&eacute;gale.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilité relative aux liens</h2>
+                <h2 class="text-white font-semibold mb-2">Responsabilit&eacute; pour les liens</h2>
                 <p>
-                    Notre offre contient des liens vers des sites web externes de tiers, sur le contenu desquels
-                    nous n'avons aucune influence. Nous ne pouvons donc assumer aucune garantie quant à ces contenus
-                    externes. Le fournisseur ou l'exploitant des pages liées est toujours responsable de leur contenu.
+                    Notre offre contient des liens vers des sites web externes de tiers, sur le contenu desquels nous
+                    n'avons aucune influence. C'est pourquoi nous ne pouvons assumer aucune garantie pour ces contenus tiers.
+                    Le fournisseur ou l'exploitant respectif des pages est toujours responsable du contenu
+                    des pages li&eacute;es.
                 </p>
             </div>
 
@@ -154,10 +173,15 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licence MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licence MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
-            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions légales</a>
-            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialité</a>
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
             <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
         </div>
     </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&#304;leti&#351;im — AIMOS</title>
-    <meta name="description" content="AIMOS dan&#305;&#351;manl&#305;&#287;&#305; i&ccedil;in bizimle ileti&#351;ime ge&ccedil;in. SovereignNode yap&#305;land&#305;rmas&#305;, ajan geli&#351;tirme, pilot projeler.">
+    <title>İletişim — AIMOS</title>
+    <meta name="description" content="AIMOS danışmanlığı için bizimle iletişime geçin. SovereignNode yapılandırması, ajan geliştirme, pilot projeler.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -44,61 +44,79 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="team.html" class="hover:text-white transition-colors">Ajan Ekibi</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">İnsan &amp; YZ</a>
             <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
-            <a href="kontakt.html" class="hover:text-white transition-colors">İletişim</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Mimari</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistem</a>
+            <a href="kontakt.html" class="text-white font-medium">İletişim</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">TR</button>
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
-                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
-                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
-                    <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                    <a href="../kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                    <a href="../en/kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="kontakt.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">T&uuml;rk&ccedil;e</a>
+                    <a href="../fr/kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
+                    <a href="../es/kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                    <a href="../it/kontakt.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Ajanlar</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Ajan Ekibi</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">İnsan &amp; YZ</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Fiyatlar</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Uyumluluk</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Mimari</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistem</a>
+        <a href="kontakt.html" class="text-white py-2">İletişim</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
     <div class="max-w-3xl mx-auto text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">&#304;leti&#351;im</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">İletişim</p>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Bizimle konu&#351;un
+            Bizimle Konuşun
         </h1>
         <p class="text-slate-400 text-lg max-w-xl mx-auto">
-            Pilot proje, teknik dan&#305;&#351;manl&#305;k veya bireysel ajan geli&#351;tirme &mdash;
+            Pilot proje, teknik danışmanlık veya bireysel ajan geliştirme &mdash;
             talebinizi bekliyoruz.
         </p>
     </div>
 </section>
 
-<!-- &#304;leti&#351;im Formu + Bilgi -->
+<!-- Contact Form + Info -->
 <section class="pb-24 px-6">
     <div class="max-w-5xl mx-auto grid lg:grid-cols-5 gap-12">
 
-        <!-- Form (3 s&uuml;tun) -->
+        <!-- Form (3 cols) -->
         <div class="lg:col-span-3">
             <form action="https://formspree.io/f/info@ecohub-muenchen.com" method="POST" class="space-y-5">
 
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm text-slate-300 mb-1.5">Ad&#305;n&#305;z *</label>
+                        <label class="block text-sm text-slate-300 mb-1.5">Ad Soyad *</label>
                         <input type="text" name="name" required
                                class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
-                               placeholder="Ad Soyad">
+                               placeholder="Ahmet Yılmaz">
                     </div>
                     <div>
-                        <label class="block text-sm text-slate-300 mb-1.5">&#350;irket</label>
+                        <label class="block text-sm text-slate-300 mb-1.5">Şirket</label>
                         <input type="text" name="company"
                                class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
-                               placeholder="&#350;irket Ad&#305;">
+                               placeholder="Şirket A.Ş.">
                     </div>
                 </div>
 
@@ -106,53 +124,53 @@
                     <label class="block text-sm text-slate-300 mb-1.5">E-posta *</label>
                     <input type="email" name="email" required
                            class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors"
-                           placeholder="ad@sirket.com">
+                           placeholder="ahmet@sirket.com.tr">
                 </div>
 
                 <div>
-                    <label class="block text-sm text-slate-300 mb-1.5">&#304;lgi Alan&#305;</label>
+                    <label class="block text-sm text-slate-300 mb-1.5">İlgi Alanı</label>
                     <select name="interest"
                             class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-signal-500 focus:outline-none transition-colors">
-                        <option value="pilot">Pilot Proje / Proof of Concept</option>
-                        <option value="beratung">Teknik Dan&#305;&#351;manl&#305;k</option>
-                        <option value="agenten">Bireysel Ajan Geli&#351;tirme</option>
-                        <option value="sovereign">SovereignNode Yap&#305;land&#305;rmas&#305;</option>
-                        <option value="migration">Sistem Ta&#351;&#305;ma / ERP Entegrasyonu</option>
-                        <option value="sonstiges">Di&#287;er</option>
+                        <option value="pilot">Pilot Proje / Konsept Kanıtı</option>
+                        <option value="beratung">Teknik Danışmanlık</option>
+                        <option value="agenten">Bireysel Ajan Geliştirme</option>
+                        <option value="sovereign">SovereignNode Yapılandırması</option>
+                        <option value="migration">Sistem Göçü / ERP Entegrasyonu</option>
+                        <option value="sonstiges">Diğer</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-sm text-slate-300 mb-1.5">Mesaj&#305;n&#305;z *</label>
+                    <label class="block text-sm text-slate-300 mb-1.5">Mesajınız *</label>
                     <textarea name="message" rows="5" required
                               class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-600 focus:border-signal-500 focus:outline-none transition-colors resize-y"
-                              placeholder="Talebinizi k&#305;saca a&ccedil;&#305;klay&#305;n&#305;z..."></textarea>
+                              placeholder="Talebinizi kısaca açıklayın..."></textarea>
                 </div>
 
                 <div class="flex items-start gap-3">
                     <input type="checkbox" id="privacy" name="privacy" required
                            class="mt-1 accent-signal-500">
                     <label for="privacy" class="text-sm text-slate-500">
-                        <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">Gizlilik politikas&#305;n&#305;</a>
-                        okudum ve verilerimin i&#351;lenmesini kabul ediyorum. *
+                        <a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">Gizlilik Politikası</a>'nı
+                        okudum ve verilerimin işlenmesini kabul ediyorum. *
                     </label>
                 </div>
 
                 <button type="submit"
                         class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
-                    Mesaj g&ouml;nder
+                    Mesaj Gönder
                 </button>
 
-                <p class="text-xs text-slate-600">* Zorunlu alanlar. Verileriniz yaln&#305;zca talebinizin i&#351;lenmesi amac&#305;yla kullan&#305;l&#305;r.</p>
+                <p class="text-xs text-slate-600">* Zorunlu alanlar. Verileriniz yalnızca talebinizin işlenmesi amacıyla kullanılacaktır.</p>
             </form>
         </div>
 
-        <!-- Bilgi (2 s&uuml;tun) -->
+        <!-- Info (2 cols) -->
         <div class="lg:col-span-2 space-y-8">
 
-            <!-- Do&#287;rudan &#304;leti&#351;im -->
+            <!-- Direct Contact -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
-                <h3 class="font-bold mb-4">Do&#287;rudan &#304;leti&#351;im</h3>
+                <h3 class="font-bold mb-4">Doğrudan İletişim</h3>
                 <div class="space-y-4 text-sm">
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -171,31 +189,31 @@
                 </div>
             </div>
 
-            <!-- Sizi Neler Bekliyor -->
+            <!-- What to expect -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <h3 class="font-bold mb-4">Sizi Neler Bekliyor</h3>
                 <div class="space-y-3 text-sm text-slate-400">
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">1</span>
-                        <p><strong class="text-white">&#304;lk g&ouml;r&uuml;&#351;me</strong> &mdash; BT altyap&#305;n&#305;z&#305; anlar ve h&#305;zl&#305; kazan&#305;mlar&#305; belirleriz.</p>
+                        <p><strong class="text-white">İlk Görüşme</strong> &mdash; BT altyapınızı anlıyor ve hızlı kazanımları belirliyoruz.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">2</span>
-                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Kullan&#305;m senaryonuz i&ccedil;in bir ajan yap&#305;land&#305;r&#305;l&#305;r ve 2 hafta test edilir.</p>
+                        <p><strong class="text-white">Konsept Kanıtı</strong> &mdash; Kullanım senaryonuz için bir ajan yapılandırılır ve 2 hafta test edilir.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">3</span>
-                        <p><strong class="text-white">Yayg&#305;nla&#351;t&#305;rma</strong> &mdash; SovereignNode sizin mekan&#305;n&#305;za, ajan ta&#351;&#305;ma, e&#287;itim.</p>
+                        <p><strong class="text-white">Devreye Alma</strong> &mdash; SovereignNode şirketinizde kurulur, ajan göçü yapılır, eğitim verilir.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- A&ccedil;&#305;k Kaynak Notu -->
+            <!-- Open Source Note -->
             <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5">
                 <p class="text-sm text-slate-400">
-                    <strong class="text-signal-300">A&ccedil;&#305;k Kaynak</strong> &mdash; AIMOS MIT lisansl&#305;d&#305;r.
-                    Yaz&#305;l&#305;m&#305; ba&#287;&#305;ms&#305;z olarak kullanabilirsiniz. Profesyonel dan&#305;&#351;manl&#305;k,
-                    bireysel ajan geli&#351;tirme ve SovereignNode yap&#305;land&#305;rmas&#305;n&#305; hizmet olarak sunuyoruz.
+                    <strong class="text-signal-300">Açık Kaynak</strong> &mdash; AIMOS, MIT lisansı ile lisanslanmıştır.
+                    Yazılımı bağımsız olarak kullanabilirsiniz. Profesyonel danışmanlık,
+                    bireysel ajan geliştirme ve SovereignNode yapılandırmasını hizmet olarak sunuyoruz.
                 </p>
             </div>
         </div>
@@ -205,9 +223,14 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisans.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
-            <a href="impressum.html" class="hover:text-slate-400 transition-colors">K&uuml;nye</a>
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
             <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
         </div>

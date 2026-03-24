@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiyatlar — AIMOS</title>
-    <meta name="description" content="AIMOS Fiyatlar: SovereignNode Kurulumu, Ajan Geliştirme, ERP Entegrasyonu ve Bakım Paketleri. Şeffaf, adil, bulut maliyeti yok.">
+    <meta name="description" content="AIMOS Fiyatları: SovereignNode kurulumu, ajan geliştirme, ERP entegrasyonu ve bakım paketleri. Şeffaf, adil, bulut maliyeti yok.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -33,7 +33,7 @@
         }
         .gradient-border { position: relative; background: #1a2332; border-radius: 12px; }
         .gradient-border::before {
-            content: ''; position: absolute; inset: -1px; border-radius: 13px;
+            content: ''; position: itibarıylasolute; inset: -1px; border-radius: 13px;
             background: linear-gradient(135deg, #0070f3, #005cc8, #2b8eff, #0070f3);
             background-size: 300% 300%; animation: border-flow 6s ease infinite; z-index: -1;
         }
@@ -53,18 +53,24 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Ajanlar</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Teknik</a>
+            <a href="team.html" class="hover:text-white transition-colors">Ajan Ekibi</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">İnsan &amp; YZ</a>
+            <a href="preise.html" class="text-white font-medium">Fiyatlar</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
-            <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Mimari</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistem</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">İletişim</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">TR</button>
-                <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <div class="itibarıylasolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
@@ -73,59 +79,71 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Ajanlar</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Ajan Ekibi</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">İnsan &amp; YZ</a>
+        <a href="preise.html" class="text-white py-2">Fiyatlar</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Uyumluluk</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Mimari</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistem</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">İletişim</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
     <div class="max-w-4xl mx-auto text-center">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Fiyatlar</p>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            &#350;effaf. Adil.<br>
-            <span class="text-signal-400">Gizli maliyet yok.</span>
+            Şeffaf. Adil.<br>
+            <span class="text-signal-400">Keine versteckten Kosten.</span>
         </h1>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-            Yaz&#305;l&#305;m i&ccedil;in lisans &uuml;creti yok. Yaln&#305;zca kurulum, entegrasyon ve
-            iste&#287;e ba&#287;l&#305; bak&#305;m i&ccedil;in &ouml;deme yap&#305;rs&#305;n&#305;z. AIMOS a&ccedil;&#305;k kaynakt&#305;r ve &ouml;yle kalacakt&#305;r.
+            Yazılım için lisans ücreti yok. Yalnızca kurulum, entegrasyon ve
+            isteğe bağlıe Wartung. AIMOS ist und bleibt Açık Kaynak.
         </p>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Proof of Concept                                                     -->
+<!--  Konsept Kanıtı                                                     -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-16 px-6">
     <div class="max-w-4xl mx-auto reveal">
         <div class="gradient-border">
             <div class="bg-slate-850 rounded-xl p-8 sm:p-10 text-center">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-6">
-                    Ba&#351;lang&#305;&ccedil;
+                    Einstieg
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Proof of Concept</h2>
-                <div class="text-4xl sm:text-5xl font-extrabold text-signal-400 mb-2">2.500 EUR</div>
-                <p class="text-slate-500 text-sm mb-6">tek seferlik, sipari&#351; verildi&#287;inde tamamen mahsup edilir</p>
+                <h2 class="text-2xl sm:text-3xl font-bold mb-2">Konsept Kanıtı</h2>
+                <div class="text-4xl sm:text-5xl font-extritibarıylaold text-signal-400 mb-2">4.900 EUR</div>
+                <p class="text-slate-500 text-sm mb-6">tek seferlik, sipariş verildiğinde tamamen mahsup edilir</p>
                 <div class="max-w-lg mx-auto text-left space-y-3 text-sm text-slate-400 mb-8">
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>AIMOS, sizin donan&#305;m&#305;n&#305;za veya ge&ccedil;ici olarak bizim donan&#305;m&#305;m&#305;za kurulur</span>
+                        <span>AIMOS donanımınıza veya geçici olarak bizimkine kurulur</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>En &ouml;nemli kullan&#305;m senaryonuz i&ccedil;in 1 ajan bireysel olarak yap&#305;land&#305;r&#305;l&#305;r</span>
+                        <span>1 ajan en önemli kullanım senaryonuz için bireysel olarak yapılandırılmış</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">2 hafta test i&#351;letimi</strong> ger&ccedil;ek verilerinizle</span>
+                        <span><strong class="text-white">2 Wochen Testbetrieb</strong> gerçek verilerinizle</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>Yayg&#305;nla&#351;t&#305;rma &ouml;nerisi i&ccedil;eren sonu&ccedil; raporu</span>
+                        <span>Devreye alma önerisi içeren final rapor</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                        <span class="text-signal-300">Risk yok: &#304;kna olmazsan&#305;z ba&#351;ka bir maliyet olu&#351;maz</span>
+                        <span class="text-signal-300">Risk yok: İkna olmazsanız ek maliyet doğmaz</span>
                     </div>
                 </div>
                 <a href="kontakt.html" class="inline-block bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
-                    PoC talep edin
+                    PoC anfragen
                 </a>
             </div>
         </div>
@@ -133,150 +151,150 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Setup & Entegrasyon (Tek Seferlik)                                   -->
+<!--  Setup & Integration (Tek seferlik)                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Tek Seferlik Hizmetler</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Kurulum &amp; Entegrasyon</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Donan&#305;m dan&#305;&#351;manl&#305;&#287;&#305;ndan &uuml;retim ortam&#305;na kadar.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Tek seferlike Leistungen</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Setup &amp; Integration</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Donanım danışmanlığından üretken işletime kadar.</p>
         </div>
 
         <div class="overflow-x-auto reveal">
-            <table class="w-full text-sm">
+            <titibarıylale class="w-full text-sm">
                 <thead>
                     <tr class="border-b border-white/10">
-                        <th class="text-left py-4 px-5 text-slate-300 font-semibold">Hizmet</th>
-                        <th class="text-left py-4 px-5 text-slate-300 font-semibold">A&ccedil;&#305;klama</th>
-                        <th class="text-right py-4 px-5 text-slate-300 font-semibold">Fiyat (net)</th>
+                        <th class="text-left py-4 px-5 text-slate-300 font-semibold">Leistung</th>
+                        <th class="text-left py-4 px-5 text-slate-300 font-semibold">Beschreibung</th>
+                        <th class="text-right py-4 px-5 text-slate-300 font-semibold">Preis (net)</th>
                     </tr>
                 </thead>
                 <tbody class="text-slate-400">
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">Donan&#305;m Dan&#305;&#351;manl&#305;&#287;&#305;</td>
-                        <td class="py-4 px-5">GPU &ouml;nerisi, sunucu spesifikasyonu, tedarik deste&#287;i</td>
+                        <td class="py-4 px-5 font-medium text-white">Hardware-Beratung</td>
+                        <td class="py-4 px-5">GPU önerisi, sunucu spesifikasyonu, tedarik desteği</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">600 &ndash; 1.800 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">SovereignNode Kurulumu</td>
-                        <td class="py-4 px-5">&#304;&#351;letim sistemi, AIMOS, LLM-Runtime (SGLang), PostgreSQL, SSL, VPN (Tailscale), G&uuml;venlik Duvar&#305;</td>
+                        <td class="py-4 px-5 font-medium text-white">SovereignNode Installation</td>
+                        <td class="py-4 px-5">Betriebssystem, AIMOS, LLM-Runtime (SGLang), PostgreSQL, SSL, VPN (Tailscale), Firewall</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">2.500 &ndash; 5.000 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">&#304;lk Ajan (bireysel)</td>
-                        <td class="py-4 px-5">Sistem promptu, ki&#351;ilik, beceriler, konekt&ouml;rler, ger&ccedil;ek verilerle test</td>
+                        <td class="py-4 px-5 font-medium text-white">Erster Agent (individuell)</td>
+                        <td class="py-4 px-5">System-Prompt, Pers&ouml;nlichkeit, Skills, Konnektoren, Testing mit Echtdaten</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.800 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">Her ek ajan</td>
-                        <td class="py-4 px-5">Yap&#305;land&#305;rma, beceriler, konekt&ouml;rler, test</td>
+                        <td class="py-4 px-5 font-medium text-white">Jeder weitere Agent</td>
+                        <td class="py-4 px-5">Yapılandırma, Skills, Konnektoren, Testing</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.000 &ndash; 1.800 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">ERP / CRM Entegrasyonu</td>
-                        <td class="py-4 px-5">SQL e&#351;leme, API ba&#287;lant&#305;s&#305;, &uuml;retim verileriyle test (sistem ba&#351;&#305;na)</td>
+                        <td class="py-4 px-5 font-medium text-white">ERP / CRM-Integration</td>
+                        <td class="py-4 px-5">SQL-Mapping, API-Anbindung, Test mit Produktionsdaten (pro System)</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.200 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">CAD / Dok&uuml;man Entegrasyonu</td>
-                        <td class="py-4 px-5">AutoCAD, Tekla, PDF, Office formatlar&#305; &mdash; Okuma, Analiz, Mal&ccedil;eki listeleri</td>
+                        <td class="py-4 px-5 font-medium text-white">CAD / Dokumenten-Integration</td>
+                        <td class="py-4 px-5">AutoCAD, Tekla, PDF, Office-Formate &mdash; Okuma, Analysieren, St&uuml;cklisten</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.200 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr>
-                        <td class="py-4 px-5 font-medium text-white">Ajan Ta&#351;&#305;ma</td>
-                        <td class="py-4 px-5">Ajanlar&#305; bizim sunucudan sizin SovereignNode'unuza ta&#351;&#305;ma (haf&#305;za dahil)</td>
+                        <td class="py-4 px-5 font-medium text-white">Ajan göçü</td>
+                        <td class="py-4 px-5">Ajanları sunucumuzdan SovereignNode'unuza taşıyın (bellek dahil)</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">600 &ndash; 1.200 EUR</td>
                     </tr>
                 </tbody>
-            </table>
+            </titibarıylale>
         </div>
 
         <div class="mt-6 bg-slate-900/50 border border-white/5 rounded-xl p-5 reveal">
             <p class="text-sm text-slate-400">
-                <strong class="text-white">Tipik ilk proje:</strong>
-                SovereignNode + 2 Ajan + 1 ERP ba&#287;lant&#305;s&#305; =
-                <span class="text-signal-300 font-semibold">8.000 &ndash; 15.000 EUR</span>.
-                PoC b&uuml;t&ccedil;esi (2.500 EUR) tamamen mahsup edilir.
+                <strong class="text-white">Typisches Erstprojekt:</strong>
+                SovereignNode + 2 Agenten + 1 ERP Bağlantısı =
+                <span class="text-signal-300 font-semibold">15.000 &ndash; 25.000 EUR</span>.
+                PoC bütçesi (4.900 EUR) tamamen mahsup edilir.
             </p>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Bak&#305;m Paketleri (Ayl&#305;k)                                            -->
+<!--  Bakım Paketie (Monatlich)                                           -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6 bg-slate-900/50">
     <div class="max-w-5xl mx-auto pt-20">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ayl&#305;k Bak&#305;m</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Destek &amp; Geli&#351;tirme</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">&#304;ste&#287;e ba&#287;l&#305; ancak &ouml;nerilir. AIMOS bak&#305;m s&ouml;zle&#351;mesi olmadan da &ccedil;al&#305;&#351;&#305;r &mdash; yaz&#305;l&#305;m sizindir.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Monatliche Wartung</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Support &amp; Weiterentwicklung</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">İsteğe bağlı ama önerilir. AIMOS bakım sözleşmesi olmadan da çalışır &mdash; bu sizin yazılımınız.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
 
-            <!-- Temel -->
+            <!-- Basis -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7 flex flex-col">
-                <h3 class="font-bold text-lg mb-1">Temel</h3>
-                <div class="text-3xl font-extrabold mb-1">350 <span class="text-base font-normal text-slate-500">EUR/Ay</span></div>
-                <p class="text-xs text-slate-600 mb-5">Minimum 12 ay s&uuml;re</p>
+                <h3 class="font-bold text-lg mb-1">Basis</h3>
+                <div class="text-3xl font-extritibarıylaold mb-1">350 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                <p class="text-xs text-slate-600 mb-5">12 Monate Mindestlaufzeit</p>
                 <ul class="space-y-3 text-sm text-slate-400 flex-1">
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Yaz&#305;l&#305;m g&uuml;ncellemeleri &amp; g&uuml;venlik yamalar&#305;
+                        Software-Güncellemeler ve Güvenlik Yamaları
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Sistem izleme (kontrol paneli eri&#351;imi)
+                        System-İzleme (Dashboard-Zugang)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        E-posta deste&#287;i (48 saat yan&#305;t s&uuml;resi)
+                        E-posta Desteği (48h Yanıt Süresi)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Ayl&#305;k token t&uuml;ketim raporu
+                        Monatlicher Token-Verbrauchsreport
                     </li>
                 </ul>
                 <a href="kontakt.html" class="mt-6 block text-center border border-white/10 hover:border-white/25 text-white font-medium px-6 py-3 rounded-xl transition-all hover:bg-white/5">
-                    Talep edin
+                    Anfragen
                 </a>
             </div>
 
-            <!-- Standart (&ouml;nerilen) -->
+            <!-- Standard (empfohlen) -->
             <div class="gradient-border">
                 <div class="bg-slate-850 rounded-xl p-7 flex flex-col h-full">
                     <div class="flex items-center gap-2 mb-1">
-                        <h3 class="font-bold text-lg">Standart</h3>
-                        <span class="text-xs bg-signal-500 text-white px-2 py-0.5 rounded-full">&ouml;nerilen</span>
+                        <h3 class="font-bold text-lg">Standard</h3>
+                        <span class="text-xs bg-signal-500 text-white px-2 py-0.5 rounded-full">empfohlen</span>
                     </div>
-                    <div class="text-3xl font-extrabold mb-1">650 <span class="text-base font-normal text-slate-500">EUR/Ay</span></div>
-                    <p class="text-xs text-slate-600 mb-5">Minimum 12 ay s&uuml;re</p>
+                    <div class="text-3xl font-extritibarıylaold mb-1">650 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                    <p class="text-xs text-slate-600 mb-5">12 Monate Mindestlaufzeit</p>
                     <ul class="space-y-3 text-sm text-slate-400 flex-1">
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Temel paketteki her &#351;ey
+                            Alles aus Basis
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span class="text-white">Ajan &ouml;zelle&#351;tirmeleri</span> (promptlar, beceriler, konekt&ouml;rler)
+                            <span class="text-white">Agent-Anpassungen</span> (Prompts, Skills, Konnektoren)
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span class="text-white">Telegram deste&#287;i</span> (24 saat yan&#305;t s&uuml;resi)
+                            <span class="text-white">Telegram-Support</span> (24h Yanıt Süresi)
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Yeni LLM modellerini de&#287;erlendirme &amp; kurma
+                            Neue LLM-Modelle evaluieren &amp; einspielen
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Ayda <span class="text-white">2 saate kadar geli&#351;tirme</span> dahil
+                            Bis zu <span class="text-white">2h Geliştirmesarbeit</span> aylık dahil
                         </li>
                     </ul>
                     <a href="kontakt.html" class="mt-6 block text-center bg-signal-500 hover:bg-signal-400 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
-                        Talep edin
+                        Anfragen
                     </a>
                 </div>
             </div>
@@ -284,32 +302,32 @@
             <!-- Premium -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7 flex flex-col">
                 <h3 class="font-bold text-lg mb-1">Premium</h3>
-                <div class="text-3xl font-extrabold mb-1">1.200 <span class="text-base font-normal text-slate-500">EUR/Ay</span></div>
-                <p class="text-xs text-slate-600 mb-5">Minimum 6 ay s&uuml;re</p>
+                <div class="text-3xl font-extritibarıylaold mb-1">1.200 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                <p class="text-xs text-slate-600 mb-5">6 Monate Mindestlaufzeit</p>
                 <ul class="space-y-3 text-sm text-slate-400 flex-1">
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Standart paketteki her &#351;ey
+                        Alles aus Standard
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-white">4 saat yan&#305;t s&uuml;resi</span> (mesai saatleri)
+                        <span class="text-white">4h Yanıt Süresi</span> (Gesch&auml;ftszeiten)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-white">Ayl&#305;k de&#287;erlendirme g&ouml;r&uuml;&#351;mesi</span> (60 dk)
+                        <span class="text-white">Monatlicher Review-Call</span> (60 Min)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Ayda <span class="text-white">5 saate kadar geli&#351;tirme</span> dahil
+                        Bis zu <span class="text-white">5h Geliştirmesarbeit</span> aylık dahil
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Yeni ajanlar &amp; beceriler dahil
+                        Neue Agenten &amp; Skills dahil
                     </li>
                 </ul>
                 <a href="kontakt.html" class="mt-6 block text-center border border-white/10 hover:border-white/25 text-white font-medium px-6 py-3 rounded-xl transition-all hover:bg-white/5">
-                    Talep edin
+                    Anfragen
                 </a>
             </div>
         </div>
@@ -317,314 +335,315 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Saat &Uuml;cretleri                                                 -->
+<!--  Stundensätze                                                         -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Esnek Hizmetler</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Saat &Uuml;cretleri</h2>
-            <p class="text-slate-400">Paketler d&#305;&#351;&#305;ndaki bireysel gereksinimler i&ccedil;in.</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Flexible Leistungen</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Stundens&auml;tze</h2>
+            <p class="text-slate-400">F&uuml;r individuelle Anforderungen au&szlig;erhalb der Pakete.</p>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6 reveal">
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
-                <div class="text-2xl font-extrabold text-signal-400 mb-1">150 EUR</div>
-                <div class="text-xs text-slate-500 mb-3">saat ba&#351;&#305;na (net)</div>
-                <h3 class="font-semibold mb-2">Geli&#351;tirme</h3>
-                <p class="text-slate-400 text-xs">Yeni beceriler, konekt&ouml;rler, ajanlar, sistem promptlar&#305;, ERP ba&#287;lant&#305;lar&#305;</p>
+                <div class="text-2xl font-extritibarıylaold text-signal-400 mb-1">150 EUR</div>
+                <div class="text-xs text-slate-500 mb-3">saat başına (net)</div>
+                <h3 class="font-semibold mb-2">Geliştirme</h3>
+                <p class="text-slate-400 text-xs">Neue Skills, Konnektoren, Agenten, System-Prompts, ERP Bağlantısıen</p>
             </div>
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
-                <div class="text-2xl font-extrabold text-signal-400 mb-1">180 EUR</div>
-                <div class="text-xs text-slate-500 mb-3">saat ba&#351;&#305;na (net)</div>
-                <h3 class="font-semibold mb-2">E&#287;itim</h3>
-                <p class="text-slate-400 text-xs">Ekibiniz i&ccedil;in uzaktan at&ouml;lyeler: Kontrol paneli, ajan y&ouml;netimi, en iyi uygulamalar</p>
+                <div class="text-2xl font-extritibarıylaold text-signal-400 mb-1">180 EUR</div>
+                <div class="text-xs text-slate-500 mb-3">saat başına (net)</div>
+                <h3 class="font-semibold mb-2">Eğitim</h3>
+                <p class="text-slate-400 text-xs">Remote-Workshops f&uuml;r Ihr Team: Dashboard, Agent-Yönetim, Best Practices</p>
             </div>
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
-                <div class="text-2xl font-extrabold text-signal-400 mb-1">220 EUR</div>
-                <div class="text-xs text-slate-500 mb-3">saat ba&#351;&#305;na (net)</div>
-                <h3 class="font-semibold mb-2">Acil Destek</h3>
-                <p class="text-slate-400 text-xs">Mesai saatleri d&#305;&#351;&#305;, hafta sonu, resmi tatiller</p>
+                <div class="text-2xl font-extritibarıylaold text-signal-400 mb-1">220 EUR</div>
+                <div class="text-xs text-slate-500 mb-3">saat başına (net)</div>
+                <h3 class="font-semibold mb-2">Notfall-Support</h3>
+                <p class="text-slate-400 text-xs">Au&szlig;erhalb der Gesch&auml;ftszeiten, Wochenende, Feiertage</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Mevcut Durum Ne Kadara Mal Oluyor?                                   -->
+<!--  Was kostet der Status Quo?                                           -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6 bg-slate-900/50">
     <div class="max-w-5xl mx-auto pt-20">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">As&#305;l Soru</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Hi&ccedil;bir &#351;eyi de&#287;i&#351;tirmemek <span class="text-signal-400">ne kadara mal oluyor?</span></h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Die eigentliche Frage</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Maliyeti nedir, <span class="text-signal-400">nichts zu &auml;ndern?</span></h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                AIMOS bir sohbet botu de&#287;ildir. Bug&uuml;n &ccedil;al&#305;&#351;anlar&#305;n&#305;z&#305;n manuel olarak yapt&#305;&#287;&#305; rutin i&#351;leri
-                devralan otonom bir sistemdir &mdash; ve bunu 7/24 yapar.
+                AIMOS bir sohbet botu değildir. Ekibinizin rutin işlerini üstlenen bir asistan sistemidir &mdash;
+                Daten zusammensuchen, Berichte vorbereiten, Fristen &uuml;berwachen &mdash; damit Ihre Mitarbeiter sich auf ihre eigentliche Facharbeit konzentrieren k&ouml;nnen.
             </p>
         </div>
 
-        <!-- Senaryo Kartlar&#305; -->
+        <!-- Key message -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-6 mb-10 reveal">
+            <h4 class="font-bold mb-3">Mesele çalışanları değiştirmek değildir.</h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                AIMOS &uuml;bernimmt <strong class="text-white">Routine-Aufgitibarıylaen</strong>, bugün nitelikli
+                çalışanları değerinin altında meşgul eden: bakiye sorgulamak, standart talepen beantworten,
+                Dokumente zusammenfassen, Termine nachverfolgen. Ihre Mitarbeiter gewinnen Zeit f&uuml;r das,
+                wof&uuml;r Sie sie eingestellt hitibarıylaen &mdash; <strong class="text-white">Kundenbeziehungen, Kararen,
+                kreative Arbeit</strong>.
+            </p>
+            <p class="text-sm text-slate-400 mt-3">
+                AIMOS ajanının bir <strong class="text-white">dauerhaftes Ged&auml;chtnis</strong>: Tanır:
+                her müşteriyi, her tercihi, her açık işlemi. Bir çalışan şirketten ayrıldn
+                verl&auml;sst, bleibt das dokumentierte Wissen erhalten &mdash; die menschliche Erfahrung und die Beziehungen allerdings nicht. Deshalb ist Ihr Team unverzichtbar.
+            </p>
+        </div>
+
+        <!-- Scenario Cards -->
         <div class="grid md:grid-cols-3 gap-6 mb-10 reveal">
 
-            <!-- Senaryo 1: Manuel ERP -->
+            <!-- Scenario 1: Manual ERP -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Bug&uuml;n: Manuel</div>
-                <h4 class="font-bold mb-1">Muhasebe Sorgular&#305;</h4>
-                <p class="text-slate-500 text-xs mb-4">Muhasebeci ERP sisteminde bakiye, fatura, &ouml;deme durumu arar</p>
+                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Heute: Manuell</div>
+                <h4 class="font-bold mb-1">Buchhaltungs-Abfragen</h4>
+                <p class="text-slate-500 text-xs mb-4">Sachbearbeiter sucht Salden, Rechnungen, Zahlungsstatus im ERP-System</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Zaman harcamas&#305;</span>
-                        <span class="text-white font-mono">~15 dk/sorgu</span>
+                        <span class="text-slate-400">Zeitaufwand</span>
+                        <span class="text-white font-mono">~15 Min/Abfrage</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Sorgu/g&uuml;n</span>
+                        <span class="text-slate-400">Abfragen/Tag</span>
                         <span class="text-white font-mono">~20</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">&Ccedil;al&#305;&#351;ma s&uuml;resi/g&uuml;n</span>
-                        <span class="text-white font-mono">~5 saat</span>
+                        <span class="text-slate-400">Arbeitszeit/Tag</span>
+                        <span class="text-white font-mono">~5 Stunden</span>
                     </div>
                     <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
-                        <span class="text-slate-300 font-medium">Personel maliyeti/ay</span>
+                        <span class="text-slate-300 font-medium">Personalkosten/Monat</span>
                         <span class="text-red-400/80 font-bold font-mono">~2.500 EUR</span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-600 mt-3">Yaln&#305;zca mesai saatlerinde. &#304;zin/hastal&#305;k = aksama.</p>
+                <p class="text-xs text-slate-600 mt-3">Nur w&auml;hrend B&uuml;rozeiten. Urlaub/Krankheit = Ausfall.</p>
             </div>
 
-            <!-- Senaryo 2: M&uuml;&#351;teri Deste&#287;i -->
+            <!-- Scenario 2: Customer Support -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Bug&uuml;n: Manuel</div>
-                <h4 class="font-bold mb-1">M&uuml;&#351;teri Taleplerini Yan&#305;tlama</h4>
-                <p class="text-slate-500 text-xs mb-4">&Ccedil;al&#305;&#351;an, e-posta, telefon ve mesajla&#351;ma &uuml;zerinden talepleri yan&#305;tlar</p>
+                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Heute: Manuell</div>
+                <h4 class="font-bold mb-1">Kunden-Anfragen beantworten</h4>
+                <p class="text-slate-500 text-xs mb-4">Mitarbeiter beantwortet Anfragen per E-Mail, Telefon, Messenger</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Zaman harcamas&#305;</span>
-                        <span class="text-white font-mono">~10 dk/talep</span>
+                        <span class="text-slate-400">Zeitaufwand</span>
+                        <span class="text-white font-mono">~10 Min/Anfrage</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Talep/g&uuml;n</span>
+                        <span class="text-slate-400">Anfragen/Tag</span>
                         <span class="text-white font-mono">~15</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">&Ccedil;al&#305;&#351;ma s&uuml;resi/g&uuml;n</span>
-                        <span class="text-white font-mono">~2,5 saat</span>
+                        <span class="text-slate-400">Arbeitszeit/Tag</span>
+                        <span class="text-white font-mono">~2,5 Stunden</span>
                     </div>
                     <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
-                        <span class="text-slate-300 font-medium">Personel maliyeti/ay</span>
+                        <span class="text-slate-300 font-medium">Personalkosten/Monat</span>
                         <span class="text-red-400/80 font-bold font-mono">~1.200 EUR</span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-600 mt-3">Yan&#305;t s&uuml;resi m&uuml;saitli&#287;e ba&#287;l&#305;. Personel de&#287;i&#351;ikli&#287;inde bilgi kaybolur.</p>
+                <p class="text-xs text-slate-600 mt-3">Antwortzeit itibarıylah&auml;ngig von Verf&uuml;gbarkeit. Wissen geht bei Personalwechsel verloren.</p>
             </div>
 
-            <!-- Senaryo 3: AIMOS -->
+            <!-- Scenario 3: AIMOS -->
             <div class="gradient-border">
                 <div class="bg-slate-850 rounded-xl p-6 h-full">
-                    <div class="text-xs text-signal-400 uppercase tracking-wider mb-3">AIMOS ile</div>
-                    <h4 class="font-bold mb-1">Her ikisi de otomatik</h4>
-                    <p class="text-slate-500 text-xs mb-4">AIMOS ajan&#305; an&#305;nda yan&#305;t verir, ERP'yi sorgular, ge&ccedil;mi&#351;i bilir</p>
+                    <div class="text-xs text-signal-400 uppercase tracking-wider mb-3">Mit AIMOS</div>
+                    <h4 class="font-bold mb-1">Beides automatisiert</h4>
+                    <p class="text-slate-500 text-xs mb-4">AIMOS-Agent antwortet sofort, fragt ERP itibarıyla, kennt die Historie</p>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between">
-                            <span class="text-slate-400">Yan&#305;t s&uuml;resi</span>
-                            <span class="text-green-400 font-mono">3&ndash;10 saniye</span>
+                            <span class="text-slate-400">Antwortzeit</span>
+                            <span class="text-green-400 font-mono">3&ndash;10 Sekunden</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-slate-400">Eri&#351;ilebilirlik</span>
-                            <span class="text-green-400 font-mono">7/24/365</span>
+                            <span class="text-slate-400">Verf&uuml;gbarkeit</span>
+                            <span class="text-green-400 font-mono">24/7/365</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-slate-400">Bilgi korunumu</span>
-                            <span class="text-green-400 font-mono">Kal&#305;c&#305;</span>
+                            <span class="text-slate-400">Wissenserhalt</span>
+                            <span class="text-green-400 font-mono">Permanent</span>
                         </div>
                         <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
-                            <span class="text-slate-300 font-medium">AIMOS bak&#305;m/ay</span>
+                            <span class="text-slate-300 font-medium">AIMOS Wartung/Monat</span>
                             <span class="text-signal-300 font-bold font-mono">350&ndash;650 EUR</span>
                         </div>
                     </div>
-                    <p class="text-xs text-signal-300/60 mt-3">&#304;zin yok, hastal&#305;k yok, bilgi kayb&#305; yok. &Ccedil;al&#305;&#351;anlar daha nitelikli g&ouml;revler i&ccedil;in serbest kal&#305;r.</p>
+                    <p class="text-xs text-signal-300/60 mt-3">Geceleri ve hafta sonları da kullanılabilir &mdash; ekibinize destek olarak</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Sonu&ccedil; -->
-        <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal">
-            <h4 class="font-bold mb-3">Mesele &ccedil;al&#305;&#351;anlar&#305;n yerini almak de&#287;il.</h4>
-            <p class="text-sm text-slate-400 leading-relaxed">
-                AIMOS, bug&uuml;n nitelikli &ccedil;al&#305;&#351;anlar&#305; de&#287;erlerinin alt&#305;nda me&#351;gul eden <strong class="text-white">rutin g&ouml;revleri</strong>
-                &uuml;stlenir: Bakiye sorgulama, standart talepleri yan&#305;tlama, belgeleri &ouml;zetleme, randevular&#305; takip etme.
-                &Ccedil;al&#305;&#351;anlar&#305;n&#305;z, onlar&#305; i&#351;e ald&#305;&#287;&#305;n&#305;z ama&ccedil; i&ccedil;in zaman kazan&#305;r &mdash;
-                <strong class="text-white">m&uuml;&#351;teri ili&#351;kileri, kararlar, yarat&#305;c&#305; &ccedil;al&#305;&#351;ma</strong>.
-            </p>
-            <p class="text-sm text-slate-400 mt-3">
-                AIMOS ajan&#305;n&#305;n <strong class="text-white">kal&#305;c&#305; bir haf&#305;zas&#305;</strong> vard&#305;r: Her m&uuml;&#351;teriyi,
-                her tercihi, her a&ccedil;&#305;k i&#351;lemi bilir. Bir &ccedil;al&#305;&#351;an &#351;irketten ayr&#305;ld&#305;&#287;&#305;nda
-                bilgi ajan da kal&#305;r.
-            </p>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  SovereignNode Donan&#305;m                                               -->
+<!--  SovereignNode Hardware                                               -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Donan&#305;m</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">SovereignNode</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Hardware</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Der SovereignNode</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                AIMOS, NVIDIA GPU'lu tek bir sunucuda &ccedil;al&#305;&#351;&#305;r.
-                Bulut yok, ayl&#305;k i&#351;lem maliyeti yok. Donan&#305;m sizindir.
+                AIMOS, NVIDIA GPU'lu tek bir sunucuda çalışır.
+                Bulut yok, aylık hesaplama maliyeti yok. Donanım size aittir.
             </p>
         </div>
 
-        <!-- Donan&#305;m Yap&#305;land&#305;rmas&#305; -->
+        <!-- Hardware Config -->
         <div class="gradient-border mb-8 reveal">
             <div class="bg-slate-850 rounded-xl p-8">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                     <div>
-                        <h3 class="font-bold text-lg">&Ouml;nerilen Yap&#305;land&#305;rma</h3>
-                        <p class="text-slate-500 text-sm">Tek seferlik sat&#305;n alma &mdash; yakla&#351;&#305;k 5.000 EUR'dan ba&#351;layan fiyatlarla</p>
+                        <h3 class="font-bold text-lg">Önerilene Yapılandırma</h3>
+                        <p class="text-slate-500 text-sm">Tek seferlike Anschaffung &mdash; itibarıyla ca. 5.000 EUR</p>
                     </div>
-                    <div class="text-3xl font-extrabold text-signal-400">~5.000 EUR</div>
+                    <div class="text-3xl font-extritibarıylaold text-signal-400">~5.000 EUR</div>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">GPU</div>
                         <div class="font-semibold">NVIDIA RTX 5090</div>
-                        <div class="text-xs text-slate-500">32 GB GDDR7 &mdash; yakl. 2.500 EUR</div>
+                        <div class="text-xs text-slate-500">32 GB GDDR7 &mdash; ca. 2.500 EUR</div>
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">CPU</div>
-                        <div class="font-semibold">16+ &Ccedil;ekirdek</div>
+                        <div class="font-semibold">16+ Kerne</div>
                         <div class="text-xs text-slate-500">AMD Ryzen 9 / Intel i7</div>
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">RAM</div>
                         <div class="font-semibold">64 GB DDR5</div>
-                        <div class="text-xs text-slate-500">Embedding modeli + veritaban&#305; i&ccedil;in</div>
+                        <div class="text-xs text-slate-500">F&uuml;r Embedding-Modell + DB</div>
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
-                        <div class="text-xs text-slate-500 mb-1">Depolama</div>
+                        <div class="text-xs text-slate-500 mb-1">Speicher</div>
                         <div class="font-semibold">1 TB NVMe SSD</div>
-                        <div class="text-xs text-slate-500">Modeller + veritabanlar&#305; + loglar</div>
+                        <div class="text-xs text-slate-500">Modelle + Datenbanken + Logs</div>
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 mt-4">
-                    &#304;&#351;letim sistemi: Ubuntu 26.04 LTS (&ouml;nerilen) veya 24.04 LTS. G&uuml;&ccedil; t&uuml;ketimi: ortalama ~170W, yakl. ayda 45 EUR.
+                    Betriebssystem: Ubuntu 26.04 LTS (empfohlen) veya 24.04 LTS. Stromverbrauch: ~170W Durchschnitt, ca. 45 EUR/Monat.
                 </p>
             </div>
         </div>
 
-        <!-- Kapasite Analizi -->
+        <!-- Capacity Analysis -->
         <div class="text-center mb-8 reveal">
-            <h3 class="text-xl font-bold mb-2">Bir SovereignNode ne yapabilir?</h3>
-            <p class="text-slate-500 text-sm">RTX 5090 &uuml;zerinde Qwen 3.5:27B &mdash; yakl. 40 Token/sn &ccedil;&#305;k&#305;&#351;, ~500 Token/sn prompt i&#351;leme</p>
+            <h3 class="text-xl font-bold mb-2">Was leistet ein SovereignNode?</h3>
+            <p class="text-slate-500 text-sm">Qwen 2.5:32B auf RTX 5090 &mdash; ca. 40 Tokens/Sek. Ausgitibarıylae, ~500 Tokens/Sek. Prompt-İşleme</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-8 reveal">
-            <!-- Hafif -->
+            <!-- Light -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Hafif Kullan&#305;m</div>
-                <h4 class="font-bold mb-1">1&ndash;2 Ajan</h4>
-                <p class="text-slate-500 text-xs mb-4">Tek asistan, ara s&#305;ra sorgular</p>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Leichte Nutzung</div>
+                <h4 class="font-bold mb-1">1&ndash;2 Agenten</h4>
+                <p class="text-slate-500 text-xs mb-4">Einzelner Assistent, gelegentliche Anfragen</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">LLM &ccedil;a&#287;r&#305;s&#305;/g&uuml;n</span>
+                        <span class="text-slate-400">LLM-Aufrufe/Tag</span>
                         <span class="text-white font-mono">~30</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/g&uuml;n</span>
+                        <span class="text-slate-400">Tokens/Tag</span>
                         <span class="text-white font-mono">~130.000</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/ay</span>
+                        <span class="text-slate-400">Tokens/Monat</span>
                         <span class="text-white font-mono">~4 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">GPU kullan&#305;m&#305;</span>
-                        <span class="text-green-400 font-mono">&lt;%5</span>
+                        <span class="text-slate-400">GPU-Auslastung</span>
+                        <span class="text-green-400 font-mono">&lt;5%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Orta -->
+            <!-- Medium -->
             <div class="bg-slate-850 border border-signal-500/30 rounded-xl p-6">
-                <div class="text-xs text-signal-400 uppercase tracking-wider mb-2">Tipik Kullan&#305;m</div>
-                <h4 class="font-bold mb-1">3&ndash;5 Ajan</h4>
-                <p class="text-slate-500 text-xs mb-4">Birden fazla departman, d&uuml;zenli g&ouml;r&uuml;&#351;meler</p>
+                <div class="text-xs text-signal-400 uppercase tracking-wider mb-2">Typische Nutzung</div>
+                <h4 class="font-bold mb-1">3&ndash;5 Agenten</h4>
+                <p class="text-slate-500 text-xs mb-4">Mehrere Abteilungen, regelm&auml;&szlig;ige Gespr&auml;che</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">LLM &ccedil;a&#287;r&#305;s&#305;/g&uuml;n</span>
+                        <span class="text-slate-400">LLM-Aufrufe/Tag</span>
                         <span class="text-white font-mono">~100</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/g&uuml;n</span>
+                        <span class="text-slate-400">Tokens/Tag</span>
                         <span class="text-white font-mono">~500.000</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/ay</span>
+                        <span class="text-slate-400">Tokens/Monat</span>
                         <span class="text-white font-mono">~15 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">GPU kullan&#305;m&#305;</span>
-                        <span class="text-signal-300 font-mono">~%10</span>
+                        <span class="text-slate-400">GPU-Auslastung</span>
+                        <span class="text-signal-300 font-mono">~10%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Yo&#287;un -->
+            <!-- Heavy -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Yo&#287;un Kullan&#305;m</div>
-                <h4 class="font-bold mb-1">5&ndash;10 Ajan</h4>
-                <p class="text-slate-500 text-xs mb-4">T&uuml;m &#351;irket, &ccedil;ok say&#305;da g&ouml;r&uuml;&#351;me, ara&ccedil; zincirleri</p>
+                <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Intensive Nutzung</div>
+                <h4 class="font-bold mb-1">5&ndash;10 Agenten</h4>
+                <p class="text-slate-500 text-xs mb-4">Ganze Firma, viele Gespr&auml;che, Tool-Ketten</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">LLM &ccedil;a&#287;r&#305;s&#305;/g&uuml;n</span>
+                        <span class="text-slate-400">LLM-Aufrufe/Tag</span>
                         <span class="text-white font-mono">~300</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/g&uuml;n</span>
+                        <span class="text-slate-400">Tokens/Tag</span>
                         <span class="text-white font-mono">~1,9 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Token/ay</span>
+                        <span class="text-slate-400">Tokens/Monat</span>
                         <span class="text-white font-mono">~57 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">GPU kullan&#305;m&#305;</span>
-                        <span class="text-amber-400 font-mono">~%35</span>
+                        <span class="text-slate-400">GPU-Auslastung</span>
+                        <span class="text-amber-400 font-mono">~35%</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- A&ccedil;&#305;klama -->
+        <!-- Explanation -->
         <div class="bg-slate-900/50 border border-white/5 rounded-xl p-6 reveal">
-            <h4 class="font-bold mb-3">Bu rakamlar ne anlama geliyor?</h4>
+            <h4 class="font-bold mb-3">Was bedeuten diese Zahlen?</h4>
             <div class="space-y-3 text-sm text-slate-400">
                 <p>
-                    Bir <strong class="text-white">token</strong>, dil modelinin en k&uuml;&ccedil;&uuml;k i&#351;leme birimidir &mdash;
-                    kabaca bir kelime veya kelime par&ccedil;as&#305;. Tipik bir Telegram mesaj&#305; 30&ndash;100 token i&ccedil;erir,
-                    ajan&#305;n ayr&#305;nt&#305;l&#305; bir yan&#305;t&#305; 100&ndash;300 token.
+                    Ein <strong class="text-white">Token</strong> dil modelinin en küçük işleme birimidir &mdash;
+                    kabaca bir kelime veya kelime parçası. Eine typische Telegram-Nachricht umfasst 30&ndash;100 Tokens,
+                    eine ausf&uuml;hrliche Antwort des Agenten 100&ndash;300 Tokens.
                 </p>
                 <p>
-                    Her ajan etkile&#351;iminde sistem yakla&#351;&#305;k <strong class="text-white">4.000&ndash;6.000 token</strong>
-                    i&#351;ler (sistem promptu + haf&#305;za + konu&#351;ma ge&ccedil;mi&#351;i + yan&#305;t). G&uuml;nde 100 etkile&#351;imde
-                    bu yakla&#351;&#305;k 500.000 token eder &mdash; GPU bu durumda yaln&#305;zca <strong class="text-white">%10 kapasiteyle &ccedil;al&#305;&#351;&#305;r</strong>.
+                    Pro Agent-Interaktion verarbeitet das System ca. <strong class="text-white">4.000&ndash;6.000 Tokens</strong>
+                    (Sistem promptu + Bellek + Konuşma geçmişi + Yanıt). Günde 100 etkileşimde
+                    bu yaklaşık 500.000 token eder &mdash; die GPU ist ditibarıylaei nur <strong class="text-white">10% ausgelastet</strong>.
                 </p>
                 <p>
-                    10 ajanla yo&#287;un kullan&#305;mda bile <strong class="text-white">%65 GPU kapasitesi bo&#351; kal&#305;r</strong>.
-                    Bir SovereignNode, t&uuml;m orta &ouml;l&ccedil;ekli i&#351;letmeler i&ccedil;in fazlas&#305;yla yeterlidir.
-                    Yapay zeka &ccedil;al&#305;&#351;anlar&#305;n&#305;z&#305; bekler &mdash; tam tersi de&#287;il.
+                    Selbst bei intensiver Nutzung mit 10 Agenten bleibt <strong class="text-white">65% GPU-Kapazit&auml;t frei</strong>.
+                    Bir SovereignNode tüm orta ölçekli işletmeler için fazlasıyla yeterli boyuttadır.
+                    Die KI wartet auf Ihre Mitarbeiter &mdash; nicht umgekehrt.
                 </p>
                 <p>
-                    <strong class="text-white">S&uuml;regelen i&#351;lem maliyeti yok:</strong> Bulut yapay zekadan farkl&#305; olarak
-                    token ba&#351;&#305;na &ouml;deme yapmazs&#305;n&#305;z. Tek seferlik donan&#305;m sat&#305;n al&#305;m&#305;ndan (~5.000 EUR) sonra yaln&#305;zca
-                    yakla&#351;&#305;k <strong class="text-white">ayda 45 EUR</strong> elektrik maliyeti olu&#351;ur &mdash; ajanlar&#305;n&#305;z&#305;n
-                    ka&ccedil; token i&#351;ledi&#287;inden ba&#287;&#305;ms&#305;z olarak.
+                    <strong class="text-white">Keine laufenden Compute-Kosten:</strong> Bulut YZ'nin aksine
+                    token başına ödeme yapmazsınız. Tek seferlik donanım alımından sonra (~5.000 EUR) fallen nur Stromkosten
+                    von ca. <strong class="text-white">45 EUR/Monat</strong> an &mdash; unitibarıylah&auml;ngig davon, wie viele
+                    Tokens Ihre Agenten verarbeiten.
                 </p>
             </div>
         </div>
@@ -632,137 +651,138 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  &Ouml;nemli Bilgiler                                                -->
+<!--  Hinweise                                                             -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-3xl mx-auto">
         <div class="bg-slate-850 border border-white/5 rounded-xl p-7 reveal">
-            <h3 class="font-bold mb-4">&Ouml;nemli Bilgiler</h3>
+            <h3 class="font-bold mb-4">Wichtige Hinweise</h3>
             <ul class="space-y-3 text-sm text-slate-400">
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    T&uuml;m fiyatlar <strong class="text-white">KDV hari&ccedil; net fiyatlard&#305;r.</strong>
+                    Alle Preise <strong class="text-white">net zzgl. gesetzl. KDV</strong>
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    <strong class="text-white">Avrupa Birli&#287;i i&ccedil;indeki</strong> m&uuml;&#351;teriler i&ccedil;in ge&ccedil;erlidir.
-                    T&uuml;m hizmetler uzaktan sunulur (SSH, Telegram, g&ouml;r&uuml;nt&uuml;l&uuml; g&ouml;r&uuml;&#351;me).
+                    G&uuml;ltig f&uuml;r Kunden <strong class="text-white">innerhalb der Europ&auml;ischen Union</strong>.
+                    Alle Leistungen werden remote erbracht (SSH, Telegram, Videocall).
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    <strong class="text-white">Yerinde randevular</strong> (kurulum, e&#287;itim, at&ouml;lye) m&uuml;mk&uuml;nd&uuml;r ve
-                    kapsama g&ouml;re bireysel olarak faturaland&#305;r&#305;l&#305;r (seyahat masraflar&#305; + g&uuml;nl&uuml;k &uuml;cret).
+                    <strong class="text-white">Vor-Ort-Termine</strong> (Installation, Eğitim, Workshop) sind m&ouml;glich und werden
+                    je nach Aufwand individuell berechnet (Reisekosten + Tagessatz).
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    <strong class="text-white">Donan&#305;m fiyata dahil de&#287;ildir.</strong>
-                    Bir SovereignNode (NVIDIA GPU'lu sunucu) m&uuml;&#351;teri taraf&#305;ndan temin edilir.
-                    Se&ccedil;imde dan&#305;&#351;manl&#305;k sa&#287;lar&#305;z.
+                    <strong class="text-white">Hardware ist nicht im Preis enthalten.</strong>
+                    Ein SovereignNode (Server mit NVIDIA GPU) wird vom Kunden beschafft.
+                    Wir beraten bei der Auswahl.
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    AIMOS <strong class="text-white">MIT lisansl&#305;d&#305;r</strong>. Yaz&#305;l&#305;m&#305; hizmet s&ouml;zle&#351;mesi
-                    olmadan da ba&#287;&#305;ms&#305;z olarak kullanabilir, uyarlayabilir ve da&#287;&#305;tabilirsiniz.
+                    AIMOS ist <strong class="text-white">MIT lisanslı</strong>. Sie k&ouml;nnen die Software auch
+                    ohne Dienstleistungsvertrag eigenst&auml;ndig einsetzen, anpassen und weitergeben.
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    Fiyatlar Nisan 2026'dan itibaren ge&ccedil;erlidir. De&#287;i&#351;iklik hakk&#305; sakl&#305;d&#305;r.
+                    Preise g&uuml;ltig itibarıyla April 2026. &Auml;nderungen vorbehalten.
                 </li>
             </ul>
 
-            <h3 class="font-bold mt-8 mb-4">Bile&#351;enlerin A&ccedil;&#305;k Kaynak Lisanslar&#305;</h3>
+            <h3 class="font-bold mt-8 mb-4">Açık Kaynak-Lizenzen der Komponenten</h3>
             <p class="text-sm text-slate-500 mb-4">
-                AIMOS, tamamen a&ccedil;&#305;k kaynak bile&#351;enlerden olu&#351;an bir yap&#305; &uuml;zerine in&#351;a edilmi&#351;tir.
-                Tescilli ba&#287;&#305;ml&#305;l&#305;k yok, gizli lisans maliyeti yok.
+                AIMOS baut auf einem Stack vollst&auml;ndig quelloffener Komponenten auf.
+                Keine propriet&auml;ren Abh&auml;ngigkeiten, keine versteckten Lizenzkosten.
             </p>
             <div class="overflow-x-auto">
-                <table class="w-full text-xs">
+                <titibarıylale class="w-full text-xs">
                     <thead>
                         <tr class="border-b border-white/10">
-                            <th class="text-left py-2 px-3 text-slate-500 font-medium">Bile&#351;en</th>
-                            <th class="text-left py-2 px-3 text-slate-500 font-medium">&#304;&#351;lev</th>
-                            <th class="text-left py-2 px-3 text-slate-500 font-medium">Lisans</th>
+                            <th class="text-left py-2 px-3 text-slate-500 font-medium">Komponente</th>
+                            <th class="text-left py-2 px-3 text-slate-500 font-medium">Funktion</th>
+                            <th class="text-left py-2 px-3 text-slate-500 font-medium">Lizenz</th>
                         </tr>
                     </thead>
                     <tbody class="text-slate-500">
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">AIMOS</td>
-                            <td class="py-2 px-3">&Ccedil;oklu ajan platformu</td>
+                            <td class="py-2 px-3">Multi-Agent-Plattform</td>
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
-                            <td class="py-2 px-3 text-slate-300">Qwen 3.5 (Alibaba)</td>
-                            <td class="py-2 px-3">Dil modeli (LLM, 27B parametre)</td>
+                            <td class="py-2 px-3 text-slate-300">Qwen 2.5 (Alibitibarıylaa)</td>
+                            <td class="py-2 px-3">Sprachmodell (LLM, 32B Parameter)</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">SGLang</td>
-                            <td class="py-2 px-3">RadixAttention'l&#305; LLM &ccedil;al&#305;&#351;ma ortam&#305; (Prefix-Cache)</td>
+                            <td class="py-2 px-3">LLM-Runtime mit RadixAttention (Prefix-Cache)</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Faster-Whisper</td>
-                            <td class="py-2 px-3">Konu&#351;ma tan&#305;ma (Speech-to-Text)</td>
+                            <td class="py-2 px-3">Spracherkennung (Speech-to-Text)</td>
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
-                            <td class="py-2 px-3 text-slate-300">OpenAI Whisper (Model)</td>
-                            <td class="py-2 px-3">Whisper Medium dil modeli</td>
+                            <td class="py-2 px-3 text-slate-300">OpenAI Whisper (Modell)</td>
+                            <td class="py-2 px-3">Whisper Medium Sprachmodell</td>
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Piper TTS</td>
-                            <td class="py-2 px-3">Konu&#351;ma sentezi (Text-to-Speech)</td>
+                            <td class="py-2 px-3">Sprachsynthese (Text-to-Speech)</td>
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Sentence-Transformers</td>
-                            <td class="py-2 px-3">Anlamsal arama i&ccedil;in g&ouml;m&uuml;lme modeli</td>
+                            <td class="py-2 px-3">Embedding-Modell f&uuml;r semantische Suche</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">PostgreSQL</td>
-                            <td class="py-2 px-3">&#304;li&#351;kisel veritaban&#305; (Relay + Yap&#305;land&#305;rma)</td>
+                            <td class="py-2 px-3">Relationale Datenbank (Relay + Config)</td>
                             <td class="py-2 px-3 text-green-400/80">PostgreSQL License (BSD)</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">SQLite</td>
-                            <td class="py-2 px-3">Ajan haf&#305;zas&#305; (ajan ba&#351;&#305;na)</td>
+                            <td class="py-2 px-3">Agent-Ged&auml;chtnis (ajan başına)</td>
                             <td class="py-2 px-3 text-green-400/80">Public Domain</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">FastAPI / Uvicorn</td>
-                            <td class="py-2 px-3">Kontrol paneli web sunucusu</td>
+                            <td class="py-2 px-3">Dashboard-Webserver</td>
                             <td class="py-2 px-3 text-green-400/80">MIT / BSD</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Python</td>
-                            <td class="py-2 px-3">Programlama dili</td>
+                            <td class="py-2 px-3">Programmiersprache</td>
                             <td class="py-2 px-3 text-green-400/80">PSF License (BSD)</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Ubuntu Linux</td>
-                            <td class="py-2 px-3">&#304;&#351;letim sistemi</td>
-                            <td class="py-2 px-3 text-green-400/80">GPL v2 (&uuml;cretsiz)</td>
+                            <td class="py-2 px-3">Betriebssystem</td>
+                            <td class="py-2 px-3 text-green-400/80">GPL v2 (ücretsiz)</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">NVIDIA CUDA Toolkit</td>
-                            <td class="py-2 px-3">GPU s&uuml;r&uuml;c&uuml;s&uuml; &amp; i&#351;lem altyap&#305;s&#305;</td>
-                            <td class="py-2 px-3 text-signal-300">NVIDIA EULA (&uuml;cretsiz, tescilli)</td>
+                            <td class="py-2 px-3">GPU-Treiber &amp; Compute-Stack</td>
+                            <td class="py-2 px-3 text-signal-300">NVIDIA EULA (ücretsiz, propriet&auml;r)</td>
                         </tr>
                         <tr>
                             <td class="py-2 px-3 text-slate-300">Tailscale</td>
-                            <td class="py-2 px-3">Uzaktan eri&#351;im VPN'i (iste&#287;e ba&#287;l&#305;)</td>
-                            <td class="py-2 px-3 text-green-400/80">BSD / &le;3 kullan&#305;c&#305; i&ccedil;in &uuml;cretsiz</td>
+                            <td class="py-2 px-3">VPN f&uuml;r Remote-Zugriff (isteğe bağlı)</td>
+                            <td class="py-2 px-3 text-green-400/80">BSD / ücretsiz f&uuml;r &le;3 User</td>
                         </tr>
                     </tbody>
-                </table>
+                </titibarıylale>
             </div>
             <p class="text-xs text-slate-600 mt-3">
-                A&ccedil;&#305;k kaynak olmayan tek bile&#351;en: NVIDIA CUDA s&uuml;r&uuml;c&uuml;leri (&uuml;cretsiz ancak tescilli).
-                Di&#287;er t&uuml;m bile&#351;enler, serbest lisanslarla tamamen a&ccedil;&#305;k kaynakt&#305;r.
-                Lisans &uuml;creti yok, kullan&#305;m k&#305;s&#305;tlamas&#305; yok, sat&#305;c&#305; ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok.
+                Einzige nicht-quelloffene Komponente: NVIDIA CUDA-Treiber (ücretsiz, itibarıylaer propriet&auml;r).
+                Alle anderen Komponenten sind vollst&auml;ndig Açık Kaynak mit permissiven Lizenzen.
+                Keine Lizenzgeb&uuml;hren, keine Nutzungsbeschr&auml;nkungen, keine Vendor-Lock-ins.
             </p>
+            </ul>
         </div>
     </div>
 </section>
@@ -770,10 +790,10 @@
 <!-- CTA -->
 <section class="pb-24 px-6 text-center">
     <div class="max-w-2xl mx-auto reveal">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Pilot projenize haz&#305;r m&#305;s&#305;n&#305;z?</h2>
-        <p class="text-slate-400 mb-8">&#350;irketiniz i&ccedil;in en uygun ba&#351;lang&#305;c&#305; &uuml;cretsiz ve ba&#287;lay&#305;c&#305; olmaks&#305;z&#305;n dan&#305;&#351;&#305;yoruz.</p>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Hazır mısınız: Ihr Pilotprojekt?</h2>
+        <p class="text-slate-400 mb-8">Wir beraten Sie ücretsiz und unverbindlich, welcher Einstieg f&uuml;r Ihr Unternehmen am besten passt.</p>
         <a href="kontakt.html" class="inline-block bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg">
-            &Uuml;cretsiz dan&#305;&#351;manl&#305;k al&#305;n
+            Kostenlos beraten lassen
         </a>
     </div>
 </section>
@@ -781,9 +801,14 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisans.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT Lisansı.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong> ürünüdür.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
-            <a href="impressum.html" class="hover:text-slate-400 transition-colors">K&uuml;nye</a>
+            <a href="impressum.html" class="hover:text-slate-400 transition-colors">Künye</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Gizlilik</a>
             <a href="compliance.html" class="hover:text-slate-400 transition-colors">Uyumluluk</a>
         </div>

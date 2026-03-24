@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatto — AIMOS</title>
-    <meta name="description" content="Ci contatti per una consulenza AIMOS. Configurazione SovereignNode, sviluppo agenti, progetti pilota.">
+    <meta name="description" content="Contattateci per una consulenza AIMOS. Configurazione SovereignNode, sviluppo agenti, progetti pilota.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -43,12 +43,18 @@
             <span class="font-semibold text-lg tracking-tight">AIMOS</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="agenti.html" class="hover:text-white transition-colors">Agenti</a>
-            <a href="tecnica.html" class="hover:text-white transition-colors">Tecnica</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Conformità</a>
+            <a href="agenten.html" class="hover:text-white transition-colors">Agenti</a>
+            <a href="team.html" class="hover:text-white transition-colors">Team di Agenti</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Uomo &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Prezzi</a>
-            <a href="kontakt.html" class="hover:text-white transition-colors">Contatto</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Conformit&agrave;</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architettura</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistema</a>
+            <a href="kontakt.html" class="text-white font-medium">Contatto</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">IT</button>
@@ -58,23 +64,35 @@
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Italiano</a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agenti</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Team di Agenti</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Uomo &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Prezzi</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Conformit&agrave;</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architettura</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistema</a>
+        <a href="kontakt.html" class="text-white py-2">Contatto</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
     <div class="max-w-3xl mx-auto text-center">
         <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Contatto</p>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Parli con noi
+            Parliamo insieme
         </h1>
         <p class="text-slate-400 text-lg max-w-xl mx-auto">
-            Che si tratti di un progetto pilota, di consulenza tecnica o di sviluppo individuale di agenti &mdash;
-            saremo lieti di ricevere la Sua richiesta.
+            Che si tratti di un progetto pilota, consulenza tecnica o sviluppo personalizzato di agenti &mdash;
+            attendiamo con piacere la Sua richiesta.
         </p>
     </div>
 </section>
@@ -115,9 +133,9 @@
                             class="w-full bg-slate-850 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-signal-500 focus:outline-none transition-colors">
                         <option value="pilot">Progetto pilota / Proof of Concept</option>
                         <option value="beratung">Consulenza tecnica</option>
-                        <option value="agenten">Sviluppo individuale di agenti</option>
+                        <option value="agenten">Sviluppo agenti personalizzato</option>
                         <option value="sovereign">Configurazione SovereignNode</option>
-                        <option value="migration">Migrazione sistemi / Connessione ERP</option>
+                        <option value="migration">Migrazione sistema / Integrazione ERP</option>
                         <option value="sonstiges">Altro</option>
                     </select>
                 </div>
@@ -133,17 +151,17 @@
                     <input type="checkbox" id="privacy" name="privacy" required
                            class="mt-1 accent-signal-500">
                     <label for="privacy" class="text-sm text-slate-500">
-                        Ho letto l&rsquo;<a href="privacy.html" class="text-signal-400 hover:text-signal-300 underline">informativa sulla privacy</a>
+                        Ho letto l'<a href="datenschutz.html" class="text-signal-400 hover:text-signal-300 underline">informativa sulla privacy</a>
                         e acconsento al trattamento dei miei dati. *
                     </label>
                 </div>
 
                 <button type="submit"
                         class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
-                    Inviare messaggio
+                    Invia messaggio
                 </button>
 
-                <p class="text-xs text-slate-600">* Campi obbligatori. I Suoi dati saranno utilizzati esclusivamente per gestire la Sua richiesta.</p>
+                <p class="text-xs text-slate-600">* Campi obbligatori. I Suoi dati verranno utilizzati esclusivamente per elaborare la Sua richiesta.</p>
             </form>
         </div>
 
@@ -173,15 +191,15 @@
 
             <!-- What to expect -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
-                <h3 class="font-bold mb-4">Cosa La aspetta</h3>
+                <h3 class="font-bold mb-4">Cosa aspettarsi</h3>
                 <div class="space-y-3 text-sm text-slate-400">
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">1</span>
-                        <p><strong class="text-white">Prima conversazione</strong> &mdash; Comprendiamo il Suo panorama IT e identifichiamo le opportunit&agrave; immediate.</p>
+                        <p><strong class="text-white">Primo colloquio</strong> &mdash; Comprendiamo il Suo panorama IT e identifichiamo le opportunit&agrave; immediate.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">2</span>
-                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Un agente viene configurato per il Suo caso d&rsquo;uso e testato per 2 settimane.</p>
+                        <p><strong class="text-white">Proof of Concept</strong> &mdash; Un agente viene configurato per il Suo caso d'uso e testato per 2 settimane.</p>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-signal-400 font-bold mt-0.5">3</span>
@@ -193,9 +211,9 @@
             <!-- Open Source Note -->
             <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5">
                 <p class="text-sm text-slate-400">
-                    <strong class="text-signal-300">Open Source</strong> &mdash; AIMOS ha licenza MIT.
-                    Pu&ograve; utilizzare il software in modo autonomo. Offriamo consulenza professionale,
-                    sviluppo individuale di agenti e configurazione SovereignNode come servizio.
+                    <strong class="text-signal-300">Open Source</strong> &mdash; AIMOS &egrave; distribuito con licenza MIT.
+                    Pu&ograve; utilizzare il software in autonomia. Offriamo consulenza professionale,
+                    sviluppo personalizzato di agenti e configurazione SovereignNode come servizio.
                 </p>
             </div>
         </div>
@@ -205,11 +223,16 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Con licenza MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licenza MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un prodotto di <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Avviso legale</a>
-            <a href="privacy.html" class="hover:text-slate-400 transition-colors">Privacy</a>
-            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacy</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Conformit&agrave;</a>
         </div>
     </div>
 </footer>

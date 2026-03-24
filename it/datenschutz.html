@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avviso legale — AIMOS</title>
+    <title>Informativa sulla privacy — AIMOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -79,91 +79,97 @@
 <!-- Content -->
 <section class="pt-32 pb-20 px-6">
     <div class="max-w-3xl mx-auto">
-        <h1 class="text-3xl font-bold mb-8">Avviso legale</h1>
+        <h1 class="text-3xl font-bold mb-8">Informativa sulla privacy</h1>
 
-        <div class="space-y-6 text-slate-400 leading-relaxed">
+        <div class="space-y-8 text-slate-400 leading-relaxed">
+
             <div>
-                <h2 class="text-white font-semibold mb-2">Informazioni ai sensi del § 5 TMG</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">1. Privacy in sintesi</h2>
+                <h3 class="text-white font-medium mb-2">Informazioni generali</h3>
                 <p>
-                    EcoHub München GmbH<br>
-                    Ohlenschlagerstraße 14<br>
-                    81369 München
+                    Le seguenti informazioni forniscono una panoramica di ci&ograve; che accade ai Suoi dati personali
+                    quando visita questo sito web. I dati personali sono tutti i dati con cui &egrave; possibile
+                    identificarLa personalmente.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">2. Hosting</h2>
+                <p>
+                    Questo sito web &egrave; ospitato da un fornitore di servizi esterno (hoster). I dati personali
+                    raccolti su questo sito vengono memorizzati sui server dell'hoster.
+                    Si tratta in particolare di indirizzi IP, richieste di contatto, metadati e dati di comunicazione,
+                    dati contrattuali, dati di contatto, nomi, accessi al sito web e altri dati generati
+                    attraverso un sito web.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">3. Software AIMOS — Trattamento dei dati</h2>
+                <p>
+                    AIMOS &egrave; un <strong class="text-white">software gestito localmente</strong>. Il software AIMOS
+                    stesso non invia alcun dato a noi o a terzi. Tutti i dati rimangono sul server dell'operatore
+                    (SovereignNode).
+                </p>
+                <div class="mt-4 bg-slate-900/50 border border-signal-500/20 rounded-xl p-5">
+                    <h4 class="text-signal-300 font-medium mb-2">Trattamento dei dati tramite AIMOS</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Inferenza LLM: completamente locale sul SovereignNode</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Memoria degli agenti: database SQLite locale per agente</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Cronologia chat: database PostgreSQL locale</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Log di audit: file system locale</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> Messaggi Telegram: transito attraverso i server Telegram (trasporto standard Telegram)</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> LLM esterni (opzionali): solo in caso di escalation esplicita, anonimizzati automaticamente tramite PII-Vault</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-white font-semibold text-lg mb-3">4. PII-Vault (Anonimizzazione)</h2>
+                <p>
+                    Quando AIMOS contatta un'API esterna di IA (ad es. per attivit&agrave; di analisi complesse),
+                    tutti i dati personali vengono <strong class="text-white">anonimizzati automaticamente prima della trasmissione</strong>.
+                    Nomi, indirizzi e-mail, numeri di telefono e credenziali di accesso vengono sostituiti da segnaposto.
+                    L'associazione (segnaposto &rarr; valore originale) rimane esclusivamente sul server locale.
                 </p>
                 <p class="mt-2">
-                    Amministratrice delegata: M&uuml;ge Fuchsenberger
+                    Dettagli: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Documentazione sulla conformit&agrave;</a>
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Iscrizione al registro</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">5. I Suoi diritti</h2>
                 <p>
-                    Tribunale competente: Amtsgericht M&uuml;nchen<br>
-                    Numero di registrazione: HRB 264741
+                    Ha il diritto in qualsiasi momento di ricevere gratuitamente informazioni sui Suoi dati personali
+                    memorizzati, sulla loro origine e destinazione e sullo scopo del trattamento dei dati,
+                    nonch&eacute; il diritto alla rettifica o cancellazione di tali dati. Per questo e per ulteriori
+                    domande sul tema dei dati personali pu&ograve; contattarci in qualsiasi momento.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Contatto</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">6. Strumenti di analisi e pubblicit&agrave;</h2>
                 <p>
-                    E-Mail: info@ecohub-muenchen.com
+                    Questo sito web non utilizza <strong class="text-white">alcuno</strong> strumento di analisi,
+                    cookie di tracciamento o reti pubblicitarie. Nessun dato viene trasmesso a Google Analytics,
+                    Facebook Pixel o servizi analoghi.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Partita IVA</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">7. Crittografia SSL</h2>
                 <p>
-                    Numero di identificazione IVA ai sensi del § 27a UStG:<br>
-                    DE342603189
+                    Per motivi di sicurezza questo sito utilizza la crittografia SSL. Una connessione crittografata
+                    si riconosce dal fatto che la barra degli indirizzi del browser passa da "http://" a "https://"
+                    e dal simbolo del lucchetto nella barra del browser.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsabile del contenuto ai sensi del § 18 comma 2 MStV</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">8. Titolare del trattamento</h2>
                 <p>
-                    Philipp Fuchsenberger<br>
-                    Ohlenschlagerstraße 14<br>
-                    81369 München
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-white font-semibold mb-2">Risoluzione delle controversie UE</h2>
-                <p>
-                    La Commissione Europea mette a disposizione una piattaforma per la risoluzione delle controversie online (ODR): <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
-                    Il nostro indirizzo e-mail &egrave; indicato sopra nell'avviso legale.
-                </p>
-                <p class="mt-2">
-                    Non siamo disponibili n&eacute; obbligati a partecipare a procedure di risoluzione delle controversie
-                    presso un organismo di conciliazione dei consumatori.
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilit&agrave; per i contenuti</h2>
-                <p>
-                    In qualit&agrave; di fornitore di servizi siamo responsabili dei contenuti propri su queste
-                    pagine ai sensi del § 7 comma 1 TMG secondo le leggi generali. Ai sensi dei §§ 8-10 TMG
-                    non siamo tuttavia obbligati, in qualit&agrave; di fornitore di servizi, a monitorare
-                    informazioni trasmesse o memorizzate da terzi o a ricercare circostanze che indichino
-                    un'attivit&agrave; illecita.
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilit&agrave; per i link</h2>
-                <p>
-                    La nostra offerta contiene link a siti web esterni di terzi, sui cui contenuti non abbiamo
-                    alcuna influenza. Pertanto non possiamo assumerci alcuna responsabilit&agrave; per tali contenuti
-                    esterni. Il rispettivo fornitore o gestore delle pagine collegate &egrave; sempre responsabile
-                    dei relativi contenuti.
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-white font-semibold mb-2">Licenza software</h2>
-                <p>
-                    AIMOS &egrave; un software open source distribuito con <strong class="text-white">licenza MIT</strong>.
-                    Il codice sorgente completo &egrave; disponibile su GitHub.
+                    Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist im
+                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Avviso legale</a> angegeben.
                 </p>
             </div>
         </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIMOS — Le système d'exploitation open source pour l'intelligence industrielle</title>
-    <meta name="description" content="AIMOS : infrastructure IA souveraine sur votre propre serveur. Conforme au RGPD, prêt pour ISO, sous licence MIT. Connecte ERP, CRM, CAO et systèmes legacy sans dépendance cloud.">
+    <title>AIMOS &mdash; Le syst&egrave;me d'exploitation open source pour l'intelligence industrielle</title>
+    <meta name="description" content="AIMOS : infrastructure IA souveraine sur votre propre serveur. Conforme RGPD, pr&ecirc;t ISO, sous licence MIT. Connecte ERP, CRM, CAO et syst&egrave;mes legacy sans d&eacute;pendance cloud.">>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -137,11 +137,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technique</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Conformité</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'agents</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humain &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
@@ -149,7 +155,7 @@
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Fran&ccedil;ais</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
@@ -157,420 +163,428 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">&Eacute;quipe d'agents</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humain &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Tarifs</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Syst&egrave;me</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  Hero                                                                 -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden">
+<section id="hero" class="relative grid-pattern overflow-hidden">
     <!-- Background glow -->
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
 
-    <div class="relative max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-8">
-            <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
-            Licence MIT &middot; 100% On-Premise &middot; Conforme au RGPD
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-            <span class="text-white">AIMOS</span><br>
-            <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
-                Le système d'exploitation open source<br>
-                pour l'intelligence industrielle.
-            </span>
-        </h1>
-
-        <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-4">
-            Souverain. Conforme aux normes. Évolutif.
-        </p>
-        <p class="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12">
-            La première infrastructure IA qui réside entièrement sur votre propre
-            <span class="text-signal-400 font-medium">SovereignNode</span> &mdash;
-            sans dépendance cloud, sans frais de licence, sans compromis.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a href="technik.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center">
-                Lire la documentation
-            </a>
-            <a href="#cta" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-8 py-3.5 rounded-xl transition-all hover:bg-white/5 text-center">
-                Configurer le SovereignNode
-            </a>
-        </div>
-
-        <!-- Terminal preview -->
-        <div class="max-w-2xl mx-auto gradient-border glow-md">
-            <div class="bg-slate-850 rounded-xl overflow-hidden">
-                <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
-                    <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
-                    <span class="text-xs text-slate-500 ml-2 font-mono">sovereign-node:~$</span>
+    <div class="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-28 pb-12">
+        <!-- Two-column layout: Text left, SVG right (desktop) -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: Text -->
+            <div class="text-center lg:text-left pt-4">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-signal-400 animate-pulse"></span>
+                    Licence MIT &middot; 100 % On-Premise &middot; Conforme RGPD
                 </div>
-                <div class="p-5 text-left font-mono text-sm leading-relaxed">
-                    <div class="text-slate-500">$ aimos status</div>
-                    <div class="mt-2 text-signal-300">AIMOS v4.3.6 &mdash; SovereignNode actif</div>
-                    <div class="text-slate-400 mt-1">
-                        <span class="text-green-400">&#9679;</span> Agent Construction &nbsp;&mdash;&nbsp; Moteur FEM/Structure &nbsp;<span class="text-slate-600">|</span>&nbsp; idle<br>
-                        <span class="text-green-400">&#9679;</span> Agent Logistique &nbsp;&mdash;&nbsp; Sync Uyumsoft/ERP &nbsp;<span class="text-slate-600">|</span>&nbsp; running<br>
-                        <span class="text-green-400">&#9679;</span> Agent Finance &nbsp;&mdash;&nbsp; Intégration ETA/DATEV &nbsp;<span class="text-slate-600">|</span>&nbsp; idle
-                    </div>
-                    <div class="mt-2 text-slate-500">GPU: RTX 5090 (22/32 GB) &nbsp;|&nbsp; DB: PostgreSQL &nbsp;|&nbsp; LLM: local</div>
-                    <div class="mt-1 text-slate-600 cursor-blink">$</div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5">
+                    <span class="text-white">AIMOS</span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        Des agents IA qui agissent.
+                    </span><br>
+                    <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">
+                        En local. Sur votre serveur.
+                    </span>
+                </h1>
+
+                <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                    Des assistants num&eacute;riques avec leur propre m&eacute;moire, leurs propres outils
+                    et un acc&egrave;s direct &agrave; vos syst&egrave;mes informatiques &mdash; sans cloud, sans frais de licence.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+                    <a href="preise.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-7 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-center text-sm">
+                        Demander un Proof of Concept
+                    </a>
+                    <a href="agenten.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-7 py-3 rounded-xl transition-all hover:bg-white/5 text-center text-sm">
+                        D&eacute;couvrir les agents
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 text-xs">
-        <span>Défiler</span>
-        <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            <!-- Right: Agent Network SVG (visible immediately) -->
+            <div class="w-full">
+            <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="R&eacute;seau d'agents AIMOS : cinq agents IA sp&eacute;cialis&eacute;s connect&eacute;s &agrave; votre serveur local">
+                <defs>
+                    <!-- Pulse animation for connection dots -->
+                    <style>
+                        @keyframes dash-flow {
+                            0% { stroke-dashoffset: 24; }
+                            100% { stroke-dashoffset: 0; }
+                        }
+                        @keyframes node-pulse {
+                            0%, 100% { opacity: 0.5; r: 3; }
+                            50% { opacity: 1; r: 5; }
+                        }
+                        .conn-line {
+                            stroke-dasharray: 6 6;
+                            animation: dash-flow 2s linear infinite;
+                        }
+                        .conn-dot {
+                            animation: node-pulse 2.5s ease-in-out infinite;
+                        }
+                        .conn-dot-d1 { animation-delay: 0s; }
+                        .conn-dot-d2 { animation-delay: 0.5s; }
+                        .conn-dot-d3 { animation-delay: 1.0s; }
+                        .conn-dot-d4 { animation-delay: 1.5s; }
+                        .conn-dot-d5 { animation-delay: 2.0s; }
+                    </style>
+
+                    <!-- Glow filter for server -->
+                    <filter id="server-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+
+                    <!-- Subtle glow for agent circles -->
+                    <filter id="agent-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- ── Network boundary ── -->
+                <rect x="40" y="20" width="580" height="400" rx="24" ry="24"
+                      fill="none" stroke="#334155" stroke-width="1.5"
+                      stroke-dasharray="8 4" opacity="0.5"/>
+                <text x="330" y="52" text-anchor="middle"
+                      fill="#475569" font-size="12" font-family="Inter, sans-serif"
+                      font-weight="500" letter-spacing="0.1em">VOTRE R&Eacute;SEAU</text>
+
+                <!-- Shield/lock icon on boundary -->
+                <g transform="translate(580, 10)">
+                    <rect x="0" y="0" width="40" height="28" rx="6" fill="#0f1923" stroke="#334155" stroke-width="1"/>
+                    <!-- Lock body -->
+                    <rect x="12" y="12" width="16" height="12" rx="2" fill="#10b981" opacity="0.8"/>
+                    <!-- Lock shackle -->
+                    <path d="M16 12 V8 a4 4 0 0 1 8 0 V12" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+                    <!-- Keyhole -->
+                    <circle cx="20" cy="18" r="1.5" fill="#0f1923"/>
+                </g>
+                <text x="600" y="52" text-anchor="middle"
+                      fill="#10b981" font-size="9" font-family="Inter, sans-serif"
+                      font-weight="500" opacity="0.7">RGPD</text>
+
+                <!-- ── Central Server ── -->
+                <g transform="translate(290, 180)">
+                    <!-- Server glow background -->
+                    <rect x="-40" y="-40" width="80" height="80" rx="16"
+                          fill="#0070f3" opacity="0.08" filter="url(#server-glow)"/>
+                    <!-- Server box -->
+                    <rect x="-32" y="-32" width="64" height="64" rx="12"
+                          fill="#1a2332" stroke="#0070f3" stroke-width="2"/>
+                    <!-- Server detail lines -->
+                    <line x1="-18" y1="-14" x2="18" y2="-14" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="-18" y1="-2" x2="18" y2="-2" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="-18" y1="10" x2="18" y2="10" stroke="#0070f3" stroke-width="1.5" opacity="0.6"/>
+                    <!-- GPU chip icon -->
+                    <rect x="-8" y="16" width="16" height="10" rx="2"
+                          fill="none" stroke="#0070f3" stroke-width="1" opacity="0.5"/>
+                    <line x1="-4" y1="26" x2="-4" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <line x1="0" y1="26" x2="0" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <line x1="4" y1="26" x2="4" y2="29" stroke="#0070f3" stroke-width="1" opacity="0.4"/>
+                    <!-- Status LEDs -->
+                    <circle cx="14" cy="-14" r="2.5" fill="#10b981" opacity="0.9"/>
+                    <circle cx="14" cy="-2" r="2.5" fill="#10b981" opacity="0.9"/>
+                    <circle cx="14" cy="10" r="2.5" fill="#f59e0b" opacity="0.7"/>
+                </g>
+                <text x="290" y="260" text-anchor="middle"
+                      fill="#94a3b8" font-size="11" font-family="Inter, sans-serif"
+                      font-weight="600" letter-spacing="0.05em">VOTRE SERVEUR</text>
+                <text x="290" y="275" text-anchor="middle"
+                      fill="#475569" font-size="9" font-family="Inter, sans-serif">GPU &middot; LLM &middot; Base de donn&eacute;es</text>
+
+                <!-- ── Agent: Finanzen (top-left) ── -->
+                <line x1="172" y1="96" x2="260" y2="165" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="216" cy="130" r="3" fill="#f59e0b" class="conn-dot conn-dot-d1"/>
+                <g transform="translate(130, 62)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Euro sign icon -->
+                    <text x="0" y="2" text-anchor="middle" dominant-baseline="central"
+                          fill="#10b981" font-size="22" font-family="Inter, sans-serif" font-weight="700">&euro;</text>
+                </g>
+                <text x="130" y="110" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Finances</text>
+                <text x="130" y="123" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">DATEV &middot; ETA</text>
+
+                <!-- ── Agent: Logistik (top-right) ── -->
+                <line x1="408" y1="96" x2="320" y2="165" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="364" cy="130" r="3" fill="#f59e0b" class="conn-dot conn-dot-d2"/>
+                <g transform="translate(450, 62)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Truck/logistics icon -->
+                    <path d="M-10 -4 h12 l6 6 v4 h-18 z" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="-5" cy="8" r="3" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                    <circle cx="7" cy="8" r="3" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="450" y="110" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Logistique</text>
+                <text x="450" y="123" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">ERP &middot; Stock</text>
+
+                <!-- ── Agent: Konstruktion (left) ── -->
+                <line x1="130" y1="228" x2="255" y2="198" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="192" cy="213" r="3" fill="#f59e0b" class="conn-dot conn-dot-d3"/>
+                <g transform="translate(88, 228)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Gear/cog icon -->
+                    <path d="M0 -12 l3 4 h4 l1 5 -4 2 -1 5 -3 -2 -3 2 -1 -5 -4 -2 1 -5 h4 z"
+                          fill="none" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="0" cy="0" r="4" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="88" y="276" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Ing&eacute;nierie</text>
+                <text x="88" y="289" text-anchor="middle"
+                      fill="#64748b" font-size="8" font-family="Inter, sans-serif">CAO &middot; FEM</text>
+
+                <!-- ── Agent: Personal (bottom-left) ── -->
+                <line x1="210" y1="360" x2="272" y2="248" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="241" cy="304" r="3" fill="#f59e0b" class="conn-dot conn-dot-d4"/>
+                <g transform="translate(185, 374)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Person icon -->
+                    <circle cx="0" cy="-6" r="5" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                    <path d="M-9 10 Q-9 0 0 2 Q9 0 9 10" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+                <text x="185" y="420" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">RH</text>
+
+                <!-- ── Agent: Vertrieb (bottom-right) ── -->
+                <line x1="385" y1="350" x2="315" y2="248" class="conn-line"
+                      stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="350" cy="299" r="3" fill="#f59e0b" class="conn-dot conn-dot-d5"/>
+                <g transform="translate(420, 364)">
+                    <circle cx="0" cy="0" r="34" fill="#1a2332" stroke="#10b981" stroke-width="1.5" filter="url(#agent-glow)"/>
+                    <circle cx="0" cy="0" r="34" fill="#10b981" opacity="0.06"/>
+                    <!-- Chart/sales icon -->
+                    <rect x="-10" y="2" width="5" height="8" rx="1" fill="#10b981" opacity="0.7"/>
+                    <rect x="-3" y="-4" width="5" height="14" rx="1" fill="#10b981" opacity="0.8"/>
+                    <rect x="4" y="-10" width="5" height="20" rx="1" fill="#10b981" opacity="0.9"/>
+                </g>
+                <text x="420" y="410" text-anchor="middle"
+                      fill="#e2e8f0" font-size="11" font-family="Inter, sans-serif" font-weight="600">Commercial</text>
+
+                <!-- ── External Access: Telegram & Email (outside boundary) ── -->
+                <!-- Dashed line from server to boundary edge -->
+                <line x1="354" y1="188" x2="620" y2="165" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+                <line x1="354" y1="200" x2="620" y2="240" stroke="#334155" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+                <!-- Telegram icon -->
+                <g transform="translate(660, 155)">
+                    <circle cx="0" cy="0" r="22" fill="#1a2332" stroke="#334155" stroke-width="1.5"/>
+                    <!-- Paper plane icon -->
+                    <path d="M-8 1 l18 -7 -6 16 -4 -5 -8 -4z" fill="#0070f3" opacity="0.7"/>
+                    <line x1="10" y1="-6" x2="0" y2="5" stroke="#1a2332" stroke-width="1"/>
+                </g>
+                <text x="660" y="186" text-anchor="middle"
+                      fill="#64748b" font-size="9" font-family="Inter, sans-serif">Telegram</text>
+
+                <!-- Email icon -->
+                <g transform="translate(660, 235)">
+                    <circle cx="0" cy="0" r="22" fill="#1a2332" stroke="#334155" stroke-width="1.5"/>
+                    <!-- Envelope icon -->
+                    <rect x="-10" y="-6" width="20" height="14" rx="2" fill="none" stroke="#0070f3" stroke-width="1.5" opacity="0.7"/>
+                    <path d="M-10 -6 l10 8 10 -8" fill="none" stroke="#0070f3" stroke-width="1.5" opacity="0.7"/>
+                </g>
+                <text x="660" y="266" text-anchor="middle"
+                      fill="#64748b" font-size="9" font-family="Inter, sans-serif">E-Mail</text>
+
+                <!-- Access label -->
+                <text x="660" y="295" text-anchor="middle"
+                      fill="#475569" font-size="8" font-family="Inter, sans-serif"
+                      font-weight="500" letter-spacing="0.05em">ACC&Egrave;S</text>
+            </svg>
+        </div>
+        </div><!-- end grid -->
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Qu'est-ce qu'un agent IA ?                                           -->
+<!--  Das Problem                                                          -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="relative py-28 bg-slate-900/50">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center mb-14 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Le concept</p>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Le constat</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Qu'est-ce qu'un agent IA ?
+                Le savoir est dans les t&ecirc;tes.<br>
+                <span class="text-signal-400">Le travail r&eacute;p&eacute;titif d&eacute;vore le temps.</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                Trois d&eacute;fis que conna&icirc;t chaque entreprise en croissance.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-8">
+            <!-- Wissensverlust -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal">
+                <h3 class="font-bold text-lg mb-3">Perte de savoir</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Quand un collaborateur exp&eacute;riment&eacute; part, il emporte avec lui des ann&eacute;es de savoir accumul&eacute;. Relations clients, d&eacute;tails des processus, valeurs d'exp&eacute;rience &mdash; irr&eacute;m&eacute;diablement.
+                </p>
+            </div>
+
+            <!-- Routinearbeit -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.1s">
+                <h3 class="font-bold text-lg mb-3">Travail r&eacute;p&eacute;titif</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Vos experts passent des heures &agrave; collecter des donn&eacute;es, cr&eacute;er des rapports, surveiller des d&eacute;lais. Du temps qui manque pour les t&acirc;ches exigeantes.
+                </p>
+            </div>
+
+            <!-- Fachkräftemangel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.2s">
+                <h3 class="font-bold text-lg mb-3">P&eacute;nurie de main-d'&oelig;uvre qualifi&eacute;e</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Les collaborateurs qualifi&eacute;s sont difficiles &agrave; trouver. En m&ecirc;me temps, les exigences en mati&egrave;re de documentation, conformit&eacute; et r&eacute;activit&eacute; augmentent.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Die Lösung                                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 grid-pattern">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">AIMOS</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                Des assistants num&eacute;riques au service de votre &eacute;quipe
             </h2>
             <p class="text-slate-400 max-w-3xl mx-auto text-lg">
-                Un agent IA n'est pas un chat-bot. C'est un <strong class="text-white">collaborateur numérique</strong>
-                avec son propre périmètre de responsabilité, sa propre mémoire et un accès direct à vos systèmes informatiques.
+                Chaque agent est un sp&eacute;cialiste de son domaine &mdash; avec sa propre m&eacute;moire, ses propres outils et une r&egrave;gle claire : il pr&eacute;pare, vous d&eacute;cidez.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <!-- Left: What a chat-bot does -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 reveal">
-                <div class="text-xs text-red-400/60 uppercase tracking-wider mb-4">Ce que fait un chat-bot</div>
-                <ul class="space-y-3 text-sm text-slate-500">
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Répond aux questions à partir de son matériel d'entraînement</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Oublie tout après la conversation</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Ne peut rien faire &mdash; ne génère que du texte</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-red-400/60 mt-0.5">&times;</span>
-                        <span>Attend passivement votre saisie</span>
-                    </li>
-                </ul>
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- LEFT: Bullet points -->
+            <div class="space-y-5 reveal">
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Recherche des donn&eacute;es, cr&eacute;e des brouillons, surveille les d&eacute;lais &mdash; disponible 24h/24</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Apprend de chaque interaction et construit une base de connaissances durable</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Se connecte &agrave; vos syst&egrave;mes existants &mdash; ERP, comptabilit&eacute;, e-mail, CAO</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pr&eacute;pare, ne d&eacute;cide jamais seul &mdash; Human-in-the-Loop est un principe fondamental</p>
+                </div>
             </div>
 
-            <!-- Right: What an AIMOS agent does -->
-            <div class="gradient-border reveal" style="transition-delay:0.1s">
-                <div class="bg-slate-850 rounded-xl p-7 h-full">
-                    <div class="text-xs text-signal-400 uppercase tracking-wider mb-4">Ce que fait un agent AIMOS</div>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Supervise son périmètre de responsabilité</strong> &mdash; stocks, factures ouvertes, demandes clients, échéances</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Agit de manière autonome</strong> &mdash; interroge les bases de données, crée des documents, envoie des messages, programme des rappels</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Se souvient durablement</strong> &mdash; connaît chaque client, chaque préférence, chaque dossier en cours</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Agit de manière proactive</strong> &mdash; signale les seuils critiques, rappelle les échéances, relance les demandes en attente</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span><strong class="text-white">Prépare mais ne décide jamais seul</strong> &mdash; brouillons d'e-mails, propositions de réservation, demandes d'achat sont soumis au collaborateur pour approbation</span>
-                        </li>
-                    </ul>
+            <!-- RIGHT: Mensch & KI callout -->
+            <div class="reveal" style="transition-delay:0.15s">
+                <div class="gradient-border p-px rounded-xl">
+                    <div class="bg-slate-850 rounded-xl p-6 text-center">
+                        <div class="text-4xl mb-3">&#129309;</div>
+                        <h3 class="font-bold mb-2">Humain &amp; IA</h3>
+                        <p class="text-slate-400 text-sm mb-4">L'agent pr&eacute;pare.<br>Vous d&eacute;cidez.</p>
+                        <a href="mensch-ki.html" class="text-signal-400 text-sm font-medium hover:underline">&rarr; En savoir plus</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  L'Équipe d'Agents                                                    -->
+<!--  Unabhängigkeit                                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="agenten" class="relative py-28 grid-pattern">
+<section class="relative py-28 bg-slate-900/50">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Section header -->
         <div class="text-center mb-16 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Architecture des agents</p>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Aucune d&eacute;pendance</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                L'&Eacute;quipe d'Agents
+                Open Source. Votre serveur.<br>
+                <span class="text-signal-400">Votre d&eacute;cision.</span>
             </h2>
             <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                Une &eacute;quipe coordonn&eacute;e d'experts m&eacute;tier &mdash; chacun dot&eacute; de sa propre m&eacute;moire, de ses propres outils
-                et d'un acc&egrave;s direct &agrave; vos syst&egrave;mes. Ils collaborent, partagent leurs r&eacute;sultats
-                et accomplissent leurs missions de mani&egrave;re autonome &mdash; 24 heures sur 24.
+                AIMOS vous appartient &mdash; aujourd'hui, demain et m&ecirc;me si vous changez d'avis.
             </p>
         </div>
 
-        <!-- Agent Cards — grille uniforme à 4 colonnes -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            <!-- Agent Construction -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col">
-                <div class="text-xs text-signal-400 font-medium mb-2">Documentation technique</div>
-                <h4 class="font-bold mb-2">Agent Construction</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Calcule les structures avec moteur FEM int&eacute;gr&eacute; (PyNite), optimise les profil&eacute;s acier par poids et co&ucirc;t, v&eacute;rifie les normes sismiques (TBDY 2018, Eurocode).
-                    <strong class="text-slate-300">Cr&eacute;e les nomenclatures en brouillon</strong> &mdash;
-                    l'ing&eacute;nieur v&eacute;rifie et valide.
+        <!-- 2x2 Card Grid -->
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+            <!-- MIT-Lizenz -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal">
+                <h3 class="font-bold text-lg mb-3">Licence MIT</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Visibilit&eacute; compl&egrave;te sur chaque ligne de code. Aucun frais de licence &mdash; ni aujourd'hui, ni demain, ni avec 100 agents. Vous pouvez modifier, &eacute;tendre ou forker le code.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PyNite FEM</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DXF</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">TBDY 2018</span>
-                </div>
             </div>
 
-            <!-- Agent Finance -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.05s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Comptabilité &amp; Finances</div>
-                <h4 class="font-bold mb-2">Agent Finance</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Accède à ETA, DATEV ou d'autres systèmes comptables. Fournit soldes et trésorerie en quelques secondes.
-                    <strong class="text-slate-300">Prépare les écritures</strong> &mdash;
-                    le comptable vérifie et valide.
+            <!-- Kein Vendor Lock-in -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.1s">
+                <h3 class="font-bold text-lg mb-3">Pas de verrouillage fournisseur</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    AIMOS ne vous lie &agrave; aucun fournisseur. Toutes les donn&eacute;es sont dans des formats ouverts (JSON, SQLite, PostgreSQL). Aucun format propri&eacute;taire, aucune d&eacute;pendance cach&eacute;e.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ETA V8</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
-                </div>
             </div>
 
-            <!-- Agent Logistique -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.1s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Entrepôt &amp; Approvisionnement</div>
-                <h4 class="font-bold mb-2">Agent Logistique</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Surveille les stocks via l'interface ERP, détecte les seuils critiques de manière autonome.
-                    <strong class="text-slate-300">Crée la demande d'approvisionnement</strong> &mdash;
-                    l'acheteur valide la commande.
+            <!-- Agent-Migration -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.2s">
+                <h3 class="font-bold text-lg mb-3">Migration d'agents</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Vos agents sont portables. Le Open Agent Package (OAP) exporte un agent compl&egrave;tement &mdash; Ged&auml;chtnis, Skills, Konfiguration. Import auf einem anderen Server in Minuten. Wenn Sie morgen auf ein propriet&auml;res System wechseln wollen: Ihre base de connaissances geht mit.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SAP OData</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Navision</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">REST</span>
-                </div>
             </div>
 
-            <!-- Agent Production -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.15s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Pilotage de production</div>
-                <h4 class="font-bold mb-2">Agent Production</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Lit l'état des machines, optimise l'ordre des commandes, crée les rapports de relève.
-                    <strong class="text-slate-300">Propose l'ordonnancement</strong> &mdash;
-                    le responsable de production valide.
+            <!-- Ihre Daten, Ihr Server -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7 hover:border-signal-500/20 transition-colors reveal" style="transition-delay:0.3s">
+                <h3 class="font-bold text-lg mb-3">Vos donn&eacute;es, votre serveur</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Toutes les donn&eacute;es restent sur votre SovereignNode. Aucun fournisseur cloud, aucun tiers, aucun transfert de donn&eacute;es. Wenn AIMOS Ihnen nicht mehr gef&auml;llt, ziehen Sie den Stecker &mdash; und alles bleibt bei Ihnen.
                 </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">OPC-UA</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">MES-API</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SQL</span>
-                </div>
-            </div>
-
-            <!-- Agent RH -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.2s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Ressources humaines</div>
-                <h4 class="font-bold mb-2">Agent RH</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Vérifie les demandes de congé par rapport au calendrier d'équipe, suit l'intégration, alerte sur les échéances contractuelles.
-                    <strong class="text-slate-300">Recommande une décision</strong> &mdash;
-                    le responsable approuve.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Personio</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">DATEV</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">iCal</span>
-                </div>
-            </div>
-
-            <!-- Agent Juridique -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.25s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Droit &amp; Contrats</div>
-                <h4 class="font-bold mb-2">Agent Juridique</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Analyse les contrats pour les échéances, génère des brouillons de NDA à partir de modèles, signale les évolutions réglementaires.
-                    <strong class="text-slate-300">Crée le brouillon</strong> &mdash;
-                    le juriste vérifie et valide.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">d.velop</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">ELO</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">PDF/OCR</span>
-                </div>
-            </div>
-
-            <!-- Agent IT-Ops -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors reveal flex flex-col" style="transition-delay:0.3s">
-                <div class="text-xs text-signal-400 font-medium mb-2">Exploitation IT</div>
-                <h4 class="font-bold mb-2">Agent IT-Ops</h4>
-                <p class="text-slate-400 text-xs leading-relaxed flex-1">
-                    Reçoit les alertes de monitoring, enrichit les tickets, surveille les expirations de licences, crée des rapports de santé.
-                    <strong class="text-slate-300">Priorise l'incident</strong> &mdash;
-                    l'administrateur vérifie et escalade.
-                </p>
-                <div class="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-1.5">
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Zabbix</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">Jira</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-900 text-[10px] text-slate-500 font-mono">SNMP</span>
-                </div>
-            </div>
-
-            <!-- Placeholder: Votre Agent -->
-            <div class="bg-slate-850 border border-dashed border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center reveal" style="transition-delay:0.35s">
-                <div class="text-2xl text-slate-700 mb-2">+</div>
-                <h4 class="font-bold text-sm text-slate-500 mb-1">Votre Agent</h4>
-                <p class="text-slate-600 text-xs">
-                    Individuellement conçu pour votre département, vos systèmes, vos workflows.
-                </p>
-                <a href="kontakt.html" class="mt-3 text-signal-400 text-xs hover:text-signal-300 underline underline-offset-2">En discuter maintenant</a>
             </div>
         </div>
 
-        <!-- Expandable note -->
-        <div class="mt-10 text-center reveal">
-            <p class="text-slate-500 text-sm">
-                Ce sont des exemples. Les agents AIMOS sont configurés individuellement par entreprise &mdash;
-                chaque département, chaque interface, chaque workflow.
-                <a href="agenten.html" class="text-signal-400 hover:text-signal-300 underline underline-offset-2">En savoir plus sur l'architecture des agents</a>.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Connectivité universelle                                             -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konnektivitaet" class="relative py-28 bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <!-- Text -->
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Connectivité universelle</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-                    Votre système parle SQL, REST&nbsp;ou&nbsp;SOAP ?<br>
-                    <span class="text-signal-400">AIMOS comprend les trois.</span>
-                </h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                    Qu'il s'agisse d'une base de données relationnelle, d'une API REST moderne ou d'un logiciel
-                    legacy des années 90 : AIMOS connecte votre infrastructure informatique existante
-                    sans cloud et sans surcharge middleware.
-                </p>
-
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Accès SQL direct</h4>
-                            <p class="text-slate-500 text-sm">PostgreSQL, MSSQL, Firebird, MySQL &mdash; SELECT uniquement, pas d'écriture sur les données de production.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 0.5s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">REST / SOAP / GraphQL</h4>
-                            <p class="text-slate-500 text-sm">API modernes et legacy à parts égales. OAuth2, clés API, NTLM &mdash; toutes les méthodes d'authentification.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 1s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Systèmes de fichiers &amp; SFTP</h4>
-                            <p class="text-slate-500 text-sm">Lecteurs réseau locaux, partages SMB, SFTP via VPN &mdash; même derrière DS-Lite/NAT via Tailscale.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="pulse-dot mt-2 flex-shrink-0" style="animation-delay: 1.5s;"></div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Canaux de communication</h4>
-                            <p class="text-slate-500 text-sm">Telegram, e-mail (IMAP/SMTP), messages vocaux (STT/TTS) &mdash; l'agent répond là où le collaborateur pose sa question.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Architecture diagram -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <div class="gradient-border glow-sm">
-                    <div class="bg-slate-850 rounded-xl p-8">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Architecture : SovereignNode</div>
-                        <div class="space-y-3 text-sm">
-                            <!-- Row 1: External Systems -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">SAP</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Uyumsoft</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">ETA V8</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">DATEV</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Tekla</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">AutoCAD</span>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 2: Connectors -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SQL</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">REST</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SFTP</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-signal-500/10 border border-signal-500/20 text-signal-300 text-xs font-medium">SOAP</span>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 3: AIMOS Core -->
-                            <div class="bg-signal-500/5 border border-signal-500/20 rounded-xl p-5 text-center">
-                                <div class="text-signal-300 font-semibold mb-2">AIMOS Kernel</div>
-                                <div class="grid grid-cols-3 gap-2 text-xs">
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Orchestrateur</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">LLM (local)</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">PostgreSQL</div>
-                                </div>
-                                <div class="grid grid-cols-2 gap-2 text-xs mt-2">
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Mémoire agents</div>
-                                    <div class="bg-slate-900/80 rounded-lg py-2 text-slate-400">Journal d'audit</div>
-                                </div>
-                            </div>
-
-                            <!-- Arrow down -->
-                            <div class="flex justify-center text-slate-600">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-
-                            <!-- Row 4: Users -->
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Telegram</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">E-mail</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Voix</span>
-                                <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/5 text-slate-400 text-xs">Tableau de bord</span>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Callout box -->
+        <div class="reveal">
+            <div class="gradient-border glow-sm p-px rounded-xl">
+                <div class="bg-slate-850 rounded-xl p-8 text-center">
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                        Le risque n'est pas d'adopter AIMOS. Le risque est d'attendre &mdash; car chaque jour sans AIMOS est un jour o&ugrave; vos agents <strong class="text-white">ne construisent pas de savoir</strong>.
+                    </p>
                 </div>
             </div>
         </div>
@@ -578,179 +592,124 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Compliance & Sécurité                                                -->
+<!--  Warum jetzt starten                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="compliance" class="relative py-28 grid-pattern">
-    <div class="max-w-7xl mx-auto px-6">
-        <!-- Section header -->
-        <div class="text-center mb-16 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Compliance &amp; Sécurité</p>
+<section class="relative py-28 grid-pattern">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Avantage du pr&eacute;curseur</p>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Conçu pour les auditeurs,<br>
+                Plus vous commencez t&ocirc;t,<br>
+                <span class="text-signal-400">plus le syst&egrave;me prend de la valeur</span>
+            </h2>
+        </div>
+
+        <!-- Text block -->
+        <div class="reveal mb-16">
+            <div class="text-slate-400 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto text-center">
+                <p>
+                    Un agent AIMOS s'am&eacute;liore &agrave; chaque conversation. Er speichert Kundenvorlieben, Prozessdetails, Lieferantenbewertungen &mdash; <strong class="text-white">de mani&egrave;re permanente et consultable</strong>. Nach einem Jahr hat Ihr Finanz-Agent hunderte Buchungsmuster gelernt. Nach zwei Jahren kennt Ihr Vertriebs-Agent jeden Kunden pers&ouml;nlich.
+                </p>
+                <p>
+                    Dieses Wissen ist <strong class="text-white">cumulatif</strong>. Es kann nicht nachgeholt werden. Unternehmen, die heute starten, haben in zwei Jahren einen Vorsprung, den Nachz&uuml;gler nicht aufholen k&ouml;nnen &mdash; unabh&auml;ngig davon, welches KI-System sie dann einsetzen.
+                </p>
+                <p>
+                    Und dank <strong class="text-white">export OAP</strong> geh&ouml;rt dieses Wissen immer Ihnen &mdash; auch wenn Sie AIMOS sp&auml;ter durch ein anderes System ersetzen.
+                </p>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="reveal">
+            <div class="grid sm:grid-cols-3 gap-6">
+                <!-- Jahr 1 -->
+                <div class="relative bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Ann&eacute;e 1</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">500+</div>
+                    <p class="text-slate-400 text-sm">faits enregistr&eacute;s, processus &eacute;tablis</p>
+                    <div class="hidden sm:block absolute top-1/2 -right-3 w-6 h-px bg-signal-500/30"></div>
+                </div>
+
+                <!-- Jahr 2 -->
+                <div class="relative bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Ann&eacute;e 2</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">360&deg;</div>
+                    <p class="text-slate-400 text-sm">Chaque client, chaque fournisseur, chaque op&eacute;ration document&eacute;e</p>
+                    <div class="hidden sm:block absolute top-1/2 -right-3 w-6 h-px bg-signal-500/30"></div>
+                </div>
+
+                <!-- Jahr 3 -->
+                <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 text-center glow-sm">
+                    <div class="text-signal-400 font-mono text-xs font-medium tracking-widest uppercase mb-2">Ann&eacute;e 3</div>
+                    <div class="text-3xl font-extrabold text-signal-400 mb-2">&infin;</div>
+                    <p class="text-slate-400 text-sm">Savoir institutionnel &mdash; ind&eacute;pendant de la rotation du personnel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  Compliance auf einen Blick                                           -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Compliance</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                Con&ccedil;u pour les auditeurs,<br>
                 <span class="text-signal-400">pas contre eux.</span>
             </h2>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                Chaque décision architecturale d'AIMOS a été prise sous l'angle de la
-                conformité réglementaire &mdash; pas ajustée après coup.
-            </p>
         </div>
 
-        <!-- Compliance Grid -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <!-- RGPD -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <!-- DSGVO -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal">
                 <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">RGPD / GDPR</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-white">Localisation complète des données</strong> sur le SovereignNode.
-                    Aucun octet ne quitte votre serveur &mdash; sauf autorisation explicite.
-                    Le PII-Vault anonymise automatiquement les appels API externes.
-                </p>
+                <h3 class="font-bold mb-1">RGPD</h3>
+                <p class="text-slate-400 text-sm">Privacy by Design &mdash; les donn&eacute;es restent locales</p>
             </div>
 
-            <!-- ISO -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.1s;">
+            <!-- ISO 27001 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.1s">
                 <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">ISO 9001 &amp; 27001</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-white">Journalisation complète</strong> de toutes les actions des agents.
-                    Chaque appel d'outil, chaque requête LLM, chaque décision
-                    est documenté avec horodatage et identifiant de session.
-                </p>
-            </div>
-
-            <!-- Sécurité de révision -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.2s;">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                </div>
-                <h3 class="font-bold mb-2">Sécurité de révision</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    <strong class="text-white">Human-in-the-Loop</strong> comme principe architectural :
-                    aucun LLM n'a d'accès direct au niveau transactionnel.
-                    Toute opération comptable requiert une approbation humaine.
-                </p>
+                <h3 class="font-bold mb-1">ISO 27001</h3>
+                <p class="text-slate-400 text-sm">Contr&ocirc;le d'acc&egrave;s par Execution Rings</p>
             </div>
 
             <!-- GoBD -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/30 transition-colors reveal" style="transition-delay: 0.3s;">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.2s">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-1">GoBD</h3>
+                <p class="text-slate-400 text-sm">Brouillon &rarr; V&eacute;rification &rarr; Validation</p>
+            </div>
+
+            <!-- EU AI Act -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal" style="transition-delay:0.3s">
                 <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">Conforme GoBD</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Séparation nette entre <strong class="text-white">brouillon et validation</strong>.
-                    Les agents préparent les écritures comptables &mdash; la validation
-                    n'est effectuée que par des comptables autorisés dans le système cible.
-                </p>
+                <h3 class="font-bold mb-1">EU AI Act</h3>
+                <p class="text-slate-400 text-sm">Transparence, supervision humaine, documentation</p>
             </div>
         </div>
 
-        <!-- Trust bar -->
-        <div class="mt-16 text-center reveal">
-            <div class="inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-4 rounded-2xl bg-slate-900/50 border border-white/5">
-                <span class="text-xs text-slate-500 uppercase tracking-widest">Vérifiable par</span>
-                <span class="text-sm text-slate-400 font-medium">Journaux d'audit</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">Traces PII-Vault</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">Identifiants de session</span>
-                <span class="text-slate-700">&middot;</span>
-                <span class="text-sm text-slate-400 font-medium">Inspection du code source</span>
-            </div>
-        </div>
-
-        <div class="mt-6 text-center">
+        <div class="text-center reveal">
             <a href="compliance.html" class="text-signal-400 hover:text-signal-300 text-sm font-medium underline underline-offset-4 transition-colors">
-                Lire la documentation Compliance en détail &rarr;
+                &rarr; Conformit&eacute; en d&eacute;tail
             </a>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Promesse Open Source                                                 -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="open-source" class="relative py-28 bg-slate-900/50">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Open Source</p>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Licence MIT.<br>
-                <span class="text-signal-400">Sans compromis.</span>
-            </h2>
-            <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-12">
-                Visibilité complète sur chaque ligne de code. Aucun frais de licence &mdash; ni aujourd'hui,
-                ni demain. Sécurité maximale de votre investissement, car vous ne dépendez
-                jamais d'un fournisseur.
-            </p>
-        </div>
-
-        <!-- Three pillars -->
-        <div class="grid sm:grid-cols-3 gap-8 mb-12 reveal">
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">100%</div>
-                <div class="text-sm text-slate-400">Code source consultable</div>
-            </div>
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">0 &euro;</div>
-                <div class="text-sm text-slate-400">Frais de licence. Pour toujours.</div>
-            </div>
-            <div>
-                <div class="text-4xl font-extrabold text-signal-400 mb-2">&infin;</div>
-                <div class="text-sm text-slate-400">Personnalisable &amp; extensible</div>
-            </div>
-        </div>
-
-        <!-- License block -->
-        <div class="inline-block gradient-border glow-sm reveal">
-            <div class="bg-slate-850 rounded-xl p-6 text-left font-mono text-xs text-slate-400 max-w-lg">
-                <div class="text-slate-600 mb-2">// MIT License (extrait)</div>
-                <div>Permission is hereby granted, <span class="text-signal-300">free of charge</span>,</div>
-                <div>to any person obtaining a copy of this software</div>
-                <div>and associated documentation files, to deal in</div>
-                <div>the Software <span class="text-signal-300">without restriction</span>, including</div>
-                <div>without limitation the rights to <span class="text-signal-300">use, copy,</span></div>
-                <div><span class="text-signal-300">modify, merge, publish, distribute, sublicense,</span></div>
-                <div><span class="text-signal-300">and/or sell</span> copies of the Software&hellip;</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Chiffres clés                                                        -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section class="relative py-20 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">15+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Skills / Connecteurs</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">39</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Outils compatibles MCP</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">138+</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">CRs implémentés</div>
-            </div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-1">24/7</div>
-                <div class="text-xs text-slate-500 uppercase tracking-wider">Exploitation On-Premise</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Appel à l'action                                                     -->
+<!--  CTA                                                                  -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="cta" class="relative py-28 bg-slate-900/50 overflow-hidden">
     <!-- Background glow -->
@@ -758,31 +717,20 @@
 
     <div class="relative max-w-3xl mx-auto px-6 text-center reveal">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Prêt pour une intelligence<br>
-            <span class="text-signal-400">industrielle souveraine ?</span>
+            Commencez avec un<br>
+            <span class="text-signal-400">Proof of Concept</span>
         </h2>
         <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-            Commencez par la documentation ou configurez votre
-            propre SovereignNode &mdash; en moins d'une heure.
+            4 900 EUR &mdash; enti&egrave;rement d&eacute;duit en cas de commande. Deux semaines d'essai avec vos donn&eacute;es et processus r&eacute;els.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a href="technik.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg text-center">
-                Lire la documentation
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="kontakt.html" class="w-full sm:w-auto bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg text-center">
+                Demander un PoC
             </a>
-            <a href="technik.html#sovereign-node" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-10 py-4 rounded-xl transition-all hover:bg-white/5 text-lg text-center">
-                Configurer le SovereignNode
+            <a href="preise.html" class="w-full sm:w-auto border border-white/10 hover:border-white/25 text-white font-medium px-10 py-4 rounded-xl transition-all hover:bg-white/5 text-lg text-center">
+                Tarifs et forfaits
             </a>
-        </div>
-
-        <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            <a href="technik.html" class="hover:text-signal-400 transition-colors">Documentation technique</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="agenten.html" class="hover:text-signal-400 transition-colors">Tous les types d'agents</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="compliance.html" class="hover:text-signal-400 transition-colors">Détails Compliance</a>
-            <span class="text-slate-700">&middot;</span>
-            <a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">Dépôt GitHub</a>
         </div>
     </div>
 </section>
@@ -801,18 +749,22 @@
                 </div>
                 <p class="text-sm text-slate-500 leading-relaxed">
                     Adaptive Industrial Management &amp; Operations System.
-                    Open source sous licence MIT.
+                    Open Source unter Licence MIT.
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                    Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
                 </p>
             </div>
 
-            <!-- Produit -->
+            <!-- Product -->
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Produit</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Équipe d'agents</a></li>
-                    <li><a href="technik.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
-                    <li><a href="technik.html#konnektoren" class="hover:text-signal-400 transition-colors">Connecteurs</a></li>
-                    <li><a href="technik.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">&Eacute;quipe d'agents</a></li>
+                    <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
+                    <li><a href="system.html" class="hover:text-signal-400 transition-colors">Syst&egrave;me</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Connecteurs</a></li>
+                    <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>
 
@@ -820,32 +772,32 @@
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">RGPD / GDPR</a></li>
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">RGPD / DSGVO</a></li>
                     <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
                     <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
-                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Journalisation d'audit</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Audit-Logging</a></li>
                 </ul>
             </div>
 
-            <!-- Ressources -->
+            <!-- Ressourcen -->
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressources</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
-                    <li><a href="technik.html#api" class="hover:text-signal-400 transition-colors">Référence API</a></li>
-                    <li><a href="technik.html#mcp" class="hover:text-signal-400 transition-colors">Compatibilité MCP</a></li>
-                    <li><a href="technik.html#changelog" class="hover:text-signal-400 transition-colors">Changelog</a></li>
+                    <li><a href="architektur.html#api" class="hover:text-signal-400 transition-colors">R&eacute;f&eacute;rence API</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilit&eacute; MCP</a></li>
+                    <li><a href="architektur.html#changelog" class="hover:text-signal-400 transition-colors">Journal des modifications</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-600">
-                &copy; 2026 AIMOS Project. Sous licence MIT.
+                &copy; 2026 AIMOS Project. Lizenziert unter der Licence MIT.
             </p>
             <div class="flex items-center gap-6 text-xs text-slate-600">
-                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions légales</a>
-                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialité</a>
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
                 <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
             </div>
         </div>

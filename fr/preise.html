@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarifs — AIMOS</title>
-    <meta name="description" content="Tarifs AIMOS : configuration SovereignNode, d&eacute;veloppement d'agents, int&eacute;gration ERP et forfaits de maintenance. Transparent, &eacute;quitable, sans frais cloud.">
+    <title>Tarifs &mdash; AIMOS</title>
+    <meta name="description" content="Tarifs AIMOS : installation SovereignNode, d&eacute;veloppement d'agents, int&eacute;gration ERP et forfaits de maintenance. Transparent, &eacute;quitable, sans co&ucirc;ts cloud.">>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -53,11 +53,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technique</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Conformité</a>
-            <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'agents</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humain &amp; IA</a>
+            <a href="preise.html" class="text-white font-medium">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
@@ -65,7 +71,7 @@
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Fran&ccedil;ais</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
@@ -73,18 +79,30 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">&Eacute;quipe d'agents</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humain &amp; IA</a>
+        <a href="preise.html" class="text-white py-2">Tarifs</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Syst&egrave;me</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
     <div class="max-w-4xl mx-auto text-center">
-        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Tarifs</p>
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Preise</p>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
             Transparent. &Eacute;quitable.<br>
             <span class="text-signal-400">Aucun co&ucirc;t cach&eacute;.</span>
         </h1>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
             Aucun frais de licence pour le logiciel. Vous ne payez que la mise en place, l'int&eacute;gration et
-            la maintenance optionnelle. AIMOS est et restera Open Source.
+            la maintenance optionnelle. AIMOS est et reste Open Source.
         </p>
     </div>
 </section>
@@ -97,11 +115,11 @@
         <div class="gradient-border">
             <div class="bg-slate-850 rounded-xl p-8 sm:p-10 text-center">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-signal-500/20 bg-signal-500/5 text-signal-300 text-xs font-medium mb-6">
-                    D&eacute;marrage
+                    Einstieg
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold mb-2">Proof of Concept</h2>
-                <div class="text-4xl sm:text-5xl font-extrabold text-signal-400 mb-2">2.500 EUR</div>
-                <p class="text-slate-500 text-sm mb-6">paiement unique, int&eacute;gralement d&eacute;duit en cas de commande</p>
+                <div class="text-4xl sm:text-5xl font-extrabold text-signal-400 mb-2">4.900 EUR</div>
+                <p class="text-slate-500 text-sm mb-6">unique, enti&egrave;rement d&eacute;duit en cas de commande</p>
                 <div class="max-w-lg mx-auto text-left space-y-3 text-sm text-slate-400 mb-8">
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -109,11 +127,11 @@
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span>1 agent configur&eacute; individuellement pour votre cas d'usage principal</span>
+                        <span>1 agent configur&eacute; individuellement pour votre cas d'usage prioritaire</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">2 semaines de test</strong> avec vos donn&eacute;es r&eacute;elles</span>
+                        <span><strong class="text-white">2 semaines d'essai</strong> avec vos donn&eacute;es r&eacute;elles</span>
                     </div>
                     <div class="flex items-start gap-3">
                         <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -133,14 +151,14 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Setup & Integration (Unique)                                         -->
+<!--  Setup & Integration (Einmalig)                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Prestations ponctuelles</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Mise en place &amp; Int&eacute;gration</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Du conseil mat&eacute;riel jusqu'&agrave; la mise en production.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Installation &amp; Int&eacute;gration</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Du conseil mat&eacute;riel &agrave; la mise en production.</p>
         </div>
 
         <div class="overflow-x-auto reveal">
@@ -155,17 +173,17 @@
                 <tbody class="text-slate-400">
                     <tr class="border-b border-white/5">
                         <td class="py-4 px-5 font-medium text-white">Conseil mat&eacute;riel</td>
-                        <td class="py-4 px-5">Recommandation GPU, sp&eacute;cification serveur, accompagnement &agrave; l'achat</td>
+                        <td class="py-4 px-5">Recommandation GPU, sp&eacute;cifications serveur, accompagnement &agrave; l'acquisition</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">600 &ndash; 1.800 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
                         <td class="py-4 px-5 font-medium text-white">Installation SovereignNode</td>
-                        <td class="py-4 px-5">Syst&egrave;me d'exploitation, AIMOS, runtime LLM (SGLang), PostgreSQL, SSL, VPN (Tailscale), pare-feu</td>
+                        <td class="py-4 px-5">Syst&egrave;me d'exploitation, AIMOS, LLM-Runtime (SGLang), PostgreSQL, SSL, VPN (Tailscale), pare-feu</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">2.500 &ndash; 5.000 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
-                        <td class="py-4 px-5 font-medium text-white">Premier agent (sur mesure)</td>
-                        <td class="py-4 px-5">Prompt syst&egrave;me, personnalit&eacute;, comp&eacute;tences, connecteurs, tests avec donn&eacute;es r&eacute;elles</td>
+                        <td class="py-4 px-5 font-medium text-white">Premier agent (personnalis&eacute;)</td>
+                        <td class="py-4 px-5">System-Prompt, personnalit&eacute;, comp&eacute;tences, connecteurs, tests avec donn&eacute;es r&eacute;elles</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.800 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
@@ -175,7 +193,7 @@
                     </tr>
                     <tr class="border-b border-white/5">
                         <td class="py-4 px-5 font-medium text-white">Int&eacute;gration ERP / CRM</td>
-                        <td class="py-4 px-5">Mapping SQL, connexion API, tests avec donn&eacute;es de production (par syst&egrave;me)</td>
+                        <td class="py-4 px-5">SQL-Mapping, connexion API, tests avec donn&eacute;es de production (par syst&egrave;me)</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.200 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr class="border-b border-white/5">
@@ -184,8 +202,8 @@
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">1.200 &ndash; 3.600 EUR</td>
                     </tr>
                     <tr>
-                        <td class="py-4 px-5 font-medium text-white">Migration d'agents</td>
-                        <td class="py-4 px-5">Migrer les agents de notre serveur vers votre SovereignNode (m&eacute;moire incluse)</td>
+                        <td class="py-4 px-5 font-medium text-white">Migration d'agent</td>
+                        <td class="py-4 px-5">Migration des agents de notre serveur vers votre SovereignNode (y compris la m&eacute;moire)</td>
                         <td class="py-4 px-5 text-right text-signal-300 font-mono">600 &ndash; 1.200 EUR</td>
                     </tr>
                 </tbody>
@@ -194,33 +212,33 @@
 
         <div class="mt-6 bg-slate-900/50 border border-white/5 rounded-xl p-5 reveal">
             <p class="text-sm text-slate-400">
-                <strong class="text-white">Projet initial typique :</strong>
+                <strong class="text-white">Projet initial type :</strong>
                 SovereignNode + 2 agents + 1 connexion ERP =
-                <span class="text-signal-300 font-semibold">8.000 &ndash; 15.000 EUR</span>.
-                Le budget PoC (2.500 EUR) est int&eacute;gralement d&eacute;duit.
+                <span class="text-signal-300 font-semibold">15.000 &ndash; 25.000 EUR</span>.
+                Le budget PoC (4 900 EUR) est enti&egrave;rement d&eacute;duit.
             </p>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Forfaits de maintenance (Mensuels)                                   -->
+<!--  Wartungspakete (Monatlich)                                           -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6 bg-slate-900/50">
     <div class="max-w-5xl mx-auto pt-20">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Maintenance mensuelle</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Support &amp; &Eacute;volution</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Optionnel, mais recommand&eacute;. AIMOS fonctionne &eacute;galement sans contrat de maintenance &mdash; c'est votre logiciel.</p>
+            <p class="text-slate-400 max-w-2xl mx-auto">Optionnel, mais recommand&eacute;. AIMOS fonctionne aussi sans contrat de maintenance &mdash; c'est votre logiciel.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
 
-            <!-- Basique -->
+            <!-- Basis -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7 flex flex-col">
-                <h3 class="font-bold text-lg mb-1">Basique</h3>
-                <div class="text-3xl font-extrabold mb-1">350 <span class="text-base font-normal text-slate-500">EUR/mois</span></div>
-                <p class="text-xs text-slate-600 mb-5">Engagement minimum de 12 mois</p>
+                <h3 class="font-bold text-lg mb-1">Essentiel</h3>
+                <div class="text-3xl font-extrabold mb-1">350 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                <p class="text-xs text-slate-600 mb-5">12 mois d'engagement minimum</p>
                 <ul class="space-y-3 text-sm text-slate-400 flex-1">
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -232,7 +250,7 @@
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Support par e-mail (d&eacute;lai de r&eacute;ponse 48h)
+                        Support e-mail (d&eacute;lai de r&eacute;ponse 48h)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -240,27 +258,27 @@
                     </li>
                 </ul>
                 <a href="kontakt.html" class="mt-6 block text-center border border-white/10 hover:border-white/25 text-white font-medium px-6 py-3 rounded-xl transition-all hover:bg-white/5">
-                    Demander
+                    Anfragen
                 </a>
             </div>
 
-            <!-- Standard (recommand&eacute;) -->
+            <!-- Standard (empfohlen) -->
             <div class="gradient-border">
                 <div class="bg-slate-850 rounded-xl p-7 flex flex-col h-full">
                     <div class="flex items-center gap-2 mb-1">
                         <h3 class="font-bold text-lg">Standard</h3>
                         <span class="text-xs bg-signal-500 text-white px-2 py-0.5 rounded-full">recommand&eacute;</span>
                     </div>
-                    <div class="text-3xl font-extrabold mb-1">650 <span class="text-base font-normal text-slate-500">EUR/mois</span></div>
-                    <p class="text-xs text-slate-600 mb-5">Engagement minimum de 12 mois</p>
+                    <div class="text-3xl font-extrabold mb-1">650 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                    <p class="text-xs text-slate-600 mb-5">12 mois d'engagement minimum</p>
                     <ul class="space-y-3 text-sm text-slate-400 flex-1">
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Tout le contenu de Basique
+                            Tout de l'offre Essentiel
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            <span class="text-white">Ajustements des agents</span> (prompts, comp&eacute;tences, connecteurs)
+                            <span class="text-white">Adaptations d'agents</span> (prompts, comp&eacute;tences, connecteurs)
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -268,15 +286,15 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            &Eacute;valuation et d&eacute;ploiement de nouveaux mod&egrave;les LLM
+                            &Eacute;valuer et installer de nouveaux mod&egrave;les LLM
                         </li>
                         <li class="flex items-start gap-2">
                             <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Jusqu'&agrave; <span class="text-white">2h de d&eacute;veloppement</span> par mois incluses
+                            Bis zu <span class="text-white">2h de d&eacute;veloppement</span> par mois incluses
                         </li>
                     </ul>
                     <a href="kontakt.html" class="mt-6 block text-center bg-signal-500 hover:bg-signal-400 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25">
-                        Demander
+                        Anfragen
                     </a>
                 </div>
             </div>
@@ -284,24 +302,24 @@
             <!-- Premium -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7 flex flex-col">
                 <h3 class="font-bold text-lg mb-1">Premium</h3>
-                <div class="text-3xl font-extrabold mb-1">1.200 <span class="text-base font-normal text-slate-500">EUR/mois</span></div>
-                <p class="text-xs text-slate-600 mb-5">Engagement minimum de 6 mois</p>
+                <div class="text-3xl font-extrabold mb-1">1.200 <span class="text-base font-normal text-slate-500">EUR/Monat</span></div>
+                <p class="text-xs text-slate-600 mb-5">6 mois d'engagement minimum</p>
                 <ul class="space-y-3 text-sm text-slate-400 flex-1">
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Tout le contenu de Standard
+                        Tout de l'offre Standard
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-white">D&eacute;lai de r&eacute;ponse 4h</span> (heures ouvrables)
+                        <span class="text-white">D&eacute;lai de r&eacute;ponse de 4h</span> (heures ouvrables)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span class="text-white">Appel de revue mensuel</span> (60 min)
+                        <span class="text-white">Appel de bilan mensuel</span> (60 min)
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        Jusqu'&agrave; <span class="text-white">5h de d&eacute;veloppement</span> par mois incluses
+                        Bis zu <span class="text-white">5h de d&eacute;veloppement</span> par mois incluses
                     </li>
                     <li class="flex items-start gap-2">
                         <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -309,7 +327,7 @@
                     </li>
                 </ul>
                 <a href="kontakt.html" class="mt-6 block text-center border border-white/10 hover:border-white/25 text-white font-medium px-6 py-3 rounded-xl transition-all hover:bg-white/5">
-                    Demander
+                    Anfragen
                 </a>
             </div>
         </div>
@@ -317,14 +335,14 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Taux horaires                                                        -->
+<!--  Stundensätze                                                         -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Prestations flexibles</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Taux horaires</h2>
-            <p class="text-slate-400">Pour les besoins sp&eacute;cifiques en dehors des forfaits.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Tarifs horaires</h2>
+            <p class="text-slate-400">Pour des besoins individuels en dehors des forfaits.</p>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6 reveal">
@@ -332,7 +350,7 @@
                 <div class="text-2xl font-extrabold text-signal-400 mb-1">150 EUR</div>
                 <div class="text-xs text-slate-500 mb-3">par heure (HT)</div>
                 <h3 class="font-semibold mb-2">D&eacute;veloppement</h3>
-                <p class="text-slate-400 text-xs">Nouvelles comp&eacute;tences, connecteurs, agents, prompts syst&egrave;me, connexions ERP</p>
+                <p class="text-slate-400 text-xs">Nouvelles comp&eacute;tences, connecteurs, agents, system-prompts, connexions ERP</p>
             </div>
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6 text-center">
                 <div class="text-2xl font-extrabold text-signal-400 mb-1">180 EUR</div>
@@ -351,30 +369,47 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Quel est le co&ucirc;t du statu quo ?                                -->
+<!--  Was kostet der Status Quo?                                           -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6 bg-slate-900/50">
     <div class="max-w-5xl mx-auto pt-20">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">La vraie question</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Quel est le co&ucirc;t de <span class="text-signal-400">ne rien changer ?</span></h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Que co&ucirc;te <span class="text-signal-400">le statu quo ?</span></h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                AIMOS n'est pas un chatbot. C'est un syst&egrave;me autonome qui prend en charge les t&acirc;ches r&eacute;p&eacute;titives
-                que vos collaborateurs effectuent manuellement aujourd'hui &mdash; 24 heures sur 24.
+                AIMOS n'est pas un chatbot. C'est un syst&egrave;me d'assistance, das Ihrem Team die Routinearbeit abnimmt &mdash;
+                Daten zusammensuchen, Berichte vorbereiten, Fristen &uuml;berwachen &mdash; damit Ihre Mitarbeiter sich auf ihre eigentliche Facharbeit konzentrieren k&ouml;nnen.
+            </p>
+        </div>
+
+        <!-- Key message -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-6 mb-10 reveal">
+            <h4 class="font-bold mb-3">L'objectif n'est pas de remplacer des collaborateurs.</h4>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                AIMOS &uuml;bernimmt <strong class="text-white">t&acirc;ches r&eacute;p&eacute;titives</strong>, die heute qualifizierte
+                Mitarbeiter unter Wert besch&auml;ftigen: Salden nachschlagen, Standard-Anfragen beantworten,
+                Dokumente zusammenfassen, Termine nachverfolgen. Ihre Mitarbeiter gewinnen Zeit f&uuml;r das,
+                wof&uuml;r Sie sie eingestellt haben &mdash; <strong class="text-white">relations clients, d&eacute;cisions,
+                travail cr&eacute;atif</strong>.
+            </p>
+            <p class="text-sm text-slate-400 mt-3">
+                Der AIMOS-Agent hat ein <strong class="text-white">m&eacute;moire permanente</strong>: Er kennt
+                jeden Kunden, jede Pr&auml;ferenz, jeden offenen Vorgang. Wenn ein Mitarbeiter das Unternehmen
+                verl&auml;sst, bleibt das dokumentierte Wissen erhalten &mdash; die menschliche Erfahrung und die Beziehungen allerdings nicht. Deshalb ist Ihr Team unverzichtbar.
             </p>
         </div>
 
         <!-- Scenario Cards -->
         <div class="grid md:grid-cols-3 gap-6 mb-10 reveal">
 
-            <!-- Scenario 1: ERP Manuel -->
+            <!-- Scenario 1: Manual ERP -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Aujourd'hui : Manuel</div>
+                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Aujourd'hui : manuel</div>
                 <h4 class="font-bold mb-1">Requ&ecirc;tes comptables</h4>
-                <p class="text-slate-500 text-xs mb-4">Un employ&eacute; recherche soldes, factures, statuts de paiement dans le syst&egrave;me ERP</p>
+                <p class="text-slate-500 text-xs mb-4">Le comptable recherche soldes, factures, statuts de paiement dans le syst&egrave;me ERP</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Temps par requ&ecirc;te</span>
+                        <span class="text-slate-400">Temps n&eacute;cessaire</span>
                         <span class="text-white font-mono">~15 min/requ&ecirc;te</span>
                     </div>
                     <div class="flex justify-between">
@@ -383,40 +418,40 @@
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Temps de travail/jour</span>
-                        <span class="text-white font-mono">~5 heures</span>
+                        <span class="text-white font-mono">~5 Stunden</span>
                     </div>
                     <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
-                        <span class="text-slate-300 font-medium">Co&ucirc;t personnel/mois</span>
+                        <span class="text-slate-300 font-medium">Co&ucirc;ts de personnel/mois</span>
                         <span class="text-red-400/80 font-bold font-mono">~2.500 EUR</span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-600 mt-3">Uniquement pendant les heures de bureau. Cong&eacute;s/maladie = interruption.</p>
+                <p class="text-xs text-slate-600 mt-3">Uniquement pendant les heures de bureau. Vacances/maladie = indisponibilit&eacute;.</p>
             </div>
 
-            <!-- Scenario 2: Support client -->
+            <!-- Scenario 2: Customer Support -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Aujourd'hui : Manuel</div>
-                <h4 class="font-bold mb-1">R&eacute;ponses aux clients</h4>
-                <p class="text-slate-500 text-xs mb-4">Un collaborateur r&eacute;pond aux demandes par e-mail, t&eacute;l&eacute;phone, messagerie</p>
+                <div class="text-xs text-red-400/80 uppercase tracking-wider mb-3">Aujourd'hui : manuel</div>
+                <h4 class="font-bold mb-1">R&eacute;pondre aux demandes clients</h4>
+                <p class="text-slate-500 text-xs mb-4">Le collaborateur r&eacute;pond aux demandes par e-mail, t&eacute;l&eacute;phone, messagerie</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Temps par demande</span>
-                        <span class="text-white font-mono">~10 min/demande</span>
+                        <span class="text-slate-400">Temps n&eacute;cessaire</span>
+                        <span class="text-white font-mono">~10 min/requ&ecirc;te</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Demandes/jour</span>
+                        <span class="text-slate-400">Demander/Tag</span>
                         <span class="text-white font-mono">~15</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Temps de travail/jour</span>
-                        <span class="text-white font-mono">~2,5 heures</span>
+                        <span class="text-white font-mono">~2,5 Stunden</span>
                     </div>
                     <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
-                        <span class="text-slate-300 font-medium">Co&ucirc;t personnel/mois</span>
+                        <span class="text-slate-300 font-medium">Co&ucirc;ts de personnel/mois</span>
                         <span class="text-red-400/80 font-bold font-mono">~1.200 EUR</span>
                     </div>
                 </div>
-                <p class="text-xs text-slate-600 mt-3">D&eacute;lai de r&eacute;ponse variable. Le savoir-faire se perd lors d'un changement de personnel.</p>
+                <p class="text-xs text-slate-600 mt-3">Temps de r&eacute;ponse abh&auml;ngig von Disponibilit&eacute;. Wissen geht bei Personalwechsel verloren.</p>
             </div>
 
             <!-- Scenario 3: AIMOS -->
@@ -424,11 +459,11 @@
                 <div class="bg-slate-850 rounded-xl p-6 h-full">
                     <div class="text-xs text-signal-400 uppercase tracking-wider mb-3">Avec AIMOS</div>
                     <h4 class="font-bold mb-1">Les deux automatis&eacute;s</h4>
-                    <p class="text-slate-500 text-xs mb-4">L'agent AIMOS r&eacute;pond instantan&eacute;ment, interroge l'ERP, conna&icirc;t l'historique</p>
+                    <p class="text-slate-500 text-xs mb-4">L'agent AIMOS r&eacute;pond imm&eacute;diatement, interroge l'ERP, conna&icirc;t l'historique</p>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between">
                             <span class="text-slate-400">Temps de r&eacute;ponse</span>
-                            <span class="text-green-400 font-mono">3&ndash;10 secondes</span>
+                            <span class="text-green-400 font-mono">3&ndash;10 Sekunden</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-slate-400">Disponibilit&eacute;</span>
@@ -436,39 +471,22 @@
                         </div>
                         <div class="flex justify-between">
                             <span class="text-slate-400">Conservation du savoir</span>
-                            <span class="text-green-400 font-mono">Permanente</span>
+                            <span class="text-green-400 font-mono">Permanent</span>
                         </div>
                         <div class="flex justify-between border-t border-white/5 pt-2 mt-2">
                             <span class="text-slate-300 font-medium">Maintenance AIMOS/mois</span>
                             <span class="text-signal-300 font-bold font-mono">350&ndash;650 EUR</span>
                         </div>
                     </div>
-                    <p class="text-xs text-signal-300/60 mt-3">Pas de cong&eacute;s, pas d'arr&ecirc;ts maladie, aucune perte de savoir-faire. Vos collaborateurs sont lib&eacute;r&eacute;s pour des t&acirc;ches plus exigeantes.</p>
+                    <p class="text-xs text-signal-300/60 mt-3">Disponible aussi la nuit et le week-end &mdash; en compl&eacute;ment de votre &eacute;quipe</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Bottom line -->
-        <div class="bg-slate-850 border border-white/5 rounded-xl p-6 reveal">
-            <h4 class="font-bold mb-3">L'objectif n'est pas de remplacer vos collaborateurs.</h4>
-            <p class="text-sm text-slate-400 leading-relaxed">
-                AIMOS prend en charge les <strong class="text-white">t&acirc;ches r&eacute;p&eacute;titives</strong> qui occupent
-                aujourd'hui des collaborateurs qualifi&eacute;s en dessous de leur valeur : consulter des soldes, r&eacute;pondre
-                aux demandes standard, r&eacute;sumer des documents, suivre des rendez-vous. Vos collaborateurs gagnent du temps
-                pour ce pourquoi vous les avez embauch&eacute;s &mdash; <strong class="text-white">relations clients, d&eacute;cisions,
-                travail cr&eacute;atif</strong>.
-            </p>
-            <p class="text-sm text-slate-400 mt-3">
-                L'agent AIMOS dispose d'une <strong class="text-white">m&eacute;moire permanente</strong> : il conna&icirc;t
-                chaque client, chaque pr&eacute;f&eacute;rence, chaque dossier en cours. Lorsqu'un collaborateur quitte
-                l'entreprise, le savoir reste &mdash; dans l'agent.
-            </p>
         </div>
     </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Mat&eacute;riel SovereignNode                                        -->
+<!--  SovereignNode Hardware                                               -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-5xl mx-auto">
@@ -476,8 +494,8 @@
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Mat&eacute;riel</p>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Le SovereignNode</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">
-                AIMOS fonctionne sur un seul serveur &eacute;quip&eacute; d'un GPU NVIDIA.
-                Pas de cloud, pas de co&ucirc;ts de calcul mensuels. Le mat&eacute;riel vous appartient.
+                AIMOS fonctionne sur un seul serveur avec GPU NVIDIA.
+                Aucun cloud, aucun co&ucirc;t de calcul mensuel. Le mat&eacute;riel vous appartient.
             </p>
         </div>
 
@@ -487,7 +505,7 @@
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
                     <div>
                         <h3 class="font-bold text-lg">Configuration recommand&eacute;e</h3>
-                        <p class="text-slate-500 text-sm">Acquisition unique &mdash; &agrave; partir d'env. 5.000 EUR</p>
+                        <p class="text-slate-500 text-sm">Acquisition unique &mdash; &agrave; partir d'env. 5 000 EUR</p>
                     </div>
                     <div class="text-3xl font-extrabold text-signal-400">~5.000 EUR</div>
                 </div>
@@ -495,7 +513,7 @@
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">GPU</div>
                         <div class="font-semibold">NVIDIA RTX 5090</div>
-                        <div class="text-xs text-slate-500">32 Go GDDR7 &mdash; env. 2.500 EUR</div>
+                        <div class="text-xs text-slate-500">32 GB GDDR7 &mdash; ca. 2.500 EUR</div>
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">CPU</div>
@@ -504,17 +522,17 @@
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">RAM</div>
-                        <div class="font-semibold">64 Go DDR5</div>
-                        <div class="text-xs text-slate-500">Pour mod&egrave;le d'embedding + BDD</div>
+                        <div class="font-semibold">64 GB DDR5</div>
+                        <div class="text-xs text-slate-500">Pour le mod&egrave;le d'embedding + BDD</div>
                     </div>
                     <div class="bg-slate-900/80 rounded-lg p-4">
                         <div class="text-xs text-slate-500 mb-1">Stockage</div>
-                        <div class="font-semibold">1 To NVMe SSD</div>
+                        <div class="font-semibold">1 TB NVMe SSD</div>
                         <div class="text-xs text-slate-500">Mod&egrave;les + bases de donn&eacute;es + journaux</div>
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 mt-4">
-                    Syst&egrave;me d'exploitation : Ubuntu 26.04 LTS (recommand&eacute;) ou 24.04 LTS. Consommation &eacute;lectrique : ~170W en moyenne, env. 45 EUR/mois.
+                    Syst&egrave;me d'exploitation: Ubuntu 26.04 LTS (empfohlen) oder 24.04 LTS. Consommation &eacute;lectrique: ~170W Durchschnitt, ca. 45 EUR/Monat.
                 </p>
             </div>
         </div>
@@ -522,14 +540,14 @@
         <!-- Capacity Analysis -->
         <div class="text-center mb-8 reveal">
             <h3 class="text-xl font-bold mb-2">Que peut faire un SovereignNode ?</h3>
-            <p class="text-slate-500 text-sm">Qwen 3.5:27B sur RTX 5090 &mdash; env. 40 tokens/s en sortie, ~500 tokens/s pour le traitement des prompts</p>
+            <p class="text-slate-500 text-sm">Qwen 2.5:32B auf RTX 5090 &mdash; ca. 40 Tokens/Sek. Ausgabe, ~500 Tokens/Sek. Prompt-Traitement</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-8 reveal">
-            <!-- L&eacute;ger -->
+            <!-- Light -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
                 <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Utilisation l&eacute;g&egrave;re</div>
-                <h4 class="font-bold mb-1">1&ndash;2 agents</h4>
+                <h4 class="font-bold mb-1">1&ndash;2 Agenten</h4>
                 <p class="text-slate-500 text-xs mb-4">Assistant unique, requ&ecirc;tes occasionnelles</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
@@ -545,16 +563,16 @@
                         <span class="text-white font-mono">~4 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Charge GPU</span>
+                        <span class="text-slate-400">Utilisation GPU</span>
                         <span class="text-green-400 font-mono">&lt;5%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Moyen -->
+            <!-- Medium -->
             <div class="bg-slate-850 border border-signal-500/30 rounded-xl p-6">
                 <div class="text-xs text-signal-400 uppercase tracking-wider mb-2">Utilisation typique</div>
-                <h4 class="font-bold mb-1">3&ndash;5 agents</h4>
+                <h4 class="font-bold mb-1">3&ndash;5 Agenten</h4>
                 <p class="text-slate-500 text-xs mb-4">Plusieurs d&eacute;partements, conversations r&eacute;guli&egrave;res</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
@@ -570,17 +588,17 @@
                         <span class="text-white font-mono">~15 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Charge GPU</span>
+                        <span class="text-slate-400">Utilisation GPU</span>
                         <span class="text-signal-300 font-mono">~10%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Intensif -->
+            <!-- Heavy -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
                 <div class="text-xs text-slate-500 uppercase tracking-wider mb-2">Utilisation intensive</div>
-                <h4 class="font-bold mb-1">5&ndash;10 agents</h4>
-                <p class="text-slate-500 text-xs mb-4">Entreprise enti&egrave;re, nombreuses conversations, cha&icirc;nes d'outils</p>
+                <h4 class="font-bold mb-1">5&ndash;10 Agenten</h4>
+                <p class="text-slate-500 text-xs mb-4">Toute l'entreprise, nombreuses conversations, cha&icirc;nes d'outils</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex justify-between">
                         <span class="text-slate-400">Appels LLM/jour</span>
@@ -595,7 +613,7 @@
                         <span class="text-white font-mono">~57 Mio.</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-slate-400">Charge GPU</span>
+                        <span class="text-slate-400">Utilisation GPU</span>
                         <span class="text-amber-400 font-mono">~35%</span>
                     </div>
                 </div>
@@ -607,25 +625,25 @@
             <h4 class="font-bold mb-3">Que signifient ces chiffres ?</h4>
             <div class="space-y-3 text-sm text-slate-400">
                 <p>
-                    Un <strong class="text-white">token</strong> est la plus petite unit&eacute; de traitement du mod&egrave;le de langage &mdash;
-                    approximativement un mot ou un fragment de mot. Un message Telegram typique comprend 30&ndash;100 tokens,
-                    une r&eacute;ponse d&eacute;taill&eacute;e de l'agent 100&ndash;300 tokens.
+                    Ein <strong class="text-white">Token</strong> ist die kleinste Traitementseinheit des Sprachmodells &mdash;
+                    grob ein Wort oder Wortteil. Eine typische Telegram-Nachricht umfasst 30&ndash;100 Tokens,
+                    eine ausf&uuml;hrliche Antwort des Agenten 100&ndash;300 Tokens.
                 </p>
                 <p>
-                    Par interaction avec un agent, le syst&egrave;me traite environ <strong class="text-white">4.000&ndash;6.000 tokens</strong>
-                    (prompt syst&egrave;me + m&eacute;moire + historique de conversation + r&eacute;ponse). Avec 100 interactions par jour,
-                    cela repr&eacute;sente environ 500.000 tokens &mdash; le GPU n'est alors utilis&eacute; qu'&agrave; <strong class="text-white">10%</strong>.
+                    Pro Agent-Interaktion verarbeitet das System ca. <strong class="text-white">4.000&ndash;6.000 Tokens</strong>
+                    (System-Prompt + Ged&auml;chtnis + Konversationsverlauf + Antwort). Bei 100 Interaktionen pro Tag
+                    sind das ca. 500.000 Tokens &mdash; die GPU ist dabei nur <strong class="text-white">10% ausgelastet</strong>.
                 </p>
                 <p>
-                    M&ecirc;me en utilisation intensive avec 10 agents, <strong class="text-white">65% de la capacit&eacute; GPU reste disponible</strong>.
-                    Un SovereignNode est largement dimensionn&eacute; pour l'ensemble des PME.
-                    L'IA attend vos collaborateurs &mdash; pas l'inverse.
+                    Selbst bei intensiver Nutzung mit 10 Agenten bleibt <strong class="text-white">65% GPU-Kapazit&auml;t frei</strong>.
+                    Ein SovereignNode ist f&uuml;r den gesamten Mittelstand mehr als ausreichend dimensioniert.
+                    Die KI wartet auf Ihre Mitarbeiter &mdash; nicht umgekehrt.
                 </p>
                 <p>
-                    <strong class="text-white">Aucun co&ucirc;t de calcul r&eacute;current :</strong> contrairement &agrave; l'IA cloud, vous
-                    ne payez pas au token. Apr&egrave;s l'acquisition unique du mat&eacute;riel (~5.000 EUR), seuls les co&ucirc;ts d'&eacute;lectricit&eacute;
-                    d'environ <strong class="text-white">45 EUR/mois</strong> s'appliquent &mdash; quel que soit le nombre
-                    de tokens trait&eacute;s par vos agents.
+                    <strong class="text-white">Aucun co&ucirc;t de calcul r&eacute;current :</strong> Im Gegensatz zu Cloud-KI zahlen
+                    Sie nicht pro Token. Nach der einmaligen Hardware-Anschaffung (~5.000 EUR) fallen nur Stromkosten
+                    von ca. <strong class="text-white">45 EUR/Monat</strong> an &mdash; unabh&auml;ngig davon, wie viele
+                    Tokens Ihre Agenten verarbeiten.
                 </p>
             </div>
         </div>
@@ -633,7 +651,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  Remarques                                                            -->
+<!--  Hinweise                                                             -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section class="pb-20 px-6">
     <div class="max-w-3xl mx-auto">
@@ -642,7 +660,7 @@
             <ul class="space-y-3 text-sm text-slate-400">
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    Tous les prix sont <strong class="text-white">hors taxes (HT), TVA en sus.</strong>
+                    Tous les prix <strong class="text-white">HT, TVA en sus.</strong>
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
@@ -651,27 +669,27 @@
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    Les <strong class="text-white">interventions sur site</strong> (installation, formation, atelier) sont possibles et
-                    factur&eacute;es individuellement selon la charge de travail (frais de d&eacute;placement + tarif journalier).
+                    <strong class="text-white">Rendez-vous sur site</strong> (installation, formation, atelier) sont possibles et sont
+                    factur&eacute;s individuellement selon l'effort (frais de d&eacute;placement + tarif journalier).
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
                     <strong class="text-white">Le mat&eacute;riel n'est pas inclus dans le prix.</strong>
                     Un SovereignNode (serveur avec GPU NVIDIA) est acquis par le client.
-                    Nous vous accompagnons dans le choix.
+                    Nous conseillons pour le choix.
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    AIMOS est sous <strong class="text-white">licence MIT</strong>. Vous pouvez &eacute;galement utiliser,
-                    adapter et redistribuer le logiciel de mani&egrave;re autonome, sans contrat de service.
+                    AIMOS est <strong class="text-white">sous licence MIT</strong>. Vous pouvez &eacute;galement utiliser le logiciel
+                    de mani&egrave;re autonome, le personnaliser et le redistribuer sans contrat de service.
                 </li>
                 <li class="flex items-start gap-2">
                     <span class="text-slate-600 mt-0.5">&bull;</span>
-                    Prix valables &agrave; partir d'avril 2026. Sous r&eacute;serve de modifications.
+                    Tarifs valables &agrave; partir d'avril 2026. Sous r&eacute;serve de modifications.
                 </li>
             </ul>
 
-            <h3 class="font-bold mt-8 mb-4">Licences Open Source des composants</h3>
+            <h3 class="font-bold mt-8 mb-4">Licences open source des composants</h3>
             <p class="text-sm text-slate-500 mb-4">
                 AIMOS repose sur une pile de composants enti&egrave;rement open source.
                 Aucune d&eacute;pendance propri&eacute;taire, aucun co&ucirc;t de licence cach&eacute;.
@@ -692,13 +710,13 @@
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
-                            <td class="py-2 px-3 text-slate-300">Qwen 3.5 (Alibaba)</td>
-                            <td class="py-2 px-3">Mod&egrave;le de langage (LLM, 27B param&egrave;tres)</td>
+                            <td class="py-2 px-3 text-slate-300">Qwen 2.5 (Alibaba)</td>
+                            <td class="py-2 px-3">Mod&egrave;le linguistique (LLM, 32B param&egrave;tres)</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">SGLang</td>
-                            <td class="py-2 px-3">Runtime LLM avec RadixAttention (cache de pr&eacute;fixes)</td>
+                            <td class="py-2 px-3">LLM-Runtime mit RadixAttention (Prefix-Cache)</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
@@ -707,7 +725,7 @@
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
-                            <td class="py-2 px-3 text-slate-300">OpenAI Whisper (Mod&egrave;le)</td>
+                            <td class="py-2 px-3 text-slate-300">OpenAI Whisper (Modell)</td>
                             <td class="py-2 px-3">Mod&egrave;le vocal Whisper Medium</td>
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
@@ -718,7 +736,7 @@
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Sentence-Transformers</td>
-                            <td class="py-2 px-3">Mod&egrave;le d'embedding pour la recherche s&eacute;mantique</td>
+                            <td class="py-2 px-3">Mod&egrave;le d'embedding pour recherche s&eacute;mantique</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
@@ -728,12 +746,12 @@
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">SQLite</td>
-                            <td class="py-2 px-3">M&eacute;moire des agents (par agent)</td>
+                            <td class="py-2 px-3">M&eacute;moire agent (par agent)</td>
                             <td class="py-2 px-3 text-green-400/80">Public Domain</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">FastAPI / Uvicorn</td>
-                            <td class="py-2 px-3">Serveur web du tableau de bord</td>
+                            <td class="py-2 px-3">Serveur web tableau de bord</td>
                             <td class="py-2 px-3 text-green-400/80">MIT / BSD</td>
                         </tr>
                         <tr class="border-b border-white/5">
@@ -744,26 +762,27 @@
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">Ubuntu Linux</td>
                             <td class="py-2 px-3">Syst&egrave;me d'exploitation</td>
-                            <td class="py-2 px-3 text-green-400/80">GPL v2 (gratuit)</td>
+                            <td class="py-2 px-3 text-green-400/80">GPL v2 (kostenlos)</td>
                         </tr>
                         <tr class="border-b border-white/5">
                             <td class="py-2 px-3 text-slate-300">NVIDIA CUDA Toolkit</td>
-                            <td class="py-2 px-3">Pilotes GPU &amp; pile de calcul</td>
-                            <td class="py-2 px-3 text-signal-300">NVIDIA EULA (gratuit, propri&eacute;taire)</td>
+                            <td class="py-2 px-3">GPU-Treiber &amp; Compute-Stack</td>
+                            <td class="py-2 px-3 text-signal-300">NVIDIA EULA (kostenlos, propriet&auml;r)</td>
                         </tr>
                         <tr>
                             <td class="py-2 px-3 text-slate-300">Tailscale</td>
                             <td class="py-2 px-3">VPN pour acc&egrave;s &agrave; distance (optionnel)</td>
-                            <td class="py-2 px-3 text-green-400/80">BSD / gratuit pour &le;3 utilisateurs</td>
+                            <td class="py-2 px-3 text-green-400/80">BSD / kostenlos f&uuml;r &le;3 User</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <p class="text-xs text-slate-600 mt-3">
-                Seul composant non open source : les pilotes NVIDIA CUDA (gratuits, mais propri&eacute;taires).
-                Tous les autres composants sont enti&egrave;rement Open Source avec des licences permissives.
-                Aucun frais de licence, aucune restriction d'utilisation, aucun verrouillage fournisseur.
+                Seul composant non open source: NVIDIA CUDA-Treiber (kostenlos, aber propriet&auml;r).
+                Alle anderen Komponenten sind vollst&auml;ndig Open Source mit permissiven Lizenzen.
+                Keine Lizenzgeb&uuml;hren, keine Nutzungsbeschr&auml;nkungen, keine Vendor-Lock-ins.
             </p>
+            </ul>
         </div>
     </div>
 </section>
@@ -772,7 +791,7 @@
 <section class="pb-24 px-6 text-center">
     <div class="max-w-2xl mx-auto reveal">
         <h2 class="text-2xl sm:text-3xl font-bold mb-4">Pr&ecirc;t pour votre projet pilote ?</h2>
-        <p class="text-slate-400 mb-8">Nous vous conseillons gratuitement et sans engagement pour trouver la meilleure approche pour votre entreprise.</p>
+        <p class="text-slate-400 mb-8">Nous vous conseillons gratuitement et sans engagement sur le meilleur point d'entr&eacute;e pour votre entreprise.</p>
         <a href="kontakt.html" class="inline-block bg-signal-500 hover:bg-signal-400 text-white font-semibold px-10 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-signal-500/25 text-lg">
             Obtenir un conseil gratuit
         </a>
@@ -782,7 +801,12 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licence MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licence MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>

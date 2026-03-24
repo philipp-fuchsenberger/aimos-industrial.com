@@ -37,11 +37,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agentes</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Tecnología</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="team.html" class="hover:text-white transition-colors">Equipo de Agentes</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humano &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Precios</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Arquitectura</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistema</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contacto</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">ES</button>
@@ -50,13 +56,25 @@
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agentes</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Equipo de Agentes</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humano &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Precios</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Cumplimiento</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Arquitectura</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistema</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contacto</a>
+    </div>
+</div>
 
 <!-- Content -->
 <section class="pt-32 pb-20 px-6">
@@ -69,39 +87,39 @@
                 <h2 class="text-white font-semibold text-lg mb-3">1. Protección de datos de un vistazo</h2>
                 <h3 class="text-white font-medium mb-2">Indicaciones generales</h3>
                 <p>
-                    Las siguientes indicaciones ofrecen una visión general de lo que sucede con sus datos
-                    personales cuando visita este sitio web. Los datos personales son todos aquellos datos
-                    con los que usted puede ser identificado personalmente.
+                    Las siguientes indicaciones ofrecen una visión general de lo que sucede con sus datos personales
+                    cuando visita este sitio web. Los datos personales son todos aquellos datos con los que
+                    se le puede identificar personalmente.
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">2. Alojamiento</h2>
                 <p>
-                    Este sitio web está alojado por un proveedor de servicios externo (hosting). Los datos
-                    personales recogidos en este sitio web se almacenan en los servidores del proveedor de
-                    hosting. Estos pueden incluir, entre otros, direcciones IP, solicitudes de contacto,
-                    metadatos y datos de comunicación, datos contractuales, datos de contacto, nombres,
-                    accesos al sitio web y otros datos generados a través del sitio web.
+                    Este sitio web está alojado en un proveedor de servicios externo (hosting). Los datos personales
+                    recopilados en este sitio web se almacenan en los servidores del proveedor de alojamiento.
+                    Estos pueden incluir direcciones IP, solicitudes de contacto, metadatos y datos de comunicación,
+                    datos contractuales, datos de contacto, nombres, accesos al sitio web y otros datos
+                    generados a través de un sitio web.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold text-lg mb-3">3. Software AIMOS — Tratamiento de datos</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">3. Software AIMOS — Procesamiento de datos</h2>
                 <p>
-                    AIMOS es un <strong class="text-white">software de operación local</strong>. El software
-                    AIMOS en sí no envía ningún dato a nosotros ni a terceros. Todos los datos permanecen
-                    en el servidor del operador (SovereignNode).
+                    AIMOS es un <strong class="text-white">software operado localmente</strong>. El software AIMOS
+                    en sí no envía datos a nosotros ni a terceros. Todos los datos permanecen en el servidor del operador
+                    (SovereignNode).
                 </p>
                 <div class="mt-4 bg-slate-900/50 border border-signal-500/20 rounded-xl p-5">
-                    <h4 class="text-signal-300 font-medium mb-2">Tratamiento de datos por AIMOS</h4>
+                    <h4 class="text-signal-300 font-medium mb-2">Procesamiento de datos por AIMOS</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Inferencia LLM: completamente local en el SovereignNode</li>
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Memoria del agente: base de datos SQLite local por agente</li>
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Historial de conversaciones: base de datos PostgreSQL local</li>
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Registros de auditoría: sistema de archivos local</li>
-                        <li><span class="text-amber-400 mr-2">&#9888;</span> Mensajes de Telegram: tránsito a través de servidores de Telegram (transporte estándar de Telegram)</li>
-                        <li><span class="text-amber-400 mr-2">&#9888;</span> LLMs externos (opcional): solo en caso de escalado explícito, anonimizados automáticamente mediante PII-Vault</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Inferencia LLM: Completamente local en el SovereignNode</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Memoria de agentes: Base de datos SQLite local por agente</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Historiales de chat: Base de datos PostgreSQL local</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Registros de auditoría: Sistema de archivos local</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> Mensajes de Telegram: Tránsito a través de servidores de Telegram (transporte estándar de Telegram)</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> LLMs externos (opcional): Solo en escalación explícita, anonimizado automáticamente por PII-Vault</li>
                     </ul>
                 </div>
             </div>
@@ -109,34 +127,32 @@
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">4. PII-Vault (Anonimización)</h2>
                 <p>
-                    Cuando AIMOS contacta una API de IA externa (por ejemplo, para tareas de análisis complejas),
-                    todos los datos personales se <strong class="text-white">anonimizan automáticamente antes de la transmisión</strong>.
-                    Nombres, direcciones de correo electrónico, números de teléfono y credenciales de acceso
-                    se reemplazan por marcadores de posición. La asignación (marcador de posición → valor original)
-                    permanece exclusivamente en el servidor local.
+                    Cuando AIMOS contacta una API de IA externa (por ejemplo, para tareas de análisis complejas), todos
+                    los datos personales se <strong class="text-white">anonimizan automáticamente antes de la transmisión</strong>.
+                    Nombres, direcciones de correo electrónico, números de teléfono y credenciales de acceso se reemplazan por marcadores.
+                    La asignación (marcador → valor original) permanece exclusivamente en el servidor local.
                 </p>
                 <p class="mt-2">
-                    Detalles: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Documentación de Compliance</a>
+                    Detalles: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Documentación de cumplimiento</a>
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">5. Sus derechos</h2>
                 <p>
-                    Usted tiene en todo momento el derecho a obtener información gratuita sobre sus datos
-                    personales almacenados, su origen y destinatarios, así como la finalidad del tratamiento
-                    de datos, y el derecho a la rectificación o eliminación de dichos datos. Para este fin,
-                    así como para cualquier otra consulta relativa a datos personales, puede dirigirse a
-                    nosotros en cualquier momento.
+                    Tiene derecho en todo momento a obtener información gratuita sobre sus datos personales
+                    almacenados, su origen y destinatarios, y el propósito del procesamiento de datos,
+                    así como un derecho a la rectificación o eliminación de estos datos. Para esto y otras
+                    preguntas sobre datos personales, puede contactarnos en cualquier momento.
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">6. Herramientas de análisis y publicidad</h2>
                 <p>
-                    Este sitio web <strong class="text-white">no utiliza</strong> herramientas de análisis,
-                    cookies de seguimiento ni redes publicitarias. No se transmiten datos a Google Analytics,
-                    Facebook Pixel ni servicios similares.
+                    Este sitio web <strong class="text-white">no</strong> utiliza herramientas de análisis,
+                    cookies de rastreo ni redes publicitarias. No se transmiten datos a Google Analytics,
+                    Facebook Pixel ni servicios comparables.
                 </p>
             </div>
 
@@ -144,16 +160,16 @@
                 <h2 class="text-white font-semibold text-lg mb-3">7. Cifrado SSL</h2>
                 <p>
                     Este sitio utiliza cifrado SSL por motivos de seguridad. Puede reconocer una conexión
-                    cifrada cuando la barra de direcciones del navegador cambia de "http://" a "https://"
-                    y aparece el símbolo del candado en la barra del navegador.
+                    cifrada porque la barra de direcciones del navegador cambia de "http://" a "https://"
+                    y aparece el símbolo de candado en la barra del navegador.
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">8. Entidad responsable</h2>
                 <p>
-                    La entidad responsable del tratamiento de datos en este sitio web se indica en el
-                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Aviso legal</a>.
+                    Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist im
+                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Aviso legal</a> angegeben.
                 </p>
             </div>
         </div>
@@ -163,11 +179,16 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un producto de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>
-            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Cumplimiento</a>
         </div>
     </div>
 </footer>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humain &amp; IA &mdash; AIMOS</title>
+    <meta name="description" content="Les agents AIMOS pr&eacute;parent, les humains d&eacute;cident. Voici comment fonctionne la collaboration entre vos collaborateurs et leurs assistants num&eacute;riques.">>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1a2332',
+                            900: '#0f1923',
+                            950: '#0a1118',
+                        },
+                        signal: {
+                            50:  '#e8f4ff',
+                            100: '#d0e8ff',
+                            200: '#a3d1ff',
+                            300: '#5eafff',
+                            400: '#2b8eff',
+                            500: '#0070f3',
+                            600: '#005cc8',
+                            700: '#004a9e',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .gradient-border {
+            position: relative;
+            background: #1a2332;
+            border-radius: 12px;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #0070f3, #005cc8, #2b8eff, #0070f3);
+            background-size: 300% 300%;
+            animation: border-flow 6s ease infinite;
+            z-index: -1;
+        }
+        @keyframes border-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0,112,243,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,112,243,0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+        .glow-sm { box-shadow: 0 0 20px rgba(0,112,243,0.15); }
+        .glow-md { box-shadow: 0 0 40px rgba(0,112,243,0.12), 0 0 80px rgba(0,112,243,0.06); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-blur {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+        }
+        .subnav-link.active {
+            color: #2b8eff;
+            border-bottom-color: #0070f3;
+        }
+        .faq-answer {
+            padding-top: 12px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+<!-- Navigation -->
+<nav id="main-nav" class="fixed top-0 w-full z-50 nav-blur bg-slate-950/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'agents</a>
+            <a href="mensch-ki.html" class="text-white font-medium">Humain &amp; IA</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        <div class="flex items-center gap-3">
+            <div class="relative group">
+                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
+                <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">T&uuml;rk&ccedil;e</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Fran&ccedil;ais</a>
+                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                    <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">&Eacute;quipe d'agents</a>
+        <a href="mensch-ki.html" class="text-white py-2">Humain &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Tarifs</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Syst&egrave;me</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
+
+<!-- Sub-Navigation (sticky below main nav) -->
+<nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
+        <a href="#prinzip" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Principe</a>
+        <a href="#arbeitsalltag" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Quotidien</a>
+        <a href="#nur-mensch" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Seul un humain</a>
+        <a href="#faq" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Questions fr&eacute;quentes</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative pt-40 pb-20 grid-pattern">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-signal-500/5 rounded-full blur-[128px] pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-6 text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">L'humain dans la boucle</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+            L'agent pr&eacute;pare.<br>
+            <span class="bg-gradient-to-r from-signal-300 via-signal-400 to-signal-500 bg-clip-text text-transparent">Vous d&eacute;cidez.</span>
+        </h1>
+        <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Les agents AIMOS ne remplacent pas les collaborateurs &mdash; ce sont
+            des <strong class="text-white">assistants num&eacute;riques</strong> qui prennent en charge le travail r&eacute;p&eacute;titif,
+            pour que votre &eacute;quipe puisse se concentrer sur ce qui compte vraiment.
+        </p>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  PRINZIP — Voici comment fonctionne la collaboration                          -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="prinzip" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Processus</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Voici comment fonctionne la collaboration</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Chaque action d'un agent suit le m&ecirc;me processus : pr&eacute;parer, pr&eacute;senter, valider.
+            </p>
+        </div>
+
+        <!-- 3-Step Flow -->
+        <div class="grid md:grid-cols-3 gap-0 items-stretch mb-14 reveal">
+            <!-- Card 1 -->
+            <div class="relative flex flex-col">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-7 h-full flex flex-col">
+                    <div class="w-10 h-10 rounded-full bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                        <span class="text-signal-400 font-bold text-sm">1</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">L'agent recherche</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        L'agent collecte des donn&eacute;es, v&eacute;rifie les stocks, recherche dans les e-mails, calcule des variantes.
+                        Il travaille avec les outils qui lui ont &eacute;t&eacute; assign&eacute;s.
+                    </p>
+                </div>
+                <!-- Arrow (visible on md+) -->
+                <div class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-slate-850 border border-white/10 items-center justify-center">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="relative flex flex-col mt-4 md:mt-0 md:mx-4">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-7 h-full flex flex-col">
+                    <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                        <span class="text-amber-400 font-bold text-sm">2</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">L'agent pr&eacute;sente</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                        Le r&eacute;sultat est pr&eacute;sent&eacute; sous forme de brouillon : une proposition de r&eacute;servation, un brouillon d'e-mail,
+                        une demande d'approvisionnement, un rapport d'inspection. Rien n'est ex&eacute;cut&eacute; automatiquement.
+                    </p>
+                </div>
+                <!-- Arrow (visible on md+) -->
+                <div class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-8 h-8 rounded-full bg-slate-850 border border-white/10 items-center justify-center">
+                    <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </div>
+            </div>
+
+            <!-- Card 3 (prominent) -->
+            <div class="relative flex flex-col mt-4 md:mt-0">
+                <div class="gradient-border p-px rounded-xl h-full">
+                    <div class="bg-slate-850 rounded-xl p-7 h-full flex flex-col">
+                        <div class="w-10 h-10 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                            <span class="text-green-400 font-bold text-sm">3</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Le collaborateur d&eacute;cide</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed flex-1">
+                            Vous v&eacute;rifiez, corrigez, compl&eacute;tez &mdash; et validez. Ou rejetez.
+                            L'agent apprend de vos corrections et s'am&eacute;liore la prochaine fois.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Callout -->
+        <div class="reveal">
+            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 text-center glow-sm">
+                <p class="text-sm text-slate-300 leading-relaxed font-medium">
+                    Aucun envoi automatique. Aucune r&eacute;servation automatique. Aucune commande automatique.<br>
+                    <strong class="text-white">L'humain a toujours le dernier mot.</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  ARBEITSALLTAG — Was sich ändert, was bleibt                           -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="arbeitsalltag" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Quotidien professionnel</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ce qui change &mdash; et ce qui reste</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Votre &eacute;quipe reste. Votre expertise reste. Ce qui change : le travail r&eacute;p&eacute;titif.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8 reveal">
+            <!-- LEFT: Vorher -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
+                <h3 class="text-lg font-bold mb-5">Avant <span class="text-slate-500 font-normal">(sans AIMOS)</span></h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        <span class="text-slate-400 text-sm leading-relaxed">45 minutes par jour : consulter et synth&eacute;tiser les soldes manuellement</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        <span class="text-slate-400 text-sm leading-relaxed">Chaque demande client : d'abord chercher, puis saisir, puis v&eacute;rifier</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        <span class="text-slate-400 text-sm leading-relaxed">Le savoir reste dans la t&ecirc;te de certains collaborateurs</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                        <span class="text-slate-400 text-sm leading-relaxed">Les t&acirc;ches r&eacute;p&eacute;titives bloquent le travail de sp&eacute;cialiste</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- RIGHT: Nachher -->
+            <div class="gradient-border p-px rounded-xl">
+                <div class="bg-slate-850 rounded-xl p-7">
+                    <h3 class="text-lg font-bold mb-5">Apr&egrave;s <span class="text-slate-500 font-normal">(avec AIMOS)</span></h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-400 text-sm leading-relaxed">L'agent fournit le r&eacute;sum&eacute; &mdash; vous v&eacute;rifiez et compl&eacute;tez</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-400 text-sm leading-relaxed">L'agent pr&eacute;pare la r&eacute;ponse &mdash; vous ajustez le ton et le contenu</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-400 text-sm leading-relaxed">L'agent enregistre les faits de mani&egrave;re permanente &mdash; votre savoir ne se perd jamais</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span class="text-slate-400 text-sm leading-relaxed">L'agent s'occupe du travail r&eacute;p&eacute;titif &mdash; vous vous concentrez sur votre expertise</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  NUR EIN MENSCH — Was nur Menschen können                              -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="nur-mensch" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Uniquement humain</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ce que seul un humain peut faire</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Un agent est un outil &mdash; pas un coll&egrave;gue. Ces capacit&eacute;s restent uniquement humaines.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+            <!-- 1. Kundenbeziehungen -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">Relations clients</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Construire la confiance, lire entre les lignes, trouver le bon ton.
+                    Aucun algorithme ne remplace une conversation personnelle.
+                </p>
+            </div>
+
+            <!-- 2. Verhandlung -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-amber-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">N&eacute;gociation</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Prioriser, trouver des compromis, peser les int&eacute;r&ecirc;ts.
+                    L'agent fournit les chiffres &mdash; vous menez la n&eacute;gociation.
+                </p>
+            </div>
+
+            <!-- 3. Urteilsvermögen -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">Discernement</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    D&eacute;cisions dans l'incertitude, consid&eacute;rations morales, doigt&eacute;.
+                    L'agent conna&icirc;t les r&egrave;gles &mdash; vous connaissez les exceptions.
+                </p>
+            </div>
+
+            <!-- 4. Improvisation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-green-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">Improvisation</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Quand quelque chose d'impr&eacute;vu se produit, il faut de la cr&eacute;ativit&eacute; et de l'exp&eacute;rience &mdash;
+                    pas un mod&egrave;le qui ne peut que r&eacute;p&eacute;ter ce qu'il conna&icirc;t.
+                </p>
+            </div>
+
+            <!-- 5. Fachexpertise -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-cyan-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">Expertise m&eacute;tier</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Ihr jahrelang aufgebautes Wissen &mdash; Branchen&shy;kenntnisse, Lieferanten&shy;beziehungen,
+                    Prozess&shy;verst&auml;ndnis &mdash; kann keine KI ersetzen. Im Gegenteil: Der Agent wird besser, je mehr er von Ihrer Erfahrung profitiert.
+                </p>
+            </div>
+
+            <!-- 6. Verantwortung -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-red-500/20 transition-colors">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h4 class="font-bold text-sm">Responsabilit&eacute;</h4>
+                </div>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Au final, c'est un humain qui assume la responsabilit&eacute;. Pour la r&eacute;servation, la commande, l'e-mail.
+                    L'agent assiste &mdash; la responsabilit&eacute; reste la v&ocirc;tre.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  FAQ — Häufige Fragen                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="faq" class="relative py-24 grid-pattern">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">FAQ</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Questions fr&eacute;quentes</h2>
+        </div>
+
+        <div class="space-y-4 reveal">
+            <!-- Q1 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
+                            AIMOS va-t-il remplacer mon poste ?
+                        </h3>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Non. Les agents AIMOS prennent en charge les t&acirc;ches r&eacute;p&eacute;titives &mdash; &mdash; collecter des donn&eacute;es,
+                            r&eacute;diger des r&eacute;ponses standard, surveiller des d&eacute;lais. Le travail de sp&eacute;cialiste,
+                            les d&eacute;cisions et les relations clients restent chez vous. En pratique, les collaborateurs
+                            rapportent qu'ils ont plus de temps pour les t&acirc;ches pour lesquelles ils ont &eacute;t&eacute;
+                            embauch&eacute;s.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
+                            Qui d&eacute;cide &mdash; moi ou l'IA ?
+                        </h3>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Toujours vous. L'agent peut faire des suggestions, cr&eacute;er des brouillons d'e-mail ou
+                            pr&eacute;parer des mod&egrave;les de r&eacute;servation &mdash; mais rien de tout cela n'est ex&eacute;cut&eacute; sans votre validation.
+                            Ce n'est pas une option, mais un principe fondamental de l'architecture.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
+                            L'IA peut-elle faire des erreurs ?
+                        </h3>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Oui. C'est exactement pourquoi le Human-in-the-Loop existe : chaque sortie d'agent est un brouillon qui est
+                            v&eacute;rifi&eacute; par un humain. L'agent est un outil &mdash; comme une calculatrice.
+                            Vous v&eacute;rifieriez &eacute;galement le r&eacute;sultat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
+                            Ai-je besoin de connaissances techniques ?
+                        </h3>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Non. Vous communiquez via Telegram, e-mail ou vocalement &mdash; en langage naturel.
+                            Pas de terminal, pas de programmation, pas de formation n&eacute;cessaire.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-sm text-white group-hover:text-signal-300 transition-colors">
+                            Que se passe-t-il avec mon savoir si je quitte l'entreprise ?
+                        </h3>
+                        <div class="faq-answer text-slate-400 text-sm leading-relaxed">
+                            Votre expertise, que vous partagez au quotidien avec l'agent, est stock&eacute;e dans
+                            la m&eacute;moire &agrave; long terme. Cela prot&egrave;ge l'entreprise contre la perte de savoir &mdash;
+                            mais ne vous rend pas rempla&ccedil;able. Car la m&eacute;moire stocke des faits, pas de l'exp&eacute;rience,
+                            pas du discernement, pas des relations.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-16 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-7 h-7 rounded-md bg-signal-500 flex items-center justify-center text-white font-bold text-xs">A</div>
+                    <span class="font-semibold">AIMOS</span>
+                </div>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    Adaptive Industrial Management &amp; Operations System.
+                    Open Source unter Licence MIT.
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                    Un produit de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Produit</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agents</a></li>
+                    <li><a href="team.html" class="hover:text-signal-400 transition-colors">&Eacute;quipe d'agents</a></li>
+                    <li><a href="mensch-ki.html" class="hover:text-signal-400 transition-colors">Humain &amp; IA</a></li>
+                    <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
+                    <li><a href="system.html" class="hover:text-signal-400 transition-colors">Syst&egrave;me</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Connecteurs</a></li>
+                    <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Compliance</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="compliance.html" class="hover:text-signal-400 transition-colors">RGPD / DSGVO</a></li>
+                    <li><a href="compliance.html#iso" class="hover:text-signal-400 transition-colors">ISO 9001 &amp; 27001</a></li>
+                    <li><a href="compliance.html#gobd" class="hover:text-signal-400 transition-colors">GoBD</a></li>
+                    <li><a href="compliance.html#audit" class="hover:text-signal-400 transition-colors">Audit-Logging</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-sm mb-4 text-slate-300">Ressources</h4>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li><a href="https://github.com/philipp-fuchsenberger/aimos-industrial" class="hover:text-signal-400 transition-colors">GitHub</a></li>
+                    <li><a href="system.html#portabilitaet" class="hover:text-signal-400 transition-colors">Compatibilit&eacute; MCP</a></li>
+                    <li><a href="index.html" class="hover:text-signal-400 transition-colors">Accueil</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Lizenziert unter der Licence MIT.</p>
+            <div class="flex items-center gap-6 text-xs text-slate-600">
+                <a href="impressum.html" class="hover:text-slate-400 transition-colors">Mentions l&eacute;gales</a>
+                <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Confidentialit&eacute;</a>
+                <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Main nav border on scroll
+    const nav = document.querySelector('#main-nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('border-white/10', window.scrollY > 50);
+        nav.classList.toggle('border-white/5', window.scrollY <= 50);
+    });
+
+    // Sub-nav: highlight active section on scroll
+    const subnavLinks = document.querySelectorAll('.subnav-link');
+    const sections = [];
+    subnavLinks.forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        const section = document.getElementById(id);
+        if (section) sections.push({ id, el: section, link });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                subnavLinks.forEach(l => l.classList.remove('active'));
+                const match = sections.find(s => s.el === entry.target);
+                if (match) match.link.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '-80px 0px -50% 0px' });
+
+    sections.forEach(s => sectionObserver.observe(s.el));
+</script>
+</body>
+</html>

@@ -37,11 +37,17 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agentes</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Tecnología</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="team.html" class="hover:text-white transition-colors">Equipo de Agentes</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humano &amp; IA</a>
             <a href="preise.html" class="hover:text-white transition-colors">Precios</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Cumplimiento</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Arquitectura</a>
+            <a href="system.html" class="hover:text-white transition-colors">Sistema</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contacto</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">ES</button>
@@ -50,13 +56,25 @@
                     <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Español</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agentes</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Equipo de Agentes</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Humano &amp; IA</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Precios</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Cumplimiento</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Arquitectura</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistema</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contacto</a>
+    </div>
+</div>
 
 <!-- Content -->
 <section class="pt-32 pb-20 px-6">
@@ -65,21 +83,21 @@
 
         <div class="space-y-6 text-slate-400 leading-relaxed">
             <div>
-                <h2 class="text-white font-semibold mb-2">Datos conforme al § 5 TMG (Ley alemana de Telemedia)</h2>
+                <h2 class="text-white font-semibold mb-2">Datos según § 5 TMG</h2>
                 <p>
                     EcoHub München GmbH<br>
                     Ohlenschlagerstraße 14<br>
                     81369 München
                 </p>
                 <p class="mt-2">
-                    Directora general: Müge Fuchsenberger
+                    Geschäftsführerin: Müge Fuchsenberger
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold mb-2">Registro mercantil</h2>
                 <p>
-                    Juzgado de registro: Amtsgericht München<br>
+                    Registro mercantil: Juzgado de Múnich<br>
                     Número de registro: HRB 264741
                 </p>
             </div>
@@ -87,20 +105,20 @@
             <div>
                 <h2 class="text-white font-semibold mb-2">Contacto</h2>
                 <p>
-                    Correo electrónico: info@ecohub-muenchen.com
+                    E-Mail: info@ecohub-muenchen.com
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">NIF intracomunitario</h2>
+                <h2 class="text-white font-semibold mb-2">NIF-IVA</h2>
                 <p>
-                    Número de identificación fiscal conforme al § 27a UStG:<br>
+                    Número de identificación fiscal según § 27a UStG:<br>
                     DE342603189
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsable del contenido conforme al § 18, apart. 2 MStV</h2>
+                <h2 class="text-white font-semibold mb-2">Responsable del contenido según § 18 párr. 2 MStV</h2>
                 <p>
                     Philipp Fuchsenberger<br>
                     Ohlenschlagerstraße 14<br>
@@ -111,41 +129,38 @@
             <div>
                 <h2 class="text-white font-semibold mb-2">Resolución de litigios en línea de la UE</h2>
                 <p>
-                    La Comisión Europea pone a disposición una plataforma para la resolución de litigios en línea (ODR):
-                    <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
-                    Puede encontrar nuestra dirección de correo electrónico en la parte superior de este aviso legal.
+                    La Comisión Europea ofrece una plataforma para la resolución de litigios en línea (ODR): <a href="https://ec.europa.eu/consumers/odr/" class="text-signal-400 hover:text-signal-300" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+                    Nuestra dirección de correo electrónico se encuentra arriba en el aviso legal.
                 </p>
                 <p class="mt-2">
-                    No estamos obligados ni dispuestos a participar en procedimientos de resolución de litigios
-                    ante una entidad de resolución alternativa de conflictos de consumo.
+                    No estamos dispuestos ni obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumo.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilidad por los contenidos</h2>
+                <h2 class="text-white font-semibold mb-2">Responsabilidad por contenidos</h2>
                 <p>
                     Como proveedor de servicios, somos responsables de nuestros propios contenidos en estas
-                    páginas conforme a las leyes generales, de acuerdo con el § 7, apart. 1 TMG. Sin embargo,
-                    conforme a los §§ 8 a 10 TMG, no estamos obligados como proveedor de servicios a supervisar
-                    la información ajena transmitida o almacenada, ni a investigar circunstancias que indiquen
-                    una actividad ilícita.
+                    páginas según las leyes generales conforme al § 7 párr. 1 TMG. Sin embargo, según los §§ 8 a 10 TMG,
+                    como proveedor de servicios no estamos obligados a supervisar la información transmitida o almacenada
+                    de terceros ni a investigar circunstancias que indiquen una actividad ilegal.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold mb-2">Responsabilidad por los enlaces</h2>
+                <h2 class="text-white font-semibold mb-2">Responsabilidad por enlaces</h2>
                 <p>
-                    Nuestra oferta contiene enlaces a sitios web externos de terceros, sobre cuyo contenido
-                    no tenemos influencia. Por tanto, no podemos asumir ninguna responsabilidad por dichos
-                    contenidos externos. El proveedor u operador respectivo de las páginas enlazadas es siempre
-                    responsable de su contenido.
+                    Nuestra oferta contiene enlaces a sitios web externos de terceros, sobre cuyo contenido no tenemos
+                    influencia. Por lo tanto, no podemos asumir ninguna garantía por estos contenidos externos.
+                    El respectivo proveedor u operador de las páginas enlazadas es siempre responsable
+                    de sus contenidos.
                 </p>
             </div>
 
             <div>
                 <h2 class="text-white font-semibold mb-2">Licencia de software</h2>
                 <p>
-                    AIMOS es software de código abierto bajo la <strong class="text-white">Licencia MIT</strong>.
+                    AIMOS es software de código abierto bajo la <strong class="text-white">licencia MIT</strong>.
                     El código fuente completo está disponible en GitHub.
                 </p>
             </div>
@@ -156,11 +171,16 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. Licencia MIT.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Un producto de <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Aviso legal</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacidad</a>
-            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Compliance</a>
+            <a href="compliance.html" class="hover:text-slate-400 transition-colors">Cumplimiento</a>
         </div>
     </div>
 </footer>

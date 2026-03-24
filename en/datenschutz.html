@@ -37,17 +37,23 @@
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
             <a href="agenten.html" class="hover:text-white transition-colors">Agents</a>
-            <a href="technik.html" class="hover:text-white transition-colors">Technology</a>
-            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="team.html" class="hover:text-white transition-colors">Agent Team</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Human &amp; AI</a>
             <a href="preise.html" class="hover:text-white transition-colors">Pricing</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="system.html" class="hover:text-white transition-colors">System</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">EN</button>
                 <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
-                    <a href="index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
@@ -57,6 +63,18 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agents</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Agent Team</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Human &amp; AI</a>
+        <a href="preise.html" class="text-slate-400 hover:text-white py-2">Pricing</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architecture</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">System</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
+    </div>
+</div>
 
 <!-- Content -->
 <section class="pt-32 pb-20 px-6">
@@ -79,10 +97,10 @@
                 <h2 class="text-white font-semibold text-lg mb-3">2. Hosting</h2>
                 <p>
                     This website is hosted by an external service provider (hoster). The personal data
-                    collected on this website is stored on the hoster's servers. This may include
-                    IP addresses, contact requests, meta and communication data, contract data,
-                    contact details, names, website access logs, and other data generated through
-                    a website.
+                    collected on this website is stored on the hoster's servers.
+                    This may include IP addresses, contact requests, meta and communication data,
+                    contract data, contact details, names, website access logs, and other data
+                    generated through a website.
                 </p>
             </div>
 
@@ -90,29 +108,29 @@
                 <h2 class="text-white font-semibold text-lg mb-3">3. AIMOS Software — Data Processing</h2>
                 <p>
                     AIMOS is <strong class="text-white">locally operated software</strong>. The AIMOS software
-                    itself does not send any data to us or third parties. All data remains on the operator's
-                    server (SovereignNode).
+                    itself does not send any data to us or third parties. All data remains on the operator's server
+                    (SovereignNode).
                 </p>
                 <div class="mt-4 bg-slate-900/50 border border-signal-500/20 rounded-xl p-5">
                     <h4 class="text-signal-300 font-medium mb-2">Data Processing by AIMOS</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><span class="text-green-400 mr-2">&#10003;</span> LLM Inference: Fully local on the SovereignNode</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> LLM Inference: Completely local on the SovereignNode</li>
                         <li><span class="text-green-400 mr-2">&#10003;</span> Agent Memory: Local SQLite database per agent</li>
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Chat History: Local PostgreSQL database</li>
-                        <li><span class="text-green-400 mr-2">&#10003;</span> Audit Logs: Local file system</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Chat Histories: Local PostgreSQL database</li>
+                        <li><span class="text-green-400 mr-2">&#10003;</span> Audit-Logs: Lokales Dateisystem</li>
                         <li><span class="text-amber-400 mr-2">&#9888;</span> Telegram Messages: Transit via Telegram servers (standard Telegram transport)</li>
-                        <li><span class="text-amber-400 mr-2">&#9888;</span> External LLMs (optional): Only upon explicit escalation, automatically anonymized via PII-Vault</li>
+                        <li><span class="text-amber-400 mr-2">&#9888;</span> External LLMs (optional): Only upon explicit escalation, automatically anonymized via PII Vault</li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold text-lg mb-3">4. PII-Vault (Anonymization)</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">4. PII Vault (Anonymization)</h2>
                 <p>
-                    When AIMOS contacts an external AI API (e.g. for complex analysis tasks), all
+                    When AIMOS contacts an external AI API (e.g., for complex analysis tasks), all
                     personal data is <strong class="text-white">automatically anonymized before transmission</strong>.
                     Names, email addresses, phone numbers, and credentials are replaced with placeholders.
-                    The mapping (placeholder to original value) remains exclusively on the local server.
+                    The mapping (placeholder → original value) remains exclusively on the local server.
                 </p>
                 <p class="mt-2">
                     Details: <a href="compliance.html" class="text-signal-400 hover:text-signal-300">Compliance Documentation</a>
@@ -122,10 +140,10 @@
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">5. Your Rights</h2>
                 <p>
-                    You have the right at any time to obtain free information about your stored
-                    personal data, its origin and recipients, and the purpose of data processing,
-                    as well as a right to correction or deletion of this data. For this purpose and
-                    for further questions regarding personal data, you can contact us at any time.
+                    You have the right at any time to free information about your stored personal data,
+                    its origin and recipients, and the purpose of data processing, as well as a right
+                    to correction or deletion of this data. You can contact us at any time regarding
+                    this and other questions about personal data.
                 </p>
             </div>
 
@@ -141,17 +159,17 @@
             <div>
                 <h2 class="text-white font-semibold text-lg mb-3">7. SSL Encryption</h2>
                 <p>
-                    This site uses SSL encryption for security reasons. An encrypted connection is
-                    indicated by the browser's address bar changing from "http://" to "https://"
+                    This site uses SSL encryption for security reasons. You can recognize an encrypted
+                    connection by the browser's address bar changing from "http://" to "https://"
                     and the lock icon in your browser bar.
                 </p>
             </div>
 
             <div>
-                <h2 class="text-white font-semibold text-lg mb-3">8. Responsible Party</h2>
+                <h2 class="text-white font-semibold text-lg mb-3">8. Responsible Authority</h2>
                 <p>
-                    The responsible party for data processing on this website is specified in the
-                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Legal Notice</a>.
+                    The responsible authority for data processing on this website is specified in the
+                    <a href="impressum.html" class="text-signal-400 hover:text-signal-300">Legal Notice</a> angegeben.
                 </p>
             </div>
         </div>
@@ -161,7 +179,12 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT License.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT License.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                A product of <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Legal Notice</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
