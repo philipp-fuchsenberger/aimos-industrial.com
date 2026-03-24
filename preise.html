@@ -61,6 +61,9 @@
             <a href="system.html" class="hover:text-white transition-colors">System</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
         </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
                 <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">DE</button>
@@ -76,6 +79,18 @@
         </div>
     </div>
 </nav>
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
+    <div class="flex flex-col gap-3 text-sm">
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agenten</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Agententeam</a>
+        <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Mensch &amp; KI</a>
+        <a href="preise.html" class="text-white py-2">Preise</a>
+        <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
+        <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Architektur</a>
+        <a href="system.html" class="text-slate-400 hover:text-white py-2">System</a>
+        <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Kontakt</a>
+    </div>
+</div>
 
 <!-- Hero -->
 <section class="pt-32 pb-16 px-6 grid-pattern">
@@ -103,7 +118,7 @@
                     Einstieg
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold mb-2">Proof of Concept</h2>
-                <div class="text-4xl sm:text-5xl font-extrabold text-signal-400 mb-2">2.500 EUR</div>
+                <div class="text-4xl sm:text-5xl font-extrabold text-signal-400 mb-2">4.900 EUR</div>
                 <p class="text-slate-500 text-sm mb-6">einmalig, wird bei Beauftragung voll angerechnet</p>
                 <div class="max-w-lg mx-auto text-left space-y-3 text-sm text-slate-400 mb-8">
                     <div class="flex items-start gap-3">
@@ -199,8 +214,8 @@
             <p class="text-sm text-slate-400">
                 <strong class="text-white">Typisches Erstprojekt:</strong>
                 SovereignNode + 2 Agenten + 1 ERP-Anbindung =
-                <span class="text-signal-300 font-semibold">8.000 &ndash; 15.000 EUR</span>.
-                Das PoC-Budget (2.500 EUR) wird dabei voll angerechnet.
+                <span class="text-signal-300 font-semibold">15.000 &ndash; 25.000 EUR</span>.
+                Das PoC-Budget (4.900 EUR) wird dabei voll angerechnet.
             </p>
         </div>
     </div>
@@ -525,7 +540,7 @@
         <!-- Capacity Analysis -->
         <div class="text-center mb-8 reveal">
             <h3 class="text-xl font-bold mb-2">Was leistet ein SovereignNode?</h3>
-            <p class="text-slate-500 text-sm">Qwen 3.5:27B auf RTX 5090 &mdash; ca. 40 Tokens/Sek. Ausgabe, ~500 Tokens/Sek. Prompt-Verarbeitung</p>
+            <p class="text-slate-500 text-sm">Qwen 2.5:32B auf RTX 5090 &mdash; ca. 40 Tokens/Sek. Ausgabe, ~500 Tokens/Sek. Prompt-Verarbeitung</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-8 reveal">
@@ -695,8 +710,8 @@
                             <td class="py-2 px-3 text-green-400/80">MIT</td>
                         </tr>
                         <tr class="border-b border-white/5">
-                            <td class="py-2 px-3 text-slate-300">Qwen 3.5 (Alibaba)</td>
-                            <td class="py-2 px-3">Sprachmodell (LLM, 27B Parameter)</td>
+                            <td class="py-2 px-3 text-slate-300">Qwen 2.5 (Alibaba)</td>
+                            <td class="py-2 px-3">Sprachmodell (LLM, 32B Parameter)</td>
                             <td class="py-2 px-3 text-green-400/80">Apache 2.0</td>
                         </tr>
                         <tr class="border-b border-white/5">
@@ -786,7 +801,12 @@
 <!-- Footer -->
 <footer class="border-t border-white/5 py-8 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT-Lizenz.</p>
+        <div>
+            <p class="text-xs text-slate-600">&copy; 2026 AIMOS Project. MIT-Lizenz.</p>
+            <p class="text-sm text-slate-500 leading-relaxed mt-3">
+                Ein Produkt der <strong class="text-slate-400">EcoHub M&uuml;nchen GmbH</strong>.
+            </p>
+        </div>
         <div class="flex items-center gap-6 text-xs text-slate-600">
             <a href="impressum.html" class="hover:text-slate-400 transition-colors">Impressum</a>
             <a href="datenschutz.html" class="hover:text-slate-400 transition-colors">Datenschutz</a>
