@@ -104,8 +104,8 @@
             <span class="font-semibold text-lg tracking-tight">AIMOS</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="agenten.html" class="hover:text-white transition-colors">Agenten</a>
-            <a href="team.html" class="hover:text-white transition-colors">Team</a>
+            <a href="agenten.html" class="text-white font-medium">Agenten</a>
+            <a href="team.html" class="hover:text-white transition-colors">Agententeam</a>
             <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
             <a href="architektur.html" class="hover:text-white transition-colors">Architektur</a>
@@ -135,6 +135,7 @@
         <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
         <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konnektoren</a>
         <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Ged&auml;chtnis</a>
+        <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
     </div>
 </nav>
 
@@ -238,10 +239,10 @@
                     <line x1="280" y1="85" x2="230" y2="150" stroke="#10b981" stroke-width="1.5"/>
 
                     <!-- LLM (bottom-left) -->
-                    <a href="architektur.html#prinzipien" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                    <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
                         <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
                         <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">LLM Runtime (lokal)</text>
+                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Sprachmodell (lokal)</text>
                     </a>
                     <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
 
@@ -966,7 +967,84 @@
 </section>
 
 
-<!-- Teamarbeit, Berechtigungen und Beispiele → siehe team.html -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  5. LLM — Das Sprachmodell                                            -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="llm" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Sprachmodell</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Das LLM &mdash; Gehirn des Agenten</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                Das Large Language Model (LLM) ist die Denkmaschine hinter jedem Agenten.
+                Es versteht Sprache, f&auml;llt Entscheidungen und steuert Werkzeuge &mdash;
+                und l&auml;uft <strong class="text-white">vollst&auml;ndig auf Ihrer eigenen Hardware</strong>.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <!-- Was ist ein LLM? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">Was macht das LLM?</h3>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Versteht Anfragen</strong> &mdash; in nat&uuml;rlicher Sprache, in jeder Sprache</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">W&auml;hlt Werkzeuge</strong> &mdash; entscheidet selbst&auml;ndig, ob eine Datenbankabfrage, ein E-Mail-Versand oder eine Berechnung n&ouml;tig ist</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Formuliert Antworten</strong> &mdash; fachlich korrekt, im Kontext des bisherigen Gespr&auml;chs</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Lernt aus Korrekturen</strong> &mdash; &uuml;ber das Langzeitged&auml;chtnis, nicht durch Modell-Training</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Warum lokal? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">Warum lokal statt Cloud?</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <h4 class="font-semibold text-sm text-green-400">Datensouver&auml;nit&auml;t</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Ihre Anfragen verlassen nie das Netzwerk. Kein Cloud-Anbieter sieht Ihre Daten.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-signal-500"></span>
+                            <h4 class="font-semibold text-sm text-signal-400">Keine laufenden Kosten</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein Token-Preis pro Anfrage. Das Modell l&auml;uft unbegrenzt auf Ihrer GPU.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <h4 class="font-semibold text-sm text-amber-400">Verf&uuml;gbarkeit</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Kein API-Limit, kein Rate-Limiting, keine Abh&auml;ngigkeit von externen Diensten.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            <h4 class="font-semibold text-sm text-purple-400">Eskalation bei Bedarf</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Bei komplexen Aufgaben: automatische, anonymisierte Eskalation an ein Cloud-LLM. <a href="architektur.html#prinzipien" class="text-signal-400 hover:underline">&rarr; Details</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Footer -->
 <footer class="border-t border-white/5 py-16 bg-slate-950">
     <div class="max-w-7xl mx-auto px-6">
