@@ -172,20 +172,22 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="sovereign-node" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruktur</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Ein einzelner Server. Lokale GPU. Keine Cloud-Abhängigkeit.
-                    Der SovereignNode ist das Herzstück jeder AIMOS-Installation &mdash;
-                    ein physischer oder virtueller Server, der alle Komponenten beherbergt.
-                </p>
-                <p class="text-slate-400 leading-relaxed mb-8">
-                    Alles läuft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
-                    und die Kommunikationskanäle. Kein Byte verlässt Ihr Netzwerk &mdash;
-                    es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
-                </p>
+        <div class="reveal mb-12">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Infrastruktur</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
+            <p class="text-slate-400 text-lg leading-relaxed mb-4 max-w-3xl">
+                Ein einzelner Server. Lokale GPU. Keine Cloud-Abh&auml;ngigkeit.
+                Der SovereignNode ist das Herzst&uuml;ck jeder AIMOS-Installation &mdash;
+                ein physischer oder virtueller Server, der alle Komponenten beherbergt.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-8 max-w-3xl">
+                Alles l&auml;uft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
+                und die Kommunikationskan&auml;le. Kein Byte verl&auml;sst Ihr Netzwerk &mdash;
+                es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
+            </p>
+        </div>
+
+        <div class="reveal mb-16">
 
                 <!-- Unified Hardware + Task Matrix -->
                 <div class="overflow-hidden rounded-xl border border-white/5">
@@ -317,11 +319,12 @@
                     <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-red-400/60"></span> Nicht empfohlen</span>
                 </div>
                 <p class="text-[10px] text-slate-600 mt-2">Basierend auf IFEval, MT-Bench, BFCL und Qwen/Llama Benchmarks (2024). Ubuntu 24.04/26.04 LTS, 16+ CPU-Kerne empfohlen.</p>
-            </div>
+        </div>
 
-            <!-- Deployment Diagram -->
-            <div class="reveal" style="transition-delay: 0.15s;">
-                <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <!-- Deployment Diagram -->
+        <div class="reveal max-w-md mx-auto">
+            <p class="text-center text-slate-500 text-xs font-mono uppercase tracking-widest mb-4">Architektur&uuml;bersicht</p>
+            <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" class="w-full">
                     <defs>
                         <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
                             <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
@@ -362,8 +365,7 @@
                     <!-- Shared Listener -->
                     <rect x="40" y="390" width="320" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
                     <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Shared Listener (Telegram, E-Mail, Voice)</text>
-                </svg>
-            </div>
+            </svg>
         </div>
     </div>
 </section>
