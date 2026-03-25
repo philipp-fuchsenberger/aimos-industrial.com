@@ -187,12 +187,12 @@
                     es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
                 </p>
 
-                <!-- Hardware Configurations -->
+                <!-- Unified Hardware + Task Matrix -->
                 <div class="overflow-hidden rounded-xl border border-white/5">
                     <table class="w-full text-xs">
                         <thead>
-                            <tr class="bg-slate-850 border-b border-white/5">
-                                <th class="text-left py-3 px-3 font-semibold text-slate-300"></th>
+                            <tr class="bg-slate-850 border-b border-white/10">
+                                <th class="text-left py-3 px-3 font-semibold text-slate-300" style="min-width:130px"></th>
                                 <th class="text-center py-3 px-3 font-semibold text-slate-300">Starter</th>
                                 <th class="text-center py-3 px-3 font-semibold text-signal-300">Business</th>
                                 <th class="text-center py-3 px-3 font-semibold text-slate-300">Professional</th>
@@ -200,6 +200,10 @@
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
+                            <!-- ── Hardware Block ── -->
+                            <tr class="border-b border-white/10 bg-slate-900/50">
+                                <td colspan="5" class="py-2 px-3 font-mono text-[10px] text-slate-500 uppercase tracking-widest">Hardware</td>
+                            </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">GPU</td>
                                 <td class="py-2 px-3 text-center">1&times; RTX 3090<br><span class="text-slate-500">24 GB</span></td>
@@ -208,18 +212,11 @@
                                 <td class="py-2 px-3 text-center">Datacenter<br><span class="text-slate-500">96+ GB</span></td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-2 px-3 font-medium text-white">Modell</td>
+                                <td class="py-2 px-3 font-medium text-white">KI-Modell</td>
                                 <td class="py-2 px-3 text-center">27B (Q4)</td>
                                 <td class="py-2 px-3 text-center bg-signal-500/5">27B (Q4)</td>
                                 <td class="py-2 px-3 text-center">70B (Q4)</td>
-                                <td class="py-2 px-3 text-center">70B+ (Q8/FP16)</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-2 px-3 font-medium text-white">VRAM f&uuml;r Kontext</td>
-                                <td class="py-2 px-3 text-center">~5 GB<br><span class="text-slate-500">~14K Token</span></td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5">~13 GB<br><span class="text-slate-500">~28K Token</span></td>
-                                <td class="py-2 px-3 text-center">~22 GB<br><span class="text-slate-500">~24K Token</span></td>
-                                <td class="py-2 px-3 text-center">~50+ GB<br><span class="text-slate-500">~64K+ Token</span></td>
+                                <td class="py-2 px-3 text-center">70B+ (Q8)</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">Geschwindigkeit</td>
@@ -236,23 +233,90 @@
                                 <td class="py-2 px-3 text-center font-mono">15&ndash;30</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-2 px-3 font-medium text-white">RAM / SSD</td>
-                                <td class="py-2 px-3 text-center">32 GB / 256 GB</td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5">64 GB / 1 TB</td>
-                                <td class="py-2 px-3 text-center">64 GB / 1 TB</td>
-                                <td class="py-2 px-3 text-center">128 GB / 2 TB</td>
-                            </tr>
-                            <tr>
                                 <td class="py-2 px-3 font-medium text-white">Hardware ca.</td>
                                 <td class="py-2 px-3 text-center font-mono text-signal-300">~2.500 EUR</td>
                                 <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-signal-300">~5.000 EUR</td>
                                 <td class="py-2 px-3 text-center font-mono text-signal-300">~8.500 EUR</td>
                                 <td class="py-2 px-3 text-center text-slate-500">auf Anfrage</td>
                             </tr>
+                            <!-- ── Aufgabeneignung Block ── -->
+                            <tr class="border-b border-white/10 bg-slate-900/50">
+                                <td colspan="5" class="py-2 px-3 font-mono text-[10px] text-slate-500 uppercase tracking-widest">Aufgabeneignung</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">ERP-Abfragen</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Exzellent"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Exzellent"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Exzellent"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Exzellent"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Datenextraktion</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Termin&shy;verwaltung</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Interner Support</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400" title="Gut"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Dokumenten&shy;suche</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Kunden&shy;kontakt</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400" title="Eingeschr&auml;nkt"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Techn. Beratung</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Mehrsprachig</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-3 text-white">Compliance</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-red-400/60" title="Nicht empfohlen"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-red-400/60"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="text-xs text-slate-600 mt-3">Alle Konfigurationen: Ubuntu 24.04/26.04 LTS, 16+ CPU-Kerne empfohlen. Stromverbrauch: 35&ndash;90 EUR/Monat je nach Ausbaustufe.</p>
+                <!-- Legend -->
+                <div class="flex items-center gap-5 mt-3 text-[10px] text-slate-500">
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-green-400"></span> Exzellent</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-signal-400"></span> Gut</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400"></span> M&ouml;glich, mit Einschr&auml;nkungen</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-red-400/60"></span> Nicht empfohlen</span>
+                </div>
+                <p class="text-[10px] text-slate-600 mt-2">Basierend auf IFEval, MT-Bench, BFCL und Qwen/Llama Benchmarks (2024). Ubuntu 24.04/26.04 LTS, 16+ CPU-Kerne empfohlen.</p>
             </div>
 
             <!-- Deployment Diagram -->
@@ -300,131 +364,6 @@
                     <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Shared Listener (Telegram, E-Mail, Voice)</text>
                 </svg>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  4b. Welches Modell f&uuml;r welche Aufgabe?                          -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Modellwahl</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Welches Modell f&uuml;r welche Aufgabe?</h2>
-            <p class="text-slate-400 max-w-3xl mx-auto">
-                Nicht jede Aufgabe braucht das gr&ouml;&szlig;te Modell. Die richtige Wahl
-                spart Hardware-Kosten und erh&ouml;ht den Durchsatz &mdash; ohne Qualit&auml;tseinbu&szlig;en.
-            </p>
-        </div>
-
-        <!-- Task-Model Matrix -->
-        <div class="overflow-x-auto mb-8 reveal">
-            <table class="w-full text-sm">
-                <thead>
-                    <tr class="border-b border-white/10">
-                        <th class="text-left py-3 px-4 text-slate-300 font-semibold">Aufgabe</th>
-                        <th class="text-center py-3 px-3 text-slate-300 font-semibold" style="min-width:100px">Empfohlenes&nbsp;Modell</th>
-                        <th class="text-center py-3 px-3 text-slate-300 font-semibold" style="min-width:90px">Paket</th>
-                        <th class="text-left py-3 px-4 text-slate-300 font-semibold">Warum</th>
-                    </tr>
-                </thead>
-                <tbody class="text-slate-400">
-                    <tr class="border-b border-white/5">
-                        <td class="py-3 px-4 font-medium text-white">ERP-Abfragen &amp; Statusberichte</td>
-                        <td class="py-3 px-3 text-center"><span class="text-green-400 font-mono font-semibold">27B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-slate-500">Starter</td>
-                        <td class="py-3 px-4 text-xs">Strukturierte Daten rein/raus. Tool-Call-Genauigkeit bei 27B: ~86%. Geschwindigkeit wichtiger als Prosa.</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="py-3 px-4 font-medium text-white">Datenextraktion (Rechnungen, Formulare)</td>
-                        <td class="py-3 px-3 text-center"><span class="text-green-400 font-mono font-semibold">27B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-slate-500">Starter</td>
-                        <td class="py-3 px-4 text-xs">JSON/Tabellenausgabe ab 14B zuverl&auml;ssig. 27B bietet zus&auml;tzliche Pr&auml;zision.</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="py-3 px-4 font-medium text-white">Terminverwaltung &amp; Erinnerungen</td>
-                        <td class="py-3 px-3 text-center"><span class="text-green-400 font-mono font-semibold">27B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-slate-500">Starter</td>
-                        <td class="py-3 px-4 text-xs">Einfache Tool-Calls (Kalender, Cronjobs). Keine Freitext-Qualit&auml;t n&ouml;tig.</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="py-3 px-4 font-medium text-white">Interner Support (IT, HR, FAQ)</td>
-                        <td class="py-3 px-3 text-center"><span class="text-signal-300 font-mono font-semibold">27B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-signal-400">Business</td>
-                        <td class="py-3 px-4 text-xs">Ton unkritisch (intern), aber mehr Kontexttiefe f&uuml;r Gespr&auml;chsverl&auml;ufe empfohlen.</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="py-3 px-4 font-medium text-white">Dokumentensuche &amp; Zusammenfassung</td>
-                        <td class="py-3 px-3 text-center"><span class="text-signal-300 font-mono font-semibold">27B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-signal-400">Business</td>
-                        <td class="py-3 px-4 text-xs">Mehr VRAM = mehr Dokument im Kontext. 32 GB VRAM erlaubt ganze Kapitel statt Ausz&uuml;ge.</td>
-                    </tr>
-                    <tr class="border-b border-white/5 bg-amber-500/5">
-                        <td class="py-3 px-4 font-medium text-white">Externer Kundenkontakt (Support, Beratung)</td>
-                        <td class="py-3 px-3 text-center"><span class="text-amber-400 font-mono font-semibold">70B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-amber-400">Professional</td>
-                        <td class="py-3 px-4 text-xs">Instruktionsbefolgung (IFEval): 27B ~74%, <strong class="text-white">70B ~82%</strong>. Ton, Markenrichtlinien und H&ouml;flichkeitsformen m&uuml;ssen zuverl&auml;ssig eingehalten werden.</td>
-                    </tr>
-                    <tr class="border-b border-white/5 bg-amber-500/5">
-                        <td class="py-3 px-4 font-medium text-white">Technische Beratung &amp; Fehlerdiagnose</td>
-                        <td class="py-3 px-3 text-center"><span class="text-amber-400 font-mono font-semibold">70B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-amber-400">Professional</td>
-                        <td class="py-3 px-4 text-xs">Multi-Step-Reasoning: 27B ~60%, <strong class="text-white">70B ~73%</strong>. Komplexe Schlussfolgerungen &uuml;ber mehrere Schritte.</td>
-                    </tr>
-                    <tr class="border-b border-white/5 bg-amber-500/5">
-                        <td class="py-3 px-4 font-medium text-white">Mehrsprachige Beratung (DE/EN/TR/FR&hellip;)</td>
-                        <td class="py-3 px-3 text-center"><span class="text-amber-400 font-mono font-semibold">70B</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-amber-400">Professional</td>
-                        <td class="py-3 px-4 text-xs">Reasoning in Nicht-Englisch f&auml;llt bei kleineren Modellen &uuml;berproportional ab. 70B: ~85% auf europ. Sprachen.</td>
-                    </tr>
-                    <tr class="bg-red-500/5">
-                        <td class="py-3 px-4 font-medium text-white">Compliance-kritisch (Recht, Sicherheit)</td>
-                        <td class="py-3 px-3 text-center"><span class="text-red-400 font-mono font-semibold">70B+</span></td>
-                        <td class="py-3 px-3 text-center text-xs text-red-400">Enterprise</td>
-                        <td class="py-3 px-4 text-xs">Immer mit Human-in-the-Loop. Kein LLM &mdash; egal welcher Gr&ouml;&szlig;e &mdash; f&uuml;r autonome rechtliche Entscheidungen.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Benchmark Sources -->
-        <div class="grid md:grid-cols-2 gap-6 reveal">
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h4 class="font-bold mb-3 text-sm">Benchmark-Grundlage</h4>
-                <ul class="space-y-2 text-xs text-slate-400">
-                    <li><strong class="text-slate-300">IFEval (Instruction Following):</strong> Misst, wie zuverl&auml;ssig ein Modell Anweisungen befolgt (&bdquo;immer siezen&ldquo;, &bdquo;keine Emojis&ldquo;). 27B: ~74%, 70B: ~82%, GPT-4o: ~86%.</li>
-                    <li><strong class="text-slate-300">MT-Bench:</strong> Bewertet die Gespr&auml;chsqualit&auml;t auf einer Skala von 1&ndash;10. 27B: ~8.3, 70B: ~8.8.</li>
-                    <li><strong class="text-slate-300">BFCL (Function Calling):</strong> Genauigkeit bei Tool-Aufrufen. 27B: ~86%, 70B: ~91%.</li>
-                    <li><strong class="text-slate-300">Multilingual MMLU:</strong> Wissensabfrage in mehreren Sprachen. 27B: ~80% (DE), 70B: ~86% (DE).</li>
-                </ul>
-            </div>
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h4 class="font-bold mb-3 text-sm">Quellen</h4>
-                <ul class="space-y-2 text-xs text-slate-400">
-                    <li>Qwen 2.5 Technical Report (Alibaba, 2024)</li>
-                    <li>Llama 3.1 Model Card (Meta, 2024)</li>
-                    <li>Hugging Face Open LLM Leaderboard v2</li>
-                    <li>Berkeley Function Calling Leaderboard (BFCL)</li>
-                    <li>IFEval: Instruction-Following Evaluation (Zhou et al., 2023)</li>
-                    <li>MT-Bench / Chatbot Arena (LMSYS, 2024)</li>
-                </ul>
-                <p class="text-xs text-slate-600 mt-3">Benchmarks basieren auf Instruct-Varianten in Q4-Quantisierung. Feintuning auf Unternehmensdaten kann ein Modell um eine Stufe verbessern.</p>
-            </div>
-        </div>
-
-        <!-- Key Insight -->
-        <div class="mt-8 bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
-            <h4 class="font-bold mb-2">Die wichtigste Erkenntnis</h4>
-            <p class="text-sm text-slate-400">
-                F&uuml;r <strong class="text-white">interne Automatisierung</strong> (ERP, Termine, Dokumente) ist das 27B-Modell
-                die richtige Wahl &mdash; schnell, effizient und auf einer einzigen GPU lauff&auml;hig.
-                F&uuml;r <strong class="text-white">externe Kommunikation</strong> mit Kunden, Partnern und Lieferanten
-                empfehlen wir das 70B-Modell &mdash; es befolgt Markenrichtlinien zuverl&auml;ssiger
-                und liefert qualitativ hochwertigere Antworten.
-                <strong class="text-white">Beide Modelle laufen auf derselben AIMOS-Software.</strong>
-                Ein Upgrade ist jederzeit m&ouml;glich &mdash; durch Hardware-Tausch, ohne Neukonfiguration.
-            </p>
         </div>
     </div>
 </section>
