@@ -89,6 +89,8 @@
             color: #0070f3;
             border-bottom-color: #0070f3;
         }
+            /* Language switcher mobile fix */
+        .lang-open { display: block !important; }
     </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
@@ -109,15 +111,15 @@
         </div>
         <div class="flex items-center gap-3">
             <div class="relative group">
-                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">DE</button>
-                <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <button onclick="var d=document.getElementById('lang-dropdown');d.classList.toggle('lang-open')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">DE</button>
+                <div id="lang-dropdown" class="absolute right-0 top-full pt-2 hidden group-hover:block z-50 min-w-[120px]"><div class="bg-slate-850 border border-white/10 rounded-lg py-1">
                     <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">Deutsch</a>
                     <a href="en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
                     <a href="tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Türkçe</a>
                     <a href="fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Français</a>
                     <a href="es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Español</a>
                     <a href="it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
-                </div>
+                </div></div>
             </div>
         </div>
     </div>
@@ -232,7 +234,7 @@
                         <!-- Model weights: ~20 GB -->
                         <rect x="22" y="22" width="362" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
                         <text x="203" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Modell-Gewichte</text>
-                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 2.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
+                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
 
                         <!-- KV-Cache: ~10 GB -->
                         <rect x="451" y="22" width="213" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
@@ -657,7 +659,7 @@
                         <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1">Qwen 2.5:27B <span class="text-slate-500 font-normal text-sm">(Q4, ~17 GB VRAM)</span></h4>
+                        <h4 class="font-bold text-lg mb-1">Qwen 3.5:27B <span class="text-slate-500 font-normal text-sm">(Q4, ~17 GB VRAM)</span></h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
                             27-Milliarden-Parameter-Modell mit <strong class="text-white">nativem Tool-Calling</strong>.
                             Kleinere Modelle (&lt;20B) scheitern an zuverl&auml;ssiger Werkzeugsteuerung &mdash;
@@ -846,7 +848,7 @@
 
                     <!-- LLM Model -->
                     <rect x="40" y="125" width="320" height="40" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 2.5:27B (Q4, ~17 GB VRAM, native Tool-Calling)</text>
+                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 3.5:27B (Q4, ~17 GB VRAM, native Tool-Calling)</text>
 
                     <!-- PostgreSQL -->
                     <rect x="40" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
@@ -1239,5 +1241,6 @@
         nav.classList.toggle('border-white/5', window.scrollY <= 50);
     });
 </script>
+<script>document.addEventListener('click',function(e){var d=document.getElementById('lang-dropdown');if(d&&!d.parentElement.contains(e.target)){d.classList.remove('lang-open')}});</script>
 </body>
 </html>

@@ -88,6 +88,8 @@
         .faq-answer {
             padding-top: 12px;
         }
+            /* Language switcher mobile fix */
+        .lang-open { display: block !important; }
     </style>
 </head>
 <body class="bg-slate-950 text-white antialiased">
@@ -114,15 +116,15 @@
             </button>
         <div class="flex items-center gap-3">
             <div class="relative group">
-                <button class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">EN</button>
-                <div class="absolute right-0 top-full mt-1 bg-slate-850 border border-white/10 rounded-lg py-1 hidden group-hover:block z-50 min-w-[120px]">
+                <button onclick="var d=document.getElementById('lang-dropdown');d.classList.toggle('lang-open')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">EN</button>
+                <div id="lang-dropdown" class="absolute right-0 top-full pt-2 hidden group-hover:block z-50 min-w-[120px]"><div class="bg-slate-850 border border-white/10 rounded-lg py-1">
                     <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Deutsch</a>
                     <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5">English</a>
                     <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">T&uuml;rk&ccedil;e</a>
                     <a href="../fr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
                     <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
                     <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
-                </div>
+                </div></div>
             </div>
         </div>
     </div>
@@ -609,5 +611,6 @@
 
     sections.forEach(s => sectionObserver.observe(s.el));
 </script>
+<script>document.addEventListener('click',function(e){var d=document.getElementById('lang-dropdown');if(d&&!d.parentElement.contains(e.target)){d.classList.remove('lang-open')}});</script>
 </body>
 </html>
