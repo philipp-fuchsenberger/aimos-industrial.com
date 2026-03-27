@@ -747,6 +747,117 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3b. MULTI-THREAD — Paralel M&uuml;&#351;teri Y&ouml;netimi             -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="threads" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Thread Mimarisi</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Bir ajan, birden fazla m&uuml;&#351;teri &mdash; ayn&inodot; anda</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Her g&ouml;r&uuml;&#351;me kendi thread kimli&gbreve;ini al&inodot;r. Ajan her zaman yaln&inodot;zca mevcut m&uuml;&#351;teriyi g&ouml;r&uuml;r &mdash; ka&ccedil; tane paralel &ccedil;al&inodot;&#351;&inodot;rsa &ccedil;al&inodot;&#351;s&inodot;n.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Thread per Customer -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-signal-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">&#304;zole Threadler</h3>
+                <p class="text-slate-400 text-sm">Her m&uuml;&#351;teri otomatik olarak kendi thread&rsquo;ini al&inodot;r. Telegram kullan&inodot;c&inodot;s&inodot; A, e-posta m&uuml;&#351;terisi B&rsquo;nin g&ouml;r&uuml;&#351;mesini asla g&ouml;remez &mdash; ayn&inodot; ajan her ikisini y&ouml;netse bile.</p>
+            </div>
+
+            <!-- Cross-Channel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Kanallar Aras&inodot;</h3>
+                <p class="text-slate-400 text-sm">Bir m&uuml;&#351;teri Telegram&rsquo;dan yazar: &ldquo;Size bir e-posta g&ouml;nderdim.&rdquo; Ajan e-posta thread&rsquo;ini bulur, kimli&gbreve;i do&gbreve;rular ve an&inodot;nda ba&gbreve;lama sahip olur.</p>
+            </div>
+
+            <!-- Propagation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Thread Yay&inodot;l&inodot;m&inodot;</h3>
+                <p class="text-slate-400 text-sm">Bir ajan bir g&ouml;revi bir meslekta&#351;&inodot;na devrederse, thread kimli&gbreve;i de birlikte gider. Al&inodot;c&inodot; ayn&inodot; m&uuml;&#351;teri ba&gbreve;lam&inodot;nda &ccedil;al&inodot;&#351;&inodot;r &mdash; kar&inodot;&#351;ma riski olmadan.</p>
+            </div>
+        </div>
+
+        <!-- Visual: Thread Flow -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-8 mb-12">
+            <h3 class="font-bold mb-6 text-center">&Ouml;rnek: &Uuml;&ccedil; M&uuml;&#351;teri, Bir Ajan Ekibi</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="border border-signal-500/20 rounded-lg p-4">
+                    <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:4819</p>
+                    <p class="text-slate-300 font-medium mb-2">M&uuml;&#351;teri M&uuml;ller (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Destek: Dan&inodot;&#351;manl&inodot;k</p>
+                        <p>&rarr; Arka Ofis: G&ouml;r&uuml;nt&uuml; Analizi</p>
+                        <p>&rarr; Destek: Sonu&ccedil; M&uuml;&#351;teriye</p>
+                    </div>
+                </div>
+                <div class="border border-emerald-500/20 rounded-lg p-4">
+                    <p class="text-emerald-400 font-mono text-xs mb-2">Thread email:schmidt@...:a3f2</p>
+                    <p class="text-slate-300 font-medium mb-2">M&uuml;&#351;teri Schmidt (E-posta)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Destek: Talebi Oku</p>
+                        <p>&rarr; &#304;&ccedil; Hizmetler: Teklif Olu&#351;tur</p>
+                        <p>&rarr; Destek: Onay&inodot; &#304;let</p>
+                    </div>
+                </div>
+                <div class="border border-amber-500/20 rounded-lg p-4">
+                    <p class="text-amber-400 font-mono text-xs mb-2">Thread tg:7291</p>
+                    <p class="text-slate-300 font-medium mb-2">M&uuml;&#351;teri Weber (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Destek: Bak&inodot;m Sorusu</p>
+                        <p>&rarr; Bilgi Taban&inodot; Okundu</p>
+                        <p>&rarr; Destek: Do&gbreve;rudan Yan&inodot;t</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-slate-600 text-xs mt-4">Her &uuml;&ccedil; i&#351;lem paralel &ccedil;al&inodot;&#351;&inodot;r. Hi&ccedil;bir ajan ba&#351;ka bir m&uuml;&#351;terinin verilerini g&ouml;remez.</p>
+        </div>
+
+        <!-- Key Features List -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Otomatik Thread Atamas&inodot;</p>
+                    <p class="text-xs text-slate-500">Telegram, e-posta, kontrol paneli &mdash; her kanal giri&#351;te otomatik olarak do&gbreve;ru thread kimli&gbreve;ini olu&#351;turur.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">E-posta Threading</p>
+                    <p class="text-xs text-slate-500">Mevcut e-postalara verilen yan&inodot;tlar, In-Reply-To ve References ba&#351;l&inodot;klar&inodot; arac&inodot;l&inodot;&gbreve;&inodot;yla do&gbreve;ru thread&rsquo;e e&#351;le&#351;tirilir.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Thread Ba&#351;&inodot;na Dosyalar</p>
+                    <p class="text-xs text-slate-500">Foto&gbreve;raflar, belgeler ve ekler thread ba&#351;&inodot;na saklan&inodot;r &mdash; Telegram veya e-posta ile gelmi&#351; olsun fark etmez.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Kod D&uuml;zeyinde &#304;zasyon</p>
+                    <p class="text-xs text-slate-500">Ayr&inodot;m veritaban&inodot; d&uuml;zeyinde zorlan&inodot;r, yapay zeka modeline ba&gbreve;l&inodot; de&gbreve;ildir. Hatal&inodot; bir model bile m&uuml;&#351;teri verilerini kar&inodot;&#351;t&inodot;ramaz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  4. HAFIZA — Uzun Süreli Hafıza                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="hafiza" class="relative py-24 grid-pattern">

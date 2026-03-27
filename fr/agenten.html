@@ -748,6 +748,117 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3b. MULTI-THREAD — Gestion parall&egrave;le des clients               -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="threads" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Architecture de Threads</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Un agent, plusieurs clients &mdash; simultan&eacute;ment</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Chaque conversation re&ccedil;oit son propre identifiant de thread. L&rsquo;agent ne voit que le client en cours &mdash; peu importe combien tournent en parall&egrave;le.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Thread per Customer -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-signal-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Threads isol&eacute;s</h3>
+                <p class="text-slate-400 text-sm">Chaque client re&ccedil;oit automatiquement son propre thread. L&rsquo;utilisateur Telegram A ne voit jamais la conversation du client e-mail B &mdash; m&ecirc;me si le m&ecirc;me agent g&egrave;re les deux.</p>
+            </div>
+
+            <!-- Cross-Channel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Multi-canal</h3>
+                <p class="text-slate-400 text-sm">Un client &eacute;crit via Telegram : &laquo;&nbsp;Je vous ai envoy&eacute; un e-mail.&nbsp;&raquo; L&rsquo;agent trouve le thread e-mail, v&eacute;rifie l&rsquo;identit&eacute; et dispose imm&eacute;diatement du contexte.</p>
+            </div>
+
+            <!-- Propagation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Propagation de Thread</h3>
+                <p class="text-slate-400 text-sm">Lorsqu&rsquo;un agent d&eacute;l&egrave;gue une t&acirc;che &agrave; un coll&egrave;gue, l&rsquo;identifiant de thread l&rsquo;accompagne. Le destinataire travaille dans le m&ecirc;me contexte client &mdash; sans risque de confusion.</p>
+            </div>
+        </div>
+
+        <!-- Visual: Thread Flow -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-8 mb-12">
+            <h3 class="font-bold mb-6 text-center">Exemple : Trois clients, une &eacute;quipe d&rsquo;agents</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="border border-signal-500/20 rounded-lg p-4">
+                    <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:4819</p>
+                    <p class="text-slate-300 font-medium mb-2">Client M&uuml;ller (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support : Conseil</p>
+                        <p>&rarr; Back-office : Analyse d&rsquo;image</p>
+                        <p>&rarr; Support : R&eacute;sultat au client</p>
+                    </div>
+                </div>
+                <div class="border border-emerald-500/20 rounded-lg p-4">
+                    <p class="text-emerald-400 font-mono text-xs mb-2">Thread email:schmidt@...:a3f2</p>
+                    <p class="text-slate-300 font-medium mb-2">Client Schmidt (E-mail)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support : Lire la demande</p>
+                        <p>&rarr; Back-office : Cr&eacute;er un devis</p>
+                        <p>&rarr; Support : Transmettre la confirmation</p>
+                    </div>
+                </div>
+                <div class="border border-amber-500/20 rounded-lg p-4">
+                    <p class="text-amber-400 font-mono text-xs mb-2">Thread tg:7291</p>
+                    <p class="text-slate-300 font-medium mb-2">Client Weber (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support : Question de maintenance</p>
+                        <p>&rarr; Base de connaissances consult&eacute;e</p>
+                        <p>&rarr; Support : R&eacute;ponse directe</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-slate-600 text-xs mt-4">Les trois processus tournent en parall&egrave;le. Aucun agent ne voit les donn&eacute;es d&rsquo;un autre client.</p>
+        </div>
+
+        <!-- Key Features List -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Attribution automatique de thread</p>
+                    <p class="text-xs text-slate-500">Telegram, e-mail, tableau de bord &mdash; chaque canal g&eacute;n&egrave;re automatiquement le bon identifiant de thread &agrave; l&rsquo;arriv&eacute;e.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Threading e-mail</p>
+                    <p class="text-xs text-slate-500">Les r&eacute;ponses aux e-mails existants sont rattach&eacute;es au bon thread via les en-t&ecirc;tes In-Reply-To et References.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Fichiers par thread</p>
+                    <p class="text-xs text-slate-500">Photos, documents et pi&egrave;ces jointes sont stock&eacute;s par thread &mdash; qu&rsquo;ils arrivent par Telegram ou par e-mail.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Isolation au niveau du code</p>
+                    <p class="text-xs text-slate-500">La s&eacute;paration est appliqu&eacute;e au niveau de la base de donn&eacute;es, ind&eacute;pendamment du mod&egrave;le IA. M&ecirc;me un mod&egrave;le d&eacute;faillant ne peut pas m&eacute;langer les donn&eacute;es clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  4. M&Eacute;MOIRE — M&eacute;moire &agrave; long terme               -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="gedaechtnis" class="relative py-24 grid-pattern">

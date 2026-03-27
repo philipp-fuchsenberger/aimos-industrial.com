@@ -748,6 +748,117 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3b. MULTI-THREAD — Atenci&oacute;n paralela de clientes               -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="threads" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arquitectura de Threads</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Un agente, muchos clientes &mdash; simult&aacute;neamente</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Cada conversaci&oacute;n recibe su propio ID de thread. El agente solo ve al cliente actual &mdash; sin importar cu&aacute;ntos se ejecuten en paralelo.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Thread per Customer -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-signal-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Threads Aislados</h3>
+                <p class="text-slate-400 text-sm">Cada cliente recibe autom&aacute;ticamente su propio thread. El usuario de Telegram A nunca ve la conversaci&oacute;n del cliente de correo B &mdash; aunque el mismo agente atienda a ambos.</p>
+            </div>
+
+            <!-- Cross-Channel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Multicanal</h3>
+                <p class="text-slate-400 text-sm">Un cliente escribe por Telegram: &laquo;Le envi&eacute; un correo.&raquo; El agente encuentra el thread de correo, verifica la identidad y tiene el contexto de inmediato.</p>
+            </div>
+
+            <!-- Propagation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Propagaci&oacute;n de Thread</h3>
+                <p class="text-slate-400 text-sm">Cuando un agente delega una tarea a un colega, el ID de thread viaja con ella. El destinatario trabaja en el mismo contexto de cliente &mdash; sin riesgo de confusi&oacute;n.</p>
+            </div>
+        </div>
+
+        <!-- Visual: Thread Flow -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-8 mb-12">
+            <h3 class="font-bold mb-6 text-center">Ejemplo: Tres clientes, un equipo de agentes</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="border border-signal-500/20 rounded-lg p-4">
+                    <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:4819</p>
+                    <p class="text-slate-300 font-medium mb-2">Cliente M&uuml;ller (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Soporte: Asesor&iacute;a</p>
+                        <p>&rarr; Back Office: An&aacute;lisis de imagen</p>
+                        <p>&rarr; Soporte: Resultado al cliente</p>
+                    </div>
+                </div>
+                <div class="border border-emerald-500/20 rounded-lg p-4">
+                    <p class="text-emerald-400 font-mono text-xs mb-2">Thread email:schmidt@...:a3f2</p>
+                    <p class="text-slate-300 font-medium mb-2">Cliente Schmidt (Correo)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Soporte: Leer consulta</p>
+                        <p>&rarr; Administraci&oacute;n: Crear presupuesto</p>
+                        <p>&rarr; Soporte: Reenviar confirmaci&oacute;n</p>
+                    </div>
+                </div>
+                <div class="border border-amber-500/20 rounded-lg p-4">
+                    <p class="text-amber-400 font-mono text-xs mb-2">Thread tg:7291</p>
+                    <p class="text-slate-300 font-medium mb-2">Cliente Weber (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Soporte: Pregunta de mantenimiento</p>
+                        <p>&rarr; Base de conocimiento consultada</p>
+                        <p>&rarr; Soporte: Respuesta directa</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-slate-600 text-xs mt-4">Los tres procesos se ejecutan en paralelo. Ning&uacute;n agente ve los datos de otro cliente.</p>
+        </div>
+
+        <!-- Key Features List -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Asignaci&oacute;n autom&aacute;tica de thread</p>
+                    <p class="text-xs text-slate-500">Telegram, correo, panel de control &mdash; cada canal genera autom&aacute;ticamente el ID de thread correcto al recibir un mensaje.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Threading de correo</p>
+                    <p class="text-xs text-slate-500">Las respuestas a correos existentes se asignan al thread correcto mediante las cabeceras In-Reply-To y References.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Archivos por thread</p>
+                    <p class="text-xs text-slate-500">Fotos, documentos y adjuntos se almacenan por thread &mdash; sin importar si llegan por Telegram o correo electr&oacute;nico.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Aislamiento a nivel de c&oacute;digo</p>
+                    <p class="text-xs text-slate-500">La separaci&oacute;n se aplica a nivel de base de datos, no depende del modelo de IA. Incluso un modelo defectuoso no puede mezclar datos de clientes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  4. MEMORIA — Memoria a largo plazo                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="gedaechtnis" class="relative py-24 grid-pattern">

@@ -748,6 +748,117 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3b. MULTI-THREAD — Parallele Kundenbetreuung                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="threads" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Thread-Architektur</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Ein Agent, viele Kunden &mdash; gleichzeitig</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Jeder Vorgang erh&auml;lt eine eigene Thread-ID. Der Agent sieht immer nur den aktuellen Kunden &mdash; egal wie viele parallel laufen.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Thread per Customer -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-signal-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Isolierte Threads</h3>
+                <p class="text-slate-400 text-sm">Jeder Kunde erh&auml;lt automatisch einen eigenen Thread. Telegram-Nutzer A sieht nie die Konversation von E-Mail-Kunde B &mdash; auch wenn derselbe Agent beide betreut.</p>
+            </div>
+
+            <!-- Cross-Channel -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Kanal&uuml;bergreifend</h3>
+                <p class="text-slate-400 text-sm">Ein Kunde schreibt per Telegram: &bdquo;Ich habe Ihnen eine E-Mail geschickt.&ldquo; Der Agent findet den E-Mail-Thread, verifiziert die Identit&auml;t und hat sofort den Kontext.</p>
+            </div>
+
+            <!-- Propagation -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
+                </div>
+                <h3 class="font-bold mb-2">Thread-Propagation</h3>
+                <p class="text-slate-400 text-sm">Wenn ein Agent einen Vorgang an einen Kollegen delegiert, wandert die Thread-ID mit. Der Empf&auml;nger arbeitet im selben Kundenkontext &mdash; ohne Verwechslungsgefahr.</p>
+            </div>
+        </div>
+
+        <!-- Visual: Thread Flow -->
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-8 mb-12">
+            <h3 class="font-bold mb-6 text-center">Beispiel: Drei Kunden, ein Agent-Team</h3>
+            <div class="grid md:grid-cols-3 gap-6 text-sm">
+                <div class="border border-signal-500/20 rounded-lg p-4">
+                    <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:4819</p>
+                    <p class="text-slate-300 font-medium mb-2">Kunde M&uuml;ller (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support: Beratung</p>
+                        <p>&rarr; Backoffice: Bildanalyse</p>
+                        <p>&rarr; Support: Ergebnis an Kunden</p>
+                    </div>
+                </div>
+                <div class="border border-emerald-500/20 rounded-lg p-4">
+                    <p class="text-emerald-400 font-mono text-xs mb-2">Thread email:schmidt@...:a3f2</p>
+                    <p class="text-slate-300 font-medium mb-2">Kunde Schmidt (E-Mail)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support: Anfrage lesen</p>
+                        <p>&rarr; Innendienst: Angebot erstellen</p>
+                        <p>&rarr; Support: Best&auml;tigung weiterleiten</p>
+                    </div>
+                </div>
+                <div class="border border-amber-500/20 rounded-lg p-4">
+                    <p class="text-amber-400 font-mono text-xs mb-2">Thread tg:7291</p>
+                    <p class="text-slate-300 font-medium mb-2">Kunde Weber (Telegram)</p>
+                    <div class="space-y-1 text-slate-500 text-xs">
+                        <p>&rarr; Support: Wartungsfrage</p>
+                        <p>&rarr; Knowledge Base gelesen</p>
+                        <p>&rarr; Support: Antwort direkt</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-slate-600 text-xs mt-4">Alle drei Vorg&auml;nge laufen parallel. Kein Agent sieht fremde Kundendaten.</p>
+        </div>
+
+        <!-- Key Features List -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Automatische Thread-Zuweisung</p>
+                    <p class="text-xs text-slate-500">Telegram, E-Mail, Dashboard &mdash; jeder Kanal erzeugt automatisch die richtige Thread-ID beim Eingang.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">E-Mail-Threading</p>
+                    <p class="text-xs text-slate-500">Antworten auf bestehende E-Mails werden &uuml;ber In-Reply-To und References-Header dem richtigen Thread zugeordnet.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Dateien pro Thread</p>
+                    <p class="text-xs text-slate-500">Fotos, Dokumente und Anh&auml;nge werden dem Thread zugeordnet gespeichert &mdash; egal ob sie per Telegram oder E-Mail eingehen.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <div>
+                    <p class="text-sm font-medium text-slate-300">Code-Level Isolation</p>
+                    <p class="text-xs text-slate-500">Die Trennung ist auf Datenbankebene erzwungen, nicht vom KI-Modell abh&auml;ngig. Selbst ein fehlerhaftes Modell kann keine Kundendaten vermischen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  4. GEDÄCHTNIS — Langzeitgedächtnis                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="gedaechtnis" class="relative py-24 grid-pattern">
