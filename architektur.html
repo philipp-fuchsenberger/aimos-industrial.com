@@ -224,20 +224,20 @@
                         <rect x="20" y="178" width="690" height="98" rx="8" fill="#0070f3" fill-opacity="0.04" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
                         <text x="25" y="194" fill="#0070f3" font-size="10" font-weight="700">AIMOS &mdash; Lokal, Ihre GPU, Ihre Daten</text>
 
-                        <!-- Starter — 14K -->
+                        <!-- Starter — 26K -->
                         <text x="40" y="215" fill="#94a3b8" font-size="9">Starter</text>
-                        <rect x="100" y="206" width="10" height="16" rx="3" fill="#0070f3" fill-opacity="0.4" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="118" y="218" fill="#94a3b8" font-size="9">14K &mdash; RTX 3090, 27B</text>
+                        <rect x="100" y="206" width="18" height="16" rx="3" fill="#0070f3" fill-opacity="0.4" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="124" y="218" fill="#94a3b8" font-size="9">26K &mdash; RTX 4090, 14B</text>
 
-                        <!-- Business — 28K -->
+                        <!-- Business — 22K -->
                         <text x="40" y="239" fill="#0070f3" font-size="9" font-weight="600">Business</text>
-                        <rect x="100" y="230" width="19" height="16" rx="3" fill="#0070f3" fill-opacity="0.5" stroke="#0070f3" stroke-width="2"/>
-                        <text x="126" y="242" fill="#0070f3" font-size="9" font-weight="600">28K &mdash; RTX 5090, 27B</text>
+                        <rect x="100" y="230" width="15" height="16" rx="3" fill="#0070f3" fill-opacity="0.5" stroke="#0070f3" stroke-width="2"/>
+                        <text x="122" y="242" fill="#0070f3" font-size="9" font-weight="600">22K &mdash; RTX 5090, 32B (pr&auml;ziser)</text>
 
                         <!-- Professional — 24K -->
                         <text x="40" y="263" fill="#94a3b8" font-size="9">Professional</text>
                         <rect x="100" y="254" width="16" height="16" rx="3" fill="#a855f7" fill-opacity="0.3" stroke="#a855f7" stroke-width="1.5"/>
-                        <text x="124" y="266" fill="#a855f7" font-size="9">24K &mdash; 2&times; RTX 5090, 70B (h&ouml;here Qualit&auml;t)</text>
+                        <text x="124" y="266" fill="#a855f7" font-size="9">24K &mdash; 2&times; RTX 5090, 70B (maximale Qualit&auml;t)</text>
 
                         <!-- Arrow + label -->
                         <line x1="36" y1="282" x2="36" y2="310" stroke="#ef4444" stroke-width="1.5"/>
@@ -610,33 +610,33 @@
                         <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" class="w-full">
                             <!-- Scale: 1 GB = 10px, max 64 GB = 640px, offset 80px for labels -->
 
-                            <!-- ── Starter: RTX 3090, 24 GB total ── -->
+                            <!-- ── Starter: RTX 4090, 24 GB total ── -->
                             <text x="0" y="28" fill="#94a3b8" font-size="9" font-weight="600">Starter</text>
-                            <text x="0" y="40" fill="#64748b" font-size="8">RTX 3090</text>
+                            <text x="0" y="40" fill="#64748b" font-size="8">RTX 4090</text>
                             <rect x="80" y="20" width="240" height="30" rx="6" fill="#1a2332" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.15"/>
-                            <!-- 27B = 17 GB = 170px -->
-                            <rect x="82" y="22" width="170" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
-                            <text x="167" y="39" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">27B &mdash; 17 GB</text>
-                            <!-- KV = 5 GB = 50px -->
-                            <rect x="254" y="22" width="50" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
-                            <text x="279" y="39" text-anchor="middle" fill="#0070f3" font-size="7" font-weight="600">5 GB</text>
+                            <!-- 14B = 9 GB = 90px -->
+                            <rect x="82" y="22" width="90" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="127" y="39" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">14B &mdash; 9 GB</text>
+                            <!-- KV = 13 GB = 130px -->
+                            <rect x="174" y="22" width="130" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
+                            <text x="239" y="39" text-anchor="middle" fill="#0070f3" font-size="7" font-weight="600">13 GB</text>
                             <!-- Reserve = 2 GB = 20px -->
                             <rect x="306" y="22" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
-                            <text x="330" y="39" fill="#64748b" font-size="8">~14K Tok</text>
+                            <text x="330" y="39" fill="#64748b" font-size="8">~26K Tok</text>
 
                             <!-- ── Business: RTX 5090, 32 GB total ── -->
                             <text x="0" y="82" fill="#0070f3" font-size="9" font-weight="700">Business</text>
                             <text x="0" y="94" fill="#64748b" font-size="8">RTX 5090</text>
                             <rect x="80" y="74" width="320" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5" stroke-opacity="0.3"/>
-                            <!-- 27B = 17 GB = 170px (gleich wie oben!) -->
-                            <rect x="82" y="76" width="170" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
-                            <text x="167" y="93" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">27B &mdash; 17 GB</text>
-                            <!-- KV = 13 GB = 130px -->
-                            <rect x="254" y="76" width="130" height="26" rx="0" fill="#0070f3" fill-opacity="0.25" stroke="#0070f3" stroke-width="1.5"/>
-                            <text x="319" y="93" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="700">13 GB</text>
+                            <!-- 32B = 19 GB = 190px -->
+                            <rect x="82" y="76" width="190" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="177" y="93" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">32B &mdash; 19 GB</text>
+                            <!-- KV = 11 GB = 110px -->
+                            <rect x="274" y="76" width="110" height="26" rx="0" fill="#0070f3" fill-opacity="0.25" stroke="#0070f3" stroke-width="1.5"/>
+                            <text x="329" y="93" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="700">11 GB</text>
                             <!-- Reserve = 2 GB = 20px -->
                             <rect x="386" y="76" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
-                            <text x="408" y="93" fill="#0070f3" font-size="8" font-weight="600">~28K Tok</text>
+                            <text x="408" y="93" fill="#0070f3" font-size="8" font-weight="600">~22K Tok</text>
 
                             <!-- ── Professional: 2x RTX 5090, 64 GB total ── -->
                             <text x="0" y="136" fill="#a855f7" font-size="9" font-weight="600">Professional</text>
@@ -663,7 +663,7 @@
                             <!-- Insight -->
                             <rect x="80" y="205" width="640" height="35" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
                             <text x="100" y="226" fill="#10b981" font-size="9" font-weight="700">Gleiche Software, unterschiedliche Kapazit&auml;t.</text>
-                            <text x="370" y="226" fill="#94a3b8" font-size="9">Business hat 2,6&times; mehr Kontext als Starter. Professional bietet h&ouml;here Modellqualit&auml;t.</text>
+                            <text x="370" y="226" fill="#94a3b8" font-size="9">Starter: schnell &amp; effizient. Business: pr&auml;ziser. Professional: maximale Qualit&auml;t.</text>
                         </svg>
                     <p class="text-xs text-slate-600 mt-4">
                         <strong class="text-slate-400">KV-Cache</strong> (Key-Value Cache) = der Arbeitsspeicher des Sprachmodells w&auml;hrend einer Konversation.
