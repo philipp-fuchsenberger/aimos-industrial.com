@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System & Infrastruktur — AIMOS</title>
-    <meta name="description" content="AIMOS System & Infrastruktur: SovereignNode-Hardware, Dual-DB-Architektur, Agent-Portabilität und technische Highlights.">
+    <meta name="description" content="AIMOS System & Infrastruktur: SovereignNode-Hardware, Dual-DB-Architektur, Assistenten-Portabilität und technische Highlights.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -103,8 +103,8 @@
             <span class="font-semibold text-lg tracking-tight">AIMOS</span>
         </a>
         <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="agenten.html" class="hover:text-white transition-colors">Agenten</a>
-            <a href="team.html" class="hover:text-white transition-colors">Agententeam</a>
+            <a href="agenten.html" class="hover:text-white transition-colors">KI-Assistenten</a>
+            <a href="team.html" class="hover:text-white transition-colors">Assistenten-Team</a>
             <a href="mensch-ki.html" class="hover:text-white transition-colors">Mensch &amp; KI</a>
             <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
@@ -132,8 +132,8 @@
 </nav>
 <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full bg-slate-950/95 nav-blur border-b border-white/5 z-50 py-4 px-6">
     <div class="flex flex-col gap-3 text-sm">
-        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">Agenten</a>
-        <a href="team.html" class="text-slate-400 hover:text-white py-2">Agententeam</a>
+        <a href="agenten.html" class="text-slate-400 hover:text-white py-2">KI-Assistenten</a>
+        <a href="team.html" class="text-slate-400 hover:text-white py-2">Assistenten-Team</a>
         <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2">Mensch &amp; KI</a>
         <a href="preise.html" class="text-slate-400 hover:text-white py-2">Preise</a>
         <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
@@ -183,7 +183,7 @@
                 ein physischer oder virtueller Server, der alle Komponenten beherbergt.
             </p>
             <p class="text-slate-400 leading-relaxed mb-8 max-w-3xl">
-                Alles l&auml;uft on-premise: die LLM-Inferenz, die Datenbanken, die Agenten-Prozesse
+                Alles l&auml;uft on-premise: die LLM-Inferenz, die Datenbanken, die KI-Assistenten-Prozesse
                 und die Kommunikationskan&auml;le. Kein Byte verl&auml;sst Ihr Netzwerk &mdash;
                 es sei denn, Sie konfigurieren es explizit (z.B. Telegram-Nachrichten).
             </p>
@@ -230,7 +230,7 @@
                                 <td class="py-2 px-3 text-center">~30+ Tok/s</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-2 px-3 font-medium text-white">Agenten</td>
+                                <td class="py-2 px-3 font-medium text-white">KI-Assistenten</td>
                                 <td class="py-2 px-3 text-center font-mono">3&ndash;5</td>
                                 <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-white">5&ndash;10</td>
                                 <td class="py-2 px-3 text-center font-mono">4&ndash;8</td>
@@ -358,11 +358,11 @@
 
                     <!-- Agents -->
                     <rect x="40" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent A</text>
+                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Assistent A</text>
                     <rect x="150" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent B</text>
+                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Assistent B</text>
                     <rect x="260" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent C</text>
+                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Assistent C</text>
 
                     <!-- Shared Listener -->
                     <rect x="40" y="390" width="320" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
@@ -392,7 +392,7 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">PostgreSQL (Relay-Datenbank)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Zentrale Nachrichtenweiterleitung zwischen Shared Listener, Orchestrator und Agenten.
+                                Zentrale Nachrichtenweiterleitung zwischen Shared Listener, Orchestrator und KI-Assistenten.
                                 Speichert eingehende Nachrichten, Audit-Logs, PII-Vault-Mappings und Session-Daten.
                                 Multi-Process-fähig durch Connection Pooling.
                             </p>
@@ -405,7 +405,7 @@
                         <div>
                             <h4 class="font-semibold text-white mb-1">SQLite (Agent-Memory)</h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
-                                Jeder Agent hat seine eigene SQLite-Datenbank mit semantischem, episodischem
+                                Jeder KI-Assistent hat seine eigene SQLite-Datenbank mit semantischem, episodischem
                                 und prozeduralem Gedächtnis. Hybrid-Suche über FTS5 + Vektor-Embeddings.
                                 Portabel durch einfaches Kopieren der Datei.
                             </p>
@@ -438,7 +438,7 @@
 
                     <!-- SQLite Box -->
                     <rect x="220" y="20" width="160" height="340" rx="8" fill="#0070f3" fill-opacity="0.06" stroke="#0070f3" stroke-width="1.5"/>
-                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (je Agent)</text>
+                    <text x="300" y="50" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="700">SQLite (je Assistent)</text>
                     <rect x="235" y="65" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
                     <text x="300" y="85" text-anchor="middle" fill="#94a3b8" font-size="10">semantic_memory</text>
                     <rect x="235" y="105" width="130" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
@@ -469,8 +469,8 @@
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Interoperabilität</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Agent-Portabilität</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS-Agenten sind portabel, kompatibel und interoperabel durch offene Standards.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Assistenten-Portabilität</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">AIMOS-Assistenten sind portabel, kompatibel und interoperabel durch offene Standards.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 reveal">
@@ -481,7 +481,7 @@
                 </div>
                 <h3 class="font-bold mb-2">OAP Export/Import</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Das Open Agent Package Format ermöglicht den vollständigen Export eines Agenten
+                    Das Open Agent Package Format ermöglicht den vollständigen Export eines KI-Assistenten
                     inklusive Memory, Skills und Konfiguration als portables Archiv.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
@@ -511,14 +511,14 @@
                 </div>
             </div>
 
-            <!-- A2A Agent Cards -->
+            <!-- A2A Assistenten-Profile -->
             <div class="bg-slate-850 border border-white/5 rounded-xl p-7">
                 <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
                 </div>
-                <h3 class="font-bold mb-2">A2A Agent Cards</h3>
+                <h3 class="font-bold mb-2">A2A Assistenten-Profile</h3>
                 <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Jeder Agent publiziert eine Agent Card (JSON-LD) nach Google A2A-Spezifikation.
+                    Jeder KI-Assistent publiziert eine Agent Card (JSON-LD) nach Google A2A-Spezifikation.
                     Externe Systeme können Fähigkeiten, Eingabeformate und Vertrauensstufe abfragen.
                 </p>
                 <div class="font-mono text-xs text-slate-500 bg-slate-900 rounded-lg p-3">
@@ -540,7 +540,7 @@
                 <!-- Source Node -->
                 <rect x="10" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="110" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode A</text>
-                <text x="110" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Export: agent.oap</text>
+                <text x="110" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Export: assistent.oap</text>
 
                 <!-- Arrow -->
                 <line x1="210" y1="60" x2="290" y2="60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow5)"/>
@@ -557,7 +557,7 @@
                 <!-- Target Node -->
                 <rect x="590" y="20" width="200" height="80" rx="8" fill="#1a2332" stroke="#0070f3" stroke-width="1.5"/>
                 <text x="690" y="50" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">SovereignNode B</text>
-                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Agent aktiv</text>
+                <text x="690" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Assistent aktiv</text>
             </svg>
         </div>
     </div>
@@ -583,7 +583,7 @@
                 <h3 class="font-bold mb-2">Native Tool-Calling</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Keine Text-Hacks oder Regex-Parsing &mdash; AIMOS nutzt die native Tool-Calling-API
-                    des LLM. Der Agent <strong class="text-white">steuert Systeme direkt</strong>,
+                    des LLM. Der KI-Assistent <strong class="text-white">steuert Systeme direkt</strong>,
                     statt Aktionen nur zu beschreiben.
                 </p>
             </div>
@@ -597,7 +597,7 @@
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Spracherkennung (Whisper STT) und Sprachsynthese (Piper TTS) in
                     <strong class="text-white">allen Sprachen</strong> &mdash;
-                    Agenten verstehen Sprachnachrichten und antworten in der Muttersprache des Nutzers.
+                    KI-Assistenten verstehen Sprachnachrichten und antworten in der Muttersprache des Nutzers.
                 </p>
             </div>
 
@@ -609,7 +609,7 @@
                 <h3 class="font-bold mb-2">Token-Tracking</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Jeder LLM-Call wird erfasst: Input-/Output-Tokens, Latenz, Kontextauslastung.
-                    <strong class="text-white">Volle Kostentransparenz</strong> pro Agent,
+                    <strong class="text-white">Volle Kostentransparenz</strong> pro KI-Assistent,
                     pro Gespräch, pro Monat.
                 </p>
             </div>
@@ -621,7 +621,7 @@
                 </div>
                 <h3 class="font-bold mb-2">Conversation Threading</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Jeder Agent weiß, <strong class="text-white">mit wem er auf welchem Kanal spricht</strong>.
+                    Jeder KI-Assistent weiß, <strong class="text-white">mit wem er auf welchem Kanal spricht</strong>.
                     Telegram, E-Mail und interne Nachrichten werden sauber getrennt &mdash;
                     keine Verwechslung zwischen Gesprächspartnern.
                 </p>
@@ -650,7 +650,7 @@
             <div>
                 <h4 class="font-semibold text-sm mb-4 text-slate-300">Produkt</h4>
                 <ul class="space-y-2 text-sm text-slate-500">
-                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agenten-Team</a></li>
+                    <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Assistenten-Team</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Architektur</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">System</a></li>
                     <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konnektoren</a></li>
