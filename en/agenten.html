@@ -149,11 +149,13 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Concept</a>
+        <a href="#anatomie" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Structure</a>
+        <a href="#orchestrator" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Orchestrator</a>
+        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Memory</a>
         <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
         <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Connectors</a>
-        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Memory</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
+        <a href="#threads" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Threads</a>
     </div>
 </nav>
 
@@ -174,26 +176,35 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  1. CONCEPT — What is an AIMOS Agent?                                 -->
+<!--  1. ANATOMIE — Structure of an AIMOS Assistant                        -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konzept" class="relative py-24 bg-slate-900/50">
+<section id="anatomie" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
 
-        <!-- Anatomy: M + S + L + C -->
+        <!-- Anatomy: O + M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Fundamentals</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">What Is an AIMOS Agent?</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Five Building Blocks</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Structure of an AIMOS Assistant</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    An AIMOS agent is a specialized digital assistant that combines four core components:
+                    An AIMOS assistant is an autonomous specialist that combines five core components:
                 </p>
                 <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-rose-400 font-bold text-xs">O</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm"><a href="#orchestrator" class="hover:text-signal-400 transition-colors">Orchestrator</a></h4>
+                            <p class="text-slate-500 text-sm">Controls the thinking process in phases: Observe, Orient, Act &mdash; following the OODA principle.</p>
+                        </div>
+                    </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory</h4>
+                            <h4 class="font-semibold text-sm"><a href="#gedaechtnis" class="hover:text-signal-400 transition-colors">Memory</a></h4>
                             <p class="text-slate-500 text-sm">Dedicated SQLite database with semantic, episodic, and procedural long-term memory.</p>
                         </div>
                     </div>
@@ -202,204 +213,401 @@
                             <span class="text-green-400 font-bold text-xs">S</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Skills (Tools)</h4>
+                            <h4 class="font-semibold text-sm"><a href="#skills" class="hover:text-signal-400 transition-colors">Skills (Tools)</a></h4>
                             <p class="text-slate-500 text-sm">Domain-specific tool collection: SQL queries, REST calls, file operations, domain-specific functions.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-amber-400 font-bold text-xs">L</span>
+                            <span class="text-amber-400 font-bold text-xs">C</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Language Model)</h4>
-                            <p class="text-slate-500 text-sm">Local model via local LLM runtime. The agent builds the complete prompt from system prompt, memory context, and user query.</p>
+                            <h4 class="font-semibold text-sm"><a href="#konnektoren" class="hover:text-signal-400 transition-colors">Connector (Interface)</a></h4>
+                            <p class="text-slate-500 text-sm">Communication channel to the user: Telegram, email, voice, or dashboard.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-purple-400 font-bold text-xs">C</span>
+                            <span class="text-purple-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Connector (Interface)</h4>
-                            <p class="text-slate-500 text-sm">Communication channel to the user: Telegram, email, voice, or dashboard.</p>
+                            <h4 class="font-semibold text-sm"><a href="#llm" class="hover:text-signal-400 transition-colors">LLM (Language Model)</a></h4>
+                            <p class="text-slate-500 text-sm">Local model via LLM runtime. The assistant builds the complete prompt from system prompt, memory context, and user query.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Agent Anatomy SVG -->
+            <!-- Agent Anatomy SVG — Pentagon with 5 components at side midpoints -->
             <div class="reveal" style="transition-delay: 0.15s;">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <defs>
-                        <marker id="agentArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                        </marker>
-                    </defs>
-                    <!-- Central Agent -->
-                    <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
-                    <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">AGENT</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomous Specialist</text>
+                <svg viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg mx-auto">
+                    <!-- Central Pentagon: ASSISTANT -->
+                    <polygon points="250,115 336,178 303,280 197,280 164,178"
+                             fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="250" y="200" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">ASSISTANT</text>
+                    <text x="250" y="220" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomous Specialist</text>
 
-                    <!-- Memory (top-left) -->
+                    <!-- Orchestrator (top-right side midpoint: 293, 147) -->
+                    <a href="#orchestrator" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="340" y="35" width="150" height="58" rx="10" fill="#f43f5e" fill-opacity="0.1" stroke="#f43f5e" stroke-width="1.5" style="cursor:pointer"/>
+                        <text x="415" y="61" text-anchor="middle" fill="#f43f5e" font-size="13" font-weight="600" style="cursor:pointer">Orchestrator</text>
+                        <text x="415" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">OODA Cycle</text>
+                    </a>
+                    <line x1="340" y1="75" x2="293" y2="147" stroke="#f43f5e" stroke-width="1.5"/>
+
+                    <!-- Memory (top-left side midpoint: 207, 147) -->
                     <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="30" width="140" height="55" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="55" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600" style="cursor:pointer">Memory</text>
-                        <text x="90" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQLite + Embeddings</text>
+                        <rect x="10" y="35" width="150" height="58" rx="10" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
+                        <text x="85" y="61" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="600" style="cursor:pointer">Memory</text>
+                        <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQLite + Embeddings</text>
                     </a>
-                    <line x1="120" y1="85" x2="170" y2="150" stroke="#0070f3" stroke-width="1.5" marker-end="url(#agentArrow)"/>
+                    <line x1="160" y1="75" x2="207" y2="147" stroke="#0070f3" stroke-width="1.5"/>
 
-                    <!-- Skills (top-right) -->
+                    <!-- Skills (right side midpoint: 320, 229) -->
                     <a href="#skills" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="30" width="140" height="55" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="55" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600" style="cursor:pointer">Skills</text>
-                        <text x="310" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQL, REST, File, Domain</text>
+                        <rect x="370" y="200" width="120" height="58" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
+                        <text x="430" y="226" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600" style="cursor:pointer">Skills</text>
+                        <text x="430" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQL, REST, Domain</text>
                     </a>
-                    <line x1="280" y1="85" x2="230" y2="150" stroke="#10b981" stroke-width="1.5"/>
+                    <line x1="370" y1="229" x2="320" y2="229" stroke="#10b981" stroke-width="1.5"/>
 
-                    <!-- LLM (bottom-left) -->
+                    <!-- LLM (left side midpoint: 181, 229) -->
                     <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Language Model (local)</text>
+                        <rect x="10" y="200" width="120" height="58" rx="10" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
+                        <text x="70" y="226" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="600" style="cursor:pointer">LLM</text>
+                        <text x="70" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">Language Model (local)</text>
                     </a>
-                    <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
+                    <line x1="130" y1="229" x2="181" y2="229" stroke="#a855f7" stroke-width="1.5"/>
 
-                    <!-- Connector (bottom-right) -->
+                    <!-- Connector (bottom side midpoint: 250, 280) -->
                     <a href="#konnektoren" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="290" width="140" height="55" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="315" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600" style="cursor:pointer">Connector</text>
-                        <text x="310" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Telegram, Email, Voice</text>
+                        <rect x="175" y="340" width="150" height="58" rx="10" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
+                        <text x="250" y="366" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600" style="cursor:pointer">Connector</text>
+                        <text x="250" y="385" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">Email, Telegram, Voice</text>
                     </a>
-                    <line x1="280" y1="290" x2="230" y2="230" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="250" y1="340" x2="250" y2="280" stroke="#f59e0b" stroke-width="1.5"/>
 
                     <!-- Formula -->
-                    <text x="200" y="385" text-anchor="middle" fill="#94a3b8" font-size="11">
-                        <tspan fill="#5eafff">Memory</tspan> + <tspan fill="#10b981">Skills</tspan> + <tspan fill="#a855f7">LLM</tspan> + <tspan fill="#f59e0b">Connector</tspan> = <tspan fill="#ffffff" font-weight="700">Agent</tspan>
+                    <text x="250" y="440" text-anchor="middle" fill="#94a3b8" font-size="11">
+                        <tspan fill="#f43f5e">O</tspan> + <tspan fill="#5eafff">M</tspan> + <tspan fill="#10b981">S</tspan> + <tspan fill="#a855f7">L</tspan> + <tspan fill="#f59e0b">C</tspan> = <tspan fill="#ffffff" font-weight="700">Assistant</tspan>
                     </text>
                 </svg>
             </div>
         </div>
 
-        <!-- The Agent as a Digital Assistant (8 cards) -->
-        <div class="mt-24">
-            <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">How It Works</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">The Agent as a Digital Assistant</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">
-                    An AIMOS agent does not work like a chatbot &mdash; it works like a case worker
-                    with their own desk, their own filing system, and their own daily routine.
-                </p>
-            </div>
+        <!-- Summary box -->
+        <div class="mt-12 bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+            <p class="text-sm text-slate-400 leading-relaxed">
+                <strong class="text-white">The key point:</strong> The assistant prepares &mdash; you decide. Your expertise, your experience, and your judgment remain indispensable. The assistant takes routine work off your plate: gathering data, monitoring deadlines, preparing drafts. The expert work stays with you.
+            </p>
+        </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Memory -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  2. ORCHESTRATOR — OODA Cycle                                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="orchestrator" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">OODA Cycle</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">The Orchestrator &mdash; how an AIMOS assistant thinks</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                A chatbot reacts to each message individually. An AIMOS assistant opens its inbox,
+                surveys everything, recognizes connections &mdash; and then acts in a coordinated way.
+                The principle behind it: the <strong class="text-white">OODA cycle</strong> from decision theory.
+            </p>
+        </div>
+
+        <!-- OODA Cycle SVG -->
+        <div class="reveal max-w-4xl mx-auto mb-16">
+            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="oodaArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e"/>
+                    </marker>
+                </defs>
+
+                <!-- Phase 1: OBSERVE -->
+                <rect x="0" y="30" width="170" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
+                <text x="85" y="60" text-anchor="middle" fill="#f43f5e" font-size="14" font-weight="700">OBSERVE</text>
+                <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">All messages at once</text>
+                <text x="85" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Group, categorize</text>
+                <text x="85" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Recognize connections</text>
+
+                <line x1="170" y1="80" x2="205" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 2: ORIENT -->
+                <rect x="210" y="30" width="170" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="295" y="60" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">ORIENT</text>
+                <text x="295" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Gather information</text>
+                <text x="295" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Check dependencies</text>
+                <text x="295" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Build situation report</text>
+
+                <line x1="380" y1="80" x2="415" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 3: DECIDE -->
+                <rect x="420" y="30" width="170" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="505" y="60" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">DECIDE</text>
+                <text x="505" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Action plan per stakeholder</text>
+                <text x="505" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Share only relevant info</text>
+                <text x="505" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Load thread context</text>
+
+                <line x1="590" y1="80" x2="625" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 4: ACT -->
+                <rect x="630" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="715" y="60" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">ACT</text>
+                <text x="715" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Respond per thread</text>
+                <text x="715" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Emails, tickets, updates</text>
+                <text x="715" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Coordinated, not individual</text>
+
+                <!-- Bottom label -->
+                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">The assistant holds the GPU across all phases &mdash; no other assistant interrupts it.</text>
+                <text x="400" y="195" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Like a case worker who closes the door and works through their inbox with focus.</text>
+            </svg>
+        </div>
+
+        <!-- Comparison: Chatbot vs AIMOS -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16 reveal">
+            <!-- Chatbot -->
+            <div class="bg-slate-850 border border-white/10 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Memory</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Remembers facts, corrections, preferences &mdash; permanently.
-                        Semantic search finds memories even with different wording.
-                    </p>
+                    <div>
+                        <h3 class="font-bold text-slate-300">Conventional Chatbot</h3>
+                        <p class="text-xs text-slate-500">Reactive mode</p>
+                    </div>
                 </div>
-
-                <!-- Notes & Filing -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <div class="space-y-3 text-sm text-slate-500">
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Processes each message <strong class="text-slate-400">in isolation</strong></span>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Notes &amp; Filing</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Writes summaries, research results, and conversation notes
-                        into its own workspace &mdash; like a case worker maintaining their file cabinet.
-                    </p>
-                </div>
-
-                <!-- Calendar -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Cannot recognize connections between requests</span>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Calendar</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Appointments, deadlines, follow-ups. The agent checks its due and overdue
-                        dates at every interaction &mdash; and acts proactively.
-                    </p>
-                </div>
-
-                <!-- Todo List -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Responds immediately &mdash; without knowing the big picture</span>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Todo List</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Open tasks, delegations, waiting lists.
-                        Automatically updated during the Dreaming cycle.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Second row -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Daily Rhythm -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Cannot inform stakeholder A about impacts from stakeholder B</span>
                     </div>
-                    <h4 class="font-bold text-sm mb-1">Daily Rhythm</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Once a day, the agent independently checks calendars, emails,
-                        and open tasks &mdash; even without anyone prompting it.
-                    </p>
-                </div>
-
-                <!-- Dreaming -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Dreaming</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        During idle periods, the agent processes its conversations: extracts facts,
-                        updates notes and todo lists, consolidates its memory.
-                    </p>
-                </div>
-
-                <!-- Teamwork -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Teamwork</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Agents communicate with each other &mdash; the finance agent asks the
-                        logistics agent for inventory values without burdening the user.
-                    </p>
-                </div>
-
-                <!-- Escalation -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Escalation</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        For complex questions, the agent automatically escalates to a more powerful
-                        AI model &mdash; anonymized and logged in an audit-proof manner.
-                    </p>
                 </div>
             </div>
 
-            <!-- Summary box -->
-            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
-                <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">The key point:</strong> The agent prepares &mdash; you decide. Your expertise, your experience, and your judgment remain indispensable. The agent takes routine work off your plate: gathering data, monitoring deadlines, preparing drafts. The expert work stays with you.
+            <!-- AIMOS -->
+            <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white">AIMOS Assistant</h3>
+                        <p class="text-xs text-rose-400">OODA mode</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Surveys <strong class="text-white">all messages at once</strong></span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Recognizes cross-thread connections</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Builds a <strong class="text-white">situation report</strong> before acting</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Responds per stakeholder &mdash; but informed by the big picture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Example -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-8">
+                <h3 class="font-bold text-lg mb-6 text-center">Example: Three messages, one situation report</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="border border-signal-500/20 rounded-lg p-4">
+                        <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:mueller</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Developer Mueller</p>
+                        <p class="text-slate-500 text-xs">"Unit tests for SG-03 are complete."</p>
+                    </div>
+                    <div class="border border-amber-500/20 rounded-lg p-4">
+                        <p class="text-amber-400 font-mono text-xs mb-2">Thread email:req-mgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Req Manager</p>
+                        <p class="text-slate-500 text-xs">"TSR-17 has been upgraded to ASIL D."</p>
+                    </div>
+                    <div class="border border-green-500/20 rounded-lg p-4">
+                        <p class="text-green-400 font-mono text-xs mb-2">Thread int:testmgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Test Manager</p>
+                        <p class="text-slate-500 text-xs">"Integration test for SG-03 is failing."</p>
+                    </div>
+                </div>
+
+                <!-- Situation Report -->
+                <div class="bg-rose-500/5 border border-rose-500/20 rounded-lg p-5 mb-6">
+                    <p class="text-rose-400 font-mono text-xs font-medium mb-2">SITUATION REPORT (cross-thread)</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        "All three messages concern Safety Goal SG-03. The ASIL D upgrade of TSR-17 changes
+                        the verification requirements: Mueller's unit tests are no longer sufficient (MC/DC coverage required).
+                        The failing integration test is a separate timing issue."
+                    </p>
+                </div>
+
+                <!-- Responses -->
+                <div class="grid md:grid-cols-3 gap-4 text-xs">
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-signal-400 font-medium mb-1">&rarr; To Mueller</p>
+                        <p class="text-slate-500">"Tests completed, but due to ASIL D upgrade, statement coverage is no longer sufficient. MC/DC required."</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-amber-400 font-medium mb-1">&rarr; To Req Manager</p>
+                        <p class="text-slate-500">"Upgrade registered. 3 SW requirements affected, unit tests need to be extended. Impact analysis attached."</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-green-400 font-medium mb-1">&rarr; To Test Manager</p>
+                        <p class="text-slate-500">"Timing issue, not caused by ASIL upgrade. Please send logfile. Integration test must be repeated after unit test extension."</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-slate-600 text-xs mt-6">
+                    Each stakeholder receives only what is relevant to them &mdash; but every response is informed by the big picture.
                 </p>
             </div>
         </div>
 
+        <!-- Technical Detail: How the Orchestrator works -->
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <div>
+                <h3 class="font-bold text-lg mb-4">How does this work technically?</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>
+                        The orchestrator is <strong class="text-white">not an AI model</strong>, but deterministic code.
+                        It controls the OODA cycle by calling the LLM multiple times with different tasks:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="text-rose-400 font-mono font-bold text-xs mt-1 flex-shrink-0">O+O</span>
+                            <span>All messages are presented to the LLM as a block: <em class="text-slate-300">"Analyze and find connections."</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-400 font-mono font-bold text-xs mt-1 flex-shrink-0">D</span>
+                            <span>The analysis is returned. The orchestrator sets it as context in the next prompt: <em class="text-slate-300">"Consolidate and build a situation report."</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-400 font-mono font-bold text-xs mt-1 flex-shrink-0">A</span>
+                            <span>Per thread: situation report + individual conversation history + response task. <strong class="text-white">Each stakeholder gets their own response.</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">What makes the situation report special</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-rose-400 mb-2 uppercase tracking-wide">Ephemeral, not permanent</h4>
+                        <p class="text-xs text-slate-500">The situation report lives only during a batch run. It is not stored &mdash; next run, new report. Long-term insights migrate to memory.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-signal-400 mb-2 uppercase tracking-wide">Thread isolation remains</h4>
+                        <p class="text-xs text-slate-500">The assistant knows the big picture, but stakeholder A learns nothing about the conversation with stakeholder B &mdash; only about impacts relevant to them.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-green-400 mb-2 uppercase tracking-wide">The orchestrator decides, not the LLM</h4>
+                        <p class="text-xs text-slate-500">The phase sequence is deterministic. The LLM cannot skip or mix phases &mdash; it receives a clear task for each phase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Archetypes -->
+        <div class="mt-20 reveal">
+            <div class="text-center mb-10">
+                <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Three Modes</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Not every assistant needs the full OODA cycle</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                    AIMOS supports three agent types &mdash; from quick voice responses to structured case workers.
+                    All three can act proactively (cronjobs, reminders, follow-ups).
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Voice Assistant -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Voice Assistant</h4>
+                            <p class="text-xs text-purple-400 font-mono">&lt;500ms latency</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Immediate reaction to voice input. Whisper transcription parallel to LLM warmup.
+                        Short, precise responses.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>Reception, voice control, quick queries</em></p>
+                </div>
+
+                <!-- Chat Assistant -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Chat Assistant</h4>
+                            <p class="text-xs text-signal-400 font-mono">&lt;5s latency</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Quick conversation via Telegram, email, or dashboard. Memory, customer records,
+                        delegation to colleagues. Cronjobs for proactive reminders.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>Customer support, helpdesk, order intake</em></p>
+                </div>
+
+                <!-- Worker -->
+                <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-3 right-3">
+                        <span class="text-[10px] font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-full">OODA</span>
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Worker</h4>
+                            <p class="text-xs text-rose-400 font-mono">Batch &mdash; OODA cycle</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-3">
+                        Checks its inbox, surveys all processes, recognizes cross-thread
+                        connections, builds a situation report &mdash; and then acts in a coordinated way.
+                    </p>
+                    <p class="text-slate-500 text-xs"><em>Process management, compliance, project assistance</em></p>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-600 text-xs mt-6">
+                All three types have memory, skills, connectors, and can act proactively.
+                The difference is in the <strong class="text-slate-400">thinking approach</strong>: one thread vs. the big picture.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -988,106 +1196,6 @@
             </div>
         </div>
 
-        <!-- Cognitive Balance -->
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token Optimization</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Dynamic balance between memory depth and response length &mdash; within the limited context window.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-            <!-- Slider Visualization -->
-            <div>
-                <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <!-- Slider bar -->
-                    <rect x="40" y="40" width="320" height="16" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <!-- Left gradient -->
-                    <rect x="40" y="40" width="160" height="16" rx="8" fill="#0070f3" fill-opacity="0.4"/>
-                    <!-- Right gradient -->
-                    <rect x="200" y="40" width="160" height="16" rx="8" fill="#10b981" fill-opacity="0.4"/>
-                    <!-- Slider handle -->
-                    <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
-
-                    <!-- Labels -->
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Memory Depth</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Response Length</text>
-
-                    <!-- Level marks -->
-                    <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="104" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">1</text>
-                    <line x1="152" y1="60" x2="152" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="152" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">2</text>
-                    <line x1="200" y1="60" x2="200" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="200" y="84" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="600">3</text>
-                    <line x1="248" y1="60" x2="248" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="248" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">4</text>
-                    <line x1="296" y1="60" x2="296" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="296" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">5</text>
-
-                    <!-- Context window -->
-                    <rect x="40" y="110" width="320" height="40" rx="6" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <rect x="40" y="110" width="120" height="40" rx="6" fill="#0070f3" fill-opacity="0.2"/>
-                    <text x="100" y="134" text-anchor="middle" fill="#5eafff" font-size="10">System Prompt</text>
-                    <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
-                    <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Memory</text>
-                    <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Response</text>
-
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Context window (e.g. 32k Tokens)</text>
-
-                    <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">More memory = less room for response (and vice versa)</text>
-                </svg>
-            </div>
-
-            <!-- Level Table -->
-            <div>
-                <div class="overflow-hidden rounded-xl border border-white/5">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-slate-850 border-b border-white/10">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Level</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Memory</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Response</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Use Case</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-400">
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">1</td>
-                                <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4">Very long</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analysis, reports</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">Reduced</td>
-                                <td class="py-3 px-4">Long</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Summaries</td>
-                            </tr>
-                            <tr class="border-b border-white/5 bg-signal-500/5">
-                                <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">Balanced</td>
-                                <td class="py-3 px-4 text-white">Medium</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standard (Default)</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Deep</td>
-                                <td class="py-3 px-4">Short</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Context-rich questions</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4 font-mono text-signal-300">5</td>
-                                <td class="py-3 px-4">Maximum</td>
-                                <td class="py-3 px-4">Minimal</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Research, fact-checking</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 

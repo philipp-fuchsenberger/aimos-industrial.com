@@ -149,11 +149,13 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konsept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konsept</a>
-        <a href="#beceriler" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Beceriler</a>
-        <a href="#konektorler" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konekt&ouml;rler</a>
-        <a href="#hafiza" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Haf&#305;za</a>
+        <a href="#anatomie" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Yap&#305;</a>
+        <a href="#orchestrator" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Orkestrat&ouml;r</a>
+        <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Haf&#305;za</a>
+        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Yetenekler</a>
+        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Konekt&ouml;rler</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
+        <a href="#threads" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Thread'ler</a>
     </div>
 </nav>
 
@@ -174,26 +176,35 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  1. KONSEPT — AIMOS Asistanı nedir?                                      -->
+<!--  1. ANATOMIE — Bir AIMOS Asistanının Yapısı                            -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konsept" class="relative py-24 bg-slate-900/50">
+<section id="anatomie" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
 
-        <!-- Anatomy: M + S + L + C -->
+        <!-- Anatomy: O + M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Temel Kavramlar</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">AIMOS Asistan&#305; Nedir?</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Be&#351; Yap&#305; Ta&#351;&#305;</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Bir AIMOS Asistan&#305;n&#305;n Yap&#305;s&#305;</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Bir AIMOS asistan&#305;, d&ouml;rt temel bile&#351;eni birle&#351;tiren otonom bir uzman:
+                    Bir AIMOS asistan&#305;, be&#351; temel bile&#351;eni birle&#351;tiren otonom bir uzman:
                 </p>
                 <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-rose-400 font-bold text-xs">O</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm"><a href="#orchestrator" class="hover:text-signal-400 transition-colors">Orchestrator</a></h4>
+                            <p class="text-slate-500 text-sm">D&uuml;&#351;&uuml;nme s&uuml;recini a&#351;amalar halinde y&ouml;netir: G&ouml;zlemle, Y&ouml;nlendir, Harekete Ge&ccedil; &mdash; OODA prensibi.</p>
+                        </div>
+                    </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory (Haf&#305;za)</h4>
+                            <h4 class="font-semibold text-sm"><a href="#gedaechtnis" class="hover:text-signal-400 transition-colors">Memory (Haf&#305;za)</a></h4>
                             <p class="text-slate-500 text-sm">Semantik, epizodik ve prosed&uuml;rel uzun s&uuml;reli haf&#305;zaya sahip &ouml;zel SQLite veritaban&#305;.</p>
                         </div>
                     </div>
@@ -202,202 +213,93 @@
                             <span class="text-green-400 font-bold text-xs">S</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Skills (Ara&#231;lar)</h4>
+                            <h4 class="font-semibold text-sm"><a href="#skills" class="hover:text-signal-400 transition-colors">Skills (Ara&#231;lar)</a></h4>
                             <p class="text-slate-500 text-sm">Alana &ouml;zg&uuml; ara&#231; koleksiyonu: SQL sorgusu, REST &#231;a&#287;r&#305;s&#305;, dosya i&#351;lemleri, alan&#305;na &ouml;zel fonksiyonlar.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-amber-400 font-bold text-xs">L</span>
+                            <span class="text-amber-400 font-bold text-xs">C</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Dil Modeli)</h4>
-                            <p class="text-slate-500 text-sm">Yerel LLM &#231;al&#305;&#351;ma ortam&#305; &uuml;zerinden yerel model. Asistan, sistem prompt&#39;u, haf&#305;za ba&#287;lam&#305; ve kullan&#305;c&#305; talebinden tam prompt&#39;u olu&#351;turur.</p>
+                            <h4 class="font-semibold text-sm"><a href="#konnektoren" class="hover:text-signal-400 transition-colors">Connector (Ba&#287;lant&#305;)</a></h4>
+                            <p class="text-slate-500 text-sm">Kullan&#305;c&#305;yla ileti&#351;im kanal&#305;: Telegram, e-posta, ses veya kontrol paneli.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-purple-400 font-bold text-xs">C</span>
+                            <span class="text-purple-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Connector (Ba&#287;lant&#305;)</h4>
-                            <p class="text-slate-500 text-sm">Kullan&#305;c&#305;yla ileti&#351;im kanal&#305;: Telegram, e-posta, ses veya kontrol paneli.</p>
+                            <h4 class="font-semibold text-sm"><a href="#llm" class="hover:text-signal-400 transition-colors">LLM (Dil Modeli)</a></h4>
+                            <p class="text-slate-500 text-sm">Yerel LLM &#231;al&#305;&#351;ma ortam&#305; &uuml;zerinden yerel model. Asistan, sistem prompt'u, haf&#305;za ba&#287;lam&#305; ve kullan&#305;c&#305; talebinden tam prompt'u olu&#351;turur.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Agent Anatomy SVG -->
+            <!-- Agent Anatomy SVG — Pentagon with 5 components at side midpoints -->
             <div class="reveal" style="transition-delay: 0.15s;">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <defs>
-                        <marker id="agentArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                        </marker>
-                    </defs>
-                    <!-- Central Agent -->
-                    <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
-                    <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">ASİSTAN</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Otonom Uzman</text>
+                <svg viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg mx-auto">
+                    <!-- Central Pentagon: ASSISTENT -->
+                    <polygon points="250,115 336,178 303,280 197,280 164,178"
+                             fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="250" y="200" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">ASSISTENT</text>
+                    <text x="250" y="220" text-anchor="middle" fill="#94a3b8" font-size="10">Autonomer Spezialist</text>
 
-                    <!-- Memory (top-left) -->
-                    <a href="#hafiza" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="30" width="140" height="55" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="55" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600" style="cursor:pointer">Haf&#305;za</text>
-                        <text x="90" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQLite + Embeddings</text>
+                    <!-- Orchestrator (top-right side midpoint: 293, 147) -->
+                    <a href="#orchestrator" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="340" y="35" width="150" height="58" rx="10" fill="#f43f5e" fill-opacity="0.1" stroke="#f43f5e" stroke-width="1.5" style="cursor:pointer"/>
+                        <text x="415" y="61" text-anchor="middle" fill="#f43f5e" font-size="13" font-weight="600" style="cursor:pointer">Orchestrator</text>
+                        <text x="415" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">OODA-Zyklus</text>
                     </a>
-                    <line x1="120" y1="85" x2="170" y2="150" stroke="#0070f3" stroke-width="1.5" marker-end="url(#agentArrow)"/>
+                    <line x1="340" y1="75" x2="293" y2="147" stroke="#f43f5e" stroke-width="1.5"/>
 
-                    <!-- Skills (top-right) -->
-                    <a href="#beceriler" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="30" width="140" height="55" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="55" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600" style="cursor:pointer">Beceriler</text>
-                        <text x="310" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQL, REST, Dosya, Alan</text>
+                    <!-- Memory (top-left side midpoint: 207, 147) -->
+                    <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="10" y="35" width="150" height="58" rx="10" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
+                        <text x="85" y="61" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="600" style="cursor:pointer">Memory</text>
+                        <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQLite + Embeddings</text>
                     </a>
-                    <line x1="280" y1="85" x2="230" y2="150" stroke="#10b981" stroke-width="1.5"/>
+                    <line x1="160" y1="75" x2="207" y2="147" stroke="#0070f3" stroke-width="1.5"/>
 
-                    <!-- LLM (bottom-left) -->
+                    <!-- Skills (right side midpoint: 320, 229) -->
+                    <a href="#skills" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="370" y="200" width="120" height="58" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
+                        <text x="430" y="226" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600" style="cursor:pointer">Skills</text>
+                        <text x="430" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQL, REST, Domain</text>
+                    </a>
+                    <line x1="370" y1="229" x2="320" y2="229" stroke="#10b981" stroke-width="1.5"/>
+
+                    <!-- LLM (left side midpoint: 181, 229) -->
                     <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Dil Modeli (yerel)</text>
+                        <rect x="10" y="200" width="120" height="58" rx="10" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
+                        <text x="70" y="226" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="600" style="cursor:pointer">LLM</text>
+                        <text x="70" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">Sprachmodell (lokal)</text>
                     </a>
-                    <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
+                    <line x1="130" y1="229" x2="181" y2="229" stroke="#a855f7" stroke-width="1.5"/>
 
-                    <!-- Connector (bottom-right) -->
-                    <a href="#konektorler" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="290" width="140" height="55" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="315" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600" style="cursor:pointer">Konekt&ouml;r</text>
-                        <text x="310" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Telegram, E-Posta, Ses</text>
+                    <!-- Connector (bottom side midpoint: 250, 280) -->
+                    <a href="#konnektoren" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="175" y="340" width="150" height="58" rx="10" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
+                        <text x="250" y="366" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600" style="cursor:pointer">Connector</text>
+                        <text x="250" y="385" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">E-Mail, Telegram, Voice</text>
                     </a>
-                    <line x1="280" y1="290" x2="230" y2="230" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="250" y1="340" x2="250" y2="280" stroke="#f59e0b" stroke-width="1.5"/>
 
                     <!-- Formula -->
-                    <text x="200" y="385" text-anchor="middle" fill="#94a3b8" font-size="11">
-                        <tspan fill="#5eafff">Haf&#305;za</tspan> + <tspan fill="#10b981">Beceriler</tspan> + <tspan fill="#a855f7">LLM</tspan> + <tspan fill="#f59e0b">Konekt&ouml;r</tspan> = <tspan fill="#ffffff" font-weight="700">Asistan</tspan>
+                    <text x="250" y="440" text-anchor="middle" fill="#94a3b8" font-size="11">
+                        <tspan fill="#f43f5e">O</tspan> + <tspan fill="#5eafff">M</tspan> + <tspan fill="#10b981">S</tspan> + <tspan fill="#a855f7">L</tspan> + <tspan fill="#f59e0b">C</tspan> = <tspan fill="#ffffff" font-weight="700">Assistent</tspan>
                     </text>
                 </svg>
             </div>
         </div>
 
-        <!-- Asistan iş başında (8 kart) -->
-        <div class="mt-24">
-            <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">&#199;al&#305;&#351;ma Bi&#231;imi</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Dijital Asistan</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">
-                    Bir AIMOS asistan&#305; sohbet botu gibi &#231;al&#305;&#351;maz &mdash; kendi masas&#305;, kendi dosya dolap&#305;
-                    ve kendi g&uuml;nl&uuml;k ritmi olan bir uzman personel gibi &#231;al&#305;&#351;&#305;r.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Hafıza -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Haf&#305;za</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Olgular&#305;, d&uuml;zeltmeleri, tercihleri kal&#305;c&#305; olarak hat&#305;rlar.
-                        Semantik arama, farkl&#305; kelimelerle de an&#305;lar&#305; bulur.
-                    </p>
-                </div>
-
-                <!-- Notlar & Dosyalama -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Notlar &amp; Dosyalama</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        &Ouml;zetler, ara&#351;t&#305;rma sonu&#231;lar&#305; ve g&ouml;r&uuml;&#351;me notlar&#305;n&#305;
-                        kendi &#231;al&#305;&#351;ma alan&#305;na yazar &mdash; bir uzman&#305;n dosya dolap&#305;n&#305; d&uuml;zenlemesi gibi.
-                    </p>
-                </div>
-
-                <!-- Takvim -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Takvim</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Randevular, son tarihler, hat&#305;rlatmalar. Asistan her etkile&#351;imde
-                        vadesi gelen ve geciken randevular&#305;n&#305; g&ouml;r&uuml;r &mdash; ve proaktif davran&#305;r.
-                    </p>
-                </div>
-
-                <!-- Yapılacaklar Listesi -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Yap&#305;lacaklar Listesi</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        A&#231;&#305;k g&ouml;revler, delegasyonlar, bekleme listeleri.
-                        Dreaming d&ouml;ng&uuml;s&uuml;nde otomatik olarak g&uuml;ncellenir.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Second row -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Günlük Ritim -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">G&uuml;nl&uuml;k Ritim</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        G&uuml;nde bir kez asistan ba&#287;&#305;ms&#305;z olarak takvimi, e-postalar&#305;
-                        ve a&#231;&#305;k g&ouml;revleri kontrol eder &mdash; kimse ona sormasa bile.
-                    </p>
-                </div>
-
-                <!-- Dreaming -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Dreaming</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Bo&#351; zamanlar&#305;nda asistan konu&#351;malar&#305;n&#305; i&#351;ler: olgular&#305; &#231;&#305;kar&#305;r,
-                        notlar&#305; ve yap&#305;lacaklar listesini g&uuml;nceller, haf&#305;zas&#305;n&#305; konsolide eder.
-                    </p>
-                </div>
-
-                <!-- Ekip Çalışması -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Ekip &#199;al&#305;&#351;mas&#305;</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Asistanlar birbirleriyle ileti&#351;im kurar &mdash; Finans Asistan&#305;, Lojistik Asistan&#305;&#39;ndan
-                        depo de&#287;erlerini sorar; kullan&#305;c&#305;y&#305; me&#351;gul etmeden.
-                    </p>
-                </div>
-
-                <!-- Eskalasyon -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Eskalasyon</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Karma&#351;&#305;k sorularda asistan otomatik olarak daha g&uuml;&#231;l&uuml; bir
-                        YZ modeline eskale eder &mdash; anonim ve denetlenebilir &#351;ekilde.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Summary box -->
-            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
-                <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">Kilit nokta:</strong> Asistan haz&#305;rl&#305;k yapar &mdash; karar&#305; Siz verirsiniz. Uzmanl&#305;&#287;&#305;n&#305;z, deneyiminiz ve de&#287;erlendirme yetiniz vazge&#231;ilmezdir. Asistan rutin i&#351;leri &uuml;stlenir: veri toplama, s&uuml;re takibi, taslak haz&#305;rlama. Uzmanl&#305;k gerektiren i&#351; Sizde kal&#305;r.
-                </p>
-            </div>
+        <!-- Summary box -->
+        <div class="mt-12 bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+            <p class="text-sm text-slate-400 leading-relaxed">
+                <strong class="text-white">Kilit nokta:</strong> Asistan haz&#305;rl&#305;k yapar &mdash; karar&#305; Siz verirsiniz. Uzmanl&#305;&#287;&#305;n&#305;z, deneyiminiz ve de&#287;erlendirme yetiniz vazge&#231;ilmezdir. Asistan rutin i&#351;leri &uuml;stlenir: veri toplama, s&uuml;re takibi, taslak haz&#305;rlama. Uzmanl&#305;k gerektiren i&#351; Sizde kal&#305;r.
+            </p>
         </div>
 
     </div>
@@ -405,9 +307,315 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  2. BECERİLER — 18 Beceri + Yol Haritası                             -->
+<!--  2. ORCHESTRATOR — OODA Döngüsü                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="beceriler" class="relative py-24 grid-pattern">
+<section id="orchestrator" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">OODA D&ouml;ng&uuml;s&uuml;</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Orkestrat&ouml;r &mdash; bir AIMOS asistan&#305; nas&#305;l d&uuml;&#351;&uuml;n&uuml;r</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                Bir chatbot her mesaja tek tek tepki verir. Bir AIMOS asistan&#305; gelen kutusunu a&ccedil;ar,
+                her &#351;eyi g&ouml;zden ge&ccedil;irir, ba&#287;lant&#305;lar&#305; fark eder &mdash; ve sonra koordineli hareket eder.
+                Arkas&#305;ndaki prensip: karar teorisinden <strong class="text-white">OODA d&ouml;ng&uuml;s&uuml;</strong>.
+            </p>
+        </div>
+
+        <!-- OODA Cycle SVG -->
+        <div class="reveal max-w-4xl mx-auto mb-16">
+            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="oodaArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e"/>
+                    </marker>
+                </defs>
+
+                <!-- Phase 1: OBSERVE -->
+                <rect x="0" y="30" width="170" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
+                <text x="85" y="60" text-anchor="middle" fill="#f43f5e" font-size="14" font-weight="700">OBSERVE</text>
+                <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">T&uuml;m mesajlar&#305; birden</text>
+                <text x="85" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Grupla, Kategorize et</text>
+                <text x="85" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Ba&#287;lant&#305;lar&#305; fark et</text>
+
+                <line x1="170" y1="80" x2="205" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 2: ORIENT -->
+                <rect x="210" y="30" width="170" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="295" y="60" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">ORIENT</text>
+                <text x="295" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Bilgi topla</text>
+                <text x="295" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Ba&#287;&#305;ml&#305;l&#305;klar&#305; kontrol et</text>
+                <text x="295" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Durum de&#287;erlendirmesi olu&#351;tur</text>
+
+                <line x1="380" y1="80" x2="415" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 3: DECIDE -->
+                <rect x="420" y="30" width="170" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="505" y="60" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">DECIDE</text>
+                <text x="505" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Payda&#351; ba&#351;&#305;na aksiyon plan&#305;</text>
+                <text x="505" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Yaln&#305;zca ilgili bilgileri payla&#351;</text>
+                <text x="505" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Thread ba&#287;lam&#305;n&#305; y&uuml;kle</text>
+
+                <line x1="590" y1="80" x2="625" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 4: ACT -->
+                <rect x="630" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="715" y="60" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">ACT</text>
+                <text x="715" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Thread ba&#351;&#305;na yan&#305;t ver</text>
+                <text x="715" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">E-postalar, biletler, g&uuml;ncellemeler</text>
+                <text x="715" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Koordineli, tek tek de&#287;il</text>
+
+                <!-- Bottom label -->
+                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">Asistan t&uuml;m a&#351;amalar boyunca GPU'yu tutar &mdash; ba&#351;ka bir asistan onu kesemez.</text>
+                <text x="400" y="195" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Kap&#305;s&#305;n&#305; kapatan ve gelen kutusunu konsantre bir &#351;ekilde i&#351;leyen bir memur gibi.</text>
+            </svg>
+        </div>
+
+        <!-- Comparison: Chatbot vs AIMOS -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16 reveal">
+            <!-- Chatbot -->
+            <div class="bg-slate-850 border border-white/10 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-300">Geleneksel Chatbot</h3>
+                        <p class="text-xs text-slate-500">Reaktif Mod</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm text-slate-500">
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Her mesaj&#305; <strong class="text-slate-400">izole</strong> olarak i&#351;ler</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Talepler aras&#305;ndaki ba&#287;lant&#305;lar&#305; fark etmez</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>B&uuml;y&uuml;k resmi bilmeden hemen yan&#305;t verir</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Payda&#351; A'y&#305;, Payda&#351; B'nin etkileri hakk&#305;nda bilgilendiremez</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIMOS -->
+            <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white">AIMOS Asistan&#305;</h3>
+                        <p class="text-xs text-rose-400">OODA Modu</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span><strong class="text-white">T&uuml;m mesajlar&#305; birden</strong> g&ouml;zden ge&ccedil;irir</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Thread'ler aras&#305; ba&#287;lant&#305;lar&#305; fark eder</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Harekete ge&ccedil;meden &ouml;nce bir <strong class="text-white">durum de&#287;erlendirmesi</strong> olu&#351;turur</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Payda&#351; ba&#351;&#305;na yan&#305;t verir &mdash; ama b&uuml;y&uuml;k resimden haberdar olarak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Example -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-8">
+                <h3 class="font-bold text-lg mb-6 text-center">&Ouml;rnek: &Uuml;&ccedil; Mesaj, Bir Durum De&#287;erlendirmesi</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="border border-signal-500/20 rounded-lg p-4">
+                        <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:m&uuml;ller</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Geli&#351;tirici M&uuml;ller</p>
+                        <p class="text-slate-500 text-xs">&ldquo;SG-03 i&ccedil;in birim testleri tamamland&#305;.&rdquo;</p>
+                    </div>
+                    <div class="border border-amber-500/20 rounded-lg p-4">
+                        <p class="text-amber-400 font-mono text-xs mb-2">Thread email:req-mgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Gereksinim Y&ouml;neticisi</p>
+                        <p class="text-slate-500 text-xs">&ldquo;TSR-17, ASIL D'ye y&uuml;kseltildi.&rdquo;</p>
+                    </div>
+                    <div class="border border-green-500/20 rounded-lg p-4">
+                        <p class="text-green-400 font-mono text-xs mb-2">Thread int:testmgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Test Y&ouml;neticisi</p>
+                        <p class="text-slate-500 text-xs">&ldquo;SG-03 i&ccedil;in entegrasyon testi ba&#351;ar&#305;s&#305;z.&rdquo;</p>
+                    </div>
+                </div>
+
+                <!-- Lagebild -->
+                <div class="bg-rose-500/5 border border-rose-500/20 rounded-lg p-5 mb-6">
+                    <p class="text-rose-400 font-mono text-xs font-medium mb-2">DURUM DE&#286;ERLEND&#304;RMES&#304; (thread'ler aras&#305;)</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        &ldquo;Her &uuml;&ccedil; mesaj da G&uuml;venlik Hedefi SG-03 ile ilgili. TSR-17'nin ASIL-D'ye y&uuml;kseltilmesi
+                        do&#287;rulama gereksinimlerini de&#287;i&#351;tiriyor: M&uuml;ller'in birim testleri art&#305;k yeterli de&#287;il (MC/DC Kapsam&#305; gerekli).
+                        Ba&#351;ar&#305;s&#305;z entegrasyon testi ayr&#305; bir zamanlama sorunudur.&rdquo;
+                    </p>
+                </div>
+
+                <!-- Responses -->
+                <div class="grid md:grid-cols-3 gap-4 text-xs">
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-signal-400 font-medium mb-1">&rarr; M&uuml;ller'e</p>
+                        <p class="text-slate-500">&ldquo;Testler tamamland&#305;, ancak ASIL-D y&uuml;kseltmesi nedeniyle Statement Coverage art&#305;k yeterli de&#287;il. MC/DC gerekli.&rdquo;</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-amber-400 font-medium mb-1">&rarr; Gereksinim Y&ouml;neticisine</p>
+                        <p class="text-slate-500">&ldquo;Y&uuml;kseltme kaydedildi. 3 yaz&#305;l&#305;m gereksinimi etkilendi, birim testlerinin geni&#351;letilmesi gerekiyor. Etki Analizi ektedir.&rdquo;</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-green-400 font-medium mb-1">&rarr; Test Y&ouml;neticisine</p>
+                        <p class="text-slate-500">&ldquo;Zamanlama sorunu, ASIL y&uuml;kseltmesinden kaynaklanm&#305;yor. L&uuml;tfen log dosyas&#305;n&#305; g&ouml;nderin. Birim testi geni&#351;letmesinden sonra entegrasyon testinin tekrarlanmas&#305; gerekiyor.&rdquo;</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-slate-600 text-xs mt-6">
+                    Her payda&#351; yaln&#305;zca kendisi i&ccedil;in ilgili olan&#305; al&#305;r &mdash; ama her yan&#305;t b&uuml;y&uuml;k resimden haberdar olarak verilir.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical Detail: How the Orchestrator works -->
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <div>
+                <h3 class="font-bold text-lg mb-4">Teknik olarak nas&#305;l &ccedil;al&#305;&#351;&#305;r?</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>
+                        Orkestrat&ouml;r <strong class="text-white">bir YZ modeli de&#287;il</strong>, deterministik koddur.
+                        OODA d&ouml;ng&uuml;s&uuml;n&uuml;, LLM'yi farkl&#305; g&ouml;revlerle birden fazla kez &ccedil;a&#287;&#305;rarak y&ouml;netir:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="text-rose-400 font-mono font-bold text-xs mt-1 flex-shrink-0">O+O</span>
+                            <span>T&uuml;m mesajlar LLM'ye blok olarak sunulur: <em class="text-slate-300">&ldquo;Analiz et ve ba&#287;lant&#305;lar&#305; bul.&rdquo;</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-400 font-mono font-bold text-xs mt-1 flex-shrink-0">D</span>
+                            <span>Analiz geri d&ouml;ner. Orkestrat&ouml;r bunu bir sonraki prompt'a ba&#287;lam olarak ekler: <em class="text-slate-300">&ldquo;Konsolide et ve durum de&#287;erlendirmesi olu&#351;tur.&rdquo;</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-400 font-mono font-bold text-xs mt-1 flex-shrink-0">A</span>
+                            <span>Thread ba&#351;&#305;na: Durum de&#287;erlendirmesi + bireysel konu&#351;ma ge&ccedil;mi&#351;i + yan&#305;t g&ouml;revi. <strong class="text-white">Her payda&#351; kendi yan&#305;t&#305;n&#305; al&#305;r.</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Durum de&#287;erlendirmesini &ouml;zel k&#305;lan ne?</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-rose-400 mb-2 uppercase tracking-wide">Ge&ccedil;ici, kal&#305;c&#305; de&#287;il</h4>
+                        <p class="text-xs text-slate-500">Durum de&#287;erlendirmesi yaln&#305;zca bir toplu i&#351;lem s&#305;ras&#305;nda ya&#351;ar. Kaydedilmez &mdash; sonraki &ccedil;al&#305;&#351;ma, yeni de&#287;erlendirme. Uzun vadeli bulgular haf&#305;zaya aktar&#305;l&#305;r.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-signal-400 mb-2 uppercase tracking-wide">Thread izolasyonu korunur</h4>
+                        <p class="text-xs text-slate-500">Asistan b&uuml;y&uuml;k resmi bilir, ama Payda&#351; A, Payda&#351; B ile olan konu&#351;may&#305; &ouml;&#287;renmez &mdash; yaln&#305;zca kendisi i&ccedil;in ilgili etkileri.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-green-400 mb-2 uppercase tracking-wide">Karar veren orkestrat&ouml;rd&uuml;r, LLM de&#287;il</h4>
+                        <p class="text-xs text-slate-500">A&#351;ama s&#305;ras&#305; deterministiktir. LLM hi&ccedil;bir a&#351;amay&#305; atlayamaz veya kar&#305;&#351;t&#305;ramaz &mdash; her a&#351;ama i&ccedil;in net bir g&ouml;rev al&#305;r.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Archetypes -->
+        <div class="mt-20 reveal">
+            <div class="text-center mb-10">
+                <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">&Uuml;&ccedil; Mod</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Her asistan tam OODA d&ouml;ng&uuml;s&uuml;ne ihtiya&ccedil; duymaz</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                    AIMOS &uuml;&ccedil; asistan t&uuml;r&uuml; tan&#305;r &mdash; h&#305;zl&#305; sesli yan&#305;ttan yap&#305;land&#305;r&#305;lm&#305;&#351; memura kadar.
+                    Her &uuml;&ccedil;&uuml; de proaktif hareket edebilir (zamanlanm&#305;&#351; g&ouml;revler, hat&#305;rlatmalar, yeniden sunumlar).
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Ses Asistanı -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Ses Asistan&#305;</h4>
+                            <p class="text-xs text-purple-400 font-mono">&lt;500ms Gecikme</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Ses girdisine an&#305;nda tepki. Whisper transkripsiyon LLM &#305;s&#305;nmas&#305;yla paralel.
+                        K&#305;sa, &ouml;z yan&#305;tlar.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>Resepsiyon, ses kontrol&uuml;, h&#305;zl&#305; sorgular</em></p>
+                </div>
+
+                <!-- Sohbet Asistanı -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Sohbet Asistan&#305;</h4>
+                            <p class="text-xs text-signal-400 font-mono">&lt;5s Gecikme</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Telegram, e-posta veya kontrol paneli &uuml;zerinden h&#305;zl&#305; konu&#351;ma. Haf&#305;za, m&uuml;&#351;teri dosyalar&#305;,
+                        meslekta&#351;lara delegasyon. Proaktif hat&#305;rlatmalar i&ccedil;in zamanlanm&#305;&#351; g&ouml;revler.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>M&uuml;&#351;teri deste&#287;i, yard&#305;m masas&#305;, sipari&#351; kabul&uuml;</em></p>
+                </div>
+
+                <!-- Çalışan -->
+                <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-3 right-3">
+                        <span class="text-[10px] font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-full">OODA</span>
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">&Ccedil;al&#305;&#351;an</h4>
+                            <p class="text-xs text-rose-400 font-mono">Batch &mdash; OODA d&ouml;ng&uuml;s&uuml;</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-3">
+                        Gelen kutusunu kontrol eder, t&uuml;m s&uuml;re&ccedil;leri g&ouml;zden ge&ccedil;irir, thread'ler aras&#305;
+                        ba&#287;lant&#305;lar&#305; fark eder, bir durum de&#287;erlendirmesi olu&#351;turur &mdash; ve sonra koordineli hareket eder.
+                    </p>
+                    <p class="text-slate-500 text-xs"><em>S&uuml;re&ccedil; y&ouml;netimi, uyumluluk, proje asistanl&#305;&#287;&#305;</em></p>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-600 text-xs mt-6">
+                Her &uuml;&ccedil; t&uuml;r de haf&#305;zaya, yeteneklere, konekt&ouml;rlere sahiptir ve proaktif hareket edebilir.
+                Fark <strong class="text-slate-400">d&uuml;&#351;&uuml;nme bi&ccedil;imindedir</strong>: tek thread vs. b&uuml;y&uuml;k resim.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3. BECERİLER — 18 Beceri + Yol Haritası                             -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="skills" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">SKILL_REGISTRY</p>
@@ -657,9 +865,9 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  3. KONEKTÖRLER — Evrensel Bağlantı                                   -->
+<!--  4. KONEKTÖRLER — Evrensel Bağlantı                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konektorler" class="relative py-24 bg-slate-900/50">
+<section id="konnektoren" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ba&#287;lant&#305;</p>
@@ -862,7 +1070,7 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <!--  4. HAFIZA — Uzun Süreli Hafıza                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="hafiza" class="relative py-24 grid-pattern">
+<section id="gedaechtnis" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3 Katmanl&#305; Haf&#305;za</p>
@@ -987,97 +1195,7 @@
             </div>
         </div>
 
-        <!-- Cognitive Balance -->
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Token Optimizasyonu</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Haf&#305;za derinli&#287;i ile yan&#305;t uzunlu&#287;u aras&#305;nda dinamik denge &mdash; s&#305;n&#305;rl&#305; ba&#287;lam penceresi i&#231;inde.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-            <!-- Slider Visualization -->
-            <div>
-                <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <rect x="40" y="40" width="320" height="16" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <rect x="40" y="40" width="160" height="16" rx="8" fill="#0070f3" fill-opacity="0.4"/>
-                    <rect x="200" y="40" width="160" height="16" rx="8" fill="#10b981" fill-opacity="0.4"/>
-                    <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
-
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Haf&#305;za Derinli&#287;i</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Yan&#305;t Uzunlu&#287;u</text>
-
-                    <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="104" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">1</text>
-                    <line x1="152" y1="60" x2="152" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="152" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">2</text>
-                    <line x1="200" y1="60" x2="200" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="200" y="84" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="600">3</text>
-                    <line x1="248" y1="60" x2="248" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="248" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">4</text>
-                    <line x1="296" y1="60" x2="296" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="296" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">5</text>
-
-                    <rect x="40" y="110" width="320" height="40" rx="6" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <rect x="40" y="110" width="120" height="40" rx="6" fill="#0070f3" fill-opacity="0.2"/>
-                    <text x="100" y="134" text-anchor="middle" fill="#5eafff" font-size="10">Sistem Prompt</text>
-                    <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
-                    <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Haf&#305;za</text>
-                    <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Yan&#305;t</text>
-
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Ba&#287;lam Penceresi (&ouml;rn. 32k Token)</text>
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">Daha fazla haf&#305;za = yan&#305;t i&#231;in daha az alan (ve tersi)</text>
-                </svg>
-            </div>
-
-            <!-- Level Table -->
-            <div>
-                <div class="overflow-hidden rounded-xl border border-white/5">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-slate-850 border-b border-white/10">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Seviye</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Haf&#305;za</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Yan&#305;t</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Kullan&#305;m</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-400">
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">1</td>
-                                <td class="py-3 px-4">Minimum</td>
-                                <td class="py-3 px-4">&#199;ok uzun</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Analiz, raporlar</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">Azalt&#305;lm&#305;&#351;</td>
-                                <td class="py-3 px-4">Uzun</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">&Ouml;zetler</td>
-                            </tr>
-                            <tr class="border-b border-white/5 bg-signal-500/5">
-                                <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">Dengeli</td>
-                                <td class="py-3 px-4 text-white">Orta</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Standart (Varsay&#305;lan)</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Derin</td>
-                                <td class="py-3 px-4">K&#305;sa</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Ba&#287;lam yo&#287;un sorular</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4 font-mono text-signal-300">5</td>
-                                <td class="py-3 px-4">Maksimum</td>
-                                <td class="py-3 px-4">Minimum</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Ara&#351;t&#305;rma, olgu kontrol&uuml;</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <!-- (Cognitive Balance moved to architektur.html — now dynamic, not static slider) -->
     </div>
 </section>
 
@@ -1184,7 +1302,7 @@
                     <li><a href="team.html" class="hover:text-signal-400 transition-colors">Asistan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
-                    <li><a href="agenten.html#konektorler" class="hover:text-signal-400 transition-colors">Konekt&ouml;rler</a></li>
+                    <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konekt&ouml;rler</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>
                 </ul>
             </div>

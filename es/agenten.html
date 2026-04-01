@@ -149,11 +149,13 @@
 <!-- Sub-Navigation (sticky below main nav) -->
 <nav id="sub-nav" class="fixed top-16 w-full z-40 nav-blur bg-slate-900/80 border-b border-white/5 transition-transform duration-300">
     <div class="max-w-7xl mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto text-sm text-slate-400 scrollbar-none">
-        <a href="#konzept" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Concepto</a>
-        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Skills</a>
-        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Conectores</a>
+        <a href="#anatomie" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Estructura</a>
+        <a href="#orchestrator" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Orquestador</a>
         <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Memoria</a>
+        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Habilidades</a>
+        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Conectores</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
+        <a href="#threads" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Hilos</a>
     </div>
 </nav>
 
@@ -174,26 +176,35 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  1. CONCEPTO — &iquest;Qu&eacute; es un agente AIMOS?                -->
+<!--  1. ESTRUCTURA — Estructura de un asistente AIMOS                     -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konzept" class="relative py-24 bg-slate-900/50">
+<section id="anatomie" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
 
-        <!-- Anatomy: M + S + L + C -->
+        <!-- Anatomy: O + M + S + L + C -->
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Fundamentos</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">&iquest;Qu&eacute; es un agente AIMOS?</h2>
+                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Cinco componentes</p>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Estructura de un asistente AIMOS</h2>
                 <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Un agente AIMOS es un asistente digital especializado que combina cuatro componentes clave:
+                    Un asistente AIMOS es un especialista aut&oacute;nomo que combina cinco componentes clave:
                 </p>
                 <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-rose-400 font-bold text-xs">O</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm"><a href="#orchestrator" class="hover:text-signal-400 transition-colors">Orchestrator</a></h4>
+                            <p class="text-slate-500 text-sm">Controla el proceso de pensamiento en fases: Observar, Orientar, Actuar &mdash; seg&uacute;n el principio OODA.</p>
+                        </div>
+                    </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <span class="text-signal-400 font-bold text-xs">M</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Memory (Memoria)</h4>
+                            <h4 class="font-semibold text-sm"><a href="#gedaechtnis" class="hover:text-signal-400 transition-colors">Memory (Memoria)</a></h4>
                             <p class="text-slate-500 text-sm">Base de datos SQLite propia con memoria a largo plazo sem&aacute;ntica, epis&oacute;dica y procedimental.</p>
                         </div>
                     </div>
@@ -202,201 +213,93 @@
                             <span class="text-green-400 font-bold text-xs">S</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Skills (Herramientas)</h4>
+                            <h4 class="font-semibold text-sm"><a href="#skills" class="hover:text-signal-400 transition-colors">Skills (Herramientas)</a></h4>
                             <p class="text-slate-500 text-sm">Colecci&oacute;n de herramientas especializadas: consultas SQL, llamadas REST, operaciones de archivos, funciones espec&iacute;ficas del dominio.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-amber-400 font-bold text-xs">L</span>
+                            <span class="text-amber-400 font-bold text-xs">C</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">LLM (Modelo de lenguaje)</h4>
-                            <p class="text-slate-500 text-sm">Modelo local mediante runtime LLM local. El agente construye el prompt completo a partir del system prompt, contexto de memoria y consulta del usuario.</p>
+                            <h4 class="font-semibold text-sm"><a href="#konnektoren" class="hover:text-signal-400 transition-colors">Connector (Conexi&oacute;n)</a></h4>
+                            <p class="text-slate-500 text-sm">Canal de comunicaci&oacute;n con el usuario: Telegram, e-mail, voz o dashboard.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span class="text-purple-400 font-bold text-xs">C</span>
+                            <span class="text-purple-400 font-bold text-xs">L</span>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm">Connector (Conexi&oacute;n)</h4>
-                            <p class="text-slate-500 text-sm">Canal de comunicaci&oacute;n con el usuario: Telegram, e-mail, voz o dashboard.</p>
+                            <h4 class="font-semibold text-sm"><a href="#llm" class="hover:text-signal-400 transition-colors">LLM (Modelo de lenguaje)</a></h4>
+                            <p class="text-slate-500 text-sm">Modelo local mediante LLM-Runtime. El asistente construye el prompt completo a partir del system prompt, contexto de memoria y consulta del usuario.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Agent Anatomy SVG -->
+            <!-- Agent Anatomy SVG — Pentagon with 5 components at side midpoints -->
             <div class="reveal" style="transition-delay: 0.15s;">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <defs>
-                        <marker id="agentArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                            <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                        </marker>
-                    </defs>
-                    <!-- Central Agent -->
-                    <rect x="120" y="150" width="160" height="80" rx="12" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="2"/>
-                    <text x="200" y="185" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">AGENTE</text>
-                    <text x="200" y="205" text-anchor="middle" fill="#94a3b8" font-size="10">Especialista aut&oacute;nomo</text>
+                <svg viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg mx-auto">
+                    <!-- Central Pentagon: ASSISTENT -->
+                    <polygon points="250,115 336,178 303,280 197,280 164,178"
+                             fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="2" stroke-linejoin="round"/>
+                    <text x="250" y="200" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">ASISTENTE</text>
+                    <text x="250" y="220" text-anchor="middle" fill="#94a3b8" font-size="10">Especialista aut&oacute;nomo</text>
 
-                    <!-- Memory (top-left) -->
+                    <!-- Orchestrator (top-right side midpoint: 293, 147) -->
+                    <a href="#orchestrator" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
+                        <rect x="340" y="35" width="150" height="58" rx="10" fill="#f43f5e" fill-opacity="0.1" stroke="#f43f5e" stroke-width="1.5" style="cursor:pointer"/>
+                        <text x="415" y="61" text-anchor="middle" fill="#f43f5e" font-size="13" font-weight="600" style="cursor:pointer">Orchestrator</text>
+                        <text x="415" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">Ciclo OODA</text>
+                    </a>
+                    <line x1="340" y1="75" x2="293" y2="147" stroke="#f43f5e" stroke-width="1.5"/>
+
+                    <!-- Memory (top-left side midpoint: 207, 147) -->
                     <a href="#gedaechtnis" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="30" width="140" height="55" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="55" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600" style="cursor:pointer">Memory</text>
-                        <text x="90" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQLite + Embeddings</text>
+                        <rect x="10" y="35" width="150" height="58" rx="10" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1" style="cursor:pointer"/>
+                        <text x="85" y="61" text-anchor="middle" fill="#5eafff" font-size="13" font-weight="600" style="cursor:pointer">Memory</text>
+                        <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQLite + Embeddings</text>
                     </a>
-                    <line x1="120" y1="85" x2="170" y2="150" stroke="#0070f3" stroke-width="1.5" marker-end="url(#agentArrow)"/>
+                    <line x1="160" y1="75" x2="207" y2="147" stroke="#0070f3" stroke-width="1.5"/>
 
-                    <!-- Skills (top-right) -->
+                    <!-- Skills (right side midpoint: 320, 229) -->
                     <a href="#skills" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="30" width="140" height="55" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="55" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600" style="cursor:pointer">Skills</text>
-                        <text x="310" y="72" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">SQL, REST, File, Domain</text>
+                        <rect x="370" y="200" width="120" height="58" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" style="cursor:pointer"/>
+                        <text x="430" y="226" text-anchor="middle" fill="#10b981" font-size="13" font-weight="600" style="cursor:pointer">Skills</text>
+                        <text x="430" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">SQL, REST, Domain</text>
                     </a>
-                    <line x1="280" y1="85" x2="230" y2="150" stroke="#10b981" stroke-width="1.5"/>
+                    <line x1="370" y1="229" x2="320" y2="229" stroke="#10b981" stroke-width="1.5"/>
 
-                    <!-- LLM (bottom-left) -->
+                    <!-- LLM (left side midpoint: 181, 229) -->
                     <a href="#llm" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="20" y="290" width="140" height="55" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
-                        <text x="90" y="315" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600" style="cursor:pointer">LLM</text>
-                        <text x="90" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Modelo de lenguaje (local)</text>
+                        <rect x="10" y="200" width="120" height="58" rx="10" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1" style="cursor:pointer"/>
+                        <text x="70" y="226" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="600" style="cursor:pointer">LLM</text>
+                        <text x="70" y="245" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">Modelo de lenguaje (local)</text>
                     </a>
-                    <line x1="120" y1="290" x2="170" y2="230" stroke="#a855f7" stroke-width="1.5"/>
+                    <line x1="130" y1="229" x2="181" y2="229" stroke="#a855f7" stroke-width="1.5"/>
 
-                    <!-- Connector (bottom-right) -->
+                    <!-- Connector (bottom side midpoint: 250, 280) -->
                     <a href="#konnektoren" opacity="0.9" onmouseover="this.setAttribute('opacity','1')" onmouseout="this.setAttribute('opacity','0.9')">
-                        <rect x="240" y="290" width="140" height="55" rx="8" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
-                        <text x="310" y="315" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600" style="cursor:pointer">Connector</text>
-                        <text x="310" y="332" text-anchor="middle" fill="#94a3b8" font-size="9" style="cursor:pointer">Telegram, E-Mail, Voice</text>
+                        <rect x="175" y="340" width="150" height="58" rx="10" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" style="cursor:pointer"/>
+                        <text x="250" y="366" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="600" style="cursor:pointer">Connector</text>
+                        <text x="250" y="385" text-anchor="middle" fill="#94a3b8" font-size="10" style="cursor:pointer">E-Mail, Telegram, Voice</text>
                     </a>
-                    <line x1="280" y1="290" x2="230" y2="230" stroke="#f59e0b" stroke-width="1.5"/>
+                    <line x1="250" y1="340" x2="250" y2="280" stroke="#f59e0b" stroke-width="1.5"/>
 
                     <!-- Formula -->
-                    <text x="200" y="385" text-anchor="middle" fill="#94a3b8" font-size="11">
-                        <tspan fill="#5eafff">Memory</tspan> + <tspan fill="#10b981">Skills</tspan> + <tspan fill="#a855f7">LLM</tspan> + <tspan fill="#f59e0b">Connector</tspan> = <tspan fill="#ffffff" font-weight="700">Agente</tspan>
+                    <text x="250" y="440" text-anchor="middle" fill="#94a3b8" font-size="11">
+                        <tspan fill="#f43f5e">O</tspan> + <tspan fill="#5eafff">M</tspan> + <tspan fill="#10b981">S</tspan> + <tspan fill="#a855f7">L</tspan> + <tspan fill="#f59e0b">C</tspan> = <tspan fill="#ffffff" font-weight="700">Asistente</tspan>
                     </text>
                 </svg>
             </div>
         </div>
 
-        <!-- El agente como asistente digital (8 cards) -->
-        <div class="mt-24">
-            <div class="text-center mb-12 reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Modo de trabajo</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El agente como asistente digital</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">
-                    Un agente AIMOS no trabaja como un chatbot &mdash; trabaja como un empleado administrativo
-                    con su propio escritorio, su propio archivo y su propio ritmo diario.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Memoria -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Memoria</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Recuerda hechos, correcciones, preferencias &mdash; de forma permanente.
-                        La b&uacute;squeda sem&aacute;ntica encuentra recuerdos incluso con otras palabras.
-                    </p>
-                </div>
-
-                <!-- Notas y archivo -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Notas y archivo</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Redacta res&uacute;menes, resultados de investigaci&oacute;n y notas de conversaci&oacute;n
-                        en su propio workspace &mdash; como un empleado que mantiene su archivo.
-                    </p>
-                </div>
-
-                <!-- Calendario -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Calendario</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Citas, plazos, seguimientos. El agente revisa en cada interacci&oacute;n
-                        sus citas pendientes y vencidas &mdash; y act&uacute;a de forma proactiva.
-                    </p>
-                </div>
-
-                <!-- Lista de tareas -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Lista de tareas</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Tareas pendientes, delegaciones, listas de espera.
-                        Se actualiza autom&aacute;ticamente en el ciclo Dreaming.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Second row -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 reveal">
-                <!-- Ritmo diario -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Ritmo diario</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Una vez al d&iacute;a, el agente revisa de forma aut&oacute;noma el calendario, los correos electr&oacute;nicos
-                        y las tareas pendientes &mdash; sin que nadie le dirija la palabra.
-                    </p>
-                </div>
-
-                <!-- Dreaming / Trabajo nocturno -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Dreaming</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        En per&iacute;odos de inactividad, el agente procesa sus conversaciones: extrae hechos,
-                        actualiza notas y listas de tareas, consolida su memoria.
-                    </p>
-                </div>
-
-                <!-- Trabajo en equipo -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Trabajo en equipo</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Los agentes se comunican entre s&iacute; &mdash; el agente financiero pregunta al
-                        agente de log&iacute;stica por los valores de inventario, sin molestar al usuario.
-                    </p>
-                </div>
-
-                <!-- Escalado -->
-                <div class="bg-slate-850 border border-white/5 rounded-xl p-5 hover:border-signal-500/20 transition-colors">
-                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-3">
-                        <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                    </div>
-                    <h4 class="font-bold text-sm mb-1">Escalado</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">
-                        Ante preguntas complejas, el agente escala autom&aacute;ticamente a un modelo de IA
-                        m&aacute;s potente &mdash; de forma anonimizada y con registro auditable.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Summary box -->
-            <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
-                <p class="text-sm text-slate-400 leading-relaxed">
-                    <strong class="text-white">El punto clave:</strong> El agente prepara &mdash; usted decide. Su conocimiento especializado, su experiencia y su criterio siguen siendo indispensables. El agente le quita el trabajo rutinario: recopilar datos, supervisar plazos, preparar borradores. El trabajo profesional sigue siendo suyo.
-                </p>
+        <!-- Summary box -->
+        <div class="mt-12 bg-slate-850 border border-signal-500/20 rounded-xl p-6 reveal">
+            <p class="text-sm text-slate-400 leading-relaxed">
+                <strong class="text-white">El punto clave:</strong> El asistente prepara &mdash; usted decide. Su conocimiento especializado, su experiencia y su criterio siguen siendo indispensables. El asistente le quita el trabajo rutinario: recopilar datos, supervisar plazos, preparar borradores. El trabajo profesional sigue siendo suyo.
+            </p>
             </div>
         </div>
 
@@ -405,7 +308,313 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  2. SKILLS — 18 Skills + Roadmap                                      -->
+<!--  2. ORCHESTRATOR — Ciclo OODA                                         -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="orchestrator" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Ciclo OODA</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El orquestador &mdash; c&oacute;mo piensa un asistente AIMOS</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                Un chatbot reacciona a cada mensaje de forma individual. Un asistente AIMOS abre su bandeja de entrada,
+                lo revisa todo, reconoce conexiones &mdash; y luego act&uacute;a de forma coordinada.
+                El principio detr&aacute;s: el <strong class="text-white">ciclo OODA</strong> de la teor&iacute;a de decisiones.
+            </p>
+        </div>
+
+        <!-- OODA Cycle SVG -->
+        <div class="reveal max-w-4xl mx-auto mb-16">
+            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="oodaArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e"/>
+                    </marker>
+                </defs>
+
+                <!-- Phase 1: OBSERVE -->
+                <rect x="0" y="30" width="170" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
+                <text x="85" y="60" text-anchor="middle" fill="#f43f5e" font-size="14" font-weight="700">OBSERVE</text>
+                <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Todos los mensajes a la vez</text>
+                <text x="85" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Agrupar, categorizar</text>
+                <text x="85" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Reconocer conexiones</text>
+
+                <line x1="170" y1="80" x2="205" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 2: ORIENT -->
+                <rect x="210" y="30" width="170" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="295" y="60" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">ORIENT</text>
+                <text x="295" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Obtener informaci&oacute;n</text>
+                <text x="295" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Verificar dependencias</text>
+                <text x="295" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Crear cuadro de situaci&oacute;n</text>
+
+                <line x1="380" y1="80" x2="415" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 3: DECIDE -->
+                <rect x="420" y="30" width="170" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="505" y="60" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">DECIDE</text>
+                <text x="505" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Plan de acci&oacute;n por interlocutor</text>
+                <text x="505" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Compartir solo lo relevante</text>
+                <text x="505" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Cargar contexto del hilo</text>
+
+                <line x1="590" y1="80" x2="625" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 4: ACT -->
+                <rect x="630" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="715" y="60" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">ACT</text>
+                <text x="715" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Responder por hilo</text>
+                <text x="715" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">E-mails, tickets, actualizaciones</text>
+                <text x="715" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Coordinado, no individual</text>
+
+                <!-- Bottom label -->
+                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">El asistente mantiene la GPU en todas las fases &mdash; ning&uacute;n otro asistente lo interrumpe.</text>
+                <text x="400" y="195" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Como un administrativo que cierra la puerta y procesa su bandeja de entrada con concentraci&oacute;n.</text>
+            </svg>
+        </div>
+
+        <!-- Comparison: Chatbot vs AIMOS -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16 reveal">
+            <!-- Chatbot -->
+            <div class="bg-slate-850 border border-white/10 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-300">Chatbot convencional</h3>
+                        <p class="text-xs text-slate-500">Modo reactivo</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm text-slate-500">
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Procesa cada mensaje de forma <strong class="text-slate-400">aislada</strong></span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>No reconoce conexiones entre consultas</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>Responde inmediatamente &mdash; sin conocer el panorama completo</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-red-400 mt-0.5">&times;</span>
+                        <span>No puede informar al interlocutor A sobre las implicaciones del interlocutor B</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIMOS -->
+            <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white">Asistente AIMOS</h3>
+                        <p class="text-xs text-rose-400">Modo OODA</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Revisa <strong class="text-white">todos los mensajes a la vez</strong></span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Reconoce conexiones entre hilos</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Crea un <strong class="text-white">cuadro de situaci&oacute;n</strong> antes de actuar</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-green-400 mt-0.5">&check;</span>
+                        <span>Responde por interlocutor &mdash; pero informado por el panorama completo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Example -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-8">
+                <h3 class="font-bold text-lg mb-6 text-center">Ejemplo: Tres mensajes, un cuadro de situaci&oacute;n</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="border border-signal-500/20 rounded-lg p-4">
+                        <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:m&uuml;ller</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Desarrollador M&uuml;ller</p>
+                        <p class="text-slate-500 text-xs">&laquo;Los tests unitarios para SG-03 est&aacute;n listos.&raquo;</p>
+                    </div>
+                    <div class="border border-amber-500/20 rounded-lg p-4">
+                        <p class="text-amber-400 font-mono text-xs mb-2">Thread email:req-mgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Gestor de requisitos</p>
+                        <p class="text-slate-500 text-xs">&laquo;TSR-17 ha sido elevado a ASIL D.&raquo;</p>
+                    </div>
+                    <div class="border border-green-500/20 rounded-lg p-4">
+                        <p class="text-green-400 font-mono text-xs mb-2">Thread int:testmgr</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Responsable de pruebas</p>
+                        <p class="text-slate-500 text-xs">&laquo;El test de integraci&oacute;n de SG-03 falla.&raquo;</p>
+                    </div>
+                </div>
+
+                <!-- Cuadro de situacion -->
+                <div class="bg-rose-500/5 border border-rose-500/20 rounded-lg p-5 mb-6">
+                    <p class="text-rose-400 font-mono text-xs font-medium mb-2">CUADRO DE SITUACI&Oacute;N (transversal entre hilos)</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        &laquo;Los tres mensajes se refieren al Safety Goal SG-03. La elevaci&oacute;n a ASIL-D de TSR-17 modifica
+                        los requisitos de verificaci&oacute;n: los tests unitarios de M&uuml;ller ya no son suficientes (se requiere cobertura MC/DC).
+                        El fallo en el test de integraci&oacute;n es un problema de timing independiente.&raquo;
+                    </p>
+                </div>
+
+                <!-- Responses -->
+                <div class="grid md:grid-cols-3 gap-4 text-xs">
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-signal-400 font-medium mb-1">&rarr; A M&uuml;ller</p>
+                        <p class="text-slate-500">&laquo;Tests completados, pero por la elevaci&oacute;n a ASIL-D ya no basta con Statement Coverage. Se requiere MC/DC.&raquo;</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-amber-400 font-medium mb-1">&rarr; Al gestor de requisitos</p>
+                        <p class="text-slate-500">&laquo;Elevaci&oacute;n registrada. 3 requisitos SW afectados, los tests unitarios deben ampliarse. An&aacute;lisis de impacto adjunto.&raquo;</p>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <p class="text-green-400 font-medium mb-1">&rarr; Al responsable de pruebas</p>
+                        <p class="text-slate-500">&laquo;Problema de timing, no causado por la elevaci&oacute;n ASIL. Por favor env&iacute;e el logfile. El test de integraci&oacute;n debe repetirse tras la ampliaci&oacute;n de tests unitarios.&raquo;</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-slate-600 text-xs mt-6">
+                    Cada interlocutor recibe solo lo relevante para &eacute;l &mdash; pero cada respuesta est&aacute; informada por el panorama completo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Technical Detail: How the Orchestrator works -->
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <div>
+                <h3 class="font-bold text-lg mb-4">&iquest;C&oacute;mo funciona t&eacute;cnicamente?</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <p>
+                        El orquestador <strong class="text-white">no es un modelo de IA</strong>, sino c&oacute;digo determin&iacute;stico.
+                        Controla el ciclo OODA llamando al LLM varias veces con tareas diferentes:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <span class="text-rose-400 font-mono font-bold text-xs mt-1 flex-shrink-0">O+O</span>
+                            <span>Todos los mensajes se presentan al LLM como bloque: <em class="text-slate-300">&laquo;Analiza y encuentra conexiones.&raquo;</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-400 font-mono font-bold text-xs mt-1 flex-shrink-0">D</span>
+                            <span>El an&aacute;lisis se devuelve. El orquestador lo establece como contexto en el siguiente prompt: <em class="text-slate-300">&laquo;Consolida y crea un cuadro de situaci&oacute;n.&raquo;</em></span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-green-400 font-mono font-bold text-xs mt-1 flex-shrink-0">A</span>
+                            <span>Por hilo: cuadro de situaci&oacute;n + historial de conversaci&oacute;n individual + encargo de respuesta. <strong class="text-white">Cada interlocutor recibe su propia respuesta.</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Lo que hace especial al cuadro de situaci&oacute;n</h3>
+                <div class="space-y-4 text-sm text-slate-400">
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-rose-400 mb-2 uppercase tracking-wide">Ef&iacute;mero, no permanente</h4>
+                        <p class="text-xs text-slate-500">El cuadro de situaci&oacute;n solo existe durante un ciclo batch. No se almacena &mdash; en el siguiente ciclo se genera uno nuevo. Los conocimientos a largo plazo se transfieren a la memoria.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-signal-400 mb-2 uppercase tracking-wide">El aislamiento de hilos se mantiene</h4>
+                        <p class="text-xs text-slate-500">El asistente conoce el panorama completo, pero el interlocutor A no se entera de la conversaci&oacute;n con el interlocutor B &mdash; solo de las repercusiones relevantes para &eacute;l.</p>
+                    </div>
+                    <div class="bg-slate-850 border border-white/5 rounded-lg p-4">
+                        <h4 class="font-semibold text-xs text-green-400 mb-2 uppercase tracking-wide">El orquestador decide, no el LLM</h4>
+                        <p class="text-xs text-slate-500">El orden de las fases es determin&iacute;stico. El LLM no puede saltarse ni mezclar fases &mdash; recibe un encargo claro para cada fase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Three Archetypes -->
+        <div class="mt-20 reveal">
+            <div class="text-center mb-10">
+                <p class="text-rose-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Tres modos</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">No todos los asistentes necesitan el ciclo OODA completo</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                    AIMOS dispone de tres tipos de asistentes &mdash; desde la respuesta r&aacute;pida por voz hasta el administrativo estructurado.
+                    Los tres pueden actuar de forma proactiva (cronjobs, recordatorios, seguimientos).
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Asistente de voz -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-purple-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Asistente de voz</h4>
+                            <p class="text-xs text-purple-400 font-mono">&lt;500ms latencia</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Reacci&oacute;n inmediata a entrada de voz. Transcripci&oacute;n Whisper en paralelo con el warmup del LLM.
+                        Respuestas cortas y precisas.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>Recepci&oacute;n, control por voz, consultas r&aacute;pidas</em></p>
+                </div>
+
+                <!-- Asistente de chat -->
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Asistente de chat</h4>
+                            <p class="text-xs text-signal-400 font-mono">&lt;5s latencia</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-3">
+                        Conversaci&oacute;n r&aacute;pida por Telegram, e-mail o dashboard. Memoria, expedientes de clientes,
+                        delegaci&oacute;n a colegas. Cronjobs para recordatorios proactivos.
+                    </p>
+                    <p class="text-slate-600 text-xs"><em>Soporte al cliente, helpdesk, recepci&oacute;n de pedidos</em></p>
+                </div>
+
+                <!-- Colaborador -->
+                <div class="bg-slate-850 border border-rose-500/20 rounded-xl p-6 relative overflow-hidden">
+                    <div class="absolute top-3 right-3">
+                        <span class="text-[10px] font-mono text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-full">OODA</span>
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Colaborador</h4>
+                            <p class="text-xs text-rose-400 font-mono">Batch &mdash; Ciclo OODA</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-3">
+                        Revisa su bandeja de entrada, supervisa todos los procesos, reconoce
+                        conexiones entre hilos, crea un cuadro de situaci&oacute;n &mdash; y luego act&uacute;a de forma coordinada.
+                    </p>
+                    <p class="text-slate-500 text-xs"><em>Gesti&oacute;n de procesos, cumplimiento, asistencia a proyectos</em></p>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-600 text-xs mt-6">
+                Los tres tipos disponen de memoria, habilidades, conectores y pueden actuar de forma proactiva.
+                La diferencia est&aacute; en el <strong class="text-slate-400">enfoque</strong>: un hilo vs. la visi&oacute;n general.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  3. SKILLS — 18 Skills + Roadmap                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="skills" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
@@ -657,7 +866,7 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  3. CONECTORES — Conexi&oacute;n universal                           -->
+<!--  4. CONECTORES — Conexi&oacute;n universal                           -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="konnektoren" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
@@ -750,7 +959,7 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  3b. MULTI-THREAD — Atenci&oacute;n paralela de clientes               -->
+<!--  5. MULTI-THREAD — Atenci&oacute;n paralela de clientes               -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="threads" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
@@ -861,7 +1070,7 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  4. MEMORIA — Memoria a largo plazo                                   -->
+<!--  6. MEMORIA — Memoria a largo plazo                                   -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="gedaechtnis" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
@@ -988,120 +1197,22 @@
             </div>
         </div>
 
-        <!-- Cognitive Balance -->
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Optimizaci&oacute;n de tokens</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Cognitive Balance</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Equilibrio din&aacute;mico entre profundidad de memoria y longitud de respuesta &mdash; dentro de la ventana de contexto limitada.</p>
-        </div>
+        <!-- (Cognitive Balance moved to architektur.html — now dynamic, not static slider) -->
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-            <!-- Slider Visualization -->
-            <div>
-                <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-md mx-auto">
-                    <!-- Slider bar -->
-                    <rect x="40" y="40" width="320" height="16" rx="8" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <!-- Left gradient -->
-                    <rect x="40" y="40" width="160" height="16" rx="8" fill="#0070f3" fill-opacity="0.4"/>
-                    <!-- Right gradient -->
-                    <rect x="200" y="40" width="160" height="16" rx="8" fill="#10b981" fill-opacity="0.4"/>
-                    <!-- Slider handle -->
-                    <circle cx="200" cy="48" r="12" fill="#ffffff" stroke="#0070f3" stroke-width="2"/>
-
-                    <!-- Labels -->
-                    <text x="40" y="30" fill="#5eafff" font-size="11" font-weight="600">Profundidad de memoria</text>
-                    <text x="360" y="30" text-anchor="end" fill="#10b981" font-size="11" font-weight="600">Longitud de respuesta</text>
-
-                    <!-- Level marks -->
-                    <line x1="104" y1="60" x2="104" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="104" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">1</text>
-                    <line x1="152" y1="60" x2="152" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="152" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">2</text>
-                    <line x1="200" y1="60" x2="200" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="200" y="84" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="600">3</text>
-                    <line x1="248" y1="60" x2="248" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="248" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">4</text>
-                    <line x1="296" y1="60" x2="296" y2="72" stroke="#94a3b8" stroke-width="1"/>
-                    <text x="296" y="84" text-anchor="middle" fill="#94a3b8" font-size="9">5</text>
-
-                    <!-- Context window -->
-                    <rect x="40" y="110" width="320" height="40" rx="6" fill="#1a2332" stroke="#94a3b8" stroke-width="0.5"/>
-                    <rect x="40" y="110" width="120" height="40" rx="6" fill="#0070f3" fill-opacity="0.2"/>
-                    <text x="100" y="134" text-anchor="middle" fill="#5eafff" font-size="10">System Prompt</text>
-                    <rect x="160" y="110" width="100" height="40" fill="#10b981" fill-opacity="0.15"/>
-                    <text x="210" y="134" text-anchor="middle" fill="#10b981" font-size="10">Memory</text>
-                    <rect x="260" y="110" width="100" height="40" rx="6" fill="#f59e0b" fill-opacity="0.15"/>
-                    <text x="310" y="134" text-anchor="middle" fill="#f59e0b" font-size="10">Respuesta</text>
-
-                    <text x="200" y="172" text-anchor="middle" fill="#94a3b8" font-size="10">Ventana de contexto (ej. 32k tokens)</text>
-
-                    <!-- Arrow showing dynamic -->
-                    <text x="200" y="200" text-anchor="middle" fill="#94a3b8" font-size="9" font-style="italic">M&aacute;s memoria = menos espacio para respuesta (y viceversa)</text>
-                </svg>
-            </div>
-
-            <!-- Level Table -->
-            <div>
-                <div class="overflow-hidden rounded-xl border border-white/5">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-slate-850 border-b border-white/10">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Nivel</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Memoria</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Respuesta</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300 hidden sm:table-cell">Uso</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-400">
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">1</td>
-                                <td class="py-3 px-4">M&iacute;nima</td>
-                                <td class="py-3 px-4">Muy larga</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">An&aacute;lisis, informes</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">2</td>
-                                <td class="py-3 px-4">Reducida</td>
-                                <td class="py-3 px-4">Larga</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Res&uacute;menes</td>
-                            </tr>
-                            <tr class="border-b border-white/5 bg-signal-500/5">
-                                <td class="py-3 px-4 font-mono text-white font-bold">3</td>
-                                <td class="py-3 px-4 text-white">Equilibrada</td>
-                                <td class="py-3 px-4 text-white">Media</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs text-white">Est&aacute;ndar (predeterminado)</td>
-                            </tr>
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-mono text-signal-300">4</td>
-                                <td class="py-3 px-4">Profunda</td>
-                                <td class="py-3 px-4">Corta</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Preguntas contextuales</td>
-                            </tr>
-                            <tr>
-                                <td class="py-3 px-4 font-mono text-signal-300">5</td>
-                                <td class="py-3 px-4">M&aacute;xima</td>
-                                <td class="py-3 px-4">M&iacute;nima</td>
-                                <td class="py-3 px-4 hidden sm:table-cell text-xs">Investigaci&oacute;n, verificaci&oacute;n de datos</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  5. LLM — El modelo de lenguaje                                       -->
+<!--  7. LLM — El modelo de lenguaje                                       -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="llm" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
             <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Modelo de lenguaje</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El LLM &mdash; cerebro del agente</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El LLM &mdash; cerebro del asistente</h2>
             <p class="text-slate-400 max-w-3xl mx-auto">
-                El Large Language Model (LLM) es el motor de pensamiento detr&aacute;s de cada agente.
+                El Large Language Model (LLM) es el motor de pensamiento detr&aacute;s de cada asistente.
                 Comprende el lenguaje, toma decisiones y controla herramientas &mdash;
                 y funciona <strong class="text-white">completamente en su propio hardware</strong>.
             </p>
