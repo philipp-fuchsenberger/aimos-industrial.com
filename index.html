@@ -472,7 +472,13 @@
                     <path d="M80 102 L110 102" stroke="#ef4444" stroke-width="1.5" opacity="0.15"/>
 
                     <circle cx="135" cy="22" r="18" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
-                    <text x="135" y="26" text-anchor="middle" fill="#ef4444" font-size="11">Bot</text>
+                    <!-- Robot icon -->
+                    <rect x="126" y="13" width="18" height="14" rx="3" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+                    <circle cx="131" cy="19" r="1.5" fill="#ef4444"/>
+                    <circle cx="139" cy="19" r="1.5" fill="#ef4444"/>
+                    <line x1="129" y1="23" x2="141" y2="23" stroke="#ef4444" stroke-width="1"/>
+                    <line x1="135" y1="9" x2="135" y2="13" stroke="#ef4444" stroke-width="1"/>
+                    <circle cx="135" cy="8" r="1.5" fill="#ef4444"/>
 
                     <path d="M153 22 L190 22" stroke="#ef4444" stroke-width="1.5" marker-end="url(#cbArr)"/>
                     <rect x="190" y="10" width="70" height="24" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
@@ -504,9 +510,26 @@
                     <rect x="10" y="62" width="55" height="20" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1"/>
                     <text x="37" y="76" text-anchor="middle" fill="#94a3b8" font-size="8">Agent C</text>
 
-                    <path d="M65 20 L92 42" stroke="#0070f3" stroke-width="1" opacity="0.7"/>
-                    <path d="M65 46 L92 46" stroke="#10b981" stroke-width="1" opacity="0.7"/>
-                    <path d="M65 72 L92 50" stroke="#a855f7" stroke-width="1" opacity="0.7"/>
+                    <path d="M65 20 L85 42" stroke="#0070f3" stroke-width="1" opacity="0.7"/>
+                    <path d="M65 46 L85 46" stroke="#10b981" stroke-width="1" opacity="0.7"/>
+                    <path d="M65 72 L85 50" stroke="#a855f7" stroke-width="1" opacity="0.7"/>
+
+                    <!-- Brain/Network icon at convergence point -->
+                    <g transform="translate(78, 46)">
+                        <circle cx="0" cy="0" r="5" fill="#0070f3" opacity="0.15"/>
+                        <!-- Simplified neural network dots -->
+                        <circle cx="-3" cy="-2" r="1" fill="#5eafff"/>
+                        <circle cx="2" cy="-3" r="1" fill="#5eafff"/>
+                        <circle cx="3" cy="1" r="1" fill="#5eafff"/>
+                        <circle cx="-2" cy="3" r="1" fill="#5eafff"/>
+                        <circle cx="0" cy="0" r="1.2" fill="#0070f3"/>
+                        <line x1="-3" y1="-2" x2="0" y2="0" stroke="#5eafff" stroke-width="0.5" opacity="0.6"/>
+                        <line x1="2" y1="-3" x2="0" y2="0" stroke="#5eafff" stroke-width="0.5" opacity="0.6"/>
+                        <line x1="3" y1="1" x2="0" y2="0" stroke="#5eafff" stroke-width="0.5" opacity="0.6"/>
+                        <line x1="-2" y1="3" x2="0" y2="0" stroke="#5eafff" stroke-width="0.5" opacity="0.6"/>
+                        <line x1="-3" y1="-2" x2="2" y2="-3" stroke="#5eafff" stroke-width="0.3" opacity="0.3"/>
+                        <line x1="3" y1="1" x2="-2" y2="3" stroke="#5eafff" stroke-width="0.3" opacity="0.3"/>
+                    </g>
 
                     <rect x="92" y="28" width="46" height="36" rx="8" fill="#0a1929" stroke="#0070f3" stroke-width="1.5"/>
                     <text x="115" y="43" text-anchor="middle" fill="#5eafff" font-size="7" font-weight="600">1. Ordnen</text>
