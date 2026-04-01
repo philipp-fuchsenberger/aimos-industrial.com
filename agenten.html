@@ -321,52 +321,65 @@
             </p>
         </div>
 
-        <!-- OODA Cycle SVG -->
-        <div class="reveal max-w-4xl mx-auto mb-16">
-            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <!-- 5-Phase OODA Cycle SVG (CR-236) -->
+        <div class="reveal max-w-5xl mx-auto mb-16">
+            <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" class="w-full">
                 <defs>
                     <marker id="oodaArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
                         <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e"/>
                     </marker>
                 </defs>
 
-                <!-- Phase 1: OBSERVE -->
-                <rect x="0" y="30" width="170" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
-                <text x="85" y="60" text-anchor="middle" fill="#f43f5e" font-size="14" font-weight="700">OBSERVE</text>
-                <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Alle Nachrichten auf einmal</text>
-                <text x="85" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Gruppieren, Kategorisieren</text>
-                <text x="85" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Zusammenh&auml;nge erkennen</text>
+                <!-- Phase 0: CONTEXT -->
+                <rect x="0" y="30" width="150" height="100" rx="10" fill="#94a3b8" fill-opacity="0.06" stroke="#94a3b8" stroke-width="1.5"/>
+                <text x="75" y="56" text-anchor="middle" fill="#94a3b8" font-size="12" font-weight="700">KONTEXT</text>
+                <text x="75" y="74" text-anchor="middle" fill="#64748b" font-size="8">Workspace-Dateien lesen</text>
+                <text x="75" y="88" text-anchor="middle" fill="#64748b" font-size="8">Datenquellen pr&uuml;fen</text>
+                <text x="75" y="102" text-anchor="middle" fill="#64748b" font-size="8">&bdquo;Schreibtisch anschauen&ldquo;</text>
 
-                <line x1="170" y1="80" x2="205" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="150" y1="80" x2="175" y2="80" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 1: OBSERVE -->
+                <rect x="180" y="30" width="150" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
+                <text x="255" y="56" text-anchor="middle" fill="#f43f5e" font-size="12" font-weight="700">OBSERVE</text>
+                <text x="255" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Alle Nachrichten auf einmal</text>
+                <text x="255" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Gruppieren, Kategorisieren</text>
+                <text x="255" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Zusammenh&auml;nge erkennen</text>
+
+                <line x1="330" y1="80" x2="355" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
                 <!-- Phase 2: ORIENT -->
-                <rect x="210" y="30" width="170" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="295" y="60" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">ORIENT</text>
-                <text x="295" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Informationen beschaffen</text>
-                <text x="295" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Abh&auml;ngigkeiten pr&uuml;fen</text>
-                <text x="295" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Lagebild erstellen</text>
+                <rect x="360" y="30" width="150" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="435" y="56" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="700">ORIENT</text>
+                <text x="435" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Informationen beschaffen</text>
+                <text x="435" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Abh&auml;ngigkeiten pr&uuml;fen</text>
+                <text x="435" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Lagebild erstellen</text>
 
-                <line x1="380" y1="80" x2="415" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="510" y1="80" x2="535" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
-                <!-- Phase 3: DECIDE -->
-                <rect x="420" y="30" width="170" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="505" y="60" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">DECIDE</text>
-                <text x="505" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Aktionsplan pro Stakeholder</text>
-                <text x="505" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Nur relevante Infos teilen</text>
-                <text x="505" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Thread-Kontext laden</text>
+                <!-- Phase 3: ACT -->
+                <rect x="540" y="30" width="150" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="615" y="56" text-anchor="middle" fill="#10b981" font-size="12" font-weight="700">HANDELN</text>
+                <text x="615" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Pro Thread antworten</text>
+                <text x="615" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">E-Mails, Tickets, Updates</text>
+                <text x="615" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Koordiniert, nicht einzeln</text>
 
-                <line x1="590" y1="80" x2="625" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="690" y1="80" x2="715" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
-                <!-- Phase 4: ACT -->
-                <rect x="630" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="715" y="60" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">ACT</text>
-                <text x="715" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Pro Thread antworten</text>
-                <text x="715" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">E-Mails, Tickets, Updates</text>
-                <text x="715" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Koordiniert, nicht einzeln</text>
+                <!-- Phase 4: PERSIST -->
+                <rect x="720" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="805" y="56" text-anchor="middle" fill="#0070f3" font-size="12" font-weight="700">FESTHALTEN</text>
+                <text x="805" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Todo-Liste aktualisieren</text>
+                <text x="805" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Status dokumentieren</text>
+                <text x="805" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Erinnerungen setzen</text>
+
+                <!-- Feedback arrow from PERSIST back to CONTEXT -->
+                <path d="M 805 135 L 805 165 Q 805 180 790 180 L 85 180 Q 70 180 70 165 L 70 135"
+                      stroke="#64748b" stroke-width="1" stroke-dasharray="4,3" fill="none" marker-end="url(#oodaArrow)"/>
+                <text x="440" y="198" text-anchor="middle" fill="#64748b" font-size="8" font-style="italic">Workspace-Dateien tragen den Zustand in die n&auml;chste Sitzung</text>
 
                 <!-- Bottom label -->
-                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">Der Assistent h&auml;lt die GPU &uuml;ber alle Phasen &mdash; kein anderer Assistent unterbricht ihn.</text>
-                <text x="400" y="195" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Wie ein Sachbearbeiter, der die T&uuml;r zumacht und seinen Posteingang konzentriert abarbeitet.</text>
+                <text x="450" y="220" text-anchor="middle" fill="#94a3b8" font-size="9">Der Assistent h&auml;lt die GPU &uuml;ber alle 5 Phasen &mdash; wie ein Sachbearbeiter der seine T&uuml;r zumacht.</text>
             </svg>
         </div>
 
