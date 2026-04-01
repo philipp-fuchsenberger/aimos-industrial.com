@@ -393,33 +393,116 @@
                 </div>
             </div>
 
-            <!-- Chatbot vs AIMOS comparison -->
+            <!-- Chatbot vs AIMOS — SVG comparison -->
             <div class="grid md:grid-cols-2 gap-6 mb-8 reveal">
+                <!-- Chatbot SVG -->
                 <div class="bg-slate-850 border border-red-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2 mb-4">
                         <span class="w-2 h-2 rounded-full bg-red-500"></span>
                         <h4 class="font-bold text-sm text-red-400">Herk&ouml;mmlicher Chat-Bot</h4>
                     </div>
-                    <ul class="text-xs text-slate-500 space-y-2">
-                        <li>&bull; Reagiert auf jede Nachricht einzeln</li>
-                        <li>&bull; Vergisst den Kontext nach dem Gespr&auml;ch</li>
-                        <li>&bull; Kann keine Aufgaben &uuml;ber mehrere Schritte planen</li>
-                        <li>&bull; Wartet passiv auf Eingaben</li>
-                        <li>&bull; Kennt weder Kollegen noch Prozesse</li>
-                    </ul>
+                    <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto mb-4">
+                        <!-- Messages coming in one by one -->
+                        <rect x="10" y="10" width="70" height="24" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+                        <text x="45" y="26" text-anchor="middle" fill="#94a3b8" font-size="9">Nachricht 1</text>
+                        <path d="M80 22 L110 22" stroke="#ef4444" stroke-width="1.5" marker-end="url(#chatbotArrow)"/>
+
+                        <rect x="10" y="50" width="70" height="24" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+                        <text x="45" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">Nachricht 2</text>
+                        <path d="M80 62 L110 62" stroke="#ef4444" stroke-width="1.5" opacity="0.3"/>
+
+                        <rect x="10" y="90" width="70" height="24" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+                        <text x="45" y="106" text-anchor="middle" fill="#94a3b8" font-size="9">Nachricht 3</text>
+                        <path d="M80 102 L110 102" stroke="#ef4444" stroke-width="1.5" opacity="0.15"/>
+
+                        <!-- Bot (simple circle) -->
+                        <circle cx="135" cy="22" r="18" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+                        <text x="135" y="18" text-anchor="middle" fill="#ef4444" font-size="16">🤖</text>
+                        <text x="135" y="30" text-anchor="middle" fill="#64748b" font-size="6">Bot</text>
+
+                        <!-- Single response -->
+                        <path d="M153 22 L190 22" stroke="#ef4444" stroke-width="1.5" marker-end="url(#chatbotArrow)"/>
+                        <rect x="190" y="10" width="70" height="24" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+                        <text x="225" y="26" text-anchor="middle" fill="#ef4444" font-size="9">Antwort 1</text>
+
+                        <!-- Waiting indicator for 2 and 3 -->
+                        <text x="135" y="66" text-anchor="middle" fill="#64748b" font-size="8">wartet...</text>
+                        <text x="135" y="106" text-anchor="middle" fill="#64748b" font-size="8">wartet...</text>
+
+                        <!-- Labels -->
+                        <text x="160" y="150" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="600">Einzeln. Nacheinander. Ohne Kontext.</text>
+                        <text x="160" y="168" text-anchor="middle" fill="#64748b" font-size="9">Nachricht 2 weiß nichts von Nachricht 1.</text>
+                        <text x="160" y="183" text-anchor="middle" fill="#64748b" font-size="9">Kein Gesamtbild. Keine Koordination.</text>
+
+                        <defs>
+                            <marker id="chatbotArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444"/>
+                            </marker>
+                        </defs>
+                    </svg>
                 </div>
+
+                <!-- AIMOS SVG -->
                 <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-6">
-                    <div class="flex items-center gap-2 mb-3">
+                    <div class="flex items-center gap-2 mb-4">
                         <span class="w-2 h-2 rounded-full bg-signal-500 animate-pulse"></span>
                         <h4 class="font-bold text-sm text-signal-400">AIMOS KI-Assistent</h4>
                     </div>
-                    <ul class="text-xs text-slate-400 space-y-2">
-                        <li>&bull; &Ouml;ffnet seinen Posteingang und &uuml;berblickt <strong class="text-white">alles auf einmal</strong></li>
-                        <li>&bull; Strukturiert, priorisiert und <strong class="text-white">plant seine Aktionen</strong></li>
-                        <li>&bull; F&uuml;hrt Informationen aus verschiedenen Quellen <strong class="text-white">zusammen</strong></li>
-                        <li>&bull; Handelt erst, wenn er das <strong class="text-white">Gesamtbild</strong> hat</li>
-                        <li>&bull; Koordiniert sich mit Kollegen und <strong class="text-white">fordert fehlenden Input ein</strong></li>
-                    </ul>
+                    <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto mb-4">
+                        <!-- All messages arrive at once -->
+                        <rect x="10" y="10" width="60" height="20" rx="4" fill="#1e293b" stroke="#0070f3" stroke-width="1"/>
+                        <text x="40" y="24" text-anchor="middle" fill="#94a3b8" font-size="8">Email A</text>
+
+                        <rect x="10" y="36" width="60" height="20" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+                        <text x="40" y="50" text-anchor="middle" fill="#94a3b8" font-size="8">Chat B</text>
+
+                        <rect x="10" y="62" width="60" height="20" rx="4" fill="#1e293b" stroke="#a855f7" stroke-width="1"/>
+                        <text x="40" y="76" text-anchor="middle" fill="#94a3b8" font-size="8">Agent C</text>
+
+                        <!-- All arrows converge -->
+                        <path d="M70 20 L95 45" stroke="#0070f3" stroke-width="1" opacity="0.7"/>
+                        <path d="M70 46 L95 46" stroke="#10b981" stroke-width="1" opacity="0.7"/>
+                        <path d="M70 72 L95 48" stroke="#a855f7" stroke-width="1" opacity="0.7"/>
+
+                        <!-- Phase 1: Structure -->
+                        <rect x="95" y="28" width="50" height="36" rx="8" fill="#0a1929" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="120" y="43" text-anchor="middle" fill="#5eafff" font-size="7" font-weight="600">1. Ordnen</text>
+                        <text x="120" y="55" text-anchor="middle" fill="#64748b" font-size="6">Struktur</text>
+
+                        <path d="M145 46 L160 46" stroke="#0070f3" stroke-width="1.5"/>
+
+                        <!-- Phase 2: Consolidate -->
+                        <rect x="160" y="28" width="50" height="36" rx="8" fill="#0a1929" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="185" y="43" text-anchor="middle" fill="#5eafff" font-size="7" font-weight="600">2. Pr&uuml;fen</text>
+                        <text x="185" y="55" text-anchor="middle" fill="#64748b" font-size="6">Kontext</text>
+
+                        <path d="M210 46 L225 46" stroke="#0070f3" stroke-width="1.5"/>
+
+                        <!-- Phase 3: Act -->
+                        <rect x="225" y="28" width="50" height="36" rx="8" fill="#0a1929" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="250" y="43" text-anchor="middle" fill="#5eafff" font-size="7" font-weight="600">3. Handeln</text>
+                        <text x="250" y="55" text-anchor="middle" fill="#64748b" font-size="6">Aktion</text>
+
+                        <!-- Multiple coordinated outputs -->
+                        <path d="M275 36 L295 20" stroke="#0070f3" stroke-width="1" opacity="0.7"/>
+                        <path d="M275 46 L295 46" stroke="#10b981" stroke-width="1" opacity="0.7"/>
+                        <path d="M275 56 L295 72" stroke="#a855f7" stroke-width="1" opacity="0.7"/>
+
+                        <rect x="295" y="10" width="20" height="20" rx="3" fill="#0070f3" opacity="0.2" stroke="#0070f3" stroke-width="0.5"/>
+                        <text x="305" y="23" text-anchor="middle" fill="#5eafff" font-size="8">✉</text>
+
+                        <rect x="295" y="36" width="20" height="20" rx="3" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="0.5"/>
+                        <text x="305" y="49" text-anchor="middle" fill="#10b981" font-size="8">✉</text>
+
+                        <rect x="295" y="62" width="20" height="20" rx="3" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="0.5"/>
+                        <text x="305" y="75" text-anchor="middle" fill="#a855f7" font-size="8">⬆</text>
+
+                        <!-- Labels -->
+                        <text x="160" y="110" text-anchor="middle" fill="#0070f3" font-size="10" font-weight="600">Alles erfassen. Dann koordiniert handeln.</text>
+                        <text x="160" y="128" text-anchor="middle" fill="#94a3b8" font-size="9">Alle Nachrichten gleichzeitig analysiert.</text>
+                        <text x="160" y="143" text-anchor="middle" fill="#94a3b8" font-size="9">Zusammenh&auml;nge erkannt. Gesamtbild gebildet.</text>
+                        <text x="160" y="158" text-anchor="middle" fill="#94a3b8" font-size="9">Alle Aktionen aufeinander abgestimmt.</text>
+                    </svg>
                 </div>
             </div>
 
