@@ -152,10 +152,9 @@
         <a href="#anatomie" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Estructura</a>
         <a href="#orchestrator" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Orquestador</a>
         <a href="#gedaechtnis" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Memoria</a>
-        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Habilidades</a>
-        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Conectores</a>
         <a href="#llm" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">LLM</a>
-        <a href="#threads" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Hilos</a>
+        <a href="#konnektoren" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Conectores</a>
+        <a href="#skills" class="subnav-link whitespace-nowrap hover:text-white transition-colors border-b-2 border-transparent pb-0.5">Habilidades</a>
     </div>
 </nav>
 
@@ -241,7 +240,7 @@
             <!-- Agent Anatomy SVG — Pentagon with 5 components at side midpoints -->
             <div class="reveal" style="transition-delay: 0.15s;">
                 <svg viewBox="0 0 500 460" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg mx-auto">
-                    <!-- Central Pentagon: ASSISTENT -->
+                    <!-- Central Pentagon: ASISTENTE -->
                     <polygon points="250,115 336,178 303,280 197,280 164,178"
                              fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="2" stroke-linejoin="round"/>
                     <text x="250" y="200" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="700">ASISTENTE</text>
@@ -300,7 +299,6 @@
             <p class="text-sm text-slate-400 leading-relaxed">
                 <strong class="text-white">El punto clave:</strong> El asistente prepara &mdash; usted decide. Su conocimiento especializado, su experiencia y su criterio siguen siendo indispensables. El asistente le quita el trabajo rutinario: recopilar datos, supervisar plazos, preparar borradores. El trabajo profesional sigue siendo suyo.
             </p>
-            </div>
         </div>
 
     </div>
@@ -322,52 +320,78 @@
             </p>
         </div>
 
-        <!-- OODA Cycle SVG -->
-        <div class="reveal max-w-4xl mx-auto mb-16">
-            <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <!-- 6-Phase OODA Cycle SVG — CONTEXTO + O·O·D·A + PERSISTIR -->
+        <div class="reveal max-w-5xl mx-auto mb-16">
+            <svg viewBox="0 0 960 230" xmlns="http://www.w3.org/2000/svg" class="w-full">
                 <defs>
                     <marker id="oodaArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e"/>
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
                     </marker>
                 </defs>
 
-                <!-- Phase 1: OBSERVE -->
-                <rect x="0" y="30" width="170" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
-                <text x="85" y="60" text-anchor="middle" fill="#f43f5e" font-size="14" font-weight="700">OBSERVE</text>
-                <text x="85" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Todos los mensajes a la vez</text>
-                <text x="85" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Agrupar, categorizar</text>
-                <text x="85" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Reconocer conexiones</text>
+                <!-- Phase 0: CONTEXTO -->
+                <rect x="0" y="30" width="130" height="100" rx="10" fill="#94a3b8" fill-opacity="0.06" stroke="#94a3b8" stroke-width="1"/>
+                <text x="65" y="56" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700">CONTEXTO</text>
+                <text x="65" y="74" text-anchor="middle" fill="#64748b" font-size="8">Leer workspace</text>
+                <text x="65" y="88" text-anchor="middle" fill="#64748b" font-size="8">Verificar fuentes de datos</text>
+                <text x="65" y="102" text-anchor="middle" fill="#64748b" font-size="8">&laquo;Escritorio&raquo;</text>
 
-                <line x1="170" y1="80" x2="205" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="130" y1="80" x2="150" y2="80" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- OODA bracket label -->
+                <rect x="155" y="6" width="530" height="18" rx="4" fill="#f43f5e" fill-opacity="0.06"/>
+                <text x="420" y="19" text-anchor="middle" fill="#f43f5e" font-size="10" font-weight="700" letter-spacing="8">O &middot; O &middot; D &middot; A</text>
+
+                <!-- Phase 1: OBSERVE -->
+                <rect x="155" y="30" width="128" height="100" rx="10" fill="#f43f5e" fill-opacity="0.08" stroke="#f43f5e" stroke-width="1.5"/>
+                <text x="219" y="56" text-anchor="middle" fill="#f43f5e" font-size="11" font-weight="700">OBSERVE</text>
+                <text x="219" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Leer mensajes</text>
+                <text x="219" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Agrupar, clasificar</text>
+                <text x="219" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Encontrar conexiones</text>
+
+                <line x1="283" y1="80" x2="293" y2="80" stroke="#f43f5e" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
                 <!-- Phase 2: ORIENT -->
-                <rect x="210" y="30" width="170" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="295" y="60" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">ORIENT</text>
-                <text x="295" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Obtener informaci&oacute;n</text>
-                <text x="295" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Verificar dependencias</text>
-                <text x="295" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Crear cuadro de situaci&oacute;n</text>
+                <rect x="298" y="30" width="128" height="100" rx="10" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="362" y="56" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700">ORIENT</text>
+                <text x="362" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Investigar, verificar</text>
+                <text x="362" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Reconocer dependencias</text>
+                <text x="362" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Crear cuadro de situaci&oacute;n</text>
 
-                <line x1="380" y1="80" x2="415" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="426" y1="80" x2="436" y2="80" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
                 <!-- Phase 3: DECIDE -->
-                <rect x="420" y="30" width="170" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="505" y="60" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">DECIDE</text>
-                <text x="505" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Plan de acci&oacute;n por interlocutor</text>
-                <text x="505" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">Compartir solo lo relevante</text>
-                <text x="505" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Cargar contexto del hilo</text>
+                <rect x="441" y="30" width="108" height="100" rx="10" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="495" y="56" text-anchor="middle" fill="#10b981" font-size="11" font-weight="700">DECIDE</text>
+                <text x="495" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Crear plan de acci&oacute;n</text>
+                <text x="495" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">Por interlocutor:</text>
+                <text x="495" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">&iquest;Qu&eacute; necesita saber?</text>
 
-                <line x1="590" y1="80" x2="625" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+                <line x1="549" y1="80" x2="559" y2="80" stroke="#10b981" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
 
                 <!-- Phase 4: ACT -->
-                <rect x="630" y="30" width="170" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="715" y="60" text-anchor="middle" fill="#0070f3" font-size="14" font-weight="700">ACT</text>
-                <text x="715" y="80" text-anchor="middle" fill="#94a3b8" font-size="9">Responder por hilo</text>
-                <text x="715" y="95" text-anchor="middle" fill="#94a3b8" font-size="9">E-mails, tickets, actualizaciones</text>
-                <text x="715" y="110" text-anchor="middle" fill="#94a3b8" font-size="9">Coordinado, no individual</text>
+                <rect x="564" y="30" width="121" height="100" rx="10" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="625" y="56" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">ACT</text>
+                <text x="625" y="74" text-anchor="middle" fill="#94a3b8" font-size="8">Responder por hilo</text>
+                <text x="625" y="88" text-anchor="middle" fill="#94a3b8" font-size="8">E-mails, tickets</text>
+                <text x="625" y="102" text-anchor="middle" fill="#94a3b8" font-size="8">Actuar coordinadamente</text>
+
+                <line x1="685" y1="80" x2="705" y2="80" stroke="#0070f3" stroke-width="1.5" marker-end="url(#oodaArrow)"/>
+
+                <!-- Phase 5: PERSISTIR -->
+                <rect x="710" y="30" width="148" height="100" rx="10" fill="#a855f7" fill-opacity="0.06" stroke="#a855f7" stroke-width="1"/>
+                <text x="784" y="56" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="700">PERSISTIR</text>
+                <text x="784" y="74" text-anchor="middle" fill="#64748b" font-size="8">Actualizar tareas</text>
+                <text x="784" y="88" text-anchor="middle" fill="#64748b" font-size="8">Documentar estado</text>
+                <text x="784" y="102" text-anchor="middle" fill="#64748b" font-size="8">Programar recordatorios</text>
+
+                <!-- Feedback arrow from PERSISTIR back to CONTEXTO -->
+                <path d="M 784 135 L 784 168 Q 784 178 774 178 L 75 178 Q 65 178 65 168 L 65 135"
+                      stroke="#64748b" stroke-width="1" stroke-dasharray="4,3" fill="none" marker-end="url(#oodaArrow)"/>
+                <text x="420" y="195" text-anchor="middle" fill="#64748b" font-size="8" font-style="italic">Los archivos de trabajo transmiten el estado a la siguiente sesi&oacute;n</text>
 
                 <!-- Bottom label -->
-                <text x="400" y="175" text-anchor="middle" fill="#94a3b8" font-size="10">El asistente mantiene la GPU en todas las fases &mdash; ning&uacute;n otro asistente lo interrumpe.</text>
-                <text x="400" y="195" text-anchor="middle" fill="#64748b" font-size="9" font-style="italic">Como un administrativo que cierra la puerta y procesa su bandeja de entrada con concentraci&oacute;n.</text>
+                <text x="480" y="220" text-anchor="middle" fill="#94a3b8" font-size="9">El asistente mantiene la GPU durante todas las fases &mdash; como un empleado que cierra su puerta.</text>
             </svg>
         </div>
 
@@ -442,18 +466,18 @@
                 <h3 class="font-bold text-lg mb-6 text-center">Ejemplo: Tres mensajes, un cuadro de situaci&oacute;n</h3>
                 <div class="grid md:grid-cols-3 gap-4 mb-8">
                     <div class="border border-signal-500/20 rounded-lg p-4">
-                        <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:m&uuml;ller</p>
-                        <p class="text-slate-300 font-medium text-sm mb-2">Desarrollador M&uuml;ller</p>
+                        <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:garc&iacute;a</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Desarrollador Garc&iacute;a</p>
                         <p class="text-slate-500 text-xs">&laquo;Los tests unitarios para SG-03 est&aacute;n listos.&raquo;</p>
                     </div>
                     <div class="border border-amber-500/20 rounded-lg p-4">
-                        <p class="text-amber-400 font-mono text-xs mb-2">Thread email:req-mgr</p>
-                        <p class="text-slate-300 font-medium text-sm mb-2">Gestor de requisitos</p>
+                        <p class="text-amber-400 font-mono text-xs mb-2">Thread email:resp-req</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Responsable de Requisitos</p>
                         <p class="text-slate-500 text-xs">&laquo;TSR-17 ha sido elevado a ASIL D.&raquo;</p>
                     </div>
                     <div class="border border-green-500/20 rounded-lg p-4">
-                        <p class="text-green-400 font-mono text-xs mb-2">Thread int:testmgr</p>
-                        <p class="text-slate-300 font-medium text-sm mb-2">Responsable de pruebas</p>
+                        <p class="text-green-400 font-mono text-xs mb-2">Thread int:resp-pruebas</p>
+                        <p class="text-slate-300 font-medium text-sm mb-2">Responsable de Pruebas</p>
                         <p class="text-slate-500 text-xs">&laquo;El test de integraci&oacute;n de SG-03 falla.&raquo;</p>
                     </div>
                 </div>
@@ -463,7 +487,7 @@
                     <p class="text-rose-400 font-mono text-xs font-medium mb-2">CUADRO DE SITUACI&Oacute;N (transversal entre hilos)</p>
                     <p class="text-slate-300 text-sm leading-relaxed">
                         &laquo;Los tres mensajes se refieren al Safety Goal SG-03. La elevaci&oacute;n a ASIL-D de TSR-17 modifica
-                        los requisitos de verificaci&oacute;n: los tests unitarios de M&uuml;ller ya no son suficientes (se requiere cobertura MC/DC).
+                        los requisitos de verificaci&oacute;n: los tests unitarios de Garc&iacute;a ya no son suficientes (se requiere cobertura MC/DC).
                         El fallo en el test de integraci&oacute;n es un problema de timing independiente.&raquo;
                     </p>
                 </div>
@@ -471,15 +495,15 @@
                 <!-- Responses -->
                 <div class="grid md:grid-cols-3 gap-4 text-xs">
                     <div class="bg-slate-900/50 rounded-lg p-3">
-                        <p class="text-signal-400 font-medium mb-1">&rarr; A M&uuml;ller</p>
+                        <p class="text-signal-400 font-medium mb-1">&rarr; A Garc&iacute;a</p>
                         <p class="text-slate-500">&laquo;Tests completados, pero por la elevaci&oacute;n a ASIL-D ya no basta con Statement Coverage. Se requiere MC/DC.&raquo;</p>
                     </div>
                     <div class="bg-slate-900/50 rounded-lg p-3">
-                        <p class="text-amber-400 font-medium mb-1">&rarr; Al gestor de requisitos</p>
+                        <p class="text-amber-400 font-medium mb-1">&rarr; Al Responsable de Requisitos</p>
                         <p class="text-slate-500">&laquo;Elevaci&oacute;n registrada. 3 requisitos SW afectados, los tests unitarios deben ampliarse. An&aacute;lisis de impacto adjunto.&raquo;</p>
                     </div>
                     <div class="bg-slate-900/50 rounded-lg p-3">
-                        <p class="text-green-400 font-medium mb-1">&rarr; Al responsable de pruebas</p>
+                        <p class="text-green-400 font-medium mb-1">&rarr; Al Responsable de Pruebas</p>
                         <p class="text-slate-500">&laquo;Problema de timing, no causado por la elevaci&oacute;n ASIL. Por favor env&iacute;e el logfile. El test de integraci&oacute;n debe repetirse tras la ampliaci&oacute;n de tests unitarios.&raquo;</p>
                     </div>
                 </div>
@@ -614,7 +638,358 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  3. SKILLS — 18 Skills + Roadmap                                      -->
+<!--  3. MEMORIA — Memoria a largo plazo                                   -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="gedaechtnis" class="relative py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Memoria a largo plazo</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Tres tipos de memoria, b&uacute;squeda h&iacute;brida y un ciclo Dreaming para la consolidaci&oacute;n.</p>
+        </div>
+
+        <!-- Memory Tiers SVG -->
+        <div class="reveal max-w-4xl mx-auto mb-12">
+            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                <defs>
+                    <marker id="memArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
+                    </marker>
+                </defs>
+                <!-- Semantic Memory -->
+                <rect x="20" y="20" width="230" height="180" rx="8" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
+                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Sem&aacute;ntica</text>
+                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Hechos y conocimiento</text>
+                <rect x="40" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Precio acero Q1: 850 EUR/t"</text>
+                <rect x="40" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                <text x="135" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"SAP API: /api/v2/stock"</text>
+                <rect x="40" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
+                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Proveedor X: 14 d&iacute;as plazo"</text>
+
+                <!-- Episodic Memory -->
+                <rect x="285" y="20" width="230" height="180" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
+                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Epis&oacute;dica</text>
+                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Vivencias y conversaciones</text>
+                <rect x="305" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15: Consulta stock"</text>
+                <rect x="305" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18: Comparativa precios"</text>
+                <rect x="305" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
+                <text x="400" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-20: An&aacute;lisis CAD"</text>
+
+                <!-- Procedural Memory -->
+                <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Procedimental</text>
+                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Procedimientos y patrones</text>
+                <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
+                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Pedido: Verificar&#8594;Aprobar&#8594;Contabilizar"</text>
+                <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
+                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG&#8594;Parse&#8594;CSV"</text>
+                <rect x="570" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
+                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventario: SQL&#8594;Diff&#8594;Report"</text>
+
+                <!-- Search Layer -->
+                <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
+                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">B&uacute;squeda h&iacute;brida: FTS5 + Embeddings vectoriales + RRF Fusion</text>
+                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">El ranking de relevancia combina resultados por palabras clave y sem&aacute;nticos</text>
+
+                <!-- Arrows from tiers to search -->
+                <line x1="135" y1="200" x2="250" y2="230" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="400" y1="200" x2="400" y2="230" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="665" y1="200" x2="550" y2="230" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
+            </svg>
+        </div>
+
+        <!-- Dreaming Explanation (enhanced) -->
+        <div class="reveal max-w-3xl mx-auto mb-10">
+            <div class="bg-slate-850 border border-purple-500/20 rounded-xl p-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Consolidaci&oacute;n de memoria por llamada LLM</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-3">
+                            En estado de reposo, el agente analiza sus conversaciones con una <strong class="text-white">llamada LLM</strong>,
+                            extrae hechos, actualiza notas y listas de tareas, consolida
+                            su memoria y genera informes semanales.
+                        </p>
+                        <p class="text-slate-500 text-xs leading-relaxed">
+                            Como el cerebro humano durante el sue&ntilde;o &mdash; el agente condensa experiencias en conocimiento,
+                            elimina entradas redundantes y refuerza conexiones importantes.
+                            El resultado: respuestas m&aacute;s precisas con menor consumo de tokens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dreaming Cycle SVG -->
+        <div class="reveal max-w-3xl mx-auto mb-16">
+            <div class="gradient-border glow-sm">
+                <div class="bg-slate-850 rounded-xl p-8">
+                    <h3 class="font-bold text-lg mb-2">Ciclo Dreaming (Consolidaci&oacute;n)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Como el cerebro humano durante el sue&ntilde;o, AIMOS consolida recuerdos en per&iacute;odos de inactividad:
+                    </p>
+                    <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                        <defs>
+                            <marker id="dreamArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
+                            </marker>
+                        </defs>
+                        <rect x="0" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Recopilar episodios</text>
+                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Todas las conversaciones</text>
+
+                        <line x1="130" y1="40" x2="175" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
+
+                        <rect x="175" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Reconocer patrones</text>
+                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">An&aacute;lisis LLM</text>
+
+                        <line x1="305" y1="40" x2="350" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
+
+                        <rect x="350" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
+                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Condensar</text>
+                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Extraer hechos</text>
+
+                        <line x1="480" y1="40" x2="525" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
+
+                        <rect x="525" y="15" width="165" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
+                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Almacenar sem&aacute;ntico</text>
+                        <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Memoria a largo plazo</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- (Cognitive Balance moved to architektur.html — now dynamic, not static slider) -->
+
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  4. LLM — El modelo de lenguaje                                       -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="llm" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Modelo de lenguaje</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El LLM &mdash; cerebro del asistente</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">
+                El Large Language Model (LLM) es el motor de pensamiento detr&aacute;s de cada asistente.
+                Comprende el lenguaje, toma decisiones y controla herramientas &mdash;
+                y funciona <strong class="text-white">completamente en su propio hardware</strong>.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 reveal">
+            <!-- &iquest;Qu&eacute; hace el LLM? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">&iquest;Qu&eacute; hace el LLM?</h3>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Comprende consultas</strong> &mdash; en lenguaje natural, en cualquier idioma</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Selecciona herramientas</strong> &mdash; decide de forma aut&oacute;noma si se necesita una consulta a base de datos, un env&iacute;o de correo o un c&aacute;lculo</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Formula respuestas</strong> &mdash; t&eacute;cnicamente correctas, en el contexto de la conversaci&oacute;n previa</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <span><strong class="text-white">Aprende de correcciones</strong> &mdash; a trav&eacute;s de la memoria a largo plazo, no mediante entrenamiento del modelo</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- &iquest;Por qu&eacute; local? -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-bold mb-3">&iquest;Por qu&eacute; local en lugar de la nube?</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <h4 class="font-semibold text-sm text-green-400">Soberan&iacute;a de datos</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sus consultas nunca abandonan la red. Ning&uacute;n proveedor de nube ve sus datos.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-signal-500"></span>
+                            <h4 class="font-semibold text-sm text-signal-400">Sin costes recurrentes</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sin precio por token por consulta. El modelo funciona de forma ilimitada en su GPU.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            <h4 class="font-semibold text-sm text-amber-400">Disponibilidad</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sin l&iacute;mite de API, sin rate-limiting, sin dependencia de servicios externos.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                            <h4 class="font-semibold text-sm text-purple-400">Escalado cuando es necesario</h4>
+                        </div>
+                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Para tareas complejas: escalado autom&aacute;tico y anonimizado a un LLM en la nube. <a href="compliance.html#umsetzung" class="text-signal-400 hover:underline">&rarr; Detalles</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  5. CONECTORES — Conexi&oacute;n universal                            -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<section id="konnektoren" class="relative py-24 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Conexi&oacute;n</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Conectores disponibles actualmente</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                El agente se comunica a trav&eacute;s de conectores &mdash; interfaces estandarizadas
+                hacia usuarios, sistemas y otros agentes.
+                <strong class="text-signal-300">Se desarrollan nuevos conectores continuamente y pueden a&ntilde;adirse
+                en cualquier momento para su infraestructura de TI espec&iacute;fica.</strong>
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+            <!-- Telegram -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">Telegram</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Texto, mensajes de voz, documentos. Mensajes proactivos
+                    para recordatorios, alarmas y resultados. Shared Listener para todos los agentes.
+                </p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">E-Mail</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    IMAP/SMTP para env&iacute;o y recepci&oacute;n. Monitorizaci&oacute;n POP3 para
+                    buzones entrantes. Formato HTML y archivos adjuntos.
+                </p>
+            </div>
+
+            <!-- Voice -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">Voice</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Whisper STT + Piper TTS &mdash; completamente local. Reconocimiento y
+                    s&iacute;ntesis de voz en todos los idiomas, sin servicios en la nube.
+                </p>
+            </div>
+
+            <!-- SFTP -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">SFTP</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Acceso a archivos en equipos de trabajo v&iacute;a Tailscale VPN. Carpeta compartida
+                    para DXF, PDF, Excel &mdash; cifrada y sin puertos abiertos.
+                </p>
+            </div>
+
+            <!-- SQL -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">Bases de datos SQL</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    PostgreSQL, MSSQL, Firebird &mdash; exclusivamente consultas SELECT.
+                    Sin acceso de escritura a datos de producci&oacute;n. Read-Only by Design.
+                </p>
+            </div>
+
+            <!-- REST/SOAP -->
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    Conexi&oacute;n API universal para ERP, CRM, gesti&oacute;n de mercanc&iacute;as.
+                    GET, POST, PUT con autenticaci&oacute;n configurable.
+                </p>
+            </div>
+        </div>
+
+        <!-- Thread-Architektur (integrado en Conectores) -->
+        <div id="threads" class="mt-20 reveal">
+            <div class="text-center mb-10">
+                <p class="text-amber-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arquitectura de Threads</p>
+                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Un asistente, muchos clientes &mdash; simult&aacute;neamente</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                    Cada proceso recibe su propia Thread-ID. El asistente solo ve al cliente actual &mdash; sin importar cu&aacute;ntos se ejecuten en paralelo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                    <h4 class="font-bold text-sm mb-2">Threads aislados</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Cada cliente recibe autom&aacute;ticamente su propio thread. El usuario de Telegram A nunca ve la conversaci&oacute;n del cliente de correo B.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                    <h4 class="font-bold text-sm mb-2">Multicanal</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Un cliente escribe por Telegram: &laquo;Le envi&eacute; un correo.&raquo; El asistente encuentra el thread de correo y tiene el contexto de inmediato.</p>
+                </div>
+                <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                    <h4 class="font-bold text-sm mb-2">Thread-Propagation</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Cuando un asistente delega una tarea a un colega, la Thread-ID viaja con ella. El destinatario trabaja en el mismo contexto de cliente.</p>
+                </div>
+            </div>
+
+            <!-- Key Features compact -->
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-xs text-slate-500"><strong class="text-slate-400">Asignaci&oacute;n autom&aacute;tica</strong> &mdash; cada canal genera la Thread-ID correcta al recibir un mensaje</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-xs text-slate-500"><strong class="text-slate-400">E-Mail-Threading</strong> &mdash; cabeceras In-Reply-To y References para asignaci&oacute;n correcta</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-xs text-slate-500"><strong class="text-slate-400">Archivos por thread</strong> &mdash; adjuntos asignados al proceso, multicanal</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <p class="text-xs text-slate-500"><strong class="text-slate-400">Code-Level Isolation</strong> &mdash; aplicada a nivel de base de datos, no depende del modelo de IA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--  6. SKILLS — 18 Skills + Roadmap                                      -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="skills" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
@@ -861,422 +1236,6 @@
             </div>
         </div>
 
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  4. CONECTORES — Conexi&oacute;n universal                           -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="konnektoren" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Conexi&oacute;n</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Conectores disponibles actualmente</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">
-                El agente se comunica a trav&eacute;s de conectores &mdash; interfaces estandarizadas
-                hacia usuarios, sistemas y otros agentes.
-                <strong class="text-signal-300">Se desarrollan nuevos conectores continuamente y pueden a&ntilde;adirse
-                en cualquier momento para su infraestructura de TI espec&iacute;fica.</strong>
-            </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-            <!-- Telegram -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">Telegram</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Texto, mensajes de voz, documentos. Mensajes proactivos
-                    para recordatorios, alarmas y resultados. Shared Listener para todos los agentes.
-                </p>
-            </div>
-
-            <!-- Email -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">E-Mail</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    IMAP/SMTP para env&iacute;o y recepci&oacute;n. Monitorizaci&oacute;n POP3 para
-                    buzones entrantes. Formato HTML y archivos adjuntos.
-                </p>
-            </div>
-
-            <!-- Voice -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">Voice</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Whisper STT + Piper TTS &mdash; completamente local. Reconocimiento y
-                    s&iacute;ntesis de voz en todos los idiomas, sin servicios en la nube.
-                </p>
-            </div>
-
-            <!-- SFTP -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">SFTP</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Acceso a archivos en equipos de trabajo v&iacute;a Tailscale VPN. Carpeta compartida
-                    para DXF, PDF, Excel &mdash; cifrada y sin puertos abiertos.
-                </p>
-            </div>
-
-            <!-- SQL -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">Bases de datos SQL</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    PostgreSQL, MSSQL, Firebird &mdash; exclusivamente consultas SELECT.
-                    Sin acceso de escritura a datos de producci&oacute;n. Read-Only by Design.
-                </p>
-            </div>
-
-            <!-- REST/SOAP -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6 hover:border-signal-500/20 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-signal-500/10 border border-signal-500/20 flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                </div>
-                <h4 class="font-bold text-sm mb-2">REST / SOAP API</h4>
-                <p class="text-slate-500 text-xs leading-relaxed">
-                    Conexi&oacute;n API universal para ERP, CRM, gesti&oacute;n de mercanc&iacute;as.
-                    GET, POST, PUT con autenticaci&oacute;n configurable.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  5. MULTI-THREAD — Atenci&oacute;n paralela de clientes               -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="threads" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Arquitectura de Threads</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Un agente, muchos clientes &mdash; simult&aacute;neamente</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Cada conversaci&oacute;n recibe su propio ID de thread. El agente solo ve al cliente actual &mdash; sin importar cu&aacute;ntos se ejecuten en paralelo.</p>
-        </div>
-
-        <!-- How it works -->
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <!-- Thread per Customer -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="w-10 h-10 bg-signal-500/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                </div>
-                <h3 class="font-bold mb-2">Threads Aislados</h3>
-                <p class="text-slate-400 text-sm">Cada cliente recibe autom&aacute;ticamente su propio thread. El usuario de Telegram A nunca ve la conversaci&oacute;n del cliente de correo B &mdash; aunque el mismo agente atienda a ambos.</p>
-            </div>
-
-            <!-- Cross-Channel -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-                </div>
-                <h3 class="font-bold mb-2">Multicanal</h3>
-                <p class="text-slate-400 text-sm">Un cliente escribe por Telegram: &laquo;Le envi&eacute; un correo.&raquo; El agente encuentra el thread de correo, verifica la identidad y tiene el contexto de inmediato.</p>
-            </div>
-
-            <!-- Propagation -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
-                </div>
-                <h3 class="font-bold mb-2">Propagaci&oacute;n de Thread</h3>
-                <p class="text-slate-400 text-sm">Cuando un agente delega una tarea a un colega, el ID de thread viaja con ella. El destinatario trabaja en el mismo contexto de cliente &mdash; sin riesgo de confusi&oacute;n.</p>
-            </div>
-        </div>
-
-        <!-- Visual: Thread Flow -->
-        <div class="bg-slate-850 border border-white/5 rounded-xl p-8 mb-12">
-            <h3 class="font-bold mb-6 text-center">Ejemplo: Tres clientes, un equipo de agentes</h3>
-            <div class="grid md:grid-cols-3 gap-6 text-sm">
-                <div class="border border-signal-500/20 rounded-lg p-4">
-                    <p class="text-signal-400 font-mono text-xs mb-2">Thread tg:4819</p>
-                    <p class="text-slate-300 font-medium mb-2">Cliente M&uuml;ller (Telegram)</p>
-                    <div class="space-y-1 text-slate-500 text-xs">
-                        <p>&rarr; Soporte: Asesor&iacute;a</p>
-                        <p>&rarr; Back Office: An&aacute;lisis de imagen</p>
-                        <p>&rarr; Soporte: Resultado al cliente</p>
-                    </div>
-                </div>
-                <div class="border border-emerald-500/20 rounded-lg p-4">
-                    <p class="text-emerald-400 font-mono text-xs mb-2">Thread email:schmidt@...:a3f2</p>
-                    <p class="text-slate-300 font-medium mb-2">Cliente Schmidt (Correo)</p>
-                    <div class="space-y-1 text-slate-500 text-xs">
-                        <p>&rarr; Soporte: Leer consulta</p>
-                        <p>&rarr; Administraci&oacute;n: Crear presupuesto</p>
-                        <p>&rarr; Soporte: Reenviar confirmaci&oacute;n</p>
-                    </div>
-                </div>
-                <div class="border border-amber-500/20 rounded-lg p-4">
-                    <p class="text-amber-400 font-mono text-xs mb-2">Thread tg:7291</p>
-                    <p class="text-slate-300 font-medium mb-2">Cliente Weber (Telegram)</p>
-                    <div class="space-y-1 text-slate-500 text-xs">
-                        <p>&rarr; Soporte: Pregunta de mantenimiento</p>
-                        <p>&rarr; Base de conocimiento consultada</p>
-                        <p>&rarr; Soporte: Respuesta directa</p>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center text-slate-600 text-xs mt-4">Los tres procesos se ejecutan en paralelo. Ning&uacute;n agente ve los datos de otro cliente.</p>
-        </div>
-
-        <!-- Key Features List -->
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <div>
-                    <p class="text-sm font-medium text-slate-300">Asignaci&oacute;n autom&aacute;tica de thread</p>
-                    <p class="text-xs text-slate-500">Telegram, correo, panel de control &mdash; cada canal genera autom&aacute;ticamente el ID de thread correcto al recibir un mensaje.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <div>
-                    <p class="text-sm font-medium text-slate-300">Threading de correo</p>
-                    <p class="text-xs text-slate-500">Las respuestas a correos existentes se asignan al thread correcto mediante las cabeceras In-Reply-To y References.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <div>
-                    <p class="text-sm font-medium text-slate-300">Archivos por thread</p>
-                    <p class="text-xs text-slate-500">Fotos, documentos y adjuntos se almacenan por thread &mdash; sin importar si llegan por Telegram o correo electr&oacute;nico.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <div>
-                    <p class="text-sm font-medium text-slate-300">Aislamiento a nivel de c&oacute;digo</p>
-                    <p class="text-xs text-slate-500">La separaci&oacute;n se aplica a nivel de base de datos, no depende del modelo de IA. Incluso un modelo defectuoso no puede mezclar datos de clientes.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  6. MEMORIA — Memoria a largo plazo                                   -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="gedaechtnis" class="relative py-24 grid-pattern">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">3-Tier Memory</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Memoria a largo plazo</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Tres tipos de memoria, b&uacute;squeda h&iacute;brida y un ciclo Dreaming para la consolidaci&oacute;n.</p>
-        </div>
-
-        <!-- Memory Tiers SVG -->
-        <div class="reveal max-w-4xl mx-auto mb-12">
-            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                <defs>
-                    <marker id="memArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#0070f3"/>
-                    </marker>
-                </defs>
-                <!-- Semantic Memory -->
-                <rect x="20" y="20" width="230" height="180" rx="8" fill="#0070f3" fill-opacity="0.08" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="135" y="50" text-anchor="middle" fill="#5eafff" font-size="14" font-weight="700">Sem&aacute;ntica</text>
-                <text x="135" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Hechos y conocimiento</text>
-                <rect x="40" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Precio acero Q1: 850 EUR/t"</text>
-                <rect x="40" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"SAP API: /api/v2/stock"</text>
-                <rect x="40" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#0070f3" stroke-width="0.5"/>
-                <text x="135" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Proveedor X: 14 d&iacute;as plazo"</text>
-
-                <!-- Episodic Memory -->
-                <rect x="285" y="20" width="230" height="180" rx="8" fill="#10b981" fill-opacity="0.08" stroke="#10b981" stroke-width="1.5"/>
-                <text x="400" y="50" text-anchor="middle" fill="#10b981" font-size="14" font-weight="700">Epis&oacute;dica</text>
-                <text x="400" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Vivencias y conversaciones</text>
-                <rect x="305" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-15: Consulta stock"</text>
-                <rect x="305" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-18: Comparativa precios"</text>
-                <rect x="305" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#10b981" stroke-width="0.5"/>
-                <text x="400" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"2026-03-20: An&aacute;lisis CAD"</text>
-
-                <!-- Procedural Memory -->
-                <rect x="550" y="20" width="230" height="180" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1.5"/>
-                <text x="665" y="50" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">Procedimental</text>
-                <text x="665" y="72" text-anchor="middle" fill="#94a3b8" font-size="10">Procedimientos y patrones</text>
-                <rect x="570" y="90" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="107" text-anchor="middle" fill="#94a3b8" font-size="9">"Pedido: Verificar&#8594;Aprobar&#8594;Contabilizar"</text>
-                <rect x="570" y="122" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="139" text-anchor="middle" fill="#94a3b8" font-size="9">"BOM-Export: DWG&#8594;Parse&#8594;CSV"</text>
-                <rect x="570" y="154" width="190" height="24" rx="4" fill="#1a2332" stroke="#f59e0b" stroke-width="0.5"/>
-                <text x="665" y="171" text-anchor="middle" fill="#94a3b8" font-size="9">"Inventario: SQL&#8594;Diff&#8594;Report"</text>
-
-                <!-- Search Layer -->
-                <rect x="100" y="230" width="600" height="50" rx="8" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
-                <text x="400" y="255" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="600">B&uacute;squeda h&iacute;brida: FTS5 + Embeddings vectoriales + RRF Fusion</text>
-                <text x="400" y="272" text-anchor="middle" fill="#94a3b8" font-size="10">El ranking de relevancia combina resultados por palabras clave y sem&aacute;nticos</text>
-
-                <!-- Arrows from tiers to search -->
-                <line x1="135" y1="200" x2="250" y2="230" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
-                <line x1="400" y1="200" x2="400" y2="230" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
-                <line x1="665" y1="200" x2="550" y2="230" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
-            </svg>
-        </div>
-
-        <!-- Dreaming Explanation (enhanced) -->
-        <div class="reveal max-w-3xl mx-auto mb-10">
-            <div class="bg-slate-850 border border-purple-500/20 rounded-xl p-6">
-                <div class="flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-2 text-purple-300">Dreaming &mdash; Consolidaci&oacute;n de memoria por llamada LLM</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-3">
-                            En estado de reposo, el agente analiza sus conversaciones con una <strong class="text-white">llamada LLM</strong>,
-                            extrae hechos, actualiza notas y listas de tareas, consolida
-                            su memoria y genera informes semanales.
-                        </p>
-                        <p class="text-slate-500 text-xs leading-relaxed">
-                            Como el cerebro humano durante el sue&ntilde;o &mdash; el agente condensa experiencias en conocimiento,
-                            elimina entradas redundantes y refuerza conexiones importantes.
-                            El resultado: respuestas m&aacute;s precisas con menor consumo de tokens.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dreaming Cycle SVG -->
-        <div class="reveal max-w-3xl mx-auto mb-16">
-            <div class="gradient-border glow-sm">
-                <div class="bg-slate-850 rounded-xl p-8">
-                    <h3 class="font-bold text-lg mb-2">Ciclo Dreaming (Consolidaci&oacute;n)</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Como el cerebro humano durante el sue&ntilde;o, AIMOS consolida recuerdos en per&iacute;odos de inactividad:
-                    </p>
-                    <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                        <defs>
-                            <marker id="dreamArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
-                            </marker>
-                        </defs>
-                        <rect x="0" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="65" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Recopilar episodios</text>
-                        <text x="65" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Todas las conversaciones</text>
-
-                        <line x1="130" y1="40" x2="175" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
-
-                        <rect x="175" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="240" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Reconocer patrones</text>
-                        <text x="240" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">An&aacute;lisis LLM</text>
-
-                        <line x1="305" y1="40" x2="350" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
-
-                        <rect x="350" y="15" width="130" height="50" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                        <text x="415" y="38" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="600">Condensar</text>
-                        <text x="415" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Extraer hechos</text>
-
-                        <line x1="480" y1="40" x2="525" y2="40" stroke="#a855f7" stroke-width="1.5" marker-end="url(#dreamArrow)"/>
-
-                        <rect x="525" y="15" width="165" height="50" rx="8" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1"/>
-                        <text x="607" y="38" text-anchor="middle" fill="#10b981" font-size="10" font-weight="600">Almacenar sem&aacute;ntico</text>
-                        <text x="607" y="53" text-anchor="middle" fill="#94a3b8" font-size="8">Memoria a largo plazo</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <!-- (Cognitive Balance moved to architektur.html — now dynamic, not static slider) -->
-
-    </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!--  7. LLM — El modelo de lenguaje                                       -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<section id="llm" class="relative py-24 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Modelo de lenguaje</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">El LLM &mdash; cerebro del asistente</h2>
-            <p class="text-slate-400 max-w-3xl mx-auto">
-                El Large Language Model (LLM) es el motor de pensamiento detr&aacute;s de cada asistente.
-                Comprende el lenguaje, toma decisiones y controla herramientas &mdash;
-                y funciona <strong class="text-white">completamente en su propio hardware</strong>.
-            </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 reveal">
-            <!-- &iquest;Qu&eacute; hace el LLM? -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">&iquest;Qu&eacute; hace el LLM?</h3>
-                <ul class="space-y-3 text-sm text-slate-400">
-                    <li class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Comprende consultas</strong> &mdash; en lenguaje natural, en cualquier idioma</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Selecciona herramientas</strong> &mdash; decide de forma aut&oacute;noma si se necesita una consulta a base de datos, un env&iacute;o de correo o un c&aacute;lculo</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Formula respuestas</strong> &mdash; t&eacute;cnicamente correctas, en el contexto de la conversaci&oacute;n previa</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-signal-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                        <span><strong class="text-white">Aprende de correcciones</strong> &mdash; a trav&eacute;s de la memoria a largo plazo, no mediante entrenamiento del modelo</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- &iquest;Por qu&eacute; local? -->
-            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                <h3 class="font-bold mb-3">&iquest;Por qu&eacute; local en lugar de la nube?</h3>
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                            <h4 class="font-semibold text-sm text-green-400">Soberan&iacute;a de datos</h4>
-                        </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sus consultas nunca abandonan la red. Ning&uacute;n proveedor de nube ve sus datos.</p>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-signal-500"></span>
-                            <h4 class="font-semibold text-sm text-signal-400">Sin costes recurrentes</h4>
-                        </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sin precio por token por consulta. El modelo funciona de forma ilimitada en su GPU.</p>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                            <h4 class="font-semibold text-sm text-amber-400">Disponibilidad</h4>
-                        </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Sin l&iacute;mite de API, sin rate-limiting, sin dependencia de servicios externos.</p>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                            <h4 class="font-semibold text-sm text-purple-400">Escalado cuando es necesario</h4>
-                        </div>
-                        <p class="text-slate-500 text-xs leading-relaxed pl-4">Para tareas complejas: escalado autom&aacute;tico y anonimizado a un LLM en la nube. <a href="compliance.html#umsetzung" class="text-signal-400 hover:underline">&rarr; Detalles</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
