@@ -147,9 +147,9 @@
 <div id="subnav" class="fixed top-16 w-full z-40 nav-blur bg-slate-950/90 border-b border-white/5 translate-y-0 transition-transform duration-300" style="transform: translateY(-100%);">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
-            <a href="#herausforderung" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Herausforderung</a>
-            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">System&uuml;bersicht</a>
-            <a href="#prinzipien" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">7 Prinzipien</a>
+            <a href="#herausforderung" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">D&eacute;fi</a>
+            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Vue d'ensemble</a>
+            <a href="#prinzipien" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">7 Principes</a>
         </div>
     </div>
 </div>
@@ -379,7 +379,7 @@
                     </a>
                     <a href="#prinzipien" class="flex items-center gap-2 text-xs text-orange-400 hover:text-orange-300 font-mono">
                         <span class="w-5 h-5 rounded bg-orange-500/10 flex items-center justify-center text-[10px] font-bold">7</span>
-                        Eskalation
+                        Escalade
                     </a>
                 </div>
             </div>
@@ -444,7 +444,7 @@
 
                 <rect x="440" y="180" width="160" height="70" rx="12" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
                 <text x="520" y="210" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">Orchestrator</text>
-                <text x="520" y="230" text-anchor="middle" fill="#92400e" font-size="9">VRAM Guard &bull; Prozess-Manager</text>
+                <text x="520" y="230" text-anchor="middle" fill="#92400e" font-size="9">VRAM Guard &bull; Gestionnaire de processus</text>
 
                 <!-- ── RIGHT: Agents (fanned out) ── -->
                 <line x1="600" y1="195" x2="660" y2="50" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
@@ -470,7 +470,7 @@
 
                 <!-- ── BOTTOM: Shared GPU ── -->
                 <rect x="340" y="340" width="360" height="55" rx="10" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
-                <text x="520" y="364" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="700">GPU &mdash; Lokale LLM-Inferenz</text>
+                <text x="520" y="364" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="700">GPU &mdash; Inf&eacute;rence LLM locale</text>
                 <text x="520" y="382" text-anchor="middle" fill="#64748b" font-size="9">Qwen 3.5:27B &bull; RTX 5090 &bull; 32 GB VRAM</text>
 
                 <!-- Agents to GPU -->
@@ -491,7 +491,7 @@
 
                 <!-- Legend -->
                 <rect x="10" y="420" width="10" height="10" rx="2" fill="#0070f3" fill-opacity="0.3"/>
-                <text x="26" y="429" fill="#64748b" font-size="9">Agenten</text>
+                <text x="26" y="429" fill="#64748b" font-size="9">Agents</text>
                 <rect x="100" y="420" width="10" height="10" rx="2" fill="#10b981" fill-opacity="0.3"/>
                 <text x="116" y="429" fill="#64748b" font-size="9">Base de donn&eacute;es</text>
                 <rect x="200" y="420" width="10" height="10" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
@@ -541,12 +541,12 @@
                     </p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6 font-mono text-xs text-slate-500">
-                    <div class="text-signal-300 mb-2">// Hybrid-Suche in Aktion</div>
+                    <div class="text-signal-300 mb-2">// Recherche hybride en action</div>
                     <div class="mb-1"><span class="text-purple-400">FTS5:</span> &nbsp;"Fournisseur profil&eacute;s acier" &rarr; 12 r&eacute;sultats</div>
                     <div class="mb-1"><span class="text-green-400">Vector:</span> "Qui fournit des poutrelles ?" &rarr; 8 r&eacute;sultats</div>
-                    <div class="mb-3"><span class="text-amber-400">RRF:</span> &nbsp;&nbsp;Fusion &rarr; Top 20, nach Relevanz sortiert</div>
+                    <div class="mb-3"><span class="text-amber-400">RRF:</span> &nbsp;&nbsp;Fusion &rarr; Top 20, tri&eacute;s par pertinence</div>
                     <div class="border-t border-white/5 pt-3 text-slate-600">
-                        Gespeichert in: SQLite (je Agent)<br>
+                        Stock&eacute; dans : SQLite (par agent)<br>
                         Mod&egrave;le d'embedding : local, pas d'appel cloud
                     </div>
                 </div>
@@ -615,17 +615,17 @@
                 <div class="grid sm:grid-cols-3 gap-4 mt-4">
                     <div class="bg-slate-900 rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold text-red-400 mb-1">99%</div>
-                        <div class="text-xs text-slate-500">Ein Agent, 11K Prompt</div>
+                        <div class="text-xs text-slate-500">Un agent, 11K Prompt</div>
                         <div class="text-xs text-red-400/60 mt-1">Timeout, pas de place</div>
                     </div>
                     <div class="bg-slate-900 rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">17%</div>
-                        <div class="text-xs text-slate-500">Spezialist A, 1.5K Prompt</div>
+                        <div class="text-xs text-slate-500">Sp&eacute;cialiste A, 1.5K Prompt</div>
                         <div class="text-xs text-signal-400 mt-1">83% libre pour le travail</div>
                     </div>
                     <div class="bg-slate-900 rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">19%</div>
-                        <div class="text-xs text-slate-500">Spezialist B, 2.8K Prompt</div>
+                        <div class="text-xs text-slate-500">Sp&eacute;cialiste B, 2.8K Prompt</div>
                         <div class="text-xs text-signal-400 mt-1">81% libre pour le travail</div>
                     </div>
                 </div>
@@ -754,7 +754,7 @@
                             <line x1="20" y1="82" x2="253" y2="82" stroke="#5eafff" stroke-width="1"/>
                             <line x1="20" y1="78" x2="20" y2="86" stroke="#5eafff" stroke-width="1"/>
                             <line x1="253" y1="78" x2="253" y2="86" stroke="#5eafff" stroke-width="1"/>
-                            <text x="136" y="96" text-anchor="middle" fill="#5eafff" font-size="9">Fix pro Agent (17-22%)</text>
+                            <text x="136" y="96" text-anchor="middle" fill="#5eafff" font-size="9">Fixe par agent (17-22%)</text>
                             <line x1="256" y1="82" x2="740" y2="82" stroke="#10b981" stroke-width="1"/>
                             <line x1="256" y1="78" x2="256" y2="86" stroke="#10b981" stroke-width="1"/>
                             <line x1="740" y1="78" x2="740" y2="86" stroke="#10b981" stroke-width="1"/>
@@ -840,7 +840,7 @@
                     <div>
                         <h4 class="font-bold text-lg mb-1">Qwen 3.5:27B <span class="text-slate-500 font-normal text-sm">(Q4, ~17 GB VRAM)</span></h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            27-Milliarden-Parameter-Modell mit <strong class="text-white">nativem Tool-Calling</strong>.
+                            Mod&egrave;le &agrave; 27 milliards de param&egrave;tres avec <strong class="text-white">Tool-Calling natif</strong>.
                             Les mod&egrave;les plus petits (&lt;20B) &eacute;chouent au pilotage fiable des outils &mdash;
                             un r&eacute;sultat critique pour la production issu de notre &eacute;valuation.
                         </p>
@@ -881,7 +881,7 @@
             <div class="mt-8">
                 <div class="gradient-border glow-sm">
                     <div class="bg-slate-850 rounded-xl p-8">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Anatomie eines LLM-Requests</div>
+                        <div class="font-mono text-xs text-slate-500 mb-4">// Anatomie d'une requ&ecirc;te LLM</div>
                         <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" class="w-full">
                             <defs>
                                 <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
@@ -920,13 +920,13 @@
                     <span class="text-orange-400 font-bold text-lg">7</span>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">Eskalation &amp; PII-Vault</h3>
+                    <h3 class="text-xl font-bold">Escalade et PII-Vault</h3>
                     <p class="text-slate-500 text-sm">Fallback automatique pour les t&acirc;ches complexes</p>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                    <h4 class="font-semibold text-sm text-orange-400 mb-2">Eskalation</h4>
+                    <h4 class="font-semibold text-sm text-orange-400 mb-2">Escalade</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         Si une t&acirc;che d&eacute;passe les capacit&eacute;s du mod&egrave;le local 27B &mdash; ou
                         en cas de timeout &mdash; l'agent escalade automatiquement vers un
@@ -934,9 +934,9 @@
                     </p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                    <h4 class="font-semibold text-sm text-orange-400 mb-2">PII-Vault (Anonymisierung)</h4>
+                    <h4 class="font-semibold text-sm text-orange-400 mb-2">PII-Vault (Anonymisation)</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Vor der Eskalation anonymisiert der <span class="text-signal-300 font-mono text-xs">PII-Vault</span>
+                        Avant l'escalade, le <span class="text-signal-300 font-mono text-xs">PII-Vault</span> anonymise
                         automatiquement toutes les donn&eacute;es personnelles : noms, num&eacute;ros de t&eacute;l&eacute;phone, adresses e-mail, noms d'entreprise.
                         Seule la question nettoy&eacute;e quitte le r&eacute;seau. La r&eacute;ponse est re-personnalis&eacute;e localement.
                         <strong class="text-white">Vos donn&eacute;es restent toujours locales.</strong>

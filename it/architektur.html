@@ -148,8 +148,8 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide py-0 -mb-px" id="subnav-links">
             <a href="#herausforderung" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Sfida</a>
-            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">System&uuml;bersicht</a>
-            <a href="#prinzipien" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">7 Prinzipien</a>
+            <a href="#architektur" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">Panoramica del sistema</a>
+            <a href="#prinzipien" class="subnav-link whitespace-nowrap text-xs font-medium text-slate-500 hover:text-white border-b-2 border-transparent px-3 py-3">7 Principi</a>
         </div>
     </div>
 </div>
@@ -180,7 +180,7 @@
                 I LLM cloud lavorano con finestre di contesto enormi su cluster di server specializzati.
                 AIMOS funziona su <strong class="text-white">una singola scheda grafica</strong> nel Suo ufficio &mdash;
                 e raggiunge con mezzi architetturali una prestazione che per le attività aziendali non solo è sufficiente,
-                sondern oft <strong class="text-white">bessere Ergebnisse</strong> liefert als &uuml;berdimensionierte Cloud-Modelle.
+                ma spesso ottiene <strong class="text-white">risultati migliori</strong> rispetto ai modelli cloud sovradimensionati.
             </p>
         </div>
 
@@ -261,27 +261,27 @@
 
                         <!-- Model weights: ~20 GB -->
                         <rect x="22" y="22" width="362" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
-                        <text x="203" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Modell-Gewichte</text>
-                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB fest belegt</text>
+                        <text x="203" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Pesi del modello</text>
+                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB allocato fisso</text>
 
                         <!-- KV-Cache: ~10 GB -->
                         <rect x="451" y="22" width="213" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
                         <text x="557" y="48" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">KV-Cache</text>
-                        <text x="557" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~13 GB f&uuml;r Contesto</text>
+                        <text x="557" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~13 GB per il contesto</text>
 
                         <!-- Safety margin -->
                         <rect x="668" y="22" width="30" height="56" rx="9" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
-                        <text x="683" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Reserve</text>
+                        <text x="683" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Riserva</text>
                         <text x="683" y="66" text-anchor="middle" fill="#94a3b8" font-size="8">~2 GB</text>
 
                         <!-- Percentage labels -->
-                        <text x="203" y="100" text-anchor="middle" fill="#a855f7" font-size="10">53% Modell</text>
+                        <text x="203" y="100" text-anchor="middle" fill="#a855f7" font-size="10">53% Modello</text>
                         <text x="557" y="100" text-anchor="middle" fill="#0070f3" font-size="10">31% Contesto</text>
-                        <text x="683" y="100" text-anchor="middle" fill="#ef4444" font-size="10">7% Puffer</text>
+                        <text x="683" y="100" text-anchor="middle" fill="#ef4444" font-size="10">7% Riserva</text>
 
                         <!-- Bottom explanation -->
                         <rect x="20" y="120" width="680" height="65" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
-                        <text x="40" y="142" fill="#10b981" font-size="11" font-weight="700">Vorteil RTX 5090:</text>
+                        <text x="40" y="142" fill="#10b981" font-size="11" font-weight="700">Vantaggio RTX 5090:</text>
                         <text x="190" y="142" fill="#94a3b8" font-size="10">8 GB di VRAM in più = quasi tre volte lo spazio per il contesto rispetto alla RTX 4090.</text>
                         <text x="40" y="162" fill="#94a3b8" font-size="10">AIMOS utilizza questo margine per più memoria, conversazioni più lunghe</text>
                         <text x="40" y="177" fill="#0070f3" font-size="10" font-weight="600">e finestre di contesto più grandi &mdash; a parità di costi.</text>
@@ -322,7 +322,7 @@
                                 </p>
                             </div>
                             <div class="bg-slate-900 rounded-lg p-4">
-                                <h4 class="font-semibold text-sm text-green-400 mb-1">Richtige Gr&ouml;&szlig;e</h4>
+                                <h4 class="font-semibold text-sm text-green-400 mb-1">Dimensione giusta</h4>
                                 <p class="text-slate-500 text-xs leading-relaxed">
                                     Un modello 27B con tool-calling nativo centra il punto ottimale:
                                     controllo affidabile degli strumenti, risposte rapide, nessuna sovraelaborazione.
@@ -371,7 +371,7 @@
                     </a>
                     <a href="#prinzipien" class="flex items-center gap-2 text-xs text-cyan-400 hover:text-cyan-300 font-mono">
                         <span class="w-5 h-5 rounded bg-cyan-500/10 flex items-center justify-center text-[10px] font-bold">5</span>
-                        Contesto-Injektion
+                        Iniezione del contesto
                     </a>
                     <a href="#prinzipien" class="flex items-center gap-2 text-xs text-red-400 hover:text-red-300 font-mono">
                         <span class="w-5 h-5 rounded bg-red-500/10 flex items-center justify-center text-[10px] font-bold">6</span>
@@ -379,7 +379,7 @@
                     </a>
                     <a href="#prinzipien" class="flex items-center gap-2 text-xs text-orange-400 hover:text-orange-300 font-mono">
                         <span class="w-5 h-5 rounded bg-orange-500/10 flex items-center justify-center text-[10px] font-bold">7</span>
-                        Eskalation
+                        Escalazione
                     </a>
                 </div>
             </div>
@@ -394,8 +394,8 @@
 <section id="architektur" class="relative py-24 bg-slate-900/50">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-12 reveal">
-            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Datenfluss</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">System-&Uuml;bersicht</h2>
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Flusso dei dati</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Panoramica del sistema</h2>
             <p class="text-slate-400 max-w-2xl mx-auto">I messaggi arrivano attraverso diversi canali, vengono distribuiti centralmente ed elaborati dall'agente appropriato &mdash; su una GPU condivisa.</p>
         </div>
 
@@ -411,13 +411,13 @@
                 </defs>
 
                 <!-- ── LEFT: Eingänge ── -->
-                <text x="60" y="22" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600" letter-spacing="0.05em">EING&Auml;NGE</text>
+                <text x="60" y="22" text-anchor="middle" fill="#5eafff" font-size="10" font-weight="600" letter-spacing="0.05em">INGRESSI</text>
                 <rect x="10" y="32" width="100" height="36" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
                 <text x="60" y="55" text-anchor="middle" fill="#94a3b8" font-size="10">Telegram</text>
                 <rect x="10" y="78" width="100" height="36" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
                 <text x="60" y="101" text-anchor="middle" fill="#94a3b8" font-size="10">E-Mail</text>
                 <rect x="10" y="124" width="100" height="36" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
-                <text x="60" y="147" text-anchor="middle" fill="#94a3b8" font-size="10">Sprache</text>
+                <text x="60" y="147" text-anchor="middle" fill="#94a3b8" font-size="10">Voce</text>
                 <rect x="10" y="170" width="100" height="36" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="1"/>
                 <text x="60" y="193" text-anchor="middle" fill="#94a3b8" font-size="10">Dashboard</text>
 
@@ -444,7 +444,7 @@
 
                 <rect x="440" y="180" width="160" height="70" rx="12" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="2"/>
                 <text x="520" y="210" text-anchor="middle" fill="#f59e0b" font-size="13" font-weight="700">Orchestrator</text>
-                <text x="520" y="230" text-anchor="middle" fill="#92400e" font-size="9">VRAM Guard &bull; Prozess-Manager</text>
+                <text x="520" y="230" text-anchor="middle" fill="#92400e" font-size="9">VRAM Guard &bull; Gestore dei processi</text>
 
                 <!-- ── RIGHT: Agents (fanned out) ── -->
                 <line x1="600" y1="195" x2="660" y2="50" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
@@ -457,7 +457,7 @@
                 <text x="750" y="62" text-anchor="middle" fill="#475569" font-size="8">Memory &bull; DATEV &bull; ETA</text>
 
                 <rect x="660" y="104" width="180" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
-                <text x="750" y="126" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Konstruktions-Agent</text>
+                <text x="750" y="126" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Agente di costruzione</text>
                 <text x="750" y="142" text-anchor="middle" fill="#475569" font-size="8">Memory &bull; FEM &bull; DXF</text>
 
                 <rect x="660" y="184" width="180" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5"/>
@@ -465,7 +465,7 @@
                 <text x="750" y="222" text-anchor="middle" fill="#475569" font-size="8">Memory &bull; SAP &bull; REST</text>
 
                 <rect x="660" y="264" width="180" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1.5" stroke-dasharray="4 3"/>
-                <text x="750" y="286" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Ihr Agent</text>
+                <text x="750" y="286" text-anchor="middle" fill="#5eafff" font-size="11" font-weight="600">Il vostro agente</text>
                 <text x="750" y="302" text-anchor="middle" fill="#475569" font-size="8">Memory &bull; i Suoi skills</text>
 
                 <!-- ── BOTTOM: Shared GPU ── -->
@@ -481,19 +481,19 @@
 
                 <!-- Orchestrator to GPU -->
                 <line x1="520" y1="250" x2="520" y2="340" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
-                <text x="540" y="300" fill="#92400e" font-size="8">sequenziell</text>
+                <text x="540" y="300" fill="#92400e" font-size="8">sequenziale</text>
 
                 <!-- Labels -->
-                <text x="220" y="230" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">Nachrichten</text>
-                <text x="220" y="242" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">einsammeln</text>
-                <text x="380" y="185" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">zwischenspeichern</text>
-                <text x="632" y="150" fill="#92400e" font-size="8" font-style="italic">verteilen</text>
+                <text x="220" y="230" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">Messaggi</text>
+                <text x="220" y="242" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">raccogliere</text>
+                <text x="380" y="185" text-anchor="middle" fill="#334155" font-size="9" font-style="italic">memorizzare</text>
+                <text x="632" y="150" fill="#92400e" font-size="8" font-style="italic">distribuire</text>
 
                 <!-- Legend -->
                 <rect x="10" y="420" width="10" height="10" rx="2" fill="#0070f3" fill-opacity="0.3"/>
-                <text x="26" y="429" fill="#64748b" font-size="9">Agenten</text>
+                <text x="26" y="429" fill="#64748b" font-size="9">Agenti</text>
                 <rect x="100" y="420" width="10" height="10" rx="2" fill="#10b981" fill-opacity="0.3"/>
-                <text x="116" y="429" fill="#64748b" font-size="9">Datenbank</text>
+                <text x="116" y="429" fill="#64748b" font-size="9">Database</text>
                 <rect x="200" y="420" width="10" height="10" rx="2" fill="#f59e0b" fill-opacity="0.3"/>
                 <text x="216" y="429" fill="#64748b" font-size="9">Orchestrator</text>
                 <rect x="310" y="420" width="10" height="10" rx="2" fill="#a855f7" fill-opacity="0.3"/>
@@ -530,7 +530,7 @@
                     <p class="text-slate-400 text-sm leading-relaxed mb-4">
                         Ogni agente ha una propria memoria con due meccanismi di ricerca:
                         <span class="text-signal-300 font-mono text-xs">FTS5</span> (ricerca full-text) e
-                        <span class="text-signal-300 font-mono text-xs">MiniLM-L6-v2</span> (384-dimensionale Vektor-Embeddings).
+                        <span class="text-signal-300 font-mono text-xs">MiniLM-L6-v2</span> (embedding vettoriali a 384 dimensioni).
                         I risultati vengono combinati tramite <strong class="text-white">Reciprocal Rank Fusion</strong> &mdash;
                         i ricordi rilevanti vengono trovati anche con termini di ricerca imprecisi.
                     </p>
@@ -541,12 +541,12 @@
                     </p>
                 </div>
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6 font-mono text-xs text-slate-500">
-                    <div class="text-signal-300 mb-2">// Hybrid-Suche in Aktion</div>
-                    <div class="mb-1"><span class="text-purple-400">FTS5:</span> &nbsp;"Lieferant Stahlprofile" &rarr; 12 Treffer</div>
-                    <div class="mb-1"><span class="text-green-400">Vector:</span> "Wer liefert Tr&auml;ger?" &rarr; 8 Treffer</div>
+                    <div class="text-signal-300 mb-2">// Ricerca ibrida in azione</div>
+                    <div class="mb-1"><span class="text-purple-400">FTS5:</span> &nbsp;"Fornitore profili acciaio" &rarr; 12 risultati</div>
+                    <div class="mb-1"><span class="text-green-400">Vector:</span> "Chi fornisce travi?" &rarr; 8 risultati</div>
                     <div class="mb-3"><span class="text-amber-400">RRF:</span> &nbsp;&nbsp;Fusione &rarr; Top 20, ordinati per rilevanza</div>
                     <div class="border-t border-white/5 pt-3 text-slate-600">
-                        Gespeichert in: SQLite (per agente)<br>
+                        Memorizzato in: SQLite (per agente)<br>
                         Modello embedding: locale, nessuna chiamata cloud
                     </div>
                 </div>
@@ -560,31 +560,31 @@
                     <span class="text-green-400 font-bold text-lg">2</span>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">Dreaming (Ged&auml;chtniskonsolidierung)</h3>
+                    <h3 class="text-xl font-bold">Dreaming (Consolidamento della memoria)</h3>
                     <p class="text-slate-500 text-sm">Salvare la conoscenza prima che il contesto sia pieno</p>
                 </div>
             </div>
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
                 <div class="grid md:grid-cols-3 gap-6">
                     <div>
-                        <h4 class="font-semibold text-sm text-green-400 mb-2">Ausl&ouml;ser</h4>
+                        <h4 class="font-semibold text-sm text-green-400 mb-2">Attivazione</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Nicht zeitgesteuert, sondern durch <strong class="text-white">Contestodruck</strong>:
+                            Non temporizzato, ma attivato dalla <strong class="text-white">pressione del contesto</strong>:
                             Se la cronologia della conversazione supera la soglia (12/18/25 messaggi, a seconda dell'agente),
                             l'orchestratore avvia un ciclo Dreaming.
                         </p>
                     </div>
                     <div>
-                        <h4 class="font-semibold text-sm text-green-400 mb-2">Ablauf</h4>
+                        <h4 class="font-semibold text-sm text-green-400 mb-2">Procedura</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
                             Il LLM analizza la cronologia ed estrae fatti come
                             <span class="font-mono text-xs text-signal-300">MEM:</span>-righe nella memoria a lungo termine.
                             Contemporaneamente i file del workspace (note, liste attività) vengono aggiornati tramite
-                            <span class="font-mono text-xs text-signal-300">FILE:</span>-Zeilen aktualisiert.
+                            <span class="font-mono text-xs text-signal-300">FILE:</span> aggiornati.
                         </p>
                     </div>
                     <div>
-                        <h4 class="font-semibold text-sm text-green-400 mb-2">Ergebnis</h4>
+                        <h4 class="font-semibold text-sm text-green-400 mb-2">Risultato</h4>
                         <p class="text-slate-400 text-sm leading-relaxed">
                             Successivamente la cronologia viene cancellata &mdash; <strong class="text-white">senza perdita di informazioni</strong>.
                             I report settimanali (fase 5) riassumono inoltre lo stato ogni 7 giorni.
@@ -602,7 +602,7 @@
                 </div>
                 <div>
                     <h3 class="text-xl font-bold">Agent-Splitting</h3>
-                    <p class="text-slate-500 text-sm">Spezialisten statt &Uuml;berflieger</p>
+                    <p class="text-slate-500 text-sm">Specialisti anzich&eacute; tuttofare</p>
                 </div>
             </div>
             <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
@@ -620,13 +620,13 @@
                     </div>
                     <div class="bg-slate-900 rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">17%</div>
-                        <div class="text-xs text-slate-500">Spezialist A, 1.5K Prompt</div>
-                        <div class="text-xs text-signal-400 mt-1">83% frei f&uuml;r Arbeit</div>
+                        <div class="text-xs text-slate-500">Specialista A, 1.5K Prompt</div>
+                        <div class="text-xs text-signal-400 mt-1">83% libero per il lavoro</div>
                     </div>
                     <div class="bg-slate-900 rounded-lg p-4 text-center">
                         <div class="text-2xl font-bold text-signal-400 mb-1">19%</div>
-                        <div class="text-xs text-slate-500">Spezialist B, 2.8K Prompt</div>
-                        <div class="text-xs text-signal-400 mt-1">81% frei f&uuml;r Arbeit</div>
+                        <div class="text-xs text-slate-500">Specialista B, 2.8K Prompt</div>
+                        <div class="text-xs text-signal-400 mt-1">81% libero per il lavoro</div>
                     </div>
                 </div>
             </div>
@@ -718,7 +718,7 @@
             <div class="max-w-4xl mx-auto mb-8">
                 <div class="gradient-border glow-sm">
                     <div class="bg-slate-850 rounded-xl p-8">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Contesto-Fenster Komposition (14.336 Tokens)</div>
+                        <div class="font-mono text-xs text-slate-500 mb-4">// Composizione della finestra di contesto (14.336 Token)</div>
                         <svg viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg" class="w-full">
                             <!-- Full context bar background -->
                             <rect x="20" y="20" width="720" height="50" rx="8" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.1"/>
@@ -740,12 +740,12 @@
                             <text x="306" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">~500-1.500</text>
                             <!-- Calendar + Projects -->
                             <rect x="358" y="20" width="55" height="50" rx="0" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-width="1"/>
-                            <text x="385" y="42" text-anchor="middle" fill="#ec4899" font-size="7" font-weight="600">Kalender</text>
-                            <text x="385" y="56" text-anchor="middle" fill="#94a3b8" font-size="7">Projekte</text>
+                            <text x="385" y="42" text-anchor="middle" fill="#ec4899" font-size="7" font-weight="600">Calendario</text>
+                            <text x="385" y="56" text-anchor="middle" fill="#94a3b8" font-size="7">Progetti</text>
                             <!-- History -->
                             <rect x="415" y="20" width="215" height="50" rx="0" fill="#0070f3" fill-opacity="0.12" stroke="#0070f3" stroke-width="0.8"/>
-                            <text x="522" y="42" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="600">Gespr&auml;chsverlauf</text>
-                            <text x="522" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">dynamisch (15-35 Nachrichten)</text>
+                            <text x="522" y="42" text-anchor="middle" fill="#5eafff" font-size="9" font-weight="600">Cronologia conversazione</text>
+                            <text x="522" y="56" text-anchor="middle" fill="#94a3b8" font-size="8">dinamico (15-35 messaggi)</text>
                             <!-- Response budget -->
                             <rect x="634" y="20" width="106" height="50" rx="8" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
                             <text x="687" y="42" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">completa</text>
@@ -763,7 +763,7 @@
                             <rect x="20" y="115" width="720" height="50" rx="8" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.05"/>
                             <circle cx="55" cy="140" r="15" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1"/>
                             <text x="55" y="144" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="700">!</text>
-                            <text x="80" y="135" fill="#ffffff" font-size="10" font-weight="600">Budget &uuml;berschritten?</text>
+                            <text x="80" y="135" fill="#ffffff" font-size="10" font-weight="600">Budget superato?</text>
                             <text x="80" y="152" fill="#94a3b8" font-size="9">Rimuovere i messaggi più vecchi &bull; Abbreviare i risultati degli strumenti a 200 caratteri &bull; Prompt + strumenti restano completi</text>
                         </svg>
                     </div>
@@ -779,14 +779,14 @@
             </div>
         </div>
 
-        <!-- ── Prinzip 5: Strukturierte Contesto-Injektion ────────────── -->
+        <!-- ── Prinzip 5: Iniezione strutturata del contesto ────────────── -->
         <div class="mb-16 reveal">
             <div class="flex items-center gap-4 mb-6">
                 <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
                     <span class="text-cyan-400 font-bold text-lg">5</span>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">Strukturierte Contesto-Injektion</h3>
+                    <h3 class="text-xl font-bold">Iniezione strutturata del contesto</h3>
                     <p class="text-slate-500 text-sm">Massima informazione con token minimi</p>
                 </div>
             </div>
@@ -799,20 +799,20 @@
                 <div class="grid sm:grid-cols-3 gap-4 font-mono text-xs">
                     <div class="bg-slate-900 rounded-lg p-3">
                         <div class="text-ec4899 text-pink-400 mb-1">&lt;calendar&gt;</div>
-                        <div class="text-slate-500">[OVERDUE] 2026-03-20 Angebot</div>
+                        <div class="text-slate-500">[OVERDUE] 2026-03-20 Offerta</div>
                         <div class="text-slate-500">[TODAY] 15:00 Riunione</div>
                         <div class="text-pink-400">&lt;/calendar&gt;</div>
                     </div>
                     <div class="bg-slate-900 rounded-lg p-3">
                         <div class="text-purple-400">&lt;projects&gt;</div>
-                        <div class="text-slate-500">[OVERDUE] Statik &rarr; M&uuml;ller</div>
+                        <div class="text-slate-500">[OVERDUE] Statica &rarr; M&uuml;ller</div>
                         <div class="text-slate-500">[BLOCKED] Disegno mancante</div>
                         <div class="text-purple-400">&lt;/projects&gt;</div>
                     </div>
                     <div class="bg-slate-900 rounded-lg p-3">
                         <div class="text-green-400">&lt;memories&gt;</div>
-                        <div class="text-slate-500">Firma nutzt DATEV (imp=9)</div>
-                        <div class="text-slate-500">Chef heisst M&uuml;ller (imp=8)</div>
+                        <div class="text-slate-500">Azienda usa DATEV (imp=9)</div>
+                        <div class="text-slate-500">Il capo si chiama M&uuml;ller (imp=8)</div>
                         <div class="text-green-400">&lt;/memories&gt;</div>
                     </div>
                 </div>
@@ -881,7 +881,7 @@
             <div class="mt-8">
                 <div class="gradient-border glow-sm">
                     <div class="bg-slate-850 rounded-xl p-8">
-                        <div class="font-mono text-xs text-slate-500 mb-4">// Anatomie eines LLM-Requests</div>
+                        <div class="font-mono text-xs text-slate-500 mb-4">// Anatomia di una richiesta LLM</div>
                         <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" class="w-full">
                             <defs>
                                 <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
@@ -920,13 +920,13 @@
                     <span class="text-orange-400 font-bold text-lg">7</span>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold">Eskalation &amp; PII-Vault</h3>
+                    <h3 class="text-xl font-bold">Escalazione e PII-Vault</h3>
                     <p class="text-slate-500 text-sm">Fallback automatico per attività complesse</p>
                 </div>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
-                    <h4 class="font-semibold text-sm text-orange-400 mb-2">Eskalation</h4>
+                    <h4 class="font-semibold text-sm text-orange-400 mb-2">Escalazione</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">
                         Se un'attività supera le capacità del modello locale 27B &mdash; o
                         si verifica un timeout &mdash; l'agente escala automaticamente a un
