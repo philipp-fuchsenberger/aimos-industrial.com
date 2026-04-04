@@ -60,6 +60,7 @@
             <a href="preise.html" class="text-white font-medium">Fiyatlar</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
             <a href="architektur.html" class="hover:text-white transition-colors">Mimari</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Do&#287;rulama</a>
             <a href="system.html" class="hover:text-white transition-colors">Sistem</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">İletişim</a>
         </div>
@@ -89,6 +90,7 @@
         <a href="preise.html" class="text-white py-2">Fiyatlar</a>
         <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Uyumluluk</a>
         <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Mimari</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Do&#287;rulama</a>
         <a href="system.html" class="text-slate-400 hover:text-white py-2">Sistem</a>
         <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">İletişim</a>
     </div>
@@ -103,8 +105,10 @@
             <span class="text-signal-400">Gizli maliyet yok.</span>
         </h1>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-            Yazılım i&ccedil;in lisans &uuml;creti yoktur. Yalnızca kurulum, entegrasyon ve
-            isteğe bağlı bakım i&ccedil;in &ouml;deme yaparsınız. AIMOS a&ccedil;ık kaynak kodludur ve &ouml;yle kalacaktır.
+            Yazılım A&ccedil;ık Kaynaktır. <strong class="text-white">&Ccedil;ok daha değerli olan şeyi
+            elde edersiniz:</strong> İstatistiksel olarak kanıtlanmış g&uuml;venilirliğe sahip,
+            tam eğitimli yapay zek&acirc; asistanları &mdash; otomotiv g&uuml;venlik m&uuml;hendisliği
+            y&ouml;ntemleriyle doğrulanmış.
         </p>
     </div>
 </section>
@@ -462,14 +466,14 @@
                 <tbody class="text-slate-400">
                     <tr class="border-b border-white/5">
                         <td class="py-3 px-4 font-medium text-white">GPU</td>
-                        <td class="py-3 px-4 text-center">1&times; RTX 4090<br><span class="text-xs text-slate-500">24 GB GDDR6X</span></td>
-                        <td class="py-3 px-4 text-center bg-signal-500/5">1&times; RTX 5090<br><span class="text-xs text-slate-500">32 GB GDDR7</span></td>
-                        <td class="py-3 px-4 text-center">2&times; RTX 5090<br><span class="text-xs text-slate-500">2&times; 32 GB</span></td>
+                        <td class="py-3 px-4 text-center">RTX 4060 Ti<br><span class="text-xs text-slate-500">16 GB GDDR6</span></td>
+                        <td class="py-3 px-4 text-center bg-signal-500/5">RTX 3090 / 5090<br><span class="text-xs text-slate-500">24&ndash;32 GB</span></td>
+                        <td class="py-3 px-4 text-center">2&times; RTX 3090 NVLink<br><span class="text-xs text-slate-500">48 GB / A100 80 GB</span></td>
                         <td class="py-3 px-4 text-center">Datacenter GPU<br><span class="text-xs text-slate-500">96+ GB</span></td>
                     </tr>
                     <tr class="border-b border-white/5">
                         <td class="py-3 px-4 font-medium text-white">YZ Modeli</td>
-                        <td class="py-3 px-4 text-center">27B Parametre</td>
+                        <td class="py-3 px-4 text-center">14B Parametre</td>
                         <td class="py-3 px-4 text-center bg-signal-500/5">27B Parametre</td>
                         <td class="py-3 px-4 text-center">70B Parametre</td>
                         <td class="py-3 px-4 text-center">70B+ Parametre</td>
@@ -520,21 +524,113 @@
             </table>
         </div>
 
-        <div class="bg-slate-900/50 border border-white/5 rounded-xl p-6 reveal">
-            <h4 class="font-bold mb-3">Neden farklı model boyutları?</h4>
+        <!-- Quality Promise -->
+        <div class="bg-gradient-to-b from-signal-500/5 to-transparent border border-signal-500/20 rounded-xl p-6 reveal">
+            <h4 class="font-bold text-lg mb-4 text-signal-300">Ger&ccedil;ekte ne alıyorsunuz: Doğrulanmış YZ Asistanları</h4>
             <div class="space-y-3 text-sm text-slate-400">
                 <p>
-                    <strong class="text-white">27B model</strong> (Starter &amp; Business) hızlı ve verimlidir &mdash; m&uuml;şteri desteği,
-                    ERP sorguları ve randevu y&ouml;netimi gibi net tanımlı g&ouml;revler i&ccedil;in ideal.
+                    Yazılım i&ccedil;in &ouml;deme yapmıyorsunuz &mdash; o A&ccedil;ık Kaynaktır. <strong class="text-white">Tamamen eğitilmiş,
+                    istatistiksel olarak doğrulanmış YZ asistanları</strong> i&ccedil;in &ouml;deme yapıyorsunuz; bunlar
+                    vakaların %99,8'inden fazlasında istenen davranışı g&ouml;sterir.
                 </p>
                 <p>
-                    <strong class="text-white">70B model</strong> (Professional &amp; Enterprise) daha karmaşık bağlamları anlar,
-                    talimatları daha hassas uygular ve daha nüanslı yanıtlar verir. Teknik danışmanlık,
-                    &ccedil;ok dilli iletişim ve yaratıcı g&ouml;revler gibi zorlu senaryolar i&ccedil;in &ouml;zellikle uygundur.
+                    Doğrulama metodolojimiz <strong class="text-white">otomotiv g&uuml;venlik m&uuml;hendisliğinden</strong> kaynaklanmaktadır
+                    ve YZ asistan pazarında benzersizdir:
+                </p>
+            </div>
+
+            <!-- V-Model -->
+            <div class="bg-slate-900 rounded-lg p-5 mt-4 mb-4">
+                <div class="font-mono text-xs text-slate-500 mb-3">// V-Modeli: Sistematik Asistan Doğrulaması</div>
+                <div class="grid grid-cols-3 gap-2 text-xs">
+                    <div class="text-right text-slate-500">
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-l-2 border-signal-500">
+                            <span class="text-signal-400 font-semibold">1. Kabul Kriterleri</span><br>
+                            <span class="text-slate-600">İş Senaryosu &rarr; Hata Oranı</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO/TS 5083 Cl. 6.2</span>
+                        </div>
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-l-2 border-signal-500">
+                            <span class="text-signal-400 font-semibold">2. Asistan Tasarımı</span><br>
+                            <span class="text-slate-600">Prompt + Referans Bilgi</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO/PAS 8800 Cl. 9.4</span>
+                        </div>
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-l-2 border-signal-500">
+                            <span class="text-signal-400 font-semibold">3. G&uuml;venlik &Ouml;nlemleri</span><br>
+                            <span class="text-slate-600">Hal&uuml;sinasyon Tespiti</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO 26262 / SOTIF</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-2xl text-signal-400 mb-1">&darr; V &darr;</div>
+                            <div class="bg-signal-500/10 border border-signal-500/30 rounded-lg p-3">
+                                <span class="text-signal-300 font-bold text-sm">Asistan</span><br>
+                                <span class="text-slate-500 text-[10px]">Qwen 27B<br>OODA Cycle<br>TurboQuant</span>
+                            </div>
+                            <div class="text-2xl text-green-400 mt-1">&uarr; V &uarr;</div>
+                        </div>
+                    </div>
+                    <div class="text-left text-slate-500">
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-r-2 border-green-500">
+                            <span class="text-green-400 font-semibold">6. Saha İzlemesi</span><br>
+                            <span class="text-slate-600">Operasyonel Veri Analizi</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO/TS 5083 Cl. 9</span>
+                        </div>
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-r-2 border-green-500">
+                            <span class="text-green-400 font-semibold">5. Monte Carlo</span><br>
+                            <span class="text-slate-600">2.000 Senaryo, CI &lt;%0,15</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO/TS 5083 H.4.1.3</span>
+                        </div>
+                        <div class="bg-slate-850 rounded p-2 mb-2 border-r-2 border-green-500">
+                            <span class="text-green-400 font-semibold">4. Aşama Testleri</span><br>
+                            <span class="text-slate-600">SOTIF + FuSi aşama başına</span><br>
+                            <span class="text-slate-600 font-mono text-[10px]">ISO 21448 / 8800</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-400">
+                <p>
+                    <strong class="text-white">Hal&uuml;sinasyon Tespiti:</strong> her asistan &ccedil;ıktısı otomatik olarak
+                    kontrol edilir &mdash; deterministik (tutarlar, formatlar, veri gizliliği) ve semantik
+                    (ton, tutarlılık, eksiksizlik). Uydurma sayılar m&uuml;şteriye ulaşmadan yakalanır.
                 </p>
                 <p>
-                    <strong class="text-white">T&uuml;m paketler aynı yazılımı kullanır.</strong> Starter'dan Business'a veya Professional'a
-                    ge&ccedil;iş her zaman m&uuml;mk&uuml;nd&uuml;r &mdash; donanım değişikliğiyle, asistan yapılandırmasını yeniden yapmadan.
+                    <strong class="text-white">Otomotiv Kalitesi:</strong> ASPICE, ISO&nbsp;26262, ISO&nbsp;21448&nbsp;(SOTIF),
+                    ISO/PAS&nbsp;8800 ve ISO/TS&nbsp;5083 deneyimimiz doğrudan asistan doğrulamasına yansır.
+                    Otonom ara&ccedil;lar ve ADAS sistemleri i&ccedil;in geliştirilen kanıtlanmış metodolojiyi uyguluyoruz
+                    &mdash; YZ asistanlarının gereksinimlerine uyarlanmış olarak.
+                </p>
+                <p>
+                    <strong class="text-white">Teknoloji:</strong> TurboQuant KV cache compression,
+                    Speculative Decoding, SGLang RadixAttention &mdash; &ouml;nc&uuml; araştırma (ICLR 2026),
+                    doğrudan &uuml;retimde konuşlandırılmış.
+                </p>
+            </div>
+        </div>
+
+        <!-- Hardware Tiers -->
+        <div class="bg-slate-900/50 border border-white/5 rounded-xl p-6 mt-6 reveal">
+            <h4 class="font-bold mb-3">Donanım Seviyeleri</h4>
+            <div class="space-y-3 text-sm text-slate-400">
+                <p>
+                    <strong class="text-white">Starter (14B, 16 GB) :</strong> basit vakalar, sınıflandırma,
+                    durum e-postaları. Multi-Pass Self-Refinement ile Business kalitesinin ~%80'i. GPU maliyeti 400&nbsp;&euro;'dan başlar.
+                </p>
+                <p>
+                    <strong class="text-white">Business (27B, 24&ndash;32 GB) :</strong> tam donanımlı
+                    YZ asistan. TurboQuant ile 33K token bağlam. RTX 5090'da Speculative Decoding ile
+                    7&times; daha hızlı. Altın standardımız.
+                </p>
+                <p>
+                    <strong class="text-white">Professional (70B, 48&ndash;80 GB) :</strong> maksimum kalite.
+                    2&times; RTX 3090, NVLink ile (NVLink destekli tek t&uuml;ketici GPU'su!) veya NVIDIA A100.
+                    Daha nüanslı dil yetenekleri gerektiren karmaşık senaryolar i&ccedil;in.
+                </p>
+                <p>
+                    <strong class="text-white">T&uuml;m seviyeler aynı yazılımı kullanır.</strong> Y&uuml;kseltme her zaman m&uuml;mk&uuml;nd&uuml;r
+                    &mdash; donanım değişikliğiyle, yeniden yapılandırma gerekmeden.
                 </p>
             </div>
         </div>

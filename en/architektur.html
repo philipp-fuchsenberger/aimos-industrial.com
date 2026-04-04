@@ -109,6 +109,7 @@
             <a href="preise.html" class="hover:text-white transition-colors">Pricing</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
             <a href="architektur.html" class="text-white font-medium">Architecture</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Validation</a>
             <a href="system.html" class="hover:text-white transition-colors">System</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
         </div>
@@ -138,6 +139,7 @@
         <a href="preise.html" class="text-slate-400 hover:text-white py-2">Pricing</a>
         <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Compliance</a>
         <a href="architektur.html" class="text-white py-2">Architecture</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Validation</a>
         <a href="system.html" class="text-slate-400 hover:text-white py-2">System</a>
         <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">Contact</a>
     </div>
@@ -189,7 +191,7 @@
             <div class="gradient-border glow-sm">
                 <div class="bg-slate-850 rounded-xl p-8">
                     <div class="font-mono text-xs text-slate-500 mb-6">// Context Window Comparison (Tokens)</div>
-                    <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <svg viewBox="0 0 720 375" xmlns="http://www.w3.org/2000/svg" class="w-full">
                         <!-- Grid lines -->
                         <line x1="180" y1="20" x2="180" y2="280" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
                         <line x1="330" y1="20" x2="330" y2="280" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.1"/>
@@ -221,70 +223,38 @@
                         <text x="195" y="159" fill="#94a3b8" font-size="9">Cloud &bull; $$</text>
 
                         <!-- AIMOS box -->
-                        <rect x="20" y="178" width="690" height="98" rx="8" fill="#0070f3" fill-opacity="0.04" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
-                        <text x="25" y="194" fill="#0070f3" font-size="10" font-weight="700">AIMOS &mdash; Local, Your GPU, Your Data</text>
+                        <rect x="20" y="178" width="690" height="130" rx="8" fill="#0070f3" fill-opacity="0.04" stroke="#0070f3" stroke-width="1" stroke-dasharray="4,3"/>
+                        <text x="25" y="194" fill="#0070f3" font-size="10" font-weight="700">AIMOS &mdash; Local, Your GPU, Your Data &mdash; TurboQuant KV Compression (ICLR 2026)</text>
 
-                        <!-- Starter — 26K -->
-                        <text x="40" y="215" fill="#94a3b8" font-size="9">Starter</text>
-                        <rect x="100" y="206" width="18" height="16" rx="3" fill="#0070f3" fill-opacity="0.4" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="124" y="218" fill="#94a3b8" font-size="9">26K &mdash; RTX 4090, 14B</text>
+                        <!-- Starter — 20K -->
+                        <text x="40" y="218" fill="#94a3b8" font-size="9">Starter</text>
+                        <rect x="115" y="209" width="14" height="14" rx="3" fill="#0070f3" fill-opacity="0.4" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="136" y="220" fill="#94a3b8" font-size="9">20K &mdash; RTX 4060 Ti 16 GB, Qwen 14B</text>
 
-                        <!-- Business — 22K -->
-                        <text x="40" y="239" fill="#0070f3" font-size="9" font-weight="600">Business</text>
-                        <rect x="100" y="230" width="15" height="16" rx="3" fill="#0070f3" fill-opacity="0.5" stroke="#0070f3" stroke-width="2"/>
-                        <text x="122" y="242" fill="#0070f3" font-size="9" font-weight="600">22K &mdash; RTX 5090, 32B (more precise)</text>
+                        <!-- Business — 33K -->
+                        <text x="40" y="240" fill="#0070f3" font-size="9" font-weight="600">Business</text>
+                        <rect x="115" y="231" width="22" height="14" rx="3" fill="#0070f3" fill-opacity="0.5" stroke="#0070f3" stroke-width="2"/>
+                        <text x="144" y="242" fill="#0070f3" font-size="9" font-weight="600">33K &mdash; RTX 3090 24 GB, Qwen 27B</text>
 
-                        <!-- Professional — 24K -->
-                        <text x="40" y="263" fill="#94a3b8" font-size="9">Professional</text>
-                        <rect x="100" y="254" width="16" height="16" rx="3" fill="#a855f7" fill-opacity="0.3" stroke="#a855f7" stroke-width="1.5"/>
-                        <text x="124" y="266" fill="#a855f7" font-size="9">24K &mdash; 2&times; RTX 5090, 70B (maximum quality)</text>
+                        <!-- Business+ — 52K -->
+                        <text x="40" y="262" fill="#0070f3" font-size="9">Business+</text>
+                        <rect x="115" y="253" width="35" height="14" rx="3" fill="#0070f3" fill-opacity="0.3" stroke="#0070f3" stroke-width="1.5"/>
+                        <text x="158" y="264" fill="#0070f3" font-size="9">52K &mdash; RTX 5090 32 GB + Speculative Decoding + SGLang</text>
+
+                        <!-- Professional — 100K+ -->
+                        <text x="40" y="284" fill="#a855f7" font-size="9" font-weight="600">Professional</text>
+                        <rect x="115" y="275" width="68" height="14" rx="3" fill="#a855f7" fill-opacity="0.3" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="190" y="286" fill="#a855f7" font-size="9">100K+ &mdash; 2&times; RTX 3090 NVLink 48 GB / A100 80 GB</text>
+
+                        <!-- TurboQuant badge -->
+                        <rect x="500" y="290" width="200" height="14" rx="7" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="0.5"/>
+                        <text x="600" y="300" text-anchor="middle" fill="#10b981" font-size="7" font-weight="600">TurboQuant: 3-Bit KV &rarr; 6&times; more context</text>
 
                         <!-- Arrow + label -->
-                        <line x1="36" y1="282" x2="36" y2="310" stroke="#ef4444" stroke-width="1.5"/>
-                        <polygon points="30,310 36,320 42,310" fill="#ef4444"/>
-                        <text x="50" y="316" fill="#ef4444" font-size="10" font-weight="600">Smaller context window &mdash; but:</text>
-                        <text x="50" y="332" fill="#0070f3" font-size="9" font-weight="600">Architecture compensates for this (see below). And: the right model for the right task.</text>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
-        <!-- Why VRAM is the bottleneck -->
-        <div class="reveal max-w-4xl mx-auto mb-12">
-            <div class="gradient-border glow-sm">
-                <div class="bg-slate-850 rounded-xl p-8">
-                    <div class="font-mono text-xs text-slate-500 mb-6">// Why VRAM is the bottleneck</div>
-                    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                        <!-- GPU VRAM bar -->
-                        <rect x="20" y="20" width="680" height="60" rx="10" fill="#1a2332" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.15"/>
-                        <text x="360" y="12" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="600">NVIDIA RTX 5090 &mdash; 32 GB VRAM</text>
-
-                        <!-- Model weights: ~20 GB -->
-                        <rect x="22" y="22" width="362" height="56" rx="9" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1.5"/>
-                        <text x="203" y="48" text-anchor="middle" fill="#a855f7" font-size="13" font-weight="700">Model Weights</text>
-                        <text x="203" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Qwen 3.5:27B (Q4) &mdash; ~17 GB permanently allocated</text>
-
-                        <!-- KV-Cache: ~10 GB -->
-                        <rect x="451" y="22" width="213" height="56" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1.5"/>
-                        <text x="557" y="48" text-anchor="middle" fill="#0070f3" font-size="11" font-weight="700">KV-Cache</text>
-                        <text x="557" y="66" text-anchor="middle" fill="#94a3b8" font-size="9">~13 GB for context</text>
-
-                        <!-- Safety margin -->
-                        <rect x="668" y="22" width="30" height="56" rx="9" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1"/>
-                        <text x="683" y="52" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="600">Reserve</text>
-                        <text x="683" y="66" text-anchor="middle" fill="#94a3b8" font-size="8">~2 GB</text>
-
-                        <!-- Percentage labels -->
-                        <text x="203" y="100" text-anchor="middle" fill="#a855f7" font-size="10">53% Model</text>
-                        <text x="557" y="100" text-anchor="middle" fill="#0070f3" font-size="10">41% Context</text>
-                        <text x="683" y="100" text-anchor="middle" fill="#ef4444" font-size="10">7% Buffer</text>
-
-                        <!-- Bottom explanation -->
-                        <rect x="20" y="120" width="680" height="65" rx="8" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
-                        <text x="40" y="142" fill="#10b981" font-size="11" font-weight="700">RTX 5090 Advantage:</text>
-                        <text x="190" y="142" fill="#94a3b8" font-size="10">8 GB more VRAM = almost three times as much room for context compared to the RTX 4090.</text>
-                        <text x="40" y="162" fill="#94a3b8" font-size="10">AIMOS uses this headroom for more memory, longer conversations,</text>
-                        <text x="40" y="177" fill="#0070f3" font-size="10" font-weight="600">and larger context windows &mdash; at the same cost.</text>
+                        <line x1="36" y1="312" x2="36" y2="340" stroke="#ef4444" stroke-width="1.5"/>
+                        <polygon points="30,340 36,350 42,340" fill="#ef4444"/>
+                        <text x="50" y="346" fill="#ef4444" font-size="10" font-weight="600">Smaller context window than cloud &mdash; but:</text>
+                        <text x="50" y="362" fill="#0070f3" font-size="9" font-weight="600">TurboQuant + Architecture compensate for this. And: your data stays with you.</text>
                     </svg>
                 </div>
             </div>
@@ -298,35 +268,35 @@
                         <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg mb-3">Bigger is not better &mdash; why gigantic cloud LLMs are often the wrong choice for enterprise use</h3>
+                        <h3 class="font-bold text-lg mb-3">The right model for the right task</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-4">
                             Models with 200 billion parameters and 1 million tokens of context are impressive &mdash; but for
-                            structured enterprise tasks (preparing bookings, monitoring deadlines, creating reports)
-                            they are <strong class="text-white">oversized and counterproductive</strong>.
+                            structured enterprise tasks often oversized. Conversely, external customer contact requires
+                            a larger model than internal data queries. <strong class="text-white">AIMOS scales with the task.</strong>
                         </p>
                         <div class="grid sm:grid-cols-3 gap-4">
                             <div class="bg-slate-900 rounded-lg p-4">
-                                <h4 class="font-semibold text-sm text-amber-400 mb-1">Overthinking</h4>
+                                <h4 class="font-semibold text-sm text-green-400 mb-1">14B &mdash; Starter</h4>
                                 <p class="text-slate-500 text-xs leading-relaxed">
-                                    Oversized models "overthink" simple tasks: they generate unnecessarily long
-                                    analyses where a short answer would suffice. This costs time and often
-                                    worsens the result.
+                                    Simple cases, document categorization, status emails.
+                                    Runs on an RTX 4060 Ti (16 GB, from 400&nbsp;&euro;).
+                                    With Multi-Pass Self-Refinement ~80% of 27B quality.
                                 </p>
                             </div>
                             <div class="bg-slate-900 rounded-lg p-4">
-                                <h4 class="font-semibold text-sm text-red-400 mb-1">Energy &amp; Latency</h4>
+                                <h4 class="font-semibold text-sm text-signal-400 mb-1">27B &mdash; Business</h4>
                                 <p class="text-slate-500 text-xs leading-relaxed">
-                                    Every request to a 200B model consumes many times the computing power.
-                                    The response takes longer, costs more power &mdash; and the result
-                                    is no better for an account query.
+                                    Full AI assistant, FuSa Safety Manager, complex analyses.
+                                    Precise tool calls (~86% BFCL), 33K context with TurboQuant KV compression.
+                                    On RTX 3090 (24 GB) or RTX 5090 with Speculative Decoding (~7&times; faster).
                                 </p>
                             </div>
                             <div class="bg-slate-900 rounded-lg p-4">
-                                <h4 class="font-semibold text-sm text-green-400 mb-1">Right Size</h4>
+                                <h4 class="font-semibold text-sm text-amber-400 mb-1">Same Software</h4>
                                 <p class="text-slate-500 text-xs leading-relaxed">
-                                    A 27B model with native tool calling hits the sweet spot:
-                                    reliable tool control, fast responses, no overthinking.
-                                    For complex edge cases, the agent escalates automatically.
+                                    Both model sizes run on the same AIMOS platform.
+                                    An upgrade from 27B to 70B is possible at any time &mdash;
+                                    by swapping hardware, without reconfiguring the agents.
                                 </p>
                             </div>
                         </div>
@@ -471,7 +441,7 @@
                 <!-- ── BOTTOM: Shared GPU ── -->
                 <rect x="340" y="340" width="360" height="55" rx="10" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="1.5"/>
                 <text x="520" y="364" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="700">GPU &mdash; Local LLM Inference</text>
-                <text x="520" y="382" text-anchor="middle" fill="#64748b" font-size="9">Qwen 3.5:27B &bull; RTX 5090 &bull; 32 GB VRAM</text>
+                <text x="520" y="382" text-anchor="middle" fill="#64748b" font-size="9">Qwen 3.5:27B &bull; RTX 3090 &bull; 24 GB + TurboQuant</text>
 
                 <!-- Agents to GPU -->
                 <line x1="750" y1="74" x2="700" y2="340" stroke="#a855f7" stroke-width="1" opacity="0.2" stroke-dasharray="3 3"/>
@@ -648,68 +618,80 @@
             <div class="mb-8">
                 <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
                     <div class="font-mono text-xs text-slate-500 mb-6">// VRAM budget per hardware tier (to scale)</div>
-                        <svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" class="w-full">
-                            <!-- Scale: 1 GB = 10px, max 64 GB = 640px, offset 80px for labels -->
+                        <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                            <!-- Scale: 1 GB = 10px, max 80 GB = 800px, offset 80px for labels -->
 
-                            <!-- ── Starter: RTX 4090, 24 GB total ── -->
+                            <!-- ── Starter: RTX 4060 Ti, 16 GB total ── -->
                             <text x="0" y="28" fill="#94a3b8" font-size="9" font-weight="600">Starter</text>
-                            <text x="0" y="40" fill="#64748b" font-size="8">RTX 4090</text>
-                            <rect x="80" y="20" width="240" height="30" rx="6" fill="#1a2332" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.15"/>
-                            <!-- 14B = 9 GB = 90px -->
-                            <rect x="82" y="22" width="90" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
-                            <text x="127" y="39" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">14B &mdash; 9 GB</text>
-                            <!-- KV = 13 GB = 130px -->
-                            <rect x="174" y="22" width="130" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
-                            <text x="239" y="39" text-anchor="middle" fill="#0070f3" font-size="7" font-weight="600">13 GB</text>
-                            <!-- Reserve = 2 GB = 20px -->
-                            <rect x="306" y="22" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
-                            <text x="330" y="39" fill="#64748b" font-size="8">~26K Tok</text>
+                            <text x="0" y="40" fill="#64748b" font-size="8">RTX 4060 Ti</text>
+                            <rect x="80" y="20" width="160" height="30" rx="6" fill="#1a2332" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.15"/>
+                            <!-- 14B Q4 = 8.5 GB = 85px -->
+                            <rect x="82" y="22" width="85" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="124" y="39" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">14B &mdash; 8.5 GB</text>
+                            <!-- KV = 5.5 GB = 55px (turbo3) -->
+                            <rect x="169" y="22" width="55" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
+                            <text x="196" y="39" text-anchor="middle" fill="#0070f3" font-size="7" font-weight="600">5.5 GB</text>
+                            <rect x="226" y="22" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+                            <text x="248" y="39" fill="#64748b" font-size="8">~20K Tok</text>
 
-                            <!-- ── Business: RTX 5090, 32 GB total ── -->
+                            <!-- ── Business: RTX 3090, 24 GB = 240px total ── -->
                             <text x="0" y="82" fill="#0070f3" font-size="9" font-weight="700">Business</text>
-                            <text x="0" y="94" fill="#64748b" font-size="8">RTX 5090</text>
-                            <rect x="80" y="74" width="320" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5" stroke-opacity="0.3"/>
-                            <!-- 32B = 19 GB = 190px -->
-                            <rect x="82" y="76" width="190" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
-                            <text x="177" y="93" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">32B &mdash; 19 GB</text>
-                            <!-- KV = 11 GB = 110px -->
-                            <rect x="274" y="76" width="110" height="26" rx="0" fill="#0070f3" fill-opacity="0.25" stroke="#0070f3" stroke-width="1.5"/>
-                            <text x="329" y="93" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="700">11 GB</text>
-                            <!-- Reserve = 2 GB = 20px -->
-                            <rect x="386" y="76" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
-                            <text x="408" y="93" fill="#0070f3" font-size="8" font-weight="600">~22K Tok</text>
+                            <text x="0" y="94" fill="#64748b" font-size="8">RTX 3090</text>
+                            <rect x="80" y="74" width="240" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5" stroke-opacity="0.3"/>
+                            <!-- 27B Q4 = 16 GB = 160px -->
+                            <rect x="82" y="76" width="160" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="162" y="93" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">27B &mdash; 16 GB</text>
+                            <!-- KV turbo3 = 5.5 GB = 55px -->
+                            <rect x="244" y="76" width="55" height="26" rx="0" fill="#0070f3" fill-opacity="0.25" stroke="#0070f3" stroke-width="1.5"/>
+                            <text x="271" y="93" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="700">5.5 GB</text>
+                            <rect x="301" y="76" width="17" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+                            <text x="326" y="93" fill="#0070f3" font-size="8" font-weight="600">~33K Tok (measured)</text>
 
-                            <!-- ── Professional: 2x RTX 5090, 64 GB total ── -->
-                            <text x="0" y="136" fill="#a855f7" font-size="9" font-weight="600">Professional</text>
-                            <text x="0" y="148" fill="#64748b" font-size="8">2&times; RTX 5090</text>
-                            <rect x="80" y="128" width="640" height="30" rx="6" fill="#1a2332" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.15"/>
-                            <!-- 70B = 40 GB = 400px -->
-                            <rect x="82" y="130" width="400" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
-                            <text x="282" y="147" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">70B &mdash; 40 GB</text>
-                            <!-- KV = 22 GB = 220px -->
-                            <rect x="484" y="130" width="220" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
-                            <text x="594" y="147" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="600">22 GB</text>
-                            <!-- Reserve = 2 GB = 20px -->
-                            <rect x="706" y="130" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
-                            <text x="680" y="147" fill="#64748b" font-size="8">~24K Tok</text>
+                            <!-- ── Business+: RTX 5090, 32 GB = 320px total ── -->
+                            <text x="0" y="128" fill="#0070f3" font-size="9" font-weight="600">Business+</text>
+                            <text x="0" y="140" fill="#64748b" font-size="8">RTX 5090 + SGLang</text>
+                            <rect x="80" y="120" width="320" height="30" rx="6" fill="#1a2332" stroke="#0070f3" stroke-width="0.5" stroke-opacity="0.3"/>
+                            <!-- 27B Q4 + 4B Draft = 18.5 GB = 185px -->
+                            <rect x="82" y="122" width="185" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="174" y="139" text-anchor="middle" fill="#a855f7" font-size="7" font-weight="600">27B + 4B Draft = 18.5 GB</text>
+                            <!-- KV = 11 GB = 110px -->
+                            <rect x="269" y="122" width="110" height="26" rx="0" fill="#0070f3" fill-opacity="0.25" stroke="#0070f3" stroke-width="1"/>
+                            <text x="324" y="139" text-anchor="middle" fill="#0070f3" font-size="7" font-weight="600">11 GB KV (turbo3)</text>
+                            <rect x="381" y="122" width="17" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+                            <text x="406" y="139" fill="#0070f3" font-size="8">~88K + Spec. Decoding</text>
+
+                            <!-- ── Professional: 2x 3090 NVLink / A100, 48 GB = 480px ── -->
+                            <text x="0" y="174" fill="#a855f7" font-size="9" font-weight="600">Professional</text>
+                            <text x="0" y="186" fill="#64748b" font-size="8">2&times; 3090 NVLink</text>
+                            <text x="0" y="196" fill="#64748b" font-size="7">or A100 80 GB</text>
+                            <rect x="80" y="166" width="480" height="30" rx="6" fill="#1a2332" stroke="#a855f7" stroke-width="0.5" stroke-opacity="0.3"/>
+                            <!-- 70B Q4 = 35 GB = 350px -->
+                            <rect x="82" y="168" width="350" height="26" rx="5" fill="#a855f7" fill-opacity="0.25" stroke="#a855f7" stroke-width="1"/>
+                            <text x="257" y="185" text-anchor="middle" fill="#a855f7" font-size="8" font-weight="600">70B &mdash; 35 GB</text>
+                            <!-- KV = 11 GB = 110px -->
+                            <rect x="434" y="168" width="110" height="26" rx="0" fill="#0070f3" fill-opacity="0.2" stroke="#0070f3" stroke-width="1"/>
+                            <text x="489" y="185" text-anchor="middle" fill="#0070f3" font-size="8" font-weight="600">11 GB</text>
+                            <rect x="546" y="168" width="12" height="26" rx="4" fill="#ef4444" fill-opacity="0.1"/>
+                            <text x="566" y="185" fill="#a855f7" font-size="8">~22K Tok</text>
 
                             <!-- Legend -->
-                            <rect x="80" y="180" width="12" height="12" rx="3" fill="#a855f7" fill-opacity="0.3"/>
-                            <text x="98" y="190" fill="#94a3b8" font-size="9">Model weights (fixed)</text>
-                            <rect x="260" y="180" width="12" height="12" rx="3" fill="#0070f3" fill-opacity="0.3"/>
-                            <text x="278" y="190" fill="#94a3b8" font-size="9">KV cache (context)</text>
-                            <rect x="440" y="180" width="12" height="12" rx="3" fill="#ef4444" fill-opacity="0.2"/>
-                            <text x="458" y="190" fill="#94a3b8" font-size="9">Reserve</text>
+                            <rect x="80" y="220" width="12" height="12" rx="3" fill="#a855f7" fill-opacity="0.3"/>
+                            <text x="98" y="230" fill="#94a3b8" font-size="9">Model weights (fixed)</text>
+                            <rect x="260" y="220" width="12" height="12" rx="3" fill="#0070f3" fill-opacity="0.3"/>
+                            <text x="278" y="230" fill="#94a3b8" font-size="9">KV cache with TurboQuant (3-bit compression)</text>
+                            <rect x="520" y="220" width="12" height="12" rx="3" fill="#ef4444" fill-opacity="0.2"/>
+                            <text x="538" y="230" fill="#94a3b8" font-size="9">Reserve</text>
 
                             <!-- Insight -->
-                            <rect x="80" y="205" width="640" height="35" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
-                            <text x="100" y="226" fill="#10b981" font-size="9" font-weight="700">Same software, different capacity.</text>
-                            <text x="370" y="226" fill="#94a3b8" font-size="9">Starter: fast &amp; efficient. Business: more precise. Professional: maximum quality.</text>
+                            <rect x="80" y="250" width="640" height="35" rx="6" fill="#1a2332" stroke="#10b981" stroke-width="1" stroke-opacity="0.3"/>
+                            <text x="100" y="264" fill="#10b981" font-size="9" font-weight="700">Same software, different capacity.</text>
+                            <text x="370" y="264" fill="#94a3b8" font-size="9">Starter: efficient. Business: gold standard. Professional: maximum quality.</text>
+                            <text x="100" y="278" fill="#64748b" font-size="8">TurboQuant compresses the KV cache to 3 bits &mdash; 6&times; more context on the same GPU. Speculative Decoding: up to 2.5&times; faster.</text>
                         </svg>
                     <p class="text-xs text-slate-600 mt-4">
                         <strong class="text-slate-400">KV cache</strong> (Key-Value Cache) = the working memory of the language model during a conversation.
-                        It holds the system prompt, memories, conversation history and the reserved tokens for the response.
-                        The more VRAM available for the KV cache, the longer and deeper conversations are possible.
+                        It holds the system prompt, memories, conversation history, and the reserved tokens for the response.
+                        The more VRAM remains for the KV cache, the longer and deeper conversations are possible.
                     </p>
                 </div>
             </div>
@@ -970,6 +952,7 @@
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Agent Team</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Architecture</a></li>
+            <a href="validierung.html" class="hover:text-white transition-colors">Validation</a>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">System</a></li>
                     <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Connectors</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>

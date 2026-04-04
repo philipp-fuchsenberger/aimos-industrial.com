@@ -109,6 +109,7 @@
             <a href="preise.html" class="hover:text-white transition-colors">Preise</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Compliance</a>
             <a href="architektur.html" class="hover:text-white transition-colors">Architektur</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Validierung</a>
             <a href="system.html" class="text-white font-medium">System</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">Kontakt</a>
         </div>
@@ -210,38 +211,52 @@
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">GPU</td>
-                                <td class="py-2 px-3 text-center">1&times; RTX 4090<br><span class="text-slate-500">24 GB</span></td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5">1&times; RTX 5090<br><span class="text-slate-500">32 GB</span></td>
-                                <td class="py-2 px-3 text-center">2&times; RTX 5090<br><span class="text-slate-500">2&times;32 GB</span></td>
-                                <td class="py-2 px-3 text-center">Datacenter<br><span class="text-slate-500">96+ GB</span></td>
+                                <td class="py-2 px-3 text-center">RTX 4060 Ti<br><span class="text-slate-500">16 GB</span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5">RTX 3090 / 5090<br><span class="text-slate-500">24&ndash;32 GB</span></td>
+                                <td class="py-2 px-3 text-center">2&times; RTX 3090 NVLink<br><span class="text-slate-500">48 GB</span></td>
+                                <td class="py-2 px-3 text-center">A100 / H100<br><span class="text-slate-500">80+ GB</span></td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">KI-Modell</td>
-                                <td class="py-2 px-3 text-center">27B (Q4)</td>
+                                <td class="py-2 px-3 text-center">14B (Q4)</td>
                                 <td class="py-2 px-3 text-center bg-signal-500/5">27B (Q4)</td>
                                 <td class="py-2 px-3 text-center">70B (Q4)</td>
-                                <td class="py-2 px-3 text-center">70B+ (Q8)</td>
+                                <td class="py-2 px-3 text-center">70B (Q4) + 9B Draft</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">Speculative Decoding</td>
+                                <td class="py-2 px-3 text-center text-slate-600">&mdash;</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5">Optional<br><span class="text-slate-500">auf 5090: +4B Draft</span></td>
+                                <td class="py-2 px-3 text-center">+4B Draft<br><span class="text-slate-500">~17K Context</span></td>
+                                <td class="py-2 px-3 text-center text-green-400">+9B Draft<br><span class="text-slate-500">~75K Context</span></td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">Geschwindigkeit</td>
-                                <td class="py-2 px-3 text-center">~20 Tok/s</td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5 text-white">~40 Tok/s</td>
-                                <td class="py-2 px-3 text-center">~25 Tok/s</td>
-                                <td class="py-2 px-3 text-center">~30+ Tok/s</td>
+                                <td class="py-2 px-3 text-center">~30 Tok/s</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 text-white">~35 Tok/s<br><span class="text-slate-500">5090+Spec: ~90 Tok/s</span></td>
+                                <td class="py-2 px-3 text-center">~20 Tok/s<br><span class="text-slate-500">+Spec: ~50 Tok/s</span></td>
+                                <td class="py-2 px-3 text-center">~40 Tok/s<br><span class="text-slate-500">+Spec: ~100 Tok/s</span></td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">KI-Assistenten</td>
-                                <td class="py-2 px-3 text-center font-mono">3&ndash;5</td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-white">5&ndash;10</td>
-                                <td class="py-2 px-3 text-center font-mono">4&ndash;8</td>
-                                <td class="py-2 px-3 text-center font-mono">10&ndash;20</td>
+                                <td class="py-2 px-3 text-center font-mono">2&ndash;4</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-white">5&ndash;10<br><span class="text-slate-500 font-sans text-[10px]">5090+Spec: 10&ndash;20</span></td>
+                                <td class="py-2 px-3 text-center font-mono">5&ndash;10</td>
+                                <td class="py-2 px-3 text-center font-mono">15&ndash;30</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">Technologie</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-500">TurboQuant</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 text-xs text-slate-400">TurboQuant<br>+ SGLang</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-400">TurboQuant<br>+ NVLink + Spec.</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-400">TurboQuant + SGLang<br>+ Spec. Decoding</td>
                             </tr>
                             <tr class="border-b border-white/5">
                                 <td class="py-2 px-3 font-medium text-white">Hardware ca.</td>
-                                <td class="py-2 px-3 text-center font-mono text-signal-300">~2.500 EUR</td>
-                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-signal-300">~5.000 EUR</td>
-                                <td class="py-2 px-3 text-center font-mono text-signal-300">~8.500 EUR</td>
-                                <td class="py-2 px-3 text-center text-slate-500">auf Anfrage</td>
+                                <td class="py-2 px-3 text-center font-mono text-signal-300">ab 1.200 EUR<br><span class="text-slate-500 font-sans text-[10px]">GPU ~400 EUR</span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-signal-300">ab 2.000 EUR<br><span class="text-slate-500 font-sans text-[10px]">3090: ~700 | 5090: ~3.500</span></td>
+                                <td class="py-2 px-3 text-center font-mono text-signal-300">ab 2.500 EUR<br><span class="text-slate-500 font-sans text-[10px]">2&times; 3090 + NVLink</span></td>
+                                <td class="py-2 px-3 text-center text-slate-500">auf Anfrage<br><span class="text-[10px]">A100: ab ~3.500 gebr.</span></td>
                             </tr>
                             <!-- ── Aufgabeneignung Block ── -->
                             <tr class="border-b border-white/10 bg-slate-900/50">

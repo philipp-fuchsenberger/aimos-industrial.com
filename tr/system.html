@@ -109,6 +109,7 @@
             <a href="preise.html" class="hover:text-white transition-colors">Fiyatlar</a>
             <a href="compliance.html" class="hover:text-white transition-colors">Uyumluluk</a>
             <a href="architektur.html" class="hover:text-white transition-colors">Mimari</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Do&#287;rulama</a>
             <a href="system.html" class="text-white font-medium">Sistem</a>
             <a href="kontakt.html" class="hover:text-white transition-colors">İletişim</a>
         </div>
@@ -138,6 +139,7 @@
         <a href="preise.html" class="text-slate-400 hover:text-white py-2">Fiyatlar</a>
         <a href="compliance.html" class="text-slate-400 hover:text-white py-2">Uyumluluk</a>
         <a href="architektur.html" class="text-slate-400 hover:text-white py-2">Mimari</a>
+            <a href="validierung.html" class="hover:text-white transition-colors">Do&#287;rulama</a>
         <a href="system.html" class="text-white py-2">Sistem</a>
         <a href="kontakt.html" class="text-slate-400 hover:text-white py-2">İletişim</a>
     </div>
@@ -174,64 +176,172 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 <section id="sovereign-node" class="relative py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-            <div class="reveal">
-                <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Altyapı</p>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
-                <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                    Tek bir sunucu. Yerel GPU. Bulut bağımlılığı yok.
-                    SovereignNode her AIMOS kurulumunun kalbidir &mdash;
-                    t&uuml;m bileşenleri barındıran fiziksel veya sanal bir sunucu.
-                </p>
-                <p class="text-slate-400 leading-relaxed mb-8">
-                    Her şey şirket i&ccedil;inde &ccedil;alışır: LLM &ccedil;ıkarımı, veritabanları, asistan s&uuml;re&ccedil;leri
-                    ve iletişim kanalları. Siz a&ccedil;ık&ccedil;a yapılandırmadık&ccedil;a (ör. Telegram mesajları)
-                    hi&ccedil;bir byte ağınızı terk etmez.
-                </p>
+        <div class="reveal mb-12">
+            <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Altyap&#305;</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">SovereignNode</h2>
+            <p class="text-slate-400 text-lg leading-relaxed mb-4 max-w-3xl">
+                Tek bir sunucu. Yerel GPU. Bulut ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok.
+                SovereignNode her AIMOS kurulumunun kalbidir &mdash;
+                t&uuml;m bile&#351;enleri bar&#305;nd&#305;ran fiziksel veya sanal bir sunucu.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-8 max-w-3xl">
+                Her &#351;ey &#351;irket i&ccedil;inde &ccedil;al&#305;&#351;&#305;r: LLM &ccedil;&#305;kar&#305;m&#305;, veritabanlar&#305;, asistan s&uuml;re&ccedil;leri
+                ve ileti&#351;im kanallar&#305;. Siz a&ccedil;&#305;k&ccedil;a yap&#305;land&#305;rmad&#305;k&ccedil;a (&ouml;r. Telegram mesajlar&#305;)
+                hi&ccedil;bir byte a&#287;&#305;n&#305;z&#305; terk etmez.
+            </p>
+        </div>
 
-                <!-- Hardware Requirements Table -->
+        <div class="reveal mb-16">
+
+                <!-- Unified Hardware + Task Matrix -->
                 <div class="overflow-hidden rounded-xl border border-white/5">
-                    <table class="w-full text-sm">
+                    <table class="w-full text-xs">
                         <thead>
-                            <tr class="bg-slate-850 border-b border-white/5">
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Bileşen</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">Minimum</th>
-                                <th class="text-left py-3 px-4 font-semibold text-slate-300">&Ouml;nerilen</th>
+                            <tr class="bg-slate-850 border-b border-white/10">
+                                <th class="text-left py-3 px-3 font-semibold text-slate-300" style="min-width:130px"></th>
+                                <th class="text-center py-3 px-3 font-semibold text-slate-300">Starter</th>
+                                <th class="text-center py-3 px-3 font-semibold text-signal-300">Business</th>
+                                <th class="text-center py-3 px-3 font-semibold text-slate-300">Professional</th>
+                                <th class="text-center py-3 px-3 font-semibold text-slate-300">Enterprise</th>
                             </tr>
                         </thead>
                         <tbody class="text-slate-400">
-                            <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">GPU</td>
-                                <td class="py-3 px-4">NVIDIA RTX 4090 (24 GB VRAM)</td>
-                                <td class="py-3 px-4 text-signal-300">NVIDIA RTX 5090 (32 GB VRAM)</td>
+                            <!-- ── Hardware Block ── -->
+                            <tr class="border-b border-white/10 bg-slate-900/50">
+                                <td colspan="5" class="py-2 px-3 font-mono text-[10px] text-slate-500 uppercase tracking-widest">Hardware</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">RAM</td>
-                                <td class="py-3 px-4">32 GB DDR4</td>
-                                <td class="py-3 px-4 text-signal-300">64 GB DDR5</td>
+                                <td class="py-2 px-3 font-medium text-white">GPU</td>
+                                <td class="py-2 px-3 text-center">RTX 4060 Ti<br><span class="text-slate-500">16 GB</span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5">RTX 3090 / 5090<br><span class="text-slate-500">24&ndash;32 GB</span></td>
+                                <td class="py-2 px-3 text-center">2&times; RTX 3090 NVLink<br><span class="text-slate-500">48 GB</span></td>
+                                <td class="py-2 px-3 text-center">A100 / H100<br><span class="text-slate-500">80+ GB</span></td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">Depolama</td>
-                                <td class="py-3 px-4">256 GB SSD</td>
-                                <td class="py-3 px-4 text-signal-300">1 TB NVMe</td>
+                                <td class="py-2 px-3 font-medium text-white">YZ Modeli</td>
+                                <td class="py-2 px-3 text-center">14B (Q4)</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5">27B (Q4)</td>
+                                <td class="py-2 px-3 text-center">70B (Q4)</td>
+                                <td class="py-2 px-3 text-center">70B (Q4) + 9B Draft</td>
                             </tr>
                             <tr class="border-b border-white/5">
-                                <td class="py-3 px-4 font-medium text-white">CPU</td>
-                                <td class="py-3 px-4">8 &ccedil;ekirdek</td>
-                                <td class="py-3 px-4 text-signal-300">16+ &ccedil;ekirdek</td>
+                                <td class="py-2 px-3 font-medium text-white">Speculative Decoding</td>
+                                <td class="py-2 px-3 text-center text-slate-600">&mdash;</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5">&#304;ste&#287;e ba&#287;l&#305;<br><span class="text-slate-500">5090'da: +4B Draft</span></td>
+                                <td class="py-2 px-3 text-center">+4B Draft<br><span class="text-slate-500">~17K Context</span></td>
+                                <td class="py-2 px-3 text-center text-green-400">+9B Draft<br><span class="text-slate-500">~75K Context</span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">H&#305;z</td>
+                                <td class="py-2 px-3 text-center">~30 Tok/s</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 text-white">~35 Tok/s<br><span class="text-slate-500">5090+Spec : ~90 Tok/s</span></td>
+                                <td class="py-2 px-3 text-center">~20 Tok/s<br><span class="text-slate-500">+Spec : ~50 Tok/s</span></td>
+                                <td class="py-2 px-3 text-center">~40 Tok/s<br><span class="text-slate-500">+Spec : ~100 Tok/s</span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">YZ Asistanlar&#305;</td>
+                                <td class="py-2 px-3 text-center font-mono">2&ndash;4</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-white">5&ndash;10<br><span class="text-slate-500 font-sans text-[10px]">5090+Spec : 10&ndash;20</span></td>
+                                <td class="py-2 px-3 text-center font-mono">5&ndash;10</td>
+                                <td class="py-2 px-3 text-center font-mono">15&ndash;30</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">Teknoloji</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-500">TurboQuant</td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 text-xs text-slate-400">TurboQuant<br>+ SGLang</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-400">TurboQuant<br>+ NVLink + Spec.</td>
+                                <td class="py-2 px-3 text-center text-xs text-slate-400">TurboQuant + SGLang<br>+ Spec. Decoding</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 font-medium text-white">Donan&#305;m yakla&#351;.</td>
+                                <td class="py-2 px-3 text-center font-mono text-signal-300">1.200 EUR'den<br><span class="text-slate-500 font-sans text-[10px]">GPU ~400 EUR</span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5 font-mono text-signal-300">2.000 EUR'den<br><span class="text-slate-500 font-sans text-[10px]">3090 : ~700 | 5090 : ~3 500</span></td>
+                                <td class="py-2 px-3 text-center font-mono text-signal-300">2.500 EUR'den<br><span class="text-slate-500 font-sans text-[10px]">2&times; 3090 + NVLink</span></td>
+                                <td class="py-2 px-3 text-center text-slate-500">talep &uuml;zerine<br><span class="text-[10px]">A100 : A100: ~3.500'den (ikinci el)</span></td>
+                            </tr>
+                            <!-- ── Task Suitability Block ── -->
+                            <tr class="border-b border-white/10 bg-slate-900/50">
+                                <td colspan="5" class="py-2 px-3 font-mono text-[10px] text-slate-500 uppercase tracking-widest">G&ouml;rev Uygunlu&#287;u</td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">ERP Sorgular&#305;</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Excellent"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Excellent"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Excellent"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400" title="Excellent"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Veri &#199;&#305;karma</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Randevu Y&ouml;netimi</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">&#304;&#231; Destek</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400" title="Bon"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Belge Arama</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">M&uuml;&#351;teri &#304;leti&#351;imi</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400" title="Limit&eacute;"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">Teknik Dan&#305;&#351;manl&#305;k</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                            </tr>
+                            <tr class="border-b border-white/5">
+                                <td class="py-2 px-3 text-white">&Ccedil;ok Dilli</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-green-400"></span></td>
                             </tr>
                             <tr>
-                                <td class="py-3 px-4 font-medium text-white">İS</td>
-                                <td class="py-3 px-4">Ubuntu 24.04 LTS</td>
-                                <td class="py-3 px-4 text-signal-300">Ubuntu 26.04 LTS</td>
+                                <td class="py-2 px-3 text-white">Compliance</td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-red-400/60" title="&Ouml;nerilmez"></span></td>
+                                <td class="py-2 px-3 text-center bg-signal-500/5"><span class="inline-block w-3 h-3 rounded-full bg-red-400/60"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-amber-400"></span></td>
+                                <td class="py-2 px-3 text-center"><span class="inline-block w-3 h-3 rounded-full bg-signal-400"></span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
+                <!-- Legend -->
+                <div class="flex items-center gap-5 mt-3 text-[10px] text-slate-500">
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-green-400"></span> Excellent</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-signal-400"></span> Bon</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400"></span> M&uuml;mk&uuml;n, k&#305;s&#305;tlamalarla</span>
+                    <span class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-red-400/60"></span> &Ouml;nerilmez</span>
+                </div>
+                <p class="text-[10px] text-slate-600 mt-2">Bas&eacute; sur IFEval, MT-Bench, BFCL et Qwen/Llama Benchmarks (2024). Ubuntu 24.04/26.04 LTS, 16+ &#231;ekirdek CPU &ouml;nerilir.</p>
+        </div>
 
-            <!-- Deployment Diagram -->
-            <div class="reveal" style="transition-delay: 0.15s;">
+        <!-- Deployment Diagram -->
+        <div class="reveal max-w-md mx-auto">
+            <p class="text-center text-slate-500 text-xs font-mono uppercase tracking-widest mb-4">Mimari Genel Bak&#305;&#351;</p>
                 <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" class="w-full">
                     <defs>
                         <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
@@ -248,7 +358,7 @@
 
                     <!-- LLM Model -->
                     <rect x="40" y="125" width="320" height="40" rx="8" fill="#1a2332" stroke="#a855f7" stroke-width="1"/>
-                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 3.5:27B (Q4, ~17 GB VRAM, yerel Tool-Calling)</text>
+                    <text x="200" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">Qwen 3.5:27B (Q4, ~17 GB VRAM, native Tool-Calling)</text>
 
                     <!-- PostgreSQL -->
                     <rect x="40" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
@@ -256,26 +366,25 @@
 
                     <!-- SQLite -->
                     <rect x="210" y="185" width="150" height="50" rx="8" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-width="1"/>
-                    <text x="285" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">SQLite (Bellek)</text>
+                    <text x="285" y="215" text-anchor="middle" fill="#10b981" font-size="12" font-weight="600">SQLite (Memory)</text>
 
                     <!-- Orchestrator -->
                     <rect x="40" y="255" width="320" height="50" rx="8" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-width="1"/>
-                    <text x="200" y="285" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Orkestrat&ouml;r + VRAM Koruma</text>
+                    <text x="200" y="285" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Orchestrator + VRAM Guard</text>
 
                     <!-- Agents -->
                     <rect x="40" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Asistan A</text>
+                    <text x="90" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent A</text>
                     <rect x="150" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Asistan B</text>
+                    <text x="200" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent B</text>
                     <rect x="260" y="325" width="100" height="45" rx="8" fill="#0070f3" fill-opacity="0.15" stroke="#0070f3" stroke-width="1"/>
-                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Asistan C</text>
+                    <text x="310" y="352" text-anchor="middle" fill="#5eafff" font-size="10">Agent C</text>
 
                     <!-- Shared Listener -->
                     <rect x="40" y="390" width="320" height="50" rx="8" fill="#0070f3" fill-opacity="0.1" stroke="#0070f3" stroke-width="1"/>
                     <text x="200" y="420" text-anchor="middle" fill="#5eafff" font-size="12" font-weight="600">Ortak Dinleyici (Telegram, E-posta, Ses)</text>
                 </svg>
             </div>
-        </div>
     </div>
 </section>
 
@@ -558,6 +667,7 @@
                 <ul class="space-y-2 text-sm text-slate-500">
                     <li><a href="agenten.html" class="hover:text-signal-400 transition-colors">Asistan Ekibi</a></li>
                     <li><a href="architektur.html" class="hover:text-signal-400 transition-colors">Mimari</a></li>
+            <a href="validierung.html" class="hover:text-white transition-colors">Do&#287;rulama</a>
                     <li><a href="system.html" class="hover:text-signal-400 transition-colors">Sistem</a></li>
                     <li><a href="agenten.html#konnektoren" class="hover:text-signal-400 transition-colors">Konekt&ouml;rler</a></li>
                     <li><a href="system.html#sovereign-node" class="hover:text-signal-400 transition-colors">SovereignNode</a></li>

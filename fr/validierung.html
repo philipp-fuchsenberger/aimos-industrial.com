@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation — AIMOS</title>
+    <meta name="description" content="Validation des agents AIMOS : assurance qualité de niveau automobile pour les agents IA selon ISO/TS 5083, ISO/PAS 8800 et ISO 21448 (SOTIF).">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1a2332', 900: '#0f1923', 950: '#0a1118' },
+                        signal: { 50: '#e8f4ff', 100: '#d0e8ff', 200: '#a3d1ff', 300: '#5eafff', 400: '#2b8eff', 500: '#0070f3', 600: '#005cc8', 700: '#004a9e' },
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-300 antialiased">
+
+<!-- Nav -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-signal-500 flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="font-semibold text-lg tracking-tight">AIMOS</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+            <a href="agenten.html" class="hover:text-white transition-colors">Assistants IA</a>
+            <a href="team.html" class="hover:text-white transition-colors">&Eacute;quipe d'assistants</a>
+            <a href="mensch-ki.html" class="hover:text-white transition-colors">Humain &amp; IA</a>
+            <a href="preise.html" class="hover:text-white transition-colors">Tarifs</a>
+            <a href="compliance.html" class="hover:text-white transition-colors">Conformit&eacute;</a>
+            <a href="architektur.html" class="hover:text-white transition-colors">Architecture</a>
+            <a href="validierung.html" class="text-white font-medium">Validation</a>
+            <a href="system.html" class="hover:text-white transition-colors">Syst&egrave;me</a>
+            <a href="kontakt.html" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="flex items-center gap-3">
+            <div class="relative group">
+                <button onclick="var d=document.getElementById('lang-dropdown');d.classList.toggle('lang-open')" class="text-slate-400 hover:text-white transition-colors text-sm font-medium px-2 py-1 rounded border border-white/10 hover:border-white/25">FR</button>
+                <div id="lang-dropdown" class="absolute right-0 top-full pt-2 hidden group-hover:block z-50 min-w-[120px]"><div class="bg-slate-850 border border-white/10 rounded-lg py-1">
+                    <a href="../index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5">Deutsch</a>
+                    <a href="../en/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">English</a>
+                    <a href="../tr/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">T&uuml;rk&ccedil;e</a>
+                    <a href="index.html" class="block px-4 py-1.5 text-sm text-signal-300 hover:bg-white/5 hover:text-white">Fran&ccedil;ais</a>
+                    <a href="../es/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Espa&ntilde;ol</a>
+                    <a href="../it/index.html" class="block px-4 py-1.5 text-sm text-slate-400 hover:bg-white/5 hover:text-white">Italiano</a>
+                </div></div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 right-0 bg-slate-950/95 backdrop-blur-xl border-b border-white/5 z-40 px-6 py-4 space-y-1">
+    <a href="agenten.html" class="text-slate-400 hover:text-white py-2 block">Assistants IA</a>
+    <a href="team.html" class="text-slate-400 hover:text-white py-2 block">&Eacute;quipe d'assistants</a>
+    <a href="mensch-ki.html" class="text-slate-400 hover:text-white py-2 block">Humain &amp; IA</a>
+    <a href="preise.html" class="text-slate-400 hover:text-white py-2 block">Tarifs</a>
+    <a href="compliance.html" class="text-slate-400 hover:text-white py-2 block">Conformit&eacute;</a>
+    <a href="architektur.html" class="text-slate-400 hover:text-white py-2 block">Architecture</a>
+    <a href="validierung.html" class="text-white font-medium py-2 block">Validation</a>
+    <a href="system.html" class="text-slate-400 hover:text-white py-2 block">Syst&egrave;me</a>
+    <a href="kontakt.html" class="text-slate-400 hover:text-white py-2 block">Contact</a>
+</div>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-signal-400 font-mono text-sm font-medium tracking-widest uppercase mb-3">Validation</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Comment un agent IA devient-il<br>
+            <span class="text-signal-400">op&eacute;rationnel ?</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Tout &ecirc;tre humain fait des erreurs. Tout LLM hallucine. La diff&eacute;rence : nous pouvons
+            mesurer la fr&eacute;quence &mdash; et veiller syst&eacute;matiquement &agrave; ce qu'elle reste
+            en dessous d'un seuil d&eacute;fini.
+        </p>
+    </div>
+</section>
+
+<!-- Le problème -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="bg-slate-850 border border-white/5 rounded-xl p-8">
+            <h2 class="text-2xl font-bold mb-6">Le probl&egrave;me : les agents IA peuvent halluciner</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Un mod&egrave;le linguistique traitant une d&eacute;claration fiscale peut inventer des montants.
+                        Un assistant s&eacute;curit&eacute; peut halluciner des r&eacute;f&eacute;rences normatives. Un agent de support peut
+                        faire des promesses que l'entreprise ne peut pas tenir.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        La plupart des fournisseurs d'IA ignorent ce probl&egrave;me &mdash; ou se fient &agrave;
+                        un &laquo;&nbsp;la plupart du temps &ccedil;a fonctionne&nbsp;&raquo;. <strong class="text-white">Pas nous.</strong>
+                    </p>
+                </div>
+                <div class="bg-slate-900 rounded-lg p-5">
+                    <h3 class="font-semibold text-sm text-red-400 mb-3">Hallucinations IA typiques</h3>
+                    <ul class="space-y-2 text-xs text-slate-500">
+                        <li class="flex gap-2"><span class="text-red-400">&#x2717;</span> Montants invent&eacute;s (&laquo;&nbsp;Remboursement : 4 782&nbsp;&euro;&nbsp;&raquo; &mdash; jamais calcul&eacute;)</li>
+                        <li class="flex gap-2"><span class="text-red-400">&#x2717;</span> R&eacute;f&eacute;rences normatives fausses (&laquo;&nbsp;conform&eacute;ment au &sect;35a al. 7&nbsp;&raquo; &mdash; n'existe pas)</li>
+                        <li class="flex gap-2"><span class="text-red-400">&#x2717;</span> M&eacute;lange de donn&eacute;es clients (donn&eacute;es du client A dans un e-mail au client B)</li>
+                        <li class="flex gap-2"><span class="text-red-400">&#x2717;</span> Fausses promesses (&laquo;&nbsp;J'ai soumis votre d&eacute;claration&nbsp;&raquo;)</li>
+                        <li class="flex gap-2"><span class="text-red-400">&#x2717;</span> Informations obsol&egrave;tes (forfait de 2021 au lieu de 2025)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Notre solution : modèle en V -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-3 text-center">Notre solution : une validation syst&eacute;matique</h2>
+        <p class="text-slate-400 text-center mb-8 max-w-2xl mx-auto">
+            D&eacute;riv&eacute;e de la m&eacute;thodologie pour les v&eacute;hicules autonomes (ADAS) et la s&eacute;curit&eacute; fonctionnelle.
+            Adapt&eacute;e aux agents IA en environnement d'entreprise.
+        </p>
+
+        <!-- Modèle en V -->
+        <div class="bg-slate-850 border border-signal-500/20 rounded-xl p-8">
+            <div class="font-mono text-xs text-signal-400 mb-6">// V de validation &mdash; de la sp&eacute;cification &agrave; la preuve statistique</div>
+
+            <div class="grid grid-cols-3 gap-4 text-sm">
+                <!-- Gauche : Spécification -->
+                <div class="space-y-4">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-600 font-mono">ISO/TS 5083 Cl. 6.2</span>
+                        <div class="bg-slate-900 border-l-2 border-signal-500 rounded-r-lg p-3 mt-1">
+                            <span class="text-signal-400 font-semibold text-xs">1. Crit&egrave;res d'acceptation</span>
+                            <p class="text-slate-500 text-xs mt-1">Business Case &rarr; taux d'erreur max.<br>Ex. : &lt;0,15 % pour 7 500 op&eacute;rations/an.</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-600 font-mono">ISO/PAS 8800 Cl. 9</span>
+                        <div class="bg-slate-900 border-l-2 border-signal-500 rounded-r-lg p-3 mt-1">
+                            <span class="text-signal-400 font-semibold text-xs">2. Agent Design</span>
+                            <p class="text-slate-500 text-xs mt-1">Prompt Engineering + connaissances de r&eacute;f&eacute;rence.<br>Expertise dans des fichiers, pas dans la m&eacute;moire du LLM.</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-600 font-mono">ISO 26262 / SOTIF</span>
+                        <div class="bg-slate-900 border-l-2 border-signal-500 rounded-r-lg p-3 mt-1">
+                            <span class="text-signal-400 font-semibold text-xs">3. Safety Measures</span>
+                            <p class="text-slate-500 text-xs mt-1">D&eacute;tection d'hallucinations.<br>V&eacute;rification d&eacute;terministe + s&eacute;mantique.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centre : Agent -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="text-signal-400 text-2xl mb-2">&darr;</div>
+                    <div class="bg-signal-500/10 border border-signal-500/30 rounded-xl p-5 text-center w-full">
+                        <span class="text-signal-300 font-bold">Agent IA</span>
+                        <p class="text-slate-500 text-xs mt-2">Cycle OODA<br>TurboQuant<br>Qwen 27B</p>
+                    </div>
+                    <div class="text-green-400 text-2xl mt-2">&uarr;</div>
+                    <p class="text-xs text-slate-600 mt-2 text-center">Boucle it&eacute;rative :<br>Erreur &rarr; Correction du prompt &rarr; Re-test</p>
+                </div>
+
+                <!-- Droite : Validation -->
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs text-slate-600 font-mono">ISO/TS 5083 Cl. 9</span>
+                        <div class="bg-slate-900 border-r-2 border-green-500 rounded-l-lg p-3 mt-1">
+                            <span class="text-green-400 font-semibold text-xs">6. Monitoring op&eacute;rationnel</span>
+                            <p class="text-slate-500 text-xs mt-1">Chaque op&eacute;ration est automatiquement &eacute;valu&eacute;e.<br>Taux d'erreur trimestriel.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-600 font-mono">ISO/TS 5083 H.4</span>
+                        <div class="bg-slate-900 border-r-2 border-green-500 rounded-l-lg p-3 mt-1">
+                            <span class="text-green-400 font-semibold text-xs">5. Monte Carlo Validation</span>
+                            <p class="text-slate-500 text-xs mt-1">2 000 sc&eacute;narios synth&eacute;tiques.<br>Preuve statistique avec intervalle de confiance.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-600 font-mono">ISO 21448 (SOTIF)</span>
+                        <div class="bg-slate-900 border-r-2 border-green-500 rounded-l-lg p-3 mt-1">
+                            <span class="text-green-400 font-semibold text-xs">4. Tests par phase (SOTIF/FuSi)</span>
+                            <p class="text-slate-500 text-xs mt-1">Tests isol&eacute;s par phase OODA.<br>Equivalence Classes + Boundary Values.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Effort -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="bg-gradient-to-r from-signal-500/5 to-amber-500/5 border border-signal-500/15 rounded-xl p-8">
+            <h2 class="text-xl font-bold mb-4">L'effort derri&egrave;re la fiabilit&eacute;</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-signal-400 mb-1">2 000+</div>
+                    <div class="text-sm text-slate-400">Sc&eacute;narios de test synth&eacute;tiques</div>
+                    <div class="text-xs text-slate-600 mt-1">G&eacute;n&eacute;r&eacute;s automatiquement &agrave; partir de<br>l'espace param&eacute;trique de l'agent</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-amber-400 mb-1">10 000+</div>
+                    <div class="text-sm text-slate-400">V&eacute;rifications assist&eacute;es par IA</div>
+                    <div class="text-xs text-slate-600 mt-1">Chaque sc&eacute;nario passe par<br>15 contr&ocirc;les automatiques</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-green-400 mb-1">Jours</div>
+                    <div class="text-sm text-slate-400">Dur&eacute;e de validation par agent</div>
+                    <div class="text-xs text-slate-600 mt-1">Plusieurs jours de cycles GPU jusqu'&agrave;<br>la preuve statistique</div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-6 text-center">
+                Pour chaque agent, des cycles de validation de plusieurs jours sont ex&eacute;cut&eacute;s avec des milliers de
+                cas de test sur notre infrastructure GPU. Chaque cas de test est &eacute;valu&eacute; par IA &mdash;
+                de mani&egrave;re d&eacute;terministe pour les chiffres et les faits, s&eacute;mantiquement pour le ton et le contexte. Ce n'est que lorsque
+                le taux d'erreur mesur&eacute; est inf&eacute;rieur au crit&egrave;re d'acceptation convenu que l'agent passe en production.
+                <strong class="text-slate-400">Nous fournissons cet effort pour chaque agent individuellement.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Détection d'hallucinations -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">D&eacute;tection d'hallucinations : deux couches</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-semibold text-green-400 mb-3">Couche 1 : D&eacute;terministe</h3>
+                <p class="text-xs text-slate-500 mb-3">Code Python, pas de LLM. Fiable &agrave; 100 %, &lt;1 seconde.</p>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li>&#x2713; Chaque montant en EUR dans la sortie est v&eacute;rifi&eacute; par rapport aux donn&eacute;es d'entr&eacute;e</li>
+                    <li>&#x2713; Aucun artefact d'appel d'outil dans les e-mails (XML, JSON)</li>
+                    <li>&#x2713; Aucun m&eacute;lange de donn&eacute;es clients (v&eacute;rification du p&eacute;rim&egrave;tre)</li>
+                    <li>&#x2713; Aucun terme syst&egrave;me interne expos&eacute; &agrave; l'ext&eacute;rieur</li>
+                    <li>&#x2713; R&eacute;sistance aux injections de prompt</li>
+                </ul>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-6">
+                <h3 class="font-semibold text-signal-400 mb-3">Couche 2 : S&eacute;mantique (bas&eacute;e sur LLM)</h3>
+                <p class="text-xs text-slate-500 mb-3">Appel LLM s&eacute;par&eacute;, temp&eacute;rature basse. Calibr&eacute; sur un gold standard.</p>
+                <ul class="space-y-2 text-xs text-slate-400">
+                    <li>&#x2713; Ton professionnel (m&ecirc;me avec des clients difficiles)</li>
+                    <li>&#x2713; Coh&eacute;rence du contenu (pas de remboursement sans donn&eacute;es)</li>
+                    <li>&#x2713; Exhaustivit&eacute; (documents manquants signal&eacute;s)</li>
+                    <li>&#x2713; Aucune fausse promesse</li>
+                    <li>&#x2713; Langue correcte (DE/EN selon le client)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-slate-900/50 border border-white/5 rounded-lg p-4 mt-4">
+            <p class="text-xs text-slate-500">
+                <strong class="text-slate-400">Calibrage :</strong> Chaque prompt de v&eacute;rification est calibr&eacute; sur
+                des brouillons gold annot&eacute;s manuellement (connus bons + connus mauvais).
+                La pr&eacute;cision, le rappel et le score F1 sont mesur&eacute;s. Seuls les contr&ocirc;les avec un F1&nbsp;&gt;&nbsp;0,9 sont d&eacute;ploy&eacute;s.
+                <strong class="text-slate-400">Les d&eacute;tails de notre m&eacute;thodologie de calibrage sont propri&eacute;taires.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Stack technologique -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">La recherche en production</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                <h3 class="font-semibold text-xs text-amber-400 mb-2">TurboQuant</h3>
+                <p class="text-xs text-slate-500">Compression du KV-Cache &agrave; 3 bits (ICLR 2026). 6&times; plus de contexte sur le m&ecirc;me GPU. Zero Accuracy Loss.</p>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                <h3 class="font-semibold text-xs text-amber-400 mb-2">Speculative Decoding</h3>
+                <p class="text-xs text-slate-500">Un petit mod&egrave;le draft g&eacute;n&egrave;re, un grand valide. Inf&eacute;rence 2,5&times; plus rapide &agrave; qualit&eacute; &eacute;gale.</p>
+            </div>
+            <div class="bg-slate-850 border border-white/5 rounded-xl p-5">
+                <h3 class="font-semibold text-xs text-amber-400 mb-2">Claim Decomposition</h3>
+                <p class="text-xs text-slate-500">Chaque affirmation de l'agent est d&eacute;compos&eacute;e en claims atomiques et v&eacute;rifi&eacute;e par rapport aux donn&eacute;es sources. Bas&eacute; sur FActScore et Chain-of-Verification (Meta 2023).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Standards -->
+<section class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">Standards de r&eacute;f&eacute;rence</h2>
+        <p class="text-slate-400 text-sm mb-6">
+            Notre m&eacute;thodologie repose sur des standards d&eacute;velopp&eacute;s pour la conduite autonome et les
+            syst&egrave;mes ADAS. Nous sommes les premiers &agrave; appliquer syst&eacute;matiquement cette m&eacute;thodologie
+            aux agents IA en environnement d'entreprise.
+        </p>
+        <div class="grid md:grid-cols-2 gap-4 text-xs">
+            <div class="bg-slate-850 rounded-lg p-4 border border-white/5">
+                <span class="text-signal-400 font-semibold">ISO/TS 5083:2025</span>
+                <span class="text-slate-600"> &mdash; Safety for Automated Driving Systems: Design, Verification and Validation</span>
+                <p class="text-slate-500 mt-1">Crit&egrave;res d'acceptation, Monte Carlo, g&eacute;n&eacute;ration de sc&eacute;narios, processus V&amp;V</p>
+            </div>
+            <div class="bg-slate-850 rounded-lg p-4 border border-white/5">
+                <span class="text-signal-400 font-semibold">ISO/PAS 8800:2024</span>
+                <span class="text-slate-600"> &mdash; Road Vehicles: Safety and Artificial Intelligence</span>
+                <p class="text-slate-500 mt-1">AI Safety Requirements, Input Space Refinement, Output Insufficiencies</p>
+            </div>
+            <div class="bg-slate-850 rounded-lg p-4 border border-white/5">
+                <span class="text-signal-400 font-semibold">ISO 21448 (SOTIF)</span>
+                <span class="text-slate-600"> &mdash; Safety of the Intended Functionality</span>
+                <p class="text-slate-500 mt-1">Validation de la fonctionnalit&eacute; pr&eacute;vue, risque r&eacute;siduel, conditions de d&eacute;clenchement</p>
+            </div>
+            <div class="bg-slate-850 rounded-lg p-4 border border-white/5">
+                <span class="text-signal-400 font-semibold">ISO 26262 / Automotive SPICE</span>
+                <span class="text-slate-600"> &mdash; S&eacute;curit&eacute; fonctionnelle + qualit&eacute; des processus</span>
+                <p class="text-slate-500 mt-1">HAZOP, FMEA, mesures de s&eacute;curit&eacute; d&eacute;terministes, maturit&eacute; des processus</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+        <div class="bg-gradient-to-b from-signal-500/10 to-transparent border border-signal-500/20 rounded-xl p-8">
+            <h2 class="text-2xl font-bold mb-3">Int&eacute;ress&eacute; par les d&eacute;tails ?</h2>
+            <p class="text-slate-400 text-sm mb-6">
+                La m&eacute;thodologie de validation compl&egrave;te fait partie de notre prestation de conseil.
+                Nous vous montrons volontiers lors d'un entretien personnel comment nous configurons votre
+                agent IA pour que vous puissiez compter sur lui en toute confiance.
+            </p>
+            <a href="kontakt.html" class="inline-flex px-8 py-3 bg-signal-500 text-white font-semibold rounded-lg hover:bg-signal-600 transition-colors">
+                Nous contacter
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-10 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+        <span>&copy; 2026 AIMOS Industrial. Tous droits r&eacute;serv&eacute;s.</span>
+        <div class="flex gap-4">
+            <a href="impressum.html" class="hover:text-white transition-colors">Mentions l&eacute;gales</a>
+            <a href="datenschutz.html" class="hover:text-white transition-colors">Protection des donn&eacute;es</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
