@@ -338,6 +338,14 @@
     <span class="adm-arrow">→</span>
   </div>
   <div class="adm-step">
+    <div class="adm-node deploy" style="background:#1a2332;border:1px solid #8b5cf6">
+      <span class="adm-label">Edge</span>
+      EDGE
+      <div class="tooltip">Cloud→Edge Anpassung: Harness-Design, Agent-Aufteilung, Kontextmanagement. Agent läuft offline auf Kunden-Hardware (7-14B Modell, 8GB VRAM).</div>
+    </div>
+    <span class="adm-arrow">→</span>
+  </div>
+  <div class="adm-step">
     <div class="adm-node stub">
       <span class="adm-label">Monitoring</span>
       ADM.7
@@ -422,25 +430,31 @@
   <!-- RIGHT: Deployment -->
   <div class="panel panel-deploy">
     <h2>🚀 Deployment <span class="badge badge-live">Live</span></h2>
-    <p>Agent läuft beim Kunden</p>
 
-    <h3>Kanäle</h3>
+    <h3>Cloud-Deployment</h3>
     <ul>
-      <li>Telegram (Bot-Token aus Pool)</li>
-      <li>Web-Chat (Portal)</li>
-      <li>Email (IMAP/SMTP)</li>
+      <li>Telegram, Email, Web-Chat</li>
+      <li>Cloud-LLM (Mistral, Anthropic)</li>
+      <li>Sofort einsatzbereit</li>
+      <li>~0.002 EUR pro Anfrage</li>
     </ul>
 
-    <h3>Was der Agent kann</h3>
+    <h3>Edge-Deployment <span class="badge badge-planned">Konzept</span></h3>
+    <p>Agent läuft <strong>offline auf Kunden-Hardware</strong>:</p>
     <ul>
-      <li>Wissensdatenbank nachschlagen</li>
-      <li>Fragen beantworten</li>
-      <li>Eskalieren bei Unbekanntem</li>
-      <li>Compliance-Regeln einhalten</li>
+      <li>7-14B Modell (8GB VRAM, ~400 EUR HW)</li>
+      <li>Deterministisches Harness (5/6 Schritte ohne LLM)</li>
+      <li>Keine Internet-Abhängigkeit</li>
+      <li>0 EUR laufende Kosten</li>
+      <li>Daten bleiben beim Kunden</li>
     </ul>
+    <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem">
+      Anpassung: Cloud-Agent → Task-Profiling → Harness-Generator →
+      Edge-Agent. Gleiche Qualität bei 80%+ der Cloud-Performance.
+    </p>
 
     <h3>Monitoring <span class="badge badge-stub">Stub</span></h3>
-    <p>ADM.7 Feldbeobachtung — geplant. Erkennt Drift und Qualitätsprobleme.</p>
+    <p>Feldbeobachtung — Drift-Erkennung, Qualitäts-Monitoring.</p>
   </div>
 </div>
 
